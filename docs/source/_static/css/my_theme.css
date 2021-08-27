@@ -1,0 +1,255 @@
+/*         CUSTOMIZE RTD THEME         */
+/* =================================== */
+
+@import "theme.css";
+
+
+/* Width of page */
+
+.wy-nav-content {
+  max-width: 1200px !important;
+}
+
+
+ .wy-menu-vertical p.caption {
+  color: #55a5d9;
+  line-height: 32px;
+  font-weight: 700;
+  text-transform: none;
+  font-size: 100%;
+  white-space: nowrap;
+}
+
+
+
+/* Change color of alternate rows in table */
+.rst-content table.docutils:not(.field-list) tr:nth-child(2n-1) td, .wy-table-backed, .wy-table-odd td, .wy-table-striped tr:nth-child(2n-1) td {
+  background-color: #f8f5fc !important;
+}
+
+
+ /* Change color of background of header boxes where CLASS, METHOD DEFINITIONS are written */
+  .py.method .sig.sig-object.py, .py.function .sig.sig-object.py {
+    margin-bottom: 6px;
+    border: none;
+    border-left: 6px solid #948a80 !important; /* original #80756a */
+    background: rgb(197, 210, 245 ) !important ; /* original:214, 216, green: 203, 208, 224, 171 , blue: 211, 228, 240, rgb(224, 224, 214)*/
+    color: rgb(102, 100, 100) !important;
+    border-top: none !important;
+    overflow-x: auto !important;
+}
+ /*  New good blue: 197, 210, 245    greenish blue 137, 194, 204)*/
+
+
+/* CHANGE TOP MAIN HORIZONTAL BAR WITH CLASS NAME */
+html.writer-html4 .rst-content dl:not(.docutils) > dt, html.writer-html5 .rst-content dl[class]:not(.option-list):not(.field-list):not(.footnote):not(.glossary):not(.simple) > dt {
+  display: table;
+  margin: 6px 0;
+  font-size: 90%;
+  line-height: normal;
+  background: rgb(183, 204, 212); /* rgb(170, 180, 184) */
+  color: #000000;
+  border-top: 3px solid black;
+  padding: 6px;
+  position: relative
+}
+
+/* Format class definition */
+/* Change color of the word 'class' */
+.py.class em.property {
+  color: rgb(44, 73, 204);
+  font-size: 140%;
+}
+/* Change class-name attributes  */
+.py.class span.sig-name.descname{
+  /*  color: rgb(17, 83, 182); */
+  color: rgb(202, 63, 128); /* original: rgb(189, 194, 166) , 2) rgb(44, 81, 105) 3) rgb(14, 107, 168)*/
+  font-size: 120%;
+ }
+/* The following is required because the above 
+ code for changing class-name also changes the following 
+ so it must be reverted*/
+.py.attribute span.sig-name.descname{
+  color: revert;
+  font-size: revert;
+}
+
+
+
+/* Change color, text and background of boxes that have a white background */
+.rst-content code.xref, .rst-content tt.xref, a .rst-content code, a .rst-content tt {
+  background: #fff;
+  border: 1px solid #e1e4e5;
+  font-size: 100% !important;
+  font-weight: 400;
+  color: rgb(214, 121, 135)
+}
+html.writer-html4 .rst-content dl:not(.docutils) > dt, html.writer-html5 .rst-content dl[class]:not(.option-list):not(.field-list):not(.footnote):not(.glossary):not(.simple) > dt {
+  font-family: SFMono-Regular, Menlo, Monaco, Consolas, Liberation Mono, Courier New, Courier, monospace;
+  font-size: 100%;
+}
+
+/* Change background color of PARAMETERS and ATTRIBUTES */
+.rst-content dt.field-odd, .rst-content dd.field-odd{
+  margin-bottom: 12px !important;
+  font-weight: 400 !important;
+  background-color: #dddcd9 !important; /* latest #e4e4e0 e4e4e2*/
+}
+
+/* Change background color of RETURNS */
+.rst-content dt.field-even, .rst-content dd.field-even{
+  margin-bottom: 12px !important;
+  font-weight: 400 !important;
+  background-color: #dddcd9 !important; /* #dbd8d8 Latest: #e2dfdf*/
+}
+/* Change text in PARAMETERS, ATTRIBUTES, RETURNS (left side boxes)  */
+.rst-content dt.field-odd, .rst-content dt.field-even {
+  font-weight: 700 !important;
+  padding-right: 10px !important;
+}
+/* Change padding in boxes on right side to PARAMETERS, ATTRIBUTES, RETURNS*/ 
+.rst-content dd.field-odd, .rst-content dd.field-even {
+  padding-left: 10px !important;
+}
+
+/* Put background under NOTES, EXAMPLES, and REFERENCES */
+.rst-content p.rubric {
+  margin-bottom: 20px !important;
+  margin-top: 20px !important;
+  display: inline !important;
+  font-weight: 700 !important;
+  padding: 5px 5px 5px 5px !important;
+  background-color: #e0e0d8 !important; /* Original :#dee7e9; maybe: #d2e5e9*/
+}
+
+
+
+/* Change color of the parameter names in METHOD AND CLASS DEFINITION*/
+/* This also changes text in example CODE boxes */
+.py.class span.n, .py.function span.n {
+  color: rgb(189, 124, 124) !important; /* original:rgb(247, 120, 120) 2) (189, 124, 124)*/
+}
+/* Change color of the parameter default values names in METHOD AND CLASS DEFINITION*/
+.py.class span.default_value, .py.function span.default_value{
+  color: rgb(156, 151, 70) !important;
+}
+
+/* Make name of methods blue */
+.py.method span.sig-name.descname, .py.function span.sig-name.descname{
+ /*  color: rgb(17, 83, 182); */
+ color: rgb(11, 119, 190) !important; /* original: rgb(189, 194, 166) , 2) rgb(44, 81, 105) 3) rgb(14, 107, 168)*/
+ font-size: 120% !important;
+}
+
+/* Color of [source] */
+.rst-content .viewcode-link {
+color:#3491a8 !important;
+font-weight: 400 !important;
+}
+/* Make a line to separate methods */
+dl.py.method, dl.py.function {
+  border-bottom: 1px solid #c2bfbf !important;
+}
+
+
+/* Change warning Top*/
+.rst-content .warning .admonition-title{
+  background: #c2bfbf !important;
+}
+
+/* Change warning Text background*/
+.rst-content .warning{
+background: #d2d5e0 !important;
+}
+
+/* Change text size CODE-EXAMPLE boxes */
+.py.class dd div.doctest.highlight-default.notranslate div.highlight pre, .py.function dd div.doctest.highlight-default.notranslate div.highlight pre{
+  font-size:85% !important;
+}
+
+
+
+
+
+
+/* Put left border in CLASS 'Parameters' and 'Attributes' description in right side boxes */
+/* .py.method dd dl.field-list dl dt,  .py.class dd dl.field-list.simple dl.simple dt {
+  border-left: 3.5px solid #000000 !important ;
+  padding-left: 20px !important;
+  margin-left: 10px !important;
+} */ 
+
+/* Put left border in CLASS and METHOD 'Parameters', 'Attributes' and 'Return' description in right side boxes*/
+ .py.class dd dl.field-list dl dt, .py.class dd dl.field-list dd.field-odd dl dt {
+  border-left: none !important ;/* latest 3.5px solid #c0bec0  */
+  padding-left: 5px !important;
+  background: #a8d3ec !important;
+}
+
+/* Put left border in CLASS and METHOD 'Parameters', 'Attributes' and 'Return' description in right side boxes*/
+.py.function dd dl.field-list dl dt, .py.function dd dl.field-list dd.field-odd dl dt {
+  border-left: none !important ;/* latest 3.5px solid #c0bec0  */
+  padding-left: 5px !important;
+  background: #a8d3ec  !important;
+}
+
+/* Change the backgrounds of "SEE ALSO" Box "NOTES BOX" */
+.admonition.seealso .admonition-title, .admonition.note .admonition-title {
+  background:#acbac5 !important;
+}
+.admonition.seealso, .admonition.note {
+  background:#dfe2df !important;
+}
+
+/* Change the left border of "SEE ALSO" Box "NOTES BOX"*/
+.admonition.seealso dl.simple dt{
+  border-left: none !important ; /* latest 3.5px solid #b4b2a3  */
+}
+
+/* Change the left border of items such as
+ "where", "Notes" and text under them to NONE */
+.py.class dd dl.simple dt, .py.method dd dt{
+  border-left: none !important ;
+  font-weight: 400 !important;
+  color: #404040 !important;
+
+  }
+
+/*      TUTORIAL PAGE CUSTOMIZATION        */
+/* ====================================== */
+
+.rst-content div.document div div.highlight-python.notranslate div.highlight {
+  background-color: #eeffea !important; /* CREAM:#FEFBF4, GREEN:#ffffea, better green#f5f6ea, defalt RTD: #eeffcc*/
+} 
+
+/* Size of font in python code boxes in USER Tutorial PAGES */
+.rst-content div.document div div.highlight-python.notranslate div.highlight pre {
+  font-size: 85% !important;
+} 
+
+/* Color of comments in code box */
+.rst-content div.document div div.highlight-python.notranslate div.highlight pre span.c1{
+	color: #979788 !important;
+  font-style:oblique !important;
+}
+
+/* Color of text of code and keyword names */
+.rst-content div.document div div.highlight-python.notranslate div.highlight pre span.n{
+  color:  rgb(12, 150, 214)!important;
+}  /* rgb(38, 166, 175); rgb(29, 186, 197) rgb(46, 122, 194) rgb(22, 154, 216) (5, 129, 187)*/
+
+/* Color of keyword value */
+.rst-content div.document div div.highlight-python.notranslate div.highlight pre span.mf, .rst-content div.document div div.highlight-python.notranslate div.highlight pre span.mi{
+  color:  rgb(202, 35, 235) !important;
+}
+
+/* Color of LINE at bottom of Examples */
+.rst-content div.document div hr.docutils{
+  border-top: 1px solid #adabab !important;
+}
+
+/* Create a custom block for rst files */
+div.custom.docutils.container {
+  border-left: 5px solid #d1cbbe !important;
+  padding-left: 5px !important;
+}
