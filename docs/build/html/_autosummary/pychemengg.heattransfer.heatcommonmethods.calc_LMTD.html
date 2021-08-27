@@ -1,0 +1,336 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>calc_LMTD &mdash; PyChemEngg 0.1a6 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/my_theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/my_theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/my_theme.css" type="text/css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/katex-math.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.12.0/contrib/auto-render.min.js"></script>
+        <script src="../_static/katex_autorenderer.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="calc_Pr" href="pychemengg.heattransfer.heatcommonmethods.calc_Pr.html" />
+    <link rel="prev" title="heatcommonmethods" href="pychemengg.heattransfer.heatcommonmethods.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> PyChemEngg
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1a6
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption" role="heading"><span class="caption-text">User Tutorial</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../userguide/heattransfer/index.html">Heat Transfer</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Reference Guide</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../autosummary_pychemengg.html">PyChemEngg API Reference</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="pychemengg.html">pychemengg</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="pychemengg.heattransfer.html">heattransfer</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="pychemengg.heattransfer.externalflow.html">externalflow</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pychemengg.heattransfer.fins.html">fins</a></li>
+<li class="toctree-l4 current"><a class="reference internal" href="pychemengg.heattransfer.heatcommonmethods.html">heatcommonmethods</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pychemengg.heattransfer.heatexchangers.html">heatexchangers</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pychemengg.heattransfer.internalflow.html">internalflow</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pychemengg.heattransfer.steadystate.html">steadystate</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="pychemengg.physicalproperties.html">physicalproperties</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">PyChemEngg</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../autosummary_pychemengg.html">PyChemEngg API</a> &raquo;</li>
+        
+          <li><a href="pychemengg.html">pychemengg</a> &raquo;</li>
+        
+          <li><a href="pychemengg.heattransfer.html">heattransfer</a> &raquo;</li>
+        
+          <li><a href="pychemengg.heattransfer.heatcommonmethods.html">heatcommonmethods</a> &raquo;</li>
+        
+      <li>calc_LMTD</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/_autosummary/pychemengg.heattransfer.heatcommonmethods.calc_LMTD.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
+      
+        <a href="pychemengg.heattransfer.heatcommonmethods.calc_Pr.html" class="btn btn-neutral float-right" title="calc_Pr" accesskey="n">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+      
+      
+        <a href="pychemengg.heattransfer.heatcommonmethods.html" class="btn btn-neutral float-left" title="heatcommonmethods" accesskey="p"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+      
+  </div>
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<div class="section" id="calc-lmtd">
+<h1>calc_LMTD<a class="headerlink" href="#calc-lmtd" title="Permalink to this headline">¶</a></h1>
+<dl class="py function">
+<dt class="sig sig-object py" id="pychemengg.heattransfer.heatcommonmethods.calc_LMTD">
+<span class="sig-prename descclassname"><span class="pre">pychemengg.heattransfer.heatcommonmethods.</span></span><span class="sig-name descname"><span class="pre">calc_LMTD</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">deltaT1</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">deltaT2</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pychemengg/heattransfer/heatcommonmethods.html#calc_LMTD"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pychemengg.heattransfer.heatcommonmethods.calc_LMTD" title="Permalink to this definition">¶</a></dt>
+<dd><p>To compute log mean temperature difference (LMTD)</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl>
+<dt><strong>deltaT1</strong><span class="classifier"><cite>int or float</cite></span></dt><dd><p>Temperature difference.</p>
+</dd>
+<dt><strong>deltaT2</strong><span class="classifier"><cite>int or float</cite></span></dt><dd><p>Temperature difference.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl>
+<dt><strong>LMTD</strong><span class="classifier"><cite>int or float</cite></span></dt><dd><p>Reynolds number for a flowing fluid.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>The following formula is used.</p>
+<div class="math">
+\[LMTD = \cfrac {\Delta T_1 - \Delta T_2} {ln[ \Delta T_1 / \Delta T_2 }\]</div>
+<p><em>where:</em></p>
+<blockquote>
+<div><p><span class="math">\(\Delta T_1\)</span> <em>= temperature difference #1</em></p>
+<p><span class="math">\(\Delta T_2\)</span> <em>= temperature difference #2</em></p>
+<p><span class="math">\(\Delta T_1\)</span> and <span class="math">\(\Delta T_2\)</span> vary on the type 
+of problem under consideration</p>
+</div></blockquote>
+<p>Internal to this function, the temperature differences are converted into 
+complex numbers to allow for the use of this function in situations
+where temperature must be iteratively solved using solvers
+such as ‘fsolve’ from scipy. The value that is returned is the real part.</p>
+<p class="rubric">References</p>
+<p>[1] G. F. Nellis and S. A. Klein, “Introduction to Engineering 
+Heat Transfer”, 1st Edition. Cambridge University Press, 2021.</p>
+<p>[2] Y. A. Cengel and A. J. Ghajar, “Heat And Mass Transfer
+Fundamentals and Applications”, 6th Edition. New York, McGraw Hill
+Education, 2020.</p>
+<p>[3] T.L. Bergman, A. S. Lavine, F. P. Incropera, D. P. Dewitt, 
+“Fundamentals of Heat and Mass Transfer”, 7th Edition, 
+John Wiley, 2011.</p>
+<p class="rubric">Examples</p>
+<p>First import the module <strong>heatcommonmethods</strong>.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pychemengg.heattransfer</span> <span class="kn">import</span> <span class="n">heatcommonmethods</span> <span class="k">as</span> <span class="n">hcm</span> 
+<span class="gp">&gt;&gt;&gt; </span><span class="n">hcm</span><span class="o">.</span><span class="n">calc_LMTD</span><span class="p">(</span><span class="n">deltaT1</span><span class="o">=</span><span class="mi">90</span><span class="o">-</span><span class="mi">40</span><span class="p">,</span> <span class="n">deltaT2</span><span class="o">=</span><span class="mi">65</span><span class="o">-</span><span class="mi">20</span><span class="p">)</span>
+<span class="go">47.456107905149494</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="pychemengg.heattransfer.heatcommonmethods.calc_Pr.html" class="btn btn-neutral float-right" title="calc_Pr" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="pychemengg.heattransfer.heatcommonmethods.html" class="btn btn-neutral float-left" title="heatcommonmethods" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021, Harvinder Singh Gill.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

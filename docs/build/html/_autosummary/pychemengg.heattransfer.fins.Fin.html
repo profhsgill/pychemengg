@@ -1,0 +1,614 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Fin &mdash; PyChemEngg 0.1a6 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/my_theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/my_theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/my_theme.css" type="text/css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/katex-math.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.12.0/contrib/auto-render.min.js"></script>
+        <script src="../_static/katex_autorenderer.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="heatcommonmethods" href="pychemengg.heattransfer.heatcommonmethods.html" />
+    <link rel="prev" title="fins" href="pychemengg.heattransfer.fins.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> PyChemEngg
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1a6
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption" role="heading"><span class="caption-text">User Tutorial</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../userguide/heattransfer/index.html">Heat Transfer</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Reference Guide</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../autosummary_pychemengg.html">PyChemEngg API Reference</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="pychemengg.html">pychemengg</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="pychemengg.heattransfer.html">heattransfer</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="pychemengg.heattransfer.externalflow.html">externalflow</a></li>
+<li class="toctree-l4 current"><a class="reference internal" href="pychemengg.heattransfer.fins.html">fins</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pychemengg.heattransfer.heatcommonmethods.html">heatcommonmethods</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pychemengg.heattransfer.heatexchangers.html">heatexchangers</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pychemengg.heattransfer.internalflow.html">internalflow</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pychemengg.heattransfer.steadystate.html">steadystate</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="pychemengg.physicalproperties.html">physicalproperties</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">PyChemEngg</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../autosummary_pychemengg.html">PyChemEngg API</a> &raquo;</li>
+        
+          <li><a href="pychemengg.html">pychemengg</a> &raquo;</li>
+        
+          <li><a href="pychemengg.heattransfer.html">heattransfer</a> &raquo;</li>
+        
+          <li><a href="pychemengg.heattransfer.fins.html">fins</a> &raquo;</li>
+        
+      <li>Fin</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/_autosummary/pychemengg.heattransfer.fins.Fin.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
+      
+        <a href="pychemengg.heattransfer.heatcommonmethods.html" class="btn btn-neutral float-right" title="heatcommonmethods" accesskey="n">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+      
+      
+        <a href="pychemengg.heattransfer.fins.html" class="btn btn-neutral float-left" title="fins" accesskey="p"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+      
+  </div>
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<div class="section" id="fin">
+<h1>Fin<a class="headerlink" href="#fin" title="Permalink to this headline">¶</a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="pychemengg.heattransfer.fins.Fin">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">pychemengg.heattransfer.fins.</span></span><span class="sig-name descname"><span class="pre">Fin</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">length</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">width</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">thickness</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">diameter</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">inner_radius</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">outer_radius</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">heattransfercoefficient</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">thermalconductivity</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pychemengg/heattransfer/fins.html#Fin"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pychemengg.heattransfer.fins.Fin" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>To compute fin efficiency of different fin types.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl>
+<dt><strong>length</strong><span class="classifier"><cite>int or float</cite></span></dt><dd><p>Length of fin.</p>
+</dd>
+<dt><strong>width</strong><span class="classifier"><cite>int or float</cite></span></dt><dd><p>Width of fin.</p>
+</dd>
+<dt><strong>thickness</strong><span class="classifier"><cite>int or float</cite></span></dt><dd><p>Thickness of fin.</p>
+</dd>
+<dt><strong>diameter</strong><span class="classifier"><cite>int or float</cite></span></dt><dd><p>Diameter of fin.</p>
+</dd>
+<dt><strong>inner_radius</strong><span class="classifier"><cite>int or float</cite></span></dt><dd><p>Inner radius of annular fin.</p>
+</dd>
+<dt><strong>outer_radius</strong><span class="classifier"><cite>int or float</cite></span></dt><dd><p>Outer radius of annular fin.</p>
+</dd>
+<dt><strong>heattransfercoefficient</strong><span class="classifier"><cite>int or float</cite></span></dt><dd><p>Heat transfer coefficient between fin and surroundings.</p>
+</dd>
+<dt><strong>thermalconductivity</strong><span class="classifier"><cite>int or float</cite></span></dt><dd><p>Thermal conductivity of fin material.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<p>First import the module <strong>fins</strong>.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">heattransfer</span> <span class="kn">import</span> <span class="n">fins</span> <span class="k">as</span> <span class="n">fins</span> 
+<span class="gp">&gt;&gt;&gt; </span><span class="n">fin1</span> <span class="o">=</span> <span class="n">fins</span><span class="o">.</span><span class="n">Fin</span><span class="p">(</span><span class="n">keyword1</span><span class="o">=...</span><span class="p">,</span> <span class="n">keyword2</span><span class="o">=...</span><span class="p">,</span> <span class="o">...</span><span class="p">)</span>
+<span class="go"># This will create an instance of class &#39;Fin&#39; and assign it to the</span>
+<span class="go">variable &#39;fin1&#39;.</span>
+<span class="go"># Methods of the class &#39;Fin&#39; can then be called like so :-</span>
+<span class="go"># fin1.cylindrical()</span>
+<span class="go"># or</span>
+<span class="go"># fin1.rectangular()</span>
+</pre></div>
+</div>
+<dl class="field-list">
+<dt class="field-odd">Attributes</dt>
+<dd class="field-odd"><dl>
+<dt><strong>See “Parameters”. All parameters are attributes.</strong></dt><dd></dd>
+<dt><strong>Additional attributes are listed below.</strong></dt><dd></dd>
+<dt><strong>efficiency</strong><span class="classifier"><cite>int or float</cite></span></dt><dd><p>Fin efficiency.</p>
+</dd>
+<dt><strong>surfacearea</strong><span class="classifier"><cite>int or float</cite></span></dt><dd><p>Surface area of given fin geometry.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="pychemengg.heattransfer.fins.Fin.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">length</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">width</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">thickness</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">diameter</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">inner_radius</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">outer_radius</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">heattransfercoefficient</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">thermalconductivity</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pychemengg/heattransfer/fins.html#Fin.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pychemengg.heattransfer.fins.Fin.__init__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<p class="rubric">Methods</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pychemengg.heattransfer.fins.Fin.__init__" title="pychemengg.heattransfer.fins.Fin.__init__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">__init__</span></code></a>([length, width, thickness, …])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#pychemengg.heattransfer.fins.Fin.cylindrical" title="pychemengg.heattransfer.fins.Fin.cylindrical"><code class="xref py py-obj docutils literal notranslate"><span class="pre">cylindrical</span></code></a>()</p></td>
+<td><p>Computes fin efficiency for a cylindrical fin.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pychemengg.heattransfer.fins.Fin.pintriangular" title="pychemengg.heattransfer.fins.Fin.pintriangular"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pintriangular</span></code></a>()</p></td>
+<td><p>Computes fin efficiency for a pintriangular fin.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#pychemengg.heattransfer.fins.Fin.rectangular" title="pychemengg.heattransfer.fins.Fin.rectangular"><code class="xref py py-obj docutils literal notranslate"><span class="pre">rectangular</span></code></a>()</p></td>
+<td><p>Computes fin efficiency for a rectangular fin.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pychemengg.heattransfer.fins.Fin.rectangularannular" title="pychemengg.heattransfer.fins.Fin.rectangularannular"><code class="xref py py-obj docutils literal notranslate"><span class="pre">rectangularannular</span></code></a>()</p></td>
+<td><p>Computes fin efficiency for a rectangularannular fin.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#pychemengg.heattransfer.fins.Fin.straightparabolic" title="pychemengg.heattransfer.fins.Fin.straightparabolic"><code class="xref py py-obj docutils literal notranslate"><span class="pre">straightparabolic</span></code></a>()</p></td>
+<td><p>Computes fin efficiency for a straightparabolic fin.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pychemengg.heattransfer.fins.Fin.straighttriangular" title="pychemengg.heattransfer.fins.Fin.straighttriangular"><code class="xref py py-obj docutils literal notranslate"><span class="pre">straighttriangular</span></code></a>()</p></td>
+<td><p>Computes fin efficiency for a straighttriangular fin.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="py method">
+<dt class="sig sig-object py" id="pychemengg.heattransfer.fins.Fin.cylindrical">
+<span class="sig-name descname"><span class="pre">cylindrical</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pychemengg/heattransfer/fins.html#Fin.cylindrical"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pychemengg.heattransfer.fins.Fin.cylindrical" title="Permalink to this definition">¶</a></dt>
+<dd><p>Computes fin efficiency for a cylindrical fin.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>`None_required`</strong><span class="classifier">‘None’</span></dt><dd><p>Attributes that are already defined are used in calculation.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>tuple containing efficiency and surfacearea :</dt><dd><p>(efficiency : <cite>int or float</cite>, surfacearea : <cite>int or float</cite>)</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>The following formula is used:</p>
+<div class="math">
+\[\eta = \frac {\tanh (mL)} {mL} \\[15pt]
+
+\\[15pt]
+
+A_{surface area} = Perimeter \hspace{2pt} L\]</div>
+<p><em>where:</em></p>
+<blockquote>
+<div><p>L = fin length</p>
+<p>m = <span class="math">\(\sqrt {\frac {h \hspace{2pt} Perimeter} {k \hspace{2pt} A_{cross-section}}}\)</span></p>
+<p>h = heat transfer coefficient</p>
+<p>Perimeter = fin perimeter</p>
+<p><span class="math">\(A_{cross-section}\)</span> = cross section area of fin</p>
+<p><span class="math">\(A_{surface area}\)</span> = surface area of fin</p>
+</div></blockquote>
+<p class="rubric">References</p>
+<p>[1] G. F. Nellis and S. A. Klein, “Introduction to Engineering 
+Heat Transfer”, 1st Edition. Cambridge University Press, 2021.</p>
+<p>[2] Y. A. Cengel and A. J. Ghajar, “Heat And Mass Transfer
+Fundamentals and Applications”, 6th Edition. New York, McGraw Hill
+Education, 2020.</p>
+<p>[3] T.L. Bergman, A. S. Lavine, F. P. Incropera, D. P. Dewitt, 
+“Fundamentals of Heat and Mass Transfer”, 7th Edition, 
+John Wiley, 2011.</p>
+<p class="rubric">Examples</p>
+<p>First import the module <strong>fins</strong>.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pychemengg.heattransfer</span> <span class="kn">import</span> <span class="n">fins</span> <span class="k">as</span> <span class="n">fins</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">fin1</span> <span class="o">=</span> <span class="n">fins</span><span class="o">.</span><span class="n">Fin</span><span class="p">(</span><span class="n">length</span><span class="o">=</span><span class="mf">0.06</span><span class="p">,</span>
+<span class="go">                     diameter=5e-3,</span>
+<span class="go">                     heattransfercoefficient=35,</span>
+<span class="go">                     thermalconductivity=8.3)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">fin1</span><span class="o">.</span><span class="n">cylindrical</span><span class="p">()</span>
+<span class="go">(0.2864128219415127, 0.000942477796076938)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pychemengg.heattransfer.fins.Fin.pintriangular">
+<span class="sig-name descname"><span class="pre">pintriangular</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pychemengg/heattransfer/fins.html#Fin.pintriangular"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pychemengg.heattransfer.fins.Fin.pintriangular" title="Permalink to this definition">¶</a></dt>
+<dd><p>Computes fin efficiency for a pintriangular fin.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>`None_required`</strong><span class="classifier">‘None’</span></dt><dd><p>Attributes that are already defined are used in calculation.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>tuple containing efficiency and surfacearea :</dt><dd><p>(efficiency : <cite>int or float</cite>, surfacearea : <cite>int or float</cite>)</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">References</p>
+<p>[1] G. F. Nellis and S. A. Klein, “Introduction to Engineering 
+Heat Transfer”, 1st Edition. Cambridge University Press, 2021.</p>
+<p>[2] Y. A. Cengel and A. J. Ghajar, “Heat And Mass Transfer
+Fundamentals and Applications”, 6th Edition. New York, McGraw Hill
+Education, 2020.</p>
+<p>[3] T.L. Bergman, A. S. Lavine, F. P. Incropera, D. P. Dewitt, 
+“Fundamentals of Heat and Mass Transfer”, 7th Edition, 
+John Wiley, 2011.</p>
+<p class="rubric">Examples</p>
+<p>First import the module <strong>fins</strong>.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pychemengg.heattransfer</span> <span class="kn">import</span> <span class="n">fins</span> <span class="k">as</span> <span class="n">fins</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">fin1</span> <span class="o">=</span> <span class="n">fins</span><span class="o">.</span><span class="n">Fin</span><span class="p">(</span><span class="n">length</span><span class="o">=</span><span class="mf">0.015</span><span class="p">,</span> <span class="n">diameter</span><span class="o">=</span><span class="mf">0.0015</span><span class="p">,</span> <span class="n">heattransfercoefficient</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">thermalconductivity</span><span class="o">=</span><span class="mi">70</span><span class="p">)</span>
+<span class="go">fin1.pintriangular()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">fin1</span><span class="o">.</span><span class="n">pintriangular</span><span class="p">()</span>
+<span class="go">(0.9354407776522699, 3.538706842238283e-05)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pychemengg.heattransfer.fins.Fin.rectangular">
+<span class="sig-name descname"><span class="pre">rectangular</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pychemengg/heattransfer/fins.html#Fin.rectangular"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pychemengg.heattransfer.fins.Fin.rectangular" title="Permalink to this definition">¶</a></dt>
+<dd><p>Computes fin efficiency for a rectangular fin.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>`None_required`</strong><span class="classifier">‘None’</span></dt><dd><p>Attributes that are already defined are used in calculation.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>tuple containing efficiency and surfacearea :</dt><dd><p>(efficiency : <cite>int or float</cite>, surfacearea : <cite>int or float</cite>)</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">References</p>
+<p>[1] G. F. Nellis and S. A. Klein, “Introduction to Engineering 
+Heat Transfer”, 1st Edition. Cambridge University Press, 2021.</p>
+<p>[2] Y. A. Cengel and A. J. Ghajar, “Heat And Mass Transfer
+Fundamentals and Applications”, 6th Edition. New York, McGraw Hill
+Education, 2020.</p>
+<p>[3] T.L. Bergman, A. S. Lavine, F. P. Incropera, D. P. Dewitt, 
+“Fundamentals of Heat and Mass Transfer”, 7th Edition, 
+John Wiley, 2011.</p>
+<p class="rubric">Examples</p>
+<p>First import the module <strong>fins</strong>.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pychemengg.heattransfer</span> <span class="kn">import</span> <span class="n">fins</span> <span class="k">as</span> <span class="n">fins</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">fin1</span> <span class="o">=</span> <span class="n">fins</span><span class="o">.</span><span class="n">Fin</span> <span class="p">(</span><span class="n">length</span><span class="o">=</span><span class="mf">0.064</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">thickness</span><span class="o">=</span><span class="mf">0.008</span><span class="p">,</span> <span class="n">heattransfercoefficient</span><span class="o">=</span><span class="mi">25</span><span class="p">,</span> <span class="n">thermalconductivity</span><span class="o">=</span><span class="mi">210</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">fin1</span><span class="o">.</span><span class="n">rectangular</span><span class="p">()</span>
+<span class="go">(0.9609578814207821, 0.129024)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pychemengg.heattransfer.fins.Fin.rectangularannular">
+<span class="sig-name descname"><span class="pre">rectangularannular</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pychemengg/heattransfer/fins.html#Fin.rectangularannular"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pychemengg.heattransfer.fins.Fin.rectangularannular" title="Permalink to this definition">¶</a></dt>
+<dd><p>Computes fin efficiency for a rectangularannular fin.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>`None_required`</strong><span class="classifier">‘None’</span></dt><dd><p>Attributes that are already defined are used in calculation.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>tuple containing efficiency and surfacearea :</dt><dd><p>(efficiency : <cite>int or float</cite>, surfacearea : <cite>int or float</cite>)</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">References</p>
+<p>[1] G. F. Nellis and S. A. Klein, “Introduction to Engineering 
+Heat Transfer”, 1st Edition. Cambridge University Press, 2021.</p>
+<p>[2] Y. A. Cengel and A. J. Ghajar, “Heat And Mass Transfer
+Fundamentals and Applications”, 6th Edition. New York, McGraw Hill
+Education, 2020.</p>
+<p>[3] T.L. Bergman, A. S. Lavine, F. P. Incropera, D. P. Dewitt, 
+“Fundamentals of Heat and Mass Transfer”, 7th Edition, 
+John Wiley, 2011.</p>
+<p class="rubric">Examples</p>
+<p>First import the module <strong>fins</strong>.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pychemengg.heattransfer</span> <span class="kn">import</span> <span class="n">fins</span> <span class="k">as</span> <span class="n">fins</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">fin1</span> <span class="o">=</span> <span class="n">fins</span><span class="o">.</span><span class="n">Fin</span><span class="p">(</span><span class="n">inner_radius</span><span class="o">=</span><span class="mf">0.025</span><span class="p">,</span> <span class="n">outer_radius</span><span class="o">=</span><span class="mf">0.045</span><span class="p">,</span> <span class="n">thickness</span><span class="o">=</span><span class="mf">0.001</span><span class="p">,</span> <span class="n">heattransfercoefficient</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">thermalconductivity</span><span class="o">=</span><span class="mi">210</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">fin1</span><span class="o">.</span><span class="n">rectangularannular</span><span class="p">()</span>
+<span class="go">(0.922097299521443, 0.00879645943005142)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pychemengg.heattransfer.fins.Fin.straightparabolic">
+<span class="sig-name descname"><span class="pre">straightparabolic</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pychemengg/heattransfer/fins.html#Fin.straightparabolic"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pychemengg.heattransfer.fins.Fin.straightparabolic" title="Permalink to this definition">¶</a></dt>
+<dd><p>Computes fin efficiency for a straightparabolic fin.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>`None_required`</strong><span class="classifier">‘None’</span></dt><dd><p>Attributes that are already defined are used in calculation.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>tuple containing efficiency and surfacearea :</dt><dd><p>(efficiency : <cite>int or float</cite>, surfacearea : <cite>int or float</cite>)</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">References</p>
+<p>[1] G. F. Nellis and S. A. Klein, “Introduction to Engineering 
+Heat Transfer”, 1st Edition. Cambridge University Press, 2021.</p>
+<p>[2] Y. A. Cengel and A. J. Ghajar, “Heat And Mass Transfer
+Fundamentals and Applications”, 6th Edition. New York, McGraw Hill
+Education, 2020.</p>
+<p>[3] T.L. Bergman, A. S. Lavine, F. P. Incropera, D. P. Dewitt, 
+“Fundamentals of Heat and Mass Transfer”, 7th Edition, 
+John Wiley, 2011.</p>
+<p class="rubric">Examples</p>
+<p>First import the module <strong>fins</strong>.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pychemengg.heattransfer</span> <span class="kn">import</span> <span class="n">fins</span> <span class="k">as</span> <span class="n">fins</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">fin1</span> <span class="o">=</span> <span class="n">fins</span><span class="o">.</span><span class="n">Fin</span><span class="p">(</span><span class="n">length</span><span class="o">=</span><span class="mf">0.03</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">thickness</span><span class="o">=</span><span class="mf">0.001</span><span class="p">,</span> <span class="n">heattransfercoefficient</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">thermalconductivity</span><span class="o">=</span><span class="mi">125</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">fin1</span><span class="o">.</span><span class="n">straightparabolic</span><span class="p">()</span>
+<span class="go">(0.8867652295764488, 0.012002221851998751)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pychemengg.heattransfer.fins.Fin.straighttriangular">
+<span class="sig-name descname"><span class="pre">straighttriangular</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pychemengg/heattransfer/fins.html#Fin.straighttriangular"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pychemengg.heattransfer.fins.Fin.straighttriangular" title="Permalink to this definition">¶</a></dt>
+<dd><p>Computes fin efficiency for a straighttriangular fin.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>`None_required`</strong><span class="classifier">‘None’</span></dt><dd><p>Attributes that are already defined are used in calculation.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>tuple containing efficiency and surfacearea :</dt><dd><p>(efficiency : <cite>int or float</cite>, surfacearea : <cite>int or float</cite>)</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">References</p>
+<p>[1] G. F. Nellis and S. A. Klein, “Introduction to Engineering 
+Heat Transfer”, 1st Edition. Cambridge University Press, 2021.</p>
+<p>[2] Y. A. Cengel and A. J. Ghajar, “Heat And Mass Transfer
+Fundamentals and Applications”, 6th Edition. New York, McGraw Hill
+Education, 2020.</p>
+<p>[3] T.L. Bergman, A. S. Lavine, F. P. Incropera, D. P. Dewitt, 
+“Fundamentals of Heat and Mass Transfer”, 7th Edition, 
+John Wiley, 2011.</p>
+<p class="rubric">Examples</p>
+<p>First import the module <strong>fins</strong>.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pychemengg.heattransfer</span> <span class="kn">import</span> <span class="n">fins</span> <span class="k">as</span> <span class="n">fins</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">fin1</span> <span class="o">=</span> <span class="n">fins</span><span class="o">.</span><span class="n">Fin</span><span class="p">(</span><span class="n">length</span><span class="o">=</span><span class="mf">0.055</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mf">0.11</span><span class="p">,</span> <span class="n">thickness</span><span class="o">=</span><span class="mf">0.004</span><span class="p">,</span> <span class="n">heattransfercoefficient</span><span class="o">=</span><span class="mi">25</span><span class="p">,</span> <span class="n">thermalconductivity</span><span class="o">=</span><span class="mi">236</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">fin1</span><span class="o">.</span><span class="n">straighttriangular</span><span class="p">()</span>
+<span class="go">(0.9275971984358753, 0.012107997357118972)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="pychemengg.heattransfer.heatcommonmethods.html" class="btn btn-neutral float-right" title="heatcommonmethods" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="pychemengg.heattransfer.fins.html" class="btn btn-neutral float-left" title="fins" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021, Harvinder Singh Gill.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

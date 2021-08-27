@@ -1,0 +1,534 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>pychemengg.physicalproperties.watervaporproperties &mdash; PyChemEngg 0.1a6 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../_static/css/my_theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/css/my_theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/my_theme.css" type="text/css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/katex-math.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.12.0/contrib/auto-render.min.js"></script>
+        <script src="../../../_static/katex_autorenderer.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> PyChemEngg
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1a6
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption" role="heading"><span class="caption-text">User Tutorial</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../userguide/heattransfer/index.html">Heat Transfer</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Reference Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../autosummary_pychemengg.html">PyChemEngg API Reference</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">PyChemEngg</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../../index.html">Module code</a> &raquo;</li>
+        
+      <li>pychemengg.physicalproperties.watervaporproperties</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for pychemengg.physicalproperties.watervaporproperties</h1><div class="highlight"><pre>
+<span></span><span class="c1"># -*- coding: utf-8 -*-</span>
+
+<span class="c1"># This file is part of pyChemEngg python package.</span>
+ 
+<span class="c1"># PyChemEngg: A python-based framework to promote problem solving and critical</span>
+<span class="c1"># thinking in chemical engineering.</span>
+
+<span class="c1"># Copyright (c) 2021 Harvinder Singh Gill &lt;profhsgill@gmail.com&gt;</span>
+
+<span class="c1"># Permission is hereby granted, free of charge, to any person obtaining a copy</span>
+<span class="c1"># of this software and associated documentation files (the &quot;Software&quot;), to deal</span>
+<span class="c1"># in the Software without restriction, including without limitation the rights</span>
+<span class="c1"># to use, copy, modify, merge, publish, distribute, sublicense, and/or sell</span>
+<span class="c1"># copies of the Software, and to permit persons to whom the Software is</span>
+<span class="c1"># furnished to do so, subject to the following conditions:</span>
+
+<span class="c1"># The above copyright notice and this permission notice shall be included in all</span>
+<span class="c1"># copies or substantial portions of the Software.</span>
+
+<span class="c1"># THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR</span>
+<span class="c1"># IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,</span>
+<span class="c1"># FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE</span>
+<span class="c1"># AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER</span>
+<span class="c1"># LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,</span>
+<span class="c1"># OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE</span>
+<span class="c1"># SOFTWARE.</span>
+
+<span class="sd">&quot;&quot;&quot;Module to compute physical properties of water vapor.</span>
+
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">os</span>
+
+<span class="k">def</span> <span class="nf">_loadwater_data</span><span class="p">():</span>
+    <span class="n">__location__</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">realpath</span><span class="p">(</span>
+                        <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">(),</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="vm">__file__</span><span class="p">)))</span>
+    <span class="n">water</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">file_to_open</span> <span class="o">=</span> <span class="s2">&quot;data_waterproperties.txt&quot;</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">__location__</span><span class="p">,</span> <span class="n">file_to_open</span><span class="p">),</span><span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">water_file</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">water_file</span><span class="p">:</span>
+            <span class="n">water</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="nb">float</span><span class="p">(</span><span class="nb">eval</span><span class="p">(</span><span class="n">x</span><span class="p">))</span> <span class="k">if</span> <span class="n">x</span> <span class="o">!=</span> <span class="s2">&quot;nan&quot;</span> <span class="k">else</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">line</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">()])</span>
+    <span class="n">water_file</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+    <span class="n">water_data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">water</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">water_data</span>
+
+<div class="viewcode-block" id="density"><a class="viewcode-back" href="../../../_autosummary/pychemengg.physicalproperties.watervaporproperties.density.html#pychemengg.physicalproperties.watervaporproperties.density">[docs]</a><span class="k">def</span> <span class="nf">density</span><span class="p">(</span><span class="n">T</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="sa">r</span><span class="sd">&quot;&quot;&quot; Provides density of water vapor at a temperature T.</span>
+<span class="sd">    </span>
+<span class="sd">    </span>
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    T : `int or float`</span>
+<span class="sd">        Temperature in &#39;Celsius&#39; at which density is required.</span>
+
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    density : `int or float`</span>
+<span class="sd">       Density (kg/m3) at temperature T .</span>
+<span class="sd">   </span>
+<span class="sd">    </span>
+<span class="sd">    Notes</span>
+<span class="sd">    -----</span>
+<span class="sd">    Look up table adapted from ref [1].</span>
+<span class="sd">    </span>
+<span class="sd">    Linear interpolation is performed when the temperature lies</span>
+<span class="sd">    between tabulated entries.</span>
+
+<span class="sd">    </span>
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    First import the module **watervaporproperties**.</span>
+<span class="sd">       </span>
+<span class="sd">    &gt;&gt;&gt; from pychemengg.physicalproperties import watervaporproperties as wvp </span>
+<span class="sd">    &gt;&gt;&gt; wvp.density(T=32.5)</span>
+<span class="sd">    0.03505</span>
+
+<span class="sd">    </span>
+<span class="sd">    References</span>
+<span class="sd">    ----------</span>
+<span class="sd">    [1] Yunus A. Cengel and Afshin J. Ghajar, &quot;Heat And Mass Transfer</span>
+<span class="sd">    Fundamentals and Applications&quot;, 6th Edition. New York, McGraw Hill</span>
+<span class="sd">    Education, 2020.</span>
+<span class="sd">    </span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">water_data</span> <span class="o">=</span> <span class="n">_loadwater_data</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">interp</span><span class="p">(</span><span class="n">T</span><span class="p">,</span> <span class="n">water_data</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span> <span class="n">water_data</span><span class="p">[:,</span><span class="mi">3</span><span class="p">])</span></div>
+
+<div class="viewcode-block" id="viscosity"><a class="viewcode-back" href="../../../_autosummary/pychemengg.physicalproperties.watervaporproperties.viscosity.html#pychemengg.physicalproperties.watervaporproperties.viscosity">[docs]</a><span class="k">def</span> <span class="nf">viscosity</span><span class="p">(</span><span class="n">T</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="sa">r</span><span class="sd">&quot;&quot;&quot; Provides viscosity of water vapor at a temperature T.</span>
+<span class="sd">    </span>
+<span class="sd">    </span>
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    T : `int or float`</span>
+<span class="sd">        Temperature in &#39;Celsius&#39; at which viscosity is required.</span>
+
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    Viscosity: `int or float`</span>
+<span class="sd">        Dynamic viscosity (kg/ms) at temperature T.</span>
+<span class="sd">   </span>
+<span class="sd">    </span>
+<span class="sd">    Notes</span>
+<span class="sd">    -----</span>
+<span class="sd">    Look up table adapted from ref [1].</span>
+<span class="sd">    </span>
+<span class="sd">    Linear interpolation is performed when the temperature lies</span>
+<span class="sd">    between tabulated entries.</span>
+
+<span class="sd">    </span>
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    First import the module **watervaporproperties**.</span>
+<span class="sd">       </span>
+<span class="sd">    &gt;&gt;&gt; from pychemengg.physicalproperties import watervaporproperties as wvp </span>
+<span class="sd">    &gt;&gt;&gt; wvp.viscosity(T=50)</span>
+<span class="sd">    1.0620000000000002e-05</span>
+
+<span class="sd">    </span>
+<span class="sd">    References</span>
+<span class="sd">    ----------</span>
+<span class="sd">    [1] Yunus A. Cengel and Afshin J. Ghajar, &quot;Heat And Mass Transfer</span>
+<span class="sd">    Fundamentals and Applications&quot;, 6th Edition. New York, McGraw Hill</span>
+<span class="sd">    Education, 2020.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">water_data</span> <span class="o">=</span> <span class="n">_loadwater_data</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">interp</span><span class="p">(</span><span class="n">T</span><span class="p">,</span> <span class="n">water_data</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span> <span class="n">water_data</span><span class="p">[:,</span><span class="mi">10</span><span class="p">])</span></div>
+
+<div class="viewcode-block" id="specificheat"><a class="viewcode-back" href="../../../_autosummary/pychemengg.physicalproperties.watervaporproperties.specificheat.html#pychemengg.physicalproperties.watervaporproperties.specificheat">[docs]</a><span class="k">def</span> <span class="nf">specificheat</span><span class="p">(</span><span class="n">T</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="sa">r</span><span class="sd">&quot;&quot;&quot; Provides specific heat of water vapor at a temperature T.</span>
+<span class="sd">    </span>
+<span class="sd">    </span>
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    T : `int or float`</span>
+<span class="sd">        Temperature in &#39;Celsius&#39; at which specific heat is required.</span>
+
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    specific heat : `int or float`</span>
+<span class="sd">        Specific heat (J/kg K) at temperature T.</span>
+<span class="sd">   </span>
+<span class="sd">    </span>
+<span class="sd">    Notes</span>
+<span class="sd">    -----</span>
+<span class="sd">    Look up table adapted from ref [1].</span>
+<span class="sd">    </span>
+<span class="sd">    Linear interpolation is performed when the temperature lies</span>
+<span class="sd">    between tabulated entries.</span>
+
+<span class="sd">    </span>
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    First import the module **watervaporproperties**.</span>
+<span class="sd">       </span>
+<span class="sd">    &gt;&gt;&gt; from pychemengg.physicalproperties import watervaporproperties as wvp </span>
+<span class="sd">    &gt;&gt;&gt; wvp.specificheat(T=32.5)</span>
+<span class="sd">    1877.5</span>
+
+<span class="sd">    </span>
+<span class="sd">    References</span>
+<span class="sd">    ----------</span>
+<span class="sd">    [1] Yunus A. Cengel and Afshin J. Ghajar, &quot;Heat And Mass Transfer</span>
+<span class="sd">    Fundamentals and Applications&quot;, 6th Edition. New York, McGraw Hill</span>
+<span class="sd">    Education, 2020.</span>
+<span class="sd">    </span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">water_data</span> <span class="o">=</span> <span class="n">_loadwater_data</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">interp</span><span class="p">(</span><span class="n">T</span><span class="p">,</span> <span class="n">water_data</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span> <span class="n">water_data</span><span class="p">[:,</span><span class="mi">6</span><span class="p">])</span></div>
+
+<div class="viewcode-block" id="thermalconductivity"><a class="viewcode-back" href="../../../_autosummary/pychemengg.physicalproperties.watervaporproperties.thermalconductivity.html#pychemengg.physicalproperties.watervaporproperties.thermalconductivity">[docs]</a><span class="k">def</span> <span class="nf">thermalconductivity</span><span class="p">(</span><span class="n">T</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="sa">r</span><span class="sd">&quot;&quot;&quot; Provides thermal conductivity of water vapor at a temperature T.</span>
+<span class="sd">    </span>
+<span class="sd">    </span>
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    T : `int or float`</span>
+<span class="sd">        Temperature in &#39;Celsius&#39; at which thermal conductivity is required.</span>
+
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    Thermal conductivity : `int or float`</span>
+<span class="sd">        Thermal conductivity (W/mK) at temperature T.</span>
+<span class="sd">   </span>
+<span class="sd">    </span>
+<span class="sd">    Notes</span>
+<span class="sd">    -----</span>
+<span class="sd">    Look up table adapted from ref [1].</span>
+<span class="sd">    </span>
+<span class="sd">    Linear interpolation is performed when the temperature lies</span>
+<span class="sd">    between tabulated entries.</span>
+
+<span class="sd">    </span>
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    First import the module **watervaporproperties**.</span>
+<span class="sd">       </span>
+<span class="sd">    &gt;&gt;&gt; from pychemengg.physicalproperties import watervaporproperties as wvp</span>
+<span class="sd">    &gt;&gt;&gt; wvp.thermalconductivity(T=42.5)</span>
+<span class="sd">    0.019799999999999998</span>
+
+<span class="sd">    </span>
+<span class="sd">    References</span>
+<span class="sd">    ----------</span>
+<span class="sd">    [1] Yunus A. Cengel and Afshin J. Ghajar, &quot;Heat And Mass Transfer</span>
+<span class="sd">    Fundamentals and Applications&quot;, 6th Edition. New York, McGraw Hill</span>
+<span class="sd">    Education, 2020.</span>
+<span class="sd">    </span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">water_data</span> <span class="o">=</span> <span class="n">_loadwater_data</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">interp</span><span class="p">(</span><span class="n">T</span><span class="p">,</span> <span class="n">water_data</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span> <span class="n">water_data</span><span class="p">[:,</span><span class="mi">8</span><span class="p">])</span></div>
+
+<div class="viewcode-block" id="heatofcondensation"><a class="viewcode-back" href="../../../_autosummary/pychemengg.physicalproperties.watervaporproperties.heatofcondensation.html#pychemengg.physicalproperties.watervaporproperties.heatofcondensation">[docs]</a><span class="k">def</span> <span class="nf">heatofcondensation</span><span class="p">(</span><span class="n">T</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="sa">r</span><span class="sd">&quot;&quot;&quot; Provides heat of condensation of water vapor at a temperature T.</span>
+<span class="sd">    </span>
+<span class="sd">    </span>
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    T : `int or float`</span>
+<span class="sd">        Temperature in &#39;Celsius&#39; at which heat of condensation is required.</span>
+
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    Heat of condensation : `int or float`</span>
+<span class="sd">        Heat of condensation (J/kg) at temperature T.</span>
+<span class="sd">   </span>
+<span class="sd">    </span>
+<span class="sd">    Notes</span>
+<span class="sd">    -----</span>
+<span class="sd">    Look up table adapted from ref [1].</span>
+<span class="sd">    </span>
+<span class="sd">    Linear interpolation is performed when the temperature lies</span>
+<span class="sd">    between tabulated entries.</span>
+
+<span class="sd">    </span>
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    First import the module **watervaporproperties**.</span>
+<span class="sd">       </span>
+<span class="sd">    &gt;&gt;&gt; from pychemengg.physicalproperties import watervaporproperties as wvp </span>
+<span class="sd">    &gt;&gt;&gt; wvp.heatofcondensation(T=68)</span>
+<span class="sd">    2338800.0</span>
+<span class="sd">    </span>
+<span class="sd">    </span>
+<span class="sd">    References</span>
+<span class="sd">    ----------</span>
+<span class="sd">    [1] Yunus A. Cengel and Afshin J. Ghajar, &quot;Heat And Mass Transfer</span>
+<span class="sd">    Fundamentals and Applications&quot;, 6th Edition. New York, McGraw Hill</span>
+<span class="sd">    Education, 2020.</span>
+<span class="sd">    </span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">water_data</span> <span class="o">=</span> <span class="n">_loadwater_data</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">interp</span><span class="p">(</span><span class="n">T</span><span class="p">,</span> <span class="n">water_data</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span> <span class="n">water_data</span><span class="p">[:,</span><span class="mi">4</span><span class="p">])</span><span class="o">*</span><span class="mf">1e3</span></div>
+
+<div class="viewcode-block" id="prandtlnumber"><a class="viewcode-back" href="../../../_autosummary/pychemengg.physicalproperties.watervaporproperties.prandtlnumber.html#pychemengg.physicalproperties.watervaporproperties.prandtlnumber">[docs]</a><span class="k">def</span> <span class="nf">prandtlnumber</span><span class="p">(</span><span class="n">T</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="sa">r</span><span class="sd">&quot;&quot;&quot; Provides Prandtl number of water vapor at a temperature T</span>
+<span class="sd">    </span>
+<span class="sd">    </span>
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    T : `int or float`</span>
+<span class="sd">        Temperature in &#39;Celsius&#39; at which Prandtl number is required.</span>
+
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    Prandtl number: `int or float`</span>
+<span class="sd">        Prandtl number at temperature T.</span>
+<span class="sd">   </span>
+<span class="sd">    </span>
+<span class="sd">    Notes</span>
+<span class="sd">    -----</span>
+<span class="sd">    Look up table adapted from ref [1].</span>
+<span class="sd">    </span>
+<span class="sd">    Linear interpolation is performed when the temperature lies</span>
+<span class="sd">    between tabulated entries.</span>
+
+<span class="sd">    </span>
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    First import the module **watervaporproperties**.</span>
+<span class="sd">       </span>
+<span class="sd">    &gt;&gt;&gt; from pychemengg.physicalproperties import watervaporproperties as wvp </span>
+<span class="sd">    &gt;&gt;&gt; wvp.prandtlnumber(T=42.5)</span>
+<span class="sd">    1.0</span>
+
+<span class="sd">    </span>
+<span class="sd">    References</span>
+<span class="sd">    ----------</span>
+<span class="sd">    [1] Yunus A. Cengel and Afshin J. Ghajar, &quot;Heat And Mass Transfer</span>
+<span class="sd">    Fundamentals and Applications&quot;, 6th Edition. New York, McGraw Hill</span>
+<span class="sd">    Education, 2020.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">water_data</span> <span class="o">=</span> <span class="n">_loadwater_data</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">interp</span><span class="p">(</span><span class="n">T</span><span class="p">,</span> <span class="n">water_data</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span> <span class="n">water_data</span><span class="p">[:,</span><span class="mi">12</span><span class="p">])</span></div>
+
+
+<span class="c1"># col_0 = &#39;Temp (C)&#39;</span>
+<span class="c1"># col_1 = &#39;Saturation pressure (kPa)&#39;</span>
+<span class="c1"># col_2 = &#39;Density (liquid, kg/m3)&#39;</span>
+<span class="c1"># col_3 = &#39;Density (vapor, kg/m3)&#39;</span>
+<span class="c1"># col_4 = &#39;Enthaly/Heat of condensation/condensation  kJ/kg&#39;</span>
+<span class="c1"># col_5 = &#39;Specific heat (liquid) J/kg K&#39;</span>
+<span class="c1"># col_6 = &#39;Specific heat (vapor) J/kg K&#39;</span>
+<span class="c1"># col_7 = &#39;Thermal cond (liquid) W/mK&#39;</span>
+<span class="c1"># col_8 = &#39;Thermal cond (vapor) W/mK&#39;</span>
+<span class="c1"># col_9 = &#39;Dynamic viscosity (liquid) kg/m s&#39;</span>
+<span class="c1"># col_10 = &#39;Dynamic viscosity (vapor) kg/m s&#39;</span>
+<span class="c1"># col_11 = &#39;Prandtl Number (liquid)&#39;</span>
+<span class="c1"># col_12 = &#39;Prandtl Number (vapor)&#39;</span>
+<span class="c1"># col_13 = &#39;Volume expansion coefficient (liquid), beta 1/K&#39;</span>
+</pre></div>
+
+           </div>
+           
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021, Harvinder Singh Gill.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

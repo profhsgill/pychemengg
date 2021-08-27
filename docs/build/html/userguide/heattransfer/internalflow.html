@@ -1,0 +1,389 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Internal flow &mdash; PyChemEngg 0.1a6 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/my_theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/my_theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/my_theme.css" type="text/css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/katex-math.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.12.0/contrib/auto-render.min.js"></script>
+        <script src="../../_static/katex_autorenderer.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="External flow" href="externalflow.html" />
+    <link rel="prev" title="Fins" href="fins.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> PyChemEngg
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1a6
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption" role="heading"><span class="caption-text">User Tutorial</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Heat Transfer</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="steadystate.html">Steady State Heat Transfer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fins.html">Fins</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Internal flow</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#introduction">Introduction</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#examples">Examples</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#example-1-internal-flow-circular-tube-entry-lengths">Example 1: Internal flow <code class="docutils literal notranslate"><span class="pre">circular</span> <span class="pre">tube,</span> <span class="pre">entry</span> <span class="pre">lengths</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="externalflow.html">External flow</a></li>
+<li class="toctree-l2"><a class="reference internal" href="heatexchangers.html">Heat Exchangers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="heatcommonmethods.html">Common methods</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Reference Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../autosummary_pychemengg.html">PyChemEngg API Reference</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">PyChemEngg</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="index.html">PyChemEngg User Guide</a> &raquo;</li>
+        
+      <li>Internal flow</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../_sources/userguide/heattransfer/internalflow.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
+      
+        <a href="externalflow.html" class="btn btn-neutral float-right" title="External flow" accesskey="n">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+      
+      
+        <a href="fins.html" class="btn btn-neutral float-left" title="Fins" accesskey="p"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+      
+  </div>
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<div class="section" id="internal-flow">
+<span id="internalflow"></span><h1>Internal flow<a class="headerlink" href="#internal-flow" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
+<p>The module <code class="docutils literal notranslate"><span class="pre">internalflow</span></code> contains functions related to fluid flow inside circular
+pipes/tubes and annular spaces. It contains methods to compute:</p>
+<ol class="arabic simple">
+<li><p>Nusselt number</p></li>
+<li><p>Entry length, friction factor, and pressure drop and other quantities</p></li>
+</ol>
+<div class="custom docutils container">
+<p><strong>How to use</strong></p>
+<p>It is recommended that the module be imported
+as <code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">pychemengg</span> <span class="pre">import</span> <span class="pre">internalflow</span> <span class="pre">as</span> <span class="pre">intflow</span></code></p>
+</div>
+<p>The following examples demonstrate how the module <cite>internalflow`</cite>
+can be used to solve heat transfer problems.</p>
+</div>
+<div class="section" id="examples">
+<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="example-1-internal-flow-circular-tube-entry-lengths">
+<h3>Example 1: Internal flow <code class="docutils literal notranslate"><span class="pre">circular</span> <span class="pre">tube,</span> <span class="pre">entry</span> <span class="pre">lengths</span></code><a class="headerlink" href="#example-1-internal-flow-circular-tube-entry-lengths" title="Permalink to this headline">¶</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">Example</span> <span class="pre">1.</span></code> Engine oil is to be cooled from 100 to 80 C by passing through
+a tube maintained at a uniform surface temperature of 40 C. Oil flows
+at a velocity of 0.03 ms/. Tube inner diameter is 2 cm. What is the
+desired tube length. <code class="docutils literal notranslate"><span class="pre">Ans:</span> <span class="pre">2.67</span> <span class="pre">m</span></code></p>
+<blockquote>
+<div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># EXAMPLE 1</span>
+<span class="kn">from</span> <span class="nn">pychemengg.heattransfer</span> <span class="kn">import</span> <span class="n">internalflow</span> <span class="k">as</span> <span class="n">intflow</span>
+<span class="kn">import</span> <span class="nn">math</span>
+<span class="c1"># Identify properties at mean buld fluid temp = (100+80)/2.</span>
+<span class="c1"># All units are in SI system</span>
+<span class="n">density</span> <span class="o">=</span> <span class="mi">846</span>
+<span class="n">specificheat</span> <span class="o">=</span> <span class="mi">2176</span>
+<span class="n">kinematicviscosity</span><span class="o">=</span><span class="mf">2.81e-5</span>
+<span class="n">thermalconductivity</span> <span class="o">=</span> <span class="mf">0.138</span>
+<span class="n">viscosity</span> <span class="o">=</span> <span class="n">kinematicviscosity</span> <span class="o">*</span> <span class="n">density</span>
+<span class="n">velocity</span> <span class="o">=</span> <span class="mf">0.03</span>
+<span class="n">diameter</span> <span class="o">=</span> <span class="mf">2e-2</span>
+
+<span class="c1"># Model the tube as CircularTube from module internalflow</span>
+<span class="n">tube</span><span class="o">=</span><span class="n">intflow</span><span class="o">.</span><span class="n">CircularTube</span><span class="p">()</span>
+<span class="c1"># Note, do not use () after CircularTube</span>
+<span class="c1"># To use correlations in internalflow, Reynolds number and Prandtl number is needed</span>
+<span class="c1"># This is provided in module &#39;commonmethods&#39;</span>
+<span class="kn">from</span> <span class="nn">pychemengg.heattransfer</span> <span class="kn">import</span> <span class="n">commonmethods</span> <span class="k">as</span> <span class="n">hcm</span>
+<span class="n">Re</span> <span class="o">=</span> <span class="n">hcm</span><span class="o">.</span><span class="n">calc_Re</span><span class="p">(</span><span class="n">characteristic_length</span><span class="o">=</span><span class="mf">2e-2</span><span class="p">,</span> <span class="n">velocity</span><span class="o">=</span><span class="n">velocity</span><span class="p">,</span> <span class="n">density</span><span class="o">=</span><span class="n">density</span><span class="p">,</span> <span class="n">viscosity</span><span class="o">=</span><span class="n">viscosity</span><span class="p">)</span>
+<span class="n">Pr</span> <span class="o">=</span> <span class="n">hcm</span><span class="o">.</span><span class="n">calc_Pr</span><span class="p">(</span><span class="n">viscosity</span><span class="o">=</span><span class="n">kinematicviscosity</span><span class="o">*</span><span class="n">density</span><span class="p">,</span> <span class="n">specificheat</span><span class="o">=</span><span class="n">specificheat</span><span class="p">,</span> <span class="n">thermalconductivity</span><span class="o">=</span><span class="n">thermalconductivity</span><span class="p">)</span>
+<span class="c1"># Print Re to see whether flow is laminar or turbulent</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Reynolds number = </span><span class="si">{</span><span class="n">Re</span><span class="si">:</span><span class="s2"> 0.0f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="c1"># Re = 21, which is &lt; 2300 and flow is laminar</span>
+
+<span class="c1"># NOTE:</span>
+<span class="c1"># The user needs to examine intermediate results and accordingly</span>
+<span class="c1"># select the path forward.</span>
+
+<span class="c1"># Now check if flow is developed or not.</span>
+<span class="c1"># Use correlation for laminar flow.</span>
+<span class="n">thermalentrylength</span> <span class="o">=</span> <span class="n">tube</span><span class="o">.</span><span class="n">thermal_entrylength_laminar</span><span class="p">(</span><span class="n">Re</span><span class="o">=</span><span class="n">Re</span><span class="p">,</span> <span class="n">Pr</span><span class="o">=</span><span class="n">Pr</span><span class="p">,</span> <span class="n">diameter</span><span class="o">=</span><span class="n">diameter</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Thermal entry length = </span><span class="si">{</span><span class="n">thermalentrylength</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">hydrolength</span> <span class="o">=</span> <span class="n">tube</span><span class="o">.</span><span class="n">hydrodynamic_entrylength_laminar</span><span class="p">(</span><span class="n">Re</span><span class="o">=</span><span class="n">Re</span><span class="p">,</span> <span class="n">diameter</span><span class="o">=</span><span class="n">diameter</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Hydrodynamic entry length = </span><span class="si">{</span><span class="n">hydrolength</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># hydrolength = 0.021 m, which means flow should be developed hydrodynamically.</span>
+<span class="c1"># thermalentrylength = 8 m, and since tube length is not known,</span>
+<span class="c1"># it is not feasible to conclude that the flow is thermally developed.</span>
+<span class="c1"># Therefore, thermally developing flow relation should be used to find Nu.</span>
+<span class="c1"># The following method can be used.</span>
+<span class="c1"># Nu_thermallydeveloping_laminar_edwards(Pr=None, length=None, diameter=None).</span>
+<span class="c1"># This requires &#39;length&#39; as input, and this is precisely what has to be</span>
+<span class="c1"># computed. This indicates a function should be created that takes &#39;length&#39;</span>
+<span class="c1"># as input and returns some &#39;equation&#39; that can be solved for &#39;length&#39;</span>
+
+<span class="c1"># Create function</span>
+<span class="c1"># Note that other variables needed such as Pr, diameter are not part of</span>
+<span class="c1"># function definition below. Based on Python variable &#39;scope&#39; the function</span>
+<span class="c1"># is able to reach out to access these other variable.</span>
+<span class="k">def</span> <span class="nf">func</span><span class="p">(</span><span class="n">length_guess</span><span class="p">):</span>
+    <span class="n">Nu</span> <span class="o">=</span> <span class="n">tube</span><span class="o">.</span><span class="n">Nu_thermallydeveloping_laminar_edwards</span><span class="p">(</span><span class="n">Re</span><span class="o">=</span><span class="n">Re</span><span class="p">,</span> <span class="n">Pr</span><span class="o">=</span><span class="n">Pr</span><span class="p">,</span> <span class="n">length</span><span class="o">=</span><span class="n">length_guess</span><span class="p">,</span> <span class="n">diameter</span><span class="o">=</span><span class="n">diameter</span><span class="p">)</span>
+
+    <span class="c1"># What equation can be formulated to return via this function</span>
+    <span class="c1"># so that &#39;length&#39; can be computed.</span>
+    <span class="c1"># Enery balance can be used</span>
+    <span class="c1"># change in internal energy = Energy gained via convection</span>
+    <span class="c1"># m Cp deltaT_internalenergy = h A delta T_conv</span>
+    <span class="c1"># These deltaTs are not the same</span>
+    <span class="c1"># deltaT_internalenergy = In - out</span>
+    <span class="c1"># deltaT_conv = LMTD</span>
+    <span class="c1"># Internal energy change function is in module commonmethods</span>
+    <span class="c1"># hcm.calc_internalenergychange(mass=mass, specificheat=specificheat, deltaT=deltaT)</span>
+    <span class="n">areacrosssection</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">4</span> <span class="o">*</span> <span class="n">diameter</span><span class="o">**</span><span class="mi">2</span>
+    <span class="n">massflowrate</span> <span class="o">=</span> <span class="n">density</span> <span class="o">*</span> <span class="n">velocity</span> <span class="o">*</span> <span class="n">areacrosssection</span>
+    <span class="n">rate_deltainternalenergy</span> <span class="o">=</span> <span class="n">hcm</span><span class="o">.</span><span class="n">calc_internalenergychange</span><span class="p">(</span><span class="n">mass</span><span class="o">=</span><span class="n">massflowrate</span><span class="p">,</span> <span class="n">specificheat</span><span class="o">=</span><span class="n">specificheat</span><span class="p">,</span> <span class="n">deltaT</span><span class="o">=</span><span class="mi">100</span><span class="o">-</span><span class="mi">80</span><span class="p">)</span>
+    <span class="n">h</span> <span class="o">=</span> <span class="n">Nu</span><span class="o">*</span><span class="n">thermalconductivity</span><span class="o">/</span><span class="n">diameter</span>
+    <span class="n">deltaT1</span> <span class="o">=</span> <span class="mi">100</span><span class="o">-</span><span class="mi">40</span>
+    <span class="n">deltaT2</span> <span class="o">=</span> <span class="mi">80</span><span class="o">-</span><span class="mi">40</span>
+    <span class="n">deltaT_conv</span> <span class="o">=</span> <span class="n">hcm</span><span class="o">.</span><span class="n">calc_LMTD</span><span class="p">(</span><span class="n">deltaT1</span><span class="o">=</span><span class="n">deltaT1</span><span class="p">,</span> <span class="n">deltaT2</span><span class="o">=</span><span class="n">deltaT2</span><span class="p">)</span>
+    <span class="n">heatrate_conv</span> <span class="o">=</span> <span class="n">h</span> <span class="o">*</span> <span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="n">diameter</span> <span class="o">*</span> <span class="n">length_guess</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">deltaT_conv</span><span class="p">)</span>
+    <span class="n">equation</span> <span class="o">=</span> <span class="n">rate_deltainternalenergy</span> <span class="o">-</span> <span class="n">heatrate_conv</span>
+    <span class="k">return</span> <span class="n">equation</span>
+<span class="kn">from</span> <span class="nn">scipy.optimize</span> <span class="kn">import</span> <span class="n">fsolve</span>
+<span class="n">guess_length</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">solution</span> <span class="o">=</span> <span class="n">fsolve</span><span class="p">(</span><span class="n">func</span><span class="p">,</span> <span class="n">guess_length</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Length of tube needed = </span><span class="si">{</span><span class="n">solution</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">:</span><span class="s2"> 0.2f</span><span class="si">}</span><span class="s2"> m&quot;</span><span class="p">)</span>
+<span class="c1"># Notice that L = 2.67 &lt; 8, thus the original assumption</span>
+<span class="c1"># of using equation of Nu for thermally developing flow was correct</span>
+
+<span class="c1"># PRINTED OUTPUT</span>
+<span class="n">Length</span> <span class="n">of</span> <span class="n">tube</span> <span class="n">needed</span> <span class="o">=</span>  <span class="mf">2.67</span> <span class="n">m</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="externalflow.html" class="btn btn-neutral float-right" title="External flow" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="fins.html" class="btn btn-neutral float-left" title="Fins" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021, Harvinder Singh Gill.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

@@ -1,0 +1,1166 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Plate &mdash; PyChemEngg 0.1a6 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/my_theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/my_theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/my_theme.css" type="text/css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/katex-math.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.12.0/contrib/auto-render.min.js"></script>
+        <script src="../_static/katex_autorenderer.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Sphere" href="pychemengg.heattransfer.externalflow.Sphere.html" />
+    <link rel="prev" title="Cylinder" href="pychemengg.heattransfer.externalflow.Cylinder.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> PyChemEngg
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1a6
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption" role="heading"><span class="caption-text">User Tutorial</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../userguide/heattransfer/index.html">Heat Transfer</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Reference Guide</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../autosummary_pychemengg.html">PyChemEngg API Reference</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="pychemengg.html">pychemengg</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="pychemengg.heattransfer.html">heattransfer</a><ul class="current">
+<li class="toctree-l4 current"><a class="reference internal" href="pychemengg.heattransfer.externalflow.html">externalflow</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pychemengg.heattransfer.fins.html">fins</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pychemengg.heattransfer.heatcommonmethods.html">heatcommonmethods</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pychemengg.heattransfer.heatexchangers.html">heatexchangers</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pychemengg.heattransfer.internalflow.html">internalflow</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pychemengg.heattransfer.steadystate.html">steadystate</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="pychemengg.physicalproperties.html">physicalproperties</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">PyChemEngg</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../autosummary_pychemengg.html">PyChemEngg API</a> &raquo;</li>
+        
+          <li><a href="pychemengg.html">pychemengg</a> &raquo;</li>
+        
+          <li><a href="pychemengg.heattransfer.html">heattransfer</a> &raquo;</li>
+        
+          <li><a href="pychemengg.heattransfer.externalflow.html">externalflow</a> &raquo;</li>
+        
+      <li>Plate</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/_autosummary/pychemengg.heattransfer.externalflow.Plate.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
+      
+        <a href="pychemengg.heattransfer.externalflow.Sphere.html" class="btn btn-neutral float-right" title="Sphere" accesskey="n">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+      
+      
+        <a href="pychemengg.heattransfer.externalflow.Cylinder.html" class="btn btn-neutral float-left" title="Cylinder" accesskey="p"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+      
+  </div>
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<div class="section" id="plate">
+<h1>Plate<a class="headerlink" href="#plate" title="Permalink to this headline">¶</a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="pychemengg.heattransfer.externalflow.Plate">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">pychemengg.heattransfer.externalflow.</span></span><span class="sig-name descname"><span class="pre">Plate</span></span><a class="reference internal" href="../_modules/pychemengg/heattransfer/externalflow.html#Plate"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pychemengg.heattransfer.externalflow.Plate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Models external flow over flat plat.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>`None_required`</strong><span class="classifier">‘None’</span></dt><dd><p>This class takes no parameters for instance creation.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<p>First import the module <strong>externalflow</strong>.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pychemengg.heattransfer</span> <span class="kn">import</span> <span class="n">externalflow</span> <span class="k">as</span> <span class="n">extflow</span> 
+<span class="gp">&gt;&gt;&gt; </span><span class="n">plateobject</span> <span class="o">=</span> <span class="n">extflow</span><span class="o">.</span><span class="n">Plate</span><span class="p">()</span>
+<span class="go"># This will create an instance of the class &#39;Plate&#39;.</span>
+<span class="go"># Methods of the class &#39;Plate&#39; can then be called like so :-</span>
+<span class="go"># plateobject.method(kwarg1=x, ...)</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Attributes</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>`None_required`</strong><span class="classifier">‘None’</span></dt><dd><p>This class does not expose any instance attributes.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="pychemengg.heattransfer.externalflow.Plate.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pychemengg.heattransfer.externalflow.Plate.__init__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<p class="rubric">Methods</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pychemengg.heattransfer.externalflow.Plate.Nu_laminar_average" title="pychemengg.heattransfer.externalflow.Plate.Nu_laminar_average"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Nu_laminar_average</span></code></a>([Re, Pr])</p></td>
+<td><p>Average Nusselt number for isothermal laminar flow on flat plate.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#pychemengg.heattransfer.externalflow.Plate.Nu_laminar_local" title="pychemengg.heattransfer.externalflow.Plate.Nu_laminar_local"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Nu_laminar_local</span></code></a>([Re, Pr])</p></td>
+<td><p>Local Nusselt number for isothermal laminar flow on flat plate.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pychemengg.heattransfer.externalflow.Plate.Nu_mixed_average" title="pychemengg.heattransfer.externalflow.Plate.Nu_mixed_average"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Nu_mixed_average</span></code></a>([Re, Pr, Re_critical])</p></td>
+<td><p>Average Nusselt number for isothermal ‘laminar + turbulent’ flow on flat plate.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#pychemengg.heattransfer.externalflow.Plate.Nu_turbulent_average" title="pychemengg.heattransfer.externalflow.Plate.Nu_turbulent_average"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Nu_turbulent_average</span></code></a>([Re, Pr])</p></td>
+<td><p>Average Nusselt number for isothermal turbulent flow on flat plate.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pychemengg.heattransfer.externalflow.Plate.Nu_turbulent_local" title="pychemengg.heattransfer.externalflow.Plate.Nu_turbulent_local"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Nu_turbulent_local</span></code></a>([Re, Pr])</p></td>
+<td><p>Local Nusselt number for isothermal turbulent flow on flat plate.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#pychemengg.heattransfer.externalflow.Plate.Nu_unheated_laminar_average" title="pychemengg.heattransfer.externalflow.Plate.Nu_unheated_laminar_average"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Nu_unheated_laminar_average</span></code></a>([Re, Pr, …])</p></td>
+<td><p>Average Nusselt number for isothermal laminar flow on flat plate with unheated starting length.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pychemengg.heattransfer.externalflow.Plate.Nu_unheated_laminar_local" title="pychemengg.heattransfer.externalflow.Plate.Nu_unheated_laminar_local"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Nu_unheated_laminar_local</span></code></a>([Re, Pr, …])</p></td>
+<td><p>Local Nusselt number for isothermal laminar flow on flat plate with unheated starting length.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#pychemengg.heattransfer.externalflow.Plate.Nu_unheated_turbulent_average" title="pychemengg.heattransfer.externalflow.Plate.Nu_unheated_turbulent_average"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Nu_unheated_turbulent_average</span></code></a>([Re, Pr, …])</p></td>
+<td><p>Average Nusselt number for isothermal turbulent flow on flat plate with unheated starting length.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pychemengg.heattransfer.externalflow.Plate.Nu_unheated_turbulent_local" title="pychemengg.heattransfer.externalflow.Plate.Nu_unheated_turbulent_local"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Nu_unheated_turbulent_local</span></code></a>([Re, Pr, …])</p></td>
+<td><p>Local Nusselt number for isothermal turbulent flow on flat plate with unheated starting length.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#pychemengg.heattransfer.externalflow.Plate.Nu_uniformflux_laminar_average" title="pychemengg.heattransfer.externalflow.Plate.Nu_uniformflux_laminar_average"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Nu_uniformflux_laminar_average</span></code></a>([Re, Pr])</p></td>
+<td><p>Average Nusselt number for laminar flow on flat plate with uniform heat flux.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pychemengg.heattransfer.externalflow.Plate.Nu_uniformflux_laminar_local" title="pychemengg.heattransfer.externalflow.Plate.Nu_uniformflux_laminar_local"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Nu_uniformflux_laminar_local</span></code></a>([Re, Pr])</p></td>
+<td><p>Local Nusselt number for laminar flow on flat plate with uniform heat flux.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#pychemengg.heattransfer.externalflow.Plate.Nu_uniformflux_turbulent_average" title="pychemengg.heattransfer.externalflow.Plate.Nu_uniformflux_turbulent_average"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Nu_uniformflux_turbulent_average</span></code></a>([Re, Pr])</p></td>
+<td><p>Average Nusselt number for turbulent flow on flat plate with uniform heat flux.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pychemengg.heattransfer.externalflow.Plate.Nu_uniformflux_turbulent_local" title="pychemengg.heattransfer.externalflow.Plate.Nu_uniformflux_turbulent_local"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Nu_uniformflux_turbulent_local</span></code></a>([Re, Pr])</p></td>
+<td><p>Local Nusselt number for turbulent flow on flat plate with uniform heat flux.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#pychemengg.heattransfer.externalflow.Plate.__init__" title="pychemengg.heattransfer.externalflow.Plate.__init__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">__init__</span></code></a>(*args, **kwargs)</p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+<dl class="py method">
+<dt class="sig sig-object py" id="pychemengg.heattransfer.externalflow.Plate.Nu_laminar_average">
+<span class="sig-name descname"><span class="pre">Nu_laminar_average</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">Re</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Pr</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pychemengg/heattransfer/externalflow.html#Plate.Nu_laminar_average"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pychemengg.heattransfer.externalflow.Plate.Nu_laminar_average" title="Permalink to this definition">¶</a></dt>
+<dd><p>Average Nusselt number for isothermal laminar flow on flat plate.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl>
+<dt><strong>Re</strong><span class="classifier"><cite>int or float</cite></span></dt><dd><p>Reynolds number for full length ‘L’ of plate.</p>
+</dd>
+<dt><strong>Pr</strong><span class="classifier"><cite>int or float</cite></span></dt><dd><p>Prandtl number for the fluid.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl>
+<dt><strong>Nu</strong><span class="classifier"><cite>int or float</cite></span></dt><dd><p>Average Nusselt number for laminar flow on flat plate.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>A Nusselt number is returned based on the equation
+even if parameters (such as <em>Re</em>, <em>Pr</em>) do not fall in their
+respective allowable range limits (see above under ‘Notes’).
+However, if this happens, a warning is issued.</p>
+</div>
+<p class="rubric">Notes</p>
+<p>The following formula is used:</p>
+<div class="math">
+\[Nu = 0.664 Re^{0.5} Pr^{1/3}\]</div>
+<p><em>where:</em></p>
+<blockquote>
+<div><p><span class="math">\(Pr &gt; 0.6\)</span></p>
+<p><span class="math">\(Re &lt; 5 * 10^5\)</span></p>
+<p>Fluid properties are at film temp (<span class="math">\(T_{film}\)</span>):</p>
+<blockquote>
+<div><p><span class="math">\(T_{film} = (T_{infinity} + T_{surface})/2\)</span></p>
+<p><span class="math">\(T_{infinity}\)</span> <em>= temperature of fluid away from surface</em></p>
+<p><span class="math">\(T_{surface}\)</span> <em>= temperature of surface</em></p>
+</div></blockquote>
+</div></blockquote>
+<p class="rubric">References</p>
+<p>[1] Yunus A. Cengel and Afshin J. Ghajar, “Heat And Mass Transfer
+Fundamentals and Applications”, 6th Edition. New York, McGraw Hill
+Education, 2020.</p>
+<p class="rubric">Examples</p>
+<p>First import the module <strong>externalflow</strong>.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pychemengg.heattransfer</span> <span class="kn">import</span> <span class="n">externalflow</span> <span class="k">as</span> <span class="n">extflow</span> 
+<span class="gp">&gt;&gt;&gt; </span><span class="n">plateobject</span> <span class="o">=</span> <span class="n">extflow</span><span class="o">.</span><span class="n">Plate</span><span class="p">()</span>
+<span class="go"># This will create an instance of the class &#39;Plate&#39;.</span>
+<span class="go"># Then call the method like so :-</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">plateobject</span><span class="o">.</span><span class="n">Nu_laminar_average</span><span class="p">(</span><span class="n">Re</span><span class="o">=</span><span class="mf">4.024e4</span><span class="p">,</span> <span class="n">Pr</span><span class="o">=</span><span class="mi">2962</span><span class="p">)</span>
+<span class="go">1912.899190840437</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pychemengg.heattransfer.externalflow.Plate.Nu_laminar_local">
+<span class="sig-name descname"><span class="pre">Nu_laminar_local</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">Re</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Pr</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pychemengg/heattransfer/externalflow.html#Plate.Nu_laminar_local"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pychemengg.heattransfer.externalflow.Plate.Nu_laminar_local" title="Permalink to this definition">¶</a></dt>
+<dd><p>Local Nusselt number for isothermal laminar flow on flat plate.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl>
+<dt><strong>Re</strong><span class="classifier"><cite>int or float</cite></span></dt><dd><p>Reynolds number at location/length ‘x’ on plate.</p>
+</dd>
+<dt><strong>Pr</strong><span class="classifier"><cite>int or float</cite></span></dt><dd><p>Prandtl number for the fluid.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl>
+<dt><strong>Nu</strong><span class="classifier"><cite>int or float</cite></span></dt><dd><p>Local Nusselt number at location/length ‘x’ on plate.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>A Nusselt number is returned based on the equation
+even if parameters (such as <em>Re</em>, <em>Pr</em>) do not fall in their
+respective allowable range limits (see above under ‘Notes’).
+However, if this happens, a warning is issued.</p>
+</div>
+<p class="rubric">Notes</p>
+<p>The following formula is used:</p>
+<div class="math">
+\[Nu = 0.332 Re^{0.5} Pr^{1/3}\]</div>
+<p><em>where:</em></p>
+<blockquote>
+<div><p><span class="math">\(Pr &gt; 0.6\)</span></p>
+<p><span class="math">\(Re &lt; 5 * 10^5\)</span></p>
+<p>Fluid properties are at film temp (<span class="math">\(T_{film}\)</span>):</p>
+<blockquote>
+<div><p><span class="math">\(T_{film} = (T_{infinity} + T_{surface})/2\)</span></p>
+<p><span class="math">\(T_{infinity}\)</span> <em>= temperature of fluid away from surface</em></p>
+<p><span class="math">\(T_{surface}\)</span> <em>= temperature of surface</em></p>
+</div></blockquote>
+</div></blockquote>
+<p class="rubric">References</p>
+<p>[1] Yunus A. Cengel and Afshin J. Ghajar, “Heat And Mass Transfer
+Fundamentals and Applications”, 6th Edition. New York, McGraw Hill
+Education, 2020.</p>
+<p class="rubric">Examples</p>
+<p>First import the module <strong>externalflow</strong>.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pychemengg.heattransfer</span> <span class="kn">import</span> <span class="n">externalflow</span> <span class="k">as</span> <span class="n">extflow</span> 
+<span class="gp">&gt;&gt;&gt; </span><span class="n">plateobject</span> <span class="o">=</span> <span class="n">extflow</span><span class="o">.</span><span class="n">Plate</span><span class="p">()</span>
+<span class="go"># This will create an instance of the class &#39;Plate&#39;.</span>
+<span class="go"># Then call the method like so :-</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">plateobject</span><span class="o">.</span><span class="n">Nu_laminar_local</span><span class="p">(</span><span class="n">Re</span><span class="o">=</span><span class="mf">4.024e4</span><span class="p">,</span> <span class="n">Pr</span><span class="o">=</span><span class="mi">2962</span><span class="p">)</span>
+<span class="go">956.4495954202185</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pychemengg.heattransfer.externalflow.Plate.Nu_mixed_average">
+<span class="sig-name descname"><span class="pre">Nu_mixed_average</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">Re</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Pr</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Re_critical</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">500000.0</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pychemengg/heattransfer/externalflow.html#Plate.Nu_mixed_average"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pychemengg.heattransfer.externalflow.Plate.Nu_mixed_average" title="Permalink to this definition">¶</a></dt>
+<dd><p>Average Nusselt number for isothermal ‘laminar + turbulent’ flow on flat plate.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl>
+<dt><strong>Re</strong><span class="classifier"><cite>int or float</cite></span></dt><dd><p>Reynolds number for full length ‘L’ of plate</p>
+</dd>
+<dt><strong>Pr</strong><span class="classifier"><cite>int or float</cite> for the fluid.</span></dt><dd><p>Prandtl number</p>
+</dd>
+<dt><strong>Re_critical</strong><span class="classifier"><cite>int or float</cite></span></dt><dd><p>Critical Reynolds number indicating transition between <em>laminar &lt;–&gt; turbulent</em>.
+Default value = <span class="math">\(5x10^5\)</span>.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl>
+<dt><strong>Nu</strong><span class="classifier"><cite>int or float</cite></span></dt><dd><p>Average Nusselt number for ‘laminar + turbulent’ flow on flat plate.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>A Nusselt number is returned based on the equation
+even if parameters (such as <em>Re</em>, <em>Pr</em>) do not fall in their
+respective allowable range limits (see above under ‘Notes’).
+However, if this happens, a warning is issued.</p>
+</div>
+<p class="rubric">Notes</p>
+<p>The following formula is used:</p>
+<div class="math">
+\[Nu = (0.037 Re^{0.8} – (0.037 Re_{critical}^{4/5} – 0.664Re_{critical}^{1/2}))Pr^{1/3}\]</div>
+<p><em>where:</em></p>
+<blockquote>
+<div><p><span class="math">\(0.6 \eqslantless Pr \eqslantless 60\)</span></p>
+<p><span class="math">\(5*10^5 \eqslantless Re_x \eqslantless 10^7\)</span></p>
+<p><span class="math">\(Re_{critical}\)</span> : is the number where fluid transitions from
+<em>laminar</em> to <em>turbulent</em>. This number can change from case to case, 
+although it is often = <span class="math">\(5*10^5\)</span>. For example, by adding
+roughness to plate surface, the transition to turbulent flow
+can occur at lower Reynolds numbers.</p>
+<p>Fluid properties are at film temp (<span class="math">\(T_{film}\)</span>):</p>
+<blockquote>
+<div><p><span class="math">\(T_{film} = (T_{infinity} + T_{surface})/2\)</span></p>
+<p><span class="math">\(T_{infinity}\)</span> <em>= temperature of fluid away from surface</em></p>
+<p><span class="math">\(T_{surface}\)</span> <em>= temperature of surface</em></p>
+</div></blockquote>
+</div></blockquote>
+<p class="rubric">References</p>
+<p>[1] Theodore L. Bergman, Adrienne S. Lavine,
+Frank P. Incropera. David P. DeWitt,
+“Fundamentals of Heat and Mass Transfer”, 8th Edition, Wiley.</p>
+<p class="rubric">Examples</p>
+<p>First import the module <strong>externalflow</strong>.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pychemengg.heattransfer</span> <span class="kn">import</span> <span class="n">externalflow</span> <span class="k">as</span> <span class="n">extflow</span> 
+<span class="gp">&gt;&gt;&gt; </span><span class="n">plateobject</span> <span class="o">=</span> <span class="n">extflow</span><span class="o">.</span><span class="n">Plate</span><span class="p">()</span>
+<span class="go"># This will create an instance of the class &#39;Plate&#39;.</span>
+<span class="go"># Then call the method like so :-</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">plateobject</span><span class="o">.</span><span class="n">Nu_mixed_average</span><span class="p">(</span><span class="n">Re</span><span class="o">=</span><span class="mi">610626</span><span class="p">,</span> <span class="n">Pr</span><span class="o">=</span><span class="mf">0.7073</span><span class="p">,</span> <span class="n">Re_critical</span><span class="o">=</span><span class="mf">5e5</span><span class="p">)</span>
+<span class="go">625.480561991628</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pychemengg.heattransfer.externalflow.Plate.Nu_turbulent_average">
+<span class="sig-name descname"><span class="pre">Nu_turbulent_average</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">Re</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Pr</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pychemengg/heattransfer/externalflow.html#Plate.Nu_turbulent_average"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pychemengg.heattransfer.externalflow.Plate.Nu_turbulent_average" title="Permalink to this definition">¶</a></dt>
+<dd><p>Average Nusselt number for isothermal turbulent flow on flat plate.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl>
+<dt><strong>Re</strong><span class="classifier"><cite>int or float</cite></span></dt><dd><p>Reynolds number for full length ‘L’ of plate.</p>
+</dd>
+<dt><strong>Pr</strong><span class="classifier"><cite>int or float</cite></span></dt><dd><p>Prandtl number for the fluid.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl>
+<dt><strong>Nu</strong><span class="classifier"><cite>int or float</cite></span></dt><dd><p>Average Nusselt number for turbulent flow on flat plate.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>A Nusselt number is returned based on the equation
+even if parameters (such as <em>Re</em>, <em>Pr</em>) do not fall in their
+respective allowable range limits (see above under ‘Notes’).
+However, if this happens, a warning is issued.</p>
+</div>
+<p class="rubric">Notes</p>
+<p>The following formula is used:</p>
+<div class="math">
+\[Nu = 0.037 Re^{0.8} Pr^{1/3}\]</div>
+<p><em>where:</em></p>
+<blockquote>
+<div><p><span class="math">\(0.6 \eqslantless Pr \eqslantless 60\)</span></p>
+<p><span class="math">\(5*10^5 \eqslantless Re_x \eqslantless 10^7\)</span></p>
+<p>Fluid properties are at film temp (<span class="math">\(T_{film}\)</span>):</p>
+<blockquote>
+<div><p><span class="math">\(T_{film} = (T_{infinity} + T_{surface})/2\)</span></p>
+<p><span class="math">\(T_{infinity}\)</span> <em>= temperature of fluid away from surface</em></p>
+<p><span class="math">\(T_{surface}\)</span> <em>= temperature of surface</em></p>
+</div></blockquote>
+</div></blockquote>
+<p class="rubric">References</p>
+<p>[1] Yunus A. Cengel and Afshin J. Ghajar, “Heat And Mass Transfer
+Fundamentals and Applications”, 6th Edition. New York, McGraw Hill
+Education, 2020.</p>
+<p class="rubric">Examples</p>
+<p>First import the module <strong>externalflow</strong>.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pychemengg.heattransfer</span> <span class="kn">import</span> <span class="n">externalflow</span> <span class="k">as</span> <span class="n">extflow</span> 
+<span class="gp">&gt;&gt;&gt; </span><span class="n">plateobject</span> <span class="o">=</span> <span class="n">extflow</span><span class="o">.</span><span class="n">Plate</span><span class="p">()</span>
+<span class="go"># This will create an instance of the class &#39;Plate&#39;.</span>
+<span class="go"># Then call the method like so :-</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">plateobject</span><span class="o">.</span><span class="n">Nu_turbulent_average</span><span class="p">(</span><span class="n">Re</span><span class="o">=</span><span class="mf">8.875e5</span><span class="p">,</span> <span class="n">Pr</span><span class="o">=</span><span class="mf">0.7387</span><span class="p">)</span>
+<span class="go">1918.1936389098291</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pychemengg.heattransfer.externalflow.Plate.Nu_turbulent_local">
+<span class="sig-name descname"><span class="pre">Nu_turbulent_local</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">Re</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Pr</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pychemengg/heattransfer/externalflow.html#Plate.Nu_turbulent_local"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pychemengg.heattransfer.externalflow.Plate.Nu_turbulent_local" title="Permalink to this definition">¶</a></dt>
+<dd><p>Local Nusselt number for isothermal turbulent flow on flat plate.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl>
+<dt><strong>Re</strong><span class="classifier"><cite>int or float</cite></span></dt><dd><p>Reynolds number at location/length ‘x’ on plate.</p>
+</dd>
+<dt><strong>Pr</strong><span class="classifier"><cite>int or float</cite></span></dt><dd><p>Prandtl number for the fluid.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl>
+<dt><strong>Nu</strong><span class="classifier"><cite>int or float</cite></span></dt><dd><p>Local Nusselt number at location/length ‘x’ on plate.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>A Nusselt number is returned based on the equation
+even if parameters (such as <em>Re</em>, <em>Pr</em>) do not fall in their
+respective allowable range limits (see above under ‘Notes’).
+However, if this happens, a warning is issued.</p>
+</div>
+<p class="rubric">Notes</p>
+<p>The following formula is used:</p>
+<div class="math">
+\[Nu = 0.0296 Re^{0.8} Pr^{1/3}\]</div>
+<p><em>where:</em></p>
+<blockquote>
+<div><p><span class="math">\(0.6 \eqslantless Pr \eqslantless 60\)</span></p>
+<p><span class="math">\(5*10^5 \eqslantless Re_x \eqslantless 10^7\)</span></p>
+<p>Fluid properties are at film temp (<span class="math">\(T_{film}\)</span>):</p>
+<blockquote>
+<div><p><span class="math">\(T_{film} = (T_{infinity} + T_{surface})/2\)</span></p>
+<p><span class="math">\(T_{infinity}\)</span> <em>= temperature of fluid away from surface</em></p>
+<p><span class="math">\(T_{surface}\)</span> <em>= temperature of surface</em></p>
+</div></blockquote>
+</div></blockquote>
+<p class="rubric">References</p>
+<p>[1] Yunus A. Cengel and Afshin J. Ghajar, “Heat And Mass Transfer
+Fundamentals and Applications”, 6th Edition. New York, McGraw Hill
+Education, 2020.</p>
+<p class="rubric">Examples</p>
+<p>First import the module <strong>externalflow</strong>.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pychemengg.heattransfer</span> <span class="kn">import</span> <span class="n">externalflow</span> <span class="k">as</span> <span class="n">extflow</span> 
+<span class="gp">&gt;&gt;&gt; </span><span class="n">plateobject</span> <span class="o">=</span> <span class="n">extflow</span><span class="o">.</span><span class="n">Plate</span><span class="p">()</span>
+<span class="go"># This will create an instance of the class &#39;Plate&#39;.</span>
+<span class="go"># Then call the method like so :-</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">plateobject</span><span class="o">.</span><span class="n">Nu_laminar_average</span><span class="p">(</span><span class="n">Re</span><span class="o">=</span><span class="mf">4.024e4</span><span class="p">,</span> <span class="n">Pr</span><span class="o">=</span><span class="mi">2962</span><span class="p">)</span>
+<span class="go">1912.899190840437</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pychemengg.heattransfer.externalflow.Plate.Nu_unheated_laminar_average">
+<span class="sig-name descname"><span class="pre">Nu_unheated_laminar_average</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">Re</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Pr</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unheatedlength</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">length</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pychemengg/heattransfer/externalflow.html#Plate.Nu_unheated_laminar_average"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pychemengg.heattransfer.externalflow.Plate.Nu_unheated_laminar_average" title="Permalink to this definition">¶</a></dt>
+<dd><p>Average Nusselt number for isothermal laminar flow on flat plate
+with unheated starting length.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl>
+<dt><strong>Re</strong><span class="classifier"><cite>int or float</cite></span></dt><dd><p>Reynolds number on plate (plate length to be used to compute Re).</p>
+</dd>
+<dt><strong>Pr</strong><span class="classifier"><cite>int or float</cite></span></dt><dd><p>Prandtl number for the fluid.</p>
+</dd>
+<dt><strong>unheatedlength</strong><span class="classifier"><cite>int or float</cite></span></dt><dd><p>Initial length of plate that is not participating in heat transfer.</p>
+</dd>
+<dt><strong>length</strong><span class="classifier"><cite>int or float</cite></span></dt><dd><p>Overall length of plate.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl>
+<dt><strong>Nu</strong><span class="classifier"><cite>int or float</cite></span></dt><dd><p>Average Nusselt number over the plate.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>A Nusselt number is returned based on the equation
+even if parameters (such as <em>Re</em>, <em>Pr</em>) do not fall in their
+respective allowable range limits (see above under ‘Notes’).
+However, if this happens, a warning is issued.</p>
+</div>
+<p class="rubric">Notes</p>
+<p>The following formula is used:</p>
+<div class="math">
+\[Nu = \left( Nu_{for \zeta=0} \right) \left( \frac{L}{L-\zeta} \right)
+\left[1- \left(\frac{\zeta}{L} \right)^{3/4} \right]^{2/3}\]</div>
+<p><em>where:</em></p>
+<blockquote>
+<div><p><span class="math">\(Pr &gt; 0.6\)</span></p>
+<p><span class="math">\(Re &lt; 5 * 10^5\)</span></p>
+<p><span class="math">\(\zeta\)</span> = Length of plate that is not heated</p>
+<p>L = Overall length of plate over which average Nusselt number is
+to be computed</p>
+<p>Fluid properties are at film temp (<span class="math">\(T_{film}\)</span>):</p>
+<blockquote>
+<div><p><span class="math">\(T_{film} = (T_{infinity} + T_{surface})/2\)</span></p>
+<p><span class="math">\(T_{infinity}\)</span> <em>= temperature of fluid away from surface</em></p>
+<p><span class="math">\(T_{surface}\)</span> <em>= temperature of surface</em></p>
+</div></blockquote>
+</div></blockquote>
+<p class="rubric">References</p>
+<p>[1] Yunus A. Cengel and Afshin J. Ghajar, “Heat And Mass Transfer
+Fundamentals and Applications”, 6th Edition. New York, McGraw Hill
+Education, 2020.</p>
+<p class="rubric">Examples</p>
+<p>First import the module <strong>externalflow</strong>.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pychemengg.heattransfer</span> <span class="kn">import</span> <span class="n">externalflow</span> <span class="k">as</span> <span class="n">extflow</span> 
+<span class="gp">&gt;&gt;&gt; </span><span class="n">plateobject</span> <span class="o">=</span> <span class="n">extflow</span><span class="o">.</span><span class="n">Plate</span><span class="p">()</span>
+<span class="go"># This will create an instance of the class &#39;Plate&#39;.</span>
+<span class="go"># Then call the method like so :-</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">plateobject</span><span class="o">.</span><span class="n">Nu_unheated_laminar_average</span><span class="p">(</span><span class="n">Re</span><span class="o">=</span><span class="mi">61062</span><span class="p">,</span> <span class="n">Pr</span><span class="o">=</span><span class="mf">0.7073</span><span class="p">,</span> <span class="n">unheatedlength</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">length</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+<span class="go">144.1942769849126</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pychemengg.heattransfer.externalflow.Plate.Nu_unheated_laminar_local">
+<span class="sig-name descname"><span class="pre">Nu_unheated_laminar_local</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">Re</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Pr</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unheatedlength</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">xlocation_tofindNu</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pychemengg/heattransfer/externalflow.html#Plate.Nu_unheated_laminar_local"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pychemengg.heattransfer.externalflow.Plate.Nu_unheated_laminar_local" title="Permalink to this definition">¶</a></dt>
+<dd><p>Local Nusselt number for isothermal laminar flow on flat plate
+with unheated starting length.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl>
+<dt><strong>Re</strong><span class="classifier"><cite>int or float</cite></span></dt><dd><p>Reynolds number at location/length ‘x’ on plate.</p>
+</dd>
+<dt><strong>Pr</strong><span class="classifier"><cite>int or float</cite></span></dt><dd><p>Prandtl number for the fluid.</p>
+</dd>
+<dt><strong>unheatedlength</strong><span class="classifier"><cite>int or float</cite></span></dt><dd><p>Initial length of plate that is not participating in heat transfer.</p>
+</dd>
+<dt><strong>xlocation_tofindNu</strong><span class="classifier"><cite>int or float</cite></span></dt><dd><p>x position to find local Nusselt number</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl>
+<dt><strong>Nu</strong><span class="classifier"><cite>int or float</cite></span></dt><dd><p>Local Nusselt number at location/length ‘x’ on plate.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>A Nusselt number is returned based on the equation
+even if parameters (such as <em>Re</em>, <em>Pr</em>) do not fall in their
+respective allowable range limits (see above under ‘Notes’).
+However, if this happens, a warning is issued.</p>
+</div>
+<p class="rubric">Notes</p>
+<p>The following formula is used:</p>
+<div class="math">
+\[Nu = \cfrac {Nu_{for\zeta=0}} {[1-(\zeta/x)^{3/4}]^{1/3}}\]</div>
+<p><em>where:</em></p>
+<blockquote>
+<div><p><span class="math">\(Pr &gt; 0.6\)</span></p>
+<p><span class="math">\(Re &lt; 5 * 10^5\)</span></p>
+<p><span class="math">\(\zeta\)</span> = length of plate that is not heated</p>
+<p>x = position along length of plate where local Nusselt number is
+to be computed</p>
+<p>Fluid properties are at film temp (<span class="math">\(T_{film}\)</span>):</p>
+<blockquote>
+<div><p><span class="math">\(T_{film} = (T_{infinity} + T_{surface})/2\)</span></p>
+<p><span class="math">\(T_{infinity}\)</span> <em>= temperature of fluid away from surface</em></p>
+<p><span class="math">\(T_{surface}\)</span> <em>= temperature of surface</em></p>
+</div></blockquote>
+</div></blockquote>
+<p class="rubric">References</p>
+<p>[1] Yunus A. Cengel and Afshin J. Ghajar, “Heat And Mass Transfer
+Fundamentals and Applications”, 6th Edition. New York, McGraw Hill
+Education, 2020.</p>
+<p class="rubric">Examples</p>
+<p>First import the module <strong>externalflow</strong>.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pychemengg.heattransfer</span> <span class="kn">import</span> <span class="n">externalflow</span> <span class="k">as</span> <span class="n">extflow</span> 
+<span class="gp">&gt;&gt;&gt; </span><span class="n">plateobject</span> <span class="o">=</span> <span class="n">extflow</span><span class="o">.</span><span class="n">Plate</span><span class="p">()</span>
+<span class="go"># This will create an instance of the class &#39;Plate&#39;.</span>
+<span class="go"># Then call the method like so :-</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">plateobject</span><span class="o">.</span><span class="n">Nu_unheated_laminar_local</span><span class="p">(</span><span class="n">Re</span><span class="o">=</span><span class="mi">61062</span><span class="p">,</span> <span class="n">Pr</span><span class="o">=</span><span class="mf">0.7073</span><span class="p">,</span> <span class="n">unheatedlength</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">xlocation_tofindNu</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+<span class="go">82.28737639413838</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pychemengg.heattransfer.externalflow.Plate.Nu_unheated_turbulent_average">
+<span class="sig-name descname"><span class="pre">Nu_unheated_turbulent_average</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">Re</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Pr</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unheatedlength</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">length</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pychemengg/heattransfer/externalflow.html#Plate.Nu_unheated_turbulent_average"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pychemengg.heattransfer.externalflow.Plate.Nu_unheated_turbulent_average" title="Permalink to this definition">¶</a></dt>
+<dd><p>Average Nusselt number for isothermal turbulent flow on flat plate
+with unheated starting length.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl>
+<dt><strong>Re</strong><span class="classifier"><cite>int or float</cite></span></dt><dd><p>Reynolds number on plate (plate length to be used to compute Re).</p>
+</dd>
+<dt><strong>Pr</strong><span class="classifier"><cite>int or float</cite></span></dt><dd><p>Prandtl number for the fluid.</p>
+</dd>
+<dt><strong>unheatedlength</strong><span class="classifier"><cite>int or float</cite></span></dt><dd><p>Initial length of plate that is not participating in heat transfer.</p>
+</dd>
+<dt><strong>length</strong><span class="classifier"><cite>int or float</cite></span></dt><dd><p>Overall length of plate.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl>
+<dt><strong>Nu</strong><span class="classifier"><cite>int or float</cite></span></dt><dd><p>Average Nusselt number over the plate.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>A Nusselt number is returned based on the equation
+even if parameters (such as <em>Re</em>, <em>Pr</em>) do not fall in their
+respective allowable range limits (see above under ‘Notes’).
+However, if this happens, a warning is issued.</p>
+</div>
+<p class="rubric">Notes</p>
+<p>The following formula is used:</p>
+<div class="math">
+\[Nu = \left( Nu_{for \zeta=0} \right) \left( \frac{L}{L-\zeta} \right)
+\left[1- \left(\frac{\zeta}{L} \right)^{9/10} \right]^{8/9}\]</div>
+<p><em>where:</em></p>
+<blockquote>
+<div><p><span class="math">\(0.6 \eqslantless Pr \eqslantless 60\)</span></p>
+<p><span class="math">\(5*10^5 \eqslantless Re_x \eqslantless 10^7\)</span></p>
+<p><span class="math">\(\zeta\)</span> = Length of plate that is not heated</p>
+<p>L = Overall length of plate over which average Nusselt number is
+to be computed</p>
+<p>Fluid properties are at film temp (<span class="math">\(T_{film}\)</span>):</p>
+<blockquote>
+<div><p><span class="math">\(T_{film} = (T_{infinity} + T_{surface})/2\)</span></p>
+<p><span class="math">\(T_{infinity}\)</span> <em>= temperature of fluid away from surface</em></p>
+<p><span class="math">\(T_{surface}\)</span> <em>= temperature of surface</em></p>
+</div></blockquote>
+</div></blockquote>
+<p class="rubric">References</p>
+<p>[1] Yunus A. Cengel and Afshin J. Ghajar, “Heat And Mass Transfer
+Fundamentals and Applications”, 6th Edition. New York, McGraw Hill
+Education, 2020.</p>
+<p class="rubric">Examples</p>
+<p>First import the module <strong>externalflow</strong>.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pychemengg.heattransfer</span> <span class="kn">import</span> <span class="n">externalflow</span> <span class="k">as</span> <span class="n">extflow</span> 
+<span class="gp">&gt;&gt;&gt; </span><span class="n">plateobject</span> <span class="o">=</span> <span class="n">extflow</span><span class="o">.</span><span class="n">Plate</span><span class="p">()</span>
+<span class="go"># This will create an instance of the class &#39;Plate&#39;.</span>
+<span class="go"># Then call the method like so :-</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">plateobject</span><span class="o">.</span><span class="n">Nu_unheated_turbulent_average</span><span class="p">(</span><span class="n">Re</span><span class="o">=</span><span class="mi">610620</span><span class="p">,</span> <span class="n">Pr</span><span class="o">=</span><span class="mf">0.7073</span><span class="p">,</span> <span class="n">unheatedlength</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">length</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+<span class="go">1381.0927382916545</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pychemengg.heattransfer.externalflow.Plate.Nu_unheated_turbulent_local">
+<span class="sig-name descname"><span class="pre">Nu_unheated_turbulent_local</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">Re</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Pr</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unheatedlength</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">xlocation_tofindNu</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pychemengg/heattransfer/externalflow.html#Plate.Nu_unheated_turbulent_local"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pychemengg.heattransfer.externalflow.Plate.Nu_unheated_turbulent_local" title="Permalink to this definition">¶</a></dt>
+<dd><p>Local Nusselt number for isothermal turbulent flow on flat plate
+with unheated starting length.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl>
+<dt><strong>Re</strong><span class="classifier"><cite>int or float</cite></span></dt><dd><p>Reynolds number at location/length ‘x’ on plate.</p>
+</dd>
+<dt><strong>Pr</strong><span class="classifier"><cite>int or float</cite></span></dt><dd><p>Prandtl number for the fluid.</p>
+</dd>
+<dt><strong>unheatedlength</strong><span class="classifier"><cite>int or float</cite></span></dt><dd><p>Initial length of plate that is not participating in heat transfer.</p>
+</dd>
+<dt><strong>xlocation_tofindNu</strong><span class="classifier"><cite>int or float</cite></span></dt><dd><p>x position to find local Nusselt number</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl>
+<dt><strong>Nu</strong><span class="classifier"><cite>int or float</cite></span></dt><dd><p>Local Nusselt number at location/length ‘x’ on plate.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>A Nusselt number is returned based on the equation
+even if parameters (such as <em>Re</em>, <em>Pr</em>) do not fall in their
+respective allowable range limits (see above under ‘Notes’).
+However, if this happens, a warning is issued.</p>
+</div>
+<p class="rubric">Notes</p>
+<p>The following formula is used:</p>
+<div class="math">
+\[Nu = \cfrac {Nu_{for\zeta=0}} {[1-(\zeta/x)^{9/10}]^{1/9}}\]</div>
+<p><em>where:</em></p>
+<blockquote>
+<div><p><span class="math">\(0.6 \eqslantless Pr \eqslantless 60\)</span></p>
+<p><span class="math">\(5*10^5 \eqslantless Re_x \eqslantless 10^7\)</span></p>
+<p><span class="math">\(\zeta\)</span> = length of plate that is not heated</p>
+<p>x = position along length of plate where local Nusselt number is
+to be computed</p>
+<p>Fluid properties are at film temp (<span class="math">\(T_{film}\)</span>):</p>
+<blockquote>
+<div><p><span class="math">\(T_{film} = (T_{infinity} + T_{surface})/2\)</span></p>
+<p><span class="math">\(T_{infinity}\)</span> <em>= temperature of fluid away from surface</em></p>
+<p><span class="math">\(T_{surface}\)</span> <em>= temperature of surface</em></p>
+</div></blockquote>
+</div></blockquote>
+<p class="rubric">References</p>
+<p>[1] Yunus A. Cengel and Afshin J. Ghajar, “Heat And Mass Transfer
+Fundamentals and Applications”, 6th Edition. New York, McGraw Hill
+Education, 2020.</p>
+<p class="rubric">Examples</p>
+<p>First import the module <strong>externalflow</strong>.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pychemengg.heattransfer</span> <span class="kn">import</span> <span class="n">externalflow</span> <span class="k">as</span> <span class="n">extflow</span> 
+<span class="gp">&gt;&gt;&gt; </span><span class="n">plateobject</span> <span class="o">=</span> <span class="n">extflow</span><span class="o">.</span><span class="n">Plate</span><span class="p">()</span>
+<span class="go"># This will create an instance of the class &#39;Plate&#39;.</span>
+<span class="go"># Then call the method like so :-</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">plateobject</span><span class="o">.</span><span class="n">Nu_unheated_turbulent_local</span><span class="p">(</span><span class="n">Re</span><span class="o">=</span><span class="mi">610620</span><span class="p">,</span> <span class="n">Pr</span><span class="o">=</span><span class="mf">0.7073</span><span class="p">,</span> <span class="n">unheatedlength</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">xlocation_tofindNu</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+<span class="go">1155.3088951877935</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pychemengg.heattransfer.externalflow.Plate.Nu_uniformflux_laminar_average">
+<span class="sig-name descname"><span class="pre">Nu_uniformflux_laminar_average</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">Re</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Pr</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pychemengg/heattransfer/externalflow.html#Plate.Nu_uniformflux_laminar_average"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pychemengg.heattransfer.externalflow.Plate.Nu_uniformflux_laminar_average" title="Permalink to this definition">¶</a></dt>
+<dd><p>Average Nusselt number for laminar flow on flat plate with uniform heat flux.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl>
+<dt><strong>Re</strong><span class="classifier"><cite>int or float</cite></span></dt><dd><p>Reynolds number for full length ‘L’ of plate.</p>
+</dd>
+<dt><strong>Pr</strong><span class="classifier"><cite>int or float</cite></span></dt><dd><p>Prandtl number for the fluid.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl>
+<dt><strong>Nu</strong><span class="classifier"><cite>int or float</cite></span></dt><dd><p>Average Nusselt number for laminar flow on flat plate.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>A Nusselt number is returned based on the equation
+even if parameters (such as <em>Re</em>, <em>Pr</em>) do not fall in their
+respective allowable range limits (see above under ‘Notes’).
+However, if this happens, a warning is issued.</p>
+</div>
+<p class="rubric">Notes</p>
+<p>The following formula is used:</p>
+<div class="math">
+\[Nu = 0.664 Re^{0.5} Pr^{1/3}\]</div>
+<p><em>where:</em></p>
+<blockquote>
+<div><p><span class="math">\(Pr &gt; 0.6\)</span></p>
+<p><span class="math">\(Re &lt; 5 * 10^5\)</span></p>
+<p>Fluid properties are at film temp (<span class="math">\(T_{film}\)</span>):</p>
+<blockquote>
+<div><p><span class="math">\(T_{film} = (T_{infinity} + T_{surface})/2\)</span></p>
+<p><span class="math">\(T_{infinity}\)</span> <em>= temperature of fluid away from surface</em></p>
+<p><span class="math">\(T_{surface}\)</span> <em>= temperature of surface</em></p>
+</div></blockquote>
+</div></blockquote>
+<p class="rubric">References</p>
+<p>[1] Yunus A. Cengel and Afshin J. Ghajar, “Heat And Mass Transfer
+Fundamentals and Applications”, 6th Edition. New York, McGraw Hill
+Education, 2020.</p>
+<p class="rubric">Examples</p>
+<p>First import the module <strong>externalflow</strong>.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pychemengg.heattransfer</span> <span class="kn">import</span> <span class="n">externalflow</span> <span class="k">as</span> <span class="n">extflow</span> 
+<span class="gp">&gt;&gt;&gt; </span><span class="n">plateobject</span> <span class="o">=</span> <span class="n">extflow</span><span class="o">.</span><span class="n">Plate</span><span class="p">()</span>
+<span class="go"># This will create an instance of the class &#39;Plate&#39;.</span>
+<span class="go"># Then call the method like so :-</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">plateobject</span><span class="o">.</span><span class="n">Nu_uniformflux_laminar_average</span><span class="p">(</span><span class="n">Re</span><span class="o">=</span><span class="mf">4.024e4</span><span class="p">,</span> <span class="n">Pr</span><span class="o">=</span><span class="mi">2962</span><span class="p">)</span>
+<span class="go">1912.899190840437</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pychemengg.heattransfer.externalflow.Plate.Nu_uniformflux_laminar_local">
+<span class="sig-name descname"><span class="pre">Nu_uniformflux_laminar_local</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">Re</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Pr</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pychemengg/heattransfer/externalflow.html#Plate.Nu_uniformflux_laminar_local"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pychemengg.heattransfer.externalflow.Plate.Nu_uniformflux_laminar_local" title="Permalink to this definition">¶</a></dt>
+<dd><p>Local Nusselt number for laminar flow on flat plate with uniform heat flux.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl>
+<dt><strong>Re</strong><span class="classifier"><cite>int or float</cite></span></dt><dd><p>Reynolds number at location/length ‘x’ on plate.</p>
+</dd>
+<dt><strong>Pr</strong><span class="classifier"><cite>int or float</cite> for the fluid.</span></dt><dd><p>Prandtl number</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl>
+<dt><strong>Nu</strong><span class="classifier"><cite>int or float</cite></span></dt><dd><p>Local Nusselt number at location/length ‘x’ on plate.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>A Nusselt number is returned based on the equation
+even if parameters (such as <em>Re</em>, <em>Pr</em>) do not fall in their
+respective allowable range limits (see above under ‘Notes’).
+However, if this happens, a warning is issued.</p>
+</div>
+<p class="rubric">Notes</p>
+<p>The following formula is used:</p>
+<div class="math">
+\[Nu = 0.453 Re^{0.5} Pr^{1/3}\]</div>
+<p><em>where:</em></p>
+<blockquote>
+<div><p><span class="math">\(Pr &gt; 0.6\)</span></p>
+<p><span class="math">\(Re &lt; 5 * 10^5\)</span></p>
+<p>Fluid properties are at film temp (<span class="math">\(T_{film}\)</span>):</p>
+<blockquote>
+<div><p><span class="math">\(T_{film} = (T_{infinity} + T_{surface})/2\)</span></p>
+<p><span class="math">\(T_{infinity}\)</span> <em>= temperature of fluid away from surface</em></p>
+<p><span class="math">\(T_{surface}\)</span> <em>= temperature of surface</em></p>
+</div></blockquote>
+</div></blockquote>
+<p class="rubric">References</p>
+<p>[1] Yunus A. Cengel and Afshin J. Ghajar, “Heat And Mass Transfer
+Fundamentals and Applications”, 6th Edition. New York, McGraw Hill
+Education, 2020</p>
+<p class="rubric">Examples</p>
+<p>First import the module <strong>externalflow</strong>.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pychemengg.heattransfer</span> <span class="kn">import</span> <span class="n">externalflow</span> <span class="k">as</span> <span class="n">extflow</span> 
+<span class="gp">&gt;&gt;&gt; </span><span class="n">plateobject</span> <span class="o">=</span> <span class="n">extflow</span><span class="o">.</span><span class="n">Plate</span><span class="p">()</span>
+<span class="go"># This will create an instance of the class &#39;Plate&#39;.</span>
+<span class="go"># Then call the method like so :-</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">plateobject</span><span class="o">.</span><span class="n">Nu_uniformflux_laminar_local</span><span class="p">(</span><span class="n">Re</span><span class="o">=</span><span class="mi">61062</span><span class="p">,</span> <span class="n">Pr</span><span class="o">=</span><span class="mf">0.7073</span><span class="p">)</span>
+<span class="go">99.73592054582787</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pychemengg.heattransfer.externalflow.Plate.Nu_uniformflux_turbulent_average">
+<span class="sig-name descname"><span class="pre">Nu_uniformflux_turbulent_average</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">Re</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Pr</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pychemengg/heattransfer/externalflow.html#Plate.Nu_uniformflux_turbulent_average"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pychemengg.heattransfer.externalflow.Plate.Nu_uniformflux_turbulent_average" title="Permalink to this definition">¶</a></dt>
+<dd><p>Average Nusselt number for turbulent flow on flat plate with
+uniform heat flux.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl>
+<dt><strong>Re</strong><span class="classifier"><cite>int or float</cite></span></dt><dd><p>Reynolds number for full length ‘L’ of plate.</p>
+</dd>
+<dt><strong>Pr</strong><span class="classifier"><cite>int or float</cite></span></dt><dd><p>Prandtl number for the fluid.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl>
+<dt><strong>Nu</strong><span class="classifier"><cite>int or float</cite></span></dt><dd><p>Average Nusselt number for turbulent flow on flat plate.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>A Nusselt number is returned based on the equation
+even if parameters (such as <em>Re</em>, <em>Pr</em>) do not fall in their
+respective allowable range limits (see above under ‘Notes’).
+However, if this happens, a warning is issued.</p>
+</div>
+<p class="rubric">Notes</p>
+<p>The following formula is used:</p>
+<div class="math">
+\[Nu = 0.037 Re^{0.8} Pr^{1/3}\]</div>
+<p><em>where:</em></p>
+<blockquote>
+<div><p><span class="math">\(0.6 \eqslantless Pr \eqslantless 60\)</span></p>
+<p><span class="math">\(5*10^5 \eqslantless Re_x \eqslantless 10^7\)</span></p>
+<p>Fluid properties are at film temp (<span class="math">\(T_{film}\)</span>):</p>
+<blockquote>
+<div><p><span class="math">\(T_{film} = (T_{infinity} + T_{surface})/2\)</span></p>
+<p><span class="math">\(T_{infinity}\)</span> <em>= temperature of fluid away from surface</em></p>
+<p><span class="math">\(T_{surface}\)</span> <em>= temperature of surface</em></p>
+</div></blockquote>
+</div></blockquote>
+<p class="rubric">References</p>
+<p>[1] Yunus A. Cengel and Afshin J. Ghajar, “Heat And Mass Transfer
+Fundamentals and Applications”, 6th Edition. New York, McGraw Hill
+Education, 2020.</p>
+<p class="rubric">Examples</p>
+<p>First import the module <strong>externalflow</strong>.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pychemengg.heattransfer</span> <span class="kn">import</span> <span class="n">externalflow</span> <span class="k">as</span> <span class="n">extflow</span> 
+<span class="gp">&gt;&gt;&gt; </span><span class="n">plateobject</span> <span class="o">=</span> <span class="n">extflow</span><span class="o">.</span><span class="n">Plate</span><span class="p">()</span>
+<span class="go"># This will assign the class &#39;Plate&#39; to the variable &#39;plateobject&#39;.</span>
+<span class="go"># Then call the method like so :-</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">plateobject</span><span class="o">.</span><span class="n">Nu_uniformflux_turbulent_average</span><span class="p">(</span><span class="n">Re</span><span class="o">=</span><span class="mf">8.875e5</span><span class="p">,</span> <span class="n">Pr</span><span class="o">=</span><span class="mf">0.7387</span><span class="p">)</span>
+<span class="go">1918.1936389098291</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pychemengg.heattransfer.externalflow.Plate.Nu_uniformflux_turbulent_local">
+<span class="sig-name descname"><span class="pre">Nu_uniformflux_turbulent_local</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">Re</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Pr</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pychemengg/heattransfer/externalflow.html#Plate.Nu_uniformflux_turbulent_local"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pychemengg.heattransfer.externalflow.Plate.Nu_uniformflux_turbulent_local" title="Permalink to this definition">¶</a></dt>
+<dd><p>Local Nusselt number for turbulent flow on flat plate with uniform heat flux.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl>
+<dt><strong>Re</strong><span class="classifier"><cite>int or float</cite></span></dt><dd><p>Reynolds number at location/length ‘x’ on plate.</p>
+</dd>
+<dt><strong>Pr</strong><span class="classifier"><cite>int or float</cite></span></dt><dd><p>Prandtl number for the fluid.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl>
+<dt><strong>Nu</strong><span class="classifier"><cite>int or float</cite></span></dt><dd><p>Local Nusselt number at location/length ‘x’ on plate.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>A Nusselt number is returned based on the equation
+even if parameters (such as <em>Re</em>, <em>Pr</em>) do not fall in their
+respective allowable range limits (see above under ‘Notes’).
+However, if this happens, a warning is issued.</p>
+</div>
+<p class="rubric">Notes</p>
+<p>The following formula is used:</p>
+<div class="math">
+\[Nu = 0.0308 Re^{0.8} Pr^{1/3}\]</div>
+<p><em>where:</em></p>
+<blockquote>
+<div><p><span class="math">\(0.6 \eqslantless Pr \eqslantless 60\)</span></p>
+<p><span class="math">\(5*10^5 \eqslantless Re_x \eqslantless 10^7\)</span></p>
+<p>Fluid properties are at film temp (<span class="math">\(T_{film}\)</span>):</p>
+<blockquote>
+<div><p><span class="math">\(T_{film} = (T_{infinity} + T_{surface})/2\)</span></p>
+<p><span class="math">\(T_{infinity}\)</span> <em>= temperature of fluid away from surface</em></p>
+<p><span class="math">\(T_{surface}\)</span> <em>= temperature of surface</em></p>
+</div></blockquote>
+</div></blockquote>
+<p class="rubric">References</p>
+<p>[1] Yunus A. Cengel and Afshin J. Ghajar, “Heat And Mass Transfer
+Fundamentals and Applications”, 6th Edition. New York, McGraw Hill
+Education, 2020.</p>
+<p class="rubric">Examples</p>
+<p>First import the module <strong>externalflow</strong>.
+&gt;&gt;&gt; from pychemengg.heattransfer import externalflow as extflow 
+&gt;&gt;&gt; plateobject = extflow.Plate()
+# This will create an instance of the class ‘Plate’.
+# Then call the method like so :-
+&gt;&gt;&gt; plateobject.Nu_uniformflux_turbulent_local(Re=610620, Pr=0.7073)
+1166.9047896712561</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="pychemengg.heattransfer.externalflow.Sphere.html" class="btn btn-neutral float-right" title="Sphere" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="pychemengg.heattransfer.externalflow.Cylinder.html" class="btn btn-neutral float-left" title="Cylinder" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021, Harvinder Singh Gill.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

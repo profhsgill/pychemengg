@@ -1,0 +1,1257 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>pychemengg.heattransfer.heatexchangers &mdash; PyChemEngg 0.1a6 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../_static/css/my_theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/css/my_theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/my_theme.css" type="text/css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/katex-math.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.12.0/contrib/auto-render.min.js"></script>
+        <script src="../../../_static/katex_autorenderer.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> PyChemEngg
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1a6
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption" role="heading"><span class="caption-text">User Tutorial</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../userguide/heattransfer/index.html">Heat Transfer</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Reference Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../autosummary_pychemengg.html">PyChemEngg API Reference</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">PyChemEngg</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../../index.html">Module code</a> &raquo;</li>
+        
+      <li>pychemengg.heattransfer.heatexchangers</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for pychemengg.heattransfer.heatexchangers</h1><div class="highlight"><pre>
+<span></span><span class="c1"># -*- coding: utf-8 -*-</span>
+
+<span class="c1"># This file is part of pyChemEngg python package.</span>
+ 
+<span class="c1"># PyChemEngg: A python-based framework to promote problem solving and critical</span>
+<span class="c1"># thinking in chemical engineering.</span>
+
+<span class="c1"># Copyright (c) 2021 Harvinder Singh Gill &lt;profhsgill@gmail.com&gt;</span>
+
+<span class="c1"># Permission is hereby granted, free of charge, to any person obtaining a copy</span>
+<span class="c1"># of this software and associated documentation files (the &quot;Software&quot;), to deal</span>
+<span class="c1"># in the Software without restriction, including without limitation the rights</span>
+<span class="c1"># to use, copy, modify, merge, publish, distribute, sublicense, and/or sell</span>
+<span class="c1"># copies of the Software, and to permit persons to whom the Software is</span>
+<span class="c1"># furnished to do so, subject to the following conditions:</span>
+
+<span class="c1"># The above copyright notice and this permission notice shall be included in all</span>
+<span class="c1"># copies or substantial portions of the Software.</span>
+
+<span class="c1"># THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR</span>
+<span class="c1"># IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,</span>
+<span class="c1"># FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE</span>
+<span class="c1"># AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER</span>
+<span class="c1"># LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,</span>
+<span class="c1"># OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE</span>
+<span class="c1"># SOFTWARE.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Module for heat exchanger analysis.</span>
+
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="kn">import</span> <span class="nn">math</span>
+<span class="kn">from</span> <span class="nn">scipy.optimize</span> <span class="kn">import</span> <span class="n">fsolve</span>
+
+
+<span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;FCorrectionFactor&quot;</span><span class="p">,</span> <span class="s2">&quot;EffNTU&quot;</span><span class="p">,</span> <span class="s2">&quot;calc_overallheattransfercoefficient_fromNTU&quot;</span><span class="p">]</span>
+
+<div class="viewcode-block" id="FCorrectionFactor"><a class="viewcode-back" href="../../../_autosummary/pychemengg.heattransfer.heatexchangers.FCorrectionFactor.html#pychemengg.heattransfer.heatexchangers.FCorrectionFactor">[docs]</a><span class="k">class</span> <span class="nc">FCorrectionFactor</span><span class="p">:</span>
+    <span class="sa">r</span><span class="sd">&quot;&quot;&quot; Contains functions to compute &#39;F&#39; correction factor for LMTD</span>
+<span class="sd">    for heat exchangers.</span>
+
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    `None_required` : &#39;None&#39;</span>
+<span class="sd">        This class takes no parameters for instance creation.</span>
+<span class="sd"> </span>
+<span class="sd">    </span>
+<span class="sd">    Attributes</span>
+<span class="sd">    ----------</span>
+<span class="sd">    `None_required` : &#39;None&#39;</span>
+<span class="sd">        This class does not expose any instance attributes.</span>
+<span class="sd">    </span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    First import the module **heatexchangers**.</span>
+<span class="sd">       </span>
+<span class="sd">    &gt;&gt;&gt; from pychemengg.heattransfer import heatexchangers as hx </span>
+<span class="sd">    &gt;&gt;&gt; hx1 = hx.FCorrectionFactor</span>
+<span class="sd">    # This will assign the class &#39;FCorrectionFactor&#39; to the</span>
+<span class="sd">    # variable &#39;hx1&#39;.</span>
+<span class="sd">    # Methods of the class &#39;FCorrectionFactor&#39; can then be called like so :-</span>
+<span class="sd">    # hx1.methodname(kwarg1=x, ... etc)</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    
+<div class="viewcode-block" id="FCorrectionFactor.oneshell2ntubepasses"><a class="viewcode-back" href="../../../_autosummary/pychemengg.heattransfer.heatexchangers.FCorrectionFactor.html#pychemengg.heattransfer.heatexchangers.FCorrectionFactor.oneshell2ntubepasses">[docs]</a>    <span class="k">def</span> <span class="nf">oneshell2ntubepasses</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">T_tubein</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">T_tubeout</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">T_shellin</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">T_shellout</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="sa">r</span><span class="sd">&quot;&quot;&quot; To find &#39;F&#39; correction factor for LMTD.</span>
+<span class="sd">        Use when shell passes = 1 and tube passes = 2, 4, 6, 8, etc</span>
+
+<span class="sd">        </span>
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        T_tubein : `int or float`</span>
+<span class="sd">            Temperature of tube side (or cold) fluid at inlet.</span>
+<span class="sd">        T_tubeout : `int or float`</span>
+<span class="sd">            Temperature of tube side (or cold) fluid at outlet.</span>
+<span class="sd">        T_shellin : `int or float`</span>
+<span class="sd">            Temperature of shell side (or hot) fluid at inlet.</span>
+<span class="sd">        T_shellout : `int or float`</span>
+<span class="sd">            Temperature of shell side (or hot) fluid at outlet.        </span>
+<span class="sd">        </span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        F : `int or float`</span>
+<span class="sd">            &#39;F&#39; correction factor for LMTD.</span>
+<span class="sd">       </span>
+<span class="sd">        </span>
+<span class="sd">        Raises</span>
+<span class="sd">        ------</span>
+<span class="sd">        ValueError with message &#39;math domain error&#39;</span>
+<span class="sd">            If negative number is being passed to the &#39;log&#39; function</span>
+<span class="sd">        </span>
+<span class="sd">        </span>
+<span class="sd">        Notes</span>
+<span class="sd">        -----</span>
+<span class="sd">        Equation number (6) of reference [1] is used.</span>
+
+<span class="sd">        This is the same equation that is used to generate plots presented</span>
+<span class="sd">        in most textbooks.        </span>
+<span class="sd">        </span>
+<span class="sd">               </span>
+<span class="sd">        Examples</span>
+<span class="sd">        --------</span>
+<span class="sd">        First import the module **heatexchangers**.</span>
+<span class="sd">           </span>
+<span class="sd">        &gt;&gt;&gt; from pychemengg.heattransfer import heatexchangers as hx </span>
+<span class="sd">        &gt;&gt;&gt; hx1 = hx.FCorrectionFactor()</span>
+<span class="sd">        &gt;&gt;&gt; hx1.oneshell2ntubepasses(T_shellin=300, T_shellout=200,</span>
+<span class="sd">                                     T_tubein=100, T_tubeout=200)</span>
+<span class="sd">        0.8022781617244771</span>
+
+<span class="sd">        </span>
+
+<span class="sd">        References</span>
+<span class="sd">        ----------</span>
+<span class="sd">        [1] R. A. Bowman, A. C. Mueller, and W. M. Nagle, &quot;Mean Temperature </span>
+<span class="sd">        Difference in Design&quot;, Transactions of the ASME 62, 1940, pp:283-294.        .</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">R</span><span class="p">,</span> <span class="n">P</span> <span class="o">=</span> <span class="n">FCorrectionFactor</span><span class="o">.</span><span class="n">calc_R_P</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">T_tubein</span><span class="o">=</span><span class="n">T_tubein</span><span class="p">,</span>
+                                          <span class="n">T_tubeout</span><span class="o">=</span><span class="n">T_tubeout</span><span class="p">,</span>
+                                          <span class="n">T_shellin</span><span class="o">=</span><span class="n">T_shellin</span><span class="p">,</span> 
+                                          <span class="n">T_shellout</span><span class="o">=</span><span class="n">T_shellout</span><span class="p">)</span>
+            <span class="n">ta</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">R</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+            <span class="n">tb</span> <span class="o">=</span> <span class="mi">2</span><span class="o">/</span><span class="n">P</span> <span class="o">-</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">R</span>
+            <span class="k">if</span> <span class="n">R</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+                <span class="n">tt</span> <span class="o">=</span> <span class="n">P</span> <span class="o">/</span> <span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">P</span><span class="p">))</span>
+            <span class="k">elif</span> <span class="n">R</span> <span class="o">!=</span> <span class="mi">1</span><span class="p">:</span>
+                <span class="n">arg1</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">P</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">P</span><span class="o">*</span><span class="n">R</span><span class="p">)</span>
+                <span class="n">tt</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="n">R</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="n">math</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">arg1</span><span class="p">)</span>
+            <span class="n">tc</span> <span class="o">=</span> <span class="n">ta</span> <span class="o">*</span> <span class="n">tt</span>
+            <span class="n">td</span> <span class="o">=</span> <span class="p">(</span><span class="n">tb</span> <span class="o">+</span> <span class="n">ta</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">tb</span> <span class="o">-</span> <span class="n">ta</span><span class="p">)</span>
+            <span class="n">f1_2</span> <span class="o">=</span> <span class="n">tc</span><span class="o">/</span><span class="n">math</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">td</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">f1_2</span>
+        <span class="k">except</span> <span class="ne">ValueError</span> <span class="k">as</span> <span class="n">err</span><span class="p">:</span>
+            <span class="k">if</span> <span class="nb">str</span><span class="p">(</span><span class="n">err</span><span class="p">)</span> <span class="o">==</span> <span class="s2">&quot;math domain error&quot;</span><span class="p">:</span>
+                <span class="nb">print</span><span class="p">(</span><span class="n">err</span><span class="p">)</span>
+                <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Most likely a negative number is being passed to the&quot;</span>
+                      <span class="s2">&quot; &#39;log&#39; function.&quot;</span><span class="p">)</span>
+                <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;A heat exchanger of this type cannot be designed&quot;</span>
+                      <span class="s2">&quot; for this particular temperature combination&quot;</span><span class="p">)</span></div>
+
+        
+        
+<div class="viewcode-block" id="FCorrectionFactor.twoshell4ntubepasses"><a class="viewcode-back" href="../../../_autosummary/pychemengg.heattransfer.heatexchangers.FCorrectionFactor.html#pychemengg.heattransfer.heatexchangers.FCorrectionFactor.twoshell4ntubepasses">[docs]</a>    <span class="k">def</span> <span class="nf">twoshell4ntubepasses</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">T_tubein</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">T_tubeout</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">T_shellin</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">T_shellout</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="sa">r</span><span class="sd">&quot;&quot;&quot;To find &#39;F&#39; correction factor for LMTD.</span>
+<span class="sd">        Use when shell passes = 2 and tube passes = 4, 8, 12, etc</span>
+
+<span class="sd">        </span>
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        T_tubein : `int or float`</span>
+<span class="sd">            Temperature of tube side (or cold) fluid at inlet.</span>
+<span class="sd">        T_tubeout : `int or float`</span>
+<span class="sd">            Temperature of tube side (or cold) fluid at outlet.</span>
+<span class="sd">        T_shellin : `int or float`</span>
+<span class="sd">            Temperature of shell side (or hot) fluid at inlet.</span>
+<span class="sd">        T_shellout : `int or float`</span>
+<span class="sd">            Temperature of shell side (or hot) fluid at outlet.        </span>
+<span class="sd">        </span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        F : `int or float`</span>
+<span class="sd">            &#39;F&#39; correction factor for LMTD.</span>
+<span class="sd">       </span>
+<span class="sd">        </span>
+<span class="sd">        Raises</span>
+<span class="sd">        ------</span>
+<span class="sd">        ValueError with message &#39;math domain error&#39;</span>
+<span class="sd">            If negative number is being passed to the &#39;log&#39; function</span>
+<span class="sd">        </span>
+<span class="sd">        </span>
+<span class="sd">        Notes</span>
+<span class="sd">        -----</span>
+<span class="sd">        Equation number (8) of reference [1] is used.</span>
+<span class="sd">        </span>
+<span class="sd">        This is the same equation used to generate plots presented</span>
+<span class="sd">        in most textbooks.         </span>
+<span class="sd">        </span>
+<span class="sd">               </span>
+<span class="sd">        Examples</span>
+<span class="sd">        --------</span>
+<span class="sd">        First import the module **heatexchangers**.</span>
+<span class="sd">           </span>
+<span class="sd">        &gt;&gt;&gt; from pychemengg.heattransfer import heatexchangers as hx </span>
+<span class="sd">        &gt;&gt;&gt; hx1 = hx.FCorrectionFactor()</span>
+<span class="sd">        &gt;&gt;&gt; hx1.twoshell4ntubepasses(T_shellin=300, T_shellout=200,</span>
+<span class="sd">                                     T_tubein=100, T_tubeout=200)</span>
+<span class="sd">        0.9568453972970873</span>
+
+<span class="sd">        </span>
+
+<span class="sd">        References</span>
+<span class="sd">        ----------</span>
+<span class="sd">        [1] R. A. Bowman, A. C. Mueller, and W. M. Nagle, &quot;Mean Temperature </span>
+<span class="sd">        Difference in Design&quot;, Transactions of the ASME 62, 1940, pp:283-294.        .</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">R</span><span class="p">,</span> <span class="n">P</span> <span class="o">=</span> <span class="n">FCorrectionFactor</span><span class="o">.</span><span class="n">calc_R_P</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">T_tubein</span><span class="o">=</span><span class="n">T_tubein</span><span class="p">,</span>
+                                              <span class="n">T_tubeout</span><span class="o">=</span><span class="n">T_tubeout</span><span class="p">,</span>
+                                              <span class="n">T_shellin</span><span class="o">=</span><span class="n">T_shellin</span><span class="p">,</span>
+                                              <span class="n">T_shellout</span><span class="o">=</span><span class="n">T_shellout</span><span class="p">)</span>
+            <span class="n">ta</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">R</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+            <span class="n">tb</span> <span class="o">=</span> <span class="mi">2</span><span class="o">/</span><span class="n">P</span> <span class="o">-</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">R</span>
+            <span class="n">tc</span> <span class="o">=</span> <span class="mi">2</span><span class="o">/</span><span class="n">P</span> <span class="o">*</span> <span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">((</span><span class="mi">1</span><span class="o">-</span><span class="n">P</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">P</span><span class="o">*</span><span class="n">R</span><span class="p">))</span>
+            <span class="k">if</span> <span class="n">R</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+                <span class="n">tt</span> <span class="o">=</span> <span class="n">P</span> <span class="o">/</span> <span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">P</span><span class="p">))</span>
+                <span class="n">tt</span> <span class="o">=</span> <span class="n">tt</span><span class="o">/</span><span class="mi">2</span>
+            <span class="k">elif</span> <span class="n">R</span> <span class="o">!=</span> <span class="mi">1</span><span class="p">:</span>
+                <span class="n">arg1</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">P</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">P</span><span class="o">*</span><span class="n">R</span><span class="p">)</span>
+                <span class="n">tt</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="n">R</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="n">math</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">arg1</span><span class="p">)</span>
+                <span class="n">tt</span> <span class="o">=</span> <span class="n">tt</span><span class="o">/</span><span class="mi">2</span>
+            <span class="n">tf</span> <span class="o">=</span> <span class="n">ta</span> <span class="o">*</span> <span class="n">tt</span>
+            <span class="n">td</span> <span class="o">=</span> <span class="p">(</span><span class="n">tb</span> <span class="o">+</span> <span class="n">tc</span> <span class="o">+</span> <span class="n">ta</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">tb</span> <span class="o">+</span> <span class="n">tc</span> <span class="o">-</span> <span class="n">ta</span><span class="p">)</span>
+            <span class="n">f2_2</span> <span class="o">=</span> <span class="n">tf</span><span class="o">/</span><span class="n">math</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">td</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">f2_2</span>
+        <span class="k">except</span> <span class="ne">ValueError</span> <span class="k">as</span> <span class="n">err</span><span class="p">:</span>
+            <span class="k">if</span> <span class="nb">str</span><span class="p">(</span><span class="n">err</span><span class="p">)</span> <span class="o">==</span> <span class="s2">&quot;math domain error&quot;</span><span class="p">:</span>
+                <span class="nb">print</span><span class="p">(</span><span class="n">err</span><span class="p">)</span>
+                <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Most likely a negative number is being passed to the&quot;</span>
+                      <span class="s2">&quot; &#39;log&#39; function.&quot;</span><span class="p">)</span>
+                <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;A heat exchanger of this type cannot be designed&quot;</span>
+                      <span class="s2">&quot; for this particular temperature combination&quot;</span><span class="p">)</span></div>
+
+    
+    
+<div class="viewcode-block" id="FCorrectionFactor.calc_R_P"><a class="viewcode-back" href="../../../_autosummary/pychemengg.heattransfer.heatexchangers.FCorrectionFactor.html#pychemengg.heattransfer.heatexchangers.FCorrectionFactor.calc_R_P">[docs]</a>    <span class="k">def</span> <span class="nf">calc_R_P</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">T_tubein</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">T_tubeout</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">T_shellin</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">T_shellout</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="sa">r</span><span class="sd">&quot;&quot;&quot;To find &#39;R&#39; and &#39;P&#39; parameters needed to compute &#39;F&#39; correction </span>
+<span class="sd">        factors. Could be useful to manually look up tables</span>
+<span class="sd">        of F correction factors in textbooks.</span>
+
+<span class="sd">        </span>
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        T_tubein : `int or float`</span>
+<span class="sd">            Temperature of tube side (or cold) fluid at inlet.</span>
+<span class="sd">        T_tubeout : `int or float`</span>
+<span class="sd">            Temperature of tube side (or cold) fluid at outlet.</span>
+<span class="sd">        T_shellin : `int or float`</span>
+<span class="sd">            Temperature of shell side (or hot) fluid at inlet.</span>
+<span class="sd">        T_shellout : `int or float`</span>
+<span class="sd">            Temperature of shell side (or hot) fluid at outlet.        </span>
+<span class="sd">        </span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        tuple containg R-parameter and P-parameter :</span>
+<span class="sd">            (R-parameter : `int or float`, P-parameter : `int or float`)</span>
+<span class="sd">       </span>
+<span class="sd">        </span>
+<span class="sd">        Notes</span>
+<span class="sd">        -----</span>
+<span class="sd">        The following formulas defined in reference [1] are used:</span>
+<span class="sd">        </span>
+<span class="sd">        .. math::</span>
+<span class="sd">            </span>
+<span class="sd">            R = \frac {T_{shellin} - T_{shellout}}  {T_{tubeout} - T_{tubein}}</span>
+<span class="sd">            </span>
+<span class="sd">            P = \frac {T_{tubeout} - T_{tubein}} {T_{shellin} - T_{tubein}}</span>
+<span class="sd">        </span>
+<span class="sd">               </span>
+<span class="sd">        Examples</span>
+<span class="sd">        --------</span>
+<span class="sd">        First import the module **heatexchangers**.</span>
+<span class="sd">           </span>
+<span class="sd">        &gt;&gt;&gt; from pychemengg.heattransfer import heatexchangers as hx </span>
+<span class="sd">        &gt;&gt;&gt; hx1 = hx.FCorrectionFactor()</span>
+<span class="sd">        &gt;&gt;&gt; hx1.calc_R_P(T_shellin=300, T_shellout=200,</span>
+<span class="sd">                                     T_tubein=100, T_tubeout=200)</span>
+<span class="sd">        (1.0, 0.5)</span>
+
+<span class="sd">        </span>
+
+<span class="sd">        References</span>
+<span class="sd">        ----------</span>
+<span class="sd">        [1] R. A. Bowman, A. C. Mueller, and W. M. Nagle, &quot;Mean Temperature </span>
+<span class="sd">        Difference in Design&quot;, Transactions of the ASME 62, 1940, pp:283-294.        .</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">R</span> <span class="o">=</span> <span class="p">(</span><span class="n">T_shellin</span> <span class="o">-</span> <span class="n">T_shellout</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">T_tubeout</span> <span class="o">-</span> <span class="n">T_tubein</span><span class="p">)</span>
+        <span class="n">P</span> <span class="o">=</span> <span class="p">(</span><span class="n">T_tubeout</span> <span class="o">-</span> <span class="n">T_tubein</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">T_shellin</span> <span class="o">-</span> <span class="n">T_tubein</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">R</span><span class="p">,</span> <span class="n">P</span></div>
+
+
+<div class="viewcode-block" id="FCorrectionFactor.singlepass_crossflow_bothunmixed"><a class="viewcode-back" href="../../../_autosummary/pychemengg.heattransfer.heatexchangers.FCorrectionFactor.html#pychemengg.heattransfer.heatexchangers.FCorrectionFactor.singlepass_crossflow_bothunmixed">[docs]</a>    <span class="k">def</span> <span class="nf">singlepass_crossflow_bothunmixed</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">T_tubein</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">T_tubeout</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                                         <span class="n">T_shellin</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">T_shellout</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="sa">r</span><span class="sd">&quot;&quot;&quot;To find &#39;F&#39; correction factor for LMTD.</span>
+<span class="sd">        Use for single pass cross flow with both fluids unmixed.</span>
+
+<span class="sd">        </span>
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        T_tubein : `int or float`</span>
+<span class="sd">            Temperature of tube side (or cold) fluid at inlet.</span>
+<span class="sd">        T_tubeout : `int or float`</span>
+<span class="sd">            Temperature of tube side (or cold) fluid at outlet.</span>
+<span class="sd">        T_shellin : `int or float`</span>
+<span class="sd">            Temperature of shell side (or hot) fluid at inlet.</span>
+<span class="sd">        T_shellout : `int or float`</span>
+<span class="sd">            Temperature of shell side (or hot) fluid at outlet.        </span>
+<span class="sd">        </span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        F : `int or float`</span>
+<span class="sd">            &#39;F&#39; correction factor for LMTD.</span>
+<span class="sd">       </span>
+<span class="sd">        </span>
+<span class="sd">        Notes</span>
+<span class="sd">        -----</span>
+<span class="sd">        Equation number (10) of reference [1] is used.</span>
+<span class="sd">        </span>
+<span class="sd">        This is the same equation that is used to generate plots presented</span>
+<span class="sd">        in most textbooks.         </span>
+<span class="sd">        </span>
+<span class="sd">               </span>
+<span class="sd">        Examples</span>
+<span class="sd">        --------</span>
+<span class="sd">        First import the module **heatexchangers**.</span>
+<span class="sd">           </span>
+<span class="sd">        &gt;&gt;&gt; from pychemengg.heattransfer import heatexchangers as hx </span>
+<span class="sd">        &gt;&gt;&gt; hx1 = hx.FCorrectionFactor()</span>
+<span class="sd">        &gt;&gt;&gt; hx1.singlepass_crossflow_bothunmixed(T_shellin=300, T_shellout=200,</span>
+<span class="sd">                                                 T_tubein=100, T_tubeout=200)</span>
+<span class="sd">        0.8945911509910063</span>
+
+<span class="sd">        </span>
+
+<span class="sd">        References</span>
+<span class="sd">        ----------</span>
+<span class="sd">        [1] R. A. Bowman, A. C. Mueller, and W. M. Nagle, &quot;Mean Temperature </span>
+<span class="sd">        Difference in Design&quot;, Transactions of the ASME 62, 1940, pp:283-294.        .</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">T1</span> <span class="o">=</span> <span class="n">T_shellin</span>
+            <span class="n">T2</span> <span class="o">=</span> <span class="n">T_shellout</span>
+            <span class="n">t1</span> <span class="o">=</span> <span class="n">T_tubein</span>
+            <span class="n">t2</span> <span class="o">=</span> <span class="n">T_tubeout</span>
+            <span class="n">p</span> <span class="o">=</span> <span class="p">(</span><span class="n">T1</span><span class="o">-</span><span class="n">T2</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">T1</span><span class="o">-</span><span class="n">t1</span><span class="p">)</span>
+            <span class="n">q</span> <span class="o">=</span> <span class="p">(</span><span class="n">t2</span><span class="o">-</span><span class="n">t1</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">T1</span><span class="o">-</span><span class="n">t1</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">p</span><span class="o">!=</span><span class="n">q</span><span class="p">:</span>
+                <span class="n">r0</span> <span class="o">=</span> <span class="p">(</span><span class="n">p</span><span class="o">-</span><span class="n">q</span><span class="p">)</span><span class="o">/</span><span class="n">math</span><span class="o">.</span><span class="n">log</span><span class="p">((</span><span class="mi">1</span><span class="o">-</span><span class="n">q</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">p</span><span class="p">))</span> <span class="c1"># r0 stand for countercurrent configuration</span>
+            <span class="k">if</span> <span class="n">p</span><span class="o">==</span><span class="n">q</span><span class="p">:</span> <span class="c1"># i.e. R = 1</span>
+                <span class="n">r0</span> <span class="o">=</span> <span class="p">(</span><span class="n">T1</span><span class="o">-</span><span class="n">t2</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">T1</span><span class="o">-</span><span class="n">t1</span><span class="p">)</span> <span class="c1"># r0 stand for countercurrent configuration</span>
+                                     <span class="c1"># when R=1 , deltaTm = LMTD = T1-t2 </span>
+                                     <span class="c1"># so this term is in numerator</span>
+            <span class="k">def</span> <span class="nf">find_r</span><span class="p">(</span><span class="n">r</span><span class="p">):</span> <span class="c1"># this is equation 10 from Bowman, 1940</span>
+                <span class="n">n</span> <span class="o">=</span> <span class="mi">40</span>
+                <span class="n">summation</span> <span class="o">=</span> <span class="mi">0</span>
+                <span class="n">fact</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">factorial</span>
+                <span class="k">for</span> <span class="n">u</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+                    <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+                        <span class="n">term</span> <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="n">u</span><span class="o">+</span><span class="n">v</span><span class="p">)</span> <span class="o">*</span> <span class="n">fact</span><span class="p">(</span><span class="n">u</span><span class="o">+</span><span class="n">v</span><span class="p">)</span><span class="o">/</span><span class="n">fact</span><span class="p">(</span><span class="n">u</span><span class="p">)</span><span class="o">/</span><span class="n">fact</span><span class="p">(</span><span class="n">v</span><span class="p">)</span><span class="o">/</span><span class="n">fact</span><span class="p">(</span><span class="n">u</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">/</span><span class="n">fact</span><span class="p">(</span><span class="n">v</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+                        <span class="n">term</span> <span class="o">=</span> <span class="n">term</span> <span class="o">*</span> <span class="n">math</span><span class="o">.</span><span class="n">pow</span><span class="p">(</span><span class="n">p</span><span class="o">/</span><span class="n">r</span><span class="p">,</span> <span class="n">u</span><span class="p">)</span> <span class="o">*</span> <span class="n">math</span><span class="o">.</span><span class="n">pow</span><span class="p">(</span><span class="n">q</span><span class="o">/</span><span class="n">r</span><span class="p">,</span> <span class="n">v</span><span class="p">)</span>
+                        <span class="n">summation</span> <span class="o">=</span> <span class="n">summation</span> <span class="o">+</span> <span class="n">term</span>
+                <span class="k">return</span> <span class="n">r</span><span class="o">-</span><span class="n">summation</span>
+            <span class="n">ans</span> <span class="o">=</span> <span class="n">fsolve</span><span class="p">(</span><span class="n">find_r</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">)</span>
+            <span class="n">F</span> <span class="o">=</span> <span class="n">ans</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">/</span><span class="n">r0</span>
+            <span class="c1"># print(&quot;p= &quot;,p, &quot; q= &quot;, q, &quot; F= &quot;, F)</span>
+            <span class="k">return</span> <span class="n">F</span>
+        <span class="k">except</span> <span class="ne">ValueError</span> <span class="k">as</span> <span class="n">err</span><span class="p">:</span>
+            <span class="k">if</span> <span class="nb">str</span><span class="p">(</span><span class="n">err</span><span class="p">)</span> <span class="o">==</span> <span class="s2">&quot;math domain error&quot;</span><span class="p">:</span>
+                <span class="nb">print</span><span class="p">(</span><span class="n">err</span><span class="p">)</span>
+                <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Most likely a negative number is being passed to the&quot;</span>
+                      <span class="s2">&quot; &#39;log&#39; function.&quot;</span><span class="p">)</span>
+                <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;A heat exchanger of this type cannot be designed&quot;</span>
+                      <span class="s2">&quot; for this particular temperature combination&quot;</span><span class="p">)</span></div>
+    
+<div class="viewcode-block" id="FCorrectionFactor.singlepass_crossflow_oneunmixed"><a class="viewcode-back" href="../../../_autosummary/pychemengg.heattransfer.heatexchangers.FCorrectionFactor.html#pychemengg.heattransfer.heatexchangers.FCorrectionFactor.singlepass_crossflow_oneunmixed">[docs]</a>    <span class="k">def</span> <span class="nf">singlepass_crossflow_oneunmixed</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">T_tubein</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">T_tubeout</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                                        <span class="n">T_shellin</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">T_shellout</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="sa">r</span><span class="sd">&quot;&quot;&quot;To find &#39;F&#39; correction factor for LMTD.</span>
+<span class="sd">        Use for single pass cross flow with one fluid unmixed.</span>
+
+<span class="sd">        </span>
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        T_tubein : `int or float`</span>
+<span class="sd">            Temperature of tube side (or cold) fluid at inlet.</span>
+<span class="sd">        T_tubeout : `int or float`</span>
+<span class="sd">            Temperature of tube side (or cold) fluid at outlet.</span>
+<span class="sd">        T_shellin : `int or float`</span>
+<span class="sd">            Temperature of shell side (or hot) fluid at inlet.</span>
+<span class="sd">        T_shellout : `int or float`</span>
+<span class="sd">            Temperature of shell side (or hot) fluid at outlet.        </span>
+<span class="sd">        </span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        F : `int or float`</span>
+<span class="sd">            &#39;F&#39; correction factor for LMTD.</span>
+<span class="sd">       </span>
+<span class="sd">        </span>
+<span class="sd">        Notes</span>
+<span class="sd">        -----</span>
+<span class="sd">        Equation number (11) of reference [1] is used.</span>
+<span class="sd">        </span>
+<span class="sd">        This is the same equation that is used to generate plots presented</span>
+<span class="sd">        in most textbooks.         </span>
+<span class="sd">        </span>
+<span class="sd">               </span>
+<span class="sd">        Examples</span>
+<span class="sd">        --------</span>
+<span class="sd">        First import the module **heatexchangers**.</span>
+<span class="sd">           </span>
+<span class="sd">        &gt;&gt;&gt; from pychemengg.heattransfer import heatexchangers as hx </span>
+<span class="sd">        &gt;&gt;&gt; hx1 = hx.FCorrectionFactor()</span>
+<span class="sd">        &gt;&gt;&gt; hx1.singlepass_crossflow_oneunmixed(T_shellin=300, T_shellout=200,</span>
+<span class="sd">                                                 T_tubein=100, T_tubeout=200)</span>
+<span class="sd">        0.8464626304853572</span>
+
+<span class="sd">        </span>
+
+<span class="sd">        References</span>
+<span class="sd">        ----------</span>
+<span class="sd">        [1] R. A. Bowman, A. C. Mueller, and W. M. Nagle, &quot;Mean Temperature </span>
+<span class="sd">        Difference in Design&quot;, Transactions of the ASME 62, 1940, pp:283-294.        .</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># this is equation 11 from Bowman, 1940</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">T1</span> <span class="o">=</span> <span class="n">T_shellin</span>
+            <span class="n">T2</span> <span class="o">=</span> <span class="n">T_shellout</span>
+            <span class="n">t1</span> <span class="o">=</span> <span class="n">T_tubein</span>
+            <span class="n">t2</span> <span class="o">=</span> <span class="n">T_tubeout</span>
+            <span class="n">P</span> <span class="o">=</span> <span class="p">(</span><span class="n">T1</span><span class="o">-</span><span class="n">T2</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">T1</span><span class="o">-</span><span class="n">t1</span><span class="p">)</span>
+            <span class="n">Q</span> <span class="o">=</span> <span class="p">(</span><span class="n">t2</span><span class="o">-</span><span class="n">t1</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">T1</span><span class="o">-</span><span class="n">t1</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">P</span><span class="o">!=</span><span class="n">Q</span><span class="p">:</span>
+                <span class="n">r0</span> <span class="o">=</span> <span class="p">(</span><span class="n">P</span><span class="o">-</span><span class="n">Q</span><span class="p">)</span><span class="o">/</span><span class="n">math</span><span class="o">.</span><span class="n">log</span><span class="p">((</span><span class="mi">1</span><span class="o">-</span><span class="n">Q</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">P</span><span class="p">))</span>
+            <span class="k">if</span> <span class="n">P</span><span class="o">==</span><span class="n">Q</span><span class="p">:</span>
+                <span class="n">r0</span> <span class="o">=</span> <span class="p">(</span><span class="n">T1</span><span class="o">-</span><span class="n">t2</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">T1</span><span class="o">-</span><span class="n">t1</span><span class="p">)</span>
+            <span class="n">b</span> <span class="o">=</span> <span class="mi">1</span><span class="o">-</span><span class="p">(</span><span class="n">Q</span><span class="o">/</span><span class="n">P</span><span class="o">*</span><span class="n">math</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">P</span><span class="p">)))</span>
+            <span class="n">R</span> <span class="o">=</span> <span class="n">Q</span><span class="o">/</span><span class="n">math</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="n">b</span><span class="p">))</span> 
+            <span class="n">F</span> <span class="o">=</span> <span class="n">R</span><span class="o">/</span><span class="n">r0</span>
+            <span class="k">return</span> <span class="n">F</span>
+        <span class="k">except</span> <span class="ne">ValueError</span> <span class="k">as</span> <span class="n">err</span><span class="p">:</span>
+            <span class="k">if</span> <span class="nb">str</span><span class="p">(</span><span class="n">err</span><span class="p">)</span> <span class="o">==</span> <span class="s2">&quot;math domain error&quot;</span><span class="p">:</span>
+                <span class="nb">print</span><span class="p">(</span><span class="n">err</span><span class="p">)</span>
+                <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Most likely a negative number is being passed to the&quot;</span>
+                      <span class="s2">&quot; &#39;log&#39; function.&quot;</span><span class="p">)</span>
+                <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;A heat exchanger of this type cannot be designed&quot;</span>
+                      <span class="s2">&quot; for this particular temperature combination&quot;</span><span class="p">)</span></div>
+    
+<div class="viewcode-block" id="FCorrectionFactor.singlepass_crossflow_bothmixed"><a class="viewcode-back" href="../../../_autosummary/pychemengg.heattransfer.heatexchangers.FCorrectionFactor.html#pychemengg.heattransfer.heatexchangers.FCorrectionFactor.singlepass_crossflow_bothmixed">[docs]</a>    <span class="k">def</span> <span class="nf">singlepass_crossflow_bothmixed</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">T_tubein</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">T_tubeout</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                                       <span class="n">T_shellin</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">T_shellout</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="sa">r</span><span class="sd">&quot;&quot;&quot;To find &#39;F&#39; correction factor for LMTD.</span>
+<span class="sd">        Use for single pass cross flow with both fluids mixed.</span>
+
+<span class="sd">        </span>
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        T_tubein : `int or float`</span>
+<span class="sd">            Temperature of tube side (or cold) fluid at inlet.</span>
+<span class="sd">        T_tubeout : `int or float`</span>
+<span class="sd">            Temperature of tube side (or cold) fluid at outlet.</span>
+<span class="sd">        T_shellin : `int or float`</span>
+<span class="sd">            Temperature of shell side (or hot) fluid at inlet.</span>
+<span class="sd">        T_shellout : `int or float`</span>
+<span class="sd">            Temperature of shell side (or hot) fluid at outlet.        </span>
+<span class="sd">        </span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        F : `int or float`</span>
+<span class="sd">            &#39;F&#39; correction factor for LMTD.</span>
+<span class="sd">       </span>
+<span class="sd">        </span>
+<span class="sd">        Notes</span>
+<span class="sd">        -----</span>
+<span class="sd">        Equation number (12) of reference [1] is used.</span>
+<span class="sd">        </span>
+<span class="sd">        This is the same equation that is used to generate plots presented</span>
+<span class="sd">        in most textbooks.         </span>
+<span class="sd">        </span>
+<span class="sd">               </span>
+<span class="sd">        Examples</span>
+<span class="sd">        --------</span>
+<span class="sd">        First import the module **heatexchangers**.</span>
+<span class="sd">           </span>
+<span class="sd">        &gt;&gt;&gt; from pychemengg.heattransfer import heatexchangers as hx </span>
+<span class="sd">        &gt;&gt;&gt; hx1 = hx.FCorrectionFactor()</span>
+<span class="sd">        &gt;&gt;&gt; hx1.singlepass_crossflow_bothmixed(T_shellin=300, T_shellout=200,</span>
+<span class="sd">                                                 T_tubein=100, T_tubeout=200)</span>
+<span class="sd">        0.7959050946318332</span>
+
+<span class="sd">        </span>
+
+<span class="sd">        References</span>
+<span class="sd">        ----------</span>
+<span class="sd">        [1] R. A. Bowman, A. C. Mueller, and W. M. Nagle, &quot;Mean Temperature </span>
+<span class="sd">        Difference in Design&quot;, Transactions of the ASME 62, 1940, pp:283-294.        .</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># this is equation 12 from Bowman, 1940</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">T1</span> <span class="o">=</span> <span class="n">T_shellin</span>
+            <span class="n">T2</span> <span class="o">=</span> <span class="n">T_shellout</span>
+            <span class="n">t1</span> <span class="o">=</span> <span class="n">T_tubein</span>
+            <span class="n">t2</span> <span class="o">=</span> <span class="n">T_tubeout</span>
+            <span class="n">P</span> <span class="o">=</span> <span class="p">(</span><span class="n">T1</span><span class="o">-</span><span class="n">T2</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">T1</span><span class="o">-</span><span class="n">t1</span><span class="p">)</span>
+            <span class="n">Q</span> <span class="o">=</span> <span class="p">(</span><span class="n">t2</span><span class="o">-</span><span class="n">t1</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">T1</span><span class="o">-</span><span class="n">t1</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">P</span><span class="o">!=</span><span class="n">Q</span><span class="p">:</span>
+                <span class="n">r0</span> <span class="o">=</span> <span class="p">(</span><span class="n">P</span><span class="o">-</span><span class="n">Q</span><span class="p">)</span><span class="o">/</span><span class="n">math</span><span class="o">.</span><span class="n">log</span><span class="p">((</span><span class="mi">1</span><span class="o">-</span><span class="n">Q</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">P</span><span class="p">))</span>
+            <span class="k">if</span> <span class="n">P</span><span class="o">==</span><span class="n">Q</span><span class="p">:</span>
+                <span class="n">r0</span> <span class="o">=</span> <span class="p">(</span><span class="n">T1</span><span class="o">-</span><span class="n">t2</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">T1</span><span class="o">-</span><span class="n">t1</span><span class="p">)</span>
+            <span class="k">def</span> <span class="nf">findR</span><span class="p">(</span><span class="n">R</span><span class="p">):</span> <span class="c1"># this is equation 10 from Bowman, 1940</span>
+                <span class="n">ta</span> <span class="o">=</span> <span class="p">(</span><span class="n">P</span><span class="o">/</span><span class="n">R</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">math</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">P</span><span class="o">/</span><span class="n">R</span><span class="p">))</span>
+                <span class="n">tb</span> <span class="o">=</span> <span class="p">(</span><span class="n">Q</span><span class="o">/</span><span class="n">R</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">math</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">Q</span><span class="o">/</span><span class="n">R</span><span class="p">))</span>
+                <span class="k">return</span> <span class="n">R</span><span class="o">*</span><span class="p">(</span><span class="n">ta</span> <span class="o">+</span> <span class="n">tb</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span>
+            <span class="n">ans</span> <span class="o">=</span> <span class="n">fsolve</span><span class="p">(</span><span class="n">findR</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">)</span>
+            <span class="n">F</span> <span class="o">=</span> <span class="n">ans</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">/</span><span class="n">r0</span>
+            <span class="k">return</span> <span class="n">F</span>
+        <span class="k">except</span> <span class="ne">ValueError</span> <span class="k">as</span> <span class="n">err</span><span class="p">:</span>
+            <span class="k">if</span> <span class="nb">str</span><span class="p">(</span><span class="n">err</span><span class="p">)</span> <span class="o">==</span> <span class="s2">&quot;math domain error&quot;</span><span class="p">:</span>
+                <span class="nb">print</span><span class="p">(</span><span class="n">err</span><span class="p">)</span>
+                <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Most likely a negative number is being passed to the&quot;</span>
+                      <span class="s2">&quot; &#39;log&#39; function.&quot;</span><span class="p">)</span>
+                <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;A heat exchanger of this type cannot be designed&quot;</span>
+                      <span class="s2">&quot; for this particular temperature combination&quot;</span><span class="p">)</span></div>
+
+
+<span class="c1">############################</span>
+<span class="c1"># Following functions need more work before adding to API</span>
+<span class="c1">############################</span>
+
+    <span class="k">def</span> <span class="nf">_find_P_equivalent</span> <span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">R</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">P</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">shellpass_count</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; </span>
+<span class="sd">            VERIFY AGAIN BEFORE ADDING TO PUBLIC API</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">n</span> <span class="o">=</span> <span class="n">shellpass_count</span>
+        <span class="k">if</span> <span class="n">R</span> <span class="o">!=</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="n">term1</span> <span class="o">=</span> <span class="p">((</span><span class="mi">1</span><span class="o">-</span><span class="n">x</span><span class="o">*</span><span class="n">R</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">x</span><span class="p">))</span><span class="o">**</span><span class="n">n</span>
+            <span class="n">Pnew</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">term1</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">R</span><span class="o">-</span><span class="n">term1</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">Pnew</span><span class="o">-</span><span class="n">P</span>
+        <span class="k">if</span> <span class="n">R</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="n">Pnew</span> <span class="o">=</span> <span class="p">(</span><span class="n">x</span> <span class="o">*</span> <span class="n">n</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">x</span><span class="o">*</span><span class="n">n</span> <span class="o">-</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">Pnew</span><span class="o">-</span><span class="n">P</span> 
+
+            
+    
+        
+    <span class="k">def</span> <span class="nf">_nshell2ntube</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">T_tubein</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">T_tubeout</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">T_shellin</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                     <span class="n">T_shellout</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">shellpass_count</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; Use when shell passes &gt;= 3</span>
+<span class="sd">            and tube passes = even multiples of shell pass</span>
+<span class="sd">            example : 3 shell - 6, 12, 18 ... tube passes</span>
+<span class="sd">                      4 shell - 8, 12, 16 ... tube passes</span>
+<span class="sd">                      ... and so on</span>
+<span class="sd">                      </span>
+<span class="sd">            VERIFY AGAIN BEFORE ADDING TO PUBLIC API</span>
+<span class="sd">            </span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">n</span> <span class="o">=</span> <span class="n">shellpass_count</span>
+            <span class="n">R</span><span class="p">,</span> <span class="n">P</span> <span class="o">=</span> <span class="n">FCorrectionFactor</span><span class="o">.</span><span class="n">calc_R_P</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">T_tubein</span><span class="o">=</span><span class="n">T_tubein</span><span class="p">,</span>
+                                              <span class="n">T_tubeout</span><span class="o">=</span><span class="n">T_tubeout</span><span class="p">,</span>
+                                              <span class="n">T_shellin</span><span class="o">=</span><span class="n">T_shellin</span><span class="p">,</span>
+                                              <span class="n">T_shellout</span><span class="o">=</span><span class="n">T_shellout</span><span class="p">)</span>
+            <span class="c1"># First we convert P for the &#39;n&#39; shell &#39;2N&#39; tube exchanger</span>
+            <span class="c1"># into &#39;P&#39; that is equivalent to &#39;1&#39; shell &#39;2&#39; tube exchanger                    </span>
+            <span class="n">psolved</span> <span class="o">=</span> <span class="n">fsolve</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">FCorrectionFactor</span><span class="o">.</span><span class="n">_find_P_equivalent</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">R</span><span class="o">=</span><span class="n">R</span><span class="p">,</span> <span class="n">P</span><span class="o">=</span><span class="n">P</span><span class="p">,</span> <span class="n">shellpass_count</span><span class="o">=</span><span class="n">n</span><span class="p">),</span> <span class="mf">0.5</span><span class="p">)</span>
+            <span class="n">pequivalent</span> <span class="o">=</span> <span class="n">psolved</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;equivalent P =&quot;</span><span class="p">,</span> <span class="n">pequivalent</span><span class="p">)</span>
+            
+            <span class="c1"># Now we take this P-equivalent and use 1 shell - 2 tube formula to find &#39;F&#39;</span>
+            <span class="c1"># To do this we find equivalent T_tubein and T_tubeout values that will correspond </span>
+            <span class="c1"># to the exchanger with equivalent P</span>
+            <span class="c1"># For this we use R, pequivalent, T_shellin and T_shellout and find equivalent T_tubein and equivalent T_tubeout</span>
+            <span class="n">equivalenttemps</span> <span class="o">=</span> <span class="n">FCorrectionFactor</span><span class="o">.</span><span class="n">_get_t1_t2_for_given_P_R</span> <span class="p">(</span><span class="n">T1</span><span class="o">=</span><span class="n">T_shellin</span><span class="p">,</span> <span class="n">T2</span><span class="o">=</span><span class="n">T_shellout</span><span class="p">,</span> <span class="n">P</span><span class="o">=</span><span class="n">pequivalent</span><span class="p">,</span> <span class="n">R</span><span class="o">=</span><span class="n">R</span><span class="p">)</span>
+            <span class="n">t1equivalent</span> <span class="o">=</span> <span class="n">equivalenttemps</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+            <span class="n">t2equivalent</span> <span class="o">=</span> <span class="n">equivalenttemps</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span>
+            <span class="c1"># Now cal 1-2 exachanger with these equivalent temps</span>
+            <span class="n">fn_2n</span> <span class="o">=</span> <span class="n">FCorrectionFactor</span><span class="o">.</span><span class="n">oneshell2ntubepasses</span><span class="p">(</span><span class="n">T_tubein</span><span class="o">=</span><span class="n">t1equivalent</span><span class="p">,</span>
+                                                    <span class="n">T_tubeout</span><span class="o">=</span><span class="n">t2equivalent</span><span class="p">,</span>
+                                                    <span class="n">T_shellin</span><span class="o">=</span><span class="n">T_shellin</span><span class="p">,</span>
+                                                    <span class="n">T_shellout</span><span class="o">=</span><span class="n">T_shellout</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">fn_2n</span>
+        <span class="k">except</span><span class="p">:</span>
+            <span class="k">return</span> <span class="s2">&quot;Impossible&quot;</span>
+
+    <span class="k">def</span> <span class="nf">_oneshell3tube</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">T_tubein</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">T_tubeout</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">T_shellin</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">T_shellout</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Based on equation by Fischer</span>
+<span class="sd">        &quot;Mean Temperature Difference Correction in Multipass Exchangers</span>
+<span class="sd">        Industrial and Engineering Chemistry, 1938</span>
+<span class="sd">        vol 30, No 4, page 377-383</span>
+<span class="sd">        </span>
+<span class="sd">        VERIFY AGAIN BEFORE ADDING TO PUBLIC API</span>
+<span class="sd">        </span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">R</span><span class="p">,</span> <span class="n">P</span> <span class="o">=</span> <span class="n">FCorrectionFactor</span><span class="o">.</span><span class="n">calc_R_P</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">T_tubein</span><span class="o">=</span><span class="n">T_tubein</span><span class="p">,</span>
+                                              <span class="n">T_tubeout</span><span class="o">=</span><span class="n">T_tubeout</span><span class="p">,</span>
+                                              <span class="n">T_shellin</span><span class="o">=</span><span class="n">T_shellin</span><span class="p">,</span>
+                                              <span class="n">T_shellout</span><span class="o">=</span><span class="n">T_shellout</span><span class="p">)</span>
+            <span class="n">R1</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="n">R</span>
+            <span class="n">T1</span> <span class="o">=</span> <span class="n">T_shellin</span>
+            <span class="n">T2</span> <span class="o">=</span> <span class="n">T_shellout</span>
+            <span class="n">t1</span> <span class="o">=</span> <span class="n">T_tubein</span>
+            <span class="n">t2</span> <span class="o">=</span> <span class="n">T_tubeout</span>
+            
+            <span class="k">if</span> <span class="n">R1</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+                <span class="n">LMTD_countercurrent</span> <span class="o">=</span> <span class="nb">abs</span><span class="p">(</span><span class="n">T1</span><span class="o">-</span><span class="n">t2</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">R1</span> <span class="o">!=</span><span class="mi">1</span><span class="p">:</span>
+                <span class="n">LMTD_countercurrent</span> <span class="o">=</span> <span class="p">((</span><span class="n">T1</span><span class="o">-</span><span class="n">t2</span><span class="p">)</span><span class="o">-</span><span class="p">(</span><span class="n">T2</span><span class="o">-</span><span class="n">t1</span><span class="p">))</span> <span class="o">/</span> <span class="n">math</span><span class="o">.</span><span class="n">log</span><span class="p">((</span><span class="n">T1</span><span class="o">-</span><span class="n">t2</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">T2</span><span class="o">-</span><span class="n">t1</span><span class="p">))</span>
+           
+            <span class="k">def</span> <span class="nf">solvefor_thetam</span><span class="p">(</span><span class="n">thetaM</span><span class="p">):</span>
+                <span class="c1"># thetaM is the true mean temperature from which &#39;F&#39; can be computed</span>
+                <span class="c1"># F = thetaM / LMTD_countercurrent</span>
+                <span class="k">if</span> <span class="n">R1</span> <span class="o">!=</span> <span class="mi">1</span><span class="p">:</span>
+                    <span class="n">lambda_1</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">9</span> <span class="o">-</span> <span class="mi">4</span><span class="o">*</span><span class="n">R1</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">R1</span><span class="p">))</span>
+                    <span class="n">m1L</span> <span class="o">=</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span> <span class="o">*</span> <span class="p">(</span><span class="mi">3</span><span class="o">+</span><span class="n">lambda_1</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">T1</span><span class="o">-</span><span class="n">T2</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="mi">3</span><span class="o">*</span><span class="n">thetaM</span><span class="p">)</span>
+                    <span class="n">m2L</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="mi">2</span> <span class="o">*</span> <span class="p">(</span><span class="mi">3</span><span class="o">-</span><span class="n">lambda_1</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">T1</span><span class="o">-</span><span class="n">T2</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="mi">3</span><span class="o">*</span><span class="n">thetaM</span><span class="p">)</span>
+                    <span class="n">denom_1</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">m1L</span><span class="p">)</span> <span class="o">-</span> <span class="n">math</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">m2L</span><span class="p">)</span>
+                    <span class="n">A</span> <span class="o">=</span> <span class="p">((</span><span class="n">T1</span><span class="o">-</span><span class="n">t2</span><span class="p">)</span><span class="o">-</span> <span class="n">math</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">m2L</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">T2</span><span class="o">-</span><span class="n">t1</span><span class="p">))</span> <span class="o">/</span> <span class="n">denom_1</span><span class="o">/</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">R1</span><span class="p">)</span>
+                    <span class="n">B</span> <span class="o">=</span> <span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">m1L</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">T2</span><span class="o">-</span><span class="n">t1</span><span class="p">)</span> <span class="o">-</span> <span class="p">(</span><span class="n">T1</span><span class="o">-</span><span class="n">t2</span><span class="p">))</span> <span class="o">/</span> <span class="n">denom_1</span><span class="o">/</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">R1</span><span class="p">)</span>
+                    <span class="n">LHS</span> <span class="o">=</span> <span class="n">A</span><span class="o">*</span><span class="n">m1L</span> <span class="o">+</span> <span class="n">B</span><span class="o">*</span><span class="n">m2L</span>
+                    <span class="n">RHS_1</span> <span class="o">=</span> <span class="p">(</span><span class="n">T1</span><span class="o">-</span><span class="n">T2</span><span class="p">)</span><span class="o">/</span><span class="n">thetaM</span> <span class="o">*</span> <span class="p">(</span><span class="n">T2</span> <span class="o">-</span> <span class="n">t1</span> <span class="o">+</span> <span class="n">math</span><span class="o">.</span><span class="n">exp</span><span class="p">((</span><span class="n">t2</span><span class="o">-</span><span class="n">t1</span><span class="p">)</span><span class="o">/</span><span class="mi">3</span><span class="o">/</span><span class="n">thetaM</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">T1</span><span class="o">-</span><span class="n">t2</span><span class="p">))</span>
+                    <span class="n">RHS_2</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">exp</span><span class="p">((</span><span class="n">t2</span><span class="o">-</span><span class="n">t1</span><span class="p">)</span><span class="o">/</span><span class="mi">3</span><span class="o">/</span><span class="n">thetaM</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">A</span><span class="o">*</span><span class="n">m1L</span><span class="o">*</span><span class="n">math</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">m1L</span><span class="p">)</span> <span class="o">+</span> <span class="n">B</span><span class="o">*</span><span class="n">m2L</span><span class="o">*</span><span class="n">math</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">m2L</span><span class="p">))</span>
+                    <span class="n">RHS</span> <span class="o">=</span> <span class="n">RHS_1</span> <span class="o">-</span> <span class="n">RHS_2</span>
+                    <span class="k">return</span> <span class="n">LHS</span><span class="o">-</span><span class="n">RHS</span>
+                <span class="k">if</span> <span class="n">R1</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+                    <span class="c1"># This case was derived by Prof. Harvinder Singh Gill</span>
+                    <span class="c1"># Equation 12 in the paper by Fischer was adapted by putting R1=1</span>
+                    <span class="c1"># and the entire solution was reworked for this case</span>
+                    <span class="c1"># Fischer provided data for R1=1 in the form of a Table (Table - I)</span>
+                    <span class="c1"># However, Fischer did not show the work nor the equation that</span>
+                    <span class="c1"># he had used to generate Table I for the case R = 1</span>
+                    <span class="n">bLa</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="mi">9</span> <span class="o">*</span> <span class="p">(</span><span class="n">t2</span><span class="o">-</span><span class="n">t1</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">t2</span><span class="o">-</span><span class="n">T1</span><span class="p">)</span> <span class="o">/</span> <span class="n">thetaM</span>
+                    <span class="n">eal</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">exp</span><span class="p">((</span><span class="n">T1</span><span class="o">-</span><span class="n">T2</span><span class="p">)</span><span class="o">/</span><span class="n">thetaM</span><span class="p">)</span>
+                    <span class="n">B</span> <span class="o">=</span> <span class="p">(</span><span class="n">T1</span><span class="o">-</span><span class="n">T2</span><span class="o">+</span><span class="n">bLa</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">eal</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+                    <span class="n">A</span> <span class="o">=</span> <span class="n">T2</span><span class="o">-</span><span class="n">B</span>
+                    <span class="n">termA</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">exp</span><span class="p">((</span><span class="n">t2</span><span class="o">-</span><span class="n">t1</span><span class="p">)</span><span class="o">/</span><span class="mi">3</span><span class="o">/</span><span class="n">thetaM</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="mi">3</span><span class="o">*</span><span class="n">t2</span> <span class="o">-</span> <span class="mi">3</span><span class="o">*</span><span class="n">T1</span> <span class="o">-</span> <span class="p">(</span><span class="n">t2</span><span class="o">-</span><span class="n">T1</span><span class="p">)</span><span class="o">/</span><span class="mi">3</span> <span class="o">+</span> <span class="mi">3</span><span class="o">*</span><span class="n">B</span><span class="o">*</span><span class="n">eal</span><span class="p">)</span>
+                    <span class="n">LHS</span> <span class="o">=</span> <span class="p">(</span><span class="n">T1</span><span class="o">-</span><span class="n">T2</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="mi">3</span><span class="o">*</span><span class="n">T2</span> <span class="o">-</span> <span class="mi">3</span><span class="o">*</span><span class="n">t1</span> <span class="o">-</span> <span class="n">termA</span><span class="p">)</span>
+                    <span class="n">RHS</span> <span class="o">=</span> <span class="mi">3</span><span class="o">*</span><span class="p">(</span><span class="n">T1</span><span class="o">-</span><span class="n">T2</span><span class="p">)</span><span class="o">*</span><span class="n">B</span> <span class="o">-</span> <span class="mi">1</span><span class="o">/</span><span class="mi">3</span><span class="o">*</span><span class="p">(</span><span class="n">t2</span><span class="o">-</span><span class="n">t1</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">t2</span><span class="o">-</span><span class="n">T1</span><span class="p">)</span>
+                    <span class="k">return</span> <span class="n">LHS</span><span class="o">-</span><span class="n">RHS</span>
+            <span class="n">ans</span> <span class="o">=</span> <span class="n">fsolve</span><span class="p">(</span><span class="n">solvefor_thetam</span><span class="p">,</span> <span class="n">LMTD_countercurrent</span><span class="p">)</span>
+            <span class="n">F</span> <span class="o">=</span> <span class="n">ans</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">/</span><span class="n">LMTD_countercurrent</span>
+            <span class="k">return</span> <span class="n">F</span>
+        <span class="k">except</span><span class="p">:</span>
+            <span class="k">return</span> <span class="s2">&quot;Impossible&quot;</span>
+
+
+    <span class="k">def</span> <span class="nf">_nshell3ntube</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">T_tubein</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">T_tubeout</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">T_shellin</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                     <span class="n">T_shellout</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">shellpass_count</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; Use when shell passes &gt;= 2</span>
+<span class="sd">            and tube passes = multiples of &#39;3&#39; of shell pass</span>
+<span class="sd">            example : 2 shell-6 tube,</span>
+<span class="sd">                      3 shell-9 tube,</span>
+<span class="sd">                      4 shell-12 tube passes</span>
+<span class="sd">                      ... and so on</span>
+<span class="sd">                      </span>
+<span class="sd">            VERIFY AGAIN BEFORE ADDING TO PUBLIC API</span>
+<span class="sd">            </span>
+<span class="sd">        &quot;&quot;&quot;</span>       
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">n</span> <span class="o">=</span> <span class="n">shellpass_count</span>
+            <span class="n">R</span><span class="p">,</span> <span class="n">P</span> <span class="o">=</span> <span class="n">FCorrectionFactor</span><span class="o">.</span><span class="n">calc_R_P</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">T_tubein</span><span class="o">=</span><span class="n">T_tubein</span><span class="p">,</span> <span class="n">T_tubeout</span><span class="o">=</span><span class="n">T_tubeout</span><span class="p">,</span> <span class="n">T_shellin</span><span class="o">=</span><span class="n">T_shellin</span><span class="p">,</span> <span class="n">T_shellout</span><span class="o">=</span><span class="n">T_shellout</span><span class="p">)</span>
+            <span class="n">R1</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="n">R</span>
+            <span class="n">T1</span> <span class="o">=</span> <span class="n">T_shellin</span>
+            <span class="n">T2</span> <span class="o">=</span> <span class="n">T_shellout</span>
+            <span class="n">t1</span> <span class="o">=</span> <span class="n">T_tubein</span>
+            <span class="n">t2</span> <span class="o">=</span> <span class="n">T_tubeout</span>
+            <span class="c1"># First we convert P for the &#39;n&#39; shell &#39;3N&#39; tube exchanger</span>
+            <span class="c1"># into &#39;P&#39; that is equivalent to &#39;1&#39; shell &#39;3&#39; tube exchanger           </span>
+            <span class="n">psolved</span> <span class="o">=</span> <span class="n">fsolve</span><span class="p">(</span><span class="n">FCorrectionFactor</span><span class="o">.</span><span class="n">_find_P_equivalent</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="n">R</span><span class="p">,</span> <span class="n">P</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
+            <span class="n">pequivalent</span> <span class="o">=</span> <span class="n">psolved</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;equivalent P =&quot;</span><span class="p">,</span> <span class="n">pequivalent</span><span class="p">)</span>
+            
+            <span class="c1"># Now we take this P-equivalent and use 1 shell - 3 tube formula to find &#39;F&#39;</span>
+            <span class="c1"># To do this we find equivalent T_tubein and T_tubeout values that will correspond </span>
+            <span class="c1"># to the exchanger with equivalent P</span>
+            <span class="c1"># For this we use R, pequivalent, T_shellin and T_shellout and find equivalent T_tubein and equivalent T_tubeout</span>
+            <span class="n">equivalenttemps</span> <span class="o">=</span> <span class="n">FCorrectionFactor</span><span class="o">.</span><span class="n">_get_t1_t2_for_given_P_R</span> <span class="p">(</span><span class="n">T1</span><span class="o">=</span><span class="n">T_shellin</span><span class="p">,</span> <span class="n">T2</span><span class="o">=</span><span class="n">T_shellout</span><span class="p">,</span> <span class="n">P</span><span class="o">=</span><span class="n">pequivalent</span><span class="p">,</span> <span class="n">R</span><span class="o">=</span><span class="n">R</span><span class="p">)</span>
+            <span class="n">t1equivalent</span>  <span class="o">=</span> <span class="n">equivalenttemps</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+            <span class="n">t2equivalent</span>  <span class="o">=</span> <span class="n">equivalenttemps</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span>
+            <span class="c1"># Now cal 1-3 exachanger with these equivalent temps</span>
+            <span class="n">fn_2n</span> <span class="o">=</span> <span class="n">FCorrectionFactor</span><span class="o">.</span><span class="n">_oneshell3tube</span><span class="p">(</span><span class="n">T_tubein</span><span class="o">=</span><span class="n">t1equivalent</span><span class="p">,</span> <span class="n">T_tubeout</span><span class="o">=</span><span class="n">t2equivalent</span> <span class="p">,</span> <span class="n">T_shellin</span><span class="o">=</span><span class="n">T_shellin</span><span class="p">,</span> <span class="n">T_shellout</span><span class="o">=</span><span class="n">T_shellout</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">fn_2n</span>
+        <span class="k">except</span><span class="p">:</span>
+            <span class="k">return</span> <span class="s2">&quot;Impossible&quot;</span>
+
+    <span class="k">def</span> <span class="nf">_get_t1_t2_for_given_P_R</span> <span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">T1</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">T2</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">P</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">R</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+        <span class="n">t1</span> <span class="o">=</span> <span class="n">T1</span><span class="o">-</span><span class="p">(</span><span class="n">T1</span><span class="o">-</span><span class="n">T2</span><span class="p">)</span><span class="o">/</span><span class="n">P</span><span class="o">/</span><span class="n">R</span>
+        <span class="n">t2</span> <span class="o">=</span> <span class="n">P</span><span class="o">*</span><span class="p">(</span><span class="n">T1</span><span class="o">-</span><span class="n">t1</span><span class="p">)</span><span class="o">+</span><span class="n">t1</span>
+        <span class="n">Rcalc</span> <span class="o">=</span> <span class="p">(</span><span class="n">T1</span><span class="o">-</span><span class="n">T2</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">t2</span><span class="o">-</span><span class="n">t1</span><span class="p">)</span>
+        <span class="n">Pcalc</span> <span class="o">=</span> <span class="p">(</span><span class="n">t2</span><span class="o">-</span><span class="n">t1</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">T1</span><span class="o">-</span><span class="n">t1</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">T1</span><span class="p">,</span><span class="n">T2</span><span class="p">,</span><span class="n">t1</span><span class="p">,</span><span class="n">t2</span><span class="p">,</span><span class="n">Rcalc</span><span class="p">,</span><span class="n">Pcalc</span>
+
+
+    
+    
+    <span class="k">def</span> <span class="nf">_twopass_crossflow_shellmixed_tubeunmixed</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">T_tubein</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">T_tubeout</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                                                 <span class="n">T_shellin</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">T_shellout</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="c1"># this is equation 13 from Bowman, 1940</span>
+        <span class="n">T1</span> <span class="o">=</span> <span class="n">T_shellin</span>
+        <span class="n">T2</span> <span class="o">=</span> <span class="n">T_shellout</span>
+        <span class="n">t1</span> <span class="o">=</span> <span class="n">T_tubein</span>
+        <span class="n">t2</span> <span class="o">=</span> <span class="n">T_tubeout</span>
+        <span class="n">P</span> <span class="o">=</span> <span class="p">(</span><span class="n">T1</span><span class="o">-</span><span class="n">T2</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">T1</span><span class="o">-</span><span class="n">t1</span><span class="p">)</span>
+        <span class="n">Q</span> <span class="o">=</span> <span class="p">(</span><span class="n">t2</span><span class="o">-</span><span class="n">t1</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">T1</span><span class="o">-</span><span class="n">t1</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">P</span><span class="o">!=</span><span class="n">Q</span><span class="p">:</span>
+            <span class="n">r0</span> <span class="o">=</span> <span class="p">(</span><span class="n">P</span><span class="o">-</span><span class="n">Q</span><span class="p">)</span><span class="o">/</span><span class="n">math</span><span class="o">.</span><span class="n">log</span><span class="p">((</span><span class="mi">1</span><span class="o">-</span><span class="n">Q</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">P</span><span class="p">))</span>
+        <span class="k">if</span> <span class="n">P</span><span class="o">==</span><span class="n">Q</span><span class="p">:</span>
+            <span class="n">r0</span> <span class="o">=</span> <span class="p">(</span><span class="n">T1</span><span class="o">-</span><span class="n">t2</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">T1</span><span class="o">-</span><span class="n">t1</span><span class="p">)</span>
+        <span class="n">ta</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">((</span><span class="mi">1</span><span class="o">-</span><span class="n">Q</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">P</span><span class="p">))</span>
+        <span class="n">qOverP</span> <span class="o">=</span> <span class="n">Q</span><span class="o">/</span><span class="n">P</span>
+        <span class="n">tb</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">qOverP</span> <span class="o">*</span> <span class="n">math</span><span class="o">.</span><span class="n">log</span><span class="p">((</span><span class="n">ta</span><span class="o">-</span><span class="n">qOverP</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">qOverP</span><span class="p">))</span>
+        <span class="n">R</span> <span class="o">=</span> <span class="n">Q</span><span class="o">/</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span> <span class="n">math</span><span class="o">.</span><span class="n">log</span><span class="p">((</span><span class="mi">1</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">tb</span><span class="p">)))</span>
+        <span class="n">F</span> <span class="o">=</span> <span class="n">R</span><span class="o">/</span><span class="n">r0</span>
+        <span class="k">return</span> <span class="n">F</span></div>
+
+
+<div class="viewcode-block" id="EffNTU"><a class="viewcode-back" href="../../../_autosummary/pychemengg.heattransfer.heatexchangers.EffNTU.html#pychemengg.heattransfer.heatexchangers.EffNTU">[docs]</a><span class="k">class</span> <span class="nc">EffNTU</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="sa">r</span><span class="sd">&quot;&quot;&quot; Contains functions to compute &#39;effectiveness&#39;</span>
+<span class="sd">    and NTU for heat exchangers.</span>
+
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    Cmin : `int or float`</span>
+<span class="sd">        Minimum heat capacity rate of fluids in heat exchanger.</span>
+<span class="sd">        :math:`C_{min} = \dot{m} c_p` =  smaller of the two heat </span>
+<span class="sd">        capacity rates for the two fluids in the heat exchanger.</span>
+<span class="sd">            </span>
+<span class="sd">            :math:`\dot{m}` = mass flow rate of the fluid</span>
+<span class="sd">            </span>
+<span class="sd">            :math:`c_p` = specific heat of the fluid</span>
+<span class="sd">    Cmax : `int or float`</span>
+<span class="sd">        Maximum heat capacity rate of fluids in heat exchanger.</span>
+<span class="sd">        :math:`C_{max} = \dot{m} c_p` =  Larger of the two heat l</span>
+<span class="sd">        capacity rates for the two fluids in the heat exchanger</span>
+<span class="sd">            </span>
+<span class="sd">            :math:`\dot{m}` = mass flow rate of the fluid</span>
+<span class="sd">            </span>
+<span class="sd">            :math:`c_p` = specific heat of the fluid</span>
+<span class="sd">    Cratio : `int or float`</span>
+<span class="sd">        Cmin/Cmax</span>
+<span class="sd">    effectiveness : `int or float or str`</span>
+<span class="sd">        Efficiency of the heat exchanger.    </span>
+<span class="sd">        Input &#39;int or float&#39; value if effectiveness values is known, or </span>
+<span class="sd">        input &quot;?&quot; if it has to be computed. Default = &quot;?&quot;.  </span>
+<span class="sd">    NTU : `int or float or str`</span>
+<span class="sd">        Number of transfer units for the heat exchanger. </span>
+<span class="sd">        Input &#39;int or float&#39; value if NTU values is known, or </span>
+<span class="sd">        input &quot;?&quot; if it has to be computed. Default = &quot;?&quot;.</span>
+<span class="sd">    </span>
+<span class="sd">    </span>
+<span class="sd">    Notes</span>
+<span class="sd">    -----</span>
+<span class="sd">    1. At least one of effectiveness or NTU must be entered </span>
+<span class="sd">    as &#39;int or float&#39; and the other will get computed.</span>
+<span class="sd">    </span>
+<span class="sd">    2. Textbooks contain explicit formulas to compute</span>
+<span class="sd">    i) effectiveness and ii) NTU for different exchanger types.</span>
+<span class="sd">    </span>
+<span class="sd">    3. In this &#39;class&#39; definition, the following exchanger types</span>
+<span class="sd">    can be computed with respect to &#39;effectiveness&#39; or &#39;NTU&#39;&#39;</span>
+<span class="sd">        </span>
+<span class="sd">    - Double pipe - parallel flow</span>
+<span class="sd">    </span>
+<span class="sd">    - Double pipe - counter flow</span>
+<span class="sd">    </span>
+<span class="sd">    - Shell and tube</span>
+<span class="sd">    </span>
+<span class="sd">        * one shell pass and 2, 4, 6 etc tube passes</span>
+<span class="sd">        * n shell passes and 2n, 4n, etc tube passes</span>
+<span class="sd">        </span>
+<span class="sd">    - Single pass counter flow:</span>
+<span class="sd">        </span>
+<span class="sd">        * both fluids unmixed</span>
+<span class="sd">        * Cmax fluid mixed, and Cmin unmixed</span>
+<span class="sd">        * Cmin fluid mixed, and Cmax unmixed</span>
+<span class="sd">        </span>
+<span class="sd">    - All exhangers when Cratio = Cmin/Cmax = 0</span>
+<span class="sd">        </span>
+<span class="sd">    4. Logic:</span>
+<span class="sd">        </span>
+<span class="sd">        Explicit formula for computing &#39;effectiveness&#39; for each of the above</span>
+<span class="sd">        exchanger types is implemented in a separate method. </span>
+<span class="sd">        When that method is called, it internally calls another</span>
+<span class="sd">        method (&quot;_get_eff_or_ntu&quot;). This method checks which of</span>
+<span class="sd">        &quot;effectiveness&quot; or &quot;NTU&quot; is missing. If &quot;effectiveness&quot; is</span>
+<span class="sd">        missing, and &quot;NTU&quot; is provided, the explict equation is used</span>
+<span class="sd">        to compute effectiveness from &quot;NTU&quot;. If &quot;NTU&quot; is missing, the same</span>
+<span class="sd">        explict equation for effectiveness becomes an implicit equation for &quot;NTU&quot;,</span>
+<span class="sd">        and it is solved using &#39;fsolve&#39; of scipy to find &quot;NTU&quot;. A</span>
+<span class="sd">        seperate explict equation for calculating &quot;NTU&quot; from &quot;effectiveness&quot;</span>
+<span class="sd">        is not implemented. The advantage of this approach is that for the</span>
+<span class="sd">        case of &quot;Single pass counter flow with both fluid unmixed&quot;, there</span>
+<span class="sd">        is no explict relationship for &quot;NTU&quot; reported in textbooks, but</span>
+<span class="sd">        there is one for computing &quot;effectiveness&quot;. So in this manner by using</span>
+<span class="sd">        &#39;fsolve&#39;, the &quot;NTU&quot;&quot; for the case of &quot;Single pass counter flow</span>
+<span class="sd">        with both fluid unmixed&quot; can also be computed.</span>
+<span class="sd">    </span>
+<span class="sd">    Attributes</span>
+<span class="sd">    ----------</span>
+<span class="sd">    See &quot;Parameters&quot;. All parameters are attributes.</span>
+<span class="sd">    </span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    First import the module **heatexchangers**.</span>
+<span class="sd">       </span>
+<span class="sd">    &gt;&gt;&gt; from pychemengg.heattransfer import heatexchangers as hx </span>
+<span class="sd">    &gt;&gt;&gt; hx1 = hx.EffNTU(Cmin=0.639, Cmax=0.836, NTU=0.854)</span>
+<span class="sd">    # This will create an instance of EffNTU and assign it to &quot;hx1&quot;.</span>
+<span class="sd">    # Methods of the class &#39;EffNTU&#39; can then be called.</span>
+<span class="sd">    # In this particular example, NTU is assigned = 0.854.</span>
+<span class="sd">    # By default effectiveness = &quot;?&quot;.</span>
+<span class="sd">    # When a heat exchanger type is next called, it will automatically</span>
+<span class="sd">    # compute the effectiveness for that exchanger type</span>
+<span class="sd">    # For example</span>
+<span class="sd">    &gt;&gt;&gt; hx1.shelltube(shellpass_count=1, tubepass_count=8)</span>
+<span class="sd">    0.4621565341983249</span>
+<span class="sd">    # This is the effectiveness.</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="EffNTU.__init__"><a class="viewcode-back" href="../../../_autosummary/pychemengg.heattransfer.heatexchangers.EffNTU.html#pychemengg.heattransfer.heatexchangers.EffNTU.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">Cmin</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">Cmax</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">NTU</span><span class="o">=</span><span class="s2">&quot;?&quot;</span><span class="p">,</span> <span class="n">effectiveness</span><span class="o">=</span><span class="s2">&quot;?&quot;</span><span class="p">):</span>
+        <span class="c1"># C: heat capacity rate = specificheat * massrate</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Cmin</span> <span class="o">=</span> <span class="n">Cmin</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Cmax</span> <span class="o">=</span> <span class="n">Cmax</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Cratio</span> <span class="o">=</span> <span class="n">Cmin</span><span class="o">/</span><span class="n">Cmax</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">effectiveness</span> <span class="o">=</span> <span class="n">effectiveness</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">NTU</span> <span class="o">=</span> <span class="n">NTU</span></div>
+
+    <span class="k">def</span> <span class="nf">_get_eff_or_ntu</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">func</span><span class="p">):</span>
+        <span class="sa">r</span><span class="sd">&quot;&quot;&quot; Determines which of &quot;effectiveness&quot; or &quot;NTU&quot; is provided and</span>
+<span class="sd">        computes the unknown quantity.</span>
+<span class="sd">        </span>
+<span class="sd">        </span>
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        func : `function object`</span>
+<span class="sd">            function of the form: effectiveness = func(NTU)</span>
+<span class="sd">        </span>
+<span class="sd">        </span>
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        effectiveness or NTU of heat exchanger : both as `int or float`</span>
+<span class="sd">            </span>
+<span class="sd">            </span>
+<span class="sd">        Notes</span>
+<span class="sd">        -----</span>
+<span class="sd">        1. Function - &#39;func&#39; is passed to this method.</span>
+<span class="sd">        2. A check is made whether &quot;effectiveness&quot; or &quot;NTU&quot; is unknown.</span>
+<span class="sd">        3. If &quot;effectiveness&quot; is unknown, the function object, &quot;func&quot;</span>
+<span class="sd">        is used to compute &quot;effectiveness&quot; from known &quot;NTU&quot; because</span>
+<span class="sd">        func is explicit for &quot;effectiveness&quot; in the form :</span>
+<span class="sd">            effectiveness = func(NTU).</span>
+<span class="sd">        4. If &quot;NTU&quot; is unknown, the same function object, &quot;func&quot; is</span>
+<span class="sd">        used to solve for &quot;NTU&quot; with known effectiveness by setting</span>
+<span class="sd">        the equation: func(x) - effectiveness = 0.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">effectiveness</span> <span class="o">==</span> <span class="s2">&quot;?&quot;</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">NTU</span> <span class="o">!=</span> <span class="s2">&quot;?&quot;</span><span class="p">:</span>
+            <span class="c1"># Case: effectiveness is unknown but NTU is known</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">effectiveness</span> <span class="o">=</span> <span class="n">func</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">NTU</span><span class="p">)</span> <span class="c1"># computes effectiveness from func</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">effectiveness</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">NTU</span> <span class="o">==</span> <span class="s2">&quot;?&quot;</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">effectiveness</span> <span class="o">!=</span> <span class="s2">&quot;?&quot;</span><span class="p">:</span>
+            <span class="c1"># Case: NTU is unknown but effectiveness is known</span>
+            <span class="n">guess</span> <span class="o">=</span> <span class="mi">1</span>
+            <span class="n">NTUValue</span> <span class="o">=</span> <span class="n">fsolve</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">func</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">effectiveness</span><span class="p">,</span> <span class="n">guess</span><span class="p">)</span>
+            <span class="c1"># solve for NTU using fsolve solver of scipy</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">NTU</span> <span class="o">=</span> <span class="n">NTUValue</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">NTU</span>
+        
+
+<div class="viewcode-block" id="EffNTU.doublepipe_parallelflow"><a class="viewcode-back" href="../../../_autosummary/pychemengg.heattransfer.heatexchangers.EffNTU.html#pychemengg.heattransfer.heatexchangers.EffNTU.doublepipe_parallelflow">[docs]</a>    <span class="k">def</span> <span class="nf">doublepipe_parallelflow</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sa">r</span><span class="sd">&quot;&quot;&quot; Computes &quot;effectiveness&quot; or &quot;NTU&quot; for double pipe parallel flow</span>
+<span class="sd">        heat exchanger.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">def</span> <span class="nf">effectiveness</span><span class="p">(</span><span class="n">NTU</span><span class="p">):</span>
+            <span class="n">num</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">math</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span> <span class="o">-</span> <span class="n">NTU</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">Cratio</span><span class="p">)))</span>
+            <span class="n">denom</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">Cratio</span>
+            <span class="n">effvalue</span> <span class="o">=</span> <span class="n">num</span><span class="o">/</span><span class="n">denom</span>
+            <span class="k">return</span> <span class="n">effvalue</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_eff_or_ntu</span><span class="p">(</span><span class="n">effectiveness</span><span class="p">)</span></div>
+    
+    
+<div class="viewcode-block" id="EffNTU.doublepipe_counterflow"><a class="viewcode-back" href="../../../_autosummary/pychemengg.heattransfer.heatexchangers.EffNTU.html#pychemengg.heattransfer.heatexchangers.EffNTU.doublepipe_counterflow">[docs]</a>    <span class="k">def</span> <span class="nf">doublepipe_counterflow</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sa">r</span><span class="sd">&quot;&quot;&quot; Computes &quot;effectiveness&quot; or &quot;NTU&quot; for double pipe counter flow</span>
+<span class="sd">        heat exchanger.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">def</span> <span class="nf">effectiveness</span><span class="p">(</span><span class="n">NTU</span><span class="p">):</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">Cratio</span> <span class="o">&lt;</span> <span class="mi">1</span><span class="p">:</span>
+                <span class="n">num</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">math</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span> <span class="o">-</span> <span class="n">NTU</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">Cratio</span><span class="p">)))</span>
+                <span class="n">denom</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">Cratio</span><span class="o">*</span><span class="n">math</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span> <span class="o">-</span> <span class="n">NTU</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">Cratio</span><span class="p">)))</span>
+                <span class="n">effvalue</span> <span class="o">=</span> <span class="n">num</span><span class="o">/</span><span class="n">denom</span>
+                <span class="k">return</span> <span class="n">effvalue</span>
+            <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">Cratio</span> <span class="o">==</span><span class="mi">1</span><span class="p">:</span>
+                <span class="n">effvalue</span> <span class="o">=</span> <span class="n">NTU</span><span class="o">/</span><span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="bp">self</span><span class="o">.</span><span class="n">NTU</span><span class="p">)</span>
+                <span class="k">return</span> <span class="n">effvalue</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_eff_or_ntu</span><span class="p">(</span><span class="n">effectiveness</span><span class="p">)</span></div>
+    
+    
+<div class="viewcode-block" id="EffNTU.shelltube"><a class="viewcode-back" href="../../../_autosummary/pychemengg.heattransfer.heatexchangers.EffNTU.html#pychemengg.heattransfer.heatexchangers.EffNTU.shelltube">[docs]</a>    <span class="k">def</span> <span class="nf">shelltube</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">shellpass_count</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">tubepass_count</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
+        <span class="sa">r</span><span class="sd">&quot;&quot;&quot; Computes &quot;effectiveness&quot; or &quot;NTU&quot; for shell and tube</span>
+<span class="sd">        heat exchanger.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">def</span> <span class="nf">effectiveness</span><span class="p">(</span><span class="n">NTU</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">tubepass_count</span><span class="o">%</span><span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">shellpass_count</span> <span class="o">=</span> <span class="n">shellpass_count</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">tubepass_count</span> <span class="o">=</span> <span class="n">tubepass_count</span>
+                <span class="n">term1</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">Cratio</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+                <span class="n">term2</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span> <span class="n">NTU</span> <span class="o">*</span> <span class="n">term1</span><span class="p">)</span>
+                <span class="n">b</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">Cratio</span> <span class="o">+</span> <span class="n">term1</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="n">term2</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">term2</span><span class="p">))</span><span class="o">**</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+                <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">shellpass_count</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+                    <span class="n">effvalue</span> <span class="o">=</span> <span class="n">b</span>
+                    <span class="k">return</span> <span class="n">effvalue</span>
+                <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">shellpass_count</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+                    <span class="n">n</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">shellpass_count</span>
+                    <span class="k">if</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">tubepass_count</span><span class="o">%</span><span class="bp">self</span><span class="o">.</span><span class="n">shellpass_count</span><span class="p">)</span><span class="o">%</span><span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+                        <span class="n">c</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">b</span><span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">Cratio</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">b</span><span class="p">)</span>
+                        <span class="n">d</span> <span class="o">=</span> <span class="p">(</span><span class="n">c</span><span class="o">**</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">c</span><span class="o">**</span><span class="n">n</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">Cratio</span><span class="p">)</span>
+                        <span class="n">effvalue</span> <span class="o">=</span> <span class="n">d</span>
+                        <span class="k">return</span> <span class="n">effvalue</span>
+                    <span class="k">else</span><span class="p">:</span>
+                        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Tube pass must be a multiple of shell pass&quot;</span><span class="p">)</span>
+                        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Tube passes must be in multiples of &#39;2&#39;&quot;</span><span class="p">)</span>
+                        <span class="k">return</span> <span class="kc">None</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Tube passes must be in multiples of &#39;2&#39;&quot;</span><span class="p">)</span>
+                <span class="k">return</span> <span class="kc">None</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_eff_or_ntu</span><span class="p">(</span><span class="n">effectiveness</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="EffNTU.crossflow_bothfluids_unmixed"><a class="viewcode-back" href="../../../_autosummary/pychemengg.heattransfer.heatexchangers.EffNTU.html#pychemengg.heattransfer.heatexchangers.EffNTU.crossflow_bothfluids_unmixed">[docs]</a>    <span class="k">def</span> <span class="nf">crossflow_bothfluids_unmixed</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sa">r</span><span class="sd">&quot;&quot;&quot; Computes &quot;effectiveness&quot; or &quot;NTU&quot; for cross flow heat exchanger</span>
+<span class="sd">        with both fluid unmixed.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">def</span> <span class="nf">effectiveness</span><span class="p">(</span><span class="n">NTU</span><span class="p">):</span>
+            <span class="n">effvalue</span> <span class="o">=</span> <span class="mi">1</span><span class="o">-</span><span class="n">math</span><span class="o">.</span><span class="n">exp</span><span class="p">((</span><span class="mi">1</span><span class="o">/</span><span class="bp">self</span><span class="o">.</span><span class="n">Cratio</span><span class="p">)</span> 
+                                    <span class="o">*</span> <span class="n">NTU</span><span class="o">**</span><span class="mf">0.22</span>
+                                    <span class="o">*</span> <span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">Cratio</span> <span class="o">*</span> <span class="n">NTU</span><span class="o">**</span><span class="mf">0.78</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">))</span>
+            <span class="k">return</span> <span class="n">effvalue</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_eff_or_ntu</span><span class="p">(</span><span class="n">effectiveness</span><span class="p">)</span>            </div>
+
+
+<div class="viewcode-block" id="EffNTU.crossflow_Cmin_unmixed"><a class="viewcode-back" href="../../../_autosummary/pychemengg.heattransfer.heatexchangers.EffNTU.html#pychemengg.heattransfer.heatexchangers.EffNTU.crossflow_Cmin_unmixed">[docs]</a>    <span class="k">def</span> <span class="nf">crossflow_Cmin_unmixed</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sa">r</span><span class="sd">&quot;&quot;&quot; Computes &quot;effectiveness&quot; or &quot;NTU&quot; for cross flow heat exchanger</span>
+<span class="sd">        with both fluid with Cmin unmixed.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">def</span> <span class="nf">effectiveness</span><span class="p">(</span><span class="n">NTU</span><span class="p">):</span>
+            <span class="n">effvalue</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="bp">self</span><span class="o">.</span><span class="n">Cratio</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span> <span class="mi">1</span><span class="o">-</span><span class="n">math</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">Cratio</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">math</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">NTU</span><span class="p">))))</span>
+            <span class="k">return</span> <span class="n">effvalue</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_eff_or_ntu</span><span class="p">(</span><span class="n">effectiveness</span><span class="p">)</span> </div>
+    
+    
+<div class="viewcode-block" id="EffNTU.crossflow_Cmax_unmixed"><a class="viewcode-back" href="../../../_autosummary/pychemengg.heattransfer.heatexchangers.EffNTU.html#pychemengg.heattransfer.heatexchangers.EffNTU.crossflow_Cmax_unmixed">[docs]</a>    <span class="k">def</span> <span class="nf">crossflow_Cmax_unmixed</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sa">r</span><span class="sd">&quot;&quot;&quot; Computes &quot;effectiveness&quot; or &quot;NTU&quot; for cross flow heat exchanger</span>
+<span class="sd">        with both fluid with Cmax unmixed.</span>
+<span class="sd">        &quot;&quot;&quot;</span>        
+        <span class="k">def</span> <span class="nf">effectiveness</span><span class="p">(</span><span class="n">NTU</span><span class="p">):</span>
+            <span class="n">effvalue</span> <span class="o">=</span> <span class="mi">1</span><span class="o">-</span><span class="n">math</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span> <span class="mi">1</span><span class="o">/</span><span class="bp">self</span><span class="o">.</span><span class="n">Cratio</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">math</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="bp">self</span><span class="o">.</span><span class="n">Cratio</span><span class="o">*</span><span class="n">NTU</span><span class="p">)))</span>
+            <span class="k">return</span> <span class="n">effvalue</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_eff_or_ntu</span><span class="p">(</span><span class="n">effectiveness</span><span class="p">)</span></div>
+    
+    
+<div class="viewcode-block" id="EffNTU.Cratio_is_zero"><a class="viewcode-back" href="../../../_autosummary/pychemengg.heattransfer.heatexchangers.EffNTU.html#pychemengg.heattransfer.heatexchangers.EffNTU.Cratio_is_zero">[docs]</a>    <span class="k">def</span> <span class="nf">Cratio_is_zero</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sa">r</span><span class="sd">&quot;&quot;&quot; Computes &quot;effectiveness&quot; or &quot;NTU&quot; for any exchanger with</span>
+<span class="sd">        Cmin/Cmax = 0</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">def</span> <span class="nf">effectiveness</span><span class="p">(</span><span class="n">NTU</span><span class="p">):</span>
+            <span class="n">effvalue</span> <span class="o">=</span> <span class="mi">1</span><span class="o">-</span><span class="n">math</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">NTU</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">effvalue</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_eff_or_ntu</span><span class="p">(</span><span class="n">effectiveness</span><span class="p">)</span></div></div>
+    
+<div class="viewcode-block" id="calc_overallheattransfercoefficient_fromNTU"><a class="viewcode-back" href="../../../_autosummary/pychemengg.heattransfer.heatexchangers.calc_overallheattransfercoefficient_fromNTU.html#pychemengg.heattransfer.heatexchangers.calc_overallheattransfercoefficient_fromNTU">[docs]</a><span class="k">def</span> <span class="nf">calc_overallheattransfercoefficient_fromNTU</span><span class="p">(</span><span class="n">NTU</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">area</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">Cmin</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="sa">r</span><span class="sd">&quot;&quot;&quot;To compute overall heat transfer coefficient (U) from NTU</span>
+<span class="sd">    </span>
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    NTU : `int or float`</span>
+<span class="sd">        Number of transfer units of heat exchanger.</span>
+<span class="sd">    area : `int or float`</span>
+<span class="sd">        Surface area of heat transfer for exchanger.</span>
+<span class="sd">    Cmin: `int or float`</span>
+<span class="sd">        Minimum heat capacity rate.</span>
+<span class="sd">        </span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    Overall heat transfer coefficient (U) : `int or float`</span>
+<span class="sd">        </span>
+<span class="sd">    </span>
+<span class="sd">    </span>
+<span class="sd">    Notes</span>
+<span class="sd">    -----</span>
+<span class="sd">    The following formula is used.</span>
+<span class="sd">    </span>
+<span class="sd">    .. math::</span>
+<span class="sd">        U = \frac {NTU \hspace{2pt} C_{min}} {A_{surfacearea}}</span>
+<span class="sd">        </span>
+<span class="sd">           </span>
+<span class="sd">    *where:*</span>
+<span class="sd">        </span>
+<span class="sd">        NTU = number of transfer units for the heat exchanger</span>
+<span class="sd">        </span>
+<span class="sd">        :math:`C_{min} = \dot{m} c_p` =  smaller of the two</span>
+<span class="sd">        capacity rates for the two fluids in the heat exchanger</span>
+<span class="sd">        </span>
+<span class="sd">        </span>
+<span class="sd">        :math:`\dot{m}` = mass flow rate of the fluid</span>
+<span class="sd">        </span>
+<span class="sd">        :math:`c_p` = specific heat of the fluid</span>
+<span class="sd">        </span>
+<span class="sd">        :math:`A_{surfacearea}` : Heat transfer surface area of the</span>
+<span class="sd">        exchanger</span>
+<span class="sd">        </span>
+<span class="sd">        U = overall heat transfer coefficient</span>
+<span class="sd">    </span>
+<span class="sd">    </span>
+<span class="sd">        </span>
+<span class="sd">    See Also</span>
+<span class="sd">    --------</span>
+<span class="sd">    pychemengg.heattransfer.heatcommonmethods.calc_overallheattransfercoefficient</span>
+<span class="sd">    </span>
+<span class="sd">    </span>
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    First import the module **heatexchangers**.</span>
+<span class="sd">       </span>
+<span class="sd">    &gt;&gt;&gt; from pychemengg.heattransfer import heatexchangers as hx </span>
+<span class="sd">    &gt;&gt;&gt; hx.calc_overallheattransfercoefficient_fromNTU(NTU=0.651, Cmin=5.02e3, area=5.11)</span>
+<span class="sd">    639.5342465753424</span>
+
+<span class="sd">    </span>
+<span class="sd">    References</span>
+<span class="sd">    ----------</span>
+<span class="sd">    [1] Yunus A. Cengel and Afshin J. Ghajar, &quot;Heat And Mass Transfer</span>
+<span class="sd">    Fundamentals and Applications&quot;, 6th Edition. New York, McGraw Hill</span>
+<span class="sd">    Education, 2020.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">NTU</span> <span class="o">*</span> <span class="n">Cmin</span> <span class="o">/</span> <span class="n">area</span></div>
+</pre></div>
+
+           </div>
+           
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021, Harvinder Singh Gill.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

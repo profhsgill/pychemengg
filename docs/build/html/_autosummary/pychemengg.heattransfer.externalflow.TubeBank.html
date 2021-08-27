@@ -1,0 +1,1229 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>TubeBank &mdash; PyChemEngg 0.1a6 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/my_theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/my_theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/my_theme.css" type="text/css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/katex-math.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.12.0/contrib/auto-render.min.js"></script>
+        <script src="../_static/katex_autorenderer.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="fins" href="pychemengg.heattransfer.fins.html" />
+    <link rel="prev" title="Sphere" href="pychemengg.heattransfer.externalflow.Sphere.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> PyChemEngg
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1a6
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption" role="heading"><span class="caption-text">User Tutorial</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../userguide/heattransfer/index.html">Heat Transfer</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Reference Guide</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../autosummary_pychemengg.html">PyChemEngg API Reference</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="pychemengg.html">pychemengg</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="pychemengg.heattransfer.html">heattransfer</a><ul class="current">
+<li class="toctree-l4 current"><a class="reference internal" href="pychemengg.heattransfer.externalflow.html">externalflow</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pychemengg.heattransfer.fins.html">fins</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pychemengg.heattransfer.heatcommonmethods.html">heatcommonmethods</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pychemengg.heattransfer.heatexchangers.html">heatexchangers</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pychemengg.heattransfer.internalflow.html">internalflow</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pychemengg.heattransfer.steadystate.html">steadystate</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="pychemengg.physicalproperties.html">physicalproperties</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">PyChemEngg</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../autosummary_pychemengg.html">PyChemEngg API</a> &raquo;</li>
+        
+          <li><a href="pychemengg.html">pychemengg</a> &raquo;</li>
+        
+          <li><a href="pychemengg.heattransfer.html">heattransfer</a> &raquo;</li>
+        
+          <li><a href="pychemengg.heattransfer.externalflow.html">externalflow</a> &raquo;</li>
+        
+      <li>TubeBank</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/_autosummary/pychemengg.heattransfer.externalflow.TubeBank.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
+      
+        <a href="pychemengg.heattransfer.fins.html" class="btn btn-neutral float-right" title="fins" accesskey="n">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+      
+      
+        <a href="pychemengg.heattransfer.externalflow.Sphere.html" class="btn btn-neutral float-left" title="Sphere" accesskey="p"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+      
+  </div>
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<div class="section" id="tubebank">
+<h1>TubeBank<a class="headerlink" href="#tubebank" title="Permalink to this headline">¶</a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="pychemengg.heattransfer.externalflow.TubeBank">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">pychemengg.heattransfer.externalflow.</span></span><span class="sig-name descname"><span class="pre">TubeBank</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">config</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'inline'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">totalrows</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tubes_per_row</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">transverse_pitch</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">longitudanal_pitch</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">length</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">outer_tubediameter</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">T_infinity</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">velocity_infinity</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pychemengg/heattransfer/externalflow.html#TubeBank"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pychemengg.heattransfer.externalflow.TubeBank" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Models a bank of tubes.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl>
+<dt><strong>config</strong><span class="classifier"><cite>str</cite></span></dt><dd><p>Tube pitch arrangement (“inline” or “staggered”; Default:”inline”).</p>
+</dd>
+<dt><strong>totalrows</strong><span class="classifier"><cite>int or float</cite></span></dt><dd><p>Number of rows. Row: A line of tubes in direction perpendicular to
+the flow of fluid over the tubes.</p>
+</dd>
+<dt><strong>tubes_per_row</strong><span class="classifier"><cite>int or float</cite></span></dt><dd><p>Number of tubes in each row.</p>
+</dd>
+<dt><strong>transverse_pitch</strong><span class="classifier"><cite>int or float</cite></span></dt><dd><p>Center-to-center distance between consecutive tubes within
+a row measured in a direction perpendicular to external flow of fluid.</p>
+</dd>
+<dt><strong>longitudanal_pitch</strong><span class="classifier"><cite>int or float</cite></span></dt><dd><p>Center-to-center distance between tubes in consecutive rows measured
+in a direction parallel to external flow of fluid .</p>
+</dd>
+<dt><strong>length</strong><span class="classifier"><cite>int or float</cite></span></dt><dd><p>Length of tubes (If not provided, assume = 1).</p>
+</dd>
+<dt><strong>outer_tubediameter</strong><span class="classifier"><cite>int or float</cite></span></dt><dd><p>Diameter of tubes.</p>
+</dd>
+<dt><strong>T_infinity</strong><span class="classifier"><cite>int or float</cite></span></dt><dd><p>Temperature of external fluid before it enters tube bank.</p>
+</dd>
+<dt><strong>velocity_infinity</strong><span class="classifier"><cite>int or float</cite></span></dt><dd><p>Velocity of external fluid  before it enters tube bank.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<p>First import the module <strong>externalflow</strong>.</p>
+<p>Units used in this example: SI system.</p>
+<p>However, any consistent units can be used.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pychemengg.heattransfer</span> <span class="kn">import</span> <span class="n">externalflow</span> <span class="k">as</span> <span class="n">extflow</span> 
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tubebundle</span> <span class="o">=</span> <span class="n">extflow</span><span class="o">.</span><span class="n">TubeBank</span><span class="p">(</span><span class="n">config</span><span class="o">=</span><span class="s2">&quot;staggered&quot;</span><span class="p">,</span> <span class="n">totalrows</span><span class="o">=</span><span class="mi">7</span><span class="p">,</span> <span class="n">tubes_per_row</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span>
+<span class="go">                         transverse_pitch=31.3e-3, longitudanal_pitch=34.3e-3,</span>
+<span class="go">                         length=1, outer_tubediameter=16.4e-3,</span>
+<span class="go">                         T_infinity=15, velocity_infinity=6)</span>
+<span class="go"># This will create an instance of &#39;TubeBank&#39;.</span>
+</pre></div>
+</div>
+<dl class="field-list">
+<dt class="field-odd">Attributes</dt>
+<dd class="field-odd"><dl>
+<dt><strong>See “Parameters”. Additional attributes are listed below.</strong></dt><dd></dd>
+<dt><strong>diagonal_pitch</strong><span class="classifier"><cite>int or float</cite></span></dt><dd><p>Diagonal distance between tubes in adjacent rows.</p>
+</dd>
+<dt><strong>viscosity</strong><span class="classifier"><cite>int or float</cite></span></dt><dd><p>Viscosity of external fluid at mean temperature of fluid.</p>
+</dd>
+<dt><strong>specificheat</strong><span class="classifier"><cite>int or float</cite></span></dt><dd><p>Specific heat of external fluid at mean temperature of fluid.</p>
+</dd>
+<dt><strong>thermalconductivity</strong><span class="classifier"><cite>int or float</cite></span></dt><dd><p>Thermal conductivity of external fluid at mean temperature of fluid.</p>
+</dd>
+<dt><strong>density_surface</strong><span class="classifier"><cite>int or float</cite>, optional</span></dt><dd><p>Density of fluid at surface temperature of tubes. Optional if 
+Prandtl number at surface temperature will not be computed.</p>
+</dd>
+<dt><strong>viscosity_surface</strong><span class="classifier"><cite>int or float</cite>, optional</span></dt><dd><p>Viscosity of fluid at surface temperature of tubes. Optional if 
+Prandtl number at surface temperature will not be computed.</p>
+</dd>
+<dt><strong>specificheat_surface</strong><span class="classifier"><cite>int or float</cite>, optional</span></dt><dd><p>Specific heat of fluid at surface temperature of tubes. Optional if 
+Prandtl number at surface temperature will not be computed.</p>
+</dd>
+<dt><strong>thermalconductivity_surface</strong><span class="classifier"><cite>int or float</cite>, optional</span></dt><dd><p>Thermal conductivity of fluid  at surface temperature of tubes. Optional if 
+Prandtl number at surface temperature will not be computed.</p>
+</dd>
+<dt><strong>T_out</strong><span class="classifier"><cite>int or float</cite></span></dt><dd><p>Temperature of external fluid at outlet of tube bank.</p>
+</dd>
+<dt><strong>T_surface</strong><span class="classifier"><cite>int or float</cite></span></dt><dd><p>Temperature of tube surface.</p>
+</dd>
+<dt><strong>Pr</strong><span class="classifier"><cite>int or float</cite></span></dt><dd><p>Prandtl number for the fluid.</p>
+</dd>
+<dt><strong>Re</strong><span class="classifier"><cite>int or float</cite></span></dt><dd><p>Reynolds number for the fluid.</p>
+</dd>
+<dt><strong>Nu</strong><span class="classifier"><cite>int or float</cite></span></dt><dd><p>Nusselt number for the fluid-tube bank heat exchange.</p>
+</dd>
+<dt><strong>maxvelocity</strong><span class="classifier"><cite>int or float</cite></span></dt><dd><p>Maximum velocity of external fluid in tube bank.</p>
+</dd>
+<dt><strong>Pr_surface</strong><span class="classifier"><cite>int or float</cite></span></dt><dd><p>Prandtl number at surface temperature of tubes.</p>
+</dd>
+<dt><strong>LMTD</strong><span class="classifier"><cite>int or float</cite></span></dt><dd><p>Log mean temperature difference between fluid “in”/”out” 
+and tube surface temperatures.</p>
+</dd>
+<dt><strong>pressuredrop</strong><span class="classifier"><cite>int or float</cite></span></dt><dd><p>Pressure drop when external fluid flows in tube bank.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="pychemengg.heattransfer.externalflow.TubeBank.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">config</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'inline'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">totalrows</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tubes_per_row</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">transverse_pitch</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">longitudanal_pitch</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">length</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">outer_tubediameter</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">T_infinity</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">velocity_infinity</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pychemengg/heattransfer/externalflow.html#TubeBank.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pychemengg.heattransfer.externalflow.TubeBank.__init__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<p class="rubric">Methods</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pychemengg.heattransfer.externalflow.TubeBank.__init__" title="pychemengg.heattransfer.externalflow.TubeBank.__init__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">__init__</span></code></a>([config, totalrows, tubes_per_row, …])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#pychemengg.heattransfer.externalflow.TubeBank.calc_LMTD" title="pychemengg.heattransfer.externalflow.TubeBank.calc_LMTD"><code class="xref py py-obj docutils literal notranslate"><span class="pre">calc_LMTD</span></code></a>()</p></td>
+<td><p>Use this to calculate log mean temperature difference (LMTD).</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pychemengg.heattransfer.externalflow.TubeBank.calc_Nu" title="pychemengg.heattransfer.externalflow.TubeBank.calc_Nu"><code class="xref py py-obj docutils literal notranslate"><span class="pre">calc_Nu</span></code></a>()</p></td>
+<td><p>Use this to calculate Nusselt number for external fluid flow in the tube bank.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#pychemengg.heattransfer.externalflow.TubeBank.calc_Pr" title="pychemengg.heattransfer.externalflow.TubeBank.calc_Pr"><code class="xref py py-obj docutils literal notranslate"><span class="pre">calc_Pr</span></code></a>()</p></td>
+<td><p>Use this to calculate fluid Prandtl number at <span class="math">\(T_{mean}\)</span>.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pychemengg.heattransfer.externalflow.TubeBank.calc_Pr_surface" title="pychemengg.heattransfer.externalflow.TubeBank.calc_Pr_surface"><code class="xref py py-obj docutils literal notranslate"><span class="pre">calc_Pr_surface</span></code></a>()</p></td>
+<td><p>Use this to calculate fluid Prandtl number at <span class="math">\(T_{surface}\)</span>.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#pychemengg.heattransfer.externalflow.TubeBank.calc_Re" title="pychemengg.heattransfer.externalflow.TubeBank.calc_Re"><code class="xref py py-obj docutils literal notranslate"><span class="pre">calc_Re</span></code></a>()</p></td>
+<td><p>Use this to calculate Reynolds number for external fluid flow in the tube bank.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pychemengg.heattransfer.externalflow.TubeBank.calc_maxvelocity" title="pychemengg.heattransfer.externalflow.TubeBank.calc_maxvelocity"><code class="xref py py-obj docutils literal notranslate"><span class="pre">calc_maxvelocity</span></code></a>()</p></td>
+<td><p>Use this to calculate maximum velocity of fluid in tube bank.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#pychemengg.heattransfer.externalflow.TubeBank.calc_pressuredrop" title="pychemengg.heattransfer.externalflow.TubeBank.calc_pressuredrop"><code class="xref py py-obj docutils literal notranslate"><span class="pre">calc_pressuredrop</span></code></a>()</p></td>
+<td><p>Use this to calculate pressure drop for fluid flow in the tube bank.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pychemengg.heattransfer.externalflow.TubeBank.set_Pr" title="pychemengg.heattransfer.externalflow.TubeBank.set_Pr"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_Pr</span></code></a>(Pr)</p></td>
+<td><p>Use this to input fluid Prandtl number at <span class="math">\(T_{mean}\)</span>.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#pychemengg.heattransfer.externalflow.TubeBank.set_Pr_surface" title="pychemengg.heattransfer.externalflow.TubeBank.set_Pr_surface"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_Pr_surface</span></code></a>(Pr_surface)</p></td>
+<td><p>Use this to input fluid Prandtl number at <span class="math">\(T_{surface}\)</span>.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pychemengg.heattransfer.externalflow.TubeBank.set_Re" title="pychemengg.heattransfer.externalflow.TubeBank.set_Re"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_Re</span></code></a>(Re)</p></td>
+<td><p>Use this to input Reynolds number.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#pychemengg.heattransfer.externalflow.TubeBank.set_T_out" title="pychemengg.heattransfer.externalflow.TubeBank.set_T_out"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_T_out</span></code></a>([T_out])</p></td>
+<td><p>Use this to input external fluid outlet temperature from tube bank.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pychemengg.heattransfer.externalflow.TubeBank.set_T_surface" title="pychemengg.heattransfer.externalflow.TubeBank.set_T_surface"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_T_surface</span></code></a>([T_surface])</p></td>
+<td><p>Use this to input tube surface temperature.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#pychemengg.heattransfer.externalflow.TubeBank.set_fluid_properties" title="pychemengg.heattransfer.externalflow.TubeBank.set_fluid_properties"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_fluid_properties</span></code></a>([density, viscosity, …])</p></td>
+<td><p>Use this to input fluid properties.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pychemengg.heattransfer.externalflow.TubeBank.set_maxvelocity" title="pychemengg.heattransfer.externalflow.TubeBank.set_maxvelocity"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_maxvelocity</span></code></a>(maxvelocity)</p></td>
+<td><p>Use this to input maximum velocity of fluid in tube bank.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="py method">
+<dt class="sig sig-object py" id="pychemengg.heattransfer.externalflow.TubeBank.calc_LMTD">
+<span class="sig-name descname"><span class="pre">calc_LMTD</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pychemengg/heattransfer/externalflow.html#TubeBank.calc_LMTD"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pychemengg.heattransfer.externalflow.TubeBank.calc_LMTD" title="Permalink to this definition">¶</a></dt>
+<dd><p>Use this to calculate log mean temperature difference (LMTD).</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>`None_required`</strong><span class="classifier">‘None’</span></dt><dd><p>Attributes that are already defined are used in calculation.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl>
+<dt><strong>LMTD</strong><span class="classifier"><cite>int or float</cite></span></dt><dd><p>Log mean temperature difference between <span class="math">\(T_{infinity}\)</span>,
+<span class="math">\(T_{out}\)</span>, and <span class="math">\(T_{surface}\)</span>.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<dl class="simple">
+<dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">heatcommonmethods.LMTD</span></code></dt><dd><p>This function is used to compute LMTD for the tube bank.</p>
+</dd>
+</dl>
+</div>
+<p class="rubric">Notes</p>
+<p>The following formula is used.</p>
+<div class="math">
+\[LMTD = \cfrac {(T_{surface} - T_{infinity}) - (T_{surface} - T_{out})}
+{ln[(T_{surface} - T_{infinity})/(T_{surface} - T_{out})]}\]</div>
+<p><em>where:</em></p>
+<blockquote>
+<div><p><span class="math">\(T_{infinity}\)</span> <em>= inlet temperature of fluid before it enters tube bank</em></p>
+<p><span class="math">\(T_{out}\)</span> <em>= outlet temperature of fluid as it exits tube bank</em></p>
+<p><span class="math">\(T_{surface}\)</span> <em>= surface temperature of tubes in tube bank</em></p>
+</div></blockquote>
+<p class="rubric">References</p>
+<p>[1] Yunus A. Cengel and Afshin J. Ghajar, “Heat And Mass Transfer
+Fundamentals and Applications”, 6th Edition. New York, McGraw Hill 
+Education, 2020.</p>
+<p class="rubric">Examples</p>
+<p>First import the module <strong>externalflow</strong>.</p>
+<p>Units used in this example: SI system.</p>
+<p>However, any consistent units can be used.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pychemengg.heattransfer</span> <span class="kn">import</span> <span class="n">externalflow</span> <span class="k">as</span> <span class="n">extflow</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tubebundle</span> <span class="o">=</span> <span class="n">extflow</span><span class="o">.</span><span class="n">TubeBank</span><span class="p">(</span><span class="n">config</span><span class="o">=</span><span class="s2">&quot;staggered&quot;</span><span class="p">,</span> <span class="n">totalrows</span><span class="o">=</span><span class="mi">7</span><span class="p">,</span> <span class="n">tubes_per_row</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span>
+<span class="go">                                 transverse_pitch=31.3e-3, longitudanal_pitch=34.3e-3,</span>
+<span class="go">                                 length=1, outer_tubediameter=16.4e-3,</span>
+<span class="go">                                 T_infinity=15, velocity_infinity=6)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tubebundle</span><span class="o">.</span><span class="n">set_T_surface</span><span class="p">(</span><span class="mi">70</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tubebundle</span><span class="o">.</span><span class="n">set_T_out</span><span class="p">(</span><span class="mi">70</span><span class="o">-</span><span class="mf">44.5</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tubebundle</span><span class="o">.</span><span class="n">calc_LMTD</span><span class="p">()</span>
+<span class="go">49.56477500080964</span>
+<span class="go"># Temperatures are in Celsius</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pychemengg.heattransfer.externalflow.TubeBank.calc_Nu">
+<span class="sig-name descname"><span class="pre">calc_Nu</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pychemengg/heattransfer/externalflow.html#TubeBank.calc_Nu"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pychemengg.heattransfer.externalflow.TubeBank.calc_Nu" title="Permalink to this definition">¶</a></dt>
+<dd><p>Use this to calculate Nusselt number for external fluid flow in the tube bank.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>`None_required`</strong><span class="classifier">‘None’</span></dt><dd><p>Attributes that are already defined are used in calculation.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl>
+<dt><strong>Re</strong><span class="classifier"><cite>int or float</cite></span></dt><dd><p>Nusselt number for external fluid flow in the tube bank.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>A Nusselt number is returned based on the equation
+even if parameters (such as <em>Re</em>, <em>Pr</em>) do not fall in their
+respective allowable range limits (see above under ‘Notes’).
+However, if this happens, a warning is issued.</p>
+</div>
+<p class="rubric">Notes</p>
+<p>The following correlation by Zukauskas ([1]), and reproduced in 
+[2] was used.</p>
+<div class="math">
+\[Nu = F C Re^{m} Pr^{n}  {\left(\frac{Pr}{Pr_{surface}}\right)}^{0.25}\]</div>
+<p><em>where:</em></p>
+<blockquote>
+<div><p>C, m, n : depend on Re and tube arrangement (“inline” vs “staggered”)</p>
+<p>F : correction factor <span class="math">\(\eqslantless 1\)</span>
+<em>“F”</em> depends on the number of tube rows.
+If tube rows &lt; 16, F &lt; 1.0. 
+A look up table can be used to compute and interpolate <em>F</em> as
+a function of tube rows,  however, the values are only valid
+for Re &gt; 1000.</p>
+<p><span class="math">\(0.7 \eqslantless Pr \eqslantless 500\)</span></p>
+<p><span class="math">\(0 \eqslantless Re_x \eqslantless 2*10^6\)</span></p>
+<p>Nu = Nusselt number</p>
+<p>Fluid properties are at mean fluid temp (<span class="math">\(T_{mean}\)</span>):</p>
+<blockquote>
+<div><p><span class="math">\(T_{mean} = (T_{infinity} + T_{out})/2\)</span></p>
+<p><span class="math">\(T_{infinity}\)</span> <em>= inlet temperature of fluid before it enters tube bank</em></p>
+<p><span class="math">\(T_{out}\)</span> <em>= outlet temperature of fluid as it exits tube bank</em></p>
+</div></blockquote>
+</div></blockquote>
+<p class="rubric">References</p>
+<p>[1] A. Zukauskas, “Heat Transfer From Tubes in Cross Flow.” 
+In “Handbook of Single Phase Convective Heat Transfer.”
+S. Kakac, R.K. Shah, and W. Aung (Eds.), 
+New York: Wiley Interscienc, 1987.</p>
+<p>[2] Yunus A. Cengel and Afshin J. Ghajar, “Heat And Mass Transfer
+Fundamentals and Applications”, 6th Edition. New York, McGraw Hill 
+Education, 2020.</p>
+<p class="rubric">Examples</p>
+<p>First import the module <strong>externalflow</strong>.</p>
+<p>Units used in this example: SI system.</p>
+<p>However, any consistent units can be used.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pychemengg.heattransfer</span> <span class="kn">import</span> <span class="n">externalflow</span> <span class="k">as</span> <span class="n">extflow</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tubebundle</span> <span class="o">=</span> <span class="n">extflow</span><span class="o">.</span><span class="n">TubeBank</span><span class="p">(</span><span class="n">config</span><span class="o">=</span><span class="s2">&quot;staggered&quot;</span><span class="p">,</span> <span class="n">totalrows</span><span class="o">=</span><span class="mi">7</span><span class="p">,</span> <span class="n">tubes_per_row</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span>
+<span class="go">                                 transverse_pitch=31.3e-3, longitudanal_pitch=34.3e-3,</span>
+<span class="go">                                 length=1, outer_tubediameter=16.4e-3,</span>
+<span class="go">                                 T_infinity=15, velocity_infinity=6)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tubebundle</span><span class="o">.</span><span class="n">set_fluid_properties</span><span class="p">(</span><span class="n">thermalconductivity</span><span class="o">=</span><span class="mf">0.027484</span><span class="p">,</span> 
+<span class="go">                                density=1.108152, </span>
+<span class="go">                                viscosity=1.92152e-05, </span>
+<span class="go">                                specificheat=1007.6, </span>
+<span class="go">                                thermalconductivity_surface=0.029482,</span>
+<span class="go">                                density_surface=1.018296,</span>
+<span class="go">                                viscosity_surface=2.04896e-05,</span>
+<span class="go">                                specificheat_surface=1008.7)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tubebundle</span><span class="o">.</span><span class="n">calc_maxvelocity</span><span class="p">()</span>
+<span class="go">12.604026845637584</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tubebundle</span><span class="o">.</span><span class="n">calc_Re</span><span class="p">()</span>
+<span class="go">11920.860149026319</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tubebundle</span><span class="o">.</span><span class="n">calc_Pr</span><span class="p">()</span>
+<span class="go">0.7044547926066074</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tubebundle</span><span class="o">.</span><span class="n">calc_Pr_surface</span><span class="p">()</span>
+<span class="go">0.7010331565022726</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tubebundle</span><span class="o">.</span><span class="n">calc_Nu</span><span class="p">()</span>
+<span class="go">81.26988497431279</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pychemengg.heattransfer.externalflow.TubeBank.calc_Pr">
+<span class="sig-name descname"><span class="pre">calc_Pr</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pychemengg/heattransfer/externalflow.html#TubeBank.calc_Pr"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pychemengg.heattransfer.externalflow.TubeBank.calc_Pr" title="Permalink to this definition">¶</a></dt>
+<dd><p>Use this to calculate fluid Prandtl number at <span class="math">\(T_{mean}\)</span>.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>`None_required`</strong><span class="classifier">‘None’</span></dt><dd><p>Attributes that are already defined are used in calculation.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl>
+<dt><strong>Pr</strong><span class="classifier"><cite>int or float</cite></span></dt><dd><p>Prandtl number for the fluid.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<dl class="simple">
+<dt><a class="reference internal" href="#pychemengg.heattransfer.externalflow.TubeBank.set_Pr" title="pychemengg.heattransfer.externalflow.TubeBank.set_Pr"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_Pr</span></code></a></dt><dd><p>If Prandtl number is known it can alternatively be set using the method ‘set_Pr’.</p>
+</dd>
+</dl>
+</div>
+<p class="rubric">Notes</p>
+<p>The following formula is used:</p>
+<p><em>where:</em></p>
+<blockquote>
+<div><p><span class="math">\(\mu\)</span> = viscosity of fluid</p>
+<p><span class="math">\(C_p\)</span> = specific heat of fluid</p>
+<p>k =  thermal conductivity</p>
+<p>Pr = Prandtl number</p>
+<p>Fluid properties are at mean fluid temp (<span class="math">\(T_{mean}\)</span>):</p>
+<blockquote>
+<div><p><span class="math">\(T_{mean} = (T_{infinity} + T_{out})/2\)</span></p>
+<p><span class="math">\(T_{infinity}\)</span> <em>= inlet temperature of fluid before it enters tube bank</em></p>
+<p><span class="math">\(T_{surface}\)</span> <em>= outlet temperature of fluid as it exits tube bank</em></p>
+</div></blockquote>
+</div></blockquote>
+<p class="rubric">References</p>
+<p>[1] Yunus A. Cengel and Afshin J. Ghajar, “Heat And Mass Transfer
+Fundamentals and Applications”, 6th Edition. New York, McGraw Hill
+Education, 2020.</p>
+<p class="rubric">Examples</p>
+<p>First import the module <strong>externalflow</strong>.</p>
+<p>Units used in this example: SI system.</p>
+<p>However, any consistent units can be used.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pychemengg.heattransfer</span> <span class="kn">import</span> <span class="n">externalflow</span> <span class="k">as</span> <span class="n">extflow</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tubebundle</span> <span class="o">=</span> <span class="n">extflow</span><span class="o">.</span><span class="n">TubeBank</span><span class="p">(</span><span class="n">config</span><span class="o">=</span><span class="s2">&quot;staggered&quot;</span><span class="p">,</span> <span class="n">totalrows</span><span class="o">=</span><span class="mi">7</span><span class="p">,</span> <span class="n">tubes_per_row</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span>
+<span class="go">                         transverse_pitch=31.3e-3, longitudanal_pitch=34.3e-3,</span>
+<span class="go">                         length=1, outer_tubediameter=16.4e-3,</span>
+<span class="go">                         T_infinity=15, velocity_infinity=6)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tubebundle</span><span class="o">.</span><span class="n">set_fluid_properties</span><span class="p">(</span><span class="n">thermalconductivity</span><span class="o">=</span><span class="mf">0.027484</span><span class="p">,</span>
+<span class="go">                                    density=1.108152,</span>
+<span class="go">                                    viscosity=1.92152e-05,</span>
+<span class="go">                                    specificheat=1007.6)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tubebundle</span><span class="o">.</span><span class="n">calc_Pr</span><span class="p">()</span>
+<span class="go">0.7044547926066074</span>
+<span class="go">&gt;&gt;&gt;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pychemengg.heattransfer.externalflow.TubeBank.calc_Pr_surface">
+<span class="sig-name descname"><span class="pre">calc_Pr_surface</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pychemengg/heattransfer/externalflow.html#TubeBank.calc_Pr_surface"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pychemengg.heattransfer.externalflow.TubeBank.calc_Pr_surface" title="Permalink to this definition">¶</a></dt>
+<dd><p>Use this to calculate fluid Prandtl number at <span class="math">\(T_{surface}\)</span>.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>`None_required`</strong><span class="classifier">‘None’</span></dt><dd><p>Attributes that are already defined are used in calculation.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl>
+<dt><strong>Pr</strong><span class="classifier"><cite>int or float</cite></span></dt><dd><p>Prandtl number for the fluid.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<dl class="simple">
+<dt><a class="reference internal" href="#pychemengg.heattransfer.externalflow.TubeBank.set_Pr_surface" title="pychemengg.heattransfer.externalflow.TubeBank.set_Pr_surface"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_Pr_surface</span></code></a></dt><dd><p>If Prandtl number at surface temperature is known it can alternatively be set using the method ‘set_Pr_surface’.</p>
+</dd>
+</dl>
+</div>
+<p class="rubric">Notes</p>
+<p>The following formula is used:</p>
+<p><em>where:</em></p>
+<blockquote>
+<div><p><span class="math">\(\mu\)</span> = viscosity of fluid</p>
+<p><span class="math">\(C_p\)</span> = specific heat of fluid</p>
+<p>k =  thermal conductivity</p>
+<p>Pr = Prandtl number</p>
+<p>Fluid properties are at surface temperature of tubes (<span class="math">\(T_{surface}\)</span>):</p>
+</div></blockquote>
+<p class="rubric">References</p>
+<p>[1] Yunus A. Cengel and Afshin J. Ghajar, “Heat And Mass Transfer
+Fundamentals and Applications”, 6th Edition. New York, McGraw Hill
+Education, 2020.</p>
+<p class="rubric">Examples</p>
+<p>First import the module <strong>externalflow</strong>.</p>
+<p>Units used in this example: SI system.</p>
+<p>However, any consistent units can be used.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pychemengg.heattransfer</span> <span class="kn">import</span> <span class="n">externalflow</span> <span class="k">as</span> <span class="n">extflow</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tubebundle</span> <span class="o">=</span> <span class="n">extflow</span><span class="o">.</span><span class="n">TubeBank</span><span class="p">(</span><span class="n">config</span><span class="o">=</span><span class="s2">&quot;staggered&quot;</span><span class="p">,</span> <span class="n">totalrows</span><span class="o">=</span><span class="mi">7</span><span class="p">,</span> <span class="n">tubes_per_row</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span>
+<span class="go">                         transverse_pitch=31.3e-3, longitudanal_pitch=34.3e-3,</span>
+<span class="go">                         length=1, outer_tubediameter=16.4e-3,</span>
+<span class="go">                         T_infinity=15, velocity_infinity=6)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tubebundle</span><span class="o">.</span><span class="n">set_fluid_properties</span><span class="p">(</span><span class="n">thermalconductivity_surface</span><span class="o">=</span><span class="mf">0.029482</span><span class="p">,</span>
+<span class="go">                                    density_surface=1.018296,</span>
+<span class="go">                                    viscosity_surface=2.04896e-05,</span>
+<span class="go">                                    specificheat_surface=1008.7)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tubebundle</span><span class="o">.</span><span class="n">calc_Pr_surface</span><span class="p">()</span>
+<span class="go">0.7010331565022726</span>
+<span class="go">&gt;&gt;&gt;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pychemengg.heattransfer.externalflow.TubeBank.calc_Re">
+<span class="sig-name descname"><span class="pre">calc_Re</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pychemengg/heattransfer/externalflow.html#TubeBank.calc_Re"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pychemengg.heattransfer.externalflow.TubeBank.calc_Re" title="Permalink to this definition">¶</a></dt>
+<dd><p>Use this to calculate Reynolds number for external fluid flow in the tube bank.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>`None_required`</strong><span class="classifier">‘None’</span></dt><dd><p>Attributes that are already defined are used in calculation.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl>
+<dt><strong>Re</strong><span class="classifier"><cite>int or float</cite></span></dt><dd><p>Reynold number for external fluid flow in the tube bank.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<dl class="simple">
+<dt><a class="reference internal" href="#pychemengg.heattransfer.externalflow.TubeBank.set_Re" title="pychemengg.heattransfer.externalflow.TubeBank.set_Re"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_Re</span></code></a></dt><dd><p>If Reynolds number is known it can alternatively be set using the method ‘set_Re’.</p>
+</dd>
+</dl>
+</div>
+<p class="rubric">Notes</p>
+<p>The following formula is used:</p>
+<div class="math">
+\[Re = \frac {D V_{max} \rho} {\mu}\]</div>
+<p><em>where:</em></p>
+<blockquote>
+<div><p><span class="math">\(D\)</span> = outside diameter of tubes</p>
+<p><span class="math">\(V_{max}\)</span> = maximum velocity of fluid in tube bank</p>
+<p><span class="math">\(\rho\)</span> = fluid density</p>
+<p><span class="math">\(\mu\)</span> = fluid viscosity</p>
+<p>Re = Reynolds number</p>
+<p>Fluid properties are at mean fluid temp (<span class="math">\(T_{mean}\)</span>):</p>
+<blockquote>
+<div><p><span class="math">\(T_{mean} = (T_{infinity} + T_{out})/2\)</span></p>
+<p><span class="math">\(T_{infinity}\)</span> <em>= inlet temperature of fluid before it enters tube bank</em></p>
+<p><span class="math">\(T_{surface}\)</span> <em>= outlet temperature of fluid as it exits tube bank</em></p>
+</div></blockquote>
+</div></blockquote>
+<p class="rubric">References</p>
+<p>[1] Yunus A. Cengel and Afshin J. Ghajar, “Heat And Mass Transfer
+Fundamentals and Applications”, 6th Edition. New York, McGraw Hill
+Education, 2020.</p>
+<p class="rubric">Examples</p>
+<p>First import the module <strong>externalflow</strong>.</p>
+<p>Units used in this example: SI system.</p>
+<p>However, any consistent units can be used.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pychemengg.heattransfer</span> <span class="kn">import</span> <span class="n">externalflow</span> <span class="k">as</span> <span class="n">extflow</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tubebundle</span> <span class="o">=</span> <span class="n">extflow</span><span class="o">.</span><span class="n">TubeBank</span><span class="p">(</span><span class="n">config</span><span class="o">=</span><span class="s2">&quot;staggered&quot;</span><span class="p">,</span> <span class="n">totalrows</span><span class="o">=</span><span class="mi">7</span><span class="p">,</span> <span class="n">tubes_per_row</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span>
+<span class="go">                         transverse_pitch=31.3e-3, longitudanal_pitch=34.3e-3,</span>
+<span class="go">                         length=1, outer_tubediameter=16.4e-3,</span>
+<span class="go">                         T_infinity=15, velocity_infinity=6)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tubebundle</span><span class="o">.</span><span class="n">set_fluid_properties</span><span class="p">(</span><span class="n">thermalconductivity</span><span class="o">=</span><span class="mf">0.027484</span><span class="p">,</span>
+<span class="go">                                    density=1.108152,</span>
+<span class="go">                                    viscosity=1.92152e-05,</span>
+<span class="go">                                    specificheat=1007.6)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tubebundle</span><span class="o">.</span><span class="n">calc_Re</span><span class="p">()</span>
+<span class="go">11920.860149026319</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pychemengg.heattransfer.externalflow.TubeBank.calc_maxvelocity">
+<span class="sig-name descname"><span class="pre">calc_maxvelocity</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pychemengg/heattransfer/externalflow.html#TubeBank.calc_maxvelocity"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pychemengg.heattransfer.externalflow.TubeBank.calc_maxvelocity" title="Permalink to this definition">¶</a></dt>
+<dd><p>Use this to calculate maximum velocity of fluid in tube bank.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>`None_required`</strong><span class="classifier">‘None’</span></dt><dd><p>Attributes that are already defined are used in calculation.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl>
+<dt><strong>maxvelocity</strong><span class="classifier"><cite>int or float</cite></span></dt><dd><p>Maximum velocity of the fluid in the tube bank.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<dl class="simple">
+<dt><a class="reference internal" href="#pychemengg.heattransfer.externalflow.TubeBank.set_maxvelocity" title="pychemengg.heattransfer.externalflow.TubeBank.set_maxvelocity"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_maxvelocity</span></code></a></dt><dd><p>If maximum velocity is known it can alternatively be set using the method ‘set_maxvelocity’.</p>
+</dd>
+</dl>
+</div>
+<p class="rubric">Notes</p>
+<p>The following formula are used:</p>
+<p>if config == “inline”:</p>
+<div class="math">
+\[V_{max} = \left( \frac {S_T} {S_T - D} \right) V_\infty\]</div>
+<p>if config == “staggered”:</p>
+<blockquote>
+<div><blockquote>
+<div><p>the greater of the following two:</p>
+</div></blockquote>
+<div class="math">
+\[V_{max} = \left( \frac {S_T} {S_T - D} \right) V_\infty\\[15pt]
+
+|or|\\[15pt]
+
+V_{max} = \left( \frac {S_T} {2(S_D - D)} \right) V_\infty\]</div>
+</div></blockquote>
+<p><em>where:</em></p>
+<blockquote>
+<div><p><span class="math">\(S_T\)</span> = transverse pitch</p>
+<p><span class="math">\(S_D\)</span> = diagonal pitch</p>
+<p><span class="math">\(D\)</span> = outside diameter of tubes</p>
+<p><span class="math">\(V_\infty\)</span> = velocity of fluid at inlet of tube bank</p>
+<p><span class="math">\(V_{max}\)</span> = maximum velocity of fluid in tube bank</p>
+</div></blockquote>
+<p class="rubric">References</p>
+<p>[1] Yunus A. Cengel and Afshin J. Ghajar, “Heat And Mass Transfer
+Fundamentals and Applications”, 6th Edition. New York, McGraw Hill
+Education, 2020.</p>
+<p class="rubric">Examples</p>
+<p>First import the module <strong>externalflow</strong>.</p>
+<p>Units used in this example: SI system.</p>
+<p>However, any consistent units can be used.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pychemengg.heattransfer</span> <span class="kn">import</span> <span class="n">externalflow</span> <span class="k">as</span> <span class="n">extflow</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tubebundle</span> <span class="o">=</span> <span class="n">extflow</span><span class="o">.</span><span class="n">TubeBank</span><span class="p">(</span><span class="n">config</span><span class="o">=</span><span class="s2">&quot;staggered&quot;</span><span class="p">,</span> <span class="n">totalrows</span><span class="o">=</span><span class="mi">7</span><span class="p">,</span> <span class="n">tubes_per_row</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span>
+<span class="go">                         transverse_pitch=31.3e-3, longitudanal_pitch=34.3e-3,</span>
+<span class="go">                         length=1, outer_tubediameter=16.4e-3,</span>
+<span class="go">                         T_infinity=15, velocity_infinity=6)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tubebundle</span><span class="o">.</span><span class="n">calc_maxvelocity</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="mf">12.604026845637584</span>
+<span class="go">&gt;&gt;&gt;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pychemengg.heattransfer.externalflow.TubeBank.calc_pressuredrop">
+<span class="sig-name descname"><span class="pre">calc_pressuredrop</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pychemengg/heattransfer/externalflow.html#TubeBank.calc_pressuredrop"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pychemengg.heattransfer.externalflow.TubeBank.calc_pressuredrop" title="Permalink to this definition">¶</a></dt>
+<dd><p>Use this to calculate pressure drop for fluid flow in the tube bank.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>`None_required`</strong><span class="classifier">‘None’</span></dt><dd><p>Attributes that are already defined are used in calculation.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl>
+<dt><strong>pressure drop</strong><span class="classifier"><cite>int or float</cite></span></dt><dd><p>Pressure drop for external fluid flow in the tube bank.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>A Nusselt number is returned based on the equation
+even if parameters (such as <em>Re</em>, <em>Pr</em>) do not fall in their
+respective allowable range limits (see above under ‘Notes’).
+However, if this happens, a warning is issued.</p>
+</div>
+<p class="rubric">Notes</p>
+<p>The following correlation by Zukauskas and Ulinskas([1]) was used.
+This correlation is used in textbooks as a graphical plot.
+For example in [2].</p>
+<div class="math">
+\[\Delta P = Eu \cfrac{\rho V_{max}^2}{2} N_L\]</div>
+<p><em>where:</em></p>
+<blockquote>
+<div><p><span class="math">\(\Delta P\)</span> = Pressure drop</p>
+<p>Eu = Euler number</p>
+<p><span class="math">\(\rho\)</span> = density of fluid</p>
+<p><span class="math">\(V_{max}\)</span> = maximum fluid velocity in tube bank</p>
+<p><span class="math">\(N_L\)</span> = number of tube rows</p>
+<p>Fluid properties are at mean fluid temp (<span class="math">\(T_{mean}\)</span>):</p>
+<blockquote>
+<div><p><span class="math">\(T_{mean} = (T_{infinity} + T_{out})/2\)</span></p>
+<p><span class="math">\(T_{infinity}\)</span> <em>= inlet temperature of fluid before it enters tube bank</em></p>
+<p><span class="math">\(T_{out}\)</span> <em>= outlet temperature of fluid as it exits tube bank</em></p>
+</div></blockquote>
+</div></blockquote>
+<p class="rubric">References</p>
+<p>[1] A. Zukauskas, “Heat Transfer From Tubes in Cross Flow.” 
+In “Handbook of Single Phase Convective Heat Transfer.”
+S. Kakac, R.K. Shah, and W. Aung (Eds.), 
+New York: Wiley Interscienc, 1987.</p>
+<p>[2] Yunus A. Cengel and Afshin J. Ghajar, “Heat And Mass Transfer
+Fundamentals and Applications”, 6th Edition. New York, McGraw Hill 
+Education, 2020.</p>
+<p class="rubric">Examples</p>
+<p>First import the module <strong>externalflow</strong>.</p>
+<p>Units used in this example: SI system.</p>
+<p>However, any consistent units can be used.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pychemengg.heattransfer</span> <span class="kn">import</span> <span class="n">externalflow</span> <span class="k">as</span> <span class="n">extflow</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tubebundle</span> <span class="o">=</span> <span class="n">extflow</span><span class="o">.</span><span class="n">TubeBank</span><span class="p">(</span><span class="n">config</span><span class="o">=</span><span class="s2">&quot;staggered&quot;</span><span class="p">,</span> <span class="n">totalrows</span><span class="o">=</span><span class="mi">7</span><span class="p">,</span> <span class="n">tubes_per_row</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span>
+<span class="go">                                 transverse_pitch=31.3e-3, longitudanal_pitch=34.3e-3,</span>
+<span class="go">                                 length=1, outer_tubediameter=16.4e-3,</span>
+<span class="go">                                 T_infinity=15, velocity_infinity=6)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tubebundle</span><span class="o">.</span><span class="n">set_fluid_properties</span><span class="p">(</span><span class="n">thermalconductivity</span><span class="o">=</span><span class="mf">0.027484</span><span class="p">,</span> 
+<span class="go">                                density=1.108152, </span>
+<span class="go">                                viscosity=1.92152e-05, </span>
+<span class="go">                                specificheat=1007.6, </span>
+<span class="go">                                thermalconductivity_surface=0.029482,</span>
+<span class="go">                                density_surface=1.018296,</span>
+<span class="go">                                viscosity_surface=2.04896e-05,</span>
+<span class="go">                                specificheat_surface=1008.7)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tubebundle</span><span class="o">.</span><span class="n">calc_maxvelocity</span><span class="p">()</span>
+<span class="go">12.604026845637584</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tubebundle</span><span class="o">.</span><span class="n">calc_Re</span><span class="p">()</span>
+<span class="go">11920.860149026319</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tubebundle</span><span class="o">.</span><span class="n">calc_Pr</span><span class="p">()</span>
+<span class="go">0.7044547926066074</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tubebundle</span><span class="o">.</span><span class="n">calc_Pr_surface</span><span class="p">()</span>
+<span class="go">0.7010331565022726</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tubebundle</span><span class="o">.</span><span class="n">calc_Nu</span><span class="p">()</span>
+<span class="go">81.26988497431279</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tubebundle</span><span class="o">.</span><span class="n">calc_pressuredrop</span><span class="p">()</span>
+<span class="go">211.3578929319506</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pychemengg.heattransfer.externalflow.TubeBank.set_Pr">
+<span class="sig-name descname"><span class="pre">set_Pr</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">Pr</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pychemengg/heattransfer/externalflow.html#TubeBank.set_Pr"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pychemengg.heattransfer.externalflow.TubeBank.set_Pr" title="Permalink to this definition">¶</a></dt>
+<dd><p>Use this to input fluid Prandtl number at <span class="math">\(T_{mean}\)</span>.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl>
+<dt><strong>Pr</strong><span class="classifier"><cite>int or float</cite></span></dt><dd><p>Prandtl number of external fluid.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>`None`</strong><span class="classifier">‘None’</span></dt><dd><p>This method simply assign Prandtl number
+to keyword attribute. It does not return anything.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<dl class="simple">
+<dt><a class="reference internal" href="#pychemengg.heattransfer.externalflow.TubeBank.calc_Pr" title="pychemengg.heattransfer.externalflow.TubeBank.calc_Pr"><code class="xref py py-obj docutils literal notranslate"><span class="pre">calc_Pr</span></code></a></dt><dd><p>Prandtl number can alternatively be computed using the method ‘calc_Pr’.</p>
+</dd>
+</dl>
+</div>
+<p class="rubric">Examples</p>
+<p>First import the module <strong>externalflow</strong>.</p>
+<p>Units used in this example: SI system.</p>
+<p>However, any consistent units can be used.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pychemengg.heattransfer</span> <span class="kn">import</span> <span class="n">externalflow</span> <span class="k">as</span> <span class="n">extflow</span> 
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tubebundle</span> <span class="o">=</span> <span class="n">extflow</span><span class="o">.</span><span class="n">TubeBank</span><span class="p">(</span><span class="n">config</span><span class="o">=</span><span class="s2">&quot;staggered&quot;</span><span class="p">,</span> <span class="n">totalrows</span><span class="o">=</span><span class="mi">7</span><span class="p">,</span> <span class="n">tubes_per_row</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span>
+<span class="go">                         transverse_pitch=31.3e-3, longitudanal_pitch=34.3e-3,</span>
+<span class="go">                         length=1, outer_tubediameter=16.4e-3,</span>
+<span class="go">                         T_infinity=15, velocity_infinity=6)</span>
+<span class="go"># This will create an instance of &#39;TubeBank&#39;.</span>
+<span class="go"># Next set Prandtl number like so:-</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tubebundle</span><span class="o">.</span><span class="n">set_Pr</span><span class="p">(</span><span class="mf">0.705</span><span class="p">)</span>
+<span class="go">&gt;&gt;&gt;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pychemengg.heattransfer.externalflow.TubeBank.set_Pr_surface">
+<span class="sig-name descname"><span class="pre">set_Pr_surface</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">Pr_surface</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pychemengg/heattransfer/externalflow.html#TubeBank.set_Pr_surface"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pychemengg.heattransfer.externalflow.TubeBank.set_Pr_surface" title="Permalink to this definition">¶</a></dt>
+<dd><p>Use this to input fluid Prandtl number at <span class="math">\(T_{surface}\)</span>.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl>
+<dt><strong>Pr</strong><span class="classifier"><cite>int or float</cite></span></dt><dd><p>Prandtl number of external fluid.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>`None`</strong><span class="classifier">‘None’</span></dt><dd><p>This method simply assign Prandtl number
+to keyword attribute. It does not return anything.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<dl class="simple">
+<dt><a class="reference internal" href="#pychemengg.heattransfer.externalflow.TubeBank.calc_Pr_surface" title="pychemengg.heattransfer.externalflow.TubeBank.calc_Pr_surface"><code class="xref py py-obj docutils literal notranslate"><span class="pre">calc_Pr_surface</span></code></a></dt><dd><p>Prandtl number at surface temperature can alternatively be computed using the method ‘calc_Pr_surface’.</p>
+</dd>
+</dl>
+</div>
+<p class="rubric">Examples</p>
+<p>First import the module <strong>externalflow</strong>.</p>
+<p>Units used in this example: SI system.</p>
+<p>However, any consistent units can be used.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pychemengg.heattransfer</span> <span class="kn">import</span> <span class="n">externalflow</span> <span class="k">as</span> <span class="n">extflow</span> 
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tubebundle</span> <span class="o">=</span> <span class="n">extflow</span><span class="o">.</span><span class="n">TubeBank</span><span class="p">(</span><span class="n">config</span><span class="o">=</span><span class="s2">&quot;staggered&quot;</span><span class="p">,</span> <span class="n">totalrows</span><span class="o">=</span><span class="mi">7</span><span class="p">,</span> <span class="n">tubes_per_row</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span>
+<span class="go">                         transverse_pitch=31.3e-3, longitudanal_pitch=34.3e-3,</span>
+<span class="go">                         length=1, outer_tubediameter=16.4e-3,</span>
+<span class="go">                         T_infinity=15, velocity_infinity=6)</span>
+<span class="go"># This will create an instance of &#39;TubeBank&#39;.</span>
+<span class="go"># Next set Prandtl number like so:-</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tubebundle</span><span class="o">.</span><span class="n">set_Pr_surface</span><span class="p">(</span><span class="mf">0.701</span><span class="p">)</span>
+<span class="go">&gt;&gt;&gt;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pychemengg.heattransfer.externalflow.TubeBank.set_Re">
+<span class="sig-name descname"><span class="pre">set_Re</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">Re</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pychemengg/heattransfer/externalflow.html#TubeBank.set_Re"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pychemengg.heattransfer.externalflow.TubeBank.set_Re" title="Permalink to this definition">¶</a></dt>
+<dd><p>Use this to input Reynolds number.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl>
+<dt><strong>Re</strong><span class="classifier"><cite>int or float</cite></span></dt><dd><p>Reynolds number of external fluid flow.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>`None`</strong><span class="classifier">‘None’</span></dt><dd><p>This method simply assign Reynolds number
+to keyword attribute. It does not return anything.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<dl class="simple">
+<dt><a class="reference internal" href="#pychemengg.heattransfer.externalflow.TubeBank.calc_Re" title="pychemengg.heattransfer.externalflow.TubeBank.calc_Re"><code class="xref py py-obj docutils literal notranslate"><span class="pre">calc_Re</span></code></a></dt><dd><p>Reynolds number can alternatively be computed using the method ‘calc_Re’.</p>
+</dd>
+</dl>
+</div>
+<p class="rubric">Examples</p>
+<p>First import the module <strong>externalflow</strong>.</p>
+<p>Units used in this example: SI system.</p>
+<p>However, any consistent units can be used.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pychemengg.heattransfer</span> <span class="kn">import</span> <span class="n">externalflow</span> <span class="k">as</span> <span class="n">extflow</span> 
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tubebundle</span> <span class="o">=</span> <span class="n">extflow</span><span class="o">.</span><span class="n">TubeBank</span><span class="p">(</span><span class="n">config</span><span class="o">=</span><span class="s2">&quot;staggered&quot;</span><span class="p">,</span> <span class="n">totalrows</span><span class="o">=</span><span class="mi">7</span><span class="p">,</span> <span class="n">tubes_per_row</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span>
+<span class="go">                         transverse_pitch=31.3e-3, longitudanal_pitch=34.3e-3,</span>
+<span class="go">                         length=1, outer_tubediameter=16.4e-3,</span>
+<span class="go">                         T_infinity=15, velocity_infinity=6)</span>
+<span class="go"># This will create an instance of &#39;TubeBank&#39;.</span>
+<span class="go"># Next set Reynolds number like so:-</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tubebundle</span><span class="o">.</span><span class="n">set_Re</span><span class="p">(</span><span class="mi">13943</span><span class="p">)</span>
+<span class="go">&gt;&gt;&gt;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pychemengg.heattransfer.externalflow.TubeBank.set_T_out">
+<span class="sig-name descname"><span class="pre">set_T_out</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">T_out</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pychemengg/heattransfer/externalflow.html#TubeBank.set_T_out"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pychemengg.heattransfer.externalflow.TubeBank.set_T_out" title="Permalink to this definition">¶</a></dt>
+<dd><p>Use this to input external fluid outlet temperature from tube bank.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl>
+<dt><strong>T_out</strong><span class="classifier"><cite>int or float</cite></span></dt><dd><p>Temperature of fluid at outlet of tube bank.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>`None`</strong><span class="classifier">‘None’</span></dt><dd><p>This method simply assigns fluid outlet temperature
+to keyword attribute. It does not return anything.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<p>First import the module <strong>externalflow</strong>.</p>
+<p>Units used in this example: SI system.</p>
+<p>However, any consistent units can be used.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pychemengg.heattransfer</span> <span class="kn">import</span> <span class="n">externalflow</span> <span class="k">as</span> <span class="n">extflow</span> 
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tubebundle</span> <span class="o">=</span> <span class="n">extflow</span><span class="o">.</span><span class="n">TubeBank</span><span class="p">(</span><span class="n">config</span><span class="o">=</span><span class="s2">&quot;staggered&quot;</span><span class="p">,</span> <span class="n">totalrows</span><span class="o">=</span><span class="mi">7</span><span class="p">,</span> <span class="n">tubes_per_row</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span>
+<span class="go">                         transverse_pitch=31.3e-3, longitudanal_pitch=34.3e-3,</span>
+<span class="go">                         length=1, outer_tubediameter=16.4e-3,</span>
+<span class="go">                         T_infinity=15, velocity_infinity=6)</span>
+<span class="go"># This will create an instance of &#39;TubeBank&#39;.</span>
+<span class="go"># Next set fluid outlet temperatue like so:-</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tubebundle</span><span class="o">.</span><span class="n">set_T_out</span><span class="p">(</span><span class="mf">114.5</span><span class="p">)</span>
+<span class="go">&gt;&gt;&gt;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pychemengg.heattransfer.externalflow.TubeBank.set_T_surface">
+<span class="sig-name descname"><span class="pre">set_T_surface</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">T_surface</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pychemengg/heattransfer/externalflow.html#TubeBank.set_T_surface"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pychemengg.heattransfer.externalflow.TubeBank.set_T_surface" title="Permalink to this definition">¶</a></dt>
+<dd><p>Use this to input tube surface temperature.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl>
+<dt><strong>T_surface</strong><span class="classifier"><cite>int or float</cite></span></dt><dd><p>Temperature of tube surface.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>`None`</strong><span class="classifier">‘None’</span></dt><dd><p>This method simply assign tube surface temperature
+to keyword attribute. It does not return anything.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<p>First import the module <strong>externalflow</strong>.</p>
+<p>Units used in this example: SI system.</p>
+<p>However, any consistent units can be used.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pychemengg.heattransfer</span> <span class="kn">import</span> <span class="n">externalflow</span> <span class="k">as</span> <span class="n">extflow</span> 
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tubebundle</span> <span class="o">=</span> <span class="n">extflow</span><span class="o">.</span><span class="n">TubeBank</span><span class="p">(</span><span class="n">config</span><span class="o">=</span><span class="s2">&quot;staggered&quot;</span><span class="p">,</span> <span class="n">totalrows</span><span class="o">=</span><span class="mi">7</span><span class="p">,</span> <span class="n">tubes_per_row</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span>
+<span class="go">                         transverse_pitch=31.3e-3, longitudanal_pitch=34.3e-3,</span>
+<span class="go">                         length=1, outer_tubediameter=16.4e-3,</span>
+<span class="go">                         T_infinity=15, velocity_infinity=6)</span>
+<span class="go"># This will create an instance of &#39;TubeBank&#39;.</span>
+<span class="go"># Next set tube surface temperatue like so:-</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tubebundle</span><span class="o">.</span><span class="n">set_T_surface</span><span class="p">(</span><span class="mi">70</span><span class="p">)</span>
+<span class="go">&gt;&gt;&gt;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pychemengg.heattransfer.externalflow.TubeBank.set_fluid_properties">
+<span class="sig-name descname"><span class="pre">set_fluid_properties</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">density</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">viscosity</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">specificheat</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">thermalconductivity</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">density_surface</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">viscosity_surface</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">specificheat_surface</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">thermalconductivity_surface</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pychemengg/heattransfer/externalflow.html#TubeBank.set_fluid_properties"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pychemengg.heattransfer.externalflow.TubeBank.set_fluid_properties" title="Permalink to this definition">¶</a></dt>
+<dd><p>Use this to input fluid properties.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl>
+<dt><strong>viscosity</strong><span class="classifier"><cite>int or float</cite></span></dt><dd><p>Viscosity of external fluid at mean temperature of fluid.</p>
+</dd>
+<dt><strong>specificheat</strong><span class="classifier"><cite>int or float</cite></span></dt><dd><p>Specific heat of external fluid at mean temperature of fluid.</p>
+</dd>
+<dt><strong>thermalconductivity</strong><span class="classifier"><cite>int or float</cite></span></dt><dd><p>Thermal conductivity of external fluid at mean temperature of fluid.</p>
+</dd>
+<dt><strong>density_surface</strong><span class="classifier"><cite>int or float</cite>, optional</span></dt><dd><p>Density of fluid at surface temperature of tubes. Optional if 
+Prandtl number at surface temperature will not be computed.</p>
+</dd>
+<dt><strong>viscosity_surface</strong><span class="classifier"><cite>int or float</cite>, optional</span></dt><dd><p>Viscosity of fluid at surface temperature of tubes. Optional if 
+Prandtl number at surface temperature will not be computed.</p>
+</dd>
+<dt><strong>specificheat_surface</strong><span class="classifier"><cite>int or float</cite>, optional</span></dt><dd><p>Specific heat of fluid at surface temperature of tubes. Optional if 
+Prandtl number at surface temperature will not be computed.</p>
+</dd>
+<dt><strong>thermalconductivity_surface</strong><span class="classifier"><cite>int or float</cite>, optional</span></dt><dd><p>Thermal conductivity of fluid  at surface temperature of tubes. Optional if 
+Prandtl number at surface temperature will not be computed.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>`None`</strong><span class="classifier">‘None’</span></dt><dd><p>This method simply assigns different fluid properties to keyword 
+attributes. It does not return anything.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>All properties are at <span class="math">\(T_{mean} = (T_{infinity} + T_{out})/2\)</span>.
+Exception: some properties with <em>_surface</em> are at tube surface temperature
+<span class="math">\(T_{surface}\)</span>.</p>
+<p class="rubric">Examples</p>
+<p>First import the module <strong>externalflow</strong>.</p>
+<p>Units used in this example: SI system.</p>
+<p>However, any consistent units can be used.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pychemengg.heattransfer</span> <span class="kn">import</span> <span class="n">externalflow</span> <span class="k">as</span> <span class="n">extflow</span> 
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tubebundle</span> <span class="o">=</span> <span class="n">extflow</span><span class="o">.</span><span class="n">TubeBank</span><span class="p">(</span><span class="n">config</span><span class="o">=</span><span class="s2">&quot;staggered&quot;</span><span class="p">,</span> <span class="n">totalrows</span><span class="o">=</span><span class="mi">7</span><span class="p">,</span> <span class="n">tubes_per_row</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span>
+<span class="go">                         transverse_pitch=31.3e-3, longitudanal_pitch=34.3e-3,</span>
+<span class="go">                         length=1, outer_tubediameter=16.4e-3,</span>
+<span class="go">                         T_infinity=15, velocity_infinity=6)</span>
+<span class="go"># This will create an instance of &#39;TubeBank&#39;.</span>
+<span class="go"># Next set fluid properties like so:-</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tubebundle</span><span class="o">.</span><span class="n">set_fluid_properties</span><span class="p">(</span><span class="n">thermalconductivity</span><span class="o">=</span><span class="mf">0.027484</span><span class="p">,</span>
+<span class="go">                                 density=1.108152,</span>
+<span class="go">                                 viscosity=1.92152e-05,</span>
+<span class="go">                                 specificheat=1007.6)</span>
+<span class="go">&gt;&gt;&gt;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pychemengg.heattransfer.externalflow.TubeBank.set_maxvelocity">
+<span class="sig-name descname"><span class="pre">set_maxvelocity</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">maxvelocity</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pychemengg/heattransfer/externalflow.html#TubeBank.set_maxvelocity"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pychemengg.heattransfer.externalflow.TubeBank.set_maxvelocity" title="Permalink to this definition">¶</a></dt>
+<dd><p>Use this to input maximum velocity of fluid in tube bank.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl>
+<dt><strong>maxvelocity</strong><span class="classifier"><cite>int or float</cite></span></dt><dd><p>Maximum velocity of external fluid flow.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>`None`</strong><span class="classifier">‘None’</span></dt><dd><p>This method simply assign maximum velocity
+to keyword attribute. It does not return anything.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<dl class="simple">
+<dt><a class="reference internal" href="#pychemengg.heattransfer.externalflow.TubeBank.calc_maxvelocity" title="pychemengg.heattransfer.externalflow.TubeBank.calc_maxvelocity"><code class="xref py py-obj docutils literal notranslate"><span class="pre">calc_maxvelocity</span></code></a></dt><dd><p>Maximum velocity can alternatively be computed using the method ‘calc_maxvelocity’.</p>
+</dd>
+</dl>
+</div>
+<p class="rubric">Examples</p>
+<p>First import the module <strong>externalflow</strong>.</p>
+<p>Units used in this example: SI system.</p>
+<p>However, any consistent units can be used.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pychemengg.heattransfer</span> <span class="kn">import</span> <span class="n">externalflow</span> <span class="k">as</span> <span class="n">extflow</span> 
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tubebundle</span> <span class="o">=</span> <span class="n">extflow</span><span class="o">.</span><span class="n">TubeBank</span><span class="p">(</span><span class="n">config</span><span class="o">=</span><span class="s2">&quot;staggered&quot;</span><span class="p">,</span> <span class="n">totalrows</span><span class="o">=</span><span class="mi">7</span><span class="p">,</span> <span class="n">tubes_per_row</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span>
+<span class="go">                         transverse_pitch=31.3e-3, longitudanal_pitch=34.3e-3,</span>
+<span class="go">                         length=1, outer_tubediameter=16.4e-3,</span>
+<span class="go">                         T_infinity=15, velocity_infinity=6)</span>
+<span class="go"># This will create an instance of &#39;TubeBank&#39;.</span>
+<span class="go"># Next set Reynolds number like so:-</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tubebundle</span><span class="o">.</span><span class="n">set_maxvelocity</span><span class="p">(</span><span class="mf">12.6</span><span class="p">)</span>
+<span class="go">&gt;&gt;&gt;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="pychemengg.heattransfer.fins.html" class="btn btn-neutral float-right" title="fins" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="pychemengg.heattransfer.externalflow.Sphere.html" class="btn btn-neutral float-left" title="Sphere" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021, Harvinder Singh Gill.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

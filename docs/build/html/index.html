@@ -1,0 +1,367 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>PyChemEngg &mdash; PyChemEngg 0.1a6 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/my_theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/css/my_theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/my_theme.css" type="text/css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css" type="text/css" />
+  <link rel="stylesheet" href="_static/katex-math.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.12.0/contrib/auto-render.min.js"></script>
+        <script src="_static/katex_autorenderer.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="PyChemEngg User Guide" href="userguide/heattransfer/index.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="#" class="icon icon-home"> PyChemEngg
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1a6
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption" role="heading"><span class="caption-text">User Tutorial</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="userguide/heattransfer/index.html">Heat Transfer</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Reference Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="autosummary_pychemengg.html">PyChemEngg API Reference</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="#">PyChemEngg</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="#" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>PyChemEngg</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/index.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
+      
+        <a href="userguide/heattransfer/index.html" class="btn btn-neutral float-right" title="PyChemEngg User Guide" accesskey="n">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+      
+      
+  </div>
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<div class="section" id="pychemengg">
+<h1>PyChemEngg<a class="headerlink" href="#pychemengg" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="about-pychemengg">
+<h2>About PyChemEngg<a class="headerlink" href="#about-pychemengg" title="Permalink to this headline">¶</a></h2>
+<p>PyChemEngg is a python-based framework to promote problem solving and critical
+thinking in chemical engineering.</p>
+<p>Computers have changed every aspect of human life, and exciting advancements
+in quantum computing, articial intelligence and other revolutionary technologies
+are expected to make computational thinking even more integral to the work space.</p>
+<p>To better prepare the future generations of chemical engineers, it is important
+to therefore incorporate a greater degree of computational thinking in their
+education. This however, should not mean that students instead of using
+calculators should start coding and translating mathematical equations and formula
+into a program using a software language. Doing so will not enhance engineering
+thinking. Instead, the computational tools should be used to reinforce concepts,
+and train the students in problem solving.</p>
+<p>One way to do this is to use a framework that encapsulates the equations and formula
+into words, and allows use of these words to build solutions. PyChemEngg strives to
+do just that.</p>
+</div>
+<div class="section" id="philosophy">
+<h2>Philosophy<a class="headerlink" href="#philosophy" title="Permalink to this headline">¶</a></h2>
+<p>The <em>PyChemEngg</em> package has the following philosophy:</p>
+<p>The package should facilitate student learning. The package should not
+become a black box such that it hides the underlying fundamentals of
+chemical engineering. Instead the package should reinforce chemical
+engineering principles, and stimulate students to think.</p>
+<p>In keeping with the above philosophy and for making learning intuitive,
+symbolism has been avoided and the public API contains only
+<strong>keyword arguments</strong>, and the names of the <strong>keywords</strong> have been kept as close
+as possible to their corresponding descriptive names of concepts and
+quantities.</p>
+<p>The expectation is that use of <em>words</em> rather than symbols will
+reinforce concepts and promote deeper learning and thinking.</p>
+</div>
+<div class="section" id="why-use-python-to-make-this-framework">
+<h2>Why use Python to make this framework ?<a class="headerlink" href="#why-use-python-to-make-this-framework" title="Permalink to this headline">¶</a></h2>
+<p>Python is known for its simple syntax, English-like commands, and ease of learning.
+Python also has a mature ecosystem with respect to support libraries and packages
+such as numpy, scipy, and matplotlib, which can provide a comprehensive support
+in developing such as framework. Therefore, Python is a natural choice for
+developing this framework, and thus the idea of <strong>PyChemEngg</strong> was born.</p>
+<p>An additional benefit of Python is its popularity in scientific and technical
+computational areas such as artifical intelligence, machine learning, and data science.
+Therefore, by using Python, the future generation of chemical engineers will be able
+learn Python, a skill that is already in demand in the industry. This will make the
+chemical engineers even more versatile.</p>
+<div class="toctree-wrapper compound">
+<p class="caption" role="heading"><span class="caption-text">User Tutorial</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="userguide/heattransfer/index.html">Heat Transfer</a></li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<p class="caption" role="heading"><span class="caption-text">Reference Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="autosummary_pychemengg.html">PyChemEngg API Reference</a></li>
+</ul>
+</div>
+</div>
+<div class="section" id="how-to-install-pychemengg">
+<h2>How to install PyChemEngg<a class="headerlink" href="#how-to-install-pychemengg" title="Permalink to this headline">¶</a></h2>
+<p>PyChemEngg can be installed using pip : <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">pychemengg</span></code></p>
+</div>
+<div class="section" id="project-status">
+<h2>Project status<a class="headerlink" href="#project-status" title="Permalink to this headline">¶</a></h2>
+<p>PyChemEngg is in a state of development and evolution. In the near future,
+there will be support for different topics such as:</p>
+<ul class="simple">
+<li><p>Material Balances</p></li>
+<li><p>Heat Transfer</p></li>
+<li><p>Fluid Flow</p></li>
+<li><p>Thermodynamics</p></li>
+<li><p>Chemical Reaction Engineering</p></li>
+<li><p>Process Control</p></li>
+</ul>
+<p>At this time the following has been accomplished.</p>
+<ol class="arabic simple">
+<li><p>Material Balances : Physical balance module is ready and is being documented.</p></li>
+<li><p>Heat Transfer : Modules for common topics generally taught are ready and released as a beta version.</p></li>
+</ol>
+</div>
+<div class="section" id="to-do">
+<h2>To do<a class="headerlink" href="#to-do" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li><p>Finish the ‘transition heat transfer’ module for heat transfer and add it to the package.</p></li>
+<li><p>Complete ‘tutorial’ on material balances and release the module.</p></li>
+<li><p>Gather feedback from constituents (instructors and students) to revise the beta design.</p></li>
+</ol>
+</div>
+<div class="section" id="website">
+<h2>Website<a class="headerlink" href="#website" title="Permalink to this headline">¶</a></h2>
+<p>PyChemEngg is hosted at :</p>
+<blockquote>
+<div><p><a class="reference external" href="https://pypi.org/project/pychemengg/">https://pypi.org/project/pychemengg/</a></p>
+</div></blockquote>
+</div>
+<div class="section" id="contact">
+<h2>Contact<a class="headerlink" href="#contact" title="Permalink to this headline">¶</a></h2>
+<p>Created by [ <a class="reference external" href="mailto:profhsgill&#37;&#52;&#48;gmail&#46;com">profhsgill<span>&#64;</span>gmail<span>&#46;</span>com</a> ] (<a class="reference external" href="https://www.gilllab.science">https://www.gilllab.science</a>), feel free to contact me.</p>
+</div>
+<div class="section" id="license-information">
+<h2>License information<a class="headerlink" href="#license-information" title="Permalink to this headline">¶</a></h2>
+<p>PyChemEngg is open source and is available under the MIT license.</p>
+</div>
+</div>
+<div class="section" id="indices-and-tables">
+<h1>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p><a class="reference internal" href="genindex.html"><span class="std std-ref">Index</span></a></p></li>
+<li><p><a class="reference internal" href="py-modindex.html"><span class="std std-ref">Module Index</span></a></p></li>
+<li><p><a class="reference internal" href="search.html"><span class="std std-ref">Search Page</span></a></p></li>
+</ul>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="userguide/heattransfer/index.html" class="btn btn-neutral float-right" title="PyChemEngg User Guide" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021, Harvinder Singh Gill.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

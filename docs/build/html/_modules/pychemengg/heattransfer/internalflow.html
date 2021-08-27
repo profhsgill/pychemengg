@@ -1,0 +1,1454 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>pychemengg.heattransfer.internalflow &mdash; PyChemEngg 0.1a6 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../_static/css/my_theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/css/my_theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/my_theme.css" type="text/css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/katex-math.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.12.0/contrib/auto-render.min.js"></script>
+        <script src="../../../_static/katex_autorenderer.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> PyChemEngg
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1a6
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption" role="heading"><span class="caption-text">User Tutorial</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../userguide/heattransfer/index.html">Heat Transfer</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Reference Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../autosummary_pychemengg.html">PyChemEngg API Reference</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">PyChemEngg</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../../index.html">Module code</a> &raquo;</li>
+        
+      <li>pychemengg.heattransfer.internalflow</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for pychemengg.heattransfer.internalflow</h1><div class="highlight"><pre>
+<span></span><span class="c1"># -*- coding: utf-8 -*-</span>
+
+<span class="c1"># This file is part of pyChemEngg python package.</span>
+ 
+<span class="c1"># PyChemEngg: A python-based framework to promote problem solving and critical</span>
+<span class="c1"># thinking in chemical engineering.</span>
+
+<span class="c1"># Copyright (c) 2021 Harvinder Singh Gill &lt;profhsgill@gmail.com&gt;</span>
+
+<span class="c1"># Permission is hereby granted, free of charge, to any person obtaining a copy</span>
+<span class="c1"># of this software and associated documentation files (the &quot;Software&quot;), to deal</span>
+<span class="c1"># in the Software without restriction, including without limitation the rights</span>
+<span class="c1"># to use, copy, modify, merge, publish, distribute, sublicense, and/or sell</span>
+<span class="c1"># copies of the Software, and to permit persons to whom the Software is</span>
+<span class="c1"># furnished to do so, subject to the following conditions:</span>
+
+<span class="c1"># The above copyright notice and this permission notice shall be included in all</span>
+<span class="c1"># copies or substantial portions of the Software.</span>
+
+<span class="c1"># THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR</span>
+<span class="c1"># IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,</span>
+<span class="c1"># FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE</span>
+<span class="c1"># AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER</span>
+<span class="c1"># LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,</span>
+<span class="c1"># OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE</span>
+<span class="c1"># SOFTWARE.</span>
+
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Contains correlations to find Nusselt number</span>
+<span class="sd">for INTERNAL flow</span>
+
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">scipy</span> <span class="kn">import</span> <span class="n">interpolate</span>
+<span class="kn">from</span> <span class="nn">scipy.optimize</span> <span class="kn">import</span> <span class="n">fsolve</span>
+<span class="kn">import</span> <span class="nn">warnings</span>
+<span class="n">warnings</span><span class="o">.</span><span class="n">simplefilter</span><span class="p">(</span><span class="s1">&#39;always&#39;</span><span class="p">)</span>
+
+<span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;CircularTube&quot;</span><span class="p">]</span>
+
+<div class="viewcode-block" id="CircularTube"><a class="viewcode-back" href="../../../_autosummary/pychemengg.heattransfer.internalflow.CircularTube.html#pychemengg.heattransfer.internalflow.CircularTube">[docs]</a><span class="k">class</span> <span class="nc">CircularTube</span><span class="p">:</span>
+    <span class="sa">r</span><span class="sd">&quot;&quot;&quot; For heat transfer from fluid flow through a circular tube.</span>
+
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    `None_required` : &#39;None&#39;</span>
+<span class="sd">        This class takes no parameters for instance creation.</span>
+<span class="sd"> </span>
+<span class="sd">    </span>
+<span class="sd">    Attributes</span>
+<span class="sd">    ----------</span>
+<span class="sd">    `None_required` : &#39;None&#39;</span>
+<span class="sd">        This class does not expose any instance attributes.</span>
+<span class="sd">    </span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    First import the module **internalflow**.</span>
+<span class="sd">       </span>
+<span class="sd">    &gt;&gt;&gt; from pychemengg.heattransfer import internalflow as intflow </span>
+<span class="sd">    &gt;&gt;&gt; tube = intflow.CircularTube</span>
+<span class="sd">    # This will assign the class &#39;CircularTube&#39; to the variable &#39;tube&#39;.</span>
+<span class="sd">    # Methods of the class &#39;CircularTube&#39; can then be called like so :-</span>
+<span class="sd">    # tube.method(kwarg1=x, ...)</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    
+<div class="viewcode-block" id="CircularTube.Nu_uniformheatflux_laminar"><a class="viewcode-back" href="../../../_autosummary/pychemengg.heattransfer.internalflow.CircularTube.html#pychemengg.heattransfer.internalflow.CircularTube.Nu_uniformheatflux_laminar">[docs]</a>    <span class="k">def</span> <span class="nf">Nu_uniformheatflux_laminar</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sa">r</span><span class="sd">&quot;&quot;&quot; Nusselt number for laminar flow in tube with constant heat flux.</span>
+<span class="sd">        </span>
+<span class="sd">        </span>
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        `None_required` : &#39;None&#39;</span>
+<span class="sd">        </span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        Nu : `float`</span>
+<span class="sd">            Nusselt number = 4.36</span>
+<span class="sd">       </span>
+<span class="sd">        </span>
+<span class="sd">        Notes</span>
+<span class="sd">        -----</span>
+<span class="sd">        The following formula is used:         </span>
+<span class="sd">        </span>
+<span class="sd">        .. math::</span>
+<span class="sd">            </span>
+<span class="sd">            Nu = 4.36</span>
+<span class="sd">    </span>
+
+<span class="sd">        Examples</span>
+<span class="sd">        --------</span>
+<span class="sd">        First import the module **internalflow**.</span>
+<span class="sd">           </span>
+<span class="sd">        &gt;&gt;&gt; from pychemengg.heattransfer import internalflow as intflow </span>
+<span class="sd">        &gt;&gt;&gt; tube = intflow.CircularTube()</span>
+<span class="sd">        &gt;&gt;&gt; tube.Nu_uniformheatflux_laminar()</span>
+<span class="sd">        4.36</span>
+<span class="sd">        </span>
+<span class="sd">        References</span>
+<span class="sd">        ----------</span>
+<span class="sd">        [1] Yunus A. Cengel and Afshin J. Ghajar, &quot;Heat And Mass Transfer</span>
+<span class="sd">        Fundamentals and Applications&quot;, 6th Edition. New York, McGraw Hill</span>
+<span class="sd">        Education, 2020.</span>
+<span class="sd">        </span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="mf">4.36</span></div>
+    
+<div class="viewcode-block" id="CircularTube.Nu_constantsurfacetemp_laminar"><a class="viewcode-back" href="../../../_autosummary/pychemengg.heattransfer.internalflow.CircularTube.html#pychemengg.heattransfer.internalflow.CircularTube.Nu_constantsurfacetemp_laminar">[docs]</a>    <span class="k">def</span> <span class="nf">Nu_constantsurfacetemp_laminar</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sa">r</span><span class="sd">&quot;&quot;&quot; Nusselt number for laminar flow in tube (constant tube surface</span>
+<span class="sd">        temperature).</span>
+<span class="sd">        </span>
+<span class="sd">        </span>
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        `None_required` : &#39;None&#39;</span>
+<span class="sd">        </span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        Nu : `float`</span>
+<span class="sd">            Nusselt number = 3.36</span>
+<span class="sd">       </span>
+<span class="sd">        </span>
+<span class="sd">        Notes</span>
+<span class="sd">        -----</span>
+<span class="sd">        The following formula is used:         </span>
+<span class="sd">        </span>
+<span class="sd">        .. math::</span>
+<span class="sd">            </span>
+<span class="sd">            Nu = 3.36</span>
+<span class="sd">        </span>
+
+<span class="sd">        Examples</span>
+<span class="sd">        --------</span>
+<span class="sd">        First import the module **internalflow**.</span>
+<span class="sd">           </span>
+<span class="sd">        &gt;&gt;&gt; from pychemengg.heattransfer import internalflow as intflow </span>
+<span class="sd">        &gt;&gt;&gt; tube = intflow.CircularTube()</span>
+<span class="sd">        &gt;&gt;&gt; tube.Nu_constantsurfacetemp_laminar()</span>
+<span class="sd">        3.36</span>
+<span class="sd">        </span>
+<span class="sd">        References</span>
+<span class="sd">        ----------</span>
+<span class="sd">        [1] Yunus A. Cengel and Afshin J. Ghajar, &quot;Heat And Mass Transfer</span>
+<span class="sd">        Fundamentals and Applications&quot;, 6th Edition. New York, McGraw Hill</span>
+<span class="sd">        Education, 2020.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="mf">3.66</span></div>
+    
+<div class="viewcode-block" id="CircularTube.Nu_thermallydeveloping_laminar_edwards"><a class="viewcode-back" href="../../../_autosummary/pychemengg.heattransfer.internalflow.CircularTube.html#pychemengg.heattransfer.internalflow.CircularTube.Nu_thermallydeveloping_laminar_edwards">[docs]</a>    <span class="k">def</span> <span class="nf">Nu_thermallydeveloping_laminar_edwards</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">Re</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">Pr</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                                               <span class="n">length</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">diameter</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="sa">r</span><span class="sd">&quot;&quot;&quot;Nusselt number for thermally developing laminar flow and</span>
+<span class="sd">        constant tube surface temperature.</span>
+<span class="sd">        </span>
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        Re : `int or float`</span>
+<span class="sd">            Reynolds number for tube/pipe</span>
+<span class="sd">        Pr : `int or float`</span>
+<span class="sd">            Prandtl number for the fluid.</span>
+<span class="sd">        length : `int or float`</span>
+<span class="sd">            Length of tube</span>
+<span class="sd">        diameter : `int or float`</span>
+<span class="sd">            Diameter of tube</span>
+<span class="sd">        </span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        Nu : `int or float`</span>
+<span class="sd">            Average Nusselt number</span>
+<span class="sd">       </span>
+<span class="sd">        </span>
+<span class="sd">        Notes</span>
+<span class="sd">        -----</span>
+<span class="sd">        The following formula is used:         </span>
+<span class="sd">        </span>
+<span class="sd">        .. math::</span>
+<span class="sd">            </span>
+<span class="sd">            Nu = 3.66 + \cfrac {0.065 (D/L) Re Pr}</span>
+<span class="sd">                               {1 + 0.04[(D/L) Re Pr]^{2/3}}</span>
+<span class="sd">            </span>
+<span class="sd">               </span>
+<span class="sd">        *where:*</span>
+<span class="sd">        </span>
+<span class="sd">            Re = Reynolds number</span>
+<span class="sd">            </span>
+<span class="sd">            Pr = Prandtl number</span>
+<span class="sd">            </span>
+<span class="sd">            D = Pipe inner diameter</span>
+<span class="sd">            </span>
+<span class="sd">            L = Pipe length</span>
+<span class="sd">            </span>
+<span class="sd">            :math:`Re &lt; 2300` (for laminar flow)</span>
+<span class="sd">            </span>
+<span class="sd">            All fluid properties are at bulk mean temp (:math:`T_{b}`):</span>
+<span class="sd">            </span>
+<span class="sd">                :math:`T_{b} = (T_{fluid,in} + T_{fluid,out})/2`</span>
+<span class="sd">                </span>
+<span class="sd">                except :math:`\mu_{surface}`</span>
+<span class="sd">                </span>
+
+<span class="sd">        </span>
+<span class="sd">        Warnings</span>
+<span class="sd">        --------</span>
+<span class="sd">        A Nusselt number is returned based on the equation</span>
+<span class="sd">        even if parameters (such as *Re*, *Pr*) do not fall in their</span>
+<span class="sd">        respective allowable range limits (see above under &#39;Notes&#39;).</span>
+<span class="sd">        However, if this happens, a warning is issued.</span>
+<span class="sd">                </span>
+
+<span class="sd">        </span>
+<span class="sd">        Examples</span>
+<span class="sd">        --------</span>
+<span class="sd">        First import the module **internalflow**.</span>
+<span class="sd">           </span>
+<span class="sd">        &gt;&gt;&gt; from pychemengg.heattransfer import internalflow as intflow </span>
+<span class="sd">        &gt;&gt;&gt; tube = intflow.CircularTube()</span>
+<span class="sd">        &gt;&gt;&gt; tube.Nu_thermallydeveloping_laminar_edwards(Re=77.16, Pr=28750,</span>
+<span class="sd">                                              length=1500, diameter=0.4)</span>
+<span class="sd">        13.729061335098443</span>
+
+<span class="sd">        </span>
+<span class="sd">        References</span>
+<span class="sd">        ----------</span>
+<span class="sd">        [1] Yunus A. Cengel and Afshin J. Ghajar, &quot;Heat And Mass Transfer</span>
+<span class="sd">        Fundamentals and Applications&quot;, 6th Edition. New York, McGraw Hill</span>
+<span class="sd">        Education, 2020.</span>
+<span class="sd">        </span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">term1</span> <span class="o">=</span> <span class="n">diameter</span><span class="o">/</span><span class="n">length</span><span class="o">*</span><span class="n">Re</span><span class="o">*</span><span class="n">Pr</span>
+        <span class="n">Nu</span> <span class="o">=</span> <span class="mf">3.66</span> <span class="o">+</span> <span class="p">(</span><span class="mf">0.065</span><span class="o">*</span><span class="n">term1</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="mf">0.04</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">power</span><span class="p">(</span><span class="n">term1</span><span class="p">,</span> <span class="mi">2</span><span class="o">/</span><span class="mi">3</span><span class="p">))</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="p">(</span><span class="n">Re</span> <span class="o">&lt;</span> <span class="mi">2300</span><span class="p">):</span> <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="s2">&quot;Flow is not laminar. Re is not within range. &quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">Nu</span></div>
+    
+<div class="viewcode-block" id="CircularTube.Nu_thermallyandhydrodynamicallydeveloping_laminar_siedertate"><a class="viewcode-back" href="../../../_autosummary/pychemengg.heattransfer.internalflow.CircularTube.html#pychemengg.heattransfer.internalflow.CircularTube.Nu_thermallyandhydrodynamicallydeveloping_laminar_siedertate">[docs]</a>    <span class="k">def</span> <span class="nf">Nu_thermallyandhydrodynamicallydeveloping_laminar_siedertate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">Re</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">Pr</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">length</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                                        <span class="n">diameter</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">viscosity_bulk</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">viscosity_surface</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="sa">r</span><span class="sd">&quot;&quot;&quot;Nusselt number for thermally developing and hydrodynamically </span>
+<span class="sd">        developing laminar flow and constant tube surface temperature.</span>
+<span class="sd">        </span>
+<span class="sd">        </span>
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        Re : `int or float`</span>
+<span class="sd">            Reynolds number for tube/pipe</span>
+<span class="sd">        Pr : `int or float`</span>
+<span class="sd">            Prandtl number for the fluid.</span>
+<span class="sd">        length : `int or float`</span>
+<span class="sd">            Length of tube</span>
+<span class="sd">        diameter : `int or float`</span>
+<span class="sd">            Diameter of tube</span>
+<span class="sd">        viscosity_bulk : `int or float`</span>
+<span class="sd">            fluid viscosity at bulk temperature</span>
+<span class="sd">        viscosity_surface : `int or float`</span>
+<span class="sd">            fluid viscosity at surface temperature</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        Nu : `int or float`</span>
+<span class="sd">            Average Nusselt number</span>
+<span class="sd">       </span>
+<span class="sd">        </span>
+<span class="sd">        Notes</span>
+<span class="sd">        -----</span>
+<span class="sd">        The following formula is used:         </span>
+<span class="sd">        </span>
+<span class="sd">        .. math::</span>
+<span class="sd">            </span>
+<span class="sd">            Nu = 1.86 \left(\frac{Re Pr D} {L}\right)^{1/3} </span>
+<span class="sd">                      \left(\frac{\mu_{bulk}} {\mu_{surface}}\right)^{0.14}</span>
+<span class="sd">            </span>
+<span class="sd">               </span>
+<span class="sd">        *where:*</span>
+<span class="sd">            Re = Reynolds number</span>
+<span class="sd">            </span>
+<span class="sd">            Pr = Prandtl number</span>
+<span class="sd">            </span>
+<span class="sd">            D = Pipe inner diameter</span>
+<span class="sd">            </span>
+<span class="sd">            L = Pipe length</span>
+<span class="sd">            </span>
+<span class="sd">            :math:`\mu_{bulk}` = viscosity at bulk temperature</span>
+<span class="sd">            </span>
+<span class="sd">            :math:`\mu_{surface}` = viscosity at surface temperature</span>
+<span class="sd">            </span>
+<span class="sd">            :math:`Re &lt; 2300` (for laminar flow)</span>
+<span class="sd">            </span>
+<span class="sd">            :math:`0.6 \eqslantless Pr \eqslantless 5`</span>
+<span class="sd">            </span>
+<span class="sd">            :math:`0.0044 \eqslantless \left(\frac{\mu_{bulk}} {\mu_{surface}}\right) \eqslantless 9.75`</span>
+<span class="sd">            </span>
+<span class="sd">            All fluid properties are at bulk mean temp (:math:`T_{b}`):</span>
+<span class="sd">            </span>
+<span class="sd">                :math:`T_{b} = (T_{fluid,in} + T_{fluid,out})/2`</span>
+<span class="sd">                </span>
+<span class="sd">                except :math:`\mu_{surface}` is at surface temperature</span>
+<span class="sd">                </span>
+
+<span class="sd">        </span>
+<span class="sd">        Warnings</span>
+<span class="sd">        --------</span>
+<span class="sd">        A Nusselt number is returned based on the equation</span>
+<span class="sd">        even if parameters (such as *Re*, *Pr*) do not fall in their</span>
+<span class="sd">        respective allowable range limits (see above under &#39;Notes&#39;).</span>
+<span class="sd">        However, if this happens, a warning is issued.</span>
+<span class="sd">        </span>
+<span class="sd">        </span>
+<span class="sd">        Examples</span>
+<span class="sd">        --------</span>
+<span class="sd">        First import the module **internalflow**.</span>
+<span class="sd">           </span>
+<span class="sd">        &gt;&gt;&gt; from pychemengg.heattransfer import internalflow as intflow </span>
+<span class="sd">        &gt;&gt;&gt; tube = intflow.CircularTube()</span>
+<span class="sd">        &gt;&gt;&gt; tube.Nu_thermallyandhydrodynamicallydeveloping_laminar_siedertate(Re=1390, Pr=0.7228,</span>
+<span class="sd">                                        length=0.1, diameter=0.005, viscosity_bulk=1.963,</span>
+<span class="sd">                                        viscosity_surface=2.420)</span>
+<span class="sd">        6.664822962495227</span>
+
+<span class="sd">        </span>
+<span class="sd">        References</span>
+<span class="sd">        ----------</span>
+<span class="sd">        [1] Yunus A. Cengel and Afshin J. Ghajar, &quot;Heat And Mass Transfer</span>
+<span class="sd">        Fundamentals and Applications&quot;, 6th Edition. New York, McGraw Hill</span>
+<span class="sd">        Education, 2020.        </span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">Nu</span> <span class="o">=</span> <span class="mf">1.86</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">power</span><span class="p">(</span><span class="n">Re</span><span class="o">*</span><span class="n">Pr</span><span class="o">*</span><span class="n">diameter</span><span class="o">/</span><span class="n">length</span><span class="p">,</span> <span class="mi">1</span><span class="o">/</span><span class="mi">3</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">power</span><span class="p">(</span><span class="n">viscosity_bulk</span><span class="o">/</span><span class="n">viscosity_surface</span><span class="p">,</span> <span class="mf">0.14</span><span class="p">)</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="p">(</span><span class="n">Re</span> <span class="o">&lt;</span> <span class="mi">2300</span><span class="p">):</span> <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="s2">&quot;Flow is not laminar. Re is not within range. &quot;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="p">(</span><span class="mf">0.6</span><span class="o">&lt;=</span><span class="n">Pr</span><span class="o">&lt;=</span><span class="mi">5</span><span class="p">):</span> <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="s2">&quot;Pr is not within range.&quot;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="p">(</span><span class="mf">0.0044</span><span class="o">&lt;=</span><span class="p">(</span><span class="n">viscosity_bulk</span><span class="o">/</span><span class="n">viscosity_surface</span><span class="p">)</span><span class="o">&lt;=</span><span class="mf">9.75</span><span class="p">):</span>
+                <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="s2">&quot;Ratio of viscosity_bulk to viscosity_surface&quot;</span>
+                              <span class="s2">&quot; is not within range.&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">Nu</span></div>
+    
+<div class="viewcode-block" id="CircularTube.Nu_dittusboelter"><a class="viewcode-back" href="../../../_autosummary/pychemengg.heattransfer.internalflow.CircularTube.html#pychemengg.heattransfer.internalflow.CircularTube.Nu_dittusboelter">[docs]</a>    <span class="k">def</span> <span class="nf">Nu_dittusboelter</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">Re</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">Pr</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">thermal_ID</span><span class="o">=</span><span class="s2">&quot;heated&quot;</span><span class="p">):</span>
+        <span class="sa">r</span><span class="sd">&quot;&quot;&quot;Nusselt number for turbulent flow constant tube surface temperature.</span>
+<span class="sd">        </span>
+<span class="sd">        </span>
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        Re : `int or float`</span>
+<span class="sd">            Reynolds number for tube/pipe</span>
+<span class="sd">        Pr : `int or float`</span>
+<span class="sd">            Prandtl number for the fluid.</span>
+<span class="sd">        thermal_ID : `str`</span>
+<span class="sd">            Identifier for whether fluid is being &quot;heated&quot; or &quot;cooled&quot;.</span>
+<span class="sd">            Default = &quot;heated&quot;</span>
+<span class="sd">        </span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        Nu : `int or float`</span>
+<span class="sd">            Average Nusselt number</span>
+<span class="sd">       </span>
+<span class="sd">        </span>
+<span class="sd">        Notes</span>
+<span class="sd">        -----</span>
+<span class="sd">        The following formula is used:         </span>
+<span class="sd">        </span>
+<span class="sd">        .. math::</span>
+<span class="sd">            </span>
+<span class="sd">            Nu = 0.023 Re^{0.8} Pr^{n}</span>
+<span class="sd">        </span>
+<span class="sd">        *where:*</span>
+<span class="sd">        </span>
+<span class="sd">            n = 0.3 when fluid is &quot;cooled&quot;</span>
+<span class="sd">            </span>
+<span class="sd">              = 0.4 when fluid is &quot;heated&quot;</span>
+<span class="sd">            </span>
+<span class="sd">            Re = Reynolds number</span>
+<span class="sd">            </span>
+<span class="sd">            Pr = Prandtl number</span>
+<span class="sd">            </span>
+<span class="sd">            :math:`Re &gt; 10000` (for turbulent flow)</span>
+<span class="sd">            </span>
+<span class="sd">            All fluid properties are at bulk mean temp (:math:`T_{b}`):</span>
+<span class="sd">            </span>
+<span class="sd">                :math:`T_{b} = (T_{fluid,in} + T_{fluid,out})/2`</span>
+<span class="sd">                </span>
+
+<span class="sd">        </span>
+<span class="sd">        Warnings</span>
+<span class="sd">        --------</span>
+<span class="sd">        A Nusselt number is returned based on the equation</span>
+<span class="sd">        even if parameters (such as *Re*, *Pr*) do not fall in their</span>
+<span class="sd">        respective allowable range limits (see above under &#39;Notes&#39;).</span>
+<span class="sd">        However, if this happens, a warning is issued.</span>
+<span class="sd">        </span>
+<span class="sd">        </span>
+<span class="sd">        Examples</span>
+<span class="sd">        --------</span>
+<span class="sd">        First import the module **internalflow**.</span>
+<span class="sd">           </span>
+<span class="sd">        &gt;&gt;&gt; from pychemengg.heattransfer import internalflow as intflow </span>
+<span class="sd">        &gt;&gt;&gt; tube = intflow.CircularTube()</span>
+<span class="sd">        &gt;&gt;&gt; tube.Nu_dittusboelter(Re=10760, Pr=4.32, thermal_ID=&quot;heated&quot;)</span>
+<span class="sd">        69.40186669836865</span>
+
+<span class="sd">        </span>
+<span class="sd">        References</span>
+<span class="sd">        ----------</span>
+<span class="sd">        [1] Yunus A. Cengel and Afshin J. Ghajar, &quot;Heat And Mass Transfer</span>
+<span class="sd">        Fundamentals and Applications&quot;, 6th Edition. New York, McGraw Hill</span>
+<span class="sd">        Education, 2020.        </span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">thermal_ID</span> <span class="o">==</span> <span class="s2">&quot;heated&quot;</span><span class="p">:</span>
+            <span class="n">Nu</span> <span class="o">=</span> <span class="mf">0.023</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">power</span><span class="p">(</span><span class="n">Re</span><span class="p">,</span> <span class="mf">0.8</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">power</span><span class="p">(</span><span class="n">Pr</span><span class="p">,</span> <span class="mf">0.4</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">thermal_ID</span> <span class="o">==</span> <span class="s2">&quot;cooled&quot;</span><span class="p">:</span>
+            <span class="n">Nu</span> <span class="o">=</span> <span class="mf">0.023</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">power</span><span class="p">(</span><span class="n">Re</span><span class="p">,</span> <span class="mf">0.8</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">power</span><span class="p">(</span><span class="n">Pr</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">)</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="p">(</span><span class="n">Re</span><span class="o">&gt;=</span><span class="mi">10000</span><span class="p">):</span> <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="s2">&quot;Flow is not turbulent. Re is not within range.&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">Nu</span></div>
+        
+<div class="viewcode-block" id="CircularTube.Nu_siedertate"><a class="viewcode-back" href="../../../_autosummary/pychemengg.heattransfer.internalflow.CircularTube.html#pychemengg.heattransfer.internalflow.CircularTube.Nu_siedertate">[docs]</a>    <span class="k">def</span> <span class="nf">Nu_siedertate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">Re</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">Pr</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">viscosity_bulk</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">viscosity_surfaceace</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="sa">r</span><span class="sd">&quot;&quot;&quot;Nusselt number for turbulent flow constant tube surface temperature.</span>
+<span class="sd">        Use when temperature differences are large.</span>
+<span class="sd">        </span>
+<span class="sd">        </span>
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        Re : `int or float`</span>
+<span class="sd">            Reynolds number for tube/pipe</span>
+<span class="sd">        Pr : `int or float`</span>
+<span class="sd">            Prandtl number for the fluid.</span>
+<span class="sd">        viscosity_bulk : `int or float`</span>
+<span class="sd">            fluid viscosity at bulk temperature</span>
+<span class="sd">        viscosity_surface : `int or float`</span>
+<span class="sd">            fluid viscosity at surface temperature</span>
+<span class="sd">        </span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        Nu : `int or float`</span>
+<span class="sd">            Average Nusselt number</span>
+<span class="sd">       </span>
+<span class="sd">        </span>
+<span class="sd">        Notes</span>
+<span class="sd">        -----</span>
+<span class="sd">        The following formula is used:         </span>
+<span class="sd">        </span>
+<span class="sd">        .. math:: </span>
+<span class="sd">            Nu = 0.027 Re^{0.8} Pr^{1/3} \left( \frac {\mu_{bulk}} {\mu_{surface}} \right)^{0.14}</span>
+<span class="sd">        </span>
+<span class="sd">        *where:*</span>
+<span class="sd">            Re = Reynolds number</span>
+<span class="sd">            </span>
+<span class="sd">            Pr = Prandtl number</span>
+<span class="sd">            </span>
+<span class="sd">            :math:`\mu_{bulk}` = viscosity at bulk temperature</span>
+<span class="sd">            </span>
+<span class="sd">            :math:`\mu_{surface}` = viscosity at surface temperature</span>
+<span class="sd">            </span>
+<span class="sd">            :math:`Re &gt; 10000` (for turbulent flow)</span>
+<span class="sd">            </span>
+<span class="sd">            :math:`0.7 \eqslantless Pr \eqslantless 16700`</span>
+<span class="sd">                        </span>
+<span class="sd">            All fluid properties are at bulk mean temp (:math:`T_{b}`):</span>
+<span class="sd">            </span>
+<span class="sd">                :math:`T_{b} = (T_{fluid,in} + T_{fluid,out})/2`</span>
+<span class="sd">                </span>
+<span class="sd">                except :math:`\mu_{surface}` is at surface temperature</span>
+<span class="sd">                </span>
+<span class="sd">        </span>
+<span class="sd">        Warnings</span>
+<span class="sd">        --------</span>
+<span class="sd">        A Nusselt number is returned based on the equation</span>
+<span class="sd">        even if parameters (such as *Re*, *Pr*) do not fall in their</span>
+<span class="sd">        respective allowable range limits (see above under &#39;Notes&#39;).</span>
+<span class="sd">        However, if this happens, a warning is issued.</span>
+<span class="sd">        </span>
+<span class="sd">        </span>
+<span class="sd">        Examples</span>
+<span class="sd">        --------</span>
+<span class="sd">        First import the module **internalflow**.</span>
+<span class="sd">           </span>
+<span class="sd">        &gt;&gt;&gt; from pychemengg.heattransfer import internalflow as intflow </span>
+<span class="sd">        &gt;&gt;&gt; tube = intflow.CircularTube()</span>
+<span class="sd">        &gt;&gt;&gt; tube.Nu_siedertate(self, Re=2.04e5, Pr=3.02,</span>
+<span class="sd">                               viscosity_bulk=4.71,</span>
+<span class="sd">                               viscosity_surfaceace=2.82)</span>
+<span class="sd">        741.7512113817678</span>
+
+<span class="sd">        </span>
+<span class="sd">        References</span>
+<span class="sd">        ----------</span>
+<span class="sd">        [1] Yunus A. Cengel and Afshin J. Ghajar, &quot;Heat And Mass Transfer</span>
+<span class="sd">        Fundamentals and Applications&quot;, 6th Edition. New York, McGraw Hill</span>
+<span class="sd">        Education, 2020.</span>
+<span class="sd">        [2] M. N. Ozisik, &quot;Heat Transfer A Basic Approach&quot;, McGraw Hill, 1985.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">Nu</span> <span class="o">=</span> <span class="mf">0.027</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">power</span><span class="p">(</span><span class="n">Re</span><span class="p">,</span> <span class="mf">0.8</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">power</span><span class="p">(</span><span class="n">Pr</span><span class="p">,</span> <span class="mi">1</span><span class="o">/</span><span class="mi">3</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">power</span><span class="p">(</span><span class="n">viscosity_bulk</span><span class="o">/</span><span class="n">viscosity_surfaceace</span><span class="p">,</span> <span class="mf">0.14</span><span class="p">)</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="p">(</span><span class="n">Re</span><span class="o">&gt;=</span><span class="mi">10000</span><span class="p">):</span> <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="s2">&quot;Flow is not turbulent. Re is not within range.&quot;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="p">(</span><span class="mf">0.7</span><span class="o">&lt;=</span><span class="n">Pr</span><span class="o">&lt;=</span><span class="mi">16700</span><span class="p">):</span> <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="s2">&quot;Pr is not within range.&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">Nu</span></div>
+     
+<div class="viewcode-block" id="CircularTube.Nu_gnielinski"><a class="viewcode-back" href="../../../_autosummary/pychemengg.heattransfer.internalflow.CircularTube.html#pychemengg.heattransfer.internalflow.CircularTube.Nu_gnielinski">[docs]</a>    <span class="k">def</span> <span class="nf">Nu_gnielinski</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">Re</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">Pr</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="sa">r</span><span class="sd">&quot;&quot;&quot;Nusselt number for turbulent flow constant tube surface temperature.</span>
+<span class="sd">        A more accurate correlation.</span>
+<span class="sd">        </span>
+<span class="sd">        </span>
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        Re : `int or float`</span>
+<span class="sd">            Reynolds number for tube/pipe</span>
+<span class="sd">        Pr : `int or float`</span>
+<span class="sd">            Prandtl number for the fluid.</span>
+<span class="sd">        </span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        Nu : `int or float`</span>
+<span class="sd">            Average Nusselt number</span>
+<span class="sd">       </span>
+<span class="sd">        </span>
+<span class="sd">        Notes</span>
+<span class="sd">        -----</span>
+<span class="sd">        The following formula is used:         </span>
+<span class="sd">        </span>
+<span class="sd">        .. math::</span>
+<span class="sd">            </span>
+<span class="sd">            Nu = \cfrac{(f/8) (Re-1000) Pr}{ 1+12.7(f/8)^{0.5} (Pr^{2/3}-1)}</span>
+<span class="sd">            </span>
+<span class="sd">        </span>
+<span class="sd">        *where:*</span>
+<span class="sd">            Re = Reynolds number</span>
+<span class="sd">            </span>
+<span class="sd">            Pr = Prandtl number</span>
+<span class="sd">            </span>
+<span class="sd">            f = friction factor (can be determined from different correlations.</span>
+<span class="sd">                Here following &#39;Petukhov&#39; correlation is used.)</span>
+<span class="sd">            </span>
+<span class="sd">            :math:`f=(0.790 \ln Re - 1.64)^{-2}` (Petukhov correlation)</span>
+<span class="sd">            </span>
+<span class="sd">            :math:`3*10^3\eqslantless Re \eqslantless 5*10^6` (for turbulent flow)</span>
+<span class="sd">            </span>
+<span class="sd">            :math:`0.5 \eqslantless Pr \eqslantless 2000`</span>
+<span class="sd">                        </span>
+<span class="sd">            All fluid properties are at bulk mean temp (:math:`T_{b}`):</span>
+<span class="sd">            </span>
+<span class="sd">                :math:`T_{b} = (T_{fluid,in} + T_{fluid,out})/2`</span>
+<span class="sd">                </span>
+<span class="sd">        </span>
+<span class="sd">        Warnings</span>
+<span class="sd">        --------</span>
+<span class="sd">        A Nusselt number is returned based on the equation</span>
+<span class="sd">        even if parameters (such as *Re*, *Pr*) do not fall in their</span>
+<span class="sd">        respective allowable range limits (see above under &#39;Notes&#39;).</span>
+<span class="sd">        However, if this happens, a warning is issued.</span>
+<span class="sd">        </span>
+<span class="sd">        </span>
+<span class="sd">        Examples</span>
+<span class="sd">        --------</span>
+<span class="sd">        First import the module **internalflow**.</span>
+<span class="sd">           </span>
+<span class="sd">        &gt;&gt;&gt; from pychemengg.heattransfer import internalflow as intflow </span>
+<span class="sd">        &gt;&gt;&gt; tube = intflow.CircularTube()</span>
+<span class="sd">        &gt;&gt;&gt; tube.Nu_siedertate(Re=2.04e5, Pr=3.02,</span>
+<span class="sd">                               viscosity_bulk=4.71,</span>
+<span class="sd">                               viscosity_surfaceace=2.82)</span>
+<span class="sd">        741.7512113817678</span>
+
+<span class="sd">        </span>
+<span class="sd">        References</span>
+<span class="sd">        ----------</span>
+<span class="sd">        [1] Yunus A. Cengel and Afshin J. Ghajar, &quot;Heat And Mass Transfer</span>
+<span class="sd">        Fundamentals and Applications&quot;, 6th Edition. New York, McGraw Hill</span>
+<span class="sd">        Education, 2020.</span>
+<span class="sd">        [2] M. N. Ozisik, &quot;Heat Transfer A Basic Approach&quot;, McGraw Hill, 1985.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">f</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">power</span><span class="p">(</span><span class="mf">0.79</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">Re</span><span class="p">)</span> <span class="o">-</span> <span class="mf">1.64</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">)</span>
+        <span class="n">num</span> <span class="o">=</span> <span class="p">(</span><span class="n">f</span><span class="o">/</span><span class="mi">8</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">Re</span><span class="o">-</span><span class="mi">1000</span><span class="p">)</span><span class="o">*</span><span class="n">Pr</span>
+        <span class="n">denom</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">+</span> <span class="mf">12.7</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">power</span><span class="p">(</span><span class="n">f</span><span class="o">/</span><span class="mi">8</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">power</span><span class="p">(</span><span class="n">Pr</span><span class="p">,</span><span class="mi">2</span><span class="o">/</span><span class="mi">3</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+        <span class="n">Nu</span> <span class="o">=</span> <span class="n">num</span><span class="o">/</span><span class="n">denom</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="p">(</span><span class="mf">3e3</span><span class="o">&lt;=</span><span class="n">Re</span><span class="o">&lt;=</span><span class="mf">5e6</span><span class="p">):</span> <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="s2">&quot;Re is not within range.&quot;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="p">(</span><span class="mf">0.5</span><span class="o">&lt;=</span><span class="n">Pr</span><span class="o">&lt;=</span><span class="mi">2000</span><span class="p">):</span> <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="s2">&quot;Pr is not within range.&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">Nu</span></div>
+
+<div class="viewcode-block" id="CircularTube.Nu_annulus_laminar"><a class="viewcode-back" href="../../../_autosummary/pychemengg.heattransfer.internalflow.CircularTube.html#pychemengg.heattransfer.internalflow.CircularTube.Nu_annulus_laminar">[docs]</a>    <span class="k">def</span> <span class="nf">Nu_annulus_laminar</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">outerannulus_diameter</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                           <span class="n">innerannulus_diameter</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                           <span class="n">findNUat_ID</span><span class="o">=</span><span class="s2">&quot;innerannulus_diameter&quot;</span><span class="p">):</span>
+        
+        <span class="sa">r</span><span class="sd">&quot;&quot;&quot;Nusselt number for laminar flow in annulus (one surface is</span>
+<span class="sd">        isothermal and other adiabatic)</span>
+<span class="sd">        </span>
+<span class="sd">        </span>
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        outerannulus_diameter : `int or float`</span>
+<span class="sd">            Outer annulus diameter for fluid flow.</span>
+<span class="sd">        innerannulus_diameter : `int or float`</span>
+<span class="sd">            Inner annulus diameter for fluid flow.</span>
+<span class="sd">        findNUat_ID : `str`</span>
+<span class="sd">            Annulus diameter where  Nu is to be found. </span>
+<span class="sd">            Default = &quot;innerannulus_diameter&quot;, </span>
+<span class="sd">            second option = &quot;outerannulus_diameter&quot;</span>
+<span class="sd">        </span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        Nu : `int or float`</span>
+<span class="sd">            Average Nusselt number</span>
+<span class="sd">       </span>
+<span class="sd">        </span>
+<span class="sd">        Notes</span>
+<span class="sd">        -----</span>
+<span class="sd">        A look table is provided in textbooks with ratio of</span>
+<span class="sd">        outerannulus_diameter/innerannulus_diameter in one column and</span>
+<span class="sd">        Nu_at_innerannulus_diameter and Nu_at_outerannulus_diameter in other</span>
+<span class="sd">        two columns. This table is implemented and values are interpolated</span>
+<span class="sd">        as required.</span>
+<span class="sd">            </span>
+<span class="sd">        </span>
+<span class="sd">        Examples</span>
+<span class="sd">        --------</span>
+<span class="sd">        First import the module **internalflow**.</span>
+<span class="sd">           </span>
+<span class="sd">        &gt;&gt;&gt; from pychemengg.heattransfer import internalflow as intflow </span>
+<span class="sd">        &gt;&gt;&gt; tube = intflow.CircularTube()</span>
+<span class="sd">        &gt;&gt;&gt; tube.Nu_annulus_laminar(outerannulus_diameter=0.1,</span>
+<span class="sd">                                    innerannulus_diameter=0.025,</span>
+<span class="sd">                                    findNUat_ID=&quot;innerannulus_diameter&quot;)</span>
+<span class="sd">        741.7512113817678</span>
+
+<span class="sd">        </span>
+<span class="sd">        References</span>
+<span class="sd">        ----------</span>
+<span class="sd">        [1] Yunus A. Cengel and Afshin J. Ghajar, &quot;Heat And Mass Transfer</span>
+<span class="sd">        Fundamentals and Applications&quot;, 6th Edition. New York, McGraw Hill</span>
+<span class="sd">        Education, 2020.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">di_do_vals</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mf">0.05</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.25</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
+        <span class="n">Nu_i_vals</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span> <span class="mf">17.46</span><span class="p">,</span> <span class="mf">11.56</span><span class="p">,</span> <span class="mf">7.37</span><span class="p">,</span> <span class="mf">5.74</span><span class="p">,</span> <span class="mf">4.86</span><span class="p">])</span>
+        <span class="n">Nu_o_vals</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">3.66</span><span class="p">,</span> <span class="mf">4.06</span><span class="p">,</span> <span class="mf">4.11</span><span class="p">,</span> <span class="mf">4.23</span><span class="p">,</span> <span class="mf">4.43</span><span class="p">,</span> <span class="mf">4.86</span><span class="p">])</span>
+        <span class="n">fxn_Nu_i</span> <span class="o">=</span> <span class="n">interpolate</span><span class="o">.</span><span class="n">interp1d</span><span class="p">(</span><span class="n">di_do_vals</span><span class="p">,</span> <span class="n">Nu_i_vals</span><span class="p">)</span>
+        <span class="n">fxn_Nu_o</span> <span class="o">=</span> <span class="n">interpolate</span><span class="o">.</span><span class="n">interp1d</span><span class="p">(</span><span class="n">di_do_vals</span><span class="p">,</span> <span class="n">Nu_o_vals</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">findNUat_ID</span><span class="o">==</span><span class="s2">&quot;innerannulus_diameter&quot;</span><span class="p">:</span>
+            <span class="n">Nu</span> <span class="o">=</span> <span class="n">fxn_Nu_i</span><span class="p">(</span><span class="n">innerannulus_diameter</span><span class="o">/</span><span class="n">outerannulus_diameter</span><span class="p">)</span> 
+        <span class="k">if</span> <span class="n">findNUat_ID</span><span class="o">==</span><span class="s2">&quot;outerannulus_diameter&quot;</span><span class="p">:</span>
+            <span class="n">Nu</span> <span class="o">=</span> <span class="n">fxn_Nu_o</span><span class="p">(</span><span class="n">innerannulus_diameter</span><span class="o">/</span><span class="n">outerannulus_diameter</span><span class="p">)</span>   
+        <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">Nu</span><span class="p">):</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;For inner to outer annulus diameter ratio of &quot;</span>
+                  <span class="s2">&quot;&lt; 0.05, data for &#39;Nu&#39; is not available&quot;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="nb">float</span><span class="p">(</span><span class="n">Nu</span><span class="p">)</span> <span class="c1"># Nu is an np.array of float.</span></div>
+                             <span class="c1"># Convert to Python float type before returning.</span>
+    
+<div class="viewcode-block" id="CircularTube.Nu_liquidmetal_isothermal"><a class="viewcode-back" href="../../../_autosummary/pychemengg.heattransfer.internalflow.CircularTube.html#pychemengg.heattransfer.internalflow.CircularTube.Nu_liquidmetal_isothermal">[docs]</a>    <span class="k">def</span> <span class="nf">Nu_liquidmetal_isothermal</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">Re</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">Pr_surface</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="sa">r</span><span class="sd">&quot;&quot;&quot;Nusselt number for liquid metals (isothermal case).</span>
+<span class="sd">        </span>
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        Re : `int or float`</span>
+<span class="sd">            Reynolds number.</span>
+<span class="sd">        Pr_surface : `int or float`</span>
+<span class="sd">            Prandtl number at surface temperature.</span>
+<span class="sd">        </span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        Nu : `int or float`</span>
+<span class="sd">            Average Nusselt number</span>
+<span class="sd">       </span>
+<span class="sd">        </span>
+<span class="sd">        Notes</span>
+<span class="sd">        -----</span>
+<span class="sd">        The following formula is used:         </span>
+<span class="sd">        </span>
+<span class="sd">        .. math::</span>
+<span class="sd">            </span>
+<span class="sd">            Nu = 4.8 + 0.0156 Re^{0.85} Pr_{surface}^{0.93}</span>
+<span class="sd">        </span>
+<span class="sd">        *where:*</span>
+<span class="sd">            Re = Reynolds number</span>
+<span class="sd">            </span>
+<span class="sd">            :math:`Pr_{surface}` = Prandtl number at surface temperature</span>
+<span class="sd">            </span>
+<span class="sd">            :math:`10^4\eqslantless Re \eqslantless 10^6` (for turbulent flow)</span>
+<span class="sd">            </span>
+<span class="sd">            :math:`0.004 \eqslantless Pr \eqslantless 0.01`</span>
+<span class="sd">                        </span>
+<span class="sd">            All fluid properties are at bulk mean temp (:math:`T_{b}`):</span>
+<span class="sd">            </span>
+<span class="sd">                :math:`T_{b} = (T_{fluid,in} + T_{fluid,out})/2`</span>
+<span class="sd">                </span>
+<span class="sd">                except :math:`\Pr_{surface}` is at surface temperature</span>
+<span class="sd">            </span>
+<span class="sd">        </span>
+<span class="sd">        Examples</span>
+<span class="sd">        --------</span>
+<span class="sd">        First import the module **internalflow**.</span>
+<span class="sd">           </span>
+<span class="sd">        &gt;&gt;&gt; from pychemengg.heattransfer import internalflow as intflow </span>
+<span class="sd">        &gt;&gt;&gt; tube = intflow.CircularTube()</span>
+<span class="sd">        &gt;&gt;&gt; tube. Nu_liquidmetal_isothermal(Re=13570, Pr_surface=0.0119)</span>
+<span class="sd">        5.624282620227201</span>
+
+<span class="sd">        </span>
+<span class="sd">        References</span>
+<span class="sd">        ----------</span>
+<span class="sd">        [1] Yunus A. Cengel and Afshin J. Ghajar, &quot;Heat And Mass Transfer</span>
+<span class="sd">        Fundamentals and Applications&quot;, 6th Edition. New York, McGraw Hill</span>
+<span class="sd">        Education, 2020.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">Nu</span> <span class="o">=</span> <span class="mf">4.8</span> <span class="o">+</span> <span class="mf">0.0156</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">power</span><span class="p">(</span><span class="n">Re</span><span class="p">,</span><span class="mf">0.85</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">power</span><span class="p">(</span><span class="n">Pr_surface</span><span class="p">,</span> <span class="mf">0.93</span><span class="p">)</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="p">(</span><span class="mf">1e4</span><span class="o">&lt;=</span><span class="n">Re</span><span class="o">&lt;=</span><span class="mf">1e6</span><span class="p">):</span> <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="s2">&quot;Re is not within range.&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">Nu</span></div>
+    
+<div class="viewcode-block" id="CircularTube.Nu_liquidmetal_constflux"><a class="viewcode-back" href="../../../_autosummary/pychemengg.heattransfer.internalflow.CircularTube.html#pychemengg.heattransfer.internalflow.CircularTube.Nu_liquidmetal_constflux">[docs]</a>    <span class="k">def</span> <span class="nf">Nu_liquidmetal_constflux</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">Re</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">Pr_surface</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="sa">r</span><span class="sd">&quot;&quot;&quot;Nusselt number for liquid metals (constant flux case).</span>
+<span class="sd">        </span>
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        Re : `int or float`</span>
+<span class="sd">            Reynolds number.</span>
+<span class="sd">        Pr_surface : `int or float`</span>
+<span class="sd">            Prandtl number at surface temperature.</span>
+<span class="sd">        </span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        Nu : `int or float`</span>
+<span class="sd">            Average Nusselt number.</span>
+<span class="sd">       </span>
+<span class="sd">        </span>
+<span class="sd">        Notes</span>
+<span class="sd">        -----</span>
+<span class="sd">        The following formula is used:         </span>
+<span class="sd">        </span>
+<span class="sd">        .. math::</span>
+<span class="sd">            </span>
+<span class="sd">            Nu = 6.3 + 0.0167 Re^{0.85} Pr_{surface}^{0.93}</span>
+<span class="sd">        </span>
+<span class="sd">        *where:*</span>
+<span class="sd">            Re = Reynolds number</span>
+<span class="sd">            </span>
+<span class="sd">            :math:`Pr_{surface}` = Prandtl number at surface temperature</span>
+<span class="sd">            </span>
+<span class="sd">            :math:`10^4\eqslantless Re \eqslantless 10^6` (for turbulent flow)</span>
+<span class="sd">            </span>
+<span class="sd">            :math:`0.004 \eqslantless Pr \eqslantless 0.01`</span>
+<span class="sd">                        </span>
+<span class="sd">            All fluid properties are at bulk mean temp (:math:`T_{b}`):</span>
+<span class="sd">            </span>
+<span class="sd">                :math:`T_{b} = (T_{fluid,in} + T_{fluid,out})/2`</span>
+<span class="sd">                </span>
+<span class="sd">                except :math:`\Pr_{surface}` is at surface temperature</span>
+<span class="sd">            </span>
+<span class="sd">        </span>
+<span class="sd">        Examples</span>
+<span class="sd">        --------</span>
+<span class="sd">        First import the module **internalflow**.</span>
+<span class="sd">           </span>
+<span class="sd">        &gt;&gt;&gt; from pychemengg.heattransfer import internalflow as intflow </span>
+<span class="sd">        &gt;&gt;&gt; tube = intflow.CircularTube()</span>
+<span class="sd">        &gt;&gt;&gt; tube.Nu_liquidmetal_constflux(Re=13570, Pr_surface=0.0119)</span>
+<span class="sd">        7.182405112679119</span>
+
+<span class="sd">        </span>
+<span class="sd">        References</span>
+<span class="sd">        ----------</span>
+<span class="sd">        [1] Yunus A. Cengel and Afshin J. Ghajar, &quot;Heat And Mass Transfer</span>
+<span class="sd">        Fundamentals and Applications&quot;, 6th Edition. New York, McGraw Hill</span>
+<span class="sd">        Education, 2020.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">Nu</span> <span class="o">=</span> <span class="mf">6.3</span> <span class="o">+</span> <span class="mf">0.0167</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">power</span><span class="p">(</span><span class="n">Re</span><span class="p">,</span><span class="mf">0.85</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">power</span><span class="p">(</span><span class="n">Pr_surface</span><span class="p">,</span> <span class="mf">0.93</span><span class="p">)</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="p">(</span><span class="mf">1e4</span><span class="o">&lt;=</span><span class="n">Re</span><span class="o">&lt;=</span><span class="mf">1e6</span><span class="p">):</span> <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="s2">&quot;Re is not within range.&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">Nu</span></div>
+    
+<div class="viewcode-block" id="CircularTube.pressuredrop"><a class="viewcode-back" href="../../../_autosummary/pychemengg.heattransfer.internalflow.CircularTube.html#pychemengg.heattransfer.internalflow.CircularTube.pressuredrop">[docs]</a>    <span class="k">def</span> <span class="nf">pressuredrop</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">length</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">diameter</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">frictionfactor</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                     <span class="n">density</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">velocity</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="sa">r</span><span class="sd">&quot;&quot;&quot;Computes pressure drop for flow in a pipe.</span>
+<span class="sd">        </span>
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        length : `int or float`</span>
+<span class="sd">            Length of pipe.</span>
+<span class="sd">        diameter : `int or float`</span>
+<span class="sd">            Diameter of pipe.</span>
+<span class="sd">        frictionfactor: `int or float`</span>
+<span class="sd">            Friction factor of flowing fluid in pipe.</span>
+<span class="sd">        density : `int or float`</span>
+<span class="sd">            Density of fluid.</span>
+<span class="sd">        velocity : `int or float`</span>
+<span class="sd">            Velocity of fluid in pipe.</span>
+<span class="sd">            </span>
+<span class="sd">        </span>
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        pressure drop : `int or float`</span>
+<span class="sd">            Pressure drop from flowing fluid in pipe</span>
+<span class="sd">       </span>
+<span class="sd">        </span>
+<span class="sd">        Notes</span>
+<span class="sd">        -----</span>
+<span class="sd">        The following formula is used:         </span>
+<span class="sd">        </span>
+<span class="sd">        .. math::</span>
+<span class="sd">            </span>
+<span class="sd">            \Delta P = f \frac{L}{D} \frac{\rho V_{avg}^2}{2}</span>
+<span class="sd">        </span>
+<span class="sd">        *where:*</span>
+<span class="sd">            </span>
+<span class="sd">            :math:`\rho` = density</span>
+<span class="sd">            </span>
+<span class="sd">            :math:`V_{avg}` = average velocity</span>
+<span class="sd">            </span>
+<span class="sd">            L = pipe length</span>
+<span class="sd">            </span>
+<span class="sd">            D = pipe inner diameter</span>
+<span class="sd">            </span>
+<span class="sd">            f = friction factor</span>
+<span class="sd">            </span>
+<span class="sd">            :math:`\Delta P` = pressure drop in pipe</span>
+
+<span class="sd">                        </span>
+<span class="sd">            All fluid properties are at bulk mean temp (:math:`T_{b}`):</span>
+<span class="sd">            </span>
+<span class="sd">                :math:`T_{b} = (T_{fluid,in} + T_{fluid,out})/2`</span>
+
+<span class="sd">            </span>
+<span class="sd">        </span>
+<span class="sd">        Examples</span>
+<span class="sd">        --------</span>
+<span class="sd">        First import the module **internalflow**.</span>
+<span class="sd">           </span>
+<span class="sd">        &gt;&gt;&gt; from pychemengg.heattransfer import internalflow as intflow </span>
+<span class="sd">        &gt;&gt;&gt; tube = intflow.CircularTube()</span>
+<span class="sd">        &gt;&gt;&gt; tube.pressuredrop(length=200, diameter=0.3, frictionfactor=0.1006,</span>
+<span class="sd">                         density=888.1, velocity=2)</span>
+<span class="sd">        119123.81333333332</span>
+
+<span class="sd">        </span>
+<span class="sd">        References</span>
+<span class="sd">        ----------</span>
+<span class="sd">        [1] Yunus A. Cengel and Afshin J. Ghajar, &quot;Heat And Mass Transfer</span>
+<span class="sd">        Fundamentals and Applications&quot;, 6th Edition. New York, McGraw Hill</span>
+<span class="sd">        Education, 2020.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">frictionfactor</span> <span class="o">*</span><span class="n">length</span><span class="o">/</span><span class="n">diameter</span><span class="o">/</span><span class="mi">2</span><span class="o">*</span><span class="n">density</span><span class="o">*</span><span class="n">velocity</span><span class="o">**</span><span class="mi">2</span></div>
+    
+<div class="viewcode-block" id="CircularTube.frictionfactor_laminar"><a class="viewcode-back" href="../../../_autosummary/pychemengg.heattransfer.internalflow.CircularTube.html#pychemengg.heattransfer.internalflow.CircularTube.frictionfactor_laminar">[docs]</a>    <span class="k">def</span> <span class="nf">frictionfactor_laminar</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">Re</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="sa">r</span><span class="sd">&quot;&quot;&quot;Computes friction factor for laminar flow in a pipe.</span>
+<span class="sd">        </span>
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        Re : `int or float`</span>
+<span class="sd">            Reynolds number</span>
+<span class="sd">        </span>
+<span class="sd">            </span>
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        friction factor : `int or float`</span>
+<span class="sd">            Friction factor for flowing fluid in pipe</span>
+<span class="sd">       </span>
+<span class="sd">        </span>
+<span class="sd">        Notes</span>
+<span class="sd">        -----</span>
+<span class="sd">        The following formula is used:         </span>
+<span class="sd">        </span>
+<span class="sd">        .. math::</span>
+<span class="sd">            </span>
+<span class="sd">            f = \frac{64}{Re}</span>
+<span class="sd">        </span>
+<span class="sd">        *where:*</span>
+<span class="sd">            </span>
+<span class="sd">            Re = Reynolds number</span>
+<span class="sd">            </span>
+<span class="sd">            f = friction factor</span>
+<span class="sd">            </span>
+<span class="sd">            :math:`Re &lt; 2300` (for laminar flow)</span>
+<span class="sd">                        </span>
+<span class="sd">            All fluid properties are at bulk mean temp (:math:`T_{b}`):</span>
+<span class="sd">            </span>
+<span class="sd">                :math:`T_{b} = (T_{fluid,in} + T_{fluid,out})/2`</span>
+
+<span class="sd">        </span>
+<span class="sd">        Warnings</span>
+<span class="sd">        --------</span>
+<span class="sd">        A friction factor is returned based on the equation</span>
+<span class="sd">        even if parameters (such as *Re*) do not fall in their</span>
+<span class="sd">        respective allowable range limits (see above under &#39;Notes&#39;).</span>
+<span class="sd">        However, if this happens, a warning is issued.</span>
+<span class="sd">        </span>
+<span class="sd">        </span>
+<span class="sd">        Examples</span>
+<span class="sd">        --------</span>
+<span class="sd">        First import the module **internalflow**.</span>
+<span class="sd">           </span>
+<span class="sd">        &gt;&gt;&gt; from pychemengg.heattransfer import internalflow as intflow </span>
+<span class="sd">        &gt;&gt;&gt; tube = intflow.CircularTube()</span>
+<span class="sd">        &gt;&gt;&gt; tube.frictionfactor_laminar(636)</span>
+<span class="sd">        0.10062893081761007</span>
+
+<span class="sd">        </span>
+<span class="sd">        References</span>
+<span class="sd">        ----------</span>
+<span class="sd">        [1] Yunus A. Cengel and Afshin J. Ghajar, &quot;Heat And Mass Transfer</span>
+<span class="sd">        Fundamentals and Applications&quot;, 6th Edition. New York, McGraw Hill</span>
+<span class="sd">        Education, 2020.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="p">(</span><span class="n">Re</span><span class="o">&lt;</span><span class="mi">2300</span><span class="p">):</span> <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="s2">&quot;Flow is not laminar.&quot;</span>
+                                        <span class="s2">&quot; Re is not within range.&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="mi">64</span><span class="o">/</span><span class="n">Re</span></div>
+    
+    
+<div class="viewcode-block" id="CircularTube.frictionfactor_turbulent"><a class="viewcode-back" href="../../../_autosummary/pychemengg.heattransfer.internalflow.CircularTube.html#pychemengg.heattransfer.internalflow.CircularTube.frictionfactor_turbulent">[docs]</a>    <span class="k">def</span> <span class="nf">frictionfactor_turbulent</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">Re</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">diameter</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> 
+                                 <span class="n">roughness</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">surfacetype</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="sa">r</span><span class="sd">&quot;&quot;&quot;Computes friction factor for turbulent flow in a pipe.</span>
+<span class="sd">        </span>
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        Re : `int or float`</span>
+<span class="sd">            Reynolds number.</span>
+<span class="sd">        diameter : `int or float`</span>
+<span class="sd">            Inner diameter of pipe.</span>
+<span class="sd">        roughness : `int or float`</span>
+<span class="sd">            Roughness of pipe.</span>
+<span class="sd">        surfacetype : `str`</span>
+<span class="sd">            Indicates if surface is to be considered</span>
+<span class="sd">            &quot;rough&quot; or &quot;smooth&quot;. At least one of the two must be entered.</span>
+<span class="sd">            </span>
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        friction factor : `int or float`</span>
+<span class="sd">            Friction factor for flowing fluid in pipe</span>
+<span class="sd">       </span>
+<span class="sd">        </span>
+<span class="sd">        Notes</span>
+<span class="sd">        -----</span>
+<span class="sd">        The following formula is used:         </span>
+<span class="sd">        </span>
+<span class="sd">        for &quot;smooth&quot; surface</span>
+<span class="sd">            </span>
+<span class="sd">        .. math::</span>
+<span class="sd">            </span>
+<span class="sd">            f=(0.790 \ln Re - 1.64)^{-2} \hspace{5pt}(Petukhov\hspace{5pt}correlation)</span>
+<span class="sd">            </span>
+<span class="sd">        for &quot;rough surface&quot;</span>
+<span class="sd">        </span>
+<span class="sd">        .. math::</span>
+<span class="sd">            </span>
+<span class="sd">            \frac{1}{\sqrt{f}} = ( -2.0 \log_{10} \left( \frac{\epsilon /D}{3.7}</span>
+<span class="sd">                        + \frac{2.51}{Re \sqrt{f}}\right) </span>
+<span class="sd">                                  </span>
+<span class="sd">                                  \hspace{5pt}(Colebrook\hspace{5pt}correlation)</span>
+<span class="sd">        </span>
+<span class="sd">        *where:*</span>
+<span class="sd">            </span>
+<span class="sd">            Re = Reynolds number</span>
+<span class="sd">            </span>
+<span class="sd">            f = friction factor</span>
+<span class="sd">            </span>
+<span class="sd">            :math:`\epsilon` = surface roughness of inside of pipes</span>
+<span class="sd">                        </span>
+<span class="sd">            All fluid properties are at bulk mean temp (:math:`T_{b}`):</span>
+<span class="sd">            </span>
+<span class="sd">                :math:`T_{b} = (T_{fluid,in} + T_{fluid,out})/2`</span>
+
+<span class="sd">        </span>
+<span class="sd">        Warnings</span>
+<span class="sd">        --------</span>
+<span class="sd">        A friction factor is returned based on the equation</span>
+<span class="sd">        even if parameters (such as *Re*) do not fall in their</span>
+<span class="sd">        respective allowable range limits (see above under &#39;Notes&#39;).</span>
+<span class="sd">        However, if this happens, a warning is issued.</span>
+<span class="sd">        </span>
+<span class="sd">        </span>
+<span class="sd">        Examples</span>
+<span class="sd">        --------</span>
+<span class="sd">        First import the module **internalflow**.</span>
+<span class="sd">           </span>
+<span class="sd">        &gt;&gt;&gt; from pychemengg.heattransfer import internalflow as intflow </span>
+<span class="sd">        &gt;&gt;&gt; tube = intflow.CircularTube()</span>
+<span class="sd">        &gt;&gt;&gt; tube.frictionfactor_turbulent(Re=126400, diameter=2/12, </span>
+<span class="sd">                                     roughness=7e-6, surfacetype=&quot;rough&quot;)</span>
+<span class="sd">        0.017397627070796194</span>
+
+<span class="sd">        </span>
+<span class="sd">        References</span>
+<span class="sd">        ----------</span>
+<span class="sd">        [1] Yunus A. Cengel and Afshin J. Ghajar, &quot;Heat And Mass Transfer</span>
+<span class="sd">        Fundamentals and Applications&quot;, 6th Edition. New York, McGraw Hill</span>
+<span class="sd">        Education, 2020.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">correctchoice</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;rough&quot;</span><span class="p">,</span> <span class="s2">&quot;smooth&quot;</span><span class="p">]</span>
+        <span class="k">if</span> <span class="n">surfacetype</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">correctchoice</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;You must enter &#39;surfacetype as &#39;smooth&#39; OR &#39;rough&#39;&quot;</span><span class="p">)</span>
+            <span class="n">frictionfactor</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="k">elif</span> <span class="n">surfacetype</span> <span class="o">==</span> <span class="s2">&quot;smooth&quot;</span><span class="p">:</span> <span class="c1"># Petukhov equation</span>
+            <span class="n">frictionfactor</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">power</span><span class="p">((</span><span class="mf">0.79</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">Re</span><span class="p">)</span> <span class="o">-</span> <span class="mf">1.64</span><span class="p">),</span><span class="o">-</span><span class="mi">2</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">surfacetype</span> <span class="o">==</span> <span class="s2">&quot;rough&quot;</span><span class="p">:</span>
+            <span class="k">def</span> <span class="nf">colebrook</span><span class="p">(</span><span class="n">f</span><span class="p">):</span>
+                <span class="n">f</span><span class="o">=</span><span class="n">f</span><span class="o">+</span><span class="mf">0.</span><span class="n">j</span>
+                <span class="n">LHS</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">power</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">)</span>
+                <span class="n">RHS</span> <span class="o">=</span> <span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">roughness</span><span class="o">/</span><span class="n">diameter</span><span class="o">/</span><span class="mf">3.7</span> <span class="o">+</span> <span class="mf">2.51</span><span class="o">/</span><span class="n">Re</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">power</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="mf">0.5</span><span class="p">))</span>
+                <span class="k">return</span> <span class="p">(</span><span class="n">LHS</span><span class="o">-</span><span class="n">RHS</span><span class="p">)</span><span class="o">.</span><span class="n">real</span>
+            <span class="n">f</span> <span class="o">=</span> <span class="n">fsolve</span><span class="p">(</span><span class="n">colebrook</span><span class="p">,</span> <span class="mf">0.05</span><span class="p">)</span>
+            <span class="n">frictionfactor</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="p">(</span><span class="n">Re</span><span class="o">&gt;</span><span class="mi">2300</span><span class="p">):</span> <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="s2">&quot;Flow is not turbulent.&quot;</span>
+                                        <span class="s2">&quot; Re is not within range.&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">frictionfactor</span></div>
+        
+<div class="viewcode-block" id="CircularTube.hydrodynamic_entrylength_laminar"><a class="viewcode-back" href="../../../_autosummary/pychemengg.heattransfer.internalflow.CircularTube.html#pychemengg.heattransfer.internalflow.CircularTube.hydrodynamic_entrylength_laminar">[docs]</a>    <span class="k">def</span> <span class="nf">hydrodynamic_entrylength_laminar</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">Re</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">diameter</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="sa">r</span><span class="sd">&quot;&quot;&quot;Computes laminar hydrodynamic entry length.</span>
+<span class="sd">        </span>
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        Re : `int or float`</span>
+<span class="sd">            Reynolds number.</span>
+<span class="sd">        diameter : `int or float`</span>
+<span class="sd">            Inner diameter of pipe.</span>
+<span class="sd">        </span>
+<span class="sd">            </span>
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        entry length : `int or float`</span>
+<span class="sd">            Hydrodynamic entry length.</span>
+<span class="sd">       </span>
+<span class="sd">        </span>
+<span class="sd">        Notes</span>
+<span class="sd">        -----</span>
+<span class="sd">        The following formula is used:         </span>
+<span class="sd">        </span>
+<span class="sd">        .. math::</span>
+<span class="sd">            </span>
+<span class="sd">            L_{h} = 0.05 Re D</span>
+
+<span class="sd">        </span>
+<span class="sd">        *where:*</span>
+<span class="sd">            </span>
+<span class="sd">            Re = Reynolds number</span>
+<span class="sd">            </span>
+<span class="sd">            D = internal diameter of pipe</span>
+<span class="sd">            </span>
+<span class="sd">            :math:`L_h` = hydrodynamic entry length</span>
+<span class="sd">                        </span>
+<span class="sd">            All fluid properties are at bulk mean temp (:math:`T_{b}`):</span>
+<span class="sd">            </span>
+<span class="sd">                :math:`T_{b} = (T_{fluid,in} + T_{fluid,out})/2`</span>
+
+<span class="sd">        </span>
+<span class="sd">        Warnings</span>
+<span class="sd">        --------</span>
+<span class="sd">        A friction factor is returned based on the equation</span>
+<span class="sd">        even if parameters (such as *Re*) do not fall in their</span>
+<span class="sd">        respective allowable range limits (see above under &#39;Notes&#39;).</span>
+<span class="sd">        However, if this happens, a warning is issued.</span>
+<span class="sd">        </span>
+<span class="sd">        </span>
+<span class="sd">        Examples</span>
+<span class="sd">        --------</span>
+<span class="sd">        First import the module **internalflow**.</span>
+<span class="sd">           </span>
+<span class="sd">        &gt;&gt;&gt; from pychemengg.heattransfer import internalflow as intflow </span>
+<span class="sd">        &gt;&gt;&gt; tube = intflow.CircularTube()</span>
+<span class="sd">        &gt;&gt;&gt; tube.hydrodynamic_entrylength_laminar(Re=636, diameter=0.3)</span>
+<span class="sd">        9.54</span>
+
+<span class="sd">        </span>
+<span class="sd">        References</span>
+<span class="sd">        ----------</span>
+<span class="sd">        [1] Yunus A. Cengel and Afshin J. Ghajar, &quot;Heat And Mass Transfer</span>
+<span class="sd">        Fundamentals and Applications&quot;, 6th Edition. New York, McGraw Hill</span>
+<span class="sd">        Education, 2020.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="p">(</span><span class="n">Re</span><span class="o">&lt;</span><span class="mi">2300</span><span class="p">):</span> <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="s2">&quot;Flow is not laminar.&quot;</span>
+                                        <span class="s2">&quot; Re is not within range.&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="mf">0.05</span><span class="o">*</span><span class="n">Re</span><span class="o">*</span><span class="n">diameter</span></div>
+    
+<div class="viewcode-block" id="CircularTube.hydrodynamic_entrylength_turbulent"><a class="viewcode-back" href="../../../_autosummary/pychemengg.heattransfer.internalflow.CircularTube.html#pychemengg.heattransfer.internalflow.CircularTube.hydrodynamic_entrylength_turbulent">[docs]</a>    <span class="k">def</span> <span class="nf">hydrodynamic_entrylength_turbulent</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">diameter</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="sa">r</span><span class="sd">&quot;&quot;&quot;Computes turbulent hydrodynamic entry length.</span>
+<span class="sd">        </span>
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        diameter : `int or float`</span>
+<span class="sd">            Inner diameter of pipe.</span>
+<span class="sd">        </span>
+<span class="sd">            </span>
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        entry length : `int or float`</span>
+<span class="sd">            Hydrodynamic entry length.</span>
+<span class="sd">       </span>
+<span class="sd">        </span>
+<span class="sd">        Notes</span>
+<span class="sd">        -----</span>
+<span class="sd">        The following formula is used:         </span>
+<span class="sd">        </span>
+<span class="sd">        .. math::</span>
+<span class="sd">            </span>
+<span class="sd">            L_{h} = 10 D</span>
+
+<span class="sd">        </span>
+<span class="sd">        *where:*</span>
+<span class="sd">            </span>
+<span class="sd">            D = internal diameter of pipe</span>
+<span class="sd">            </span>
+<span class="sd">            :math:`L_h` = hydrodynamic entry length</span>
+<span class="sd">        </span>
+<span class="sd">        </span>
+<span class="sd">        Examples</span>
+<span class="sd">        --------</span>
+<span class="sd">        First import the module **internalflow**.</span>
+<span class="sd">           </span>
+<span class="sd">        &gt;&gt;&gt; from pychemengg.heattransfer import internalflow as intflow </span>
+<span class="sd">        &gt;&gt;&gt; tube = intflow.CircularTube()</span>
+<span class="sd">        &gt;&gt;&gt; tube.hydrodynamic_entrylength_turbulent(diameter=0.03)</span>
+<span class="sd">        0.3</span>
+
+<span class="sd">        </span>
+<span class="sd">        References</span>
+<span class="sd">        ----------</span>
+<span class="sd">        [1] Yunus A. Cengel and Afshin J. Ghajar, &quot;Heat And Mass Transfer</span>
+<span class="sd">        Fundamentals and Applications&quot;, 6th Edition. New York, McGraw Hill</span>
+<span class="sd">        Education, 2020.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="mi">10</span><span class="o">*</span><span class="n">diameter</span></div>
+    
+<div class="viewcode-block" id="CircularTube.thermal_entrylength_laminar"><a class="viewcode-back" href="../../../_autosummary/pychemengg.heattransfer.internalflow.CircularTube.html#pychemengg.heattransfer.internalflow.CircularTube.thermal_entrylength_laminar">[docs]</a>    <span class="k">def</span> <span class="nf">thermal_entrylength_laminar</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">Re</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">Pr</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">diameter</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="sa">r</span><span class="sd">&quot;&quot;&quot;Computes laminar thermal entry length.</span>
+<span class="sd">        </span>
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        Re : `int or float`</span>
+<span class="sd">            Reynolds number.</span>
+<span class="sd">        Pr : `int or float`</span>
+<span class="sd">            Prandtl number.    </span>
+<span class="sd">        diameter : `int or float`</span>
+<span class="sd">            Inner diameter of pipe.</span>
+<span class="sd">        </span>
+<span class="sd">            </span>
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        entry length : `int or float`</span>
+<span class="sd">            Thermal entry length.</span>
+<span class="sd">       </span>
+<span class="sd">        </span>
+<span class="sd">        Notes</span>
+<span class="sd">        -----</span>
+<span class="sd">        The following formula is used:         </span>
+<span class="sd">        </span>
+<span class="sd">        .. math::</span>
+<span class="sd">            </span>
+<span class="sd">            L_{t} = 0.05 Re Pr D</span>
+
+<span class="sd">        </span>
+<span class="sd">        *where:*</span>
+<span class="sd">            </span>
+<span class="sd">            Re = Reynolds number</span>
+<span class="sd">            </span>
+<span class="sd">            Pr = Prandtl number</span>
+<span class="sd">            </span>
+<span class="sd">            D = internal diameter of pipe</span>
+<span class="sd">            </span>
+<span class="sd">            :math:`L_t` = thermal entry length</span>
+<span class="sd">                        </span>
+<span class="sd">            All fluid properties are at bulk mean temp (:math:`T_{b}`):</span>
+<span class="sd">            </span>
+<span class="sd">                :math:`T_{b} = (T_{fluid,in} + T_{fluid,out})/2`</span>
+
+<span class="sd">        </span>
+<span class="sd">        Warnings</span>
+<span class="sd">        --------</span>
+<span class="sd">        A friction factor is returned based on the equation</span>
+<span class="sd">        even if parameters (such as *Re*) do not fall in their</span>
+<span class="sd">        respective allowable range limits (see above under &#39;Notes&#39;).</span>
+<span class="sd">        However, if this happens, a warning is issued.</span>
+<span class="sd">        </span>
+<span class="sd">        </span>
+<span class="sd">        Examples</span>
+<span class="sd">        --------</span>
+<span class="sd">        First import the module **internalflow**.</span>
+<span class="sd">           </span>
+<span class="sd">        &gt;&gt;&gt; from pychemengg.heattransfer import internalflow as intflow </span>
+<span class="sd">        &gt;&gt;&gt; tube = intflow.CircularTube()</span>
+<span class="sd">        &gt;&gt;&gt; tube.thermal_entrylength_laminar(Re=636, Pr=10863, diameter=0.3)</span>
+<span class="sd">        103633.02</span>
+
+<span class="sd">        </span>
+<span class="sd">        References</span>
+<span class="sd">        ----------</span>
+<span class="sd">        [1] Yunus A. Cengel and Afshin J. Ghajar, &quot;Heat And Mass Transfer</span>
+<span class="sd">        Fundamentals and Applications&quot;, 6th Edition. New York, McGraw Hill</span>
+<span class="sd">        Education, 2020.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="p">(</span><span class="n">Re</span><span class="o">&lt;</span><span class="mi">2300</span><span class="p">):</span> <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="s2">&quot;Flow is not laminar.&quot;</span>
+                                        <span class="s2">&quot; Re is not within range.&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="mf">0.05</span><span class="o">*</span><span class="n">Re</span><span class="o">*</span><span class="n">Pr</span><span class="o">*</span><span class="n">diameter</span></div>
+    
+<div class="viewcode-block" id="CircularTube.thermal_entrylength_turbulent"><a class="viewcode-back" href="../../../_autosummary/pychemengg.heattransfer.internalflow.CircularTube.html#pychemengg.heattransfer.internalflow.CircularTube.thermal_entrylength_turbulent">[docs]</a>    <span class="k">def</span> <span class="nf">thermal_entrylength_turbulent</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">diameter</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="sa">r</span><span class="sd">&quot;&quot;&quot;Computes turbulent thermal entry length.</span>
+<span class="sd">        </span>
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        diameter : `int or float`</span>
+<span class="sd">            Inner diameter of pipe.</span>
+<span class="sd">        </span>
+<span class="sd">            </span>
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        entry length : `int or float`</span>
+<span class="sd">            Hydrodynamic entry length.</span>
+<span class="sd">       </span>
+<span class="sd">        </span>
+<span class="sd">        Notes</span>
+<span class="sd">        -----</span>
+<span class="sd">        The following formula is used:         </span>
+<span class="sd">        </span>
+<span class="sd">        .. math::</span>
+<span class="sd">            </span>
+<span class="sd">            L_{t} = 10 D</span>
+
+<span class="sd">        </span>
+<span class="sd">        *where:*</span>
+<span class="sd">            </span>
+<span class="sd">            D = internal diameter of pipe</span>
+<span class="sd">            </span>
+<span class="sd">            :math:`L_t` = thermal entry length</span>
+<span class="sd">        </span>
+<span class="sd">        </span>
+<span class="sd">        Examples</span>
+<span class="sd">        --------</span>
+<span class="sd">        First import the module **internalflow**.</span>
+<span class="sd">           </span>
+<span class="sd">        &gt;&gt;&gt; from pychemengg.heattransfer import internalflow as intflow </span>
+<span class="sd">        &gt;&gt;&gt; tube = intflow.CircularTube()</span>
+<span class="sd">        &gt;&gt;&gt; tube.thermal_entrylength_turbulent(diameter=0.03)</span>
+<span class="sd">        0.3</span>
+
+<span class="sd">        </span>
+<span class="sd">        References</span>
+<span class="sd">        ----------</span>
+<span class="sd">        [1] Yunus A. Cengel and Afshin J. Ghajar, &quot;Heat And Mass Transfer</span>
+<span class="sd">        Fundamentals and Applications&quot;, 6th Edition. New York, McGraw Hill</span>
+<span class="sd">        Education, 2020.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="mi">10</span><span class="o">*</span><span class="n">diameter</span></div></div>
+</pre></div>
+
+           </div>
+           
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021, Harvinder Singh Gill.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

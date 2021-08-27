@@ -1,0 +1,449 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Heat Exchangers &mdash; PyChemEngg 0.1a6 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/my_theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/my_theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/my_theme.css" type="text/css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/katex-math.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.12.0/contrib/auto-render.min.js"></script>
+        <script src="../../_static/katex_autorenderer.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Common methods" href="heatcommonmethods.html" />
+    <link rel="prev" title="External flow" href="externalflow.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> PyChemEngg
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1a6
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption" role="heading"><span class="caption-text">User Tutorial</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Heat Transfer</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="steadystate.html">Steady State Heat Transfer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fins.html">Fins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="internalflow.html">Internal flow</a></li>
+<li class="toctree-l2"><a class="reference internal" href="externalflow.html">External flow</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Heat Exchangers</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#introduction">Introduction</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#examples">Examples</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#example-1-counter-flow-lmtd">Example 1: Counter flow <code class="docutils literal notranslate"><span class="pre">LMTD</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#example-2-double-pipe-effectiveness-ntu">Example 2: Double-pipe <code class="docutils literal notranslate"><span class="pre">Effectiveness-NTU</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#example-3-comparison-of-cross-flow-and-shell-and-tube-f-correction-factors">Example 3: Comparison of cross flow and shell and tube <code class="docutils literal notranslate"><span class="pre">F</span> <span class="pre">correction</span> <span class="pre">factors</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="heatcommonmethods.html">Common methods</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Reference Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../autosummary_pychemengg.html">PyChemEngg API Reference</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">PyChemEngg</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="index.html">PyChemEngg User Guide</a> &raquo;</li>
+        
+      <li>Heat Exchangers</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../_sources/userguide/heattransfer/heatexchangers.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
+      
+        <a href="heatcommonmethods.html" class="btn btn-neutral float-right" title="Common methods" accesskey="n">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+      
+      
+        <a href="externalflow.html" class="btn btn-neutral float-left" title="External flow" accesskey="p"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+      
+  </div>
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<div class="section" id="heat-exchangers">
+<span id="heatexchangers"></span><h1>Heat Exchangers<a class="headerlink" href="#heat-exchangers" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
+<p>The module <code class="docutils literal notranslate"><span class="pre">heatexchangers</span></code> contains methods to perform heat transfer
+calculations related to heat exchangers.</p>
+<p>The module has methods for the following:</p>
+<ol class="arabic simple">
+<li><p>Calculation of F factors</p></li>
+<li><p>Calculation of effectiveness and NTU</p></li>
+<li><p>Calculation of overall heat coefficient from NTU</p></li>
+</ol>
+<div class="custom docutils container">
+<p><strong>How to use</strong></p>
+<p>It is recommended that the module be imported
+as <code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">pychemengg</span> <span class="pre">import</span> <span class="pre">heatexchangers</span> <span class="pre">as</span> <span class="pre">hx</span></code></p>
+</div>
+<p>The following examples demonstrate how the module <cite>heatexchangers`</cite>
+can be used to solve heat transfer problems.</p>
+</div>
+<div class="section" id="examples">
+<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="example-1-counter-flow-lmtd">
+<h3>Example 1: Counter flow <code class="docutils literal notranslate"><span class="pre">LMTD</span></code><a class="headerlink" href="#example-1-counter-flow-lmtd" title="Permalink to this headline">¶</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">Example</span> <span class="pre">1.</span></code> Hot fluid (Cp=2.09 kJ/kg-K) flows through a counter flow
+heat exchanger at a rate of 0.63 kg/s. It enter at 193 C and leaves
+at 65 C. Cold fluid (Cp=1.67 kJ/kgK) exits at 149 C at a rate of
+1 kg/s. What area is required if the overall heat transfer
+coefficient based on the inside area is 0.7 kW/m2K. <code class="docutils literal notranslate"><span class="pre">Ans:</span> <span class="pre">Area</span> <span class="pre">=</span> <span class="pre">8.5</span> <span class="pre">m2</span></code></p>
+<blockquote>
+<div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># EXAMPLE 1</span>
+<span class="kn">from</span> <span class="nn">pychemengg.heattransfer</span> <span class="kn">import</span> <span class="n">heatexchangers</span> <span class="k">as</span> <span class="n">hx</span>
+<span class="kn">from</span> <span class="nn">pychemengg.heattransfer</span> <span class="kn">import</span> <span class="n">heatcommonmethods</span> <span class="k">as</span> <span class="n">hcm</span>
+
+<span class="c1"># Use change in internal energy to compute heat transfered</span>
+<span class="n">heattransfer_hot</span> <span class="o">=</span> <span class="n">hcm</span><span class="o">.</span><span class="n">calc_internalenergychange</span><span class="p">(</span><span class="n">mass</span><span class="o">=</span><span class="mf">0.63</span><span class="p">,</span> <span class="n">specificheat</span><span class="o">=</span><span class="mf">2.09e3</span><span class="p">,</span> <span class="n">deltaT</span><span class="o">=</span><span class="mi">193</span><span class="o">-</span><span class="mi">65</span><span class="p">)</span>
+
+<span class="c1"># heattransfer_hot = heattransfer_cold, use this to find inlet</span>
+<span class="c1"># temperature of cold fluid</span>
+
+<span class="n">T_cold_in</span> <span class="o">=</span> <span class="mi">149</span> <span class="o">-</span> <span class="n">heattransfer_hot</span><span class="o">/</span><span class="mf">1.67e3</span>
+
+<span class="c1"># compute LMTD</span>
+<span class="n">deltaT1</span> <span class="o">=</span> <span class="mi">65</span><span class="o">-</span><span class="n">T_cold_in</span>
+<span class="n">deltaT2</span> <span class="o">=</span> <span class="mi">193</span><span class="o">-</span><span class="mi">149</span>
+<span class="n">LMTD</span> <span class="o">=</span> <span class="n">hcm</span><span class="o">.</span><span class="n">calc_LMTD</span><span class="p">(</span><span class="n">deltaT1</span><span class="o">=</span><span class="n">deltaT1</span><span class="p">,</span> <span class="n">deltaT2</span><span class="o">=</span><span class="n">deltaT2</span><span class="p">)</span>
+<span class="n">correctionfactor</span> <span class="o">=</span> <span class="mi">1</span> <span class="c1"># Because counterflow</span>
+<span class="c1"># compute area using convection equation</span>
+<span class="n">area</span> <span class="o">=</span> <span class="n">heattransfer_hot</span><span class="o">/</span><span class="mf">0.7e3</span><span class="o">/</span><span class="n">LMTD</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Area required = </span><span class="si">{</span><span class="n">area</span><span class="si">:</span><span class="s2"> 0.1f</span><span class="si">}</span><span class="s2"> m2&quot;</span><span class="p">)</span>
+
+<span class="c1"># PRINTED OUTPUT</span>
+<span class="n">Area</span> <span class="n">required</span> <span class="o">=</span>  <span class="mf">8.5</span> <span class="n">m2</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="example-2-double-pipe-effectiveness-ntu">
+<h3>Example 2: Double-pipe <code class="docutils literal notranslate"><span class="pre">Effectiveness-NTU</span></code><a class="headerlink" href="#example-2-double-pipe-effectiveness-ntu" title="Permalink to this headline">¶</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">Example</span> <span class="pre">2.</span></code> A fluid (Cp = 4.18 kJ/kgK) enters a parallel flow, double-pipe heat
+exchanger at 40 C at 0.75 kg/s. It is heated by a second fluid (Cp = 1.581 kJ/kgK)
+flowing at a rate of 1.5 kg/s with inlet temperature 115 C. If the area is 13 m2
+and overall heat transfer coefficient is 0.205 kW/m2K, find
+the total heat rate. <code class="docutils literal notranslate"><span class="pre">Ans:</span> <span class="pre">heat</span> <span class="pre">rate</span> <span class="pre">=</span> <span class="pre">87.17</span> <span class="pre">kW</span></code></p>
+<blockquote>
+<div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># EXAMPLE 2</span>
+<span class="kn">from</span> <span class="nn">pychemengg.heattransfer</span> <span class="kn">import</span> <span class="n">heatexchangers</span> <span class="k">as</span> <span class="n">hx</span>
+
+<span class="c1"># Use effectiveness-NTU method.</span>
+<span class="n">Ccold</span> <span class="o">=</span> <span class="mf">0.75</span><span class="o">*</span><span class="mf">4.18e3</span>
+<span class="n">Chot</span> <span class="o">=</span> <span class="mf">1.5</span><span class="o">*</span><span class="mf">1.581e3</span>
+<span class="c1"># Print both to see which is Cmin</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot; Chot = </span><span class="si">{</span><span class="n">Chot</span><span class="si">}</span><span class="s2"> and Ccold = </span><span class="si">{</span><span class="n">Ccold</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="c1"># This produces:  Chot = 2371.5 and Ccold = 3135.0</span>
+<span class="c1"># Based on this, assign Cmin and Cmax.</span>
+<span class="n">Cmin</span> <span class="o">=</span> <span class="n">Chot</span>
+<span class="n">Cmax</span> <span class="o">=</span> <span class="n">Ccold</span>
+<span class="c1"># Calculate NTU = UA/Cmin</span>
+<span class="n">NTU</span> <span class="o">=</span> <span class="o">.</span><span class="mf">205e3</span> <span class="o">*</span> <span class="mi">13</span><span class="o">/</span><span class="n">Cmin</span>
+<span class="c1"># Next given this NTU find effectiveness.</span>
+<span class="c1"># First create instance of EffNTU class</span>
+<span class="n">doublepipe</span> <span class="o">=</span> <span class="n">hx</span><span class="o">.</span><span class="n">EffNTU</span><span class="p">(</span><span class="n">Cmin</span><span class="o">=</span><span class="n">Cmin</span><span class="p">,</span> <span class="n">Cmax</span><span class="o">=</span><span class="n">Cmax</span><span class="p">,</span> <span class="n">NTU</span><span class="o">=</span><span class="n">NTU</span><span class="p">,</span> <span class="n">effectiveness</span><span class="o">=</span><span class="s2">&quot;?&quot;</span><span class="p">)</span>
+<span class="c1"># The keyword - &#39;effectiveness&#39; is assigned the string &quot;?&quot;.</span>
+<span class="c1"># This alerts the function that effectiveness is to be computed.</span>
+
+<span class="c1"># Then call the appropriate exchanger type to compute effectiveness.</span>
+<span class="n">effectiveness</span> <span class="o">=</span> <span class="n">doublepipe</span><span class="o">.</span><span class="n">doublepipe_parallelflow</span><span class="p">()</span>
+
+<span class="n">heatratemax</span> <span class="o">=</span> <span class="n">Cmin</span><span class="o">*</span><span class="p">(</span><span class="mi">115</span><span class="o">-</span><span class="mi">40</span><span class="p">)</span>
+<span class="n">heatrate_actual</span> <span class="o">=</span> <span class="n">effectiveness</span> <span class="o">*</span> <span class="n">heatratemax</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Heat rate = </span><span class="si">{</span><span class="n">heatrate_actual</span><span class="si">:</span><span class="s2"> 0.3e</span><span class="si">}</span><span class="s2"> W&quot;</span><span class="p">)</span>
+
+
+<span class="c1"># PRINTED OUTPUT</span>
+<span class="n">Heat</span> <span class="n">rate</span> <span class="o">=</span>  <span class="mf">8.719e+04</span> <span class="n">W</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="example-3-comparison-of-cross-flow-and-shell-and-tube-f-correction-factors">
+<h3>Example 3: Comparison of cross flow and shell and tube <code class="docutils literal notranslate"><span class="pre">F</span> <span class="pre">correction</span> <span class="pre">factors</span></code><a class="headerlink" href="#example-3-comparison-of-cross-flow-and-shell-and-tube-f-correction-factors" title="Permalink to this headline">¶</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">Example</span> <span class="pre">3.</span></code> An exchanger is desired for operation with T<sub>hot,in</sub> = 400 C,
+T<sub>hot,out</sub> = 130 C, and T<sub>cold,in</sub> = 25 C. The following
+is known about the system:</p>
+<p><strong>Hot fluid</strong>: mass flow rate = 2 kg/s, specific heat = 2000 J/kg k</p>
+<p><strong>Cold fluid</strong>: mass flow rate = 6.857 kg/s, specific heat = 1050 J/kgK</p>
+<p><strong>Overall heat transfer coefficient</strong> = 150 W/m2K</p>
+<p>Compare i) shell and tube heat exchanger design with ii) cross flow exchanger
+with both fluids unmixed. Find the suitable configurations.</p>
+<p><code class="docutils literal notranslate"><span class="pre">Ans:</span> <span class="pre">2</span> <span class="pre">Shell</span> <span class="pre">-</span> <span class="pre">4</span> <span class="pre">tube:</span> <span class="pre">F</span> <span class="pre">=</span> <span class="pre">0.93,</span> <span class="pre">area</span> <span class="pre">=</span> <span class="pre">48.64</span> <span class="pre">m2;</span> <span class="pre">Cross</span> <span class="pre">flow:</span> <span class="pre">F</span> <span class="pre">=</span> <span class="pre">0.85,</span> <span class="pre">area</span> <span class="pre">=</span> <span class="pre">53.8</span> <span class="pre">m2</span></code></p>
+<blockquote>
+<div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># EXAMPLE 3</span>
+<span class="kn">from</span> <span class="nn">pychemengg.heattransfer</span> <span class="kn">import</span> <span class="n">heatexchangers</span> <span class="k">as</span> <span class="n">hx</span>
+<span class="kn">from</span> <span class="nn">pychemengg.heattransfer</span> <span class="kn">import</span> <span class="n">heatcommonmethods</span> <span class="k">as</span> <span class="n">hcm</span>
+
+<span class="c1"># Use energy balance to find T_cold_out</span>
+<span class="n">mass_hot</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">specificheat_hot</span> <span class="o">=</span> <span class="mi">2000</span>
+<span class="n">T_hot_in</span> <span class="o">=</span> <span class="mi">400</span>
+<span class="n">T_hot_out</span> <span class="o">=</span> <span class="mi">130</span>
+<span class="n">deltaT_hot</span> <span class="o">=</span> <span class="n">T_hot_in</span> <span class="o">-</span> <span class="n">T_hot_out</span>
+
+<span class="n">hot_internalenergychange</span> <span class="o">=</span> <span class="n">hcm</span><span class="o">.</span><span class="n">calc_internalenergychange</span><span class="p">(</span><span class="n">mass</span><span class="o">=</span><span class="n">mass_hot</span><span class="p">,</span> <span class="n">specificheat</span><span class="o">=</span><span class="n">specificheat_hot</span><span class="p">,</span> <span class="n">deltaT</span><span class="o">=</span><span class="n">deltaT_hot</span><span class="p">)</span>
+
+<span class="n">mass_cold</span> <span class="o">=</span> <span class="mf">6.857</span>
+<span class="n">specificheat_cold</span> <span class="o">=</span> <span class="mi">1050</span>
+<span class="n">T_cold_in</span> <span class="o">=</span>  <span class="mi">25</span>
+<span class="n">T_cold_out</span> <span class="o">=</span> <span class="n">T_cold_in</span> <span class="o">+</span> <span class="n">hot_internalenergychange</span><span class="o">/</span><span class="n">mass_cold</span><span class="o">/</span><span class="n">specificheat_cold</span>
+
+<span class="c1"># case: shell-tube</span>
+<span class="c1"># Calculate LMTD.</span>
+<span class="n">deltaT_1</span> <span class="o">=</span> <span class="n">T_hot_in</span> <span class="o">-</span> <span class="n">T_cold_out</span>
+<span class="n">deltaT_2</span> <span class="o">=</span> <span class="n">T_hot_out</span> <span class="o">-</span> <span class="n">T_cold_in</span>
+<span class="n">LMTD</span> <span class="o">=</span> <span class="n">hcm</span><span class="o">.</span><span class="n">calc_LMTD</span><span class="p">(</span><span class="n">deltaT1</span><span class="o">=</span><span class="n">deltaT_1</span><span class="p">,</span> <span class="n">deltaT2</span><span class="o">=</span><span class="n">deltaT_2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;LMTD = </span><span class="si">{</span><span class="n">LMTD</span><span class="si">:</span><span class="s2"> 0.1f</span><span class="si">}</span><span class="s2"> C&quot;</span><span class="p">)</span>
+<span class="c1"># Calculate F correction factor.</span>
+<span class="n">exchanger</span> <span class="o">=</span> <span class="n">hx</span><span class="o">.</span><span class="n">FCorrectionFactor</span><span class="p">()</span>
+<span class="n">oneshelltube_F_factor</span> <span class="o">=</span> <span class="n">exchanger</span><span class="o">.</span><span class="n">oneshell2ntubepasses</span><span class="p">(</span><span class="n">T_tubein</span><span class="o">=</span><span class="n">T_cold_in</span><span class="p">,</span> <span class="n">T_tubeout</span><span class="o">=</span><span class="n">T_cold_out</span><span class="p">,</span> <span class="n">T_shellin</span><span class="o">=</span><span class="n">T_hot_in</span><span class="p">,</span> <span class="n">T_shellout</span><span class="o">=</span><span class="n">T_hot_out</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;1-Shell 2-Tube F Factor = </span><span class="si">{</span><span class="n">oneshelltube_F_factor</span><span class="si">:</span><span class="s2"> 0.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="c1"># The F factor is 0.58, which is quite low.</span>
+<span class="c1"># Therefore the 2 shell-4 pass configuration can be examined.</span>
+<span class="n">twoshelltube_F_factor</span> <span class="o">=</span> <span class="n">exchanger</span><span class="o">.</span><span class="n">twoshell4ntubepasses</span><span class="p">(</span><span class="n">T_tubein</span><span class="o">=</span><span class="n">T_cold_in</span><span class="p">,</span> <span class="n">T_tubeout</span><span class="o">=</span><span class="n">T_cold_out</span><span class="p">,</span> <span class="n">T_shellin</span><span class="o">=</span><span class="n">T_hot_in</span><span class="p">,</span> <span class="n">T_shellout</span><span class="o">=</span><span class="n">T_hot_out</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;2-Shell 4-Tube F Factor = </span><span class="si">{</span><span class="n">twoshelltube_F_factor</span><span class="si">:</span><span class="s2"> 0.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="c1"># The F factor for 2 shell and 4 tube is 0.93.</span>
+<span class="c1"># Calculate area for this using convection heat rate equation and internal energy change</span>
+<span class="c1"># hot_internalenergychange = U * A * LMTD * F</span>
+<span class="n">overallheattransfercoefficient</span> <span class="o">=</span> <span class="mi">150</span>
+<span class="n">area_shelltube</span> <span class="o">=</span> <span class="n">hot_internalenergychange</span><span class="o">/</span><span class="n">overallheattransfercoefficient</span><span class="o">/</span><span class="n">LMTD</span><span class="o">/</span><span class="n">twoshelltube_F_factor</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Area needed for 2 shell-4 tube heat exchanger = </span><span class="si">{</span><span class="n">area_shelltube</span><span class="si">:</span><span class="s2">0.2f</span><span class="si">}</span><span class="s2"> m2&quot;</span><span class="p">)</span>
+
+<span class="c1"># case: cross flow both fluids unmixed</span>
+<span class="c1"># Calculate F factor.</span>
+<span class="n">crossflow_F_factor</span> <span class="o">=</span> <span class="n">exchanger</span><span class="o">.</span><span class="n">singlepass_crossflow_bothunmixed</span><span class="p">(</span><span class="n">T_tubein</span><span class="o">=</span><span class="n">T_cold_in</span><span class="p">,</span> <span class="n">T_tubeout</span><span class="o">=</span><span class="n">T_cold_out</span><span class="p">,</span> <span class="n">T_shellin</span><span class="o">=</span><span class="n">T_hot_in</span><span class="p">,</span> <span class="n">T_shellout</span><span class="o">=</span><span class="n">T_hot_out</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Cross flow F factor= </span><span class="si">{</span><span class="n">crossflow_F_factor</span><span class="si">:</span><span class="s2"> 0.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="c1"># Calculate area as was done for shell-tube case</span>
+<span class="n">area_crossflow</span> <span class="o">=</span> <span class="n">hot_internalenergychange</span><span class="o">/</span><span class="n">overallheattransfercoefficient</span><span class="o">/</span><span class="n">LMTD</span><span class="o">/</span><span class="n">crossflow_F_factor</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Area needed for cross flow heat exchanger = </span><span class="si">{</span><span class="n">area_crossflow</span><span class="si">:</span><span class="s2">0.2f</span><span class="si">}</span><span class="s2"> m2&quot;</span><span class="p">)</span>
+
+
+
+<span class="c1"># PRINTED OUTPUT</span>
+<span class="n">LMTD</span> <span class="o">=</span>  <span class="mf">157.5</span> <span class="n">C</span>
+<span class="mi">1</span><span class="o">-</span><span class="n">Shell</span> <span class="mi">2</span><span class="o">-</span><span class="n">Tube</span> <span class="n">F</span> <span class="n">Factor</span> <span class="o">=</span>  <span class="mf">0.58</span>
+<span class="mi">2</span><span class="o">-</span><span class="n">Shell</span> <span class="mi">4</span><span class="o">-</span><span class="n">Tube</span> <span class="n">F</span> <span class="n">Factor</span> <span class="o">=</span>  <span class="mf">0.93</span>
+<span class="n">Area</span> <span class="n">needed</span> <span class="k">for</span> <span class="mi">2</span> <span class="n">shell</span><span class="o">-</span><span class="mi">4</span> <span class="n">tube</span> <span class="n">heat</span> <span class="n">exchanger</span> <span class="o">=</span> <span class="mf">49.32</span> <span class="n">m2</span>
+<span class="n">Cross</span> <span class="n">flow</span> <span class="n">F</span> <span class="n">factor</span><span class="o">=</span>  <span class="mf">0.85</span>
+<span class="n">Area</span> <span class="n">needed</span> <span class="k">for</span> <span class="n">cross</span> <span class="n">flow</span> <span class="n">heat</span> <span class="n">exchanger</span> <span class="o">=</span> <span class="mf">53.70</span> <span class="n">m2</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="heatcommonmethods.html" class="btn btn-neutral float-right" title="Common methods" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="externalflow.html" class="btn btn-neutral float-left" title="External flow" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021, Harvinder Singh Gill.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

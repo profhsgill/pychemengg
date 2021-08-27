@@ -1,0 +1,669 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>pychemengg.heattransfer.heatcommonmethods &mdash; PyChemEngg 0.1a6 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../_static/css/my_theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/css/my_theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/my_theme.css" type="text/css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/katex-math.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.12.0/contrib/auto-render.min.js"></script>
+        <script src="../../../_static/katex_autorenderer.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> PyChemEngg
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1a6
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption" role="heading"><span class="caption-text">User Tutorial</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../userguide/heattransfer/index.html">Heat Transfer</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Reference Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../autosummary_pychemengg.html">PyChemEngg API Reference</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">PyChemEngg</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../../index.html">Module code</a> &raquo;</li>
+        
+      <li>pychemengg.heattransfer.heatcommonmethods</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for pychemengg.heattransfer.heatcommonmethods</h1><div class="highlight"><pre>
+<span></span><span class="c1"># -*- coding: utf-8 -*-</span>
+
+<span class="c1"># This file is part of pyChemEngg python package.</span>
+ 
+<span class="c1"># PyChemEngg: A python-based framework to promote problem solving and critical</span>
+<span class="c1"># thinking in chemical engineering.</span>
+
+<span class="c1"># Copyright (c) 2021 Harvinder Singh Gill &lt;profhsgill@gmail.com&gt;</span>
+
+<span class="c1"># Permission is hereby granted, free of charge, to any person obtaining a copy</span>
+<span class="c1"># of this software and associated documentation files (the &quot;Software&quot;), to deal</span>
+<span class="c1"># in the Software without restriction, including without limitation the rights</span>
+<span class="c1"># to use, copy, modify, merge, publish, distribute, sublicense, and/or sell</span>
+<span class="c1"># copies of the Software, and to permit persons to whom the Software is</span>
+<span class="c1"># furnished to do so, subject to the following conditions:</span>
+
+<span class="c1"># The above copyright notice and this permission notice shall be included in all</span>
+<span class="c1"># copies or substantial portions of the Software.</span>
+
+<span class="c1"># THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR</span>
+<span class="c1"># IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,</span>
+<span class="c1"># FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE</span>
+<span class="c1"># AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER</span>
+<span class="c1"># LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,</span>
+<span class="c1"># OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE</span>
+<span class="c1"># SOFTWARE.</span>
+
+<span class="sd">&quot;&quot;&quot;Module contains functions commonly used in heat transfer.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">scipy</span> <span class="kn">import</span> <span class="n">interpolate</span>
+<span class="kn">from</span> <span class="nn">scipy.interpolate</span> <span class="kn">import</span> <span class="n">interp1d</span>
+<span class="kn">import</span> <span class="nn">bisect</span>
+<span class="kn">import</span> <span class="nn">warnings</span>
+<span class="n">warnings</span><span class="o">.</span><span class="n">simplefilter</span><span class="p">(</span><span class="s1">&#39;always&#39;</span><span class="p">)</span>
+
+<span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;calc_LMTD&quot;</span><span class="p">,</span> <span class="s2">&quot;calc_internalenergychange&quot;</span><span class="p">,</span>
+           <span class="s2">&quot;calc_overallheattransfercoefficient&quot;</span><span class="p">,</span> <span class="s2">&quot;calc_Re&quot;</span><span class="p">]</span>
+
+<div class="viewcode-block" id="calc_internalenergychange"><a class="viewcode-back" href="../../../_autosummary/pychemengg.heattransfer.heatcommonmethods.calc_internalenergychange.html#pychemengg.heattransfer.heatcommonmethods.calc_internalenergychange">[docs]</a><span class="k">def</span> <span class="nf">calc_internalenergychange</span><span class="p">(</span><span class="n">mass</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">specificheat</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">deltaT</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="sa">r</span><span class="sd">&quot;&quot;&quot;To compute change in internal energy due to temperature change.</span>
+<span class="sd">    </span>
+<span class="sd">    </span>
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    mass : `int or float`</span>
+<span class="sd">        Mass of object (solid, liquid or gas).</span>
+<span class="sd">    specificheat : `int or float`</span>
+<span class="sd">        Specific heat of object.</span>
+<span class="sd">    deltaT : `int or float`</span>
+<span class="sd">        Change in temperature of object.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    internal energy change: `int or float`</span>
+<span class="sd">        Internal energy change due to change in temperature of object.</span>
+<span class="sd">    </span>
+<span class="sd">    </span>
+<span class="sd">    Notes</span>
+<span class="sd">    -----</span>
+<span class="sd">    The following formula is used:         </span>
+<span class="sd">    </span>
+<span class="sd">    .. math::</span>
+<span class="sd">        </span>
+<span class="sd">       \Delta U = mC_p\Delta T</span>
+<span class="sd">        </span>
+<span class="sd">           </span>
+<span class="sd">    *where:*</span>
+<span class="sd">        </span>
+<span class="sd">        m = change in internal energy</span>
+<span class="sd">        </span>
+<span class="sd">        :math:`C_p` = specific heat</span>
+<span class="sd">        </span>
+<span class="sd">        :math:`\Delta T` = change in temperature</span>
+<span class="sd">        </span>
+<span class="sd">        :math:`\Delta U` = change in internal energy</span>
+
+<span class="sd">    </span>
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    First import the module **heatcommonmethods**.</span>
+<span class="sd">       </span>
+<span class="sd">    &gt;&gt;&gt; from pychemengg.heattransfer import heatcommonmethods as hcm </span>
+<span class="sd">    &gt;&gt;&gt; hcm.calc_internalenergychange(mass=4.686, specificheat=0.395,</span>
+<span class="sd">                                      deltaT=150-100)</span>
+<span class="sd">    92.5485</span>
+
+<span class="sd">    </span>
+<span class="sd">    References</span>
+<span class="sd">    ----------</span>
+<span class="sd">    [1] G. F. Nellis and S. A. Klein, &quot;Introduction to Engineering </span>
+<span class="sd">    Heat Transfer&quot;, 1st Edition. Cambridge University Press, 2021.</span>
+<span class="sd">    </span>
+<span class="sd">    [2] Y. A. Cengel and A. J. Ghajar, &quot;Heat And Mass Transfer</span>
+<span class="sd">    Fundamentals and Applications&quot;, 6th Edition. New York, McGraw Hill</span>
+<span class="sd">    Education, 2020.</span>
+<span class="sd">    </span>
+<span class="sd">    [3] T.L. Bergman, A. S. Lavine, F. P. Incropera, D. P. Dewitt, </span>
+<span class="sd">    &quot;Fundamentals of Heat and Mass Transfer&quot;, 7th Edition, </span>
+<span class="sd">    John Wiley, 2011.</span>
+<span class="sd">    </span>
+<span class="sd">    &quot;&quot;&quot;</span>    
+    <span class="k">return</span> <span class="n">mass</span> <span class="o">*</span> <span class="n">specificheat</span> <span class="o">*</span> <span class="n">deltaT</span></div>
+
+
+<div class="viewcode-block" id="calc_Re"><a class="viewcode-back" href="../../../_autosummary/pychemengg.heattransfer.heatcommonmethods.calc_Re.html#pychemengg.heattransfer.heatcommonmethods.calc_Re">[docs]</a><span class="k">def</span> <span class="nf">calc_Re</span><span class="p">(</span><span class="n">characteristic_length</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">velocity</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">density</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">viscosity</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="sa">r</span><span class="sd">&quot;&quot;&quot;To compute Reynolds number for flowing fluid.</span>
+<span class="sd">    </span>
+<span class="sd">    </span>
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    characteristic_length : `int or float`</span>
+<span class="sd">        Relevant length for computing Reynolds number (see Notes).</span>
+<span class="sd">    velocity : `int or float`</span>
+<span class="sd">        Velocity of fluid.</span>
+<span class="sd">    density : `int or float`</span>
+<span class="sd">        Density of fluid.</span>
+<span class="sd">    viscosity : `int or float`</span>
+<span class="sd">        Viscosity of fluid.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    Reynolds number : `int or float`</span>
+<span class="sd">        Reynolds number for a flowing fluid.</span>
+<span class="sd">    </span>
+<span class="sd">    </span>
+<span class="sd">    Notes</span>
+<span class="sd">    -----</span>
+<span class="sd">    The following formula is used:         </span>
+<span class="sd">    </span>
+<span class="sd">    .. math::</span>
+<span class="sd">        </span>
+<span class="sd">       Re = \frac {L_c V \rho} {\mu}</span>
+<span class="sd">       </span>
+<span class="sd">           </span>
+<span class="sd">    *where:*</span>
+<span class="sd">        </span>
+<span class="sd">        :math:`L_c`  *= characteristic length*</span>
+<span class="sd">            for example:</span>
+<span class="sd">                :math:`L_c` *= internal diameter of pipe/tube for fluid flowing*</span>
+<span class="sd">                in a circular tube/pipe</span>
+<span class="sd">                :math:`L_c` *= external diameter for fluid flowing</span>
+<span class="sd">                outside a circular tube/pipe*</span>
+<span class="sd">                :math:`L_c` *= hydraulic diameter for fluid flowing</span>
+<span class="sd">                in a non-circular tube/pipe*</span>
+
+<span class="sd">        *V = fluid velocity*</span>
+<span class="sd">        </span>
+<span class="sd">        :math:`\rho` *= density of fluid*</span>
+<span class="sd">        </span>
+<span class="sd">        :math:`\mu` *= viscosity of fluid*</span>
+
+<span class="sd">    </span>
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    First import the module **heatcommonmethods**.</span>
+<span class="sd">       </span>
+<span class="sd">    &gt;&gt;&gt; from pychemengg.heattransfer import heatcommonmethods as hcm </span>
+<span class="sd">    &gt;&gt;&gt; hcm.calc_Re(characteristic_length=0.015, velocity=6.43,</span>
+<span class="sd">                    density=1.059, viscosity=2.008e-5)</span>
+<span class="sd">    5086.680776892429</span>
+
+<span class="sd">    </span>
+<span class="sd">    References</span>
+<span class="sd">    ----------</span>
+<span class="sd">    [1] G. F. Nellis and S. A. Klein, &quot;Introduction to Engineering </span>
+<span class="sd">    Heat Transfer&quot;, 1st Edition. Cambridge University Press, 2021.</span>
+<span class="sd">    </span>
+<span class="sd">    [2] Y. A. Cengel and A. J. Ghajar, &quot;Heat And Mass Transfer</span>
+<span class="sd">    Fundamentals and Applications&quot;, 6th Edition. New York, McGraw Hill</span>
+<span class="sd">    Education, 2020.</span>
+<span class="sd">    </span>
+<span class="sd">    [3] T.L. Bergman, A. S. Lavine, F. P. Incropera, D. P. Dewitt, </span>
+<span class="sd">    &quot;Fundamentals of Heat and Mass Transfer&quot;, 7th Edition, </span>
+<span class="sd">    John Wiley, 2011.</span>
+<span class="sd">    &quot;&quot;&quot;</span> 
+    <span class="k">return</span> <span class="n">characteristic_length</span> <span class="o">*</span> <span class="n">velocity</span> <span class="o">*</span> <span class="n">density</span> <span class="o">/</span> <span class="n">viscosity</span></div>
+
+
+<div class="viewcode-block" id="calc_Pr"><a class="viewcode-back" href="../../../_autosummary/pychemengg.heattransfer.heatcommonmethods.calc_Pr.html#pychemengg.heattransfer.heatcommonmethods.calc_Pr">[docs]</a><span class="k">def</span> <span class="nf">calc_Pr</span><span class="p">(</span><span class="n">viscosity</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">specificheat</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">thermalconductivity</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="sa">r</span><span class="sd">&quot;&quot;&quot;To compute Prandtl number for a fluid.</span>
+<span class="sd">    </span>
+<span class="sd">    </span>
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    viscosity : `int or float`</span>
+<span class="sd">        Viscosity of fluid.</span>
+<span class="sd">    specificheat : `int or float`</span>
+<span class="sd">        Specific heat of fluid.</span>
+<span class="sd">    thermalconductivity : `int or float`</span>
+<span class="sd">        Thermal conductivity of fluid.</span>
+
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    Prandtl number : `int or float`</span>
+<span class="sd">        Prandtl number for a fluid.</span>
+<span class="sd">    </span>
+<span class="sd">    </span>
+<span class="sd">    Notes</span>
+<span class="sd">    -----</span>
+<span class="sd">    The following formula is used:         </span>
+<span class="sd">    </span>
+<span class="sd">    .. math::</span>
+<span class="sd">        </span>
+<span class="sd">       Pr = \frac {\mu C_p} {k}</span>
+<span class="sd">       </span>
+<span class="sd">           </span>
+<span class="sd">    *where:*</span>
+<span class="sd">        </span>
+<span class="sd">        :math:`\mu` *= viscosity of fluid*        </span>
+<span class="sd">        </span>
+<span class="sd">        :math:`C_p`  *= specific heat*</span>
+<span class="sd">        </span>
+<span class="sd">        *k = thermal conductivity*</span>
+
+<span class="sd">    </span>
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    First import the module **heatcommonmethods**.</span>
+<span class="sd">       </span>
+<span class="sd">    &gt;&gt;&gt; from pychemengg.heattransfer import heatcommonmethods as hcm </span>
+<span class="sd">    &gt;&gt;&gt; hcm.calc_Pr(viscosity=0.8374, specificheat=1880, thermalconductivity=0.145)</span>
+<span class="sd">    10857.324137931037</span>
+
+<span class="sd">    </span>
+<span class="sd">    References</span>
+<span class="sd">    ----------</span>
+<span class="sd">    [1] G. F. Nellis and S. A. Klein, &quot;Introduction to Engineering </span>
+<span class="sd">    Heat Transfer&quot;, 1st Edition. Cambridge University Press, 2021.</span>
+<span class="sd">    </span>
+<span class="sd">    [2] Y. A. Cengel and A. J. Ghajar, &quot;Heat And Mass Transfer</span>
+<span class="sd">    Fundamentals and Applications&quot;, 6th Edition. New York, McGraw Hill</span>
+<span class="sd">    Education, 2020.</span>
+<span class="sd">    </span>
+<span class="sd">    [3] T.L. Bergman, A. S. Lavine, F. P. Incropera, D. P. Dewitt, </span>
+<span class="sd">    &quot;Fundamentals of Heat and Mass Transfer&quot;, 7th Edition, </span>
+<span class="sd">    John Wiley, 2011.</span>
+<span class="sd">    &quot;&quot;&quot;</span> 
+    <span class="k">return</span>  <span class="n">viscosity</span> <span class="o">*</span> <span class="n">specificheat</span> <span class="o">/</span> <span class="n">thermalconductivity</span></div>
+
+
+<div class="viewcode-block" id="calc_LMTD"><a class="viewcode-back" href="../../../_autosummary/pychemengg.heattransfer.heatcommonmethods.calc_LMTD.html#pychemengg.heattransfer.heatcommonmethods.calc_LMTD">[docs]</a><span class="k">def</span> <span class="nf">calc_LMTD</span><span class="p">(</span><span class="n">deltaT1</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">deltaT2</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="sa">r</span><span class="sd">&quot;&quot;&quot;To compute log mean temperature difference (LMTD) </span>
+<span class="sd">    </span>
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    deltaT1 : `int or float`</span>
+<span class="sd">        Temperature difference.</span>
+<span class="sd">    deltaT2 : `int or float`</span>
+<span class="sd">        Temperature difference.</span>
+<span class="sd">        </span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    LMTD : `int or float`</span>
+<span class="sd">        Reynolds number for a flowing fluid.</span>
+<span class="sd">    </span>
+<span class="sd">    </span>
+<span class="sd">    Notes</span>
+<span class="sd">    -----</span>
+<span class="sd">    The following formula is used.</span>
+<span class="sd">    </span>
+<span class="sd">    .. math::</span>
+<span class="sd">        </span>
+<span class="sd">        LMTD = \cfrac {\Delta T_1 - \Delta T_2} {ln[ \Delta T_1 / \Delta T_2 }</span>
+<span class="sd">        </span>
+<span class="sd">           </span>
+<span class="sd">    *where:*</span>
+<span class="sd">        </span>
+<span class="sd">        :math:`\Delta T_1` *= temperature difference #1*</span>
+<span class="sd">        </span>
+<span class="sd">        :math:`\Delta T_2` *= temperature difference #2*</span>
+<span class="sd">        </span>
+<span class="sd">        :math:`\Delta T_1` and :math:`\Delta T_2` vary on the type </span>
+<span class="sd">        of problem under consideration</span>
+
+<span class="sd">    Internal to this function, the temperature differences are converted into </span>
+<span class="sd">    complex numbers to allow for the use of this function in situations</span>
+<span class="sd">    where temperature must be iteratively solved using solvers</span>
+<span class="sd">    such as &#39;fsolve&#39; from scipy. The value that is returned is the real part.</span>
+<span class="sd">    </span>
+<span class="sd">    </span>
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    First import the module **heatcommonmethods**.</span>
+<span class="sd">       </span>
+<span class="sd">    &gt;&gt;&gt; from pychemengg.heattransfer import heatcommonmethods as hcm </span>
+<span class="sd">    &gt;&gt;&gt; hcm.calc_LMTD(deltaT1=90-40, deltaT2=65-20)</span>
+<span class="sd">    47.456107905149494</span>
+
+<span class="sd">    </span>
+<span class="sd">    References</span>
+<span class="sd">    ----------</span>
+<span class="sd">    [1] G. F. Nellis and S. A. Klein, &quot;Introduction to Engineering </span>
+<span class="sd">    Heat Transfer&quot;, 1st Edition. Cambridge University Press, 2021.</span>
+<span class="sd">    </span>
+<span class="sd">    [2] Y. A. Cengel and A. J. Ghajar, &quot;Heat And Mass Transfer</span>
+<span class="sd">    Fundamentals and Applications&quot;, 6th Edition. New York, McGraw Hill</span>
+<span class="sd">    Education, 2020.</span>
+<span class="sd">    </span>
+<span class="sd">    [3] T.L. Bergman, A. S. Lavine, F. P. Incropera, D. P. Dewitt, </span>
+<span class="sd">    &quot;Fundamentals of Heat and Mass Transfer&quot;, 7th Edition, </span>
+<span class="sd">    John Wiley, 2011.</span>
+<span class="sd">    &quot;&quot;&quot;</span> 
+    <span class="k">if</span> <span class="n">deltaT1</span> <span class="o">==</span> <span class="n">deltaT2</span><span class="p">:</span>
+        <span class="n">LMTD</span> <span class="o">=</span> <span class="n">deltaT1</span>
+        <span class="k">return</span> <span class="n">LMTD</span>
+    <span class="k">else</span><span class="p">:</span>    
+        <span class="n">deltaT1</span> <span class="o">=</span> <span class="n">deltaT1</span> <span class="o">+</span> <span class="mi">0</span><span class="n">j</span>
+        <span class="n">deltaT2</span> <span class="o">=</span> <span class="n">deltaT2</span> <span class="o">+</span> <span class="mi">0</span><span class="n">j</span>
+        <span class="n">LMTD</span> <span class="o">=</span> <span class="p">(</span><span class="n">deltaT1</span><span class="o">-</span><span class="n">deltaT2</span><span class="p">)</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">deltaT1</span><span class="o">/</span><span class="n">deltaT2</span><span class="p">)</span>
+        <span class="n">LMTD</span> <span class="o">=</span> <span class="n">LMTD</span><span class="o">.</span><span class="n">real</span>
+        <span class="k">return</span> <span class="n">LMTD</span></div>
+
+
+<div class="viewcode-block" id="calc_overallheattransfercoefficient"><a class="viewcode-back" href="../../../_autosummary/pychemengg.heattransfer.heatcommonmethods.calc_overallheattransfercoefficient.html#pychemengg.heattransfer.heatcommonmethods.calc_overallheattransfercoefficient">[docs]</a><span class="k">def</span> <span class="nf">calc_overallheattransfercoefficient</span><span class="p">(</span><span class="n">inner_heattransfercoefficient</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                          <span class="n">outer_heattransfercoefficient</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                          <span class="n">inner_foulingfactor</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                          <span class="n">outer_foulingfactor</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                          <span class="n">resistanceof_wall</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                          <span class="n">inner_area</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                          <span class="n">outer_area</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                          <span class="n">is_basedon_outerarea</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+                          <span class="n">is_basedon_innerarea</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+    <span class="sa">r</span><span class="sd">&quot;&quot;&quot;To compute overall heat transfer coefficient (U) from resistance</span>
+<span class="sd">    values</span>
+<span class="sd">    </span>
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    inner_heattransfercoefficient : `int or float`</span>
+<span class="sd">        Heat transfer coefficient on inside/oneside of object.</span>
+<span class="sd">    outer_heattransfercoefficient : `int or float`</span>
+<span class="sd">        Heat transfer coefficient on outside/otherside of object.</span>
+<span class="sd">    inner_foulingfactor: `int or float`</span>
+<span class="sd">        Fouling factor on inside/oneside of object.</span>
+<span class="sd">    outer_foulingfactor: `int or float`</span>
+<span class="sd">        Fouling factor on outside/otherside of object.</span>
+<span class="sd">    resistanceof_wall: `int or float`,</span>
+<span class="sd">        Resistance of conduction of object material (based on shape).</span>
+<span class="sd">    inner_area: `int or float`</span>
+<span class="sd">        Surface area of inside/oneside of object.</span>
+<span class="sd">    outer_area: `int or float`</span>
+<span class="sd">        Surface area of outside/otherside of object.</span>
+<span class="sd">    is_basedon_outerarea : `bool`, default = False</span>
+<span class="sd">        Specification whether overall heat transfer coefficient (U) </span>
+<span class="sd">        is based on outside/oneside surface area.</span>
+<span class="sd">    is_basedon_innerarea : `bool`, default = False</span>
+<span class="sd">        Specification whether overall heat transfer coefficient (U) </span>
+<span class="sd">        is based on inside/oneside surface area.</span>
+<span class="sd">        </span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    Overall heat transfer coefficient (U) : `int or float`</span>
+<span class="sd">        If &#39;is_basedon_innerarea == True&#39; &#39;U&#39; based on inner/oneside area</span>
+<span class="sd">        is returned</span>
+<span class="sd">        </span>
+<span class="sd">        If &#39;is_basedon_outerarea == True&#39; &#39;U&#39; based on inner/oneside area</span>
+<span class="sd">        is returned</span>
+<span class="sd">    </span>
+<span class="sd">    </span>
+<span class="sd">    Notes</span>
+<span class="sd">    -----</span>
+<span class="sd">    The following formula is used.</span>
+<span class="sd">    </span>
+<span class="sd">    .. math::</span>
+<span class="sd">        </span>
+<span class="sd">        \frac{1}{U_iA_i} = \frac{1}{U_oA_o} = </span>
+<span class="sd">        </span>
+<span class="sd">        R_{convection, in} + R_{fouling, in} + R_{conduction}</span>
+<span class="sd">        + R_{fouling, out} + R_{convection, out}</span>
+<span class="sd">        </span>
+<span class="sd">           </span>
+<span class="sd">    *where:*</span>
+<span class="sd">        </span>
+<span class="sd">        :math:`U_i` *= overall heat transfer coefficient based on</span>
+<span class="sd">        inner area*</span>
+<span class="sd">        </span>
+<span class="sd">        :math:`U_o` *= overall heat transfer coefficient based on</span>
+<span class="sd">        outer area*</span>
+<span class="sd">        </span>
+<span class="sd">        :math:`A_i` *= inner surface area of heat transfer*</span>
+<span class="sd">        </span>
+<span class="sd">        :math:`A_o` *= outer area of heat transfer*</span>
+<span class="sd">        </span>
+<span class="sd">        :math:`R_{*}` *= resistance of conduction, convection or fouling*</span>
+<span class="sd">    </span>
+
+<span class="sd">    **What if some resistances are zero**</span>
+<span class="sd">    </span>
+<span class="sd">    *Simply leave their respective keywords at default value of &#39;None&#39;.*</span>
+<span class="sd">    </span>
+<span class="sd">        </span>
+<span class="sd">    See Also</span>
+<span class="sd">    --------</span>
+<span class="sd">    pychemengg.heattransfer.steadystate.Slab.resistanceof_cond</span>
+<span class="sd">    pychemengg.heattransfer.steadystate.Slab.resistanceof_conv</span>
+<span class="sd">    pychemengg.heattransfer.steadystate.Slab.resistanceof_fouling</span>
+<span class="sd">    pychemengg.heattransfer.steadystate.Cylinder.resistanceof_cond</span>
+<span class="sd">    pychemengg.heattransfer.steadystate.Cylinder.resistanceof_conv</span>
+<span class="sd">    pychemengg.heattransfer.steadystate.Cylinder.resistanceof_fouling</span>
+<span class="sd">    pychemengg.heattransfer.steadystate.Sphere.resistanceof_cond</span>
+<span class="sd">    pychemengg.heattransfer.steadystate.Sphere.resistanceof_conv</span>
+<span class="sd">    pychemengg.heattransfer.steadystate.Sphere.resistanceof_fouling</span>
+<span class="sd">   </span>
+<span class="sd">    </span>
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    First import the module **heatcommonmethods**.</span>
+<span class="sd">       </span>
+<span class="sd">    &gt;&gt;&gt; from pychemengg.heattransfer import heatcommonmethods as hcm </span>
+<span class="sd">    &gt;&gt;&gt; hcm.calc_overallheattransfercoefficient(inner_heattransfercoefficient=800,</span>
+<span class="sd">                              outer_heattransfercoefficient=1200,</span>
+<span class="sd">                              inner_foulingfactor=0.0004,</span>
+<span class="sd">                              outer_foulingfactor=0.0001,</span>
+<span class="sd">                              resistanceof_wall=0.0025,</span>
+<span class="sd">                              inner_area=0.0471,</span>
+<span class="sd">                              outer_area=0.0597,</span>
+<span class="sd">                              is_basedon_outerarea=True)</span>
+<span class="sd">    315.06138931035497</span>
+
+<span class="sd">    </span>
+<span class="sd">    References</span>
+<span class="sd">    ----------</span>
+<span class="sd">    [1] G. F. Nellis and S. A. Klein, &quot;Introduction to Engineering </span>
+<span class="sd">    Heat Transfer&quot;, 1st Edition. Cambridge University Press, 2021.</span>
+<span class="sd">    </span>
+<span class="sd">    [2] Y. A. Cengel and A. J. Ghajar, &quot;Heat And Mass Transfer</span>
+<span class="sd">    Fundamentals and Applications&quot;, 6th Edition. New York, McGraw Hill</span>
+<span class="sd">    Education, 2020.</span>
+<span class="sd">    </span>
+<span class="sd">    [3] T.L. Bergman, A. S. Lavine, F. P. Incropera, D. P. Dewitt, </span>
+<span class="sd">    &quot;Fundamentals of Heat and Mass Transfer&quot;, 7th Edition, </span>
+<span class="sd">    John Wiley, 2011.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">resistanceof_conv_inside</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="n">inner_heattransfercoefficient</span><span class="o">*</span><span class="n">inner_area</span><span class="p">)</span> <span class="k">if</span> <span class="n">inner_heattransfercoefficient</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="mi">0</span>
+    <span class="n">resistanceof_fouling_inside</span> <span class="o">=</span> <span class="n">inner_foulingfactor</span><span class="o">/</span><span class="n">inner_area</span> <span class="k">if</span> <span class="n">inner_foulingfactor</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="mi">0</span>
+    <span class="n">resistanceof_wall</span> <span class="o">=</span> <span class="n">resistanceof_wall</span> <span class="k">if</span> <span class="n">resistanceof_wall</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="mi">0</span>
+    <span class="n">resistanceof_conv_outside</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="n">outer_heattransfercoefficient</span><span class="o">*</span><span class="n">outer_area</span><span class="p">)</span> <span class="k">if</span> <span class="n">outer_heattransfercoefficient</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="mi">0</span>
+    <span class="n">resistanceof_fouling_outside</span> <span class="o">=</span> <span class="n">outer_foulingfactor</span><span class="o">/</span><span class="n">outer_area</span> <span class="k">if</span> <span class="n">outer_foulingfactor</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="mi">0</span>
+    
+    <span class="n">U_times_area_inverse</span> <span class="o">=</span> <span class="p">(</span><span class="n">resistanceof_conv_inside</span>
+                  <span class="o">+</span> <span class="n">resistanceof_fouling_inside</span>
+                  <span class="o">+</span> <span class="n">resistanceof_wall</span>
+                  <span class="o">+</span> <span class="n">resistanceof_conv_outside</span>
+                  <span class="o">+</span> <span class="n">resistanceof_fouling_outside</span><span class="p">)</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">is_basedon_outerarea</span><span class="o">==</span><span class="kc">True</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="n">is_basedon_innerarea</span><span class="o">==</span><span class="kc">False</span><span class="p">):</span>
+        <span class="k">return</span> <span class="p">((</span><span class="n">U_times_area_inverse</span><span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">))</span> <span class="o">/</span> <span class="n">outer_area</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">is_basedon_outerarea</span><span class="o">==</span><span class="kc">False</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="n">is_basedon_innerarea</span><span class="o">==</span><span class="kc">True</span><span class="p">):</span>
+        <span class="k">return</span> <span class="p">((</span><span class="n">U_times_area_inverse</span><span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">))</span> <span class="o">/</span> <span class="n">inner_area</span></div>
+</pre></div>
+
+           </div>
+           
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021, Harvinder Singh Gill.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

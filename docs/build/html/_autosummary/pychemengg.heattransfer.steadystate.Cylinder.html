@@ -1,0 +1,781 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Cylinder &mdash; PyChemEngg 0.1a6 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/my_theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/my_theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/my_theme.css" type="text/css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/katex-math.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.12.0/contrib/auto-render.min.js"></script>
+        <script src="../_static/katex_autorenderer.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="CylinderBase" href="pychemengg.heattransfer.steadystate.CylinderBase.html" />
+    <link rel="prev" title="steadystate" href="pychemengg.heattransfer.steadystate.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> PyChemEngg
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1a6
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption" role="heading"><span class="caption-text">User Tutorial</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../userguide/heattransfer/index.html">Heat Transfer</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Reference Guide</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../autosummary_pychemengg.html">PyChemEngg API Reference</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="pychemengg.html">pychemengg</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="pychemengg.heattransfer.html">heattransfer</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="pychemengg.heattransfer.externalflow.html">externalflow</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pychemengg.heattransfer.fins.html">fins</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pychemengg.heattransfer.heatcommonmethods.html">heatcommonmethods</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pychemengg.heattransfer.heatexchangers.html">heatexchangers</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pychemengg.heattransfer.internalflow.html">internalflow</a></li>
+<li class="toctree-l4 current"><a class="reference internal" href="pychemengg.heattransfer.steadystate.html">steadystate</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="pychemengg.physicalproperties.html">physicalproperties</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">PyChemEngg</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../autosummary_pychemengg.html">PyChemEngg API</a> &raquo;</li>
+        
+          <li><a href="pychemengg.html">pychemengg</a> &raquo;</li>
+        
+          <li><a href="pychemengg.heattransfer.html">heattransfer</a> &raquo;</li>
+        
+          <li><a href="pychemengg.heattransfer.steadystate.html">steadystate</a> &raquo;</li>
+        
+      <li>Cylinder</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/_autosummary/pychemengg.heattransfer.steadystate.Cylinder.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
+      
+        <a href="pychemengg.heattransfer.steadystate.CylinderBase.html" class="btn btn-neutral float-right" title="CylinderBase" accesskey="n">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+      
+      
+        <a href="pychemengg.heattransfer.steadystate.html" class="btn btn-neutral float-left" title="steadystate" accesskey="p"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+      
+  </div>
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<div class="section" id="cylinder">
+<h1>Cylinder<a class="headerlink" href="#cylinder" title="Permalink to this headline">¶</a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="pychemengg.heattransfer.steadystate.Cylinder">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">pychemengg.heattransfer.steadystate.</span></span><span class="sig-name descname"><span class="pre">Cylinder</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">length</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">inner_radius</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">outer_radius</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">thermalconductivity</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pychemengg/heattransfer/steadystate.html#Cylinder"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pychemengg.heattransfer.steadystate.Cylinder" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Models a cylindrical object</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl>
+<dt><strong>length</strong><span class="classifier"><cite>int or float</cite></span></dt><dd><p>Length of cylindrical object (if length is not known put length = 1.0)</p>
+</dd>
+<dt><strong>inner_radius: `int or float`</strong></dt><dd><p>Inner radius of cylindrical object</p>
+</dd>
+<dt><strong>outer_radius: `int or float`</strong></dt><dd><p>Outer radius of cylindrical object</p>
+</dd>
+<dt><strong>thermalconductivity</strong><span class="classifier"><cite>int or float</cite></span></dt><dd><p>Thermal conductivity of cylindrical object</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<p>First import the module <strong>steadystate</strong></p>
+<p>Units used in this example: SI system</p>
+<p>However, any consistent units can be used</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pychemengg.heattransfer</span> <span class="kn">import</span> <span class="n">steadystate</span> <span class="k">as</span> <span class="n">ss</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">insulation</span> <span class="o">=</span> <span class="n">Cylinder</span><span class="p">(</span><span class="n">length</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">inner_radius</span><span class="o">=</span><span class="mf">1.5e-3</span><span class="p">,</span> <span class="n">outer_radius</span><span class="o">=</span><span class="mf">3.5e-3</span><span class="p">,</span> <span class="n">thermalconductivity</span><span class="o">=</span><span class="mf">0.15</span><span class="p">)</span>
+<span class="go"># This will create an instance of &#39;Cylinder&#39; with a name &#39;insulation&#39;  </span>
+</pre></div>
+</div>
+<dl class="field-list">
+<dt class="field-odd">Attributes</dt>
+<dd class="field-odd"><dl>
+<dt><strong>length</strong><span class="classifier"><cite>int or float</cite></span></dt><dd><p>Length of cylindrical object (if length is not known put length = 1.0)</p>
+</dd>
+<dt><strong>inner_radius: `int or float`</strong></dt><dd><p>Inner radius of cylindrical object</p>
+</dd>
+<dt><strong>outer_radius: `int or float`</strong></dt><dd><p>Outer radius of cylindrical object</p>
+</dd>
+<dt><strong>thermalconductivity</strong><span class="classifier"><cite>int or float</cite></span></dt><dd><p>Thermal conductivity of cylindrical object</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="pychemengg.heattransfer.steadystate.Cylinder.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">length</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">inner_radius</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">outer_radius</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">thermalconductivity</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pychemengg/heattransfer/steadystate.html#Cylinder.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pychemengg.heattransfer.steadystate.Cylinder.__init__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<p class="rubric">Methods</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pychemengg.heattransfer.steadystate.Cylinder.__init__" title="pychemengg.heattransfer.steadystate.Cylinder.__init__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">__init__</span></code></a>([length, inner_radius, …])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#pychemengg.heattransfer.steadystate.Cylinder.area" title="pychemengg.heattransfer.steadystate.Cylinder.area"><code class="xref py py-obj docutils literal notranslate"><span class="pre">area</span></code></a>([radius])</p></td>
+<td><p>Computes surface area of a cylinder</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pychemengg.heattransfer.steadystate.Cylinder.heatrateof_cond" title="pychemengg.heattransfer.steadystate.Cylinder.heatrateof_cond"><code class="xref py py-obj docutils literal notranslate"><span class="pre">heatrateof_cond</span></code></a>([dT])</p></td>
+<td><p>Computes heat rate of conduction for a cylindrical object</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#pychemengg.heattransfer.steadystate.Cylinder.heatrateof_conv" title="pychemengg.heattransfer.steadystate.Cylinder.heatrateof_conv"><code class="xref py py-obj docutils literal notranslate"><span class="pre">heatrateof_conv</span></code></a>([heattransfercoefficient, …])</p></td>
+<td><p>Computes heat rate of convection for a cylindrical object</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pychemengg.heattransfer.steadystate.Cylinder.heatrateof_rad" title="pychemengg.heattransfer.steadystate.Cylinder.heatrateof_rad"><code class="xref py py-obj docutils literal notranslate"><span class="pre">heatrateof_rad</span></code></a>([radius, T_infinity, …])</p></td>
+<td><p>Computes heat rate of radiation for a cylindrical object</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#pychemengg.heattransfer.steadystate.Cylinder.resistanceof_cond" title="pychemengg.heattransfer.steadystate.Cylinder.resistanceof_cond"><code class="xref py py-obj docutils literal notranslate"><span class="pre">resistanceof_cond</span></code></a>()</p></td>
+<td><p>Computes resistance of conduction for a cylindrical object</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pychemengg.heattransfer.steadystate.Cylinder.resistanceof_conv" title="pychemengg.heattransfer.steadystate.Cylinder.resistanceof_conv"><code class="xref py py-obj docutils literal notranslate"><span class="pre">resistanceof_conv</span></code></a>([heattransfercoefficient, …])</p></td>
+<td><p>Computes resistance of convection for a cylindrical object</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#pychemengg.heattransfer.steadystate.Cylinder.resistanceof_fouling" title="pychemengg.heattransfer.steadystate.Cylinder.resistanceof_fouling"><code class="xref py py-obj docutils literal notranslate"><span class="pre">resistanceof_fouling</span></code></a>([foulingfactor, radius])</p></td>
+<td><p>Computes resistance of fouling for a cylindrical object</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pychemengg.heattransfer.steadystate.Cylinder.volume" title="pychemengg.heattransfer.steadystate.Cylinder.volume"><code class="xref py py-obj docutils literal notranslate"><span class="pre">volume</span></code></a>([radius])</p></td>
+<td><p>Computes volume of a cylinder</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="py method">
+<dt class="sig sig-object py" id="pychemengg.heattransfer.steadystate.Cylinder.area">
+<span class="sig-name descname"><span class="pre">area</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">radius</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pychemengg/heattransfer/steadystate.html#Cylinder.area"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pychemengg.heattransfer.steadystate.Cylinder.area" title="Permalink to this definition">¶</a></dt>
+<dd><p>Computes surface area of a cylinder</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl>
+<dt><strong>radius</strong><span class="classifier"><cite>int or float</cite></span></dt><dd><p>Radius at which surface area is to be computed</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl>
+<dt><strong>area</strong><span class="classifier"><cite>int or float</cite></span></dt><dd><p>Surface area of cylinder</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>Surface area of cylinder is computed using:</p>
+<div class="math">
+\[A = 2\pi rL
+
+\]</div>
+<p><em>where:</em></p>
+<blockquote>
+<div><p><em>r = radius</em></p>
+<p><em>L = length</em></p>
+<p><em>A = surface area</em></p>
+</div></blockquote>
+<p class="rubric">Examples</p>
+<p>First import the module <strong>steadystate</strong></p>
+<p>Units used in this example: SI system</p>
+<p>However, any consistent units can be used</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pychemengg.heattransfer</span> <span class="kn">import</span> <span class="n">steadystate</span> <span class="k">as</span> <span class="n">ss</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">insulation</span> <span class="o">=</span> <span class="n">Cylinder</span><span class="p">(</span><span class="n">length</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">inner_radius</span><span class="o">=</span><span class="mf">1.5e-3</span><span class="p">,</span> <span class="n">outer_radius</span><span class="o">=</span><span class="mf">3.5e-3</span><span class="p">,</span> <span class="n">thermalconductivity</span><span class="o">=</span><span class="mf">0.15</span><span class="p">)</span>
+<span class="go"># This will create an instance of &#39;Cylinder&#39; with a name &#39;insulation&#39;</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">insulation</span><span class="o">.</span><span class="n">area</span><span class="p">(</span><span class="n">radius</span><span class="o">=</span><span class="n">insulation</span><span class="o">.</span><span class="n">outer_radius</span><span class="p">)</span>
+<span class="go">0.10995574287564275</span>
+<span class="go"># This computes surface area @ outer radius</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">insulation</span><span class="o">.</span><span class="n">area</span><span class="p">(</span><span class="n">radius</span><span class="o">=</span><span class="n">insulation</span><span class="o">.</span><span class="n">inner_radius</span><span class="p">)</span>
+<span class="go">0.047123889803846894</span>
+<span class="go"># This computes surface area @ inner radius</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">insulation</span><span class="o">.</span><span class="n">area</span><span class="p">(</span><span class="n">radius</span><span class="o">=</span><span class="mf">1.5e-3</span><span class="p">)</span>
+<span class="go">0.047123889803846894</span>
+<span class="go"># This will also compute surface area @ inner radius, which is = 1.5e-3.</span>
+<span class="go"># Here the radius is entered as a number directly, rather than as an attribute.</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pychemengg.heattransfer.steadystate.Cylinder.heatrateof_cond">
+<span class="sig-name descname"><span class="pre">heatrateof_cond</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dT</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pychemengg/heattransfer/steadystate.html#Cylinder.heatrateof_cond"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pychemengg.heattransfer.steadystate.Cylinder.heatrateof_cond" title="Permalink to this definition">¶</a></dt>
+<dd><p>Computes heat rate of conduction for a cylindrical object</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl>
+<dt><strong>dT</strong><span class="classifier"><cite>int or float</cite></span></dt><dd><p>Temperature difference between two surfaces of the cylinder</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl>
+<dt><strong>heatrate</strong><span class="classifier"><cite>int or float</cite></span></dt><dd><p>Rate of heat transfer by conduction</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>The following formula is used:</p>
+<div class="math">
+\[Q (heatrate) = \frac{\Delta T}{R_{conduction}}
+
+\]</div>
+<p><em>where:</em></p>
+<blockquote>
+<div><p><span class="math">\(\Delta T\)</span> <em>= temperature difference</em></p>
+<p><span class="math">\(R_{conduction}\)</span> <em>= conduction resistance</em> given by</p>
+<blockquote>
+<div><p><span class="math">\(R_{conduction} = \cfrac{ln(r_o/r_i)}{2\pi kL}\)</span></p>
+<p><span class="math">\(r_o\)</span> <em>= outer radius of cylinder</em></p>
+<p><span class="math">\(r_i\)</span> <em>= inner radius of cylinder</em></p>
+<p><em>L = length</em></p>
+<p><em>k = thermal conductivity</em></p>
+</div></blockquote>
+</div></blockquote>
+<p class="rubric">References</p>
+<p>[1] Yunus A. Cengel and Afshin J. Ghajar, “Heat And Mass Transfer
+Fundamentals and Applications”, 6th Edition. New York, McGraw Hill
+Education, 2020</p>
+<p class="rubric">Examples</p>
+<p>First import the module <strong>steadystate</strong></p>
+<p>Units used in this example: SI system</p>
+<p>However, any consistent units can be used</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pychemengg.heattransfer</span> <span class="kn">import</span> <span class="n">steadystate</span> <span class="k">as</span> <span class="n">ss</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">insulation</span> <span class="o">=</span> <span class="n">Cylinder</span><span class="p">(</span><span class="n">length</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">inner_radius</span><span class="o">=</span><span class="mf">1.5e-3</span><span class="p">,</span> <span class="n">outer_radius</span><span class="o">=</span><span class="mf">3.5e-3</span><span class="p">,</span> <span class="n">thermalconductivity</span><span class="o">=</span><span class="mf">0.15</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">insulation</span><span class="o">.</span><span class="n">heatrateof_cond</span><span class="p">(</span><span class="n">dT</span><span class="o">=</span><span class="mi">75</span><span class="p">)</span>
+<span class="go">417.12506315941755</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pychemengg.heattransfer.steadystate.Cylinder.heatrateof_conv">
+<span class="sig-name descname"><span class="pre">heatrateof_conv</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">heattransfercoefficient</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">radius</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dT</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pychemengg/heattransfer/steadystate.html#Cylinder.heatrateof_conv"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pychemengg.heattransfer.steadystate.Cylinder.heatrateof_conv" title="Permalink to this definition">¶</a></dt>
+<dd><p>Computes heat rate of convection for a cylindrical object</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl>
+<dt><strong>heattransfercoefficient</strong><span class="classifier"><cite>int or float</cite></span></dt><dd><p>Heat transfer coefficient <em>`h`</em> for the cylinder surface</p>
+</dd>
+<dt><strong>radius</strong><span class="classifier"><cite>int or float</cite></span></dt><dd><p>Radius of cylinder where convective heat transfer rate is to be computed</p>
+</dd>
+<dt><strong>dT</strong><span class="classifier"><cite>int or float</cite></span></dt><dd><p>Temperature difference between cylinder surface and surrounding fluid</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl>
+<dt><strong>heatrate</strong><span class="classifier"><cite>int or float</cite></span></dt><dd><p>Rate of heat transfer by convection</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>Heat rate of convection is calculated using the Newton’s Law</p>
+<div class="math">
+\[Q (heatrate) = h A \Delta T
+
+\]</div>
+<p><em>where:</em></p>
+<blockquote>
+<div><p><em>h = heat transfer coefficient</em></p>
+<p><em>A = area of heat transfer</em></p>
+<p><span class="math">\(\Delta T\)</span> <em>= temperature difference</em></p>
+</div></blockquote>
+<p class="rubric">References</p>
+<p>[1] Yunus A. Cengel and Afshin J. Ghajar, “Heat And Mass Transfer
+Fundamentals and Applications”, 6th Edition. New York, McGraw Hill
+Education, 2020</p>
+<p class="rubric">Examples</p>
+<p>First import the module <strong>steadystate</strong></p>
+<p>Units used in this example: SI system</p>
+<p>However, any consistent units can be used</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pychemengg.heattransfer</span> <span class="kn">import</span> <span class="n">steadystate</span> <span class="k">as</span> <span class="n">ss</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">insulation</span> <span class="o">=</span> <span class="n">Cylinder</span><span class="p">(</span><span class="n">length</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">inner_radius</span><span class="o">=</span><span class="mf">1.5e-3</span><span class="p">,</span> <span class="n">outer_radius</span><span class="o">=</span><span class="mf">3.5e-3</span><span class="p">,</span> <span class="n">thermalconductivity</span><span class="o">=</span><span class="mf">0.15</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">insulation</span><span class="o">.</span><span class="n">heatrateof_conv</span><span class="p">(</span><span class="n">heattransfercoefficient</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span> <span class="n">radius</span><span class="o">=</span><span class="n">insulation</span><span class="o">.</span><span class="n">outer_radius</span><span class="p">,</span> <span class="n">dT</span><span class="o">=</span><span class="mf">90.6</span><span class="o">-</span><span class="mi">30</span><span class="p">)</span>
+<span class="go">79.9598162191674</span>
+<span class="go"># NOTE: Mathematical expressions (such as: 90.6 - 30) can be used as an argument</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pychemengg.heattransfer.steadystate.Cylinder.heatrateof_rad">
+<span class="sig-name descname"><span class="pre">heatrateof_rad</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">radius</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">T_infinity</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">T_surface</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">emissivity</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pychemengg/heattransfer/steadystate.html#Cylinder.heatrateof_rad"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pychemengg.heattransfer.steadystate.Cylinder.heatrateof_rad" title="Permalink to this definition">¶</a></dt>
+<dd><p>Computes heat rate of radiation for a cylindrical object</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl>
+<dt><strong>radius</strong><span class="classifier"><cite>int or float</cite></span></dt><dd><p>Radius of cylinder where radiation heat transfer rate is to be computed</p>
+</dd>
+<dt><strong>T_infinity</strong><span class="classifier"><cite>int or float</cite></span></dt><dd><p>Temperature of surroundings in <strong>absolute temperature units</strong></p>
+</dd>
+<dt><strong>T_surface</strong><span class="classifier"><cite>int or float</cite></span></dt><dd><p>Temperature of cylinder surface in <strong>absolute temperature units</strong></p>
+</dd>
+<dt><strong>emissivity</strong><span class="classifier"><cite>int or float</cite></span></dt><dd><p>Emissivity of the cylinder</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl>
+<dt><strong>heatrate</strong><span class="classifier"><cite>int or float</cite> (returns a positive value)</span></dt><dd><p>Rate of heat transfer by radiation</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>Heat rate of radiation is calculated using the Stefan-Boltzmann law</p>
+<div class="math">
+\[Q (heatrate) = \sigma \epsilon A (T_{infinity}^4 - T_{surface}^4)
+
+\]</div>
+<p><em>where:</em></p>
+<blockquote>
+<div><p><span class="math">\(\sigma\)</span> <em>= Stefan-Boltzmann constant</em></p>
+<p><span class="math">\(\epsilon\)</span> <em>= emissivity of object</em></p>
+<p><em>A = area of heat transfer</em></p>
+<p><span class="math">\(T_{infinity}^4\)</span> <em>= absolute temperature of surroundings</em></p>
+<p><span class="math">\(T_{surface}^4\)</span> <em>= absolute temperature of surface</em></p>
+</div></blockquote>
+<p class="rubric">References</p>
+<p>[1] Yunus A. Cengel and Afshin J. Ghajar, “Heat And Mass Transfer
+Fundamentals and Applications”, 6th Edition. New York, McGraw Hill
+Education, 2020</p>
+<p class="rubric">Examples</p>
+<p>First import the module <strong>steadystate</strong></p>
+<p>Units used in this example: SI system</p>
+<p>However, any consistent units can be used</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pychemengg.heattransfer</span> <span class="kn">import</span> <span class="n">steadystate</span> <span class="k">as</span> <span class="n">ss</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">insulation</span> <span class="o">=</span> <span class="n">Cylinder</span><span class="p">(</span><span class="n">length</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">inner_radius</span><span class="o">=</span><span class="mf">1.5e-3</span><span class="p">,</span> <span class="n">outer_radius</span><span class="o">=</span><span class="mf">3.5e-3</span><span class="p">,</span> <span class="n">thermalconductivity</span><span class="o">=</span><span class="mf">0.15</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">insulation</span><span class="o">.</span><span class="n">heatrateof_rad</span><span class="p">(</span><span class="n">radius</span><span class="o">=</span><span class="n">insulation</span><span class="o">.</span><span class="n">outer_radius</span><span class="p">,</span> <span class="n">T_infinity</span><span class="o">=</span><span class="mi">30</span><span class="o">+</span><span class="mi">273</span><span class="p">,</span> <span class="n">T_surface</span><span class="o">=</span><span class="mf">90.6</span><span class="o">+</span><span class="mi">273</span><span class="p">,</span> <span class="n">emissivity</span><span class="o">=</span><span class="mf">0.95</span><span class="p">)</span>
+<span class="go">53.60018341250309</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pychemengg.heattransfer.steadystate.Cylinder.resistanceof_cond">
+<span class="sig-name descname"><span class="pre">resistanceof_cond</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pychemengg/heattransfer/steadystate.html#Cylinder.resistanceof_cond"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pychemengg.heattransfer.steadystate.Cylinder.resistanceof_cond" title="Permalink to this definition">¶</a></dt>
+<dd><p>Computes resistance of conduction for a cylindrical object</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>`None_required`</strong><span class="classifier">‘None’</span></dt><dd><p>Uses attributes defined during instance creation</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl>
+<dt><strong>resistance</strong><span class="classifier"><cite>int or float</cite></span></dt><dd><p>Conduction resistance</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>The following formula is used:</p>
+<div class="math">
+\[R_{conduction} = \cfrac{ln(r_o/r_i)}{2\pi kL}\]</div>
+<p><em>where:</em></p>
+<blockquote>
+<div><p><span class="math">\(r_o\)</span> <em>= outer radius of cylinder</em></p>
+<p><span class="math">\(r_i\)</span> <em>= inner radius of cylinder</em></p>
+<p><em>L = thickness</em></p>
+<p><em>k = thermal conductivity</em></p>
+<p><span class="math">\(R_{conduction}\)</span> <em>= conduction resistance</em></p>
+</div></blockquote>
+<p class="rubric">References</p>
+<p>[1] Yunus A. Cengel and Afshin J. Ghajar, “Heat And Mass Transfer
+Fundamentals and Applications”, 6th Edition. New York, McGraw Hill
+Education, 2020</p>
+<p class="rubric">Examples</p>
+<p>First import the module <strong>steadystate</strong></p>
+<p>Units used in this example: SI system</p>
+<p>However, any consistent units can be used</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pychemengg.heattransfer</span> <span class="kn">import</span> <span class="n">steadystate</span> <span class="k">as</span> <span class="n">ss</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">insulation</span> <span class="o">=</span> <span class="n">Cylinder</span><span class="p">(</span><span class="n">length</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">inner_radius</span><span class="o">=</span><span class="mf">1.5e-3</span><span class="p">,</span> <span class="n">outer_radius</span><span class="o">=</span><span class="mf">3.5e-3</span><span class="p">,</span> <span class="n">thermalconductivity</span><span class="o">=</span><span class="mf">0.15</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">insulation</span><span class="o">.</span><span class="n">resistanceof_cond</span><span class="p">()</span>
+<span class="go">0.1798021903357468</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pychemengg.heattransfer.steadystate.Cylinder.resistanceof_conv">
+<span class="sig-name descname"><span class="pre">resistanceof_conv</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">heattransfercoefficient</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">radius</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pychemengg/heattransfer/steadystate.html#Cylinder.resistanceof_conv"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pychemengg.heattransfer.steadystate.Cylinder.resistanceof_conv" title="Permalink to this definition">¶</a></dt>
+<dd><p>Computes resistance of convection for a cylindrical object</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl>
+<dt><strong>heattransfercoefficient</strong><span class="classifier"><cite>int or float</cite></span></dt><dd><p>Heat transfer coefficient <em>`h`</em> for the cylindrical surface</p>
+</dd>
+<dt><strong>radius</strong><span class="classifier"><cite>int or float</cite></span></dt><dd><p>Radius of cylinder where convective heat transfer is to be computed</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl>
+<dt><strong>resistance</strong><span class="classifier"><cite>int or float</cite></span></dt><dd><p>Convection resistance</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>The following formula is used:</p>
+<div class="math">
+\[R_{convection} = \frac{1}{hA}
+
+\]</div>
+<p><em>where:</em></p>
+<blockquote>
+<div><p><em>h = heat transfer coefficient</em></p>
+<p><em>A = area of heat transfer</em></p>
+<p><span class="math">\(R_{convection}\)</span> <em>= convection resistance</em></p>
+</div></blockquote>
+<p class="rubric">References</p>
+<p>[1] Yunus A. Cengel and Afshin J. Ghajar, “Heat And Mass Transfer
+Fundamentals and Applications”, 6th Edition. New York, McGraw Hill
+Education, 2020</p>
+<p class="rubric">Examples</p>
+<p>First import the module <strong>steadystate</strong></p>
+<p>Units used in this example: SI system</p>
+<p>However, any consistent units can be used</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pychemengg.heattransfer</span> <span class="kn">import</span> <span class="n">steadystate</span> <span class="k">as</span> <span class="n">ss</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">insulation</span> <span class="o">=</span> <span class="n">Cylinder</span><span class="p">(</span><span class="n">length</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">inner_radius</span><span class="o">=</span><span class="mf">1.5e-3</span><span class="p">,</span> <span class="n">outer_radius</span><span class="o">=</span><span class="mf">3.5e-3</span><span class="p">,</span> <span class="n">thermalconductivity</span><span class="o">=</span><span class="mf">0.15</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">insulation</span><span class="o">.</span><span class="n">resistanceof_conv</span><span class="p">(</span><span class="n">heattransfercoefficient</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span> <span class="n">radius</span><span class="o">=</span><span class="n">insulation</span><span class="o">.</span><span class="n">outer_radius</span><span class="p">)</span>
+<span class="go">0.7578806813899779</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pychemengg.heattransfer.steadystate.Cylinder.resistanceof_fouling">
+<span class="sig-name descname"><span class="pre">resistanceof_fouling</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">foulingfactor</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">radius</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pychemengg/heattransfer/steadystate.html#Cylinder.resistanceof_fouling"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pychemengg.heattransfer.steadystate.Cylinder.resistanceof_fouling" title="Permalink to this definition">¶</a></dt>
+<dd><p>Computes resistance of fouling for a cylindrical object</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl>
+<dt><strong>foulingfactor</strong><span class="classifier"><cite>int or float</cite></span></dt><dd><p>Fouling factor <span class="math">\(R_f\)</span> for the cylindrical surface</p>
+<p>typical units are <span class="math">\(m^2\)</span> K/W</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl>
+<dt><strong>resistance</strong><span class="classifier"><cite>int or float</cite></span></dt><dd><p>Fouling resistance</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>The following formula is used:</p>
+<div class="math">
+\[R_{fouling} = \frac{R_f}{A}
+
+\]</div>
+<p><em>where:</em></p>
+<blockquote>
+<div><p><span class="math">\(R_f\)</span> <em>= fouling factor</em></p>
+<p><em>A = fouled area of heat transfer</em></p>
+<p><span class="math">\(R_{fouling}\)</span> <em>= fouling resistance</em></p>
+</div></blockquote>
+<p class="rubric">References</p>
+<p>[1] Yunus A. Cengel and Afshin J. Ghajar, “Heat And Mass Transfer
+Fundamentals and Applications”, 6th Edition. New York, McGraw Hill
+Education, 2020</p>
+<p class="rubric">Examples</p>
+<p>First import the module <strong>steadystate</strong></p>
+<p>Units used in this example: SI system</p>
+<p>However, any consistent units can be used</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pychemengg.heattransfer</span> <span class="kn">import</span> <span class="n">steadystate</span> <span class="k">as</span> <span class="n">ss</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">insulation</span> <span class="o">=</span> <span class="n">Cylinder</span><span class="p">(</span><span class="n">length</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">inner_radius</span><span class="o">=</span><span class="mf">1.5e-3</span><span class="p">,</span> <span class="n">outer_radius</span><span class="o">=</span><span class="mf">3.5e-3</span><span class="p">,</span> <span class="n">thermalconductivity</span><span class="o">=</span><span class="mf">0.15</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">insulation</span><span class="o">.</span><span class="n">resistanceof_fouling</span><span class="p">(</span><span class="n">foulingfactor</span><span class="o">=</span><span class="mf">0.0007</span><span class="p">,</span> <span class="n">radius</span><span class="o">=</span><span class="n">insulation</span><span class="o">.</span><span class="n">outer_radius</span><span class="p">)</span>
+<span class="go">0.006366197723675814</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pychemengg.heattransfer.steadystate.Cylinder.volume">
+<span class="sig-name descname"><span class="pre">volume</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">radius</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pychemengg/heattransfer/steadystate.html#Cylinder.volume"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pychemengg.heattransfer.steadystate.Cylinder.volume" title="Permalink to this definition">¶</a></dt>
+<dd><p>Computes volume of a cylinder</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl>
+<dt><strong>radius</strong><span class="classifier"><cite>int or float</cite></span></dt><dd><p>Radius at which volume is to be computed</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl>
+<dt><strong>volume</strong><span class="classifier"><cite>int or float</cite></span></dt><dd><p>Volume of cylinder</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>Volume of cylinder is computed using:</p>
+<div class="math">
+\[V = \pi r^2 L
+
+\]</div>
+<p><em>where:</em></p>
+<blockquote>
+<div><p><em>r = radius</em></p>
+<p><em>L = length</em></p>
+<p><em>V = volume</em></p>
+</div></blockquote>
+<p class="rubric">Examples</p>
+<p>First import the module <strong>steadystate</strong></p>
+<p>Units used in this example: SI system</p>
+<p>However, any consistent units can be used</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">insulation</span> <span class="o">=</span> <span class="n">Cylinder</span><span class="p">(</span><span class="n">length</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">inner_radius</span><span class="o">=</span><span class="mf">1.5e-3</span><span class="p">,</span> <span class="n">outer_radius</span><span class="o">=</span><span class="mf">3.5e-3</span><span class="p">,</span> <span class="n">thermalconductivity</span><span class="o">=</span><span class="mf">0.15</span><span class="p">)</span>
+<span class="go">This will create an instance of &#39;Cylinder&#39; with a name &#39;insulation&#39;</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">insulation</span><span class="o">.</span><span class="n">volume</span><span class="p">(</span><span class="n">radius</span><span class="o">=</span><span class="n">insulation</span><span class="o">.</span><span class="n">outer_radius</span><span class="p">)</span>
+<span class="go">0.00019242255003237485</span>
+<span class="go"># This computes volume @ outer radius</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">insulation</span><span class="o">.</span><span class="n">volume</span><span class="p">(</span><span class="n">radius</span><span class="o">=</span><span class="n">insulation</span><span class="o">.</span><span class="n">inner_radius</span><span class="p">)</span>
+<span class="go">3.534291735288517e-05</span>
+<span class="go"># This computes volume @ inner radius</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span> <span class="n">insulation</span><span class="o">.</span><span class="n">volume</span><span class="p">(</span><span class="n">radius</span><span class="o">=</span><span class="mf">1.5e-3</span><span class="p">)</span>
+<span class="go">3.534291735288517e-05</span>
+<span class="go"># This will also compute volume @ inner radius, which is = 1.5e-3.</span>
+<span class="go"># Here the radius is entered as a number directly, rather than as an attribute.</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="pychemengg.heattransfer.steadystate.CylinderBase.html" class="btn btn-neutral float-right" title="CylinderBase" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="pychemengg.heattransfer.steadystate.html" class="btn btn-neutral float-left" title="steadystate" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021, Harvinder Singh Gill.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

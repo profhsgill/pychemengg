@@ -1,0 +1,625 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>FCorrectionFactor &mdash; PyChemEngg 0.1a6 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/my_theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/my_theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/my_theme.css" type="text/css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/katex-math.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.12.0/contrib/auto-render.min.js"></script>
+        <script src="../_static/katex_autorenderer.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="internalflow" href="pychemengg.heattransfer.internalflow.html" />
+    <link rel="prev" title="EffNTU" href="pychemengg.heattransfer.heatexchangers.EffNTU.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> PyChemEngg
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1a6
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption" role="heading"><span class="caption-text">User Tutorial</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../userguide/heattransfer/index.html">Heat Transfer</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Reference Guide</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../autosummary_pychemengg.html">PyChemEngg API Reference</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="pychemengg.html">pychemengg</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="pychemengg.heattransfer.html">heattransfer</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="pychemengg.heattransfer.externalflow.html">externalflow</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pychemengg.heattransfer.fins.html">fins</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pychemengg.heattransfer.heatcommonmethods.html">heatcommonmethods</a></li>
+<li class="toctree-l4 current"><a class="reference internal" href="pychemengg.heattransfer.heatexchangers.html">heatexchangers</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pychemengg.heattransfer.internalflow.html">internalflow</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pychemengg.heattransfer.steadystate.html">steadystate</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="pychemengg.physicalproperties.html">physicalproperties</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">PyChemEngg</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../autosummary_pychemengg.html">PyChemEngg API</a> &raquo;</li>
+        
+          <li><a href="pychemengg.html">pychemengg</a> &raquo;</li>
+        
+          <li><a href="pychemengg.heattransfer.html">heattransfer</a> &raquo;</li>
+        
+          <li><a href="pychemengg.heattransfer.heatexchangers.html">heatexchangers</a> &raquo;</li>
+        
+      <li>FCorrectionFactor</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/_autosummary/pychemengg.heattransfer.heatexchangers.FCorrectionFactor.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
+      
+        <a href="pychemengg.heattransfer.internalflow.html" class="btn btn-neutral float-right" title="internalflow" accesskey="n">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+      
+      
+        <a href="pychemengg.heattransfer.heatexchangers.EffNTU.html" class="btn btn-neutral float-left" title="EffNTU" accesskey="p"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+      
+  </div>
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<div class="section" id="fcorrectionfactor">
+<h1>FCorrectionFactor<a class="headerlink" href="#fcorrectionfactor" title="Permalink to this headline">¶</a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="pychemengg.heattransfer.heatexchangers.FCorrectionFactor">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">pychemengg.heattransfer.heatexchangers.</span></span><span class="sig-name descname"><span class="pre">FCorrectionFactor</span></span><a class="reference internal" href="../_modules/pychemengg/heattransfer/heatexchangers.html#FCorrectionFactor"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pychemengg.heattransfer.heatexchangers.FCorrectionFactor" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Contains functions to compute ‘F’ correction factor for LMTD
+for heat exchangers.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>`None_required`</strong><span class="classifier">‘None’</span></dt><dd><p>This class takes no parameters for instance creation.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<p>First import the module <strong>heatexchangers</strong>.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pychemengg.heattransfer</span> <span class="kn">import</span> <span class="n">heatexchangers</span> <span class="k">as</span> <span class="n">hx</span> 
+<span class="gp">&gt;&gt;&gt; </span><span class="n">hx1</span> <span class="o">=</span> <span class="n">hx</span><span class="o">.</span><span class="n">FCorrectionFactor</span>
+<span class="go"># This will assign the class &#39;FCorrectionFactor&#39; to the</span>
+<span class="go"># variable &#39;hx1&#39;.</span>
+<span class="go"># Methods of the class &#39;FCorrectionFactor&#39; can then be called like so :-</span>
+<span class="go"># hx1.methodname(kwarg1=x, ... etc)</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Attributes</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>`None_required`</strong><span class="classifier">‘None’</span></dt><dd><p>This class does not expose any instance attributes.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="pychemengg.heattransfer.heatexchangers.FCorrectionFactor.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pychemengg.heattransfer.heatexchangers.FCorrectionFactor.__init__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<p class="rubric">Methods</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pychemengg.heattransfer.heatexchangers.FCorrectionFactor.__init__" title="pychemengg.heattransfer.heatexchangers.FCorrectionFactor.__init__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">__init__</span></code></a>(*args, **kwargs)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#pychemengg.heattransfer.heatexchangers.FCorrectionFactor.calc_R_P" title="pychemengg.heattransfer.heatexchangers.FCorrectionFactor.calc_R_P"><code class="xref py py-obj docutils literal notranslate"><span class="pre">calc_R_P</span></code></a>([T_tubein, T_tubeout, T_shellin, …])</p></td>
+<td><p>To find ‘R’ and ‘P’ parameters needed to compute ‘F’ correction  factors.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pychemengg.heattransfer.heatexchangers.FCorrectionFactor.oneshell2ntubepasses" title="pychemengg.heattransfer.heatexchangers.FCorrectionFactor.oneshell2ntubepasses"><code class="xref py py-obj docutils literal notranslate"><span class="pre">oneshell2ntubepasses</span></code></a>([T_tubein, T_tubeout, …])</p></td>
+<td><p>To find ‘F’ correction factor for LMTD.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#pychemengg.heattransfer.heatexchangers.FCorrectionFactor.singlepass_crossflow_bothmixed" title="pychemengg.heattransfer.heatexchangers.FCorrectionFactor.singlepass_crossflow_bothmixed"><code class="xref py py-obj docutils literal notranslate"><span class="pre">singlepass_crossflow_bothmixed</span></code></a>([T_tubein, …])</p></td>
+<td><p>To find ‘F’ correction factor for LMTD.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pychemengg.heattransfer.heatexchangers.FCorrectionFactor.singlepass_crossflow_bothunmixed" title="pychemengg.heattransfer.heatexchangers.FCorrectionFactor.singlepass_crossflow_bothunmixed"><code class="xref py py-obj docutils literal notranslate"><span class="pre">singlepass_crossflow_bothunmixed</span></code></a>([T_tubein, …])</p></td>
+<td><p>To find ‘F’ correction factor for LMTD.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#pychemengg.heattransfer.heatexchangers.FCorrectionFactor.singlepass_crossflow_oneunmixed" title="pychemengg.heattransfer.heatexchangers.FCorrectionFactor.singlepass_crossflow_oneunmixed"><code class="xref py py-obj docutils literal notranslate"><span class="pre">singlepass_crossflow_oneunmixed</span></code></a>([T_tubein, …])</p></td>
+<td><p>To find ‘F’ correction factor for LMTD.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pychemengg.heattransfer.heatexchangers.FCorrectionFactor.twoshell4ntubepasses" title="pychemengg.heattransfer.heatexchangers.FCorrectionFactor.twoshell4ntubepasses"><code class="xref py py-obj docutils literal notranslate"><span class="pre">twoshell4ntubepasses</span></code></a>([T_tubein, T_tubeout, …])</p></td>
+<td><p>To find ‘F’ correction factor for LMTD.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="py method">
+<dt class="sig sig-object py" id="pychemengg.heattransfer.heatexchangers.FCorrectionFactor.calc_R_P">
+<span class="sig-name descname"><span class="pre">calc_R_P</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">T_tubein</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">T_tubeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">T_shellin</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">T_shellout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pychemengg/heattransfer/heatexchangers.html#FCorrectionFactor.calc_R_P"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pychemengg.heattransfer.heatexchangers.FCorrectionFactor.calc_R_P" title="Permalink to this definition">¶</a></dt>
+<dd><p>To find ‘R’ and ‘P’ parameters needed to compute ‘F’ correction 
+factors. Could be useful to manually look up tables
+of F correction factors in textbooks.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl>
+<dt><strong>T_tubein</strong><span class="classifier"><cite>int or float</cite></span></dt><dd><p>Temperature of tube side (or cold) fluid at inlet.</p>
+</dd>
+<dt><strong>T_tubeout</strong><span class="classifier"><cite>int or float</cite></span></dt><dd><p>Temperature of tube side (or cold) fluid at outlet.</p>
+</dd>
+<dt><strong>T_shellin</strong><span class="classifier"><cite>int or float</cite></span></dt><dd><p>Temperature of shell side (or hot) fluid at inlet.</p>
+</dd>
+<dt><strong>T_shellout</strong><span class="classifier"><cite>int or float</cite></span></dt><dd><p>Temperature of shell side (or hot) fluid at outlet.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>tuple containg R-parameter and P-parameter :</dt><dd><p>(R-parameter : <cite>int or float</cite>, P-parameter : <cite>int or float</cite>)</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>The following formulas defined in reference [1] are used:</p>
+<div class="math">
+\[R = \frac {T_{shellin} - T_{shellout}}  {T_{tubeout} - T_{tubein}}
+
+P = \frac {T_{tubeout} - T_{tubein}} {T_{shellin} - T_{tubein}}\]</div>
+<p class="rubric">References</p>
+<p>[1] R. A. Bowman, A. C. Mueller, and W. M. Nagle, “Mean Temperature 
+Difference in Design”, Transactions of the ASME 62, 1940, pp:283-294.        .</p>
+<p class="rubric">Examples</p>
+<p>First import the module <strong>heatexchangers</strong>.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pychemengg.heattransfer</span> <span class="kn">import</span> <span class="n">heatexchangers</span> <span class="k">as</span> <span class="n">hx</span> 
+<span class="gp">&gt;&gt;&gt; </span><span class="n">hx1</span> <span class="o">=</span> <span class="n">hx</span><span class="o">.</span><span class="n">FCorrectionFactor</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">hx1</span><span class="o">.</span><span class="n">calc_R_P</span><span class="p">(</span><span class="n">T_shellin</span><span class="o">=</span><span class="mi">300</span><span class="p">,</span> <span class="n">T_shellout</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span>
+<span class="go">                             T_tubein=100, T_tubeout=200)</span>
+<span class="go">(1.0, 0.5)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pychemengg.heattransfer.heatexchangers.FCorrectionFactor.oneshell2ntubepasses">
+<span class="sig-name descname"><span class="pre">oneshell2ntubepasses</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">T_tubein</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">T_tubeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">T_shellin</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">T_shellout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pychemengg/heattransfer/heatexchangers.html#FCorrectionFactor.oneshell2ntubepasses"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pychemengg.heattransfer.heatexchangers.FCorrectionFactor.oneshell2ntubepasses" title="Permalink to this definition">¶</a></dt>
+<dd><p>To find ‘F’ correction factor for LMTD.
+Use when shell passes = 1 and tube passes = 2, 4, 6, 8, etc</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl>
+<dt><strong>T_tubein</strong><span class="classifier"><cite>int or float</cite></span></dt><dd><p>Temperature of tube side (or cold) fluid at inlet.</p>
+</dd>
+<dt><strong>T_tubeout</strong><span class="classifier"><cite>int or float</cite></span></dt><dd><p>Temperature of tube side (or cold) fluid at outlet.</p>
+</dd>
+<dt><strong>T_shellin</strong><span class="classifier"><cite>int or float</cite></span></dt><dd><p>Temperature of shell side (or hot) fluid at inlet.</p>
+</dd>
+<dt><strong>T_shellout</strong><span class="classifier"><cite>int or float</cite></span></dt><dd><p>Temperature of shell side (or hot) fluid at outlet.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl>
+<dt><strong>F</strong><span class="classifier"><cite>int or float</cite></span></dt><dd><p>‘F’ correction factor for LMTD.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-odd">Raises</dt>
+<dd class="field-odd"><dl class="simple">
+<dt>ValueError with message ‘math domain error’</dt><dd><p>If negative number is being passed to the ‘log’ function</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>Equation number (6) of reference [1] is used.</p>
+<p>This is the same equation that is used to generate plots presented
+in most textbooks.</p>
+<p class="rubric">References</p>
+<p>[1] R. A. Bowman, A. C. Mueller, and W. M. Nagle, “Mean Temperature 
+Difference in Design”, Transactions of the ASME 62, 1940, pp:283-294.        .</p>
+<p class="rubric">Examples</p>
+<p>First import the module <strong>heatexchangers</strong>.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pychemengg.heattransfer</span> <span class="kn">import</span> <span class="n">heatexchangers</span> <span class="k">as</span> <span class="n">hx</span> 
+<span class="gp">&gt;&gt;&gt; </span><span class="n">hx1</span> <span class="o">=</span> <span class="n">hx</span><span class="o">.</span><span class="n">FCorrectionFactor</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">hx1</span><span class="o">.</span><span class="n">oneshell2ntubepasses</span><span class="p">(</span><span class="n">T_shellin</span><span class="o">=</span><span class="mi">300</span><span class="p">,</span> <span class="n">T_shellout</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span>
+<span class="go">                             T_tubein=100, T_tubeout=200)</span>
+<span class="go">0.8022781617244771</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pychemengg.heattransfer.heatexchangers.FCorrectionFactor.singlepass_crossflow_bothmixed">
+<span class="sig-name descname"><span class="pre">singlepass_crossflow_bothmixed</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">T_tubein</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">T_tubeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">T_shellin</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">T_shellout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pychemengg/heattransfer/heatexchangers.html#FCorrectionFactor.singlepass_crossflow_bothmixed"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pychemengg.heattransfer.heatexchangers.FCorrectionFactor.singlepass_crossflow_bothmixed" title="Permalink to this definition">¶</a></dt>
+<dd><p>To find ‘F’ correction factor for LMTD.
+Use for single pass cross flow with both fluids mixed.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl>
+<dt><strong>T_tubein</strong><span class="classifier"><cite>int or float</cite></span></dt><dd><p>Temperature of tube side (or cold) fluid at inlet.</p>
+</dd>
+<dt><strong>T_tubeout</strong><span class="classifier"><cite>int or float</cite></span></dt><dd><p>Temperature of tube side (or cold) fluid at outlet.</p>
+</dd>
+<dt><strong>T_shellin</strong><span class="classifier"><cite>int or float</cite></span></dt><dd><p>Temperature of shell side (or hot) fluid at inlet.</p>
+</dd>
+<dt><strong>T_shellout</strong><span class="classifier"><cite>int or float</cite></span></dt><dd><p>Temperature of shell side (or hot) fluid at outlet.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl>
+<dt><strong>F</strong><span class="classifier"><cite>int or float</cite></span></dt><dd><p>‘F’ correction factor for LMTD.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>Equation number (12) of reference [1] is used.</p>
+<p>This is the same equation that is used to generate plots presented
+in most textbooks.</p>
+<p class="rubric">References</p>
+<p>[1] R. A. Bowman, A. C. Mueller, and W. M. Nagle, “Mean Temperature 
+Difference in Design”, Transactions of the ASME 62, 1940, pp:283-294.        .</p>
+<p class="rubric">Examples</p>
+<p>First import the module <strong>heatexchangers</strong>.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pychemengg.heattransfer</span> <span class="kn">import</span> <span class="n">heatexchangers</span> <span class="k">as</span> <span class="n">hx</span> 
+<span class="gp">&gt;&gt;&gt; </span><span class="n">hx1</span> <span class="o">=</span> <span class="n">hx</span><span class="o">.</span><span class="n">FCorrectionFactor</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">hx1</span><span class="o">.</span><span class="n">singlepass_crossflow_bothmixed</span><span class="p">(</span><span class="n">T_shellin</span><span class="o">=</span><span class="mi">300</span><span class="p">,</span> <span class="n">T_shellout</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span>
+<span class="go">                                         T_tubein=100, T_tubeout=200)</span>
+<span class="go">0.7959050946318332</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pychemengg.heattransfer.heatexchangers.FCorrectionFactor.singlepass_crossflow_bothunmixed">
+<span class="sig-name descname"><span class="pre">singlepass_crossflow_bothunmixed</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">T_tubein</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">T_tubeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">T_shellin</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">T_shellout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pychemengg/heattransfer/heatexchangers.html#FCorrectionFactor.singlepass_crossflow_bothunmixed"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pychemengg.heattransfer.heatexchangers.FCorrectionFactor.singlepass_crossflow_bothunmixed" title="Permalink to this definition">¶</a></dt>
+<dd><p>To find ‘F’ correction factor for LMTD.
+Use for single pass cross flow with both fluids unmixed.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl>
+<dt><strong>T_tubein</strong><span class="classifier"><cite>int or float</cite></span></dt><dd><p>Temperature of tube side (or cold) fluid at inlet.</p>
+</dd>
+<dt><strong>T_tubeout</strong><span class="classifier"><cite>int or float</cite></span></dt><dd><p>Temperature of tube side (or cold) fluid at outlet.</p>
+</dd>
+<dt><strong>T_shellin</strong><span class="classifier"><cite>int or float</cite></span></dt><dd><p>Temperature of shell side (or hot) fluid at inlet.</p>
+</dd>
+<dt><strong>T_shellout</strong><span class="classifier"><cite>int or float</cite></span></dt><dd><p>Temperature of shell side (or hot) fluid at outlet.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl>
+<dt><strong>F</strong><span class="classifier"><cite>int or float</cite></span></dt><dd><p>‘F’ correction factor for LMTD.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>Equation number (10) of reference [1] is used.</p>
+<p>This is the same equation that is used to generate plots presented
+in most textbooks.</p>
+<p class="rubric">References</p>
+<p>[1] R. A. Bowman, A. C. Mueller, and W. M. Nagle, “Mean Temperature 
+Difference in Design”, Transactions of the ASME 62, 1940, pp:283-294.        .</p>
+<p class="rubric">Examples</p>
+<p>First import the module <strong>heatexchangers</strong>.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pychemengg.heattransfer</span> <span class="kn">import</span> <span class="n">heatexchangers</span> <span class="k">as</span> <span class="n">hx</span> 
+<span class="gp">&gt;&gt;&gt; </span><span class="n">hx1</span> <span class="o">=</span> <span class="n">hx</span><span class="o">.</span><span class="n">FCorrectionFactor</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">hx1</span><span class="o">.</span><span class="n">singlepass_crossflow_bothunmixed</span><span class="p">(</span><span class="n">T_shellin</span><span class="o">=</span><span class="mi">300</span><span class="p">,</span> <span class="n">T_shellout</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span>
+<span class="go">                                         T_tubein=100, T_tubeout=200)</span>
+<span class="go">0.8945911509910063</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pychemengg.heattransfer.heatexchangers.FCorrectionFactor.singlepass_crossflow_oneunmixed">
+<span class="sig-name descname"><span class="pre">singlepass_crossflow_oneunmixed</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">T_tubein</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">T_tubeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">T_shellin</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">T_shellout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pychemengg/heattransfer/heatexchangers.html#FCorrectionFactor.singlepass_crossflow_oneunmixed"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pychemengg.heattransfer.heatexchangers.FCorrectionFactor.singlepass_crossflow_oneunmixed" title="Permalink to this definition">¶</a></dt>
+<dd><p>To find ‘F’ correction factor for LMTD.
+Use for single pass cross flow with one fluid unmixed.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl>
+<dt><strong>T_tubein</strong><span class="classifier"><cite>int or float</cite></span></dt><dd><p>Temperature of tube side (or cold) fluid at inlet.</p>
+</dd>
+<dt><strong>T_tubeout</strong><span class="classifier"><cite>int or float</cite></span></dt><dd><p>Temperature of tube side (or cold) fluid at outlet.</p>
+</dd>
+<dt><strong>T_shellin</strong><span class="classifier"><cite>int or float</cite></span></dt><dd><p>Temperature of shell side (or hot) fluid at inlet.</p>
+</dd>
+<dt><strong>T_shellout</strong><span class="classifier"><cite>int or float</cite></span></dt><dd><p>Temperature of shell side (or hot) fluid at outlet.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl>
+<dt><strong>F</strong><span class="classifier"><cite>int or float</cite></span></dt><dd><p>‘F’ correction factor for LMTD.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>Equation number (11) of reference [1] is used.</p>
+<p>This is the same equation that is used to generate plots presented
+in most textbooks.</p>
+<p class="rubric">References</p>
+<p>[1] R. A. Bowman, A. C. Mueller, and W. M. Nagle, “Mean Temperature 
+Difference in Design”, Transactions of the ASME 62, 1940, pp:283-294.        .</p>
+<p class="rubric">Examples</p>
+<p>First import the module <strong>heatexchangers</strong>.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pychemengg.heattransfer</span> <span class="kn">import</span> <span class="n">heatexchangers</span> <span class="k">as</span> <span class="n">hx</span> 
+<span class="gp">&gt;&gt;&gt; </span><span class="n">hx1</span> <span class="o">=</span> <span class="n">hx</span><span class="o">.</span><span class="n">FCorrectionFactor</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">hx1</span><span class="o">.</span><span class="n">singlepass_crossflow_oneunmixed</span><span class="p">(</span><span class="n">T_shellin</span><span class="o">=</span><span class="mi">300</span><span class="p">,</span> <span class="n">T_shellout</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span>
+<span class="go">                                         T_tubein=100, T_tubeout=200)</span>
+<span class="go">0.8464626304853572</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pychemengg.heattransfer.heatexchangers.FCorrectionFactor.twoshell4ntubepasses">
+<span class="sig-name descname"><span class="pre">twoshell4ntubepasses</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">T_tubein</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">T_tubeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">T_shellin</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">T_shellout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pychemengg/heattransfer/heatexchangers.html#FCorrectionFactor.twoshell4ntubepasses"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pychemengg.heattransfer.heatexchangers.FCorrectionFactor.twoshell4ntubepasses" title="Permalink to this definition">¶</a></dt>
+<dd><p>To find ‘F’ correction factor for LMTD.
+Use when shell passes = 2 and tube passes = 4, 8, 12, etc</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl>
+<dt><strong>T_tubein</strong><span class="classifier"><cite>int or float</cite></span></dt><dd><p>Temperature of tube side (or cold) fluid at inlet.</p>
+</dd>
+<dt><strong>T_tubeout</strong><span class="classifier"><cite>int or float</cite></span></dt><dd><p>Temperature of tube side (or cold) fluid at outlet.</p>
+</dd>
+<dt><strong>T_shellin</strong><span class="classifier"><cite>int or float</cite></span></dt><dd><p>Temperature of shell side (or hot) fluid at inlet.</p>
+</dd>
+<dt><strong>T_shellout</strong><span class="classifier"><cite>int or float</cite></span></dt><dd><p>Temperature of shell side (or hot) fluid at outlet.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl>
+<dt><strong>F</strong><span class="classifier"><cite>int or float</cite></span></dt><dd><p>‘F’ correction factor for LMTD.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-odd">Raises</dt>
+<dd class="field-odd"><dl class="simple">
+<dt>ValueError with message ‘math domain error’</dt><dd><p>If negative number is being passed to the ‘log’ function</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>Equation number (8) of reference [1] is used.</p>
+<p>This is the same equation used to generate plots presented
+in most textbooks.</p>
+<p class="rubric">References</p>
+<p>[1] R. A. Bowman, A. C. Mueller, and W. M. Nagle, “Mean Temperature 
+Difference in Design”, Transactions of the ASME 62, 1940, pp:283-294.        .</p>
+<p class="rubric">Examples</p>
+<p>First import the module <strong>heatexchangers</strong>.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pychemengg.heattransfer</span> <span class="kn">import</span> <span class="n">heatexchangers</span> <span class="k">as</span> <span class="n">hx</span> 
+<span class="gp">&gt;&gt;&gt; </span><span class="n">hx1</span> <span class="o">=</span> <span class="n">hx</span><span class="o">.</span><span class="n">FCorrectionFactor</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">hx1</span><span class="o">.</span><span class="n">twoshell4ntubepasses</span><span class="p">(</span><span class="n">T_shellin</span><span class="o">=</span><span class="mi">300</span><span class="p">,</span> <span class="n">T_shellout</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span>
+<span class="go">                             T_tubein=100, T_tubeout=200)</span>
+<span class="go">0.9568453972970873</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="pychemengg.heattransfer.internalflow.html" class="btn btn-neutral float-right" title="internalflow" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="pychemengg.heattransfer.heatexchangers.EffNTU.html" class="btn btn-neutral float-left" title="EffNTU" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021, Harvinder Singh Gill.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

@@ -1,0 +1,484 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>EffNTU &mdash; PyChemEngg 0.1a6 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/my_theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/my_theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/my_theme.css" type="text/css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/katex-math.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.12.0/contrib/auto-render.min.js"></script>
+        <script src="../_static/katex_autorenderer.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="FCorrectionFactor" href="pychemengg.heattransfer.heatexchangers.FCorrectionFactor.html" />
+    <link rel="prev" title="calc_overallheattransfercoefficient_fromNTU" href="pychemengg.heattransfer.heatexchangers.calc_overallheattransfercoefficient_fromNTU.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> PyChemEngg
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1a6
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption" role="heading"><span class="caption-text">User Tutorial</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../userguide/heattransfer/index.html">Heat Transfer</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Reference Guide</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../autosummary_pychemengg.html">PyChemEngg API Reference</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="pychemengg.html">pychemengg</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="pychemengg.heattransfer.html">heattransfer</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="pychemengg.heattransfer.externalflow.html">externalflow</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pychemengg.heattransfer.fins.html">fins</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pychemengg.heattransfer.heatcommonmethods.html">heatcommonmethods</a></li>
+<li class="toctree-l4 current"><a class="reference internal" href="pychemengg.heattransfer.heatexchangers.html">heatexchangers</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pychemengg.heattransfer.internalflow.html">internalflow</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pychemengg.heattransfer.steadystate.html">steadystate</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="pychemengg.physicalproperties.html">physicalproperties</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">PyChemEngg</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../autosummary_pychemengg.html">PyChemEngg API</a> &raquo;</li>
+        
+          <li><a href="pychemengg.html">pychemengg</a> &raquo;</li>
+        
+          <li><a href="pychemengg.heattransfer.html">heattransfer</a> &raquo;</li>
+        
+          <li><a href="pychemengg.heattransfer.heatexchangers.html">heatexchangers</a> &raquo;</li>
+        
+      <li>EffNTU</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/_autosummary/pychemengg.heattransfer.heatexchangers.EffNTU.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
+      
+        <a href="pychemengg.heattransfer.heatexchangers.FCorrectionFactor.html" class="btn btn-neutral float-right" title="FCorrectionFactor" accesskey="n">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+      
+      
+        <a href="pychemengg.heattransfer.heatexchangers.calc_overallheattransfercoefficient_fromNTU.html" class="btn btn-neutral float-left" title="calc_overallheattransfercoefficient_fromNTU" accesskey="p"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+      
+  </div>
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<div class="section" id="effntu">
+<h1>EffNTU<a class="headerlink" href="#effntu" title="Permalink to this headline">¶</a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="pychemengg.heattransfer.heatexchangers.EffNTU">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">pychemengg.heattransfer.heatexchangers.</span></span><span class="sig-name descname"><span class="pre">EffNTU</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">Cmin</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Cmax</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">NTU</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'?'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">effectiveness</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'?'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pychemengg/heattransfer/heatexchangers.html#EffNTU"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pychemengg.heattransfer.heatexchangers.EffNTU" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Contains functions to compute ‘effectiveness’
+and NTU for heat exchangers.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl>
+<dt><strong>Cmin</strong><span class="classifier"><cite>int or float</cite></span></dt><dd><p>Minimum heat capacity rate of fluids in heat exchanger.
+<span class="math">\(C_{min} = \dot{m} c_p\)</span> =  smaller of the two heat 
+capacity rates for the two fluids in the heat exchanger.</p>
+<blockquote>
+<div><p><span class="math">\(\dot{m}\)</span> = mass flow rate of the fluid</p>
+<p><span class="math">\(c_p\)</span> = specific heat of the fluid</p>
+</div></blockquote>
+</dd>
+<dt><strong>Cmax</strong><span class="classifier"><cite>int or float</cite></span></dt><dd><p>Maximum heat capacity rate of fluids in heat exchanger.
+<span class="math">\(C_{max} = \dot{m} c_p\)</span> =  Larger of the two heat l
+capacity rates for the two fluids in the heat exchanger</p>
+<blockquote>
+<div><p><span class="math">\(\dot{m}\)</span> = mass flow rate of the fluid</p>
+<p><span class="math">\(c_p\)</span> = specific heat of the fluid</p>
+</div></blockquote>
+</dd>
+<dt><strong>Cratio</strong><span class="classifier"><cite>int or float</cite></span></dt><dd><p>Cmin/Cmax</p>
+</dd>
+<dt><strong>effectiveness</strong><span class="classifier"><cite>int or float or str</cite></span></dt><dd><p>Efficiency of the heat exchanger.    
+Input ‘int or float’ value if effectiveness values is known, or 
+input “?” if it has to be computed. Default = “?”.</p>
+</dd>
+<dt><strong>NTU</strong><span class="classifier"><cite>int or float or str</cite></span></dt><dd><p>Number of transfer units for the heat exchanger. 
+Input ‘int or float’ value if NTU values is known, or 
+input “?” if it has to be computed. Default = “?”.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>1. At least one of effectiveness or NTU must be entered 
+as ‘int or float’ and the other will get computed.</p>
+<p>2. Textbooks contain explicit formulas to compute
+i) effectiveness and ii) NTU for different exchanger types.</p>
+<p>3. In this ‘class’ definition, the following exchanger types
+can be computed with respect to ‘effectiveness’ or ‘NTU’’</p>
+<ul>
+<li><p>Double pipe - parallel flow</p></li>
+<li><p>Double pipe - counter flow</p></li>
+<li><p>Shell and tube</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>one shell pass and 2, 4, 6 etc tube passes</p></li>
+<li><p>n shell passes and 2n, 4n, etc tube passes</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>Single pass counter flow:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>both fluids unmixed</p></li>
+<li><p>Cmax fluid mixed, and Cmin unmixed</p></li>
+<li><p>Cmin fluid mixed, and Cmax unmixed</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>All exhangers when Cratio = Cmin/Cmax = 0</p></li>
+</ul>
+<ol class="arabic" start="4">
+<li><p>Logic:</p>
+<blockquote>
+<div><p>Explicit formula for computing ‘effectiveness’ for each of the above
+exchanger types is implemented in a separate method. 
+When that method is called, it internally calls another
+method (“_get_eff_or_ntu”). This method checks which of
+“effectiveness” or “NTU” is missing. If “effectiveness” is
+missing, and “NTU” is provided, the explict equation is used
+to compute effectiveness from “NTU”. If “NTU” is missing, the same
+explict equation for effectiveness becomes an implicit equation for “NTU”,
+and it is solved using ‘fsolve’ of scipy to find “NTU”. A
+seperate explict equation for calculating “NTU” from “effectiveness”
+is not implemented. The advantage of this approach is that for the
+case of “Single pass counter flow with both fluid unmixed”, there
+is no explict relationship for “NTU” reported in textbooks, but
+there is one for computing “effectiveness”. So in this manner by using
+‘fsolve’, the “NTU”” for the case of “Single pass counter flow
+with both fluid unmixed” can also be computed.</p>
+</div></blockquote>
+</li>
+</ol>
+<p class="rubric">Examples</p>
+<p>First import the module <strong>heatexchangers</strong>.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pychemengg.heattransfer</span> <span class="kn">import</span> <span class="n">heatexchangers</span> <span class="k">as</span> <span class="n">hx</span> 
+<span class="gp">&gt;&gt;&gt; </span><span class="n">hx1</span> <span class="o">=</span> <span class="n">hx</span><span class="o">.</span><span class="n">EffNTU</span><span class="p">(</span><span class="n">Cmin</span><span class="o">=</span><span class="mf">0.639</span><span class="p">,</span> <span class="n">Cmax</span><span class="o">=</span><span class="mf">0.836</span><span class="p">,</span> <span class="n">NTU</span><span class="o">=</span><span class="mf">0.854</span><span class="p">)</span>
+<span class="go"># This will create an instance of EffNTU and assign it to &quot;hx1&quot;.</span>
+<span class="go"># Methods of the class &#39;EffNTU&#39; can then be called.</span>
+<span class="go"># In this particular example, NTU is assigned = 0.854.</span>
+<span class="go"># By default effectiveness = &quot;?&quot;.</span>
+<span class="go"># When a heat exchanger type is next called, it will automatically</span>
+<span class="go"># compute the effectiveness for that exchanger type</span>
+<span class="go"># For example</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">hx1</span><span class="o">.</span><span class="n">shelltube</span><span class="p">(</span><span class="n">shellpass_count</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">tubepass_count</span><span class="o">=</span><span class="mi">8</span><span class="p">)</span>
+<span class="go">0.4621565341983249</span>
+<span class="go"># This is the effectiveness.</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Attributes</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>See “Parameters”. All parameters are attributes.</strong></dt><dd></dd>
+</dl>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="pychemengg.heattransfer.heatexchangers.EffNTU.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">Cmin</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Cmax</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">NTU</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'?'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">effectiveness</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'?'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pychemengg/heattransfer/heatexchangers.html#EffNTU.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pychemengg.heattransfer.heatexchangers.EffNTU.__init__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<p class="rubric">Methods</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pychemengg.heattransfer.heatexchangers.EffNTU.Cratio_is_zero" title="pychemengg.heattransfer.heatexchangers.EffNTU.Cratio_is_zero"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Cratio_is_zero</span></code></a>()</p></td>
+<td><p>Computes “effectiveness” or “NTU” for any exchanger with Cmin/Cmax = 0</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#pychemengg.heattransfer.heatexchangers.EffNTU.__init__" title="pychemengg.heattransfer.heatexchangers.EffNTU.__init__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">__init__</span></code></a>([Cmin, Cmax, NTU, effectiveness])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pychemengg.heattransfer.heatexchangers.EffNTU.crossflow_Cmax_unmixed" title="pychemengg.heattransfer.heatexchangers.EffNTU.crossflow_Cmax_unmixed"><code class="xref py py-obj docutils literal notranslate"><span class="pre">crossflow_Cmax_unmixed</span></code></a>()</p></td>
+<td><p>Computes “effectiveness” or “NTU” for cross flow heat exchanger with both fluid with Cmax unmixed.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#pychemengg.heattransfer.heatexchangers.EffNTU.crossflow_Cmin_unmixed" title="pychemengg.heattransfer.heatexchangers.EffNTU.crossflow_Cmin_unmixed"><code class="xref py py-obj docutils literal notranslate"><span class="pre">crossflow_Cmin_unmixed</span></code></a>()</p></td>
+<td><p>Computes “effectiveness” or “NTU” for cross flow heat exchanger with both fluid with Cmin unmixed.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pychemengg.heattransfer.heatexchangers.EffNTU.crossflow_bothfluids_unmixed" title="pychemengg.heattransfer.heatexchangers.EffNTU.crossflow_bothfluids_unmixed"><code class="xref py py-obj docutils literal notranslate"><span class="pre">crossflow_bothfluids_unmixed</span></code></a>()</p></td>
+<td><p>Computes “effectiveness” or “NTU” for cross flow heat exchanger with both fluid unmixed.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#pychemengg.heattransfer.heatexchangers.EffNTU.doublepipe_counterflow" title="pychemengg.heattransfer.heatexchangers.EffNTU.doublepipe_counterflow"><code class="xref py py-obj docutils literal notranslate"><span class="pre">doublepipe_counterflow</span></code></a>()</p></td>
+<td><p>Computes “effectiveness” or “NTU” for double pipe counter flow heat exchanger.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pychemengg.heattransfer.heatexchangers.EffNTU.doublepipe_parallelflow" title="pychemengg.heattransfer.heatexchangers.EffNTU.doublepipe_parallelflow"><code class="xref py py-obj docutils literal notranslate"><span class="pre">doublepipe_parallelflow</span></code></a>()</p></td>
+<td><p>Computes “effectiveness” or “NTU” for double pipe parallel flow heat exchanger.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#pychemengg.heattransfer.heatexchangers.EffNTU.shelltube" title="pychemengg.heattransfer.heatexchangers.EffNTU.shelltube"><code class="xref py py-obj docutils literal notranslate"><span class="pre">shelltube</span></code></a>([shellpass_count, tubepass_count])</p></td>
+<td><p>Computes “effectiveness” or “NTU” for shell and tube heat exchanger.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="py method">
+<dt class="sig sig-object py" id="pychemengg.heattransfer.heatexchangers.EffNTU.Cratio_is_zero">
+<span class="sig-name descname"><span class="pre">Cratio_is_zero</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pychemengg/heattransfer/heatexchangers.html#EffNTU.Cratio_is_zero"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pychemengg.heattransfer.heatexchangers.EffNTU.Cratio_is_zero" title="Permalink to this definition">¶</a></dt>
+<dd><p>Computes “effectiveness” or “NTU” for any exchanger with
+Cmin/Cmax = 0</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pychemengg.heattransfer.heatexchangers.EffNTU.crossflow_Cmax_unmixed">
+<span class="sig-name descname"><span class="pre">crossflow_Cmax_unmixed</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pychemengg/heattransfer/heatexchangers.html#EffNTU.crossflow_Cmax_unmixed"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pychemengg.heattransfer.heatexchangers.EffNTU.crossflow_Cmax_unmixed" title="Permalink to this definition">¶</a></dt>
+<dd><p>Computes “effectiveness” or “NTU” for cross flow heat exchanger
+with both fluid with Cmax unmixed.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pychemengg.heattransfer.heatexchangers.EffNTU.crossflow_Cmin_unmixed">
+<span class="sig-name descname"><span class="pre">crossflow_Cmin_unmixed</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pychemengg/heattransfer/heatexchangers.html#EffNTU.crossflow_Cmin_unmixed"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pychemengg.heattransfer.heatexchangers.EffNTU.crossflow_Cmin_unmixed" title="Permalink to this definition">¶</a></dt>
+<dd><p>Computes “effectiveness” or “NTU” for cross flow heat exchanger
+with both fluid with Cmin unmixed.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pychemengg.heattransfer.heatexchangers.EffNTU.crossflow_bothfluids_unmixed">
+<span class="sig-name descname"><span class="pre">crossflow_bothfluids_unmixed</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pychemengg/heattransfer/heatexchangers.html#EffNTU.crossflow_bothfluids_unmixed"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pychemengg.heattransfer.heatexchangers.EffNTU.crossflow_bothfluids_unmixed" title="Permalink to this definition">¶</a></dt>
+<dd><p>Computes “effectiveness” or “NTU” for cross flow heat exchanger
+with both fluid unmixed.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pychemengg.heattransfer.heatexchangers.EffNTU.doublepipe_counterflow">
+<span class="sig-name descname"><span class="pre">doublepipe_counterflow</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pychemengg/heattransfer/heatexchangers.html#EffNTU.doublepipe_counterflow"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pychemengg.heattransfer.heatexchangers.EffNTU.doublepipe_counterflow" title="Permalink to this definition">¶</a></dt>
+<dd><p>Computes “effectiveness” or “NTU” for double pipe counter flow
+heat exchanger.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pychemengg.heattransfer.heatexchangers.EffNTU.doublepipe_parallelflow">
+<span class="sig-name descname"><span class="pre">doublepipe_parallelflow</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pychemengg/heattransfer/heatexchangers.html#EffNTU.doublepipe_parallelflow"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pychemengg.heattransfer.heatexchangers.EffNTU.doublepipe_parallelflow" title="Permalink to this definition">¶</a></dt>
+<dd><p>Computes “effectiveness” or “NTU” for double pipe parallel flow
+heat exchanger.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pychemengg.heattransfer.heatexchangers.EffNTU.shelltube">
+<span class="sig-name descname"><span class="pre">shelltube</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">shellpass_count</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tubepass_count</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pychemengg/heattransfer/heatexchangers.html#EffNTU.shelltube"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pychemengg.heattransfer.heatexchangers.EffNTU.shelltube" title="Permalink to this definition">¶</a></dt>
+<dd><p>Computes “effectiveness” or “NTU” for shell and tube
+heat exchanger.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="pychemengg.heattransfer.heatexchangers.FCorrectionFactor.html" class="btn btn-neutral float-right" title="FCorrectionFactor" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="pychemengg.heattransfer.heatexchangers.calc_overallheattransfercoefficient_fromNTU.html" class="btn btn-neutral float-left" title="calc_overallheattransfercoefficient_fromNTU" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021, Harvinder Singh Gill.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

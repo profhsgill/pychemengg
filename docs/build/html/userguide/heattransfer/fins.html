@@ -1,0 +1,420 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Fins &mdash; PyChemEngg 0.1a6 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/my_theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/my_theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/my_theme.css" type="text/css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/katex-math.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.12.0/contrib/auto-render.min.js"></script>
+        <script src="../../_static/katex_autorenderer.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Internal flow" href="internalflow.html" />
+    <link rel="prev" title="Steady State Heat Transfer" href="steadystate.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> PyChemEngg
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1a6
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption" role="heading"><span class="caption-text">User Tutorial</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Heat Transfer</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="steadystate.html">Steady State Heat Transfer</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Fins</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#introduction">Introduction</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#examples">Examples</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#example-1-fins-cylindrical-single-fin">Example 1: Fins <code class="docutils literal notranslate"><span class="pre">cylindrical,</span> <span class="pre">single</span> <span class="pre">fin</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#example-2-fins-rectangular-annular-many-fins">Example 2: Fins <code class="docutils literal notranslate"><span class="pre">rectangular</span> <span class="pre">annular,</span> <span class="pre">many</span> <span class="pre">fins</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="internalflow.html">Internal flow</a></li>
+<li class="toctree-l2"><a class="reference internal" href="externalflow.html">External flow</a></li>
+<li class="toctree-l2"><a class="reference internal" href="heatexchangers.html">Heat Exchangers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="heatcommonmethods.html">Common methods</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Reference Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../autosummary_pychemengg.html">PyChemEngg API Reference</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">PyChemEngg</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="index.html">PyChemEngg User Guide</a> &raquo;</li>
+        
+      <li>Fins</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../_sources/userguide/heattransfer/fins.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
+      
+        <a href="internalflow.html" class="btn btn-neutral float-right" title="Internal flow" accesskey="n">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+      
+      
+        <a href="steadystate.html" class="btn btn-neutral float-left" title="Steady State Heat Transfer" accesskey="p"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+      
+  </div>
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<div class="section" id="fins">
+<span id="id1"></span><h1>Fins<a class="headerlink" href="#fins" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
+<p>The module <code class="docutils literal notranslate"><span class="pre">fins</span></code> contains functions that can be used to find the</p>
+<ol class="arabic simple">
+<li><p>fin-efficiency, and</p></li>
+<li><p>surface area</p></li>
+</ol>
+<p>of different fin geometries.</p>
+<p>The geometries available are:</p>
+<ol class="arabic simple">
+<li><p>cylindrical (fin with constant circular cross section)</p></li>
+<li><p>rectangular (fin with constant rectangular cross section)</p></li>
+<li><p>rectangularannular (circular fin around a cylindrical shape)</p></li>
+<li><p>pintriangular (concial fin)</p></li>
+<li><p>straightparabolic (rectangular base with parabolic cross-section profile)</p></li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The formulas for fin efficiency assume an <strong>adiabatic</strong> fin tip case. If the
+fin tip is not adiabatic, the appropriate corrected fin length (Lc) must be used
+for the “length” keyword.</p>
+<p>The corrected lengths (Lc) and corrected outer radius (roc) for the different geometries are:</p>
+<table class="colwidths-given docutils align-default" id="id2">
+<caption><span class="caption-text">Corrected fin lengths</span><a class="headerlink" href="#id2" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Geometry</p></th>
+<th class="head"><p>Corrected length</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>rectangular</p></td>
+<td><p>Lc = L + t/2 (L = physical length, t = thickness, Lc = corrected length)</p></td>
+</tr>
+<tr class="row-odd"><td><p>cylindrical</p></td>
+<td><p>Lc = L + D/4 (L = physical length, D = diameter, , Lc = corrected length)</p></td>
+</tr>
+<tr class="row-even"><td><p>rectangularannular</p></td>
+<td><p>roc = ro + t/2 (ro = outer radius, t = thickness, , roc = corrected outer radius)</p></td>
+</tr>
+<tr class="row-odd"><td><p>pintriangular</p></td>
+<td><p>Lc = L (no change, L = physical length, Lc = corrected length)</p></td>
+</tr>
+<tr class="row-even"><td><p>straightparabolic</p></td>
+<td><p>Lc = L (no change, L = physical length, Lc = corrected length)</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="custom docutils container">
+<p><strong>How to use</strong></p>
+<p>It is recommended that the module be imported
+as <code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">pychemengg</span> <span class="pre">import</span> <span class="pre">fins</span> <span class="pre">as</span> <span class="pre">fins</span></code></p>
+</div>
+<p>The following examples demonstrate how the module <code class="docutils literal notranslate"><span class="pre">fins</span></code>
+can be used to solve heat transfer problems.</p>
+</div>
+<div class="section" id="examples">
+<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="example-1-fins-cylindrical-single-fin">
+<h3>Example 1: Fins <code class="docutils literal notranslate"><span class="pre">cylindrical,</span> <span class="pre">single</span> <span class="pre">fin</span></code><a class="headerlink" href="#example-1-fins-cylindrical-single-fin" title="Permalink to this headline">¶</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">Example</span> <span class="pre">1.</span></code> A rod of diameter D = 2 cm, length= 25 cm, and thermal
+conductivity k = 50 W/mC is exposed to ambient temperature air at
+T<sub>infinity</sub> = 20 C with a heat transfer coefficient h = 64 W/m2C.
+If one end of the rod is maintained at 120 C, find the heat loss from the
+rod. <code class="docutils literal notranslate"><span class="pre">Ans:</span> <span class="pre">heat</span> <span class="pre">loss</span> <span class="pre">=</span> <span class="pre">25.1</span> <span class="pre">kW</span></code></p>
+<blockquote>
+<div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># EXAMPLE 1</span>
+<span class="kn">from</span> <span class="nn">pychemengg.heattransfer</span> <span class="kn">import</span> <span class="n">fins</span> <span class="k">as</span> <span class="n">fins</span>
+<span class="c1"># The rod is similar to a single fin.</span>
+<span class="c1"># Model it as a cylindrical fin.</span>
+<span class="c1"># The rod tip is assumed to be adiabatic, so length = actual length.</span>
+<span class="n">rod</span> <span class="o">=</span> <span class="n">fins</span><span class="o">.</span><span class="n">Fin</span><span class="p">(</span><span class="n">length</span><span class="o">=</span><span class="mf">25e-2</span><span class="p">,</span> <span class="n">diameter</span><span class="o">=</span><span class="mf">2e-2</span><span class="p">,</span> <span class="n">heattransfercoefficient</span><span class="o">=</span><span class="mi">64</span><span class="p">,</span> <span class="n">thermalconductivity</span><span class="o">=</span><span class="mi">50</span><span class="p">)</span>
+<span class="c1"># There are other parameters for the &#39;Fin&#39; class, however, only the relevant ones</span>
+<span class="c1"># need to be provided. The rest can be left as &#39;None&#39; by default.</span>
+<span class="c1"># Next call on the cylindrical method to get efficiency and surface area.</span>
+<span class="n">rod</span><span class="o">.</span><span class="n">cylindrical</span><span class="p">()</span>
+<span class="c1"># The above method will run and create attributes &#39;efficiency&#39; and &#39;surfacearea&#39;.</span>
+<span class="n">max_heatrate</span> <span class="o">=</span> <span class="n">rod</span><span class="o">.</span><span class="n">heattransfercoefficient</span> <span class="o">*</span> <span class="n">rod</span><span class="o">.</span><span class="n">surfacearea</span> <span class="o">*</span> <span class="p">(</span><span class="mi">120</span><span class="o">-</span><span class="mi">20</span><span class="p">)</span>
+<span class="n">actual_heatrate</span> <span class="o">=</span> <span class="n">max_heatrate</span> <span class="o">*</span> <span class="n">rod</span><span class="o">.</span><span class="n">efficiency</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Heat loss = </span><span class="si">{</span><span class="n">actual_heatrate</span><span class="si">:</span><span class="s2"> 0.1f</span><span class="si">}</span><span class="s2"> W&quot;</span><span class="p">)</span>
+
+<span class="c1"># PRINTED OUTPUT</span>
+<span class="n">Heat</span> <span class="n">loss</span> <span class="o">=</span>  <span class="mf">25.1</span> <span class="n">W</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+<hr class="docutils" />
+<div class="section" id="example-2-fins-rectangular-annular-many-fins">
+<h3>Example 2: Fins <code class="docutils literal notranslate"><span class="pre">rectangular</span> <span class="pre">annular,</span> <span class="pre">many</span> <span class="pre">fins</span></code><a class="headerlink" href="#example-2-fins-rectangular-annular-many-fins" title="Permalink to this headline">¶</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">Example</span> <span class="pre">2.</span></code>
+Annular fins with inner radius of 12.5 mm, outer radius of 22.5 mm and thickness
+of 1 mm are attached to a cylinder at 200 fins per meter. The cylinder surface is
+maintained at 250°C. The surrounding air temperature is 25°C. Consider the convective
+heat transfer coefficient (h) as 25 W/m2K and the thermal conductivity (k) of the fin
+as 240 W/mK.</p>
+<ol class="arabic">
+<li><p>Find heat loss per fin. <code class="docutils literal notranslate"><span class="pre">Ans:</span> <span class="pre">heat</span> <span class="pre">loss</span> <span class="pre">=</span> <span class="pre">13</span> <span class="pre">W</span></code></p></li>
+<li><p>Heat loss per unit length of cylinder. <code class="docutils literal notranslate"><span class="pre">Ans:</span> <span class="pre">heat</span> <span class="pre">loss</span> <span class="pre">=</span> <span class="pre">2961</span> <span class="pre">W/m</span></code></p>
+<blockquote>
+<div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># EXAMPLE 2</span>
+<span class="kn">from</span> <span class="nn">pychemengg.heattransfer</span> <span class="kn">import</span> <span class="n">fins</span> <span class="k">as</span> <span class="n">fins</span>
+<span class="c1"># Model fin as a rectangularannular fin.</span>
+<span class="c1"># The fin tip is not given to be adiabatic.</span>
+<span class="c1"># So outer radius should be corrected as correctedradius = outerfinradius + thickness/2</span>
+<span class="n">correctedouter_radius</span> <span class="o">=</span> <span class="mf">22.5e-3</span> <span class="o">+</span> <span class="mf">1e-3</span><span class="o">/</span><span class="mi">2</span>
+<span class="n">annularfin</span> <span class="o">=</span> <span class="n">fins</span><span class="o">.</span><span class="n">Fin</span><span class="p">(</span><span class="n">inner_radius</span><span class="o">=</span><span class="mf">12.5e-3</span><span class="p">,</span> <span class="n">outer_radius</span><span class="o">=</span><span class="n">correctedouter_radius</span><span class="p">,</span> <span class="n">thickness</span><span class="o">=</span><span class="mf">1e-3</span><span class="p">,</span> <span class="n">heattransfercoefficient</span><span class="o">=</span><span class="mi">25</span><span class="p">,</span> <span class="n">thermalconductivity</span><span class="o">=</span><span class="mi">240</span><span class="p">)</span>
+<span class="c1"># There are other parameters for the &#39;Fin&#39; class, however, only the relevant ones</span>
+<span class="c1"># need to be provided. The rest can be left as &#39;None&#39; by default.</span>
+<span class="c1"># Even if irrelevant ones are provided, the method only uses the relavant parameters.</span>
+<span class="c1"># Next call on the rectangularannular method to get efficiency and surface area.</span>
+<span class="n">annularfin</span><span class="o">.</span><span class="n">rectangularannular</span><span class="p">()</span>
+<span class="c1"># The above method will run and create attributes &#39;efficiency&#39; and &#39;surfacearea&#39;.</span>
+<span class="n">max_heatrateperfin</span> <span class="o">=</span> <span class="n">annularfin</span><span class="o">.</span><span class="n">heattransfercoefficient</span> <span class="o">*</span> <span class="n">annularfin</span><span class="o">.</span><span class="n">surfacearea</span> <span class="o">*</span> <span class="p">(</span><span class="mi">250</span><span class="o">-</span><span class="mi">25</span><span class="p">)</span>
+<span class="n">actualheatrateperfin</span> <span class="o">=</span> <span class="n">max_heatrateperfin</span> <span class="o">*</span> <span class="n">annularfin</span><span class="o">.</span><span class="n">efficiency</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Heat loss from single fin = </span><span class="si">{</span><span class="n">actualheatrateperfin</span><span class="si">:</span><span class="s2"> 0.1f</span><span class="si">}</span><span class="s2"> W&quot;</span><span class="p">)</span>
+<span class="c1"># To compute heat loss from 1 m long finned cylinder</span>
+<span class="c1"># Total heat loss from 1m cylinder = heat loss from fins on 1m + heat loss from surface not covered by fins</span>
+<span class="n">fincount</span><span class="o">=</span><span class="mi">200</span>
+<span class="n">total_finheatloss</span> <span class="o">=</span> <span class="n">fincount</span> <span class="o">*</span> <span class="n">actualheatrateperfin</span>
+<span class="kn">import</span> <span class="nn">math</span>
+<span class="n">barecylindersurfacearea</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="p">(</span><span class="mf">12.5e-3</span> <span class="o">*</span> <span class="mi">2</span><span class="p">)</span> <span class="o">*</span> <span class="mi">1</span> <span class="c1"># area = pi * D * L</span>
+<span class="n">baseareaof_singlefin</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="p">(</span><span class="mf">12.5e-3</span> <span class="o">*</span><span class="mi">2</span><span class="p">)</span> <span class="o">*</span> <span class="mf">1e-3</span> <span class="c1"># here L = 1e-3</span>
+<span class="n">areacoveredby_allfins</span> <span class="o">=</span> <span class="mi">200</span> <span class="o">*</span> <span class="n">baseareaof_singlefin</span>
+<span class="n">heatlossfrom_area_without_fins</span> <span class="o">=</span> <span class="mi">25</span> <span class="o">*</span> <span class="p">(</span><span class="n">barecylindersurfacearea</span><span class="o">-</span><span class="n">areacoveredby_allfins</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="mi">250</span><span class="o">-</span><span class="mi">25</span><span class="p">)</span>
+<span class="n">totalheatloss</span> <span class="o">=</span> <span class="n">total_finheatloss</span> <span class="o">+</span> <span class="n">heatlossfrom_area_without_fins</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Heat loss for 1 m cylinder = </span><span class="si">{</span><span class="n">totalheatloss</span><span class="si">:</span><span class="s2"> 0.0f</span><span class="si">}</span><span class="s2"> W/m&quot;</span><span class="p">)</span>
+
+<span class="c1"># PRINTED OUTPUT</span>
+<span class="n">Heat</span> <span class="n">loss</span> <span class="kn">from</span> <span class="nn">single</span> <span class="n">fin</span> <span class="o">=</span>  <span class="mf">13.0</span> <span class="n">W</span>
+<span class="n">Heat</span> <span class="n">loss</span> <span class="k">for</span> <span class="mi">1</span> <span class="n">m</span> <span class="n">cylinder</span> <span class="o">=</span>  <span class="mi">2961</span> <span class="n">W</span><span class="o">/</span><span class="n">m</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+</ol>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="internalflow.html" class="btn btn-neutral float-right" title="Internal flow" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="steadystate.html" class="btn btn-neutral float-left" title="Steady State Heat Transfer" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021, Harvinder Singh Gill.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
