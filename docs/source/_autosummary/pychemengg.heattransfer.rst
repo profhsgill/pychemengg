@@ -1,4 +1,4 @@
-heattransfer
+﻿heattransfer
 ============
 
 .. automodule:: pychemengg.heattransfer
@@ -35,5 +35,6 @@ heattransfer
    pychemengg.heattransfer.heatexchangers
    pychemengg.heattransfer.internalflow
    pychemengg.heattransfer.steadystate
+   pychemengg.heattransfer.transient
 
 

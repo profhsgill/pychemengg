@@ -48,7 +48,7 @@
     
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="physicalproperties" href="pychemengg.physicalproperties.html" />
+    <link rel="next" title="transient" href="pychemengg.heattransfer.transient.html" />
     <link rel="prev" title="Slab" href="pychemengg.heattransfer.steadystate.Slab.html" /> 
 </head>
 
@@ -113,6 +113,7 @@
 <li class="toctree-l4"><a class="reference internal" href="pychemengg.heattransfer.heatexchangers.html">heatexchangers</a></li>
 <li class="toctree-l4"><a class="reference internal" href="pychemengg.heattransfer.internalflow.html">internalflow</a></li>
 <li class="toctree-l4 current"><a class="reference internal" href="pychemengg.heattransfer.steadystate.html">steadystate</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pychemengg.heattransfer.transient.html">transient</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="pychemengg.physicalproperties.html">physicalproperties</a></li>
@@ -192,7 +193,7 @@
   
   <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
       
-        <a href="pychemengg.physicalproperties.html" class="btn btn-neutral float-right" title="physicalproperties" accesskey="n">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="pychemengg.heattransfer.transient.html" class="btn btn-neutral float-right" title="transient" accesskey="n">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
       
       
         <a href="pychemengg.heattransfer.steadystate.Slab.html" class="btn btn-neutral float-left" title="Slab" accesskey="p"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
@@ -411,7 +412,7 @@ Education, 2020</p>
 <p>Units used in this example: SI system</p>
 <p>However, any consistent units can be used</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pychemengg.heattransfer</span> <span class="kn">import</span> <span class="n">steadystate</span> <span class="k">as</span> <span class="n">ss</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">shellSS</span> <span class="o">=</span> <span class="n">ss</span><span class="o">.</span><span class="n">Sphere</span><span class="p">(</span><span class="n">inner_radius</span><span class="o">=</span><span class="mf">.30</span><span class="p">,</span> <span class="n">outer_radius</span><span class="o">=</span><span class="mf">.31</span><span class="p">,</span> <span class="n">thermalconductivity</span><span class="o">=</span><span class="mf">15.1</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">shellSS</span> <span class="o">=</span> <span class="n">ss</span><span class="o">.</span><span class="n">Sphere</span><span class="p">(</span><span class="n">inner_radius</span><span class="o">=.</span><span class="mi">30</span><span class="p">,</span> <span class="n">outer_radius</span><span class="o">=.</span><span class="mi">31</span><span class="p">,</span> <span class="n">thermalconductivity</span><span class="o">=</span><span class="mf">15.1</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">shellSS</span><span class="o">.</span><span class="n">heatrateof_cond</span><span class="p">(</span><span class="n">dT</span><span class="o">=</span><span class="mi">75</span><span class="p">)</span>
 <span class="go">132352.15690308428</span>
 </pre></div>
@@ -461,7 +462,7 @@ Education, 2020</p>
 <p>Units used in this example: SI system</p>
 <p>However, any consistent units can be used</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pychemengg.heattransfer</span> <span class="kn">import</span> <span class="n">steadystate</span> <span class="k">as</span> <span class="n">ss</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">shellSS</span> <span class="o">=</span> <span class="n">ss</span><span class="o">.</span><span class="n">Sphere</span><span class="p">(</span><span class="n">inner_radius</span><span class="o">=</span><span class="mf">.30</span><span class="p">,</span> <span class="n">outer_radius</span><span class="o">=</span><span class="mf">.31</span><span class="p">,</span> <span class="n">thermalconductivity</span><span class="o">=</span><span class="mf">15.1</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">shellSS</span> <span class="o">=</span> <span class="n">ss</span><span class="o">.</span><span class="n">Sphere</span><span class="p">(</span><span class="n">inner_radius</span><span class="o">=.</span><span class="mi">30</span><span class="p">,</span> <span class="n">outer_radius</span><span class="o">=.</span><span class="mi">31</span><span class="p">,</span> <span class="n">thermalconductivity</span><span class="o">=</span><span class="mf">15.1</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">shellSS</span><span class="o">.</span><span class="n">heatrateof_conv</span><span class="p">(</span><span class="n">heattransfercoefficient</span><span class="o">=</span><span class="mi">500</span><span class="p">,</span> <span class="n">radius</span><span class="o">=</span><span class="n">shellSS</span><span class="o">.</span><span class="n">outer_radius</span><span class="p">,</span> <span class="n">dT</span><span class="o">=</span><span class="mi">25</span><span class="p">)</span>
 <span class="go">15095.352700498957</span>
 </pre></div>
@@ -515,7 +516,7 @@ Education, 2020</p>
 <p>Units used in this example: SI system</p>
 <p>However, any consistent units can be used</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pychemengg.heattransfer</span> <span class="kn">import</span> <span class="n">steadystate</span> <span class="k">as</span> <span class="n">ss</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">shellSS</span> <span class="o">=</span> <span class="n">ss</span><span class="o">.</span><span class="n">Sphere</span><span class="p">(</span><span class="n">inner_radius</span><span class="o">=</span><span class="mf">.30</span><span class="p">,</span> <span class="n">outer_radius</span><span class="o">=</span><span class="mf">.31</span><span class="p">,</span> <span class="n">thermalconductivity</span><span class="o">=</span><span class="mf">15.1</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">shellSS</span> <span class="o">=</span> <span class="n">ss</span><span class="o">.</span><span class="n">Sphere</span><span class="p">(</span><span class="n">inner_radius</span><span class="o">=.</span><span class="mi">30</span><span class="p">,</span> <span class="n">outer_radius</span><span class="o">=.</span><span class="mi">31</span><span class="p">,</span> <span class="n">thermalconductivity</span><span class="o">=</span><span class="mf">15.1</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">shellSS</span><span class="o">.</span><span class="n">heatrateof_rad</span><span class="p">(</span><span class="n">radius</span><span class="o">=</span><span class="n">shellSS</span><span class="o">.</span><span class="n">outer_radius</span><span class="p">,</span> <span class="n">T_infinity</span><span class="o">=</span><span class="mi">30</span><span class="o">+</span><span class="mi">273</span><span class="p">,</span> <span class="n">T_surface</span><span class="o">=</span><span class="mf">90.6</span><span class="o">+</span><span class="mi">273</span><span class="p">,</span> <span class="n">emissivity</span><span class="o">=</span><span class="mf">0.95</span><span class="p">)</span>
 <span class="go">588.6831572504626</span>
 </pre></div>
@@ -560,7 +561,7 @@ Education, 2020</p>
 <p>Units used in this example: SI system</p>
 <p>However, any consistent units can be used</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pychemengg.heattransfer</span> <span class="kn">import</span> <span class="n">steadystate</span> <span class="k">as</span> <span class="n">ss</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">shellSS</span> <span class="o">=</span> <span class="n">ss</span><span class="o">.</span><span class="n">Sphere</span><span class="p">(</span><span class="n">inner_radius</span><span class="o">=</span><span class="mf">.30</span><span class="p">,</span> <span class="n">outer_radius</span><span class="o">=</span><span class="mf">.31</span><span class="p">,</span> <span class="n">thermalconductivity</span><span class="o">=</span><span class="mf">15.1</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">shellSS</span> <span class="o">=</span> <span class="n">ss</span><span class="o">.</span><span class="n">Sphere</span><span class="p">(</span><span class="n">inner_radius</span><span class="o">=.</span><span class="mi">30</span><span class="p">,</span> <span class="n">outer_radius</span><span class="o">=.</span><span class="mi">31</span><span class="p">,</span> <span class="n">thermalconductivity</span><span class="o">=</span><span class="mf">15.1</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">shellSS</span><span class="o">.</span><span class="n">resistanceof_cond</span><span class="p">()</span>
 <span class="go">0.0005666700245385441</span>
 </pre></div>
@@ -608,7 +609,7 @@ Education, 2020</p>
 <p>Units used in this example: SI system</p>
 <p>However, any consistent units can be used</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pychemengg.heattransfer</span> <span class="kn">import</span> <span class="n">steadystate</span> <span class="k">as</span> <span class="n">ss</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">shellSS</span> <span class="o">=</span> <span class="n">ss</span><span class="o">.</span><span class="n">Sphere</span><span class="p">(</span><span class="n">inner_radius</span><span class="o">=</span><span class="mf">.30</span><span class="p">,</span> <span class="n">outer_radius</span><span class="o">=</span><span class="mf">.31</span><span class="p">,</span> <span class="n">thermalconductivity</span><span class="o">=</span><span class="mf">15.1</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">shellSS</span> <span class="o">=</span> <span class="n">ss</span><span class="o">.</span><span class="n">Sphere</span><span class="p">(</span><span class="n">inner_radius</span><span class="o">=.</span><span class="mi">30</span><span class="p">,</span> <span class="n">outer_radius</span><span class="o">=.</span><span class="mi">31</span><span class="p">,</span> <span class="n">thermalconductivity</span><span class="o">=</span><span class="mf">15.1</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">shellSS</span><span class="o">.</span><span class="n">resistanceof_conv</span><span class="p">(</span><span class="n">heattransfercoefficient</span><span class="o">=</span><span class="mi">500</span><span class="p">,</span> <span class="n">radius</span><span class="o">=</span><span class="n">shellSS</span><span class="o">.</span><span class="n">outer_radius</span><span class="p">)</span>
 <span class="go">0.0016561388459094206</span>
 </pre></div>
@@ -655,7 +656,7 @@ Education, 2020</p>
 <p>Units used in this example: SI system</p>
 <p>However, any consistent units can be used</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pychemengg.heattransfer</span> <span class="kn">import</span> <span class="n">steadystate</span> <span class="k">as</span> <span class="n">ss</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">shellSS</span> <span class="o">=</span> <span class="n">ss</span><span class="o">.</span><span class="n">Sphere</span><span class="p">(</span><span class="n">inner_radius</span><span class="o">=</span><span class="mf">.30</span><span class="p">,</span> <span class="n">outer_radius</span><span class="o">=</span><span class="mf">.31</span><span class="p">,</span> <span class="n">thermalconductivity</span><span class="o">=</span><span class="mf">15.1</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">shellSS</span> <span class="o">=</span> <span class="n">ss</span><span class="o">.</span><span class="n">Sphere</span><span class="p">(</span><span class="n">inner_radius</span><span class="o">=.</span><span class="mi">30</span><span class="p">,</span> <span class="n">outer_radius</span><span class="o">=.</span><span class="mi">31</span><span class="p">,</span> <span class="n">thermalconductivity</span><span class="o">=</span><span class="mf">15.1</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">shellSS</span><span class="o">.</span><span class="n">resistanceof_fouling</span><span class="p">(</span><span class="n">foulingfactor</span><span class="o">=</span><span class="mf">0.0007</span><span class="p">,</span> <span class="n">radius</span><span class="o">=</span><span class="n">shellSS</span><span class="o">.</span><span class="n">outer_radius</span><span class="p">)</span>
 <span class="go">0.0005796485960682973</span>
 </pre></div>
@@ -728,7 +729,7 @@ Education, 2020</p>
           </div>
           <footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="pychemengg.physicalproperties.html" class="btn btn-neutral float-right" title="physicalproperties" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="pychemengg.heattransfer.transient.html" class="btn btn-neutral float-right" title="transient" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
         <a href="pychemengg.heattransfer.steadystate.Slab.html" class="btn btn-neutral float-left" title="Slab" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
 
