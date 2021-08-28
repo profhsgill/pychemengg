@@ -1,4 +1,4 @@
-NonLumpedCylinder
+﻿NonLumpedCylinder
 =================
 
 .. currentmodule:: pychemengg.heattransfer.transient
@@ -16,13 +16,13 @@ NonLumpedCylinder
 
    .. autosummary::
    
-      ~NonLumpedCylinder.Fo
       ~NonLumpedCylinder.__init__
       ~NonLumpedCylinder.calc_Bi
+      ~NonLumpedCylinder.calc_Fo
       ~NonLumpedCylinder.calc_eigenvalues
       ~NonLumpedCylinder.heatrateof_conv_at_time_t
       ~NonLumpedCylinder.maxheattransferpossible
-      ~NonLumpedCylinder.temp_of_solid_at_time_t
+      ~NonLumpedCylinder.temperature_of_solid_at_time_t
       ~NonLumpedCylinder.totalheat_transferred_during_interval_t
    
    

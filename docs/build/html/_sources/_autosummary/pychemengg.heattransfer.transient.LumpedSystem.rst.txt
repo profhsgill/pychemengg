@@ -1,4 +1,4 @@
-LumpedSystem
+﻿LumpedSystem
 ============
 
 .. currentmodule:: pychemengg.heattransfer.transient
@@ -20,7 +20,7 @@ LumpedSystem
       ~LumpedSystem.calc_Bi
       ~LumpedSystem.heatrateof_conv_at_time_t
       ~LumpedSystem.maxheattransferpossible
-      ~LumpedSystem.temp_of_solid_at_time_t
+      ~LumpedSystem.temperature_of_solid_at_time_t
       ~LumpedSystem.totalheat_transferred_during_interval_t
    
    

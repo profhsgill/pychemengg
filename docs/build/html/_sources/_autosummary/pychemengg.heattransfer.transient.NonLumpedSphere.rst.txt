@@ -1,4 +1,4 @@
-NonLumpedSphere
+﻿NonLumpedSphere
 ===============
 
 .. currentmodule:: pychemengg.heattransfer.transient
@@ -16,13 +16,13 @@ NonLumpedSphere
 
    .. autosummary::
    
-      ~NonLumpedSphere.Fo
       ~NonLumpedSphere.__init__
       ~NonLumpedSphere.calc_Bi
+      ~NonLumpedSphere.calc_Fo
       ~NonLumpedSphere.calc_eigenvalues
       ~NonLumpedSphere.heatrateof_conv_at_time_t
       ~NonLumpedSphere.maxheattransferpossible
-      ~NonLumpedSphere.temp_of_solid_at_time_t
+      ~NonLumpedSphere.temperature_of_solid_at_time_t
       ~NonLumpedSphere.totalheat_transferred_during_interval_t
    
    

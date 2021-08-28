@@ -1,4 +1,4 @@
-NonLumpedSlab
+﻿NonLumpedSlab
 =============
 
 .. currentmodule:: pychemengg.heattransfer.transient
@@ -16,13 +16,13 @@ NonLumpedSlab
 
    .. autosummary::
    
-      ~NonLumpedSlab.Fo
       ~NonLumpedSlab.__init__
       ~NonLumpedSlab.calc_Bi
+      ~NonLumpedSlab.calc_Fo
       ~NonLumpedSlab.calc_eigenvalues
       ~NonLumpedSlab.heatrateof_conv_at_time_t
       ~NonLumpedSlab.maxheattransferpossible
-      ~NonLumpedSlab.temp_of_solid_at_time_t
+      ~NonLumpedSlab.temperature_of_solid_at_time_t
       ~NonLumpedSlab.totalheat_transferred_during_interval_t
    
    
