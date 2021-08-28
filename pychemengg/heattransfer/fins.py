@@ -59,8 +59,7 @@ class Fin(object):
     
     Attributes
     ----------
-    See "Parameters". All parameters are attributes.
-    Additional attributes are listed below.
+    See "Parameters". All parameters are attributes. Additional attributes are listed below.
     efficiency : `int or float`
         Fin efficiency.
     surfacearea : `int or float`
