@@ -881,7 +881,73 @@ class NonLumpedSlab():
         return qrate
 
 
-    def totalheat_transferred_during_interval_t(self, time=None, xposition_tofindtemp=None):
+    def totalheat_transferred_during_interval_t(self, time=None):
+        r"""Heat transferred between solid object and surroundings during 
+        time interval = 0 to t.
+        
+        
+        Parameters
+        ----------
+        time : 'int or float'
+            Time from start of process, during which heat
+            transferred is to be found.
+                    
+        
+        Returns
+        -------
+        total heat transferred : `int or float`
+            Total heat transferred between object and
+            surroundings during interval 0 to t
+        
+        
+        Notes
+        -----
+        Total heat  transferred in interval 0 to t is calculated using the
+        following formula:
+            
+        .. math::
+            q_{0 to t} = q_{max} (1 - \theta_{0} \frac{Sin_lambda}{}m C_p (T_{t} - T_{inintial})
+            
+        *where:*
+        
+            t = time marking the interval [0, t] for which heat
+            transferred is to be computed    
+        
+            m = mass of object
+            
+            :math:`C_{p} = specific heat of object`
+        
+            :math:`T_{t} = temperature of object at time = t`
+        
+            :math:`T_{initial} = temperature of object at time = 0`
+            
+            :math:`q_{0 to t} = heat transferred in interval [0, t]`
+                     
+        
+        Examples
+        --------
+        First import the module **transient**
+        
+        Units used in this example: SI system
+        
+        However, any consistent units can be used
+        
+        >>> from pychemengg.heattransfer import transient
+        >>> plate = transient.LumpedSystem(thermalconductivity=180, density=2800, specificheat=880, T_initial=700, T_infinity=15, heattransfercoefficient=53, surfacearea=2*1, volume=1*2e-2)
+        # This will create an instance of 'LumpedSystem' with a name 'plate'
+        # Let heat transferred in time = 60 s after start of the process be needed.
+        # Next call the following
+        >>> plate.totalheat_transferred_during_interval_t(time=60)
+        -4087185.6290410785
+        # negative value indicates heat is being lost by the solid object
+        
+        
+        References
+        ----------
+        [1] Yunus A. Cengel and Afshin J. Ghajar, "Heat And Mass Transfer
+        Fundamentals and Applications", 6th Edition. New York, McGraw Hill
+        Education, 2020.       
+        """
         term1 = 4*np.sin(self.eigenvalues)
         term2 = 2*self.eigenvalues + np.sin(2*self.eigenvalues)
         term3 = np.exp(-np.power(self.eigenvalues,2) * self.Fo)        
