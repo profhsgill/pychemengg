@@ -29,8 +29,11 @@ Module for transient/unsteady state heat transfer.
 
 """
 import numpy as np
-from scipy.optimize import brentq, fsolve
-from scipy.special import j0, j1, erfc
+from scipy.optimize import brentq
+from scipy.optimize import fsolve
+from scipy.special import j0
+from scipy.special import j1
+from scipy.special import erfc
 
 __all__ = ["LumpedSystem", "NonLumpedSlab", "NonLumpedCylinder",
            "NonLumpedSphere", "SemiInfinite"]
@@ -643,7 +646,7 @@ class NonLumpedSlab():
         Fourier number is calculated using the following formula.
             
         .. math::
-            Fo = \frac {\alpha t} {L^2}
+            Fo = \frac {\alpha t} {L_c^2}
         
         *where:*
         
@@ -651,7 +654,7 @@ class NonLumpedSlab():
         
             *t = time at which temperature or heat transfer is to be evaluated*
             
-            *L = (slab thickness)/2*
+            :math:`L_c` *= characteristic length = (slab thickness)/2*
             
             *Fo = Fourier number*
                      
@@ -750,7 +753,7 @@ class NonLumpedSlab():
         return self.eigenvalues
 
         
-    def temperature_of_solid_at_time_t(self, time=None, positioninsolid=None):
+    def temperature_of_solid_at_time_t(self, time=None, xposition_tofindtemp=None):
         r"""Calculates temperature of solid object at a given time = t and position = x.
         
         
@@ -759,7 +762,7 @@ class NonLumpedSlab():
         time : `int or float`
             Time instant from begining of process, at which temperature
             of solid object is to be found.
-        positioninsolid : `int or float`
+        xposition_tofindtemp : `int or float`
             Distance measured from center of rectangular object where temperature is to be found.
                                 
         
@@ -774,7 +777,7 @@ class NonLumpedSlab():
         Temperature of solid object at time = t and position = x is calculated using the following formula:
             
         .. math::
-            T(t) = T_{infinity} + (T_{initial} - T_{infinity}) \displaystyle\sum_{i=1}^\infty \cfrac{4sin(\lambda_i)}{2 \lambda_i + sin(2 \lambda_i)} e^{- \lambda_i^2 \tau} cos(\lambda_i x/L)
+            T(t) = T_{infinity} + (T_{initial} - T_{infinity}) \displaystyle\sum_{n=1}^\infty \cfrac{4sin(\lambda_n)}{2 \lambda_n + sin(2 \lambda_n)} e^{- \lambda_n^2 \tau} cos(\lambda_n x/L)
         
         *where:*
         
@@ -786,7 +789,7 @@ class NonLumpedSlab():
             
             :math:`\tau = Fourier number`
             
-            x = distance from center of solid slab where temperature  is required
+            x = distance from center of solid slab where temperature is required (x = 0 for center of slab)
             
             L = thickness/2
                      
@@ -811,7 +814,7 @@ class NonLumpedSlab():
         plate.calc_eigenvalues()
         array([ 0.14717481,  3.1485222 ,  6.28665585,  9.42709237, 12.56810661,
                15.70935213, 18.85071334, 21.99214066, 25.13360932, 28.27510552])
-        >>> plate.temperature_of_solid_at_time_t(time=7*60, positioninsolid=plate.thickness/2)
+        >>> plate.temperature_of_solid_at_time_t(time=7*60, xposition_tofindtemp=plate.thickness/2)
         279.76430920417204
         
         
@@ -827,7 +830,7 @@ class NonLumpedSlab():
         term1 = 4*np.sin(self.eigenvalues)
         term2 = 2*self.eigenvalues + np.sin(2*self.eigenvalues)
         term3 = np.exp(-np.power(self.eigenvalues,2) * self.Fo)
-        term4 = np.cos(self.eigenvalues*positioninsolid/(self.thickness/2))
+        term4 = np.cos(self.eigenvalues*xposition_tofindtemp/(self.thickness/2))
         theta = np.sum(term1/term2*term3*term4)
         self.solidtemp_at_time_t = (self.T_infinity
                                 + (self.T_initial-self.T_infinity)*theta)
@@ -892,7 +895,7 @@ class NonLumpedSlab():
         plate.calc_eigenvalues()
         array([ 0.14717481,  3.1485222 ,  6.28665585,  9.42709237, 12.56810661,
                15.70935213, 18.85071334, 21.99214066, 25.13360932, 28.27510552])
-        >>> plate.temperature_of_solid_at_time_t(time=7*60, positioninsolid=plate.thickness/2)
+        >>> plate.temperature_of_solid_at_time_t(time=7*60, xposition_tofindtemp=plate.thickness/2)
         279.76430920417204
         # Next call the following
         >>> plate.heatrateof_conv_at_time_t(time=7*60)
@@ -910,9 +913,9 @@ class NonLumpedSlab():
         Education, 2020.       
         """
         qrate = (self.heattransfercoefficient * self.surfacearea
-                *(self.T_infinity - self.temperature_of_solid_at_time_t(time=None, positioninsolid=self.thickness/2)))
+                *(self.T_infinity - self.temperature_of_solid_at_time_t(time=None, xposition_tofindtemp=self.thickness/2)))
         # For convection, surface temperature is required, therefore let
-        # positioninsolid = surface position = thickness/2 because origin is in middle
+        # xposition_tofindtemp = surface position = thickness/2 because origin is in middle
         return qrate
 
 
@@ -941,11 +944,11 @@ class NonLumpedSlab():
         following formula:
             
         .. math::
-            q_{0 to t} = q_{max} (1 - \displaystyle\sum_{i=1}^\infty \cfrac{4Sin( \lambda_i)}{2 \lambda_i + Sin(2 \lambda_i)} \frac{Sin( \lambda_i)}{\lambda_i} e^{- \lambda_n^2 \tau}
+            q_{0 to t} = q_{max} (1 - \displaystyle\sum_{n=1}^\infty \cfrac{4Sin( \lambda_n)}{2 \lambda_n + Sin(2 \lambda_n)} \frac{Sin( \lambda_n)}{\lambda_n} e^{- \lambda_n^2 \tau}
             
         *where:*
         
-            :math:`\lambda_i = i^{th} eigen value of x_i tan(x_i) - Bi = 0 , i = 1 \hspace{2pt} to \hspace{2pt} \infty`
+            :math:`\lambda_n = n^{th} eigen value of x_n tan(x_n) - Bi = 0 , n = 1 \hspace{2pt} to \hspace{2pt} \infty`
             
             :math:`\tau = Fourier number`
                         
@@ -1070,6 +1073,56 @@ class NonLumpedSlab():
    
     
 class NonLumpedCylinder():
+    r""" Model for nonlumped analysis of cylindrical solid object.
+
+
+    Parameters
+    ----------
+    radius : `int or float`
+        Radius of solid object.
+    surfacearea : `int or float`
+        Surface area of solid object.
+    volume : `int or float`
+        Volume of solid object.
+    density : `int or float`
+        Density of solid object.
+    specificheat : `int or float`
+        Specific heat of solid object.
+    thermalconductivity : `int or float`
+        Thermal conductivity of solid object.
+    thermaldiffusivity : `int or float`
+        Thermal diffusivity of solid object.
+    heattransfercoefficient : `int or float`
+        Heat transfer coefficient between solid object and surrounding.
+    T_infinity : `int or float`
+        Temperature of surroundings.
+    T_initial : `int or float`
+        Temperature of solid object at time = 0.
+    
+    
+    
+    Attributes
+    ----------
+    See "Parameters". All parameters are attributes. Additional attributes are listed below.
+    
+    mass : `int or float`
+        Mass of solid object computed as (volume * density) of solid object.
+ 
+    
+
+    Examples
+    --------
+    First import the module **transient**
+    
+    Units used in this example: SI system
+    
+    However, any consistent units can be used
+    
+    >>> from pychemengg.heattransfer import transient
+    >>> cylinder=transient.NonLumpedCylinder(radius=10e-2, surfacearea=1, T_initial=600, volume=np.pi*10e-2**2*1, T_infinity=200, density=7900, thermaldiffusivity=None, specificheat=477, heattransfercoefficient=80, thermalconductivity=14.9)
+    # This will create an instance of 'NonLumpedCylinder' with a name 'cylinder' 
+    """
+    
     def __init__(self, radius=None,
                  surfacearea=None,
                  volume=None,
@@ -1101,7 +1154,65 @@ class NonLumpedCylinder():
                 self.thermaldiffusivity = thermaldiffusivity
 
         
-    def calc_Bi(self):        
+    def calc_Bi(self):
+        r"""Computes Biot number.
+        
+        
+        Parameters
+        ----------
+        `None_required` : 'None'
+            Attributes that are already defined are used in calculation.
+                                
+        
+        Returns
+        -------
+        Bi : `int or float`
+            Biot number
+        
+        
+        Notes
+        -----
+        Biot number is calculated using the following formula.
+            
+        .. math::
+            Bi = \frac {h L_{c}} {k}
+        
+        *where:*
+        
+            *h = heat transfer coefficient*
+        
+            *k = thermal conductivity of solid object*
+            
+            :math:`L_c` *= characteristic length of solid object = radius*
+            
+            *Bi = Biot number*
+                     
+        
+        Examples
+        --------
+        First import the module **transient**
+        
+        Units used in this example: SI system
+        
+        However, any consistent units can be used
+        
+        >>> from pychemengg.heattransfer import transient
+        >>> cylinder=transient.NonLumpedCylinder(radius=10e-2, surfacearea=1, T_initial=600, volume=np.pi*10e-2**2*1, T_infinity=200, density=7900, thermaldiffusivity=None, specificheat=477, heattransfercoefficient=80, thermalconductivity=14.9)
+        # This will create an instance of 'NonLumpedSlab' with a name 'plate' 
+        # Next call calc_Bi
+        >>> cylinder.calc_Bi()
+        0.5369127516778524
+        
+        
+        References
+        ----------
+        [1] G. F. Nellis and S. A. Klein, "Introduction to Engineering 
+        Heat Transfer", 1st Edition. Cambridge University Press, 2021.
+        
+        [2] Y. A. Cengel and A. J. Ghajar, "Heat And Mass Transfer
+        Fundamentals and Applications", 6th Edition. New York, McGraw Hill
+        Education, 2020.       
+        """        
         self.Bi = (self.heattransfercoefficient
                            * self.radius
                            / self.thermalconductivity)
@@ -1109,11 +1220,130 @@ class NonLumpedCylinder():
 
     
     def calc_Fo(self, time=None):
+        r"""Computes Fourier number.
+        
+        
+        Parameters
+        ----------
+        time : 'int or float'
+            Time at which temperature or heat transfer is to be evaluated.
+                                
+        
+        Returns
+        -------
+        Fo : `int or float`
+            Fourier number
+        
+        
+        Notes
+        -----
+        Fourier number is calculated using the following formula.
+            
+        .. math::
+            Fo = \frac {\alpha t} {L_c^2}
+        
+        *where:*
+        
+            :math:`\alpha` *= thermal diffusivity*
+        
+            *t = time at which temperature or heat transfer is to be evaluated*
+            
+            :math:`L_c` *= characteristic length = radius*
+            
+            *Fo = Fourier number*
+                     
+        
+        Examples
+        --------
+        First import the module **transient**
+        
+        Units used in this example: SI system
+        
+        However, any consistent units can be used
+        
+        >>> from pychemengg.heattransfer import transient
+        >>> cylinder=transient.NonLumpedCylinder(radius=10e-2, surfacearea=1, T_initial=600, volume=np.pi*10e-2**2*1, T_infinity=200, density=7900, thermaldiffusivity=None, specificheat=477, heattransfercoefficient=80, thermalconductivity=14.9)
+        # This will create an instance of 'NonLumpedSlab' with a name 'plate' 
+        # Next call calc_Fo assuming temperature is required at 7 min
+        >>> cylinder.calc_Fo(time=7*60)
+        0.16606958044741657
+        
+        
+        References
+        ----------
+        [1] G. F. Nellis and S. A. Klein, "Introduction to Engineering 
+        Heat Transfer", 1st Edition. Cambridge University Press, 2021.
+        
+        [2] Y. A. Cengel and A. J. Ghajar, "Heat And Mass Transfer
+        Fundamentals and Applications", 6th Edition. New York, McGraw Hill
+        Education, 2020.       
+        """
         self.Fo = self.thermaldiffusivity * time / (self.radius)**2
         return self.Fo
     
     
-    def calc_eigenvalues(self, numberof_eigenvalues_desired=None):
+    def calc_eigenvalues(self, numberof_eigenvalues_desired=10):
+        r"""Computes eigen values of characteristic equation for Cylindrical geometry.
+        
+        
+        Parameters
+        ----------
+        numberof_eigenvalues_desired : 'int or float' (default = 10)
+            Number of eigen values desired for the characteristic equation.
+                                
+        
+        Returns
+        -------
+        eigenvalues : `np.array of int or float`
+            Eigen values
+        
+        
+        Notes
+        -----
+        Eigen values are calculated as roots of the following equation.
+            
+        .. math::
+            \lambda_n \frac{J_1(\lambda_n)}{J_0(\lambda_n)} - Bi = 0 , n = 1 \hspace{2pt} to \hspace{2pt} \infty
+            
+        *where:*
+        
+            :math:`J_0` *= Bessel function of first kind of order 0* 
+            
+            :math:`J_1` *= Bessel function of first kind of order 1*
+            
+            :math:`\lambda_n` *= nth eigen value*
+            
+            *Bi = Biot number*
+                     
+        
+        Examples
+        --------
+        First import the module **transient**
+        
+        Units used in this example: SI system
+        
+        However, any consistent units can be used
+        
+        >>> from pychemengg.heattransfer import transient
+        >>> cylinder=transient.NonLumpedCylinder(radius=10e-2, surfacearea=1, T_initial=600, volume=np.pi*10e-2**2*1, T_infinity=200, density=7900, thermaldiffusivity=None, specificheat=477, heattransfercoefficient=80, thermalconductivity=14.9)
+        # This will create an instance of 'NonLumpedSlab' with a name 'plate' 
+        # Next call calc_Bi
+        >>> cylinder.calc_Bi()
+        0.5369127516778524
+        # Let first 5 eigen values be required
+        >>> cylinder.calc_eigenvalues(numberof_eigenvalues_desired=5)
+        array([ 0.97061535,  3.96852663,  7.0915602 , 10.22605944, 13.36390715])
+        
+        
+        References
+        ----------
+        [1] G. F. Nellis and S. A. Klein, "Introduction to Engineering 
+        Heat Transfer", 1st Edition. Cambridge University Press, 2021.
+        
+        [2] Y. A. Cengel and A. J. Ghajar, "Heat And Mass Transfer
+        Fundamentals and Applications", 6th Edition. New York, McGraw Hill
+        Education, 2020.       
+        """
         cylinder_eigenfunction = lambda x, Bi: x*j1(x)/j0(x)-Bi
         cylinder_eigenvalues = _get_eigenvalues(cylinder_eigenfunction, Bi=self.Bi,
                                           numberof_eigenvalues_desired=numberof_eigenvalues_desired)
@@ -1122,6 +1352,68 @@ class NonLumpedCylinder():
 
         
     def temperature_of_solid_at_time_t(self, time=None, rposition_tofindtemp=None):
+        r"""Calculates temperature of solid object at a given time = t and radius = r.
+        
+        
+        Parameters
+        ----------
+        time : `int or float`
+            Time instant from begining of process, at which temperature
+            of solid object is to be found.
+        rposition_tofindtemp : `int or float`
+            Radius from center of cylindrical object where temperature is to be found.
+                                
+        
+        Returns
+        -------
+        temperature : `int or float`
+            Temperature of solid object at time = t and radius = r.
+        
+        
+        Notes
+        -----
+        Temperature of solid object at time = t and radius = r is calculated using the following formula:
+            
+        .. math::
+            T(t) = T_{infinity} + (T_{initial} - T_{infinity}) \displaystyle\sum_{n=1}^\infty \cfrac{2}{\lambda_n} \frac{J_1(\lambda_n)}{\lambda_n J_0^2(\lambda_n) + J_1^2(\lambda_n)} e^{- \lambda_n^2 \tau} J_0(\lambda_n r/r_{outside}) 
+        
+            :math:`T_{infinity} = temperature of surrounding fluid`
+        
+            :math:`T_{initial} = intitial temperature of solid object`
+            
+            :math:`\lambda_n = nth eigen value of x_n tan(x_n) - Bi = 0 , n = 1 \hspace{2pt} to \hspace{2pt} \infty`
+            
+            :math:`\tau = Fourier number`
+            
+            r = radius from center of solid cylinder where temperature is required (r = 0 for center of cylinder)
+            
+            :math:`r_{outside}` *= outer radius of the cylinder*
+                     
+        
+        Examples
+        --------
+        First import the module **transient**
+        
+        Units used in this example: SI system
+        
+        However, any consistent units can be used
+        
+        >>> from pychemengg.heattransfer import transient
+        >>> cylinder=transient.NonLumpedCylinder(radius=10e-2, surfacearea=1, T_initial=600, volume=np.pi*10e-2**2*1, T_infinity=200, density=7900, thermaldiffusivity=None, specificheat=477, heattransfercoefficient=80, thermalconductivity=14.9)
+        # This will create an instance of 'NonLumpedSlab' with a name 'plate' 
+        # Next call calc_Bi
+        >>> cylinder.calc_Bi()
+        0.5369127516778524
+        # Next call calc_Fo assuming temperature is required at 7 min
+        >>> cylinder.calc_Fo(time=7*60)
+        0.16606958044741657
+        # Let default (=10) eigen values be required
+        >>> cylinder.calc_eigenvalues()
+        array([ 0.97061535,  3.96852663,  7.0915602 , 10.22605944, 13.36390715,
+        16.50318456, 19.64320399, 22.78365791, 25.92438812, 29.06530494])
+        >>> cylinder.temperature_of_solid_at_time_t(time=7*60, rposition_tofindtemp=0)
+        578.8399893522001
+        """
         term1 = 2/self.eigenvalues*j1(self.eigenvalues)
         term2 = np.power(j0(self.eigenvalues),2) + np.power(j1(self.eigenvalues),2)
         term3 = np.exp(-np.power(self.eigenvalues,2) * self.Fo)        
@@ -1396,7 +1688,7 @@ if __name__ == '__main__':
     plate.Bi()
     plate.Fo(time=7*60)
     plate.calc_eigenvalues(numberof_eigenvalues_desired=10)
-    plate.temperature_of_solid_at_time_t(time=7*60, positioninsolid=plate.thickness/2)
+    plate.temperature_of_solid_at_time_t(time=7*60, xposition_tofindtemp=plate.thickness/2)
 
     
     #Ghajjar 4-4 6th edition
@@ -1484,8 +1776,8 @@ if __name__ == '__main__':
     wall.Bi()
     wall.Fo(time=8*60)
     wall.calc_eigenvalues(numberof_eigenvalues_desired=1)
-    wall.temperature_of_solid_at_time_t(time=8*60, positioninsolid=0)
-    wall.temperature_of_solid_at_time_t(time=8*60, positioninsolid=40e-3)
+    wall.temperature_of_solid_at_time_t(time=8*60, xposition_tofindtemp=0)
+    wall.temperature_of_solid_at_time_t(time=8*60, xposition_tofindtemp=40e-3)
     # print(wall.heatrateof_conv_at_time_t())
     print(wall.totalheat_transferred_during_interval_t())
     
@@ -1507,7 +1799,7 @@ if __name__ == '__main__':
 #         wall.Fo(time=time[0])
 #         eigens = wall.calc_eigenvalues(numberof_eigenvalues_desired=1)
 #         # print("eign", eigens)
-#         T0 = wall.temperature_of_solid_at_time_t(time=time[0], positioninsolid=0)
+#         T0 = wall.temperature_of_solid_at_time_t(time=time[0], xposition_tofindtemp=0)
 #         return T0-550
     
 #     time_solution = fsolve(problem5_38, 1)
@@ -1530,7 +1822,7 @@ if __name__ == '__main__':
 #         wall.Fo(time=time[0])
 #         eigens = wall.calc_eigenvalues(numberof_eigenvalues_desired=5)
 #         # print("eign", eigens)
-#         T0 = wall.temperature_of_solid_at_time_t(time=time[0], positioninsolid=0)
+#         T0 = wall.temperature_of_solid_at_time_t(time=time[0], xposition_tofindtemp=0)
 #         return T0-750
     
 #     time_solution = fsolve(problem5_40, 1)
