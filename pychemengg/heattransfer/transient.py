@@ -168,9 +168,12 @@ class LumpedSystem():
         
         References
         ----------
-        [1] Yunus A. Cengel and Afshin J. Ghajar, "Heat And Mass Transfer
+        [1] G. F. Nellis and S. A. Klein, "Introduction to Engineering 
+        Heat Transfer", 1st Edition. Cambridge University Press, 2021.
+        
+        [2] Y. A. Cengel and A. J. Ghajar, "Heat And Mass Transfer
         Fundamentals and Applications", 6th Edition. New York, McGraw Hill
-        Education, 2020.       
+        Education, 2020.      
         """        
         self.Bi = (self.heattransfercoefficient
                            * self.characteristiclength
@@ -184,7 +187,7 @@ class LumpedSystem():
         Parameters
         ----------
         time : 'int or float'
-            Time instant from start of process, at which temperature
+            Time instant from begining of process, at which temperature
             of solid object is to be found.
                                 
         
@@ -196,7 +199,7 @@ class LumpedSystem():
         
         Notes
         -----
-        Temperature of solid bject at time = t is calculated using the following formula:
+        Temperature of solid object at time = t is calculated using the following formula:
             
         .. math::
             T(t) = T_{infinity} + (T_{initial} - T_{infinity}) e^{-bt}
@@ -243,9 +246,12 @@ class LumpedSystem():
         
         References
         ----------
-        [1] Yunus A. Cengel and Afshin J. Ghajar, "Heat And Mass Transfer
+        [1] G. F. Nellis and S. A. Klein, "Introduction to Engineering 
+        Heat Transfer", 1st Edition. Cambridge University Press, 2021.
+        
+        [2] Y. A. Cengel and A. J. Ghajar, "Heat And Mass Transfer
         Fundamentals and Applications", 6th Edition. New York, McGraw Hill
-        Education, 2020.       
+        Education, 2020.   
         """
         b = ((self.heattransfercoefficient * self.surfacearea)
              / (self.density*self.volume*self.specificheat)) # unit of b is 1/time
@@ -260,12 +266,12 @@ class LumpedSystem():
         Parameters
         ----------
         time : 'int or float'
-            Time instant from start of process, at which heat rate is to be found.
+            Time instant from begining of process, at which heat rate is to be found.
                     
         
         Returns
         -------
-        heat rate of convection : `int or float`
+        heat rate of convection : `int or float; Positive: Heat is gained by object, Negative: Heat is lost by object`
             Heat rate of convection between solid object and surroundings at time = t.
         
         
@@ -274,7 +280,7 @@ class LumpedSystem():
         Heat rate is calculated using the following formula:
             
         .. math::
-            q_{t} = h A_s (T_{t} - T_{infinity})
+            q_{t} = h A_s (T_{infinity} - T_{t})
             
         *where:*
         
@@ -311,9 +317,12 @@ class LumpedSystem():
         
         References
         ----------
-        [1] Yunus A. Cengel and Afshin J. Ghajar, "Heat And Mass Transfer
+        [1] G. F. Nellis and S. A. Klein, "Introduction to Engineering 
+        Heat Transfer", 1st Edition. Cambridge University Press, 2021.
+        
+        [2] Y. A. Cengel and A. J. Ghajar, "Heat And Mass Transfer
         Fundamentals and Applications", 6th Edition. New York, McGraw Hill
-        Education, 2020.       
+        Education, 2020.  
         """
         q_rate = (self.heattransfercoefficient * self.surfacearea
                 *(self.temperature_of_solid_at_time_t(time=time) - self.T_infinity))
@@ -327,13 +336,13 @@ class LumpedSystem():
         Parameters
         ----------
         time : 'int or float'
-            Time from start of process, during which heat
-            transferred is to be found.
+            Time-limit after start of process for which
+            heat transferred is to be computed.
                     
         
         Returns
         -------
-        total heat transferred : `int or float`
+        total heat transferred : `int or float; Positive: Heat is gained by object, Negative: Heat is lost by object`
             Total heat transferred between object and
             surroundings during interval 0 to t
         
@@ -382,9 +391,12 @@ class LumpedSystem():
         
         References
         ----------
-        [1] Yunus A. Cengel and Afshin J. Ghajar, "Heat And Mass Transfer
+        [1] G. F. Nellis and S. A. Klein, "Introduction to Engineering 
+        Heat Transfer", 1st Edition. Cambridge University Press, 2021.
+        
+        [2] Y. A. Cengel and A. J. Ghajar, "Heat And Mass Transfer
         Fundamentals and Applications", 6th Edition. New York, McGraw Hill
-        Education, 2020.       
+        Education, 2020.   
         """
         qtotal = (self.mass * self.specificheat
                  * (self.temperature_of_solid_at_time_t(time=time) - self.T_initial))
@@ -400,19 +412,22 @@ class LumpedSystem():
             This class takes no parameters for instance creation.
      
         
-        Attributes
-        ----------
-        `None_required` : 'None'
-            This class does not expose any instance attributes.
+         Returns
+         -------
+         maximum heat transfer possible: `int or float; Positive: Heat is gained by object, Negative: Heat is lost by object`
+             Maximum heat transfer posssible between object and
+             surroundings
         
         
         Notes
         -----
-        Total heat  transferred between solid object and surroundings in 
-        interval 0 to t is calculated using the following formula:
+        Maximum heat transfer possible between solid object and surroundings 
+        is calculated using the following formula. This is based on the assumption
+        that final object temperature will eventually reach surrounding temperature
+        of :math:`T_{infinity}`
             
         .. math::
-            q_{max} = m C_p (T_{infinity} - T_{inintial})
+            q_{max} = m C_p (T_{infinity} - T_{initial})
             
         *where:*  
         
@@ -420,7 +435,7 @@ class LumpedSystem():
             
             :math:`C_{p} = specific heat of solid object`
         
-            :math:`T_{infinity} = temperature of solid object at time = infinity`
+            :math:`T_{infinity} = temperature of surrounding, which the solid object will eventually attain`
         
             :math:`T_{initial} = temperature of solid object at time = initial`
             
@@ -446,7 +461,10 @@ class LumpedSystem():
         
         References
         ----------
-        [1] Yunus A. Cengel and Afshin J. Ghajar, "Heat And Mass Transfer
+        [1] G. F. Nellis and S. A. Klein, "Introduction to Engineering 
+        Heat Transfer", 1st Edition. Cambridge University Press, 2021.
+        
+        [2] Y. A. Cengel and A. J. Ghajar, "Heat And Mass Transfer
         Fundamentals and Applications", 6th Edition. New York, McGraw Hill
         Education, 2020.       
         """
@@ -589,7 +607,10 @@ class NonLumpedSlab():
         
         References
         ----------
-        [1] Yunus A. Cengel and Afshin J. Ghajar, "Heat And Mass Transfer
+        [1] G. F. Nellis and S. A. Klein, "Introduction to Engineering 
+        Heat Transfer", 1st Edition. Cambridge University Press, 2021.
+        
+        [2] Y. A. Cengel and A. J. Ghajar, "Heat And Mass Transfer
         Fundamentals and Applications", 6th Edition. New York, McGraw Hill
         Education, 2020.       
         """
@@ -653,7 +674,10 @@ class NonLumpedSlab():
         
         References
         ----------
-        [1] Yunus A. Cengel and Afshin J. Ghajar, "Heat And Mass Transfer
+        [1] G. F. Nellis and S. A. Klein, "Introduction to Engineering 
+        Heat Transfer", 1st Edition. Cambridge University Press, 2021.
+        
+        [2] Y. A. Cengel and A. J. Ghajar, "Heat And Mass Transfer
         Fundamentals and Applications", 6th Edition. New York, McGraw Hill
         Education, 2020.       
         """
@@ -712,7 +736,10 @@ class NonLumpedSlab():
         
         References
         ----------
-        [1] Yunus A. Cengel and Afshin J. Ghajar, "Heat And Mass Transfer
+        [1] G. F. Nellis and S. A. Klein, "Introduction to Engineering 
+        Heat Transfer", 1st Edition. Cambridge University Press, 2021.
+        
+        [2] Y. A. Cengel and A. J. Ghajar, "Heat And Mass Transfer
         Fundamentals and Applications", 6th Edition. New York, McGraw Hill
         Education, 2020.       
         """
@@ -723,16 +750,16 @@ class NonLumpedSlab():
         return self.eigenvalues
 
         
-    def temperature_of_solid_at_time_t(self, time=None, xposition_tofindtemp=None):
+    def temperature_of_solid_at_time_t(self, time=None, positioninsolid=None):
         r"""Calculates temperature of solid object at a given time = t and position = x.
         
         
         Parameters
         ----------
         time : `int or float`
-            Time instant from start of process, at which temperature
+            Time instant from begining of process, at which temperature
             of solid object is to be found.
-        xposition_tofindtemp : `int or float`
+        positioninsolid : `int or float`
             Distance measured from center of rectangular object where temperature is to be found.
                                 
         
@@ -747,7 +774,7 @@ class NonLumpedSlab():
         Temperature of solid object at time = t and position = x is calculated using the following formula:
             
         .. math::
-            T(t) = T_{infinity} + (T_{initial} - T_{infinity}) \displaystyle\sum_{i=1}^\infty \cfrac{4sin(\lambda_n)}{2 \lambda_n + sin(2 \lambda_n)} e^{- \lambda_n^2 \tau} cos(\lambda_n x/L)
+            T(t) = T_{infinity} + (T_{initial} - T_{infinity}) \displaystyle\sum_{i=1}^\infty \cfrac{4sin(\lambda_i)}{2 \lambda_i + sin(2 \lambda_i)} e^{- \lambda_i^2 \tau} cos(\lambda_i x/L)
         
         *where:*
         
@@ -784,20 +811,23 @@ class NonLumpedSlab():
         plate.calc_eigenvalues()
         array([ 0.14717481,  3.1485222 ,  6.28665585,  9.42709237, 12.56810661,
                15.70935213, 18.85071334, 21.99214066, 25.13360932, 28.27510552])
-        >>> plate.temperature_of_solid_at_time_t(time=7*60, xposition_tofindtemp=plate.thickness/2)
+        >>> plate.temperature_of_solid_at_time_t(time=7*60, positioninsolid=plate.thickness/2)
         279.76430920417204
         
         
         References
         ----------
-        [1] Yunus A. Cengel and Afshin J. Ghajar, "Heat And Mass Transfer
+        [1] G. F. Nellis and S. A. Klein, "Introduction to Engineering 
+        Heat Transfer", 1st Edition. Cambridge University Press, 2021.
+        
+        [2] Y. A. Cengel and A. J. Ghajar, "Heat And Mass Transfer
         Fundamentals and Applications", 6th Edition. New York, McGraw Hill
         Education, 2020.       
         """
         term1 = 4*np.sin(self.eigenvalues)
         term2 = 2*self.eigenvalues + np.sin(2*self.eigenvalues)
         term3 = np.exp(-np.power(self.eigenvalues,2) * self.Fo)
-        term4 = np.cos(self.eigenvalues*xposition_tofindtemp/(self.thickness/2))
+        term4 = np.cos(self.eigenvalues*positioninsolid/(self.thickness/2))
         theta = np.sum(term1/term2*term3*term4)
         self.solidtemp_at_time_t = (self.T_infinity
                                 + (self.T_initial-self.T_infinity)*theta)
@@ -810,13 +840,13 @@ class NonLumpedSlab():
         
         Parameters
         ----------
-        time : 'int or float'
-            Time instant from start of process, at which heat rate is to be found.
+        time : `int or float`
+            Time instant from begining of process, at which heat rate is to be found.
                     
         
         Returns
         -------
-        heat rate of convection : `int or float`
+        heat rate of convection : `int or float ; Positive: Heat is gained by object, Negative: Heat is lost by object`
             Heat rate of convection between solid object and surroundings at time = t.
         
         
@@ -825,7 +855,7 @@ class NonLumpedSlab():
         Heat rate of convection is calculated using the following formula:
             
         .. math::
-            q_{t} = h A_s (T_{t} - T_{infinity})
+            q_{t} = h A_s (T_{infinity} - T_{t})
             
         *where:*
         
@@ -862,22 +892,27 @@ class NonLumpedSlab():
         plate.calc_eigenvalues()
         array([ 0.14717481,  3.1485222 ,  6.28665585,  9.42709237, 12.56810661,
                15.70935213, 18.85071334, 21.99214066, 25.13360932, 28.27510552])
-        >>> plate.temperature_of_solid_at_time_t(time=7*60, xposition_tofindtemp=plate.thickness/2)
+        >>> plate.temperature_of_solid_at_time_t(time=7*60, positioninsolid=plate.thickness/2)
         279.76430920417204
         # Next call the following
         >>> plate.heatrateof_conv_at_time_t(time=7*60)
-        -26428.282895499357
-        # negative sign indicates loss of heat by the solid object
+        26428.282895499357
+        # Positive sign indicates gain of heat by the solid object
         
         
         References
         ----------
-        [1] Yunus A. Cengel and Afshin J. Ghajar, "Heat And Mass Transfer
+        [1] G. F. Nellis and S. A. Klein, "Introduction to Engineering 
+        Heat Transfer", 1st Edition. Cambridge University Press, 2021.
+        
+        [2] Y. A. Cengel and A. J. Ghajar, "Heat And Mass Transfer
         Fundamentals and Applications", 6th Edition. New York, McGraw Hill
         Education, 2020.       
         """
         qrate = (self.heattransfercoefficient * self.surfacearea
-                *(self.temperature_of_solid_at_time_t(time=None, xposition_tofindtemp=self.thickness/2)- self.T_infinity))
+                *(self.T_infinity - self.temperature_of_solid_at_time_t(time=None, positioninsolid=self.thickness/2)))
+        # For convection, surface temperature is required, therefore let
+        # positioninsolid = surface position = thickness/2 because origin is in middle
         return qrate
 
 
@@ -889,13 +924,13 @@ class NonLumpedSlab():
         Parameters
         ----------
         time : 'int or float'
-            Time from start of process, during which heat
-            transferred is to be found.
+            Time-limit after start of process for which
+            heat transferred is to be computed.
                     
         
         Returns
         -------
-        total heat transferred : `int or float`
+        total heat transferred : `int or float; Positive: Heat is gained by object, Negative: Heat is lost by object`
             Total heat transferred between object and
             surroundings during interval 0 to t
         
@@ -906,22 +941,22 @@ class NonLumpedSlab():
         following formula:
             
         .. math::
-            q_{0 to t} = q_{max} (1 - \theta_{0} \frac{Sin_lambda}{}m C_p (T_{t} - T_{inintial})
+            q_{0 to t} = q_{max} (1 - \displaystyle\sum_{i=1}^\infty \cfrac{4Sin( \lambda_i)}{2 \lambda_i + Sin(2 \lambda_i)} \frac{Sin( \lambda_i)}{\lambda_i} e^{- \lambda_n^2 \tau}
             
         *where:*
         
-            t = time marking the interval [0, t] for which heat
-            transferred is to be computed    
-        
-            m = mass of object
+            :math:`\lambda_i = i^{th} eigen value of x_i tan(x_i) - Bi = 0 , i = 1 \hspace{2pt} to \hspace{2pt} \infty`
             
-            :math:`C_{p} = specific heat of object`
+            :math:`\tau = Fourier number`
+                        
+            :math:`q_{max} = maximum heat transfer possible between object and surroundings`
+       
+
         
-            :math:`T_{t} = temperature of object at time = t`
-        
-            :math:`T_{initial} = temperature of object at time = 0`
-            
-            :math:`q_{0 to t} = heat transferred in interval [0, t]`
+        See Also
+        ----------
+        pychemengg.heattransfer.transient.NonLumpedSlab.maxheattransferpossible
+                
                      
         
         Examples
@@ -933,18 +968,28 @@ class NonLumpedSlab():
         However, any consistent units can be used
         
         >>> from pychemengg.heattransfer import transient
-        >>> plate = transient.LumpedSystem(thermalconductivity=180, density=2800, specificheat=880, T_initial=700, T_infinity=15, heattransfercoefficient=53, surfacearea=2*1, volume=1*2e-2)
-        # This will create an instance of 'LumpedSystem' with a name 'plate'
-        # Let heat transferred in time = 60 s after start of the process be needed.
+        >>> plate = transient.NonLumpedSlab(thickness=4e-2, surfacearea=1, volume=1*4e-2, density=8530, specificheat=380, thermalconductivity=110, thermaldiffusivity=None, heattransfercoefficient=120, T_infinity=500, T_initial=20)
+        # This will create an instance of 'NonLumpedSlab' with a name 'plate'
+        # Let temperature at time = 7 min after start of the process be required.
         # Next call the following
-        >>> plate.totalheat_transferred_during_interval_t(time=60)
-        -4087185.6290410785
-        # negative value indicates heat is being lost by the solid object
+        >>> plate.calc_Bi()
+        0.021818181818181816
+        >>> plate.calc_Fo(time=7*60)
+        35.63275128031097
+        plate.calc_eigenvalues()
+        array([ 0.14717481,  3.1485222 ,  6.28665585,  9.42709237, 12.56810661,
+               15.70935213, 18.85071334, 21.99214066, 25.13360932, 28.27510552])
+        >>> plate.totalheat_transferred_during_interval_t(time=7*60)
+        33472028.92491645
+        # Positive value means heat is gained by the object.
         
         
         References
         ----------
-        [1] Yunus A. Cengel and Afshin J. Ghajar, "Heat And Mass Transfer
+        [1] G. F. Nellis and S. A. Klein, "Introduction to Engineering 
+        Heat Transfer", 1st Edition. Cambridge University Press, 2021.
+        
+        [2] Y. A. Cengel and A. J. Ghajar, "Heat And Mass Transfer
         Fundamentals and Applications", 6th Edition. New York, McGraw Hill
         Education, 2020.       
         """
@@ -957,6 +1002,69 @@ class NonLumpedSlab():
         return heattransferred  
     
     def maxheattransferpossible(self):
+        r"""Maximum possible heat transfer between solid object and surroundings.
+        
+        
+        Parameters
+        ----------
+        `None_required` : 'None'
+            Attributes that are already defined are used in calculation.
+     
+        
+         Returns
+         -------
+         maximum heat transfer possible: `int or float; Positive: Heat is gained by object, Negative: Heat is lost by object`
+             Maximum heat transfer posssible between object and surroundings.
+        
+        
+        Notes
+        -----
+        Maximum heat transfer possible between solid object and surroundings 
+        is calculated using the following formula. This is based on the assumption
+        that final object temperature will eventually reach surrounding temperature
+        of :math:`T_{infinity}`
+            
+        .. math::
+            q_{max} = m C_p (T_{infinity} - T_{initial})
+            
+        *where:*  
+        
+            m = mass of solid object
+            
+            :math:`C_{p} = specific heat of solid object`
+        
+            :math:`T_{infinity} = temperature of surrounding, which the solid object will eventually attain`
+        
+            :math:`T_{initial} = temperature of solid object at time = initial`
+            
+            :math:`q_{max} = max heat transfer possible`
+                     
+        
+        Examples
+        --------
+        First import the module **transient**
+        
+        Units used in this example: SI system
+        
+        However, any consistent units can be used
+        
+        >>> from pychemengg.heattransfer import transient
+        >>> plate = transient.NonLumpedSlab(thickness=4e-2, surfacearea=1, volume=1*4e-2, density=8530, specificheat=380, thermalconductivity=110, thermaldiffusivity=None, heattransfercoefficient=120, T_infinity=500, T_initial=20)
+        # This will create an instance of 'NonLumpedSlab' with a name 'plate'
+        >>> plate.maxheattransferpossible()
+        62234880.0
+        # negative value indicates heat is being lost by the solid object
+        
+        
+        References
+        ----------
+        [1] G. F. Nellis and S. A. Klein, "Introduction to Engineering 
+        Heat Transfer", 1st Edition. Cambridge University Press, 2021.
+        
+        [2] Y. A. Cengel and A. J. Ghajar, "Heat And Mass Transfer
+        Fundamentals and Applications", 6th Edition. New York, McGraw Hill
+        Education, 2020.       
+        """
         qtotal_max = self.mass * self.specificheat * (self.T_infinity - self.T_initial)
         return qtotal_max
    
@@ -1288,7 +1396,7 @@ if __name__ == '__main__':
     plate.Bi()
     plate.Fo(time=7*60)
     plate.calc_eigenvalues(numberof_eigenvalues_desired=10)
-    plate.temperature_of_solid_at_time_t(time=7*60, xposition_tofindtemp=plate.thickness/2)
+    plate.temperature_of_solid_at_time_t(time=7*60, positioninsolid=plate.thickness/2)
 
     
     #Ghajjar 4-4 6th edition
@@ -1376,8 +1484,8 @@ if __name__ == '__main__':
     wall.Bi()
     wall.Fo(time=8*60)
     wall.calc_eigenvalues(numberof_eigenvalues_desired=1)
-    wall.temperature_of_solid_at_time_t(time=8*60, xposition_tofindtemp=0)
-    wall.temperature_of_solid_at_time_t(time=8*60, xposition_tofindtemp=40e-3)
+    wall.temperature_of_solid_at_time_t(time=8*60, positioninsolid=0)
+    wall.temperature_of_solid_at_time_t(time=8*60, positioninsolid=40e-3)
     # print(wall.heatrateof_conv_at_time_t())
     print(wall.totalheat_transferred_during_interval_t())
     
@@ -1399,7 +1507,7 @@ if __name__ == '__main__':
 #         wall.Fo(time=time[0])
 #         eigens = wall.calc_eigenvalues(numberof_eigenvalues_desired=1)
 #         # print("eign", eigens)
-#         T0 = wall.temperature_of_solid_at_time_t(time=time[0], xposition_tofindtemp=0)
+#         T0 = wall.temperature_of_solid_at_time_t(time=time[0], positioninsolid=0)
 #         return T0-550
     
 #     time_solution = fsolve(problem5_38, 1)
@@ -1422,7 +1530,7 @@ if __name__ == '__main__':
 #         wall.Fo(time=time[0])
 #         eigens = wall.calc_eigenvalues(numberof_eigenvalues_desired=5)
 #         # print("eign", eigens)
-#         T0 = wall.temperature_of_solid_at_time_t(time=time[0], xposition_tofindtemp=0)
+#         T0 = wall.temperature_of_solid_at_time_t(time=time[0], positioninsolid=0)
 #         return T0-750
     
 #     time_solution = fsolve(problem5_40, 1)
