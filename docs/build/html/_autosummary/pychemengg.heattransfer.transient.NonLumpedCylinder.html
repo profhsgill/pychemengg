@@ -235,6 +235,51 @@
 <dt class="sig sig-object py" id="pychemengg.heattransfer.transient.NonLumpedCylinder">
 <em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">pychemengg.heattransfer.transient.</span></span><span class="sig-name descname"><span class="pre">NonLumpedCylinder</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">radius</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">surfacearea</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">volume</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">density</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">specificheat</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">thermalconductivity</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">thermaldiffusivity</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">heattransfercoefficient</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">T_infinity</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">T_initial</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pychemengg/heattransfer/transient.html#NonLumpedCylinder"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pychemengg.heattransfer.transient.NonLumpedCylinder" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Model for nonlumped analysis of cylindrical solid object.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl>
+<dt><strong>radius</strong><span class="classifier"><cite>int or float</cite></span></dt><dd><p>Radius of solid object.</p>
+</dd>
+<dt><strong>surfacearea</strong><span class="classifier"><cite>int or float</cite></span></dt><dd><p>Surface area of solid object.</p>
+</dd>
+<dt><strong>volume</strong><span class="classifier"><cite>int or float</cite></span></dt><dd><p>Volume of solid object.</p>
+</dd>
+<dt><strong>density</strong><span class="classifier"><cite>int or float</cite></span></dt><dd><p>Density of solid object.</p>
+</dd>
+<dt><strong>specificheat</strong><span class="classifier"><cite>int or float</cite></span></dt><dd><p>Specific heat of solid object.</p>
+</dd>
+<dt><strong>thermalconductivity</strong><span class="classifier"><cite>int or float</cite></span></dt><dd><p>Thermal conductivity of solid object.</p>
+</dd>
+<dt><strong>thermaldiffusivity</strong><span class="classifier"><cite>int or float</cite></span></dt><dd><p>Thermal diffusivity of solid object.</p>
+</dd>
+<dt><strong>heattransfercoefficient</strong><span class="classifier"><cite>int or float</cite></span></dt><dd><p>Heat transfer coefficient between solid object and surrounding.</p>
+</dd>
+<dt><strong>T_infinity</strong><span class="classifier"><cite>int or float</cite></span></dt><dd><p>Temperature of surroundings.</p>
+</dd>
+<dt><strong>T_initial</strong><span class="classifier"><cite>int or float</cite></span></dt><dd><p>Temperature of solid object at time = 0.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<p>First import the module <strong>transient</strong></p>
+<p>Units used in this example: SI system</p>
+<p>However, any consistent units can be used</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pychemengg.heattransfer</span> <span class="kn">import</span> <span class="n">transient</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">cylinder</span><span class="o">=</span><span class="n">transient</span><span class="o">.</span><span class="n">NonLumpedCylinder</span><span class="p">(</span><span class="n">radius</span><span class="o">=</span><span class="mf">10e-2</span><span class="p">,</span> <span class="n">surfacearea</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">T_initial</span><span class="o">=</span><span class="mi">600</span><span class="p">,</span> <span class="n">volume</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="mf">10e-2</span><span class="o">**</span><span class="mi">2</span><span class="o">*</span><span class="mi">1</span><span class="p">,</span> <span class="n">T_infinity</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span> <span class="n">density</span><span class="o">=</span><span class="mi">7900</span><span class="p">,</span> <span class="n">thermaldiffusivity</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">specificheat</span><span class="o">=</span><span class="mi">477</span><span class="p">,</span> <span class="n">heattransfercoefficient</span><span class="o">=</span><span class="mi">80</span><span class="p">,</span> <span class="n">thermalconductivity</span><span class="o">=</span><span class="mf">14.9</span><span class="p">)</span>
+<span class="go"># This will create an instance of &#39;NonLumpedCylinder&#39; with a name &#39;cylinder&#39; </span>
+</pre></div>
+</div>
+<dl class="field-list">
+<dt class="field-odd">Attributes</dt>
+<dd class="field-odd"><dl>
+<dt><strong>See “Parameters”. All parameters are attributes. Additional attributes are listed below.</strong></dt><dd></dd>
+<dt><strong>mass</strong><span class="classifier"><cite>int or float</cite></span></dt><dd><p>Mass of solid object computed as (volume * density) of solid object.</p>
+</dd>
+</dl>
+</dd>
+</dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="pychemengg.heattransfer.transient.NonLumpedCylinder.__init__">
 <span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">radius</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">surfacearea</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">volume</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">density</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">specificheat</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">thermalconductivity</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">thermaldiffusivity</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">heattransfercoefficient</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">T_infinity</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">T_initial</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pychemengg/heattransfer/transient.html#NonLumpedCylinder.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pychemengg.heattransfer.transient.NonLumpedCylinder.__init__" title="Permalink to this definition">¶</a></dt>
@@ -250,29 +295,430 @@
 <tr class="row-odd"><td><p><a class="reference internal" href="#pychemengg.heattransfer.transient.NonLumpedCylinder.__init__" title="pychemengg.heattransfer.transient.NonLumpedCylinder.__init__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">__init__</span></code></a>([radius, surfacearea, volume, …])</p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">calc_Bi</span></code>()</p></td>
-<td><p></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#pychemengg.heattransfer.transient.NonLumpedCylinder.calc_Bi" title="pychemengg.heattransfer.transient.NonLumpedCylinder.calc_Bi"><code class="xref py py-obj docutils literal notranslate"><span class="pre">calc_Bi</span></code></a>()</p></td>
+<td><p>Computes Biot number.</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">calc_Fo</span></code>([time])</p></td>
-<td><p></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pychemengg.heattransfer.transient.NonLumpedCylinder.calc_Fo" title="pychemengg.heattransfer.transient.NonLumpedCylinder.calc_Fo"><code class="xref py py-obj docutils literal notranslate"><span class="pre">calc_Fo</span></code></a>([time])</p></td>
+<td><p>Computes Fourier number.</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">calc_eigenvalues</span></code>([numberof_eigenvalues_desired])</p></td>
-<td><p></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#pychemengg.heattransfer.transient.NonLumpedCylinder.calc_eigenvalues" title="pychemengg.heattransfer.transient.NonLumpedCylinder.calc_eigenvalues"><code class="xref py py-obj docutils literal notranslate"><span class="pre">calc_eigenvalues</span></code></a>([numberof_eigenvalues_desired])</p></td>
+<td><p>Computes eigen values of characteristic equation for Cylindrical geometry.</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">heatrateof_conv_at_time_t</span></code>()</p></td>
-<td><p></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pychemengg.heattransfer.transient.NonLumpedCylinder.heatrateof_conv_at_time_t" title="pychemengg.heattransfer.transient.NonLumpedCylinder.heatrateof_conv_at_time_t"><code class="xref py py-obj docutils literal notranslate"><span class="pre">heatrateof_conv_at_time_t</span></code></a>()</p></td>
+<td><p>Heat rate of convection between object and surroundings at a given time = t.</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">maxheattransferpossible</span></code>()</p></td>
-<td><p></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#pychemengg.heattransfer.transient.NonLumpedCylinder.maxheattransferpossible" title="pychemengg.heattransfer.transient.NonLumpedCylinder.maxheattransferpossible"><code class="xref py py-obj docutils literal notranslate"><span class="pre">maxheattransferpossible</span></code></a>()</p></td>
+<td><p>Maximum possible heat transfer between solid object and surroundings.</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">temperature_of_solid_at_time_t</span></code>([time, …])</p></td>
-<td><p></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pychemengg.heattransfer.transient.NonLumpedCylinder.temperature_of_solid_at_time_t" title="pychemengg.heattransfer.transient.NonLumpedCylinder.temperature_of_solid_at_time_t"><code class="xref py py-obj docutils literal notranslate"><span class="pre">temperature_of_solid_at_time_t</span></code></a>([…])</p></td>
+<td><p>Calculates temperature of solid object at a given time = t and radius = r.</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">totalheat_transferred_during_interval_t</span></code>()</p></td>
-<td><p></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#pychemengg.heattransfer.transient.NonLumpedCylinder.totalheat_transferred_during_interval_t" title="pychemengg.heattransfer.transient.NonLumpedCylinder.totalheat_transferred_during_interval_t"><code class="xref py py-obj docutils literal notranslate"><span class="pre">totalheat_transferred_during_interval_t</span></code></a>()</p></td>
+<td><p>Heat transferred between solid object and surroundings during  time interval = 0 to t.</p></td>
 </tr>
 </tbody>
 </table>
+<dl class="py method">
+<dt class="sig sig-object py" id="pychemengg.heattransfer.transient.NonLumpedCylinder.calc_Bi">
+<span class="sig-name descname"><span class="pre">calc_Bi</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pychemengg/heattransfer/transient.html#NonLumpedCylinder.calc_Bi"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pychemengg.heattransfer.transient.NonLumpedCylinder.calc_Bi" title="Permalink to this definition">¶</a></dt>
+<dd><p>Computes Biot number.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>`None_required`</strong><span class="classifier">‘None’</span></dt><dd><p>Attributes that are already defined are used in calculation.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl>
+<dt><strong>Bi</strong><span class="classifier"><cite>int or float</cite></span></dt><dd><p>Biot number</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>Biot number is calculated using the following formula.</p>
+<div class="math">
+\[Bi = \frac {h L_{c}} {k}
+
+\]</div>
+<p><em>where:</em></p>
+<blockquote>
+<div><p><em>h = heat transfer coefficient</em></p>
+<p><em>k = thermal conductivity of solid object</em></p>
+<p><span class="math">\(L_c\)</span> <em>= characteristic length of solid object = radius</em></p>
+<p><em>Bi = Biot number</em></p>
+</div></blockquote>
+<p class="rubric">References</p>
+<p>[1] G. F. Nellis and S. A. Klein, “Introduction to Engineering 
+Heat Transfer”, 1st Edition. Cambridge University Press, 2021.</p>
+<p>[2] Y. A. Cengel and A. J. Ghajar, “Heat And Mass Transfer
+Fundamentals and Applications”, 6th Edition. New York, McGraw Hill
+Education, 2020.</p>
+<p class="rubric">Examples</p>
+<p>First import the module <strong>transient</strong></p>
+<p>Units used in this example: SI system</p>
+<p>However, any consistent units can be used</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pychemengg.heattransfer</span> <span class="kn">import</span> <span class="n">transient</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">cylinder</span><span class="o">=</span><span class="n">transient</span><span class="o">.</span><span class="n">NonLumpedCylinder</span><span class="p">(</span><span class="n">radius</span><span class="o">=</span><span class="mf">10e-2</span><span class="p">,</span> <span class="n">surfacearea</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">T_initial</span><span class="o">=</span><span class="mi">600</span><span class="p">,</span> <span class="n">volume</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="mf">10e-2</span><span class="o">**</span><span class="mi">2</span><span class="o">*</span><span class="mi">1</span><span class="p">,</span> <span class="n">T_infinity</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span> <span class="n">density</span><span class="o">=</span><span class="mi">7900</span><span class="p">,</span> <span class="n">thermaldiffusivity</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">specificheat</span><span class="o">=</span><span class="mi">477</span><span class="p">,</span> <span class="n">heattransfercoefficient</span><span class="o">=</span><span class="mi">80</span><span class="p">,</span> <span class="n">thermalconductivity</span><span class="o">=</span><span class="mf">14.9</span><span class="p">)</span>
+<span class="go"># This will create an instance of &#39;NonLumpedSlab&#39; with a name &#39;plate&#39; </span>
+<span class="go"># Next call calc_Bi</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">cylinder</span><span class="o">.</span><span class="n">calc_Bi</span><span class="p">()</span>
+<span class="go">0.5369127516778524</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pychemengg.heattransfer.transient.NonLumpedCylinder.calc_Fo">
+<span class="sig-name descname"><span class="pre">calc_Fo</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pychemengg/heattransfer/transient.html#NonLumpedCylinder.calc_Fo"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pychemengg.heattransfer.transient.NonLumpedCylinder.calc_Fo" title="Permalink to this definition">¶</a></dt>
+<dd><p>Computes Fourier number.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>time</strong><span class="classifier">‘int or float’</span></dt><dd><p>Time at which temperature or heat transfer is to be evaluated.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl>
+<dt><strong>Fo</strong><span class="classifier"><cite>int or float</cite></span></dt><dd><p>Fourier number</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>Fourier number is calculated using the following formula.</p>
+<div class="math">
+\[Fo = \frac {\alpha t} {L_c^2}
+
+\]</div>
+<p><em>where:</em></p>
+<blockquote>
+<div><p><span class="math">\(\alpha\)</span> <em>= thermal diffusivity</em></p>
+<p><em>t = time at which temperature or heat transfer is to be evaluated</em></p>
+<p><span class="math">\(L_c\)</span> <em>= characteristic length = radius</em></p>
+<p><em>Fo = Fourier number</em></p>
+</div></blockquote>
+<p class="rubric">References</p>
+<p>[1] G. F. Nellis and S. A. Klein, “Introduction to Engineering 
+Heat Transfer”, 1st Edition. Cambridge University Press, 2021.</p>
+<p>[2] Y. A. Cengel and A. J. Ghajar, “Heat And Mass Transfer
+Fundamentals and Applications”, 6th Edition. New York, McGraw Hill
+Education, 2020.</p>
+<p class="rubric">Examples</p>
+<p>First import the module <strong>transient</strong></p>
+<p>Units used in this example: SI system</p>
+<p>However, any consistent units can be used</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pychemengg.heattransfer</span> <span class="kn">import</span> <span class="n">transient</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">cylinder</span><span class="o">=</span><span class="n">transient</span><span class="o">.</span><span class="n">NonLumpedCylinder</span><span class="p">(</span><span class="n">radius</span><span class="o">=</span><span class="mf">10e-2</span><span class="p">,</span> <span class="n">surfacearea</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">T_initial</span><span class="o">=</span><span class="mi">600</span><span class="p">,</span> <span class="n">volume</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="mf">10e-2</span><span class="o">**</span><span class="mi">2</span><span class="o">*</span><span class="mi">1</span><span class="p">,</span> <span class="n">T_infinity</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span> <span class="n">density</span><span class="o">=</span><span class="mi">7900</span><span class="p">,</span> <span class="n">thermaldiffusivity</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">specificheat</span><span class="o">=</span><span class="mi">477</span><span class="p">,</span> <span class="n">heattransfercoefficient</span><span class="o">=</span><span class="mi">80</span><span class="p">,</span> <span class="n">thermalconductivity</span><span class="o">=</span><span class="mf">14.9</span><span class="p">)</span>
+<span class="go"># This will create an instance of &#39;NonLumpedSlab&#39; with a name &#39;plate&#39; </span>
+<span class="go"># Next call calc_Fo assuming temperature is required at 7 min</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">cylinder</span><span class="o">.</span><span class="n">calc_Fo</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="mi">7</span><span class="o">*</span><span class="mi">60</span><span class="p">)</span>
+<span class="go">0.16606958044741657</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pychemengg.heattransfer.transient.NonLumpedCylinder.calc_eigenvalues">
+<span class="sig-name descname"><span class="pre">calc_eigenvalues</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">numberof_eigenvalues_desired</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pychemengg/heattransfer/transient.html#NonLumpedCylinder.calc_eigenvalues"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pychemengg.heattransfer.transient.NonLumpedCylinder.calc_eigenvalues" title="Permalink to this definition">¶</a></dt>
+<dd><p>Computes eigen values of characteristic equation for Cylindrical geometry.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>numberof_eigenvalues_desired</strong><span class="classifier">‘int or float’ (default = 10)</span></dt><dd><p>Number of eigen values desired for the characteristic equation.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl>
+<dt><strong>eigenvalues</strong><span class="classifier"><cite>np.array of int or float</cite></span></dt><dd><p>Eigen values</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>Eigen values are calculated as roots of the following equation.</p>
+<div class="math">
+\[\lambda_n \frac{J_1(\lambda_n)}{J_0(\lambda_n)} - Bi = 0 , n = 1 \hspace{2pt} to \hspace{2pt} \infty
+
+\]</div>
+<p><em>where:</em></p>
+<blockquote>
+<div><p><span class="math">\(J_0\)</span> <em>= Bessel function of first kind of order 0</em></p>
+<p><span class="math">\(J_1\)</span> <em>= Bessel function of first kind of order 1</em></p>
+<p><span class="math">\(\lambda_n\)</span> <em>= nth eigen value</em></p>
+<p><em>Bi = Biot number</em></p>
+</div></blockquote>
+<p class="rubric">References</p>
+<p>[1] G. F. Nellis and S. A. Klein, “Introduction to Engineering 
+Heat Transfer”, 1st Edition. Cambridge University Press, 2021.</p>
+<p>[2] Y. A. Cengel and A. J. Ghajar, “Heat And Mass Transfer
+Fundamentals and Applications”, 6th Edition. New York, McGraw Hill
+Education, 2020.</p>
+<p class="rubric">Examples</p>
+<p>First import the module <strong>transient</strong></p>
+<p>Units used in this example: SI system</p>
+<p>However, any consistent units can be used</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pychemengg.heattransfer</span> <span class="kn">import</span> <span class="n">transient</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">cylinder</span><span class="o">=</span><span class="n">transient</span><span class="o">.</span><span class="n">NonLumpedCylinder</span><span class="p">(</span><span class="n">radius</span><span class="o">=</span><span class="mf">10e-2</span><span class="p">,</span> <span class="n">surfacearea</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">T_initial</span><span class="o">=</span><span class="mi">600</span><span class="p">,</span> <span class="n">volume</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="mf">10e-2</span><span class="o">**</span><span class="mi">2</span><span class="o">*</span><span class="mi">1</span><span class="p">,</span> <span class="n">T_infinity</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span> <span class="n">density</span><span class="o">=</span><span class="mi">7900</span><span class="p">,</span> <span class="n">thermaldiffusivity</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">specificheat</span><span class="o">=</span><span class="mi">477</span><span class="p">,</span> <span class="n">heattransfercoefficient</span><span class="o">=</span><span class="mi">80</span><span class="p">,</span> <span class="n">thermalconductivity</span><span class="o">=</span><span class="mf">14.9</span><span class="p">)</span>
+<span class="go"># This will create an instance of &#39;NonLumpedSlab&#39; with a name &#39;plate&#39; </span>
+<span class="go"># Next call calc_Bi</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">cylinder</span><span class="o">.</span><span class="n">calc_Bi</span><span class="p">()</span>
+<span class="go">0.5369127516778524</span>
+<span class="go"># Let first 5 eigen values be required</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">cylinder</span><span class="o">.</span><span class="n">calc_eigenvalues</span><span class="p">(</span><span class="n">numberof_eigenvalues_desired</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+<span class="go">array([ 0.97061535,  3.96852663,  7.0915602 , 10.22605944, 13.36390715])</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pychemengg.heattransfer.transient.NonLumpedCylinder.heatrateof_conv_at_time_t">
+<span class="sig-name descname"><span class="pre">heatrateof_conv_at_time_t</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pychemengg/heattransfer/transient.html#NonLumpedCylinder.heatrateof_conv_at_time_t"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pychemengg.heattransfer.transient.NonLumpedCylinder.heatrateof_conv_at_time_t" title="Permalink to this definition">¶</a></dt>
+<dd><p>Heat rate of convection between object and surroundings at a given time = t.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>`None_required`</strong><span class="classifier">‘None’</span></dt><dd><p>Attributes that are already defined are used in calculation.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl>
+<dt><strong>heat rate of convection</strong><span class="classifier"><cite>int or float ; Positive: Heat is gained by object, Negative: Heat is lost by object</cite></span></dt><dd><p>Heat rate of convection between solid object and surroundings at time = t.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>Heat rate of convection is calculated using the following formula:</p>
+<div class="math">
+\[q_{t} = h A_s (T_{infinity} - T_{t})
+
+\]</div>
+<p><em>where:</em></p>
+<blockquote>
+<div><p>t = time at which temperature is to be computed</p>
+<p>h = heat transfer coefficient</p>
+<p><span class="math">\(T_{infinity} = temperature of surrounding fluid\)</span></p>
+<p><span class="math">\(T_{t} = temperature of surface of solid object at time = t\)</span></p>
+<p><span class="math">\(A_s\)</span> <em>= surface area of solid object</em></p>
+<p><span class="math">\(q_{t}\)</span> <em>= heat rate of convection at time = t</em></p>
+</div></blockquote>
+<p class="rubric">References</p>
+<p>[1] G. F. Nellis and S. A. Klein, “Introduction to Engineering 
+Heat Transfer”, 1st Edition. Cambridge University Press, 2021.</p>
+<p>[2] Y. A. Cengel and A. J. Ghajar, “Heat And Mass Transfer
+Fundamentals and Applications”, 6th Edition. New York, McGraw Hill
+Education, 2020.</p>
+<p class="rubric">Examples</p>
+<p>First import the module <strong>transient</strong></p>
+<p>Units used in this example: SI system</p>
+<p>However, any consistent units can be used</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pychemengg.heattransfer</span> <span class="kn">import</span> <span class="n">transient</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">cylinder</span><span class="o">=</span><span class="n">transient</span><span class="o">.</span><span class="n">NonLumpedCylinder</span><span class="p">(</span><span class="n">radius</span><span class="o">=</span><span class="mf">10e-2</span><span class="p">,</span> <span class="n">surfacearea</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">T_initial</span><span class="o">=</span><span class="mi">600</span><span class="p">,</span> <span class="n">volume</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="mf">10e-2</span><span class="o">**</span><span class="mi">2</span><span class="o">*</span><span class="mi">1</span><span class="p">,</span> <span class="n">T_infinity</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span> <span class="n">density</span><span class="o">=</span><span class="mi">7900</span><span class="p">,</span> <span class="n">thermaldiffusivity</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">specificheat</span><span class="o">=</span><span class="mi">477</span><span class="p">,</span> <span class="n">heattransfercoefficient</span><span class="o">=</span><span class="mi">80</span><span class="p">,</span> <span class="n">thermalconductivity</span><span class="o">=</span><span class="mf">14.9</span><span class="p">)</span>
+<span class="go"># This will create an instance of &#39;NonLumpedCylinder&#39; with a name &#39;cylinder&#39; </span>
+<span class="go"># Next call calc_Bi</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">cylinder</span><span class="o">.</span><span class="n">calc_Bi</span><span class="p">()</span>
+<span class="go">0.5369127516778524</span>
+<span class="go"># Next call calc_Fo assuming temperature is required at 7 min</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">cylinder</span><span class="o">.</span><span class="n">calc_Fo</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="mi">7</span><span class="o">*</span><span class="mi">60</span><span class="p">)</span>
+<span class="go">0.16606958044741657</span>
+<span class="go"># Let default (=10) eigen values be required</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">cylinder</span><span class="o">.</span><span class="n">calc_eigenvalues</span><span class="p">()</span>
+<span class="go">array([ 0.97061535,  3.96852663,  7.0915602 , 10.22605944, 13.36390715,</span>
+<span class="go">16.50318456, 19.64320399, 22.78365791, 25.92438812, 29.06530494])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">heatrateof_conv_at_time_t</span><span class="p">()</span>
+<span class="go">-24040.54791137568</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pychemengg.heattransfer.transient.NonLumpedCylinder.maxheattransferpossible">
+<span class="sig-name descname"><span class="pre">maxheattransferpossible</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pychemengg/heattransfer/transient.html#NonLumpedCylinder.maxheattransferpossible"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pychemengg.heattransfer.transient.NonLumpedCylinder.maxheattransferpossible" title="Permalink to this definition">¶</a></dt>
+<dd><p>Maximum possible heat transfer between solid object and surroundings.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>`None_required`</strong><span class="classifier">‘None’</span></dt><dd><p>Attributes that are already defined are used in calculation.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>maximum heat transfer possible: <cite>int or float; Positive: Heat is gained by object, Negative: Heat is lost by object</cite></dt><dd><p>Maximum heat transfer posssible between object and surroundings.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>Maximum heat transfer possible between solid object and surroundings 
+is calculated using the following formula. This is based on the assumption
+that final object temperature will eventually reach surrounding temperature
+of <span class="math">\(T_{infinity}\)</span></p>
+<div class="math">
+\[q_{max} = m C_p (T_{infinity} - T_{initial})
+
+\]</div>
+<p><em>where:</em></p>
+<blockquote>
+<div><p>m = mass of solid object</p>
+<p><span class="math">\(C_{p} = specific heat of solid object\)</span></p>
+<p><span class="math">\(T_{infinity} = temperature of surrounding, which the solid object will eventually attain\)</span></p>
+<p><span class="math">\(T_{initial} = temperature of solid object at time = initial\)</span></p>
+<p><span class="math">\(q_{max} = max heat transfer possible\)</span></p>
+</div></blockquote>
+<p class="rubric">References</p>
+<p>[1] G. F. Nellis and S. A. Klein, “Introduction to Engineering 
+Heat Transfer”, 1st Edition. Cambridge University Press, 2021.</p>
+<p>[2] Y. A. Cengel and A. J. Ghajar, “Heat And Mass Transfer
+Fundamentals and Applications”, 6th Edition. New York, McGraw Hill
+Education, 2020.</p>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pychemengg.heattransfer</span> <span class="kn">import</span> <span class="n">transient</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">cylinder</span><span class="o">=</span><span class="n">transient</span><span class="o">.</span><span class="n">NonLumpedCylinder</span><span class="p">(</span><span class="n">radius</span><span class="o">=</span><span class="mf">10e-2</span><span class="p">,</span> <span class="n">surfacearea</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">T_initial</span><span class="o">=</span><span class="mi">600</span><span class="p">,</span> <span class="n">volume</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="mf">10e-2</span><span class="o">**</span><span class="mi">2</span><span class="o">*</span><span class="mi">1</span><span class="p">,</span> <span class="n">T_infinity</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span> <span class="n">density</span><span class="o">=</span><span class="mi">7900</span><span class="p">,</span> <span class="n">thermaldiffusivity</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">specificheat</span><span class="o">=</span><span class="mi">477</span><span class="p">,</span> <span class="n">heattransfercoefficient</span><span class="o">=</span><span class="mi">80</span><span class="p">,</span> <span class="n">thermalconductivity</span><span class="o">=</span><span class="mf">14.9</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">cylinder</span><span class="o">.</span><span class="n">maxheattransferpossible</span><span class="p">()</span>
+<span class="go">-47353854.386089675</span>
+<span class="go"># negative value indicates heat is being lost by the solid object</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pychemengg.heattransfer.transient.NonLumpedCylinder.temperature_of_solid_at_time_t">
+<span class="sig-name descname"><span class="pre">temperature_of_solid_at_time_t</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rposition_tofindtemp</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pychemengg/heattransfer/transient.html#NonLumpedCylinder.temperature_of_solid_at_time_t"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pychemengg.heattransfer.transient.NonLumpedCylinder.temperature_of_solid_at_time_t" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculates temperature of solid object at a given time = t and radius = r.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl>
+<dt><strong>time</strong><span class="classifier"><cite>int or float</cite></span></dt><dd><p>Time instant from begining of process, at which temperature
+of solid object is to be found.</p>
+</dd>
+<dt><strong>rposition_tofindtemp</strong><span class="classifier"><cite>int or float</cite></span></dt><dd><p>Radius from center of cylindrical object where temperature is to be found.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl>
+<dt><strong>temperature</strong><span class="classifier"><cite>int or float</cite></span></dt><dd><p>Temperature of solid object at time = t and radius = r.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>Temperature of solid object at time = t and radius = r is calculated using the following formula:</p>
+<div class="math">
+\[T(t) = T_{infinity} + (T_{initial} - T_{infinity}) \displaystyle\sum_{n=1}^\infty \cfrac{2}{\lambda_n} \left( \frac{J_1(\lambda_n)}{J_0^2(\lambda_n) + J_1^2(\lambda_n)} \right) e^{- \lambda_n^2 \tau} J_0(\lambda_n r/r_{outside}) 
+
+\]</div>
+<p><em>where:</em></p>
+<blockquote>
+<div><p><span class="math">\(T_{infinity} = temperature of surrounding fluid\)</span></p>
+<p><span class="math">\(T_{initial} = intitial temperature of solid object\)</span></p>
+<p><span class="math">\(J_0\)</span> <em>= Bessel function of first kind of order 0</em></p>
+<p><span class="math">\(J_1\)</span> <em>= Bessel function of first kind of order 1</em></p>
+<p><span class="math">\(\lambda_n\)</span> = <span class="math">\(n^{th}\)</span> eigen value of <span class="math">\(x_n tan(x_n) - Bi = 0\)</span> , n = 1 to <span class="math">\(\infty\)</span></p>
+<p>Bi = Biot number</p>
+<p><span class="math">\(\tau = Fourier number\)</span></p>
+<p>r = radius from center of solid cylinder where temperature is required (r = 0 for center of cylinder)</p>
+<p><span class="math">\(r_{outside}\)</span> <em>= outer radius of the cylinder</em></p>
+</div></blockquote>
+<p class="rubric">Examples</p>
+<p>First import the module <strong>transient</strong></p>
+<p>Units used in this example: SI system</p>
+<p>However, any consistent units can be used</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pychemengg.heattransfer</span> <span class="kn">import</span> <span class="n">transient</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">cylinder</span><span class="o">=</span><span class="n">transient</span><span class="o">.</span><span class="n">NonLumpedCylinder</span><span class="p">(</span><span class="n">radius</span><span class="o">=</span><span class="mf">10e-2</span><span class="p">,</span> <span class="n">surfacearea</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">T_initial</span><span class="o">=</span><span class="mi">600</span><span class="p">,</span> <span class="n">volume</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="mf">10e-2</span><span class="o">**</span><span class="mi">2</span><span class="o">*</span><span class="mi">1</span><span class="p">,</span> <span class="n">T_infinity</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span> <span class="n">density</span><span class="o">=</span><span class="mi">7900</span><span class="p">,</span> <span class="n">thermaldiffusivity</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">specificheat</span><span class="o">=</span><span class="mi">477</span><span class="p">,</span> <span class="n">heattransfercoefficient</span><span class="o">=</span><span class="mi">80</span><span class="p">,</span> <span class="n">thermalconductivity</span><span class="o">=</span><span class="mf">14.9</span><span class="p">)</span>
+<span class="go"># This will create an instance of &#39;NonLumpedSlab&#39; with a name &#39;plate&#39; </span>
+<span class="go"># Next call calc_Bi</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">cylinder</span><span class="o">.</span><span class="n">calc_Bi</span><span class="p">()</span>
+<span class="go">0.5369127516778524</span>
+<span class="go"># Next call calc_Fo assuming temperature is required at 7 min</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">cylinder</span><span class="o">.</span><span class="n">calc_Fo</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="mi">7</span><span class="o">*</span><span class="mi">60</span><span class="p">)</span>
+<span class="go">0.16606958044741657</span>
+<span class="go"># Let default (=10) eigen values be required</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">cylinder</span><span class="o">.</span><span class="n">calc_eigenvalues</span><span class="p">()</span>
+<span class="go">array([ 0.97061535,  3.96852663,  7.0915602 , 10.22605944, 13.36390715,</span>
+<span class="go">16.50318456, 19.64320399, 22.78365791, 25.92438812, 29.06530494])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">cylinder</span><span class="o">.</span><span class="n">temperature_of_solid_at_time_t</span><span class="p">(</span><span class="n">rposition_tofindtemp</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="go">578.8399893522001</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pychemengg.heattransfer.transient.NonLumpedCylinder.totalheat_transferred_during_interval_t">
+<span class="sig-name descname"><span class="pre">totalheat_transferred_during_interval_t</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pychemengg/heattransfer/transient.html#NonLumpedCylinder.totalheat_transferred_during_interval_t"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pychemengg.heattransfer.transient.NonLumpedCylinder.totalheat_transferred_during_interval_t" title="Permalink to this definition">¶</a></dt>
+<dd><p>Heat transferred between solid object and surroundings during 
+time interval = 0 to t.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>`None_required`</strong><span class="classifier">‘None’</span></dt><dd><p>Attributes that are already defined or calculated are used in calculation.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl>
+<dt><strong>total heat transferred</strong><span class="classifier"><cite>int or float; Positive: Heat is gained by object, Negative: Heat is lost by object</cite></span></dt><dd><p>Total heat transferred between object and
+surroundings during interval 0 to t</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<dl class="simple">
+<dt><a class="reference internal" href="#pychemengg.heattransfer.transient.NonLumpedCylinder.maxheattransferpossible" title="pychemengg.heattransfer.transient.NonLumpedCylinder.maxheattransferpossible"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pychemengg.heattransfer.transient.NonLumpedCylinder.maxheattransferpossible</span></code></a></dt><dd></dd>
+</dl>
+</div>
+<p class="rubric">Notes</p>
+<p>Total heat  transferred in interval 0 to t is calculated using the
+following formula:</p>
+<div class="math">
+\[q_{0 \to t} = q_{max} \left( 1-2\displaystyle\sum_{n=1}^\infty \cfrac{2}{\lambda_n} \left( \frac{J_1(\lambda_n)}{J_0^2(\lambda_n) + J_1^2(\lambda_n)} \right) e^{- \lambda_n^2 \tau} \frac{J_1(\lambda_n) }{\lambda_n} \right)
+
+\]</div>
+<p><em>where:</em></p>
+<p><span class="math">\(J_0\)</span> <em>= Bessel function of first kind of order 0</em></p>
+<p><span class="math">\(J_1\)</span> <em>= Bessel function of first kind of order 1</em></p>
+<p><span class="math">\(\lambda_n\)</span> = <span class="math">\(n^{th}\)</span> eigen value of <span class="math">\(x_n tan(x_n) - Bi = 0\)</span> , n = 1 to <span class="math">\(\infty\)</span></p>
+<p>Bi = Biot number</p>
+<p><span class="math">\(\tau = Fourier number\)</span></p>
+<p><span class="math">\(q_{max}\)</span> = <em>maximum possible heat transfer between solid and surrounding</em></p>
+<p><span class="math">\(q_{0 \to t}\)</span> <em>= heat transferred in time interval [0, t]</em></p>
+<p class="rubric">References</p>
+<p>[1] G. F. Nellis and S. A. Klein, “Introduction to Engineering 
+Heat Transfer”, 1st Edition. Cambridge University Press, 2021.</p>
+<p>[2] Y. A. Cengel and A. J. Ghajar, “Heat And Mass Transfer
+Fundamentals and Applications”, 6th Edition. New York, McGraw Hill
+Education, 2020.</p>
+<p class="rubric">Examples</p>
+<p>First import the module <strong>transient</strong></p>
+<p>Units used in this example: SI system</p>
+<p>However, any consistent units can be used</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pychemengg.heattransfer</span> <span class="kn">import</span> <span class="n">transient</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">cylinder</span><span class="o">=</span><span class="n">transient</span><span class="o">.</span><span class="n">NonLumpedCylinder</span><span class="p">(</span><span class="n">radius</span><span class="o">=</span><span class="mf">10e-2</span><span class="p">,</span> <span class="n">surfacearea</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">T_initial</span><span class="o">=</span><span class="mi">600</span><span class="p">,</span> <span class="n">volume</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="mf">10e-2</span><span class="o">**</span><span class="mi">2</span><span class="o">*</span><span class="mi">1</span><span class="p">,</span> <span class="n">T_infinity</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span> <span class="n">density</span><span class="o">=</span><span class="mi">7900</span><span class="p">,</span> <span class="n">thermaldiffusivity</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">specificheat</span><span class="o">=</span><span class="mi">477</span><span class="p">,</span> <span class="n">heattransfercoefficient</span><span class="o">=</span><span class="mi">80</span><span class="p">,</span> <span class="n">thermalconductivity</span><span class="o">=</span><span class="mf">14.9</span><span class="p">)</span>
+<span class="go"># This will create an instance of &#39;NonLumpedSlab&#39; with a name &#39;plate&#39; </span>
+<span class="go"># Next call calc_Bi</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">cylinder</span><span class="o">.</span><span class="n">calc_Bi</span><span class="p">()</span>
+<span class="go">0.5369127516778524</span>
+<span class="go"># Next call calc_Fo assuming temperature is required at 7 min</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">cylinder</span><span class="o">.</span><span class="n">calc_Fo</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="mi">7</span><span class="o">*</span><span class="mi">60</span><span class="p">)</span>
+<span class="go">0.16606958044741657</span>
+<span class="go"># Let default (=10) eigen values be required</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">cylinder</span><span class="o">.</span><span class="n">calc_eigenvalues</span><span class="p">()</span>
+<span class="go">array([ 0.97061535,  3.96852663,  7.0915602 , 10.22605944, 13.36390715,</span>
+<span class="go">16.50318456, 19.64320399, 22.78365791, 25.92438812, 29.06530494])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">cylinder</span><span class="o">.</span><span class="n">totalheat_transferred_during_interval_t</span><span class="p">()</span>
+<span class="go">-7052779.476897862</span>
+</pre></div>
+</div>
+</dd></dl>
+
 </dd></dl>
 
 </div>

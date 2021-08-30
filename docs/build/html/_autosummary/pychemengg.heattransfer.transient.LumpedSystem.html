@@ -349,7 +349,9 @@
 <p><em>Bi = Biot number</em></p>
 </div></blockquote>
 <p class="rubric">References</p>
-<p>[1] Yunus A. Cengel and Afshin J. Ghajar, “Heat And Mass Transfer
+<p>[1] G. F. Nellis and S. A. Klein, “Introduction to Engineering 
+Heat Transfer”, 1st Edition. Cambridge University Press, 2021.</p>
+<p>[2] Y. A. Cengel and A. J. Ghajar, “Heat And Mass Transfer
 Fundamentals and Applications”, 6th Edition. New York, McGraw Hill
 Education, 2020.</p>
 <p class="rubric">Examples</p>
@@ -373,13 +375,13 @@ Education, 2020.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>time</strong><span class="classifier">‘int or float’</span></dt><dd><p>Time instant from start of process, at which heat rate is to be found.</p>
+<dt><strong>time</strong><span class="classifier">‘int or float’</span></dt><dd><p>Time instant from begining of process, at which heat rate is to be found.</p>
 </dd>
 </dl>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><dl>
-<dt><strong>heat rate of convection</strong><span class="classifier"><cite>int or float</cite></span></dt><dd><p>Heat rate of convection between solid object and surroundings at time = t.</p>
+<dt><strong>heat rate of convection</strong><span class="classifier"><cite>int or float; Positive: Heat is gained by object, Negative: Heat is lost by object</cite></span></dt><dd><p>Heat rate of convection between solid object and surroundings at time = t.</p>
 </dd>
 </dl>
 </dd>
@@ -387,7 +389,7 @@ Education, 2020.</p>
 <p class="rubric">Notes</p>
 <p>Heat rate is calculated using the following formula:</p>
 <div class="math">
-\[q_{t} = h A_s (T_{t} - T_{infinity})
+\[q_{t} = h A_s (T_{infinity} - T_{t})
 
 \]</div>
 <p><em>where:</em></p>
@@ -400,7 +402,9 @@ Education, 2020.</p>
 <p><span class="math">\(q_{t} = heat rate at time = t\)</span></p>
 </div></blockquote>
 <p class="rubric">References</p>
-<p>[1] Yunus A. Cengel and Afshin J. Ghajar, “Heat And Mass Transfer
+<p>[1] G. F. Nellis and S. A. Klein, “Introduction to Engineering 
+Heat Transfer”, 1st Edition. Cambridge University Press, 2021.</p>
+<p>[2] Y. A. Cengel and A. J. Ghajar, “Heat And Mass Transfer
 Fundamentals and Applications”, 6th Edition. New York, McGraw Hill
 Education, 2020.</p>
 <p class="rubric">Examples</p>
@@ -413,7 +417,8 @@ Education, 2020.</p>
 <span class="go"># Let temperature at time = 60 s after start of the process be needed.</span>
 <span class="go"># Next call the following</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">plate</span><span class="o">.</span><span class="n">heatrateof_conv_at_time_t</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="mi">60</span><span class="p">)</span>
-<span class="go">63818.56987259833</span>
+<span class="go">-63818.56987259833</span>
+<span class="go"># negative value indicates heat is being lost by the solid object</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -429,24 +434,35 @@ Education, 2020.</p>
 </dd>
 </dl>
 </dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>maximum heat transfer possible: <cite>int or float; Positive: Heat is gained by object, Negative: Heat is lost by object</cite></dt><dd><p>Maximum heat transfer posssible between object and
+surroundings</p>
+</dd>
+</dl>
+</dd>
 </dl>
 <p class="rubric">Notes</p>
-<p>Total heat  transferred between solid object and surroundings in 
-interval 0 to t is calculated using the following formula:</p>
+<p>Maximum heat transfer possible between solid object and surroundings 
+is calculated using the following formula. This is based on the assumption
+that final object temperature will eventually reach surrounding temperature
+of <span class="math">\(T_{infinity}\)</span></p>
 <div class="math">
-\[q_{max} = m C_p (T_{infinity} - T_{inintial})
+\[q_{max} = m C_p (T_{infinity} - T_{initial})
 
 \]</div>
 <p><em>where:</em></p>
 <blockquote>
 <div><p>m = mass of solid object</p>
 <p><span class="math">\(C_{p} = specific heat of solid object\)</span></p>
-<p><span class="math">\(T_{infinity} = temperature of solid object at time = infinity\)</span></p>
+<p><span class="math">\(T_{infinity} = temperature of surrounding, which the solid object will eventually attain\)</span></p>
 <p><span class="math">\(T_{initial} = temperature of solid object at time = initial\)</span></p>
 <p><span class="math">\(q_{max} = max heat transfer possible\)</span></p>
 </div></blockquote>
 <p class="rubric">References</p>
-<p>[1] Yunus A. Cengel and Afshin J. Ghajar, “Heat And Mass Transfer
+<p>[1] G. F. Nellis and S. A. Klein, “Introduction to Engineering 
+Heat Transfer”, 1st Edition. Cambridge University Press, 2021.</p>
+<p>[2] Y. A. Cengel and A. J. Ghajar, “Heat And Mass Transfer
 Fundamentals and Applications”, 6th Edition. New York, McGraw Hill
 Education, 2020.</p>
 <p class="rubric">Examples</p>
@@ -458,17 +474,10 @@ Education, 2020.</p>
 <span class="go"># This will create an instance of &#39;LumpedSystem&#39; with a name &#39;plate&#39;</span>
 <span class="go"># Next call the following</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">plate</span><span class="o">.</span><span class="n">maxheattransferpossible</span><span class="p">()</span>
-<span class="go">33756800.0</span>
+<span class="go">-33756800.0</span>
+<span class="go"># negative value indicates heat is being lost by the solid object</span>
 </pre></div>
 </div>
-<dl class="field-list simple">
-<dt class="field-odd">Attributes</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>`None_required`</strong><span class="classifier">‘None’</span></dt><dd><p>This class does not expose any instance attributes.</p>
-</dd>
-</dl>
-</dd>
-</dl>
 </dd></dl>
 
 <dl class="py method">
@@ -478,7 +487,7 @@ Education, 2020.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>time</strong><span class="classifier">‘int or float’</span></dt><dd><p>Time instant from start of process, at which temperature
+<dt><strong>time</strong><span class="classifier">‘int or float’</span></dt><dd><p>Time instant from begining of process, at which temperature
 of solid object is to be found.</p>
 </dd>
 </dl>
@@ -491,7 +500,7 @@ of solid object is to be found.</p>
 </dd>
 </dl>
 <p class="rubric">Notes</p>
-<p>Temperature of solid bject at time = t is calculated using the following formula:</p>
+<p>Temperature of solid object at time = t is calculated using the following formula:</p>
 <div class="math">
 \[T(t) = T_{infinity} + (T_{initial} - T_{infinity}) e^{-bt}
 
@@ -512,7 +521,9 @@ of solid object is to be found.</p>
 </div></blockquote>
 </div></blockquote>
 <p class="rubric">References</p>
-<p>[1] Yunus A. Cengel and Afshin J. Ghajar, “Heat And Mass Transfer
+<p>[1] G. F. Nellis and S. A. Klein, “Introduction to Engineering 
+Heat Transfer”, 1st Edition. Cambridge University Press, 2021.</p>
+<p>[2] Y. A. Cengel and A. J. Ghajar, “Heat And Mass Transfer
 Fundamentals and Applications”, 6th Edition. New York, McGraw Hill
 Education, 2020.</p>
 <p class="rubric">Examples</p>
@@ -538,14 +549,14 @@ time interval = 0 to t.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>time</strong><span class="classifier">‘int or float’</span></dt><dd><p>Time from start of process, during which heat
-transferred is to be found.</p>
+<dt><strong>time</strong><span class="classifier">‘int or float’</span></dt><dd><p>Time-limit after start of process for which
+heat transferred is to be computed.</p>
 </dd>
 </dl>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><dl>
-<dt><strong>total heat transferred</strong><span class="classifier"><cite>int or float</cite></span></dt><dd><p>Total heat transferred between object and
+<dt><strong>total heat transferred</strong><span class="classifier"><cite>int or float; Positive: Heat is gained by object, Negative: Heat is lost by object</cite></span></dt><dd><p>Total heat transferred between object and
 surroundings during interval 0 to t</p>
 </dd>
 </dl>
@@ -569,7 +580,9 @@ transferred is to be computed</p>
 <p><span class="math">\(q_{0 to t} = heat transferred in interval [0, t]\)</span></p>
 </div></blockquote>
 <p class="rubric">References</p>
-<p>[1] Yunus A. Cengel and Afshin J. Ghajar, “Heat And Mass Transfer
+<p>[1] G. F. Nellis and S. A. Klein, “Introduction to Engineering 
+Heat Transfer”, 1st Edition. Cambridge University Press, 2021.</p>
+<p>[2] Y. A. Cengel and A. J. Ghajar, “Heat And Mass Transfer
 Fundamentals and Applications”, 6th Edition. New York, McGraw Hill
 Education, 2020.</p>
 <p class="rubric">Examples</p>
@@ -582,7 +595,8 @@ Education, 2020.</p>
 <span class="go"># Let heat transferred in time = 60 s after start of the process be needed.</span>
 <span class="go"># Next call the following</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">plate</span><span class="o">.</span><span class="n">totalheat_transferred_during_interval_t</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="mi">60</span><span class="p">)</span>
-<span class="go">4087185.6290410785</span>
+<span class="go">-4087185.6290410785</span>
+<span class="go"># negative value indicates heat is being lost by the solid object</span>
 </pre></div>
 </div>
 </dd></dl>

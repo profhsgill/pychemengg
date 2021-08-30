@@ -919,23 +919,21 @@ class NonLumpedSlab():
         return qrate
 
 
-    def totalheat_transferred_during_interval_t(self, time=None):
+    def totalheat_transferred_during_interval_t(self):
         r"""Heat transferred between solid object and surroundings during 
         time interval = 0 to t.
         
         
         Parameters
         ----------
-        time : 'int or float'
-            Time-limit after start of process for which
-            heat transferred is to be computed.
+        `None_required` : 'None'
+            Attributes that are already defined or calculated are used in calculation.
                     
         
         Returns
         -------
         total heat transferred : `int or float; Positive: Heat is gained by object, Negative: Heat is lost by object`
-            Total heat transferred between object and
-            surroundings during interval 0 to t
+            Total heat transferred between object and surroundings during interval 0 to t
         
         
         Notes
@@ -982,7 +980,7 @@ class NonLumpedSlab():
         plate.calc_eigenvalues()
         array([ 0.14717481,  3.1485222 ,  6.28665585,  9.42709237, 12.56810661,
                15.70935213, 18.85071334, 21.99214066, 25.13360932, 28.27510552])
-        >>> plate.totalheat_transferred_during_interval_t(time=7*60)
+        >>> plate.totalheat_transferred_during_interval_t()
         33472028.92491645
         # Positive value means heat is gained by the object.
         
@@ -1351,7 +1349,7 @@ class NonLumpedCylinder():
         return self.eigenvalues
 
         
-    def temperature_of_solid_at_time_t(self, time=None, rposition_tofindtemp=None):
+    def temperature_of_solid_at_time_t(self, rposition_tofindtemp=None):
         r"""Calculates temperature of solid object at a given time = t and radius = r.
         
         
@@ -1375,13 +1373,21 @@ class NonLumpedCylinder():
         Temperature of solid object at time = t and radius = r is calculated using the following formula:
             
         .. math::
-            T(t) = T_{infinity} + (T_{initial} - T_{infinity}) \displaystyle\sum_{n=1}^\infty \cfrac{2}{\lambda_n} \frac{J_1(\lambda_n)}{\lambda_n J_0^2(\lambda_n) + J_1^2(\lambda_n)} e^{- \lambda_n^2 \tau} J_0(\lambda_n r/r_{outside}) 
+            T(t) = T_{infinity} + (T_{initial} - T_{infinity}) \displaystyle\sum_{n=1}^\infty \cfrac{2}{\lambda_n} \left( \frac{J_1(\lambda_n)}{J_0^2(\lambda_n) + J_1^2(\lambda_n)} \right) e^{- \lambda_n^2 \tau} J_0(\lambda_n r/r_{outside}) 
+        
+        *where:*
         
             :math:`T_{infinity} = temperature of surrounding fluid`
         
             :math:`T_{initial} = intitial temperature of solid object`
             
-            :math:`\lambda_n = nth eigen value of x_n tan(x_n) - Bi = 0 , n = 1 \hspace{2pt} to \hspace{2pt} \infty`
+            :math:`J_0` *= Bessel function of first kind of order 0* 
+            
+            :math:`J_1` *= Bessel function of first kind of order 1*
+            
+            :math:`\lambda_n` = :math:`n^{th}` eigen value of :math:`x_n tan(x_n) - Bi = 0` , n = 1 to :math:`\infty`
+            
+            Bi = Biot number
             
             :math:`\tau = Fourier number`
             
@@ -1411,7 +1417,7 @@ class NonLumpedCylinder():
         >>> cylinder.calc_eigenvalues()
         array([ 0.97061535,  3.96852663,  7.0915602 , 10.22605944, 13.36390715,
         16.50318456, 19.64320399, 22.78365791, 25.92438812, 29.06530494])
-        >>> cylinder.temperature_of_solid_at_time_t(time=7*60, rposition_tofindtemp=0)
+        >>> cylinder.temperature_of_solid_at_time_t(rposition_tofindtemp=0)
         578.8399893522001
         """
         term1 = 2/self.eigenvalues*j1(self.eigenvalues)
@@ -1426,6 +1432,89 @@ class NonLumpedCylinder():
 
     
     def totalheat_transferred_during_interval_t(self):
+        r"""Heat transferred between solid object and surroundings during 
+        time interval = 0 to t.
+        
+        
+        Parameters
+        ----------
+        `None_required` : 'None'
+            Attributes that are already defined or calculated are used in calculation.
+                    
+        
+        Returns
+        -------
+        total heat transferred : `int or float; Positive: Heat is gained by object, Negative: Heat is lost by object`
+            Total heat transferred between object and
+            surroundings during interval 0 to t
+        
+        
+        Notes
+        -----
+        Total heat  transferred in interval 0 to t is calculated using the
+        following formula:
+            
+        .. math::
+            q_{0 \to t} = q_{max} \left( 1-2\displaystyle\sum_{n=1}^\infty \cfrac{2}{\lambda_n} \left( \frac{J_1(\lambda_n)}{J_0^2(\lambda_n) + J_1^2(\lambda_n)} \right) e^{- \lambda_n^2 \tau} \frac{J_1(\lambda_n) }{\lambda_n} \right)
+            
+        *where:*
+        
+        :math:`J_0` *= Bessel function of first kind of order 0* 
+        
+        :math:`J_1` *= Bessel function of first kind of order 1*
+        
+        :math:`\lambda_n` = :math:`n^{th}` eigen value of :math:`x_n tan(x_n) - Bi = 0` , n = 1 to :math:`\infty`
+        
+        Bi = Biot number
+        
+        :math:`\tau = Fourier number`
+        
+        :math:`q_{max}` = *maximum possible heat transfer between solid and surrounding*
+        
+        :math:`q_{0 \to t}` *= heat transferred in time interval [0, t]*
+       
+
+        
+        See Also
+        ----------
+        pychemengg.heattransfer.transient.NonLumpedCylinder.maxheattransferpossible
+                
+                     
+        
+        Examples
+        --------
+        First import the module **transient**
+        
+        Units used in this example: SI system
+        
+        However, any consistent units can be used
+        
+        >>> from pychemengg.heattransfer import transient
+        >>> cylinder=transient.NonLumpedCylinder(radius=10e-2, surfacearea=1, T_initial=600, volume=np.pi*10e-2**2*1, T_infinity=200, density=7900, thermaldiffusivity=None, specificheat=477, heattransfercoefficient=80, thermalconductivity=14.9)
+        # This will create an instance of 'NonLumpedSlab' with a name 'plate' 
+        # Next call calc_Bi
+        >>> cylinder.calc_Bi()
+        0.5369127516778524
+        # Next call calc_Fo assuming temperature is required at 7 min
+        >>> cylinder.calc_Fo(time=7*60)
+        0.16606958044741657
+        # Let default (=10) eigen values be required
+        >>> cylinder.calc_eigenvalues()
+        array([ 0.97061535,  3.96852663,  7.0915602 , 10.22605944, 13.36390715,
+        16.50318456, 19.64320399, 22.78365791, 25.92438812, 29.06530494])
+        >>> cylinder.totalheat_transferred_during_interval_t()
+        -7052779.476897862
+        
+        
+        References
+        ----------
+        [1] G. F. Nellis and S. A. Klein, "Introduction to Engineering 
+        Heat Transfer", 1st Edition. Cambridge University Press, 2021.
+        
+        [2] Y. A. Cengel and A. J. Ghajar, "Heat And Mass Transfer
+        Fundamentals and Applications", 6th Edition. New York, McGraw Hill
+        Education, 2020.       
+        """
         term1 = 2/self.eigenvalues*j1(self.eigenvalues)
         term2 = np.power(j0(self.eigenvalues),2) + np.power(j1(self.eigenvalues),2)
         term3 = np.exp(-np.power(self.eigenvalues,2) * self.Fo)        
@@ -1436,17 +1525,195 @@ class NonLumpedCylinder():
     
 
     def heatrateof_conv_at_time_t(self):
+        r"""Heat rate of convection between object and surroundings at a given time = t.
+        
+        
+        Parameters
+        ----------
+        `None_required` : 'None'
+            Attributes that are already defined are used in calculation.
+                    
+        
+        Returns
+        -------
+        heat rate of convection : `int or float ; Positive: Heat is gained by object, Negative: Heat is lost by object`
+            Heat rate of convection between solid object and surroundings at time = t.
+        
+        
+        Notes
+        -----
+        Heat rate of convection is calculated using the following formula:
+            
+        .. math::
+            q_{t} = h A_s (T_{infinity} - T_{t})
+            
+        *where:*
+        
+            t = time at which temperature is to be computed    
+        
+            h = heat transfer coefficient    
+        
+            :math:`T_{infinity} = temperature of surrounding fluid`
+        
+            :math:`T_{t} = temperature of surface of solid object at time = t`
+            
+            :math:`A_s` *= surface area of solid object*
+            
+            :math:`q_{t}` *= heat rate of convection at time = t*
+                     
+        
+        Examples
+        --------
+        First import the module **transient**
+        
+        Units used in this example: SI system
+        
+        However, any consistent units can be used
+        
+        >>> from pychemengg.heattransfer import transient
+        >>> cylinder=transient.NonLumpedCylinder(radius=10e-2, surfacearea=1, T_initial=600, volume=np.pi*10e-2**2*1, T_infinity=200, density=7900, thermaldiffusivity=None, specificheat=477, heattransfercoefficient=80, thermalconductivity=14.9)
+        # This will create an instance of 'NonLumpedCylinder' with a name 'cylinder' 
+        # Next call calc_Bi
+        >>> cylinder.calc_Bi()
+        0.5369127516778524
+        # Next call calc_Fo assuming temperature is required at 7 min
+        >>> cylinder.calc_Fo(time=7*60)
+        0.16606958044741657
+        # Let default (=10) eigen values be required
+        >>> cylinder.calc_eigenvalues()
+        array([ 0.97061535,  3.96852663,  7.0915602 , 10.22605944, 13.36390715,
+        16.50318456, 19.64320399, 22.78365791, 25.92438812, 29.06530494])
+        >>> heatrateof_conv_at_time_t()
+        -24040.54791137568
+        
+        
+        References
+        ----------
+        [1] G. F. Nellis and S. A. Klein, "Introduction to Engineering 
+        Heat Transfer", 1st Edition. Cambridge University Press, 2021.
+        
+        [2] Y. A. Cengel and A. J. Ghajar, "Heat And Mass Transfer
+        Fundamentals and Applications", 6th Edition. New York, McGraw Hill
+        Education, 2020.       
+        """
         qrate = (self.heattransfercoefficient * self.surfacearea
-                *(self.solidtemp_at_time_t - self.T_infinity))
+                *(self.T_infinity - self.temperature_of_solid_at_time_t(rposition_tofindtemp=self.radius)))
+        # For convection, surface temperature is required, thereforeput
+        # rposition_tofindtemp = surface position = self.radius, because origin is in middle
         return qrate
 
     
     def maxheattransferpossible(self):
+        r"""Maximum possible heat transfer between solid object and surroundings.
+        
+        
+        Parameters
+        ----------
+        `None_required` : 'None'
+            Attributes that are already defined are used in calculation.
+     
+        
+         Returns
+         -------
+         maximum heat transfer possible: `int or float; Positive: Heat is gained by object, Negative: Heat is lost by object`
+             Maximum heat transfer posssible between object and surroundings.
+        
+        
+        Notes
+        -----
+        Maximum heat transfer possible between solid object and surroundings 
+        is calculated using the following formula. This is based on the assumption
+        that final object temperature will eventually reach surrounding temperature
+        of :math:`T_{infinity}`
+            
+        .. math::
+            q_{max} = m C_p (T_{infinity} - T_{initial})
+            
+        *where:*  
+        
+            m = mass of solid object
+            
+            :math:`C_{p} = specific heat of solid object`
+        
+            :math:`T_{infinity} = temperature of surrounding, which the solid object will eventually attain`
+        
+            :math:`T_{initial} = temperature of solid object at time = initial`
+            
+            :math:`q_{max} = max heat transfer possible`
+                     
+        
+        Examples
+        --------
+        >>> from pychemengg.heattransfer import transient
+        >>> cylinder=transient.NonLumpedCylinder(radius=10e-2, surfacearea=1, T_initial=600, volume=np.pi*10e-2**2*1, T_infinity=200, density=7900, thermaldiffusivity=None, specificheat=477, heattransfercoefficient=80, thermalconductivity=14.9)
+        >>> cylinder.maxheattransferpossible()
+        -47353854.386089675
+        # negative value indicates heat is being lost by the solid object
+        
+        
+        References
+        ----------
+        [1] G. F. Nellis and S. A. Klein, "Introduction to Engineering 
+        Heat Transfer", 1st Edition. Cambridge University Press, 2021.
+        
+        [2] Y. A. Cengel and A. J. Ghajar, "Heat And Mass Transfer
+        Fundamentals and Applications", 6th Edition. New York, McGraw Hill
+        Education, 2020.       
+        """
         qtotal_max = self.mass * self.specificheat * (self.T_infinity - self.T_initial)
         return qtotal_max
 
 
 class NonLumpedSphere():
+    r""" Model for nonlumped analysis of spherical solid object.
+
+
+    Parameters
+    ----------
+    radius : `int or float`
+        Radius of solid object.
+    surfacearea : `int or float`
+        Surface area of solid object.
+    volume : `int or float`
+        Volume of solid object.
+    density : `int or float`
+        Density of solid object.
+    specificheat : `int or float`
+        Specific heat of solid object.
+    thermalconductivity : `int or float`
+        Thermal conductivity of solid object.
+    thermaldiffusivity : `int or float`
+        Thermal diffusivity of solid object.
+    heattransfercoefficient : `int or float`
+        Heat transfer coefficient between solid object and surrounding.
+    T_infinity : `int or float`
+        Temperature of surroundings.
+    T_initial : `int or float`
+        Temperature of solid object at time = 0.
+    
+    
+    
+    Attributes
+    ----------
+    See "Parameters". All parameters are attributes. Additional attributes are listed below.
+    
+    mass : `int or float`
+        Mass of solid object computed as (volume * density) of solid object.
+ 
+    
+
+    Examples
+    --------
+    First import the module **transient**
+    
+    Units used in this example: SI system
+    
+    However, any consistent units can be used
+    
+    >>> from pychemengg.heattransfer import transient
+    >>> potato=transient.NonLumpedSphere(radius=.0275, surfacearea=4*np.pi*.0275**2, volume=4/3*np.pi*0.0275**3, density=1100, specificheat=3900, thermaldiffusivity=0.14e-6, T_initial=8, T_infinity=97, thermalconductivity=0.6, heattransfercoefficient=1400)
+    # This will create an instance of 'NonLumpedCylinder' with a name 'cylinder' 
+    """
     def __init__(self, radius=None,
                  surfacearea=None,
                  volume=None,
@@ -1477,18 +1744,189 @@ class NonLumpedSphere():
 
         
     def calc_Bi(self):        
-        self.Bi = (self.heattransfercoefficient
-                           * self.radius
-                           / self.thermalconductivity)
+        r"""Computes Biot number.
+        
+        
+        Parameters
+        ----------
+        `None_required` : 'None'
+            Attributes that are already defined are used in calculation.
+                                
+        
+        Returns
+        -------
+        Bi : `int or float`
+            Biot number
+        
+        
+        Notes
+        -----
+        Biot number is calculated using the following formula.
+            
+        .. math::
+            Bi = \frac {h L_{c}} {k}
+        
+        *where:*
+        
+            *h = heat transfer coefficient*
+        
+            *k = thermal conductivity of solid object*
+            
+            :math:`L_c` *= characteristic length of solid object = radius*
+            
+            *Bi = Biot number*
+                     
+        
+        Examples
+        --------
+        First import the module **transient**
+        
+        Units used in this example: SI system
+        
+        However, any consistent units can be used
+        
+        >>> from pychemengg.heattransfer import transient
+        >>> potato=transient.NonLumpedSphere(radius=.0275, surfacearea=4*np.pi*.0275**2, volume=4/3*np.pi*0.0275**3, density=1100, specificheat=3900, thermaldiffusivity=0.14e-6, T_initial=8, T_infinity=97, thermalconductivity=0.6, heattransfercoefficient=1400)
+        # This will create an instance of 'NonLumpedSphere' with a name 'potato' 
+        # Next call calc_Bi
+        >>> potato.calc_Bi()
+        64.16666666666667
+        
+        
+        References
+        ----------
+        [1] G. F. Nellis and S. A. Klein, "Introduction to Engineering 
+        Heat Transfer", 1st Edition. Cambridge University Press, 2021.
+        
+        [2] Y. A. Cengel and A. J. Ghajar, "Heat And Mass Transfer
+        Fundamentals and Applications", 6th Edition. New York, McGraw Hill
+        Education, 2020.       
+        """ 
+        self.Bi = (self.heattransfercoefficient * self.radius / self.thermalconductivity)
         return self.Bi
 
     
     def calc_Fo(self, time=None):
+        r"""Computes Fourier number.
+        
+        
+        Parameters
+        ----------
+        time : 'int or float'
+            Time at which temperature or heat transfer is to be evaluated.
+                                
+        
+        Returns
+        -------
+        Fo : `int or float`
+            Fourier number
+        
+        
+        Notes
+        -----
+        Fourier number is calculated using the following formula.
+            
+        .. math::
+            Fo = \frac {\alpha t} {L_c^2}
+        
+        *where:*
+        
+            :math:`\alpha` *= thermal diffusivity*
+        
+            *t = time at which temperature or heat transfer is to be evaluated*
+            
+            :math:`L_c` *= characteristic length = radius*
+            
+            *Fo = Fourier number*
+                     
+        
+        Examples
+        --------
+        First import the module **transient**
+        
+        Units used in this example: SI system
+        
+        However, any consistent units can be used
+        
+        >>> from pychemengg.heattransfer import transient
+        >>> potato=transient.NonLumpedSphere(radius=.0275, surfacearea=4*np.pi*.0275**2, volume=4/3*np.pi*0.0275**3, density=1100, specificheat=3900, thermaldiffusivity=0.14e-6, T_initial=8, T_infinity=97, thermalconductivity=0.6, heattransfercoefficient=1400)
+        # This will create an instance of 'NonLumpedSphere' with a name 'potato' 
+        # Next call calc_Fo for time = 7 min
+       >>> potato.calc_Fo(7*60)
+       0.07767439172397851
+        
+        
+        References
+        ----------
+        [1] G. F. Nellis and S. A. Klein, "Introduction to Engineering 
+        Heat Transfer", 1st Edition. Cambridge University Press, 2021.
+        
+        [2] Y. A. Cengel and A. J. Ghajar, "Heat And Mass Transfer
+        Fundamentals and Applications", 6th Edition. New York, McGraw Hill
+        Education, 2020.       
+        """
         self.Fo = self.thermaldiffusivity * time / (self.radius)**2
         return self.Fo
     
     
-    def calc_eigenvalues(self, numberof_eigenvalues_desired=None):
+    def calc_eigenvalues(self, numberof_eigenvalues_desired=10):
+        r"""Computes eigen values of characteristic equation for spherical geometry.
+        
+        
+        Parameters
+        ----------
+        numberof_eigenvalues_desired : 'int or float' (default = 10)
+            Number of eigen values desired for the characteristic equation.
+                                
+        
+        Returns
+        -------
+        eigenvalues : `np.array of int or float`
+            Eigen values
+        
+        
+        Notes
+        -----
+        Eigen values are calculated as roots of the following equation.
+            
+        .. math::
+            1 - \lambda_n cot(\lambda_n) - Bi = 0 , n = 1 \hspace{2pt} to \hspace{2pt} \infty
+            
+        *where:*
+            
+            :math:`\lambda_n` *= nth eigen value*
+            
+            *Bi = Biot number*
+                     
+        
+        Examples
+        --------
+        First import the module **transient**
+        
+        Units used in this example: SI system
+        
+        However, any consistent units can be used
+        
+        >>> from pychemengg.heattransfer import transient
+        >>> potato=transient.NonLumpedSphere(radius=.0275, surfacearea=4*np.pi*.0275**2, volume=4/3*np.pi*0.0275**3, density=1100, specificheat=3900, thermaldiffusivity=0.14e-6, T_initial=8, T_infinity=97, thermalconductivity=0.6, heattransfercoefficient=1400)
+        # This will create an instance of 'NonLumpedSphere' with a name 'potato' 
+        # Next call calc_Bi 
+        >>> potato.calc_Bi()
+        64.16666666666667
+        # Let first 5 eigen values be required
+        >>> potato.calc_eigenvalues(numberof_eigenvalues_desired=5)
+        array([ 3.09267122,  6.1855719 ,  9.27892517, 12.37294192, 15.46781574])
+        
+        
+        References
+        ----------
+        [1] G. F. Nellis and S. A. Klein, "Introduction to Engineering 
+        Heat Transfer", 1st Edition. Cambridge University Press, 2021.
+        
+        [2] Y. A. Cengel and A. J. Ghajar, "Heat And Mass Transfer
+        Fundamentals and Applications", 6th Edition. New York, McGraw Hill
+        Education, 2020.       
+        """
         sphere_eigenfunction = lambda x,Bi: 1-x/np.tan(x)-Bi
         sphere_eigenvalues = _get_eigenvalues(sphere_eigenfunction, Bi=self.Bi,
                                           numberof_eigenvalues_desired=numberof_eigenvalues_desired)
@@ -1496,7 +1934,71 @@ class NonLumpedSphere():
         return self.eigenvalues
 
         
-    def temperature_of_solid_at_time_t(self, time=None, rposition_tofindtemp=None):
+    def temperature_of_solid_at_time_t(self, rposition_tofindtemp=None):
+        r"""Calculates temperature of solid object at a given time = t and radius = r.
+        
+        
+        Parameters
+        ----------
+        time : `int or float`
+            Time instant from begining of process, at which temperature
+            of solid object is to be found.
+        rposition_tofindtemp : `int or float`
+            Radius from center of spherical object where temperature is to be found.
+                                
+        
+        Returns
+        -------
+        temperature : `int or float`
+            Temperature of solid object at time = t and radius = r.
+        
+        
+        Notes
+        -----
+        Temperature of solid object at time = t and radius = r is calculated using the following formula:
+            
+        .. math::
+            T(t) = T_{infinity} + (T_{initial} - T_{infinity}) \displaystyle\sum_{n=1}^\infty \cfrac{4(sin\lambda_n - \lambda_ncos\lambda_n)}{2 \lambda_n - sin(2 \lambda_n)} e^{- \lambda_n^2 \tau} \frac{sin(\lambda_n r/r_{outside})} {\lambda_n r/r_{outside}}
+        
+        *where:*
+        
+            :math:`T_{infinity} = temperature of surrounding fluid`
+        
+            :math:`T_{initial} = intitial temperature of solid object`
+            
+            :math:`\lambda_n` = :math:`n^{th}` eigen value of :math:`1 - \lambda_n cot(\lambda_n) - Bi = 0` , n = 1 to :math:`\infty`
+            
+            Bi = Biot number
+            
+            :math:`\tau = Fourier number`
+            
+            r = radius from center of solid sphere where temperature is required (r = 0 for center of sphere)
+            
+            :math:`r_{outside}` *= outer radius of the sphere*
+                     
+        
+        Examples
+        --------
+        First import the module **transient**
+        
+        Units used in this example: SI system
+        
+        However, any consistent units can be used
+        
+        >>> from pychemengg.heattransfer import transient
+        >>> potato=transient.NonLumpedSphere(radius=.0275, surfacearea=4*np.pi*.0275**2, volume=4/3*np.pi*0.0275**3, density=1100, specificheat=3900, thermaldiffusivity=0.14e-6, T_initial=8, T_infinity=97, thermalconductivity=0.6, heattransfercoefficient=1400)
+        # This will create an instance of 'NonLumpedSphere' with a name 'potato' 
+        # Next call calc_Bi 
+        >>> potato.calc_Bi()
+        64.16666666666667
+        >>> potato.calc_Fo(7*60)
+        0.07767439172397851
+        # Let first 5 eigen values be required
+        >>> potato.calc_eigenvalues(numberof_eigenvalues_desired=5)
+        array([ 3.09267122,  6.1855719 ,  9.27892517, 12.37294192, 15.46781574])
+        >>> potato.temperature_of_solid_at_time_t(rposition_tofindtemp=0)
+        21.274035537652196
+        """
         term1 = 4*(np.sin(self.eigenvalues)-self.eigenvalues*np.cos(self.eigenvalues))
         term2 = 2*self.eigenvalues - np.sin(2*self.eigenvalues)
         term3 = np.exp(-np.power(self.eigenvalues,2) * self.Fo)
@@ -1508,34 +2010,240 @@ class NonLumpedSphere():
             
         theta = np.sum(term1/term2*term3*term4)
         solidtemp_at_time_t = (self.T_infinity
-                                + (self.T_initial-self.T_infinity)*theta)
+                               + (self.T_initial-self.T_infinity)*theta)
         self.solidtemp_at_time_t  = solidtemp_at_time_t 
         return solidtemp_at_time_t
 
     
     def totalheat_transferred_during_interval_t(self):
+        r"""Heat transferred between solid object and surroundings during 
+        time interval = 0 to t.
+        
+        
+        Parameters
+        ----------
+        `None_required` : 'None'
+            Attributes that are already defined or calculated are used in calculation.
+                    
+        
+        Returns
+        -------
+        total heat transferred : `int or float; Positive: Heat is gained by object, Negative: Heat is lost by object`
+            Total heat transferred between object andsurroundings during interval 0 to t
+        
+        
+        Notes
+        -----
+        Total heat  transferred in interval 0 to t is calculated using the
+        following formula:
+            
+        .. math::
+            q_{0 \to t} = q_{max} \left( 1-3 \displaystyle\sum_{n=1}^\infty \cfrac{4(Sin\lambda_n - \lambda_nCos\lambda_n)}{2 \lambda_n - sin(2 \lambda_n)} e^{- \lambda_n^2 \tau} \frac{sin\lambda_n - \lambda_n cos\lambda_n}{\lambda_n^3} \right)
+            
+        *where:*
+        
+        :math:`\lambda_n` = :math:`n^{th}` eigen value of :math:`x_n tan(x_n) - Bi = 0` , n = 1 to :math:`\infty`
+        
+        Bi = Biot number
+        
+        :math:`\tau = Fourier number`
+        
+        :math:`q_{max}` = *maximum possible heat transfer between solid and surrounding*
+        
+        :math:`q_{0 \to t}` *= heat transferred in time interval [0, t]*
+       
+
+        
+        See Also
+        ----------
+        pychemengg.heattransfer.transient.NonLumpedSphere.maxheattransferpossible
+                
+                     
+        
+        Examples
+        --------
+        First import the module **transient**
+        
+        Units used in this example: SI system
+        
+        However, any consistent units can be used
+        
+        >>> from pychemengg.heattransfer import transient
+        >>> potato=transient.NonLumpedSphere(radius=.0275, surfacearea=4*np.pi*.0275**2, volume=4/3*np.pi*0.0275**3, density=1100, specificheat=3900, thermaldiffusivity=0.14e-6, T_initial=8, T_infinity=97, thermalconductivity=0.6, heattransfercoefficient=1400)
+        # This will create an instance of 'NonLumpedSphere' with a name 'potato' 
+        # Next call calc_Bi 
+        >>> potato.calc_Bi()
+        64.16666666666667
+        >>> potato.calc_Fo(7*60)
+        0.07767439172397851
+        # Let first 5 eigen values be required
+        >>> potato.calc_eigenvalues(numberof_eigenvalues_desired=5)
+        array([ 3.09267122,  6.1855719 ,  9.27892517, 12.37294192, 15.46781574])
+        >>> potato.totalheat_transferred_during_interval_t()
+        33587.246010932045
+        
+        
+        References
+        ----------
+        [1] G. F. Nellis and S. A. Klein, "Introduction to Engineering 
+        Heat Transfer", 1st Edition. Cambridge University Press, 2021.
+        
+        [2] Y. A. Cengel and A. J. Ghajar, "Heat And Mass Transfer
+        Fundamentals and Applications", 6th Edition. New York, McGraw Hill
+        Education, 2020.       
+        """
         term1 = 4*(np.sin(self.eigenvalues)-self.eigenvalues*np.cos(self.eigenvalues))
         term2 = 2*self.eigenvalues - np.sin(2*self.eigenvalues)
         term3 = np.exp(-np.power(self.eigenvalues,2) * self.Fo)        
         term4 = 3*((np.sin(self.eigenvalues-self.eigenvalues*np.cos(self.eigenvalues)))
                    / np.power(self.eigenvalues,3))
         normalized_heatamount = 1 - np.sum(term1/term2*term3*term4)
+        print("normalized heat =", normalized_heatamount)
         heattransferred = self.maxheattransferpossible() * normalized_heatamount
         return heattransferred  
     
 
     def heatrateof_conv_at_time_t(self):
+        r"""Heat rate of convection between object and surroundings at a given time = t.
+        
+        
+        Parameters
+        ----------
+        `None_required` : 'None'
+            Attributes that are already defined are used in calculation.
+                    
+        
+        Returns
+        -------
+        heat rate of convection : `int or float ; Positive: Heat is gained by object, Negative: Heat is lost by object`
+            Heat rate of convection between solid object and surroundings at time = t.
+        
+        
+        Notes
+        -----
+        Heat rate of convection is calculated using the following formula:
+            
+        .. math::
+            q_{t} = h A_s (T_{infinity} - T_{t})
+            
+        *where:*
+        
+            t = time at which temperature is to be computed    
+        
+            h = heat transfer coefficient    
+        
+            :math:`T_{infinity} = temperature of surrounding fluid`
+        
+            :math:`T_{t} = temperature of surface of solid object at time = t`
+            
+            :math:`A_s` *= surface area of solid object*
+            
+            :math:`q_{t}` *= heat rate of convection at time = t*
+                     
+        
+        Examples
+        --------
+        First import the module **transient**
+        
+        Units used in this example: SI system
+        
+        However, any consistent units can be used
+        
+        >>> from pychemengg.heattransfer import transient
+        >>> potato=transient.NonLumpedSphere(radius=.0275, surfacearea=4*np.pi*.0275**2, volume=4/3*np.pi*0.0275**3, density=1100, specificheat=3900, thermaldiffusivity=0.14e-6, T_initial=8, T_infinity=97, thermalconductivity=0.6, heattransfercoefficient=1400)
+        # This will create an instance of 'NonLumpedSphere' with a name 'potato' 
+        # Next call calc_Bi 
+        >>> potato.calc_Bi()
+        64.16666666666667
+        # Consider temperature needs to be found at 7 min
+        >>> potato.calc_Fo(7*60)
+        0.07767439172397851
+        # Let first 5 eigen values be required
+        >>> potato.calc_eigenvalues(numberof_eigenvalues_desired=5)
+        array([ 3.09267122,  6.1855719 ,  9.27892517, 12.37294192, 15.46781574])
+        >>> potato.heatrateof_conv_at_time_t()
+        19.741373294927822
+        
+        
+        References
+        ----------
+        [1] G. F. Nellis and S. A. Klein, "Introduction to Engineering 
+        Heat Transfer", 1st Edition. Cambridge University Press, 2021.
+        
+        [2] Y. A. Cengel and A. J. Ghajar, "Heat And Mass Transfer
+        Fundamentals and Applications", 6th Edition. New York, McGraw Hill
+        Education, 2020.       
+        """
         qrate = (self.heattransfercoefficient * self.surfacearea
-                *(self.solidtemp_at_time_t - self.T_infinity))
+                *(self.T_infinity - self.temperature_of_solid_at_time_t(rposition_tofindtemp=self.radius)))
+        # For convection, surface temperature is required, thereforeput
+        # rposition_tofindtemp = surface position = self.radius, because origin is in middle       
         return qrate
 
     
     def maxheattransferpossible(self):
+        r"""Maximum possible heat transfer between solid object and surroundings.
+        
+        
+        Parameters
+        ----------
+        `None_required` : 'None'
+            Attributes that are already defined are used in calculation.
+     
+        
+         Returns
+         -------
+         maximum heat transfer possible: `int or float; Positive: Heat is gained by object, Negative: Heat is lost by object`
+             Maximum heat transfer posssible between object and surroundings.
+        
+        
+        Notes
+        -----
+        Maximum heat transfer possible between solid object and surroundings 
+        is calculated using the following formula. This is based on the assumption
+        that final object temperature will eventually reach surrounding temperature
+        of :math:`T_{infinity}`
+            
+        .. math::
+            q_{max} = m C_p (T_{infinity} - T_{initial})
+            
+        *where:*  
+        
+            m = mass of solid object
+            
+            :math:`C_{p} = specific heat of solid object`
+        
+            :math:`T_{infinity} = temperature of surrounding, which the solid object will eventually attain`
+        
+            :math:`T_{initial} = temperature of solid object at time = initial`
+            
+            :math:`q_{max} = max heat transfer possible`
+                     
+        
+        Examples
+        --------
+        >>> from pychemengg.heattransfer import transient
+        >>> potato=transient.NonLumpedSphere(radius=.0275, surfacearea=4*np.pi*.0275**2, volume=4/3*np.pi*0.0275**3, density=1100, specificheat=3900, thermaldiffusivity=0.14e-6, T_initial=8, T_infinity=97, thermalconductivity=0.6, heattransfercoefficient=1400)
+        # This will create an instance of 'NonLumpedSphere' with a name 'potato' 
+        >>> potato.maxheattransferpossible()
+        33260.89947104865
+        # negative value indicates heat is being lost by the solid object
+        
+        
+        References
+        ----------
+        [1] G. F. Nellis and S. A. Klein, "Introduction to Engineering 
+        Heat Transfer", 1st Edition. Cambridge University Press, 2021.
+        
+        [2] Y. A. Cengel and A. J. Ghajar, "Heat And Mass Transfer
+        Fundamentals and Applications", 6th Edition. New York, McGraw Hill
+        Education, 2020.       
+        """
         qtotal_max = self.mass * self.specificheat * (self.T_infinity - self.T_initial)
         return qtotal_max
          
                 
-def _get_eigenvalues(func, Bi=5, numberof_eigenvalues_desired=1):
+def _get_eigenvalues(func, Bi=None, numberof_eigenvalues_desired=None):
     sol = []
     increment_leftrange = 1e-5
     incrementvalue = 0.1
