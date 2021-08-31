@@ -183,7 +183,7 @@ class LumpedSystem():
                            / self.thermalconductivity)
         return self.Bi
     
-    def temperature_of_solid_at_time_t(self, time=None):
+    def calc_temperature_of_solid_at_time_t(self, time=None):
         r"""Temperature of solid object at a given time = t.
         
         
@@ -243,7 +243,7 @@ class LumpedSystem():
         # This will create an instance of 'LumpedSystem' with a name 'plate'
         # Let temperature at time = 60 s after start of the process be needed.
         # Next call the following
-        >>> plate.temperature_of_solid_at_time_t(time=60s)
+        >>> plate.calc_temperature_of_solid_at_time_t(time=60s)
         617.0619799301729
         
         
@@ -262,7 +262,7 @@ class LumpedSystem():
                                 + (self.T_initial-self.T_infinity)*np.exp(-b*time+0j))
         return solidtemp_at_time_t.real
     
-    def heatrateof_conv_at_time_t(self, time=None):
+    def calc_heatrateof_conv_at_time_t(self, time=None):
         r"""Heat rate of convection between object and surroundings at a given time = t.
         
         
@@ -313,7 +313,7 @@ class LumpedSystem():
         # This will create an instance of 'LumpedSystem' with a name 'plate'
         # Let temperature at time = 60 s after start of the process be needed.
         # Next call the following
-        >>> plate.heatrateof_conv_at_time_t(time=60)
+        >>> plate.calc_heatrateof_conv_at_time_t(time=60)
         -63818.56987259833
         # negative value indicates heat is being lost by the solid object
         
@@ -328,10 +328,10 @@ class LumpedSystem():
         Education, 2020.  
         """
         q_rate = (self.heattransfercoefficient * self.surfacearea
-                *(self.temperature_of_solid_at_time_t(time=time) - self.T_infinity))
+                *(self.calc_temperature_of_solid_at_time_t(time=time) - self.T_infinity))
         return q_rate
 
-    def totalheat_transferred_during_interval_t(self, time=None):
+    def calc_totalheat_transferred_during_interval_t(self, time=None):
         r"""Heat transferred between solid object and surroundings during 
         time interval = 0 to t.
         
@@ -387,7 +387,7 @@ class LumpedSystem():
         # This will create an instance of 'LumpedSystem' with a name 'plate'
         # Let heat transferred in time = 60 s after start of the process be needed.
         # Next call the following
-        >>> plate.totalheat_transferred_during_interval_t(time=60)
+        >>> plate.calc_totalheat_transferred_during_interval_t(time=60)
         -4087185.6290410785
         # negative value indicates heat is being lost by the solid object
         
@@ -402,10 +402,10 @@ class LumpedSystem():
         Education, 2020.   
         """
         qtotal = (self.mass * self.specificheat
-                 * (self.temperature_of_solid_at_time_t(time=time) - self.T_initial))
+                 * (self.calc_temperature_of_solid_at_time_t(time=time) - self.T_initial))
         return qtotal
     
-    def maxheattransferpossible(self):
+    def calc_maxheattransferpossible(self):
         r"""Maximum possible heat transfer between solid object and surroundings.
         
         
@@ -457,7 +457,7 @@ class LumpedSystem():
         >>> plate = transient.LumpedSystem(thermalconductivity=180, density=2800, specificheat=880, T_initial=700, T_infinity=15, heattransfercoefficient=53, surfacearea=2*1, volume=1*2e-2)
         # This will create an instance of 'LumpedSystem' with a name 'plate'
         # Next call the following
-        >>> plate.maxheattransferpossible()
+        >>> plate.calc_maxheattransferpossible()
         -33756800.0
         # negative value indicates heat is being lost by the solid object
         
@@ -753,7 +753,7 @@ class NonLumpedSlab():
         return self.eigenvalues
 
         
-    def temperature_of_solid_at_time_t(self, time=None, xposition_tofindtemp=None):
+    def calc_temperature_of_solid_at_time_t(self, time=None, xposition_tofindtemp=None):
         r"""Calculates temperature of solid object at a given time = t and position = x.
         
         
@@ -814,7 +814,7 @@ class NonLumpedSlab():
         plate.calc_eigenvalues()
         array([ 0.14717481,  3.1485222 ,  6.28665585,  9.42709237, 12.56810661,
                15.70935213, 18.85071334, 21.99214066, 25.13360932, 28.27510552])
-        >>> plate.temperature_of_solid_at_time_t(time=7*60, xposition_tofindtemp=plate.thickness/2)
+        >>> plate.calc_temperature_of_solid_at_time_t(time=7*60, xposition_tofindtemp=plate.thickness/2)
         279.76430920417204
         
         
@@ -837,7 +837,7 @@ class NonLumpedSlab():
         return self.solidtemp_at_time_t
     
 
-    def heatrateof_conv_at_time_t(self, time=None):
+    def calc_heatrateof_conv_at_time_t(self, time=None):
         r"""Heat rate of convection between object and surroundings at a given time = t.
         
         
@@ -895,10 +895,10 @@ class NonLumpedSlab():
         plate.calc_eigenvalues()
         array([ 0.14717481,  3.1485222 ,  6.28665585,  9.42709237, 12.56810661,
                15.70935213, 18.85071334, 21.99214066, 25.13360932, 28.27510552])
-        >>> plate.temperature_of_solid_at_time_t(time=7*60, xposition_tofindtemp=plate.thickness/2)
+        >>> plate.calc_temperature_of_solid_at_time_t(time=7*60, xposition_tofindtemp=plate.thickness/2)
         279.76430920417204
         # Next call the following
-        >>> plate.heatrateof_conv_at_time_t(time=7*60)
+        >>> plate.calc_heatrateof_conv_at_time_t(time=7*60)
         26428.282895499357
         # Positive sign indicates gain of heat by the solid object
         
@@ -913,13 +913,13 @@ class NonLumpedSlab():
         Education, 2020.       
         """
         qrate = (self.heattransfercoefficient * self.surfacearea
-                *(self.T_infinity - self.temperature_of_solid_at_time_t(time=None, xposition_tofindtemp=self.thickness/2)))
+                *(self.T_infinity - self.calc_temperature_of_solid_at_time_t(time=None, xposition_tofindtemp=self.thickness/2)))
         # For convection, surface temperature is required, therefore let
         # xposition_tofindtemp = surface position = thickness/2 because origin is in middle
         return qrate
 
 
-    def totalheat_transferred_during_interval_t(self):
+    def calc_totalheat_transferred_during_interval_t(self):
         r"""Heat transferred between solid object and surroundings during 
         time interval = 0 to t.
         
@@ -956,7 +956,7 @@ class NonLumpedSlab():
         
         See Also
         ----------
-        pychemengg.heattransfer.transient.NonLumpedSlab.maxheattransferpossible
+        pychemengg.heattransfer.transient.NonLumpedSlab.calc_maxheattransferpossible
                 
                      
         
@@ -980,7 +980,7 @@ class NonLumpedSlab():
         plate.calc_eigenvalues()
         array([ 0.14717481,  3.1485222 ,  6.28665585,  9.42709237, 12.56810661,
                15.70935213, 18.85071334, 21.99214066, 25.13360932, 28.27510552])
-        >>> plate.totalheat_transferred_during_interval_t()
+        >>> plate.calc_totalheat_transferred_during_interval_t()
         33472028.92491645
         # Positive value means heat is gained by the object.
         
@@ -999,10 +999,10 @@ class NonLumpedSlab():
         term3 = np.exp(-np.power(self.eigenvalues,2) * self.Fo)        
         term4 = np.sin(self.eigenvalues)/self.eigenvalues
         normalized_heatamount = 1 - np.sum(term1/term2*term3*term4)
-        heattransferred = self.maxheattransferpossible() * normalized_heatamount
+        heattransferred = self.calc_maxheattransferpossible() * normalized_heatamount
         return heattransferred  
     
-    def maxheattransferpossible(self):
+    def calc_maxheattransferpossible(self):
         r"""Maximum possible heat transfer between solid object and surroundings.
         
         
@@ -1052,7 +1052,7 @@ class NonLumpedSlab():
         >>> from pychemengg.heattransfer import transient
         >>> plate = transient.NonLumpedSlab(thickness=4e-2, surfacearea=1, volume=1*4e-2, density=8530, specificheat=380, thermalconductivity=110, thermaldiffusivity=None, heattransfercoefficient=120, T_infinity=500, T_initial=20)
         # This will create an instance of 'NonLumpedSlab' with a name 'plate'
-        >>> plate.maxheattransferpossible()
+        >>> plate.calc_maxheattransferpossible()
         62234880.0
         # negative value indicates heat is being lost by the solid object
         
@@ -1349,7 +1349,7 @@ class NonLumpedCylinder():
         return self.eigenvalues
 
         
-    def temperature_of_solid_at_time_t(self, rposition_tofindtemp=None):
+    def calc_temperature_of_solid_at_time_t(self, rposition_tofindtemp=None):
         r"""Calculates temperature of solid object at a given time = t and radius = r.
         
         
@@ -1417,7 +1417,7 @@ class NonLumpedCylinder():
         >>> cylinder.calc_eigenvalues()
         array([ 0.97061535,  3.96852663,  7.0915602 , 10.22605944, 13.36390715,
         16.50318456, 19.64320399, 22.78365791, 25.92438812, 29.06530494])
-        >>> cylinder.temperature_of_solid_at_time_t(rposition_tofindtemp=0)
+        >>> cylinder.calc_temperature_of_solid_at_time_t(rposition_tofindtemp=0)
         578.8399893522001
         """
         term1 = 2/self.eigenvalues*j1(self.eigenvalues)
@@ -1431,7 +1431,7 @@ class NonLumpedCylinder():
         return solidtemp_at_time_t
 
     
-    def totalheat_transferred_during_interval_t(self):
+    def calc_totalheat_transferred_during_interval_t(self):
         r"""Heat transferred between solid object and surroundings during 
         time interval = 0 to t.
         
@@ -1477,7 +1477,7 @@ class NonLumpedCylinder():
         
         See Also
         ----------
-        pychemengg.heattransfer.transient.NonLumpedCylinder.maxheattransferpossible
+        pychemengg.heattransfer.transient.NonLumpedCylinder.calc_maxheattransferpossible
                 
                      
         
@@ -1502,7 +1502,7 @@ class NonLumpedCylinder():
         >>> cylinder.calc_eigenvalues()
         array([ 0.97061535,  3.96852663,  7.0915602 , 10.22605944, 13.36390715,
         16.50318456, 19.64320399, 22.78365791, 25.92438812, 29.06530494])
-        >>> cylinder.totalheat_transferred_during_interval_t()
+        >>> cylinder.calc_totalheat_transferred_during_interval_t()
         -7052779.476897862
         
         
@@ -1520,11 +1520,11 @@ class NonLumpedCylinder():
         term3 = np.exp(-np.power(self.eigenvalues,2) * self.Fo)        
         term4 = 2*j1(self.eigenvalues)/self.eigenvalues
         normalized_heatamount = 1 - np.sum(term1/term2*term3*term4)
-        heattransferred = self.maxheattransferpossible() * normalized_heatamount
+        heattransferred = self.calc_maxheattransferpossible() * normalized_heatamount
         return heattransferred  
     
 
-    def heatrateof_conv_at_time_t(self):
+    def calc_heatrateof_conv_at_time_t(self):
         r"""Heat rate of convection between object and surroundings at a given time = t.
         
         
@@ -1583,7 +1583,7 @@ class NonLumpedCylinder():
         >>> cylinder.calc_eigenvalues()
         array([ 0.97061535,  3.96852663,  7.0915602 , 10.22605944, 13.36390715,
         16.50318456, 19.64320399, 22.78365791, 25.92438812, 29.06530494])
-        >>> heatrateof_conv_at_time_t()
+        >>> calc_heatrateof_conv_at_time_t()
         -24040.54791137568
         
         
@@ -1597,13 +1597,13 @@ class NonLumpedCylinder():
         Education, 2020.       
         """
         qrate = (self.heattransfercoefficient * self.surfacearea
-                *(self.T_infinity - self.temperature_of_solid_at_time_t(rposition_tofindtemp=self.radius)))
+                *(self.T_infinity - self.calc_temperature_of_solid_at_time_t(rposition_tofindtemp=self.radius)))
         # For convection, surface temperature is required, thereforeput
         # rposition_tofindtemp = surface position = self.radius, because origin is in middle
         return qrate
 
     
-    def maxheattransferpossible(self):
+    def calc_maxheattransferpossible(self):
         r"""Maximum possible heat transfer between solid object and surroundings.
         
         
@@ -1646,7 +1646,7 @@ class NonLumpedCylinder():
         --------
         >>> from pychemengg.heattransfer import transient
         >>> cylinder=transient.NonLumpedCylinder(radius=10e-2, surfacearea=1, T_initial=600, volume=np.pi*10e-2**2*1, T_infinity=200, density=7900, thermaldiffusivity=None, specificheat=477, heattransfercoefficient=80, thermalconductivity=14.9)
-        >>> cylinder.maxheattransferpossible()
+        >>> cylinder.calc_maxheattransferpossible()
         -47353854.386089675
         # negative value indicates heat is being lost by the solid object
         
@@ -1934,7 +1934,7 @@ class NonLumpedSphere():
         return self.eigenvalues
 
         
-    def temperature_of_solid_at_time_t(self, rposition_tofindtemp=None):
+    def calc_temperature_of_solid_at_time_t(self, rposition_tofindtemp=None):
         r"""Calculates temperature of solid object at a given time = t and radius = r.
         
         
@@ -1996,7 +1996,7 @@ class NonLumpedSphere():
         # Let first 5 eigen values be required
         >>> potato.calc_eigenvalues(numberof_eigenvalues_desired=5)
         array([ 3.09267122,  6.1855719 ,  9.27892517, 12.37294192, 15.46781574])
-        >>> potato.temperature_of_solid_at_time_t(rposition_tofindtemp=0)
+        >>> potato.calc_temperature_of_solid_at_time_t(rposition_tofindtemp=0)
         21.274035537652196
         """
         term1 = 4*(np.sin(self.eigenvalues)-self.eigenvalues*np.cos(self.eigenvalues))
@@ -2015,7 +2015,7 @@ class NonLumpedSphere():
         return solidtemp_at_time_t
 
     
-    def totalheat_transferred_during_interval_t(self):
+    def calc_totalheat_transferred_during_interval_t(self):
         r"""Heat transferred between solid object and surroundings during 
         time interval = 0 to t.
         
@@ -2056,7 +2056,7 @@ class NonLumpedSphere():
         
         See Also
         ----------
-        pychemengg.heattransfer.transient.NonLumpedSphere.maxheattransferpossible
+        pychemengg.heattransfer.transient.NonLumpedSphere.calc_maxheattransferpossible
                 
                      
         
@@ -2079,8 +2079,8 @@ class NonLumpedSphere():
         # Let first 5 eigen values be required
         >>> potato.calc_eigenvalues(numberof_eigenvalues_desired=5)
         array([ 3.09267122,  6.1855719 ,  9.27892517, 12.37294192, 15.46781574])
-        >>> potato.totalheat_transferred_during_interval_t()
-        33587.246010932045
+        >>> potato.calc_totalheat_transferred_during_interval_t()
+        22929.965184224005
         
         
         References
@@ -2095,15 +2095,15 @@ class NonLumpedSphere():
         term1 = 4*(np.sin(self.eigenvalues)-self.eigenvalues*np.cos(self.eigenvalues))
         term2 = 2*self.eigenvalues - np.sin(2*self.eigenvalues)
         term3 = np.exp(-np.power(self.eigenvalues,2) * self.Fo)        
-        term4 = 3*((np.sin(self.eigenvalues-self.eigenvalues*np.cos(self.eigenvalues)))
+        term4 = 3*((np.sin(self.eigenvalues)-self.eigenvalues*np.cos(self.eigenvalues))
                    / np.power(self.eigenvalues,3))
         normalized_heatamount = 1 - np.sum(term1/term2*term3*term4)
         print("normalized heat =", normalized_heatamount)
-        heattransferred = self.maxheattransferpossible() * normalized_heatamount
+        heattransferred = self.calc_maxheattransferpossible() * normalized_heatamount
         return heattransferred  
     
 
-    def heatrateof_conv_at_time_t(self):
+    def calc_heatrateof_conv_at_time_t(self):
         r"""Heat rate of convection between object and surroundings at a given time = t.
         
         
@@ -2161,7 +2161,7 @@ class NonLumpedSphere():
         # Let first 5 eigen values be required
         >>> potato.calc_eigenvalues(numberof_eigenvalues_desired=5)
         array([ 3.09267122,  6.1855719 ,  9.27892517, 12.37294192, 15.46781574])
-        >>> potato.heatrateof_conv_at_time_t()
+        >>> potato.calc_heatrateof_conv_at_time_t()
         19.741373294927822
         
         
@@ -2175,13 +2175,13 @@ class NonLumpedSphere():
         Education, 2020.       
         """
         qrate = (self.heattransfercoefficient * self.surfacearea
-                *(self.T_infinity - self.temperature_of_solid_at_time_t(rposition_tofindtemp=self.radius)))
+                *(self.T_infinity - self.calc_temperature_of_solid_at_time_t(rposition_tofindtemp=self.radius)))
         # For convection, surface temperature is required, thereforeput
         # rposition_tofindtemp = surface position = self.radius, because origin is in middle       
         return qrate
 
     
-    def maxheattransferpossible(self):
+    def calc_maxheattransferpossible(self):
         r"""Maximum possible heat transfer between solid object and surroundings.
         
         
@@ -2225,7 +2225,7 @@ class NonLumpedSphere():
         >>> from pychemengg.heattransfer import transient
         >>> potato=transient.NonLumpedSphere(radius=.0275, surfacearea=4*np.pi*.0275**2, volume=4/3*np.pi*0.0275**3, density=1100, specificheat=3900, thermaldiffusivity=0.14e-6, T_initial=8, T_infinity=97, thermalconductivity=0.6, heattransfercoefficient=1400)
         # This will create an instance of 'NonLumpedSphere' with a name 'potato' 
-        >>> potato.maxheattransferpossible()
+        >>> potato.calc_maxheattransferpossible()
         33260.89947104865
         # negative value indicates heat is being lost by the solid object
         
@@ -2270,10 +2270,7 @@ def _get_eigenvalues(func, Bi=None, numberof_eigenvalues_desired=None):
 
 class SemiInfinite():
     
-    def __init__(self, option=None,
-                 distance_fromsurface=None,
-                 time=None,
-                 thermaldiffusivity=None,
+    def __init__(self, thermaldiffusivity=None,
                  thermalconductivity=None,
                  specificheat=None,
                  density=None,
@@ -2283,9 +2280,6 @@ class SemiInfinite():
                  surfaceheatflux=None,
                  surfaceheattransfercoefficient=None,
                  surfaceenergypulse=None):
-        self.option = option
-        self.distance_fromsurface = distance_fromsurface
-        self.time = time
         self.thermalconductivity = thermalconductivity
         self.specificheat=specificheat
         self.density=density
@@ -2301,38 +2295,41 @@ class SemiInfinite():
         else:
             self.thermaldiffusivity = thermaldiffusivity
   
-    def temp_at_given_distance_and_time(self):
-        if self.option == "specified_surfacetemperature":
-            theta = erfc(self.distance_fromsurface/2/np.power(self.thermaldiffusivity*self.time, 0.5))
+    def calc_temperature(self, option=None, xposition_tofindtemp=None, time=None):
+        self.option = option
+        self.xposition_tofindtemp = xposition_tofindtemp
+        self.time = time
+        if self.option == "surfacetemperature_specified":
+            theta = erfc(self.xposition_tofindtemp/2/np.power(self.thermaldiffusivity*self.time, 0.5))
             temp_at_given_x_and_time = self.T_initial + theta * (self.T_surface-self.T_initial)
-        if self.option == "specified_surfaceheatflux":
+        if self.option == "surfaceheatflux_specified":
             term1 = np.power(4*self.thermaldiffusivity*self.time/np.pi,0.5)
-            term2 = np.exp(np.power(-self.distance_fromsurface,2)/4/self.thermaldiffusivity/self.time)
-            term3 = self.distance_fromsurface*erfc(self.distance_fromsurface/2/np.power(self.thermaldiffusivity*self.time,0.5))
+            term2 = np.exp(np.power(-self.xposition_tofindtemp,2)/4/self.thermaldiffusivity/self.time)
+            term3 = self.xposition_tofindtemp*erfc(self.xposition_tofindtemp/2/np.power(self.thermaldiffusivity*self.time,0.5))
             temp_at_given_x_and_time = self.T_initial + self.surfaceheatflux/self.thermalconductivity*(term1*term2-term3)
-        if self.option == "specified_surfaceconvection":
-            term0 = self.distance_fromsurface/2/np.power(self.thermaldiffusivity*self.time, 0.5)
+        if self.option == "surfaceconvection_specified":
+            term0 = self.xposition_tofindtemp/2/np.power(self.thermaldiffusivity*self.time, 0.5)
             term1 = erfc(term0)
-            term2 = self.surfaceheattransfercoefficient*self.distance_fromsurface/self.thermalconductivity
+            term2 = self.surfaceheattransfercoefficient*self.xposition_tofindtemp/self.thermalconductivity
             term3 = np.power(self.surfaceheattransfercoefficient, 2)*self.thermaldiffusivity*self.time/np.power(self.thermalconductivity,2)
             term4 = self.surfaceheattransfercoefficient*np.power(self.thermaldiffusivity*self.time, 0.5)/self.thermalconductivity
             theta = term1 - np.exp(term2+term3)*erfc(term0+term4)
             temp_at_given_x_and_time = self.T_initial + theta * (self.T_infinity-self.T_initial)
-        if self.option == "specified_surfaceenergypulse":
+        if self.option == "surfaceenergypulse_specified":
             term1 = self.surfaceenergypulse/self.thermalconductivity
             term2 = np.power(np.pi*self.time/self.thermaldiffusivity, 0.5)
-            term3 = np.exp(- np.power(self.distance_fromsurface,2)/4/self.thermaldiffusivity/self.time)
+            term3 = np.exp(- np.power(self.xposition_tofindtemp,2)/4/self.thermaldiffusivity/self.time)
             temp_at_given_x_and_time = self.T_initial + term1/term2*term3
         self.temp_at_given_x_and_time = temp_at_given_x_and_time
         return self.temp_at_given_x_and_time
     
-    def heatflux_at_surface (self):
-        if self.option == "specified_surfacetemperature":
+    def calc_heatflux_at_surface (self):
+        if self.option == "surfacetemperature_specified":
             term1 = np.power(np.pi*self.thermaldiffusivity*self.time, 0.5)
             heatflux = self.thermalconductivity * (self.T_surface - self.T_initial)/term1
             return heatflux
             
-    def contacting_temp(self, other):
+    def calc_temperature_atcontact(self, other):
         self_param = np.power(self.thermalconductivity*self.density*self.specificheat, 0.5)
         other_param = np.power(other.thermalconductivity*other.density*other.specificheat, 0.5)
         term1 = self_param*self.T_initial + other_param*other.T_initial
@@ -2361,7 +2358,7 @@ if __name__ == '__main__':
                              heattransfercoefficient=heattransfercoefficient_fxn(vel[0]),
                              surfacearea=2*1,
                              volume=1*2e-2)
-        return (plate.temperature_of_solid_at_time_t(time))-50
+        return (plate.calc_temperature_of_solid_at_time_t(time))-50
     guess_value_vel = [1]
     velocity_needed = fsolve(findvel, guess_value_vel)
     heattransfercoefficient_needed = heattransfercoefficient_fxn(velocity_needed[0])
@@ -2396,7 +2393,7 @@ if __name__ == '__main__':
     plate.Bi()
     plate.Fo(time=7*60)
     plate.calc_eigenvalues(numberof_eigenvalues_desired=10)
-    plate.temperature_of_solid_at_time_t(time=7*60, xposition_tofindtemp=plate.thickness/2)
+    plate.calc_temperature_of_solid_at_time_t(time=7*60, xposition_tofindtemp=plate.thickness/2)
 
     
     #Ghajjar 4-4 6th edition
@@ -2409,9 +2406,9 @@ if __name__ == '__main__':
     cylinder.Bi()
     cylinder.Fo(time=45*60)
     cylinder.calc_eigenvalues(numberof_eigenvalues_desired=10)
-    cylinder.temperature_of_solid_at_time_t(time=45*60, rposition_tofindtemp=0)
-    cylinder.maxheattransferpossible()
-    print("heat transferred_",cylinder.totalheat_transferred_during_interval_t())
+    cylinder.calc_temperature_of_solid_at_time_t(time=45*60, rposition_tofindtemp=0)
+    cylinder.calc_maxheattransferpossible()
+    print("heat transferred_",cylinder.calc_totalheat_transferred_during_interval_t())
     
 
 # Ghajjar 4-67 Problem
@@ -2438,8 +2435,8 @@ if __name__ == '__main__':
     #     print("fourier =", tomato.Fo(time=2*3600))
     #     print(tomato.calc_eigenvalues(numberof_eigenvalues_desired=1))
     #     print("eigen =", tomato.eigenvalues)
-    #     temp_center = tomato.temperature_of_solid_at_time_t(time=2*3600, rposition_tofindtemp=0)
-    #     temp_surface = tomato.temperature_of_solid_at_time_t(time=2*3600, rposition_tofindtemp=0.04)
+    #     temp_center = tomato.calc_temperature_of_solid_at_time_t(time=2*3600, rposition_tofindtemp=0)
+    #     temp_surface = tomato.calc_temperature_of_solid_at_time_t(time=2*3600, rposition_tofindtemp=0.04)
     #     return abs(temp_center-10)+abs(temp_surface-7.1)
     # tomato = fsolve(problem4_67, 100)
 
@@ -2461,7 +2458,7 @@ if __name__ == '__main__':
         potato.Fo(time=time[0])
         potato.calc_eigenvalues(numberof_eigenvalues_desired=1)
         potato.eigenvalues
-        temp_center = potato.temperature_of_solid_at_time_t(time=time[0], rposition_tofindtemp=0)
+        temp_center = potato.calc_temperature_of_solid_at_time_t(time=time[0], rposition_tofindtemp=0)
         return temp_center-70
      
     potatocooktime = fsolve(problem4_68, 1000)
@@ -2484,10 +2481,10 @@ if __name__ == '__main__':
     wall.Bi()
     wall.Fo(time=8*60)
     wall.calc_eigenvalues(numberof_eigenvalues_desired=1)
-    wall.temperature_of_solid_at_time_t(time=8*60, xposition_tofindtemp=0)
-    wall.temperature_of_solid_at_time_t(time=8*60, xposition_tofindtemp=40e-3)
-    # print(wall.heatrateof_conv_at_time_t())
-    print(wall.totalheat_transferred_during_interval_t())
+    wall.calc_temperature_of_solid_at_time_t(time=8*60, xposition_tofindtemp=0)
+    wall.calc_temperature_of_solid_at_time_t(time=8*60, xposition_tofindtemp=40e-3)
+    # print(wall.calc_heatrateof_conv_at_time_t())
+    print(wall.calc_totalheat_transferred_during_interval_t())
     
     
     
@@ -2507,7 +2504,7 @@ if __name__ == '__main__':
 #         wall.Fo(time=time[0])
 #         eigens = wall.calc_eigenvalues(numberof_eigenvalues_desired=1)
 #         # print("eign", eigens)
-#         T0 = wall.temperature_of_solid_at_time_t(time=time[0], xposition_tofindtemp=0)
+#         T0 = wall.calc_temperature_of_solid_at_time_t(time=time[0], xposition_tofindtemp=0)
 #         return T0-550
     
 #     time_solution = fsolve(problem5_38, 1)
@@ -2530,7 +2527,7 @@ if __name__ == '__main__':
 #         wall.Fo(time=time[0])
 #         eigens = wall.calc_eigenvalues(numberof_eigenvalues_desired=5)
 #         # print("eign", eigens)
-#         T0 = wall.temperature_of_solid_at_time_t(time=time[0], xposition_tofindtemp=0)
+#         T0 = wall.calc_temperature_of_solid_at_time_t(time=time[0], xposition_tofindtemp=0)
 #         return T0-750
     
 #     time_solution = fsolve(problem5_40, 1)
@@ -2554,8 +2551,8 @@ if __name__ == '__main__':
 #         print(bearings.thermaldiffusivity)
 #         eigens = bearings.calc_eigenvalues(numberof_eigenvalues_desired=1)
 #         print("eign", eigens)
-#         T0 = bearings.temperature_of_solid_at_time_t(time=time[0],rposition_tofindtemp=0)
-#         qrate = bearings.totalheat_transferred_during_interval_t()
+#         T0 = bearings.calc_temperature_of_solid_at_time_t(time=time[0],rposition_tofindtemp=0)
+#         qrate = bearings.calc_totalheat_transferred_during_interval_t()
 #         print("qrate", qrate)
 #         return T0-50
     
@@ -2578,7 +2575,7 @@ if __name__ == '__main__':
         egg.Bi()
         egg.Fo(time=time[0])
         egg.calc_eigenvalues(numberof_eigenvalues_desired=1)
-        temp_center = egg.temperature_of_solid_at_time_t(time=time[0], rposition_tofindtemp=0)
+        temp_center = egg.calc_temperature_of_solid_at_time_t(time=time[0], rposition_tofindtemp=0)
         return temp_center-75
          
     eggcooktime = fsolve(example6_22, 1000)
@@ -2590,66 +2587,66 @@ if __name__ == '__main__':
 # Ghajjar 5t edition and 6th Edition
 # Example 4-6
     def example4_6(burydistance):
-        pipe = SemiInfinite(option="specified_surfacetemperature",
+        pipe = SemiInfinite(option="surfacetemperature_specified",
                             T_surface=-10,
                             T_initial=15,
                             thermalconductivity=0.4,
                             thermaldiffusivity=0.15e-6,
                             time = 90*24*3600,
-                            distance_fromsurface=burydistance[0])
-        return pipe.temp_at_given_distance_and_time()-0
+                            xposition_tofindtemp=burydistance[0])
+        return pipe.calc_temperature()-0
     burydist = fsolve(example4_6, 1)
     print(f"burydistance = {burydist[0]: 0.2f} m and ans from book = 0.80 m")
 
 # Ghajjar 6th edition
 # Example 4-7
 
-    wood = SemiInfinite(option="specified_surfaceheatflux",
+    wood = SemiInfinite(option="surfaceheatflux_specified",
                         time = 20*60,
                         T_initial=20,
                         surfaceheatflux=1250,
                         thermalconductivity=0.159,
                         thermaldiffusivity=1.75e-7,
-                        distance_fromsurface=0)
-    temp_wood = wood.temp_at_given_distance_and_time()
+                        xposition_tofindtemp=0)
+    temp_wood = wood.calc_temperature()
     print(f"temp of wood surface from code = {temp_wood: 0.0f} C and ans from book is 149 C")
     
-    aluminum = SemiInfinite(option="specified_surfaceheatflux",
+    aluminum = SemiInfinite(option="surfaceheatflux_specified",
                         time = 20*60,
                         T_initial=20,
                         surfaceheatflux=1250,
                         thermalconductivity=237,
                         thermaldiffusivity=9.71e-5,
-                        distance_fromsurface=0)
-    temp_aluminum = aluminum.temp_at_given_distance_and_time()
+                        xposition_tofindtemp=0)
+    temp_aluminum = aluminum.calc_temperature()
     print(f"temp of aluminum surface from code = {temp_aluminum: 0.0f} C and ans from book is 22 C")
     
     # Ghajjar 6th edition
     # Example 4-7
     
-    plate = SemiInfinite(option="specified_surfaceconvection",
+    plate = SemiInfinite(option="surfaceconvection_specified",
                          T_infinity=-70,
                          T_initial=10,
                          thermalconductivity=16.3,
                          specificheat=500,
                          density=8000,
                          surfaceheattransfercoefficient=300,
-                         distance_fromsurface=0.01,
+                         xposition_tofindtemp=0.01,
                          time=30*60)
-    tempatbolttip = plate.temp_at_given_distance_and_time()
+    tempatbolttip = plate.calc_temperature()
     print(f"temp at bolt tip from code = {tempatbolttip: 0.1f} C and from book = -40.7 C")
     
 # Ghajjar 5th Edn
 # Problem 4_99
     def problem4_99(energypulse):
-        slab = SemiInfinite(option="specified_surfaceenergypulse",
+        slab = SemiInfinite(option="surfaceenergypulse_specified",
                             thermalconductivity=63.9,
                             thermaldiffusivity=18.8e-6,
                             time=30,
-                            distance_fromsurface=25e-3,
+                            xposition_tofindtemp=25e-3,
                             T_initial=20,
                             surfaceenergypulse=energypulse[0])
-        temp = slab.temp_at_given_distance_and_time()
+        temp = slab.calc_temperature()
 
         return temp-130
     energy = fsolve(problem4_99, 100)
@@ -2658,26 +2655,26 @@ if __name__ == '__main__':
 # Ghajjar 5th Edn
 # Problem 4_102
 
-    human = SemiInfinite(option="specified_surfacetemperature",
+    human = SemiInfinite(option="surfacetemperature_specified",
                         thermalconductivity=1,
                         density=1,
                         specificheat=1.1e3**2,
                         T_initial=32)
     
-    aluminum = SemiInfinite(option="specified_surfacetemperature",
+    aluminum = SemiInfinite(option="surfacetemperature_specified",
                         thermalconductivity=1,
                         density=1,
                         specificheat=24e3**2,
                         T_initial=20)
-    temp_human_alumium = human.contacting_temp(aluminum)
+    temp_human_alumium = human.calc_temperature_atcontact(aluminum)
     print(f"contacting temp of human and aluminum = {temp_human_alumium: 0.1f} C and from book = 20.5 C ")
     
-    wood = SemiInfinite(option="specified_surfacetemperature",
+    wood = SemiInfinite(option="surfacetemperature_specified",
                         thermalconductivity=1,
                         density=1,
                         specificheat=0.38e3**2,
                         T_initial=20)
-    temp_human_alumium = human.contacting_temp(wood)
+    temp_human_alumium = human.calc_temperature_atcontact(wood)
     print(f"contacting temp of human and aluminum = {temp_human_alumium: 0.1f} C and from book = 28.9 C ")
                         
 
