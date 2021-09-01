@@ -1,0 +1,309 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>pychemengg.utils.method_aliases &mdash; PyChemEngg 0.1a9 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../_static/css/my_theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/css/my_theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/my_theme.css" type="text/css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/katex-math.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.12.0/contrib/auto-render.min.js"></script>
+        <script src="../../../_static/katex_autorenderer.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> PyChemEngg
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1a9
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption" role="heading"><span class="caption-text">User Tutorial</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../userguide/heattransfer/index.html">Heat Transfer</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Reference Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../autosummary_pychemengg.html">PyChemEngg API Reference</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">PyChemEngg</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../../index.html">Module code</a> &raquo;</li>
+        
+      <li>pychemengg.utils.method_aliases</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for pychemengg.utils.method_aliases</h1><div class="highlight"><pre>
+<span></span><span class="c1"># -*- coding: utf-8 -*-</span>
+
+<span class="c1"># Original author: José Nahuel Cuesta Luengo :</span>
+<span class="c1"># License: MIT License</span>
+<span class="c1"># Updated to Python 3 by Harvinder Singh Gill</span>
+
+<div class="viewcode-block" id="alias"><a class="viewcode-back" href="../../../_autosummary/pychemengg.utils.method_aliases.alias.html#pychemengg.utils.method_aliases.alias">[docs]</a><span class="k">class</span> <span class="nc">alias</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Alias class that can be used as a decorator for making methods callable</span>
+<span class="sd">    through other names (or &quot;aliases&quot;).</span>
+<span class="sd">    Note: This decorator must be used inside an @aliased -decorated class.</span>
+<span class="sd">    For example, if you want to make the method shout() be also callable as</span>
+<span class="sd">    yell() and scream(), you can use alias like this:</span>
+
+<span class="sd">        @alias(&#39;yell&#39;, &#39;scream&#39;)</span>
+<span class="sd">        def shout(message):</span>
+<span class="sd">            # ....</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="alias.__init__"><a class="viewcode-back" href="../../../_autosummary/pychemengg.utils.method_aliases.alias.html#pychemengg.utils.method_aliases.alias.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">aliases</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Constructor.&quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">aliases</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">aliases</span><span class="p">)</span></div>
+
+    <span class="k">def</span> <span class="fm">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">f</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Method call wrapper. As this decorator has arguments, this method will</span>
+<span class="sd">        only be called once as a part of the decoration process, receiving only</span>
+<span class="sd">        one argument: the decorated function (&#39;f&#39;). As a result of this kind of</span>
+<span class="sd">        decorator, this method must return the callable that will wrap the</span>
+<span class="sd">        decorated function.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">f</span><span class="o">.</span><span class="n">_aliases</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">aliases</span>
+        <span class="k">return</span> <span class="n">f</span></div>
+
+
+<div class="viewcode-block" id="aliased"><a class="viewcode-back" href="../../../_autosummary/pychemengg.utils.method_aliases.aliased.html#pychemengg.utils.method_aliases.aliased">[docs]</a><span class="k">def</span> <span class="nf">aliased</span><span class="p">(</span><span class="n">aliased_class</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Decorator function that *must* be used in combination with @alias</span>
+<span class="sd">    decorator. This class will make the magic happen!</span>
+<span class="sd">    @aliased classes will have their aliased method (via @alias) actually</span>
+<span class="sd">    aliased.</span>
+<span class="sd">    This method simply iterates over the member attributes of &#39;aliased_class&#39;</span>
+<span class="sd">    seeking for those which have an &#39;_aliases&#39; attribute and then defines new</span>
+<span class="sd">    members in the class using those aliases as mere pointer functions to the</span>
+<span class="sd">    original ones.</span>
+
+<span class="sd">    Usage:</span>
+<span class="sd">        @aliased</span>
+<span class="sd">        class MyClass(object):</span>
+<span class="sd">            @alias(&#39;coolMethod&#39;, &#39;myKinkyMethod&#39;)</span>
+<span class="sd">            def boring_method():</span>
+<span class="sd">                # ...</span>
+
+<span class="sd">        i = MyClass()</span>
+<span class="sd">        i.coolMethod() # equivalent to i.myKinkyMethod() and i.boring_method()</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">original_methods</span> <span class="o">=</span> <span class="n">aliased_class</span><span class="o">.</span><span class="vm">__dict__</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">method</span> <span class="ow">in</span> <span class="n">original_methods</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+        <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">method</span><span class="p">,</span> <span class="s1">&#39;_aliases&#39;</span><span class="p">):</span>
+            <span class="c1"># Add the aliases for &#39;method&#39;, but don&#39;t override any</span>
+            <span class="c1"># previously-defined attribute of &#39;aliased_class&#39;</span>
+            <span class="k">for</span> <span class="n">alias</span> <span class="ow">in</span> <span class="n">method</span><span class="o">.</span><span class="n">_aliases</span> <span class="o">-</span> <span class="nb">set</span><span class="p">(</span><span class="n">original_methods</span><span class="p">):</span>
+                <span class="nb">setattr</span><span class="p">(</span><span class="n">aliased_class</span><span class="p">,</span> <span class="n">alias</span><span class="p">,</span> <span class="n">method</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">aliased_class</span></div>
+
+
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="c1">#</span>
+    <span class="c1"># A very simple example</span>
+    <span class="c1">#</span>
+    
+    <span class="nd">@aliased</span>
+    <span class="k">class</span> <span class="nc">Vehicle</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+        <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">brand</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">color</span><span class="p">):</span>
+            <span class="sd">&quot;&quot;&quot;Constructor.&quot;&quot;&quot;</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">brand</span> <span class="o">=</span> <span class="n">brand</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">model</span> <span class="o">=</span> <span class="n">model</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">color</span> <span class="o">=</span> <span class="n">color</span>
+    
+        <span class="nd">@alias</span><span class="p">(</span><span class="s1">&#39;modelBrandAndColor&#39;</span><span class="p">,</span> <span class="s1">&#39;getModelBrandAndColour&#39;</span><span class="p">,</span> <span class="s1">&#39;getDescription&#39;</span><span class="p">)</span>
+        <span class="k">def</span> <span class="nf">model_brand_and_color</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+            <span class="sd">&quot;&quot;&quot;Get the model and brand of this Vehicle.&quot;&quot;&quot;</span>
+            <span class="k">return</span> <span class="s1">&#39;</span><span class="si">{0}</span><span class="s1"> </span><span class="si">{1}</span><span class="s1"> </span><span class="si">{2}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">color</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">brand</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="p">)</span>
+    
+    <span class="n">vehicle</span> <span class="o">=</span> <span class="n">Vehicle</span><span class="p">(</span><span class="s1">&#39;Chevrolet&#39;</span><span class="p">,</span> <span class="s1">&#39;Spark&#39;</span><span class="p">,</span> <span class="s1">&#39;black&#39;</span><span class="p">)</span>
+    <span class="c1"># Now your API looks like your users would want.</span>
+    <span class="c1"># Any of the following lines is equivalent to the others:</span>
+    <span class="nb">print</span> <span class="p">(</span><span class="n">vehicle</span><span class="o">.</span><span class="n">model_brand_and_color</span><span class="p">())</span>
+    <span class="nb">print</span> <span class="p">(</span><span class="n">vehicle</span><span class="o">.</span><span class="n">getDescription</span><span class="p">())</span>
+    <span class="nb">print</span> <span class="p">(</span><span class="n">vehicle</span><span class="o">.</span><span class="n">modelBrandAndColor</span><span class="p">())</span>
+    <span class="nb">print</span> <span class="p">(</span><span class="n">vehicle</span><span class="o">.</span><span class="n">getModelBrandAndColour</span><span class="p">())</span>
+</pre></div>
+
+           </div>
+           
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021, Harvinder Singh Gill.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

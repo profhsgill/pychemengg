@@ -103,24 +103,8 @@
 <li class="toctree-l1"><a class="reference internal" href="../userguide/heattransfer/index.html">Heat Transfer</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Reference Guide</span></p>
-<ul class="current">
-<li class="toctree-l1 current"><a class="reference internal" href="../autosummary_pychemengg.html">PyChemEngg API Reference</a><ul class="current">
-<li class="toctree-l2 current"><a class="reference internal" href="pychemengg.html">pychemengg</a><ul class="current">
-<li class="toctree-l3 current"><a class="reference internal" href="pychemengg.heattransfer.html">heattransfer</a><ul class="current">
-<li class="toctree-l4"><a class="reference internal" href="pychemengg.heattransfer.externalflow.html">externalflow</a></li>
-<li class="toctree-l4"><a class="reference internal" href="pychemengg.heattransfer.fins.html">fins</a></li>
-<li class="toctree-l4"><a class="reference internal" href="pychemengg.heattransfer.heatcommonmethods.html">heatcommonmethods</a></li>
-<li class="toctree-l4"><a class="reference internal" href="pychemengg.heattransfer.heatexchangers.html">heatexchangers</a></li>
-<li class="toctree-l4"><a class="reference internal" href="pychemengg.heattransfer.internalflow.html">internalflow</a></li>
-<li class="toctree-l4"><a class="reference internal" href="pychemengg.heattransfer.steadystate.html">steadystate</a></li>
-<li class="toctree-l4 current"><a class="reference internal" href="pychemengg.heattransfer.transient.html">transient</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="pychemengg.physicalproperties.html">physicalproperties</a></li>
-</ul>
-</li>
-</ul>
-</li>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../autosummary_pychemengg.html">PyChemEngg API Reference</a></li>
 </ul>
 
             
@@ -233,11 +217,68 @@
 <h1>SemiInfinite<a class="headerlink" href="#semiinfinite" title="Permalink to this headline">¶</a></h1>
 <dl class="py class">
 <dt class="sig sig-object py" id="pychemengg.heattransfer.transient.SemiInfinite">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">pychemengg.heattransfer.transient.</span></span><span class="sig-name descname"><span class="pre">SemiInfinite</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">option</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">distance_fromsurface</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">time</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">thermaldiffusivity</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">thermalconductivity</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">specificheat</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">density</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">T_initial</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">T_infinity</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">T_surface</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">surfaceheatflux</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">surfaceheattransfercoefficient</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">surfaceenergypulse</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pychemengg/heattransfer/transient.html#SemiInfinite"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pychemengg.heattransfer.transient.SemiInfinite" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">pychemengg.heattransfer.transient.</span></span><span class="sig-name descname"><span class="pre">SemiInfinite</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">boundarycondition</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">xposition_tofindtemp</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">time</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">density</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">specificheat</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">thermalconductivity</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">thermaldiffusivity</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">constantsurfacetemperature</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">heattransfercoefficient</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">heatflux</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">energypulse</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">T_infinity</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">T_initial</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pychemengg/heattransfer/transient.html#SemiInfinite"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pychemengg.heattransfer.transient.SemiInfinite" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Model to analyze transient heat flow in semi-infinite objects.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl>
+<dt><strong>boundarycondition</strong><span class="classifier"><cite>str</cite></span></dt><dd><p>String defining the boundary condition applied to surface of semi-infinite object.
+It can take any of the four following values:</p>
+<blockquote>
+<div><p>“surfacetemperature_specified”</p>
+<p>“heatflux_specified”</p>
+<p>“surfaceconvection_specified”</p>
+<p>“energypulse_specified”</p>
+</div></blockquote>
+</dd>
+<dt><strong>xposition_tofindtemp</strong><span class="classifier"><cite>int or float</cite></span></dt><dd><p>Location inside the semi infinite object where temperature is to be found.
+Surface of the semi infinite object is considered to be the origin (x=0)</p>
+</dd>
+<dt><strong>time</strong><span class="classifier"><cite>int or float</cite></span></dt><dd><p>Time at which temperature in the semi infinite solid is to be found.</p>
+</dd>
+<dt><strong>density</strong><span class="classifier"><cite>int or float</cite></span></dt><dd><p>Density of solid object.</p>
+</dd>
+<dt><strong>specificheat</strong><span class="classifier"><cite>int or float</cite></span></dt><dd><p>Specific heat of solid object.</p>
+</dd>
+<dt><strong>thermalconductivity</strong><span class="classifier"><cite>int or float</cite></span></dt><dd><p>Thermal conductivity of solid object.</p>
+</dd>
+<dt><strong>thermaldiffusivity</strong><span class="classifier"><cite>int or float</cite></span></dt><dd><p>Thermal diffusivity of solid object.</p>
+</dd>
+<dt><strong>constantsurfacetemperature</strong><span class="classifier"><cite>int or float</cite></span></dt><dd><p>New temperature of surface at which it is held contant (following a step change from T_initial)</p>
+</dd>
+<dt><strong>heattransfercoefficient</strong><span class="classifier"><cite>int or float</cite></span></dt><dd><p>Heat transfer coefficient between solid object and surrounding.</p>
+</dd>
+<dt><strong>heatflux</strong><span class="classifier"><cite>int of float</cite></span></dt><dd><p>Heat flux applied on surface of solid object.</p>
+</dd>
+<dt><strong>energypulse</strong><span class="classifier"><cite>int or float</cite></span></dt><dd><p>Energy pulse applied to surface of solid object.</p>
+</dd>
+<dt><strong>T_infinity</strong><span class="classifier"><cite>int or float</cite></span></dt><dd><p>Temperature of surroundings.</p>
+</dd>
+<dt><strong>T_initial</strong><span class="classifier"><cite>int or float</cite></span></dt><dd><p>Temperature of solid object at time = 0.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<p>First import the module <strong>transient</strong></p>
+<p>Units used in this example: SI system</p>
+<p>However, any consistent units can be used</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pychemengg.heattransfer</span> <span class="kn">import</span> <span class="n">transient</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">wood</span> <span class="o">=</span> <span class="n">transient</span><span class="o">.</span><span class="n">SemiInfinite</span><span class="p">(</span><span class="n">boundarycondition</span><span class="o">=</span><span class="s2">&quot;heatflux_specified&quot;</span><span class="p">,</span> <span class="n">time</span> <span class="o">=</span> <span class="mi">20</span><span class="o">*</span><span class="mi">60</span><span class="p">,</span> <span class="n">T_initial</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">heatflux</span><span class="o">=</span><span class="mi">1250</span><span class="p">,</span> <span class="n">thermalconductivity</span><span class="o">=</span><span class="mf">0.159</span><span class="p">,</span> <span class="n">thermaldiffusivity</span><span class="o">=</span><span class="mf">1.75e-7</span><span class="p">,</span> <span class="n">xposition_tofindtemp</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="go"># This will create an instance of &#39;Semi Infinite object&#39; with a name &#39;wood&#39; </span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Attributes</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>See “Parameters”. All parameters are attributes. Additional attributes are listed below.</strong></dt><dd></dd>
+</dl>
+</dd>
+</dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="pychemengg.heattransfer.transient.SemiInfinite.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">option</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">distance_fromsurface</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">time</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">thermaldiffusivity</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">thermalconductivity</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">specificheat</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">density</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">T_initial</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">T_infinity</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">T_surface</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">surfaceheatflux</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">surfaceheattransfercoefficient</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">surfaceenergypulse</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pychemengg/heattransfer/transient.html#SemiInfinite.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pychemengg.heattransfer.transient.SemiInfinite.__init__" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">boundarycondition</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">xposition_tofindtemp</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">time</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">density</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">specificheat</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">thermalconductivity</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">thermaldiffusivity</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">constantsurfacetemperature</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">heattransfercoefficient</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">heatflux</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">energypulse</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">T_infinity</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">T_initial</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pychemengg/heattransfer/transient.html#SemiInfinite.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pychemengg.heattransfer.transient.SemiInfinite.__init__" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <p class="rubric">Methods</p>
@@ -247,20 +288,91 @@
 <col style="width: 90%" />
 </colgroup>
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="#pychemengg.heattransfer.transient.SemiInfinite.__init__" title="pychemengg.heattransfer.transient.SemiInfinite.__init__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">__init__</span></code></a>([option, distance_fromsurface, …])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pychemengg.heattransfer.transient.SemiInfinite.__init__" title="pychemengg.heattransfer.transient.SemiInfinite.__init__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">__init__</span></code></a>([boundarycondition, …])</p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">contacting_temp</span></code>(other)</p></td>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">calc_heatflux_aconstantsurfacetemperature</span></code>()</p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">heatflux_at_surface</span></code>()</p></td>
-<td><p></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pychemengg.heattransfer.transient.SemiInfinite.calc_temperature" title="pychemengg.heattransfer.transient.SemiInfinite.calc_temperature"><code class="xref py py-obj docutils literal notranslate"><span class="pre">calc_temperature</span></code></a>()</p></td>
+<td><p>Calculate temperature of Semi Infinite object at time = t and position = x.</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">temp_at_given_distance_and_time</span></code>()</p></td>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">calc_temperature_atcontact</span></code>(other)</p></td>
 <td><p></p></td>
 </tr>
 </tbody>
 </table>
+<dl class="py method">
+<dt class="sig sig-object py" id="pychemengg.heattransfer.transient.SemiInfinite.calc_temperature">
+<span class="sig-name descname"><span class="pre">calc_temperature</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pychemengg/heattransfer/transient.html#SemiInfinite.calc_temperature"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pychemengg.heattransfer.transient.SemiInfinite.calc_temperature" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculate temperature of Semi Infinite object at time = t and position = x.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>`None_required`</strong><span class="classifier">‘None’</span></dt><dd><p>Attributes that are already defined are used in calculation.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl>
+<dt><strong>temperature</strong><span class="classifier"><cite>int or float</cite></span></dt><dd><p>Temperature of object at given location and time.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>Temperature of the sold semi infinite object at given location and time
+is computed based on the ‘boundary condition’.</p>
+<ol class="arabic simple">
+<li><p>Boundary condition: Surface temperature is specified as Ts = constant</p></li>
+</ol>
+<div class="math">
+\[\frac{T(x,t) - T_i}{T_s - T_i} = erfc \left( \frac{x}{2\sqrt{\alpha t}} \right)  \\[15pt]
+
+\\[15pt]
+
+q_s(t) = \frac{k(T_s - T_i)}{\sqrt{\pi \alpha t}}\]</div>
+<ol class="arabic simple" start="2">
+<li><p>Boundary condition: Surface heat flux is specified as qs = constant</p></li>
+</ol>
+<div class="math">
+\[T(x,t) - T_i = \frac{q_s}{k} \left( \sqrt{\frac{4 \alpha t}{\pi}} exp\left(-\frac {x^2}{4 \alpha t}\right) -x erfc\left( \frac{x}{2\sqrt{\alpha t}} \right) \right) 
+
+\]</div>
+<ol class="arabic simple" start="3">
+<li><p>Boundary condition: Convection on surface, <span class="math">\(q_s(t) = h[T_{\infty} - T(0,t)]\)</span></p></li>
+</ol>
+<div class="math">
+\[\frac{T(x,t) - T_i}{T_s - T_i} = erfc \left( \frac{x}{2\sqrt{\alpha t}} \right)  - exp \left( \frac{hx}{k} + \frac{h^2 \alpha t}{k^2}\right) erfc\left( \frac{x}{2\sqrt{\alpha t}} + \frac{h \sqrt{\alpha t}}{k}\right)
+
+\]</div>
+<p><em>where:</em></p>
+<blockquote>
+<div><p>t = time at which temperature or flux is to be computed</p>
+<p>x = location from surface of semi infinite object where temperature is to be computed</p>
+<p><span class="math">\(\alpha\)</span> <em>= thermal diffusivity of solid object</em></p>
+<p><span class="math">\(T(x,t)\)</span> <em>= temperature of solid object at losition ‘x’ and time ‘t’</em></p>
+<p><span class="math">\(T_{s}\)</span> <em>= new surface temperature of solid object</em></p>
+<p><span class="math">\(T_{i}\)</span> <em>= temperature of solid object at time = 0</em></p>
+<p><span class="math">\(q_s(t)\)</span> <em>= heat flux at any time ‘t’</em></p>
+</div></blockquote>
+<p class="rubric">References</p>
+<p>[1] G. F. Nellis and S. A. Klein, “Introduction to Engineering 
+Heat Transfer”, 1st Edition. Cambridge University Press, 2021.</p>
+<p>[2] Y. A. Cengel and A. J. Ghajar, “Heat And Mass Transfer
+Fundamentals and Applications”, 6th Edition. New York, McGraw Hill
+Education, 2020.</p>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pychemengg.heattransfer</span> <span class="kn">import</span> <span class="n">transient</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">potato</span><span class="o">=</span><span class="n">transient</span><span class="o">.</span><span class="n">NonLumpedSphere</span><span class="p">(</span><span class="n">radius</span><span class="o">=</span><span class="mf">.0275</span><span class="p">,</span> <span class="n">surfacearea</span><span class="o">=</span><span class="mi">4</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="mf">.0275</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="n">volume</span><span class="o">=</span><span class="mi">4</span><span class="o">/</span><span class="mi">3</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="mf">0.0275</span><span class="o">**</span><span class="mi">3</span><span class="p">,</span> <span class="n">density</span><span class="o">=</span><span class="mi">1100</span><span class="p">,</span> <span class="n">specificheat</span><span class="o">=</span><span class="mi">3900</span><span class="p">,</span> <span class="n">thermaldiffusivity</span><span class="o">=</span><span class="mf">0.14e-6</span><span class="p">,</span> <span class="n">T_initial</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span> <span class="n">T_infinity</span><span class="o">=</span><span class="mi">97</span><span class="p">,</span> <span class="n">thermalconductivity</span><span class="o">=</span><span class="mf">0.6</span><span class="p">,</span> <span class="n">heattransfercoefficient</span><span class="o">=</span><span class="mi">1400</span><span class="p">)</span>
+<span class="go"># This will create an instance of &#39;NonLumpedSphere&#39; with a name &#39;potato&#39; </span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">potato</span><span class="o">.</span><span class="n">calc_maxheattransferpossible</span><span class="p">()</span>
+<span class="go">33260.89947104865</span>
+<span class="go"># negative value indicates heat is being lost by the solid object</span>
+</pre></div>
+</div>
+</dd></dl>
+
 </dd></dl>
 
 </div>

@@ -103,24 +103,8 @@
 <li class="toctree-l1"><a class="reference internal" href="../userguide/heattransfer/index.html">Heat Transfer</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Reference Guide</span></p>
-<ul class="current">
-<li class="toctree-l1 current"><a class="reference internal" href="../autosummary_pychemengg.html">PyChemEngg API Reference</a><ul class="current">
-<li class="toctree-l2 current"><a class="reference internal" href="pychemengg.html">pychemengg</a><ul class="current">
-<li class="toctree-l3 current"><a class="reference internal" href="pychemengg.heattransfer.html">heattransfer</a><ul class="current">
-<li class="toctree-l4"><a class="reference internal" href="pychemengg.heattransfer.externalflow.html">externalflow</a></li>
-<li class="toctree-l4"><a class="reference internal" href="pychemengg.heattransfer.fins.html">fins</a></li>
-<li class="toctree-l4"><a class="reference internal" href="pychemengg.heattransfer.heatcommonmethods.html">heatcommonmethods</a></li>
-<li class="toctree-l4"><a class="reference internal" href="pychemengg.heattransfer.heatexchangers.html">heatexchangers</a></li>
-<li class="toctree-l4"><a class="reference internal" href="pychemengg.heattransfer.internalflow.html">internalflow</a></li>
-<li class="toctree-l4"><a class="reference internal" href="pychemengg.heattransfer.steadystate.html">steadystate</a></li>
-<li class="toctree-l4 current"><a class="reference internal" href="pychemengg.heattransfer.transient.html">transient</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="pychemengg.physicalproperties.html">physicalproperties</a></li>
-</ul>
-</li>
-</ul>
-</li>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../autosummary_pychemengg.html">PyChemEngg API Reference</a></li>
 </ul>
 
             
@@ -267,7 +251,7 @@
 <p>Units used in this example: SI system</p>
 <p>However, any consistent units can be used</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pychemengg.heattransfer</span> <span class="kn">import</span> <span class="n">transient</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">potato</span><span class="o">=</span><span class="n">transient</span><span class="o">.</span><span class="n">NonLumpedSphere</span><span class="p">(</span><span class="n">radius</span><span class="o">=.</span><span class="mi">0275</span><span class="p">,</span> <span class="n">surfacearea</span><span class="o">=</span><span class="mi">4</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*.</span><span class="mi">0275</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="n">volume</span><span class="o">=</span><span class="mi">4</span><span class="o">/</span><span class="mi">3</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="mf">0.0275</span><span class="o">**</span><span class="mi">3</span><span class="p">,</span> <span class="n">density</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">specificheat</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">thermaldiffusivity</span><span class="o">=</span><span class="mf">0.14e-6</span><span class="p">,</span> <span class="n">T_initial</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span> <span class="n">T_infinity</span><span class="o">=</span><span class="mi">97</span><span class="p">,</span> <span class="n">thermalconductivity</span><span class="o">=</span><span class="mf">0.6</span><span class="p">,</span> <span class="n">heattransfercoefficient</span><span class="o">=</span><span class="mi">1400</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">potato</span><span class="o">=</span><span class="n">transient</span><span class="o">.</span><span class="n">NonLumpedSphere</span><span class="p">(</span><span class="n">radius</span><span class="o">=</span><span class="mf">.0275</span><span class="p">,</span> <span class="n">surfacearea</span><span class="o">=</span><span class="mi">4</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="mf">.0275</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="n">volume</span><span class="o">=</span><span class="mi">4</span><span class="o">/</span><span class="mi">3</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="mf">0.0275</span><span class="o">**</span><span class="mi">3</span><span class="p">,</span> <span class="n">density</span><span class="o">=</span><span class="mi">1100</span><span class="p">,</span> <span class="n">specificheat</span><span class="o">=</span><span class="mi">3900</span><span class="p">,</span> <span class="n">thermaldiffusivity</span><span class="o">=</span><span class="mf">0.14e-6</span><span class="p">,</span> <span class="n">T_initial</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span> <span class="n">T_infinity</span><span class="o">=</span><span class="mi">97</span><span class="p">,</span> <span class="n">thermalconductivity</span><span class="o">=</span><span class="mf">0.6</span><span class="p">,</span> <span class="n">heattransfercoefficient</span><span class="o">=</span><span class="mi">1400</span><span class="p">)</span>
 <span class="go"># This will create an instance of &#39;NonLumpedCylinder&#39; with a name &#39;cylinder&#39; </span>
 </pre></div>
 </div>
@@ -304,16 +288,16 @@
 <tr class="row-even"><td><p><a class="reference internal" href="#pychemengg.heattransfer.transient.NonLumpedSphere.calc_eigenvalues" title="pychemengg.heattransfer.transient.NonLumpedSphere.calc_eigenvalues"><code class="xref py py-obj docutils literal notranslate"><span class="pre">calc_eigenvalues</span></code></a>([numberof_eigenvalues_desired])</p></td>
 <td><p>Computes eigen values of characteristic equation for spherical geometry.</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">heatrateof_conv_at_time_t</span></code>()</p></td>
-<td><p></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pychemengg.heattransfer.transient.NonLumpedSphere.calc_heatrateof_conv_at_time_t" title="pychemengg.heattransfer.transient.NonLumpedSphere.calc_heatrateof_conv_at_time_t"><code class="xref py py-obj docutils literal notranslate"><span class="pre">calc_heatrateof_conv_at_time_t</span></code></a>()</p></td>
+<td><p>Heat rate of convection between object and surroundings at a given time = t.</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">maxheattransferpossible</span></code>()</p></td>
-<td><p></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#pychemengg.heattransfer.transient.NonLumpedSphere.calc_maxheattransferpossible" title="pychemengg.heattransfer.transient.NonLumpedSphere.calc_maxheattransferpossible"><code class="xref py py-obj docutils literal notranslate"><span class="pre">calc_maxheattransferpossible</span></code></a>()</p></td>
+<td><p>Maximum possible heat transfer between solid object and surroundings.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#pychemengg.heattransfer.transient.NonLumpedSphere.temperature_of_solid_at_time_t" title="pychemengg.heattransfer.transient.NonLumpedSphere.temperature_of_solid_at_time_t"><code class="xref py py-obj docutils literal notranslate"><span class="pre">temperature_of_solid_at_time_t</span></code></a>([…])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pychemengg.heattransfer.transient.NonLumpedSphere.calc_temperature_of_solid_at_time_t" title="pychemengg.heattransfer.transient.NonLumpedSphere.calc_temperature_of_solid_at_time_t"><code class="xref py py-obj docutils literal notranslate"><span class="pre">calc_temperature_of_solid_at_time_t</span></code></a>([…])</p></td>
 <td><p>Calculates temperature of solid object at a given time = t and radius = r.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#pychemengg.heattransfer.transient.NonLumpedSphere.totalheat_transferred_during_interval_t" title="pychemengg.heattransfer.transient.NonLumpedSphere.totalheat_transferred_during_interval_t"><code class="xref py py-obj docutils literal notranslate"><span class="pre">totalheat_transferred_during_interval_t</span></code></a>()</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#pychemengg.heattransfer.transient.NonLumpedSphere.calc_totalheat_transferred_during_interval_t" title="pychemengg.heattransfer.transient.NonLumpedSphere.calc_totalheat_transferred_during_interval_t"><code class="xref py py-obj docutils literal notranslate"><span class="pre">calc_totalheat_transferred_during_interval_t</span></code></a>()</p></td>
 <td><p>Heat transferred between solid object and surroundings during  time interval = 0 to t.</p></td>
 </tr>
 </tbody>
@@ -360,7 +344,7 @@ Education, 2020.</p>
 <p>Units used in this example: SI system</p>
 <p>However, any consistent units can be used</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pychemengg.heattransfer</span> <span class="kn">import</span> <span class="n">transient</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">potato</span><span class="o">=</span><span class="n">transient</span><span class="o">.</span><span class="n">NonLumpedSphere</span><span class="p">(</span><span class="n">radius</span><span class="o">=.</span><span class="mi">0275</span><span class="p">,</span> <span class="n">surfacearea</span><span class="o">=</span><span class="mi">4</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*.</span><span class="mi">0275</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="n">volume</span><span class="o">=</span><span class="mi">4</span><span class="o">/</span><span class="mi">3</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="mf">0.0275</span><span class="o">**</span><span class="mi">3</span><span class="p">,</span> <span class="n">density</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">specificheat</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">thermaldiffusivity</span><span class="o">=</span><span class="mf">0.14e-6</span><span class="p">,</span> <span class="n">T_initial</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span> <span class="n">T_infinity</span><span class="o">=</span><span class="mi">97</span><span class="p">,</span> <span class="n">thermalconductivity</span><span class="o">=</span><span class="mf">0.6</span><span class="p">,</span> <span class="n">heattransfercoefficient</span><span class="o">=</span><span class="mi">1400</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">potato</span><span class="o">=</span><span class="n">transient</span><span class="o">.</span><span class="n">NonLumpedSphere</span><span class="p">(</span><span class="n">radius</span><span class="o">=</span><span class="mf">.0275</span><span class="p">,</span> <span class="n">surfacearea</span><span class="o">=</span><span class="mi">4</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="mf">.0275</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="n">volume</span><span class="o">=</span><span class="mi">4</span><span class="o">/</span><span class="mi">3</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="mf">0.0275</span><span class="o">**</span><span class="mi">3</span><span class="p">,</span> <span class="n">density</span><span class="o">=</span><span class="mi">1100</span><span class="p">,</span> <span class="n">specificheat</span><span class="o">=</span><span class="mi">3900</span><span class="p">,</span> <span class="n">thermaldiffusivity</span><span class="o">=</span><span class="mf">0.14e-6</span><span class="p">,</span> <span class="n">T_initial</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span> <span class="n">T_infinity</span><span class="o">=</span><span class="mi">97</span><span class="p">,</span> <span class="n">thermalconductivity</span><span class="o">=</span><span class="mf">0.6</span><span class="p">,</span> <span class="n">heattransfercoefficient</span><span class="o">=</span><span class="mi">1400</span><span class="p">)</span>
 <span class="go"># This will create an instance of &#39;NonLumpedSphere&#39; with a name &#39;potato&#39; </span>
 <span class="go"># Next call calc_Bi</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">potato</span><span class="o">.</span><span class="n">calc_Bi</span><span class="p">()</span>
@@ -411,11 +395,11 @@ Education, 2020.</p>
 <p>Units used in this example: SI system</p>
 <p>However, any consistent units can be used</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pychemengg.heattransfer</span> <span class="kn">import</span> <span class="n">transient</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">potato</span><span class="o">=</span><span class="n">transient</span><span class="o">.</span><span class="n">NonLumpedSphere</span><span class="p">(</span><span class="n">radius</span><span class="o">=.</span><span class="mi">0275</span><span class="p">,</span> <span class="n">surfacearea</span><span class="o">=</span><span class="mi">4</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*.</span><span class="mi">0275</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="n">volume</span><span class="o">=</span><span class="mi">4</span><span class="o">/</span><span class="mi">3</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="mf">0.0275</span><span class="o">**</span><span class="mi">3</span><span class="p">,</span> <span class="n">density</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">specificheat</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">thermaldiffusivity</span><span class="o">=</span><span class="mf">0.14e-6</span><span class="p">,</span> <span class="n">T_initial</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span> <span class="n">T_infinity</span><span class="o">=</span><span class="mi">97</span><span class="p">,</span> <span class="n">thermalconductivity</span><span class="o">=</span><span class="mf">0.6</span><span class="p">,</span> <span class="n">heattransfercoefficient</span><span class="o">=</span><span class="mi">1400</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">potato</span><span class="o">=</span><span class="n">transient</span><span class="o">.</span><span class="n">NonLumpedSphere</span><span class="p">(</span><span class="n">radius</span><span class="o">=</span><span class="mf">.0275</span><span class="p">,</span> <span class="n">surfacearea</span><span class="o">=</span><span class="mi">4</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="mf">.0275</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="n">volume</span><span class="o">=</span><span class="mi">4</span><span class="o">/</span><span class="mi">3</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="mf">0.0275</span><span class="o">**</span><span class="mi">3</span><span class="p">,</span> <span class="n">density</span><span class="o">=</span><span class="mi">1100</span><span class="p">,</span> <span class="n">specificheat</span><span class="o">=</span><span class="mi">3900</span><span class="p">,</span> <span class="n">thermaldiffusivity</span><span class="o">=</span><span class="mf">0.14e-6</span><span class="p">,</span> <span class="n">T_initial</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span> <span class="n">T_infinity</span><span class="o">=</span><span class="mi">97</span><span class="p">,</span> <span class="n">thermalconductivity</span><span class="o">=</span><span class="mf">0.6</span><span class="p">,</span> <span class="n">heattransfercoefficient</span><span class="o">=</span><span class="mi">1400</span><span class="p">)</span>
 <span class="go"># This will create an instance of &#39;NonLumpedSphere&#39; with a name &#39;potato&#39; </span>
 <span class="go"># Next call calc_Fo for time = 7 min</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">potato</span><span class="o">.</span><span class="n">calc_Fo</span><span class="p">(</span><span class="mi">7</span><span class="o">*</span><span class="mi">60</span><span class="p">)</span>
-<span class="go">0.07775206611570248</span>
+<span class="go">0.07767439172397851</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -460,7 +444,7 @@ Education, 2020.</p>
 <p>Units used in this example: SI system</p>
 <p>However, any consistent units can be used</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pychemengg.heattransfer</span> <span class="kn">import</span> <span class="n">transient</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">potato</span><span class="o">=</span><span class="n">transient</span><span class="o">.</span><span class="n">NonLumpedSphere</span><span class="p">(</span><span class="n">radius</span><span class="o">=.</span><span class="mi">0275</span><span class="p">,</span> <span class="n">surfacearea</span><span class="o">=</span><span class="mi">4</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*.</span><span class="mi">0275</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="n">volume</span><span class="o">=</span><span class="mi">4</span><span class="o">/</span><span class="mi">3</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="mf">0.0275</span><span class="o">**</span><span class="mi">3</span><span class="p">,</span> <span class="n">density</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">specificheat</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">thermaldiffusivity</span><span class="o">=</span><span class="mf">0.14e-6</span><span class="p">,</span> <span class="n">T_initial</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span> <span class="n">T_infinity</span><span class="o">=</span><span class="mi">97</span><span class="p">,</span> <span class="n">thermalconductivity</span><span class="o">=</span><span class="mf">0.6</span><span class="p">,</span> <span class="n">heattransfercoefficient</span><span class="o">=</span><span class="mi">1400</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">potato</span><span class="o">=</span><span class="n">transient</span><span class="o">.</span><span class="n">NonLumpedSphere</span><span class="p">(</span><span class="n">radius</span><span class="o">=</span><span class="mf">.0275</span><span class="p">,</span> <span class="n">surfacearea</span><span class="o">=</span><span class="mi">4</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="mf">.0275</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="n">volume</span><span class="o">=</span><span class="mi">4</span><span class="o">/</span><span class="mi">3</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="mf">0.0275</span><span class="o">**</span><span class="mi">3</span><span class="p">,</span> <span class="n">density</span><span class="o">=</span><span class="mi">1100</span><span class="p">,</span> <span class="n">specificheat</span><span class="o">=</span><span class="mi">3900</span><span class="p">,</span> <span class="n">thermaldiffusivity</span><span class="o">=</span><span class="mf">0.14e-6</span><span class="p">,</span> <span class="n">T_initial</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span> <span class="n">T_infinity</span><span class="o">=</span><span class="mi">97</span><span class="p">,</span> <span class="n">thermalconductivity</span><span class="o">=</span><span class="mf">0.6</span><span class="p">,</span> <span class="n">heattransfercoefficient</span><span class="o">=</span><span class="mi">1400</span><span class="p">)</span>
 <span class="go"># This will create an instance of &#39;NonLumpedSphere&#39; with a name &#39;potato&#39; </span>
 <span class="go"># Next call calc_Bi </span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">potato</span><span class="o">.</span><span class="n">calc_Bi</span><span class="p">()</span>
@@ -473,8 +457,121 @@ Education, 2020.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="pychemengg.heattransfer.transient.NonLumpedSphere.temperature_of_solid_at_time_t">
-<span class="sig-name descname"><span class="pre">temperature_of_solid_at_time_t</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rposition_tofindtemp</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pychemengg/heattransfer/transient.html#NonLumpedSphere.temperature_of_solid_at_time_t"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pychemengg.heattransfer.transient.NonLumpedSphere.temperature_of_solid_at_time_t" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pychemengg.heattransfer.transient.NonLumpedSphere.calc_heatrateof_conv_at_time_t">
+<span class="sig-name descname"><span class="pre">calc_heatrateof_conv_at_time_t</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pychemengg/heattransfer/transient.html#NonLumpedSphere.calc_heatrateof_conv_at_time_t"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pychemengg.heattransfer.transient.NonLumpedSphere.calc_heatrateof_conv_at_time_t" title="Permalink to this definition">¶</a></dt>
+<dd><p>Heat rate of convection between object and surroundings at a given time = t.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>`None_required`</strong><span class="classifier">‘None’</span></dt><dd><p>Attributes that are already defined are used in calculation.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl>
+<dt><strong>heat rate of convection</strong><span class="classifier"><cite>int or float ; Positive: Heat is gained by object, Negative: Heat is lost by object</cite></span></dt><dd><p>Heat rate of convection between solid object and surroundings at time = t.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>Heat rate of convection is calculated using the following formula:</p>
+<div class="math">
+\[q_{t} = h A_s (T_{infinity} - T_{t})
+
+\]</div>
+<p><em>where:</em></p>
+<blockquote>
+<div><p>t = time at which temperature is to be computed</p>
+<p>h = heat transfer coefficient</p>
+<p><span class="math">\(T_{infinity} = temperature of surrounding fluid\)</span></p>
+<p><span class="math">\(T_{t} = temperature of surface of solid object at time = t\)</span></p>
+<p><span class="math">\(A_s\)</span> <em>= surface area of solid object</em></p>
+<p><span class="math">\(q_{t}\)</span> <em>= heat rate of convection at time = t</em></p>
+</div></blockquote>
+<p class="rubric">References</p>
+<p>[1] G. F. Nellis and S. A. Klein, “Introduction to Engineering 
+Heat Transfer”, 1st Edition. Cambridge University Press, 2021.</p>
+<p>[2] Y. A. Cengel and A. J. Ghajar, “Heat And Mass Transfer
+Fundamentals and Applications”, 6th Edition. New York, McGraw Hill
+Education, 2020.</p>
+<p class="rubric">Examples</p>
+<p>First import the module <strong>transient</strong></p>
+<p>Units used in this example: SI system</p>
+<p>However, any consistent units can be used</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pychemengg.heattransfer</span> <span class="kn">import</span> <span class="n">transient</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">potato</span><span class="o">=</span><span class="n">transient</span><span class="o">.</span><span class="n">NonLumpedSphere</span><span class="p">(</span><span class="n">radius</span><span class="o">=</span><span class="mf">.0275</span><span class="p">,</span> <span class="n">surfacearea</span><span class="o">=</span><span class="mi">4</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="mf">.0275</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="n">volume</span><span class="o">=</span><span class="mi">4</span><span class="o">/</span><span class="mi">3</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="mf">0.0275</span><span class="o">**</span><span class="mi">3</span><span class="p">,</span> <span class="n">density</span><span class="o">=</span><span class="mi">1100</span><span class="p">,</span> <span class="n">specificheat</span><span class="o">=</span><span class="mi">3900</span><span class="p">,</span> <span class="n">thermaldiffusivity</span><span class="o">=</span><span class="mf">0.14e-6</span><span class="p">,</span> <span class="n">T_initial</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span> <span class="n">T_infinity</span><span class="o">=</span><span class="mi">97</span><span class="p">,</span> <span class="n">thermalconductivity</span><span class="o">=</span><span class="mf">0.6</span><span class="p">,</span> <span class="n">heattransfercoefficient</span><span class="o">=</span><span class="mi">1400</span><span class="p">)</span>
+<span class="go"># This will create an instance of &#39;NonLumpedSphere&#39; with a name &#39;potato&#39; </span>
+<span class="go"># Next call calc_Bi </span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">potato</span><span class="o">.</span><span class="n">calc_Bi</span><span class="p">()</span>
+<span class="go">64.16666666666667</span>
+<span class="go"># Consider temperature needs to be found at 7 min</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">potato</span><span class="o">.</span><span class="n">calc_Fo</span><span class="p">(</span><span class="mi">7</span><span class="o">*</span><span class="mi">60</span><span class="p">)</span>
+<span class="go">0.07767439172397851</span>
+<span class="go"># Let first 5 eigen values be required</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">potato</span><span class="o">.</span><span class="n">calc_eigenvalues</span><span class="p">(</span><span class="n">numberof_eigenvalues_desired</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+<span class="go">array([ 3.09267122,  6.1855719 ,  9.27892517, 12.37294192, 15.46781574])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">potato</span><span class="o">.</span><span class="n">calc_heatrateof_conv_at_time_t</span><span class="p">()</span>
+<span class="go">19.741373294927822</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pychemengg.heattransfer.transient.NonLumpedSphere.calc_maxheattransferpossible">
+<span class="sig-name descname"><span class="pre">calc_maxheattransferpossible</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pychemengg/heattransfer/transient.html#NonLumpedSphere.calc_maxheattransferpossible"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pychemengg.heattransfer.transient.NonLumpedSphere.calc_maxheattransferpossible" title="Permalink to this definition">¶</a></dt>
+<dd><p>Maximum possible heat transfer between solid object and surroundings.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>`None_required`</strong><span class="classifier">‘None’</span></dt><dd><p>Attributes that are already defined are used in calculation.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>maximum heat transfer possible: <cite>int or float; Positive: Heat is gained by object, Negative: Heat is lost by object</cite></dt><dd><p>Maximum heat transfer posssible between object and surroundings.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>Maximum heat transfer possible between solid object and surroundings 
+is calculated using the following formula. This is based on the assumption
+that final object temperature will eventually reach surrounding temperature
+of <span class="math">\(T_{infinity}\)</span></p>
+<div class="math">
+\[q_{max} = m C_p (T_{infinity} - T_{initial})
+
+\]</div>
+<p><em>where:</em></p>
+<blockquote>
+<div><p>m = mass of solid object</p>
+<p><span class="math">\(C_{p} = specific heat of solid object\)</span></p>
+<p><span class="math">\(T_{infinity} = temperature of surrounding, which the solid object will eventually attain\)</span></p>
+<p><span class="math">\(T_{initial} = temperature of solid object at time = initial\)</span></p>
+<p><span class="math">\(q_{max} = max heat transfer possible\)</span></p>
+</div></blockquote>
+<p class="rubric">References</p>
+<p>[1] G. F. Nellis and S. A. Klein, “Introduction to Engineering 
+Heat Transfer”, 1st Edition. Cambridge University Press, 2021.</p>
+<p>[2] Y. A. Cengel and A. J. Ghajar, “Heat And Mass Transfer
+Fundamentals and Applications”, 6th Edition. New York, McGraw Hill
+Education, 2020.</p>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pychemengg.heattransfer</span> <span class="kn">import</span> <span class="n">transient</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">potato</span><span class="o">=</span><span class="n">transient</span><span class="o">.</span><span class="n">NonLumpedSphere</span><span class="p">(</span><span class="n">radius</span><span class="o">=</span><span class="mf">.0275</span><span class="p">,</span> <span class="n">surfacearea</span><span class="o">=</span><span class="mi">4</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="mf">.0275</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="n">volume</span><span class="o">=</span><span class="mi">4</span><span class="o">/</span><span class="mi">3</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="mf">0.0275</span><span class="o">**</span><span class="mi">3</span><span class="p">,</span> <span class="n">density</span><span class="o">=</span><span class="mi">1100</span><span class="p">,</span> <span class="n">specificheat</span><span class="o">=</span><span class="mi">3900</span><span class="p">,</span> <span class="n">thermaldiffusivity</span><span class="o">=</span><span class="mf">0.14e-6</span><span class="p">,</span> <span class="n">T_initial</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span> <span class="n">T_infinity</span><span class="o">=</span><span class="mi">97</span><span class="p">,</span> <span class="n">thermalconductivity</span><span class="o">=</span><span class="mf">0.6</span><span class="p">,</span> <span class="n">heattransfercoefficient</span><span class="o">=</span><span class="mi">1400</span><span class="p">)</span>
+<span class="go"># This will create an instance of &#39;NonLumpedSphere&#39; with a name &#39;potato&#39; </span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">potato</span><span class="o">.</span><span class="n">calc_maxheattransferpossible</span><span class="p">()</span>
+<span class="go">33260.89947104865</span>
+<span class="go"># negative value indicates heat is being lost by the solid object</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pychemengg.heattransfer.transient.NonLumpedSphere.calc_temperature_of_solid_at_time_t">
+<span class="sig-name descname"><span class="pre">calc_temperature_of_solid_at_time_t</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rposition_tofindtemp</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pychemengg/heattransfer/transient.html#NonLumpedSphere.calc_temperature_of_solid_at_time_t"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pychemengg.heattransfer.transient.NonLumpedSphere.calc_temperature_of_solid_at_time_t" title="Permalink to this definition">¶</a></dt>
 <dd><p>Calculates temperature of solid object at a given time = t and radius = r.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
@@ -514,25 +611,25 @@ of solid object is to be found.</p>
 <p>Units used in this example: SI system</p>
 <p>However, any consistent units can be used</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pychemengg.heattransfer</span> <span class="kn">import</span> <span class="n">transient</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">potato</span><span class="o">=</span><span class="n">transient</span><span class="o">.</span><span class="n">NonLumpedSphere</span><span class="p">(</span><span class="n">radius</span><span class="o">=.</span><span class="mi">0275</span><span class="p">,</span> <span class="n">surfacearea</span><span class="o">=</span><span class="mi">4</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*.</span><span class="mi">0275</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="n">volume</span><span class="o">=</span><span class="mi">4</span><span class="o">/</span><span class="mi">3</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="mf">0.0275</span><span class="o">**</span><span class="mi">3</span><span class="p">,</span> <span class="n">density</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">specificheat</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">thermaldiffusivity</span><span class="o">=</span><span class="mf">0.14e-6</span><span class="p">,</span> <span class="n">T_initial</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span> <span class="n">T_infinity</span><span class="o">=</span><span class="mi">97</span><span class="p">,</span> <span class="n">thermalconductivity</span><span class="o">=</span><span class="mf">0.6</span><span class="p">,</span> <span class="n">heattransfercoefficient</span><span class="o">=</span><span class="mi">1400</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">potato</span><span class="o">=</span><span class="n">transient</span><span class="o">.</span><span class="n">NonLumpedSphere</span><span class="p">(</span><span class="n">radius</span><span class="o">=</span><span class="mf">.0275</span><span class="p">,</span> <span class="n">surfacearea</span><span class="o">=</span><span class="mi">4</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="mf">.0275</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="n">volume</span><span class="o">=</span><span class="mi">4</span><span class="o">/</span><span class="mi">3</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="mf">0.0275</span><span class="o">**</span><span class="mi">3</span><span class="p">,</span> <span class="n">density</span><span class="o">=</span><span class="mi">1100</span><span class="p">,</span> <span class="n">specificheat</span><span class="o">=</span><span class="mi">3900</span><span class="p">,</span> <span class="n">thermaldiffusivity</span><span class="o">=</span><span class="mf">0.14e-6</span><span class="p">,</span> <span class="n">T_initial</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span> <span class="n">T_infinity</span><span class="o">=</span><span class="mi">97</span><span class="p">,</span> <span class="n">thermalconductivity</span><span class="o">=</span><span class="mf">0.6</span><span class="p">,</span> <span class="n">heattransfercoefficient</span><span class="o">=</span><span class="mi">1400</span><span class="p">)</span>
 <span class="go"># This will create an instance of &#39;NonLumpedSphere&#39; with a name &#39;potato&#39; </span>
 <span class="go"># Next call calc_Bi </span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">potato</span><span class="o">.</span><span class="n">calc_Bi</span><span class="p">()</span>
 <span class="go">64.16666666666667</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">potato</span><span class="o">.</span><span class="n">calc_Fo</span><span class="p">(</span><span class="mi">7</span><span class="o">*</span><span class="mi">60</span><span class="p">)</span>
-<span class="go">0.07775206611570248</span>
+<span class="go">0.07767439172397851</span>
 <span class="go"># Let first 5 eigen values be required</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">potato</span><span class="o">.</span><span class="n">calc_eigenvalues</span><span class="p">(</span><span class="n">numberof_eigenvalues_desired</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
 <span class="go">array([ 3.09267122,  6.1855719 ,  9.27892517, 12.37294192, 15.46781574])</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">potato</span><span class="o">.</span><span class="n">temperature_of_solid_at_time_t</span><span class="p">(</span><span class="n">rposition_tofindtemp</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
-<span class="go">21.311375623386624</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">potato</span><span class="o">.</span><span class="n">calc_temperature_of_solid_at_time_t</span><span class="p">(</span><span class="n">rposition_tofindtemp</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="go">21.274035537652196</span>
 </pre></div>
 </div>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="pychemengg.heattransfer.transient.NonLumpedSphere.totalheat_transferred_during_interval_t">
-<span class="sig-name descname"><span class="pre">totalheat_transferred_during_interval_t</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pychemengg/heattransfer/transient.html#NonLumpedSphere.totalheat_transferred_during_interval_t"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pychemengg.heattransfer.transient.NonLumpedSphere.totalheat_transferred_during_interval_t" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pychemengg.heattransfer.transient.NonLumpedSphere.calc_totalheat_transferred_during_interval_t">
+<span class="sig-name descname"><span class="pre">calc_totalheat_transferred_during_interval_t</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pychemengg/heattransfer/transient.html#NonLumpedSphere.calc_totalheat_transferred_during_interval_t"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pychemengg.heattransfer.transient.NonLumpedSphere.calc_totalheat_transferred_during_interval_t" title="Permalink to this definition">¶</a></dt>
 <dd><p>Heat transferred between solid object and surroundings during 
 time interval = 0 to t.</p>
 <dl class="field-list">
@@ -552,19 +649,17 @@ time interval = 0 to t.</p>
 <div class="admonition seealso">
 <p class="admonition-title">See also</p>
 <dl class="simple">
-<dt><a class="reference internal" href="pychemengg.heattransfer.transient.NonLumpedCylinder.html#pychemengg.heattransfer.transient.NonLumpedCylinder.maxheattransferpossible" title="pychemengg.heattransfer.transient.NonLumpedCylinder.maxheattransferpossible"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pychemengg.heattransfer.transient.NonLumpedCylinder.maxheattransferpossible</span></code></a></dt><dd></dd>
+<dt><a class="reference internal" href="#pychemengg.heattransfer.transient.NonLumpedSphere.calc_maxheattransferpossible" title="pychemengg.heattransfer.transient.NonLumpedSphere.calc_maxheattransferpossible"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pychemengg.heattransfer.transient.NonLumpedSphere.calc_maxheattransferpossible</span></code></a></dt><dd></dd>
 </dl>
 </div>
 <p class="rubric">Notes</p>
 <p>Total heat  transferred in interval 0 to t is calculated using the
 following formula:</p>
 <div class="math">
-\[q_{0 \to t} = q_{max} \left( 1-3 \displaystyle\sum_{n=1}^\infty \cfrac{4(Sin\lambda_n - \lambda_nCos\lambda_n)}{2 \lambda_n - sin(2 \lambda_n)} e^{- \lambda_n^2 \tau} \frac{sin\lambda_n \lambda_n cos\lambda_n}{\lambda_n^3} \right)
+\[q_{0 \to t} = q_{max} \left( 1-3 \displaystyle\sum_{n=1}^\infty \cfrac{4(Sin\lambda_n - \lambda_nCos\lambda_n)}{2 \lambda_n - sin(2 \lambda_n)} e^{- \lambda_n^2 \tau} \frac{sin\lambda_n - \lambda_n cos\lambda_n}{\lambda_n^3} \right)
 
 \]</div>
 <p><em>where:</em></p>
-<p><span class="math">\(J_0\)</span> <em>= Bessel function of first kind of order 0</em></p>
-<p><span class="math">\(J_1\)</span> <em>= Bessel function of first kind of order 1</em></p>
 <p><span class="math">\(\lambda_n\)</span> = <span class="math">\(n^{th}\)</span> eigen value of <span class="math">\(x_n tan(x_n) - Bi = 0\)</span> , n = 1 to <span class="math">\(\infty\)</span></p>
 <p>Bi = Biot number</p>
 <p><span class="math">\(\tau = Fourier number\)</span></p>
@@ -581,20 +676,18 @@ Education, 2020.</p>
 <p>Units used in this example: SI system</p>
 <p>However, any consistent units can be used</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pychemengg.heattransfer</span> <span class="kn">import</span> <span class="n">transient</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">cylinder</span><span class="o">=</span><span class="n">transient</span><span class="o">.</span><span class="n">NonLumpedCylinder</span><span class="p">(</span><span class="n">radius</span><span class="o">=</span><span class="mf">10e-2</span><span class="p">,</span> <span class="n">surfacearea</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">T_initial</span><span class="o">=</span><span class="mi">600</span><span class="p">,</span> <span class="n">volume</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="mf">10e-2</span><span class="o">**</span><span class="mi">2</span><span class="o">*</span><span class="mi">1</span><span class="p">,</span> <span class="n">T_infinity</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span> <span class="n">density</span><span class="o">=</span><span class="mi">7900</span><span class="p">,</span> <span class="n">thermaldiffusivity</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">specificheat</span><span class="o">=</span><span class="mi">477</span><span class="p">,</span> <span class="n">heattransfercoefficient</span><span class="o">=</span><span class="mi">80</span><span class="p">,</span> <span class="n">thermalconductivity</span><span class="o">=</span><span class="mf">14.9</span><span class="p">)</span>
-<span class="go"># This will create an instance of &#39;NonLumpedSlab&#39; with a name &#39;plate&#39; </span>
-<span class="go"># Next call calc_Bi</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">cylinder</span><span class="o">.</span><span class="n">calc_Bi</span><span class="p">()</span>
-<span class="go">0.5369127516778524</span>
-<span class="go"># Next call calc_Fo assuming temperature is required at 7 min</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">cylinder</span><span class="o">.</span><span class="n">calc_Fo</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="mi">7</span><span class="o">*</span><span class="mi">60</span><span class="p">)</span>
-<span class="go">0.16606958044741657</span>
-<span class="go"># Let default (=10) eigen values be required</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">cylinder</span><span class="o">.</span><span class="n">calc_eigenvalues</span><span class="p">()</span>
-<span class="go">array([ 0.97061535,  3.96852663,  7.0915602 , 10.22605944, 13.36390715,</span>
-<span class="go">16.50318456, 19.64320399, 22.78365791, 25.92438812, 29.06530494])</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">cylinder</span><span class="o">.</span><span class="n">totalheat_transferred_during_interval_t</span><span class="p">()</span>
-<span class="go">-7052779.476897862</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">potato</span><span class="o">=</span><span class="n">transient</span><span class="o">.</span><span class="n">NonLumpedSphere</span><span class="p">(</span><span class="n">radius</span><span class="o">=</span><span class="mf">.0275</span><span class="p">,</span> <span class="n">surfacearea</span><span class="o">=</span><span class="mi">4</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="mf">.0275</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="n">volume</span><span class="o">=</span><span class="mi">4</span><span class="o">/</span><span class="mi">3</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="mf">0.0275</span><span class="o">**</span><span class="mi">3</span><span class="p">,</span> <span class="n">density</span><span class="o">=</span><span class="mi">1100</span><span class="p">,</span> <span class="n">specificheat</span><span class="o">=</span><span class="mi">3900</span><span class="p">,</span> <span class="n">thermaldiffusivity</span><span class="o">=</span><span class="mf">0.14e-6</span><span class="p">,</span> <span class="n">T_initial</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span> <span class="n">T_infinity</span><span class="o">=</span><span class="mi">97</span><span class="p">,</span> <span class="n">thermalconductivity</span><span class="o">=</span><span class="mf">0.6</span><span class="p">,</span> <span class="n">heattransfercoefficient</span><span class="o">=</span><span class="mi">1400</span><span class="p">)</span>
+<span class="go"># This will create an instance of &#39;NonLumpedSphere&#39; with a name &#39;potato&#39; </span>
+<span class="go"># Next call calc_Bi </span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">potato</span><span class="o">.</span><span class="n">calc_Bi</span><span class="p">()</span>
+<span class="go">64.16666666666667</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">potato</span><span class="o">.</span><span class="n">calc_Fo</span><span class="p">(</span><span class="mi">7</span><span class="o">*</span><span class="mi">60</span><span class="p">)</span>
+<span class="go">0.07767439172397851</span>
+<span class="go"># Let first 5 eigen values be required</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">potato</span><span class="o">.</span><span class="n">calc_eigenvalues</span><span class="p">(</span><span class="n">numberof_eigenvalues_desired</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+<span class="go">array([ 3.09267122,  6.1855719 ,  9.27892517, 12.37294192, 15.46781574])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">potato</span><span class="o">.</span><span class="n">calc_totalheat_transferred_during_interval_t</span><span class="p">()</span>
+<span class="go">22929.965184224005</span>
 </pre></div>
 </div>
 </dd></dl>

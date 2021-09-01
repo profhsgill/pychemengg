@@ -1,4 +1,4 @@
-SemiInfinite
+﻿SemiInfinite
 ============
 
 .. currentmodule:: pychemengg.heattransfer.transient
@@ -17,9 +17,9 @@ SemiInfinite
    .. autosummary::
    
       ~SemiInfinite.__init__
-      ~SemiInfinite.contacting_temp
-      ~SemiInfinite.heatflux_at_surface
-      ~SemiInfinite.temp_at_given_distance_and_time
+      ~SemiInfinite.calc_heatflux_aconstantsurfacetemperature
+      ~SemiInfinite.calc_temperature
+      ~SemiInfinite.calc_temperature_atcontact
    
    
 

@@ -103,24 +103,8 @@
 <li class="toctree-l1"><a class="reference internal" href="../userguide/heattransfer/index.html">Heat Transfer</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Reference Guide</span></p>
-<ul class="current">
-<li class="toctree-l1 current"><a class="reference internal" href="../autosummary_pychemengg.html">PyChemEngg API Reference</a><ul class="current">
-<li class="toctree-l2 current"><a class="reference internal" href="pychemengg.html">pychemengg</a><ul class="current">
-<li class="toctree-l3 current"><a class="reference internal" href="pychemengg.heattransfer.html">heattransfer</a><ul class="current">
-<li class="toctree-l4"><a class="reference internal" href="pychemengg.heattransfer.externalflow.html">externalflow</a></li>
-<li class="toctree-l4"><a class="reference internal" href="pychemengg.heattransfer.fins.html">fins</a></li>
-<li class="toctree-l4"><a class="reference internal" href="pychemengg.heattransfer.heatcommonmethods.html">heatcommonmethods</a></li>
-<li class="toctree-l4"><a class="reference internal" href="pychemengg.heattransfer.heatexchangers.html">heatexchangers</a></li>
-<li class="toctree-l4"><a class="reference internal" href="pychemengg.heattransfer.internalflow.html">internalflow</a></li>
-<li class="toctree-l4"><a class="reference internal" href="pychemengg.heattransfer.steadystate.html">steadystate</a></li>
-<li class="toctree-l4 current"><a class="reference internal" href="pychemengg.heattransfer.transient.html">transient</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="pychemengg.physicalproperties.html">physicalproperties</a></li>
-</ul>
-</li>
-</ul>
-</li>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../autosummary_pychemengg.html">PyChemEngg API Reference</a></li>
 </ul>
 
             
@@ -303,16 +287,16 @@
 <tr class="row-even"><td><p><a class="reference internal" href="#pychemengg.heattransfer.transient.LumpedSystem.calc_Bi" title="pychemengg.heattransfer.transient.LumpedSystem.calc_Bi"><code class="xref py py-obj docutils literal notranslate"><span class="pre">calc_Bi</span></code></a>()</p></td>
 <td><p>Computes Biot number.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#pychemengg.heattransfer.transient.LumpedSystem.heatrateof_conv_at_time_t" title="pychemengg.heattransfer.transient.LumpedSystem.heatrateof_conv_at_time_t"><code class="xref py py-obj docutils literal notranslate"><span class="pre">heatrateof_conv_at_time_t</span></code></a>([time])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pychemengg.heattransfer.transient.LumpedSystem.calc_heatrateof_conv_at_time_t" title="pychemengg.heattransfer.transient.LumpedSystem.calc_heatrateof_conv_at_time_t"><code class="xref py py-obj docutils literal notranslate"><span class="pre">calc_heatrateof_conv_at_time_t</span></code></a>([time])</p></td>
 <td><p>Heat rate of convection between object and surroundings at a given time = t.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#pychemengg.heattransfer.transient.LumpedSystem.maxheattransferpossible" title="pychemengg.heattransfer.transient.LumpedSystem.maxheattransferpossible"><code class="xref py py-obj docutils literal notranslate"><span class="pre">maxheattransferpossible</span></code></a>()</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#pychemengg.heattransfer.transient.LumpedSystem.calc_maxheattransferpossible" title="pychemengg.heattransfer.transient.LumpedSystem.calc_maxheattransferpossible"><code class="xref py py-obj docutils literal notranslate"><span class="pre">calc_maxheattransferpossible</span></code></a>()</p></td>
 <td><p>Maximum possible heat transfer between solid object and surroundings.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#pychemengg.heattransfer.transient.LumpedSystem.temperature_of_solid_at_time_t" title="pychemengg.heattransfer.transient.LumpedSystem.temperature_of_solid_at_time_t"><code class="xref py py-obj docutils literal notranslate"><span class="pre">temperature_of_solid_at_time_t</span></code></a>([time])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pychemengg.heattransfer.transient.LumpedSystem.calc_temperature_of_solid_at_time_t" title="pychemengg.heattransfer.transient.LumpedSystem.calc_temperature_of_solid_at_time_t"><code class="xref py py-obj docutils literal notranslate"><span class="pre">calc_temperature_of_solid_at_time_t</span></code></a>([time])</p></td>
 <td><p>Temperature of solid object at a given time = t.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#pychemengg.heattransfer.transient.LumpedSystem.totalheat_transferred_during_interval_t" title="pychemengg.heattransfer.transient.LumpedSystem.totalheat_transferred_during_interval_t"><code class="xref py py-obj docutils literal notranslate"><span class="pre">totalheat_transferred_during_interval_t</span></code></a>([time])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#pychemengg.heattransfer.transient.LumpedSystem.calc_totalheat_transferred_during_interval_t" title="pychemengg.heattransfer.transient.LumpedSystem.calc_totalheat_transferred_during_interval_t"><code class="xref py py-obj docutils literal notranslate"><span class="pre">calc_totalheat_transferred_during_interval_t</span></code></a>([time])</p></td>
 <td><p>Heat transferred between solid object and surroundings during  time interval = 0 to t.</p></td>
 </tr>
 </tbody>
@@ -369,8 +353,8 @@ Education, 2020.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="pychemengg.heattransfer.transient.LumpedSystem.heatrateof_conv_at_time_t">
-<span class="sig-name descname"><span class="pre">heatrateof_conv_at_time_t</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pychemengg/heattransfer/transient.html#LumpedSystem.heatrateof_conv_at_time_t"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pychemengg.heattransfer.transient.LumpedSystem.heatrateof_conv_at_time_t" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pychemengg.heattransfer.transient.LumpedSystem.calc_heatrateof_conv_at_time_t">
+<span class="sig-name descname"><span class="pre">calc_heatrateof_conv_at_time_t</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pychemengg/heattransfer/transient.html#LumpedSystem.calc_heatrateof_conv_at_time_t"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pychemengg.heattransfer.transient.LumpedSystem.calc_heatrateof_conv_at_time_t" title="Permalink to this definition">¶</a></dt>
 <dd><p>Heat rate of convection between object and surroundings at a given time = t.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
@@ -416,7 +400,7 @@ Education, 2020.</p>
 <span class="go"># This will create an instance of &#39;LumpedSystem&#39; with a name &#39;plate&#39;</span>
 <span class="go"># Let temperature at time = 60 s after start of the process be needed.</span>
 <span class="go"># Next call the following</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">plate</span><span class="o">.</span><span class="n">heatrateof_conv_at_time_t</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="mi">60</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">plate</span><span class="o">.</span><span class="n">calc_heatrateof_conv_at_time_t</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="mi">60</span><span class="p">)</span>
 <span class="go">-63818.56987259833</span>
 <span class="go"># negative value indicates heat is being lost by the solid object</span>
 </pre></div>
@@ -424,8 +408,8 @@ Education, 2020.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="pychemengg.heattransfer.transient.LumpedSystem.maxheattransferpossible">
-<span class="sig-name descname"><span class="pre">maxheattransferpossible</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pychemengg/heattransfer/transient.html#LumpedSystem.maxheattransferpossible"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pychemengg.heattransfer.transient.LumpedSystem.maxheattransferpossible" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pychemengg.heattransfer.transient.LumpedSystem.calc_maxheattransferpossible">
+<span class="sig-name descname"><span class="pre">calc_maxheattransferpossible</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pychemengg/heattransfer/transient.html#LumpedSystem.calc_maxheattransferpossible"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pychemengg.heattransfer.transient.LumpedSystem.calc_maxheattransferpossible" title="Permalink to this definition">¶</a></dt>
 <dd><p>Maximum possible heat transfer between solid object and surroundings.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -473,7 +457,7 @@ Education, 2020.</p>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">plate</span> <span class="o">=</span> <span class="n">transient</span><span class="o">.</span><span class="n">LumpedSystem</span><span class="p">(</span><span class="n">thermalconductivity</span><span class="o">=</span><span class="mi">180</span><span class="p">,</span> <span class="n">density</span><span class="o">=</span><span class="mi">2800</span><span class="p">,</span> <span class="n">specificheat</span><span class="o">=</span><span class="mi">880</span><span class="p">,</span> <span class="n">T_initial</span><span class="o">=</span><span class="mi">700</span><span class="p">,</span> <span class="n">T_infinity</span><span class="o">=</span><span class="mi">15</span><span class="p">,</span> <span class="n">heattransfercoefficient</span><span class="o">=</span><span class="mi">53</span><span class="p">,</span> <span class="n">surfacearea</span><span class="o">=</span><span class="mi">2</span><span class="o">*</span><span class="mi">1</span><span class="p">,</span> <span class="n">volume</span><span class="o">=</span><span class="mi">1</span><span class="o">*</span><span class="mf">2e-2</span><span class="p">)</span>
 <span class="go"># This will create an instance of &#39;LumpedSystem&#39; with a name &#39;plate&#39;</span>
 <span class="go"># Next call the following</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">plate</span><span class="o">.</span><span class="n">maxheattransferpossible</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">plate</span><span class="o">.</span><span class="n">calc_maxheattransferpossible</span><span class="p">()</span>
 <span class="go">-33756800.0</span>
 <span class="go"># negative value indicates heat is being lost by the solid object</span>
 </pre></div>
@@ -481,8 +465,8 @@ Education, 2020.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="pychemengg.heattransfer.transient.LumpedSystem.temperature_of_solid_at_time_t">
-<span class="sig-name descname"><span class="pre">temperature_of_solid_at_time_t</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pychemengg/heattransfer/transient.html#LumpedSystem.temperature_of_solid_at_time_t"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pychemengg.heattransfer.transient.LumpedSystem.temperature_of_solid_at_time_t" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pychemengg.heattransfer.transient.LumpedSystem.calc_temperature_of_solid_at_time_t">
+<span class="sig-name descname"><span class="pre">calc_temperature_of_solid_at_time_t</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pychemengg/heattransfer/transient.html#LumpedSystem.calc_temperature_of_solid_at_time_t"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pychemengg.heattransfer.transient.LumpedSystem.calc_temperature_of_solid_at_time_t" title="Permalink to this definition">¶</a></dt>
 <dd><p>Temperature of solid object at a given time = t.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
@@ -535,15 +519,15 @@ Education, 2020.</p>
 <span class="go"># This will create an instance of &#39;LumpedSystem&#39; with a name &#39;plate&#39;</span>
 <span class="go"># Let temperature at time = 60 s after start of the process be needed.</span>
 <span class="go"># Next call the following</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">plate</span><span class="o">.</span><span class="n">temperature_of_solid_at_time_t</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="mi">60</span><span class="n">s</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">plate</span><span class="o">.</span><span class="n">calc_temperature_of_solid_at_time_t</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="mi">60</span><span class="n">s</span><span class="p">)</span>
 <span class="go">617.0619799301729</span>
 </pre></div>
 </div>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="pychemengg.heattransfer.transient.LumpedSystem.totalheat_transferred_during_interval_t">
-<span class="sig-name descname"><span class="pre">totalheat_transferred_during_interval_t</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pychemengg/heattransfer/transient.html#LumpedSystem.totalheat_transferred_during_interval_t"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pychemengg.heattransfer.transient.LumpedSystem.totalheat_transferred_during_interval_t" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pychemengg.heattransfer.transient.LumpedSystem.calc_totalheat_transferred_during_interval_t">
+<span class="sig-name descname"><span class="pre">calc_totalheat_transferred_during_interval_t</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pychemengg/heattransfer/transient.html#LumpedSystem.calc_totalheat_transferred_during_interval_t"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pychemengg.heattransfer.transient.LumpedSystem.calc_totalheat_transferred_during_interval_t" title="Permalink to this definition">¶</a></dt>
 <dd><p>Heat transferred between solid object and surroundings during 
 time interval = 0 to t.</p>
 <dl class="field-list">
@@ -594,7 +578,7 @@ Education, 2020.</p>
 <span class="go"># This will create an instance of &#39;LumpedSystem&#39; with a name &#39;plate&#39;</span>
 <span class="go"># Let heat transferred in time = 60 s after start of the process be needed.</span>
 <span class="go"># Next call the following</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">plate</span><span class="o">.</span><span class="n">totalheat_transferred_during_interval_t</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="mi">60</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">plate</span><span class="o">.</span><span class="n">calc_totalheat_transferred_during_interval_t</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="mi">60</span><span class="p">)</span>
 <span class="go">-4087185.6290410785</span>
 <span class="go"># negative value indicates heat is being lost by the solid object</span>
 </pre></div>

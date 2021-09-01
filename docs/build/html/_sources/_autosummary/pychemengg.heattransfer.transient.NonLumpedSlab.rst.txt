@@ -20,10 +20,10 @@
       ~NonLumpedSlab.calc_Bi
       ~NonLumpedSlab.calc_Fo
       ~NonLumpedSlab.calc_eigenvalues
-      ~NonLumpedSlab.heatrateof_conv_at_time_t
-      ~NonLumpedSlab.maxheattransferpossible
-      ~NonLumpedSlab.temperature_of_solid_at_time_t
-      ~NonLumpedSlab.totalheat_transferred_during_interval_t
+      ~NonLumpedSlab.calc_heatrateof_conv_at_time_t
+      ~NonLumpedSlab.calc_maxheattransferpossible
+      ~NonLumpedSlab.calc_temperature_of_solid_at_time_t
+      ~NonLumpedSlab.calc_totalheat_transferred_during_interval_t
    
    
 

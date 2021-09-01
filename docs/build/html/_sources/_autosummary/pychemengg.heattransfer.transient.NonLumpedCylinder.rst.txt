@@ -20,10 +20,10 @@
       ~NonLumpedCylinder.calc_Bi
       ~NonLumpedCylinder.calc_Fo
       ~NonLumpedCylinder.calc_eigenvalues
-      ~NonLumpedCylinder.heatrateof_conv_at_time_t
-      ~NonLumpedCylinder.maxheattransferpossible
-      ~NonLumpedCylinder.temperature_of_solid_at_time_t
-      ~NonLumpedCylinder.totalheat_transferred_during_interval_t
+      ~NonLumpedCylinder.calc_heatrateof_conv_at_time_t
+      ~NonLumpedCylinder.calc_maxheattransferpossible
+      ~NonLumpedCylinder.calc_temperature_of_solid_at_time_t
+      ~NonLumpedCylinder.calc_totalheat_transferred_during_interval_t
    
    
 

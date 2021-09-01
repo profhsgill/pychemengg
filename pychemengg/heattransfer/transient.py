@@ -1740,7 +1740,8 @@ class NonLumpedSphere():
         if (self.density is not None) and (self.specificheat is not None):
             self.thermaldiffusivity = self.thermalconductivity/self.density/self.specificheat
         else:
-            self.thermaldiffusivity = thermaldiffusivity
+            if thermaldiffusivity is not None:
+                self.thermaldiffusivity = thermaldiffusivity
 
         
     def calc_Bi(self):        
@@ -1852,8 +1853,8 @@ class NonLumpedSphere():
         >>> potato=transient.NonLumpedSphere(radius=.0275, surfacearea=4*np.pi*.0275**2, volume=4/3*np.pi*0.0275**3, density=1100, specificheat=3900, thermaldiffusivity=0.14e-6, T_initial=8, T_infinity=97, thermalconductivity=0.6, heattransfercoefficient=1400)
         # This will create an instance of 'NonLumpedSphere' with a name 'potato' 
         # Next call calc_Fo for time = 7 min
-       >>> potato.calc_Fo(7*60)
-       0.07767439172397851
+        >>> potato.calc_Fo(7*60)
+        0.07767439172397851
         
         
         References
@@ -2227,7 +2228,7 @@ class NonLumpedSphere():
         # This will create an instance of 'NonLumpedSphere' with a name 'potato' 
         >>> potato.calc_maxheattransferpossible()
         33260.89947104865
-        # negative value indicates heat is being lost by the solid object
+        # positive value indicates heat is being gained by the solid object
         
         
         References
@@ -2269,67 +2270,282 @@ def _get_eigenvalues(func, Bi=None, numberof_eigenvalues_desired=None):
 
 
 class SemiInfinite():
+    r""" Model to analyze transient heat flow in semi-infinite objects.
+
+
+    Parameters
+    ----------
+    boundarycondition : `str`
+        String defining the boundary condition applied to surface of semi-infinite object.
+        It can take any of the four following values:
+            
+            "surfacetemperature_specified"
+            
+            "heatflux_specified"
+            
+            "surfaceconvection_specified"
+            
+            "energypulse_specified"            
     
-    def __init__(self, thermaldiffusivity=None,
-                 thermalconductivity=None,
-                 specificheat=None,
+    xposition_tofindtemp : `int or float`
+        Location inside the semi infinite object where temperature is to be found.
+        Surface of the semi infinite object is considered to be the origin (x=0)
+    time : `int or float`
+        Time at which temperature in the semi infinite solid is to be found.
+    density : `int or float`
+        Density of solid object.
+    specificheat : `int or float`
+        Specific heat of solid object.
+    thermalconductivity : `int or float`
+        Thermal conductivity of solid object.
+    thermaldiffusivity : `int or float`
+        Thermal diffusivity of solid object.
+    constantsurfacetemperature : `int or float`
+        New temperature of surface at which it is held contant (following a step change from T_initial)
+    heattransfercoefficient : `int or float`
+        Heat transfer coefficient between solid object and surrounding.
+    heatflux : `int of float`
+        Heat flux applied on surface of solid object.
+    energypulse : `int or float`
+        Energy pulse applied to surface of solid object.
+    T_infinity : `int or float`
+        Temperature of surroundings.
+    T_initial : `int or float`
+        Temperature of solid object at time = 0.
+    
+    
+    Attributes
+    ----------
+    See "Parameters". All parameters are attributes. Additional attributes are listed below.
+    
+
+    Examples
+    --------
+    First import the module **transient**
+    
+    Units used in this example: SI system
+    
+    However, any consistent units can be used
+    
+    >>> from pychemengg.heattransfer import transient
+    >>> wood = transient.SemiInfinite(boundarycondition="heatflux_specified", time = 20*60, T_initial=20, heatflux=1250, thermalconductivity=0.159, thermaldiffusivity=1.75e-7, xposition_tofindtemp=0)
+    # This will create an instance of 'Semi Infinite object' with a name 'wood' 
+
+    """
+    
+    def __init__(self, boundarycondition=None,
+                 xposition_tofindtemp=None,
+                 time=None,
                  density=None,
-                 T_initial=None,
+                 specificheat=None,
+                 thermalconductivity=None,
+                 thermaldiffusivity=None,
+                 constantsurfacetemperature=None,
+                 heattransfercoefficient=None,
+                 heatflux=None,
+                 energypulse=None,
                  T_infinity=None,
-                 T_surface=None,
-                 surfaceheatflux=None,
-                 surfaceheattransfercoefficient=None,
-                 surfaceenergypulse=None):
-        self.thermalconductivity = thermalconductivity
+                 T_initial=None):
+        self.boundarycondition = boundarycondition
+        self.xposition_tofindtemp = xposition_tofindtemp
+        self.time = time
         self.specificheat=specificheat
         self.density=density
-        self.T_initial = T_initial
+        self.thermalconductivity = thermalconductivity
+        self.constantsurfacetemperature = constantsurfacetemperature
+        self.heattransfercoefficient = heattransfercoefficient
+        self.heatflux = heatflux
+        self.energypulse = energypulse
         self.T_infinity = T_infinity
-        self.T_surface = T_surface
-        self.surfaceheatflux = surfaceheatflux
-        self.surfaceheattransfercoefficient = surfaceheattransfercoefficient
-        self.surfaceenergypulse = surfaceenergypulse
+        self.T_initial = T_initial
+        
         # calculate
         if (self.density is not None) and (self.specificheat is not None):
             self.thermaldiffusivity = self.thermalconductivity/self.density/self.specificheat
         else:
-            self.thermaldiffusivity = thermaldiffusivity
+            if thermaldiffusivity is not None:
+                self.thermaldiffusivity = thermaldiffusivity
   
-    def calc_temperature(self, option=None, xposition_tofindtemp=None, time=None):
-        self.option = option
-        self.xposition_tofindtemp = xposition_tofindtemp
-        self.time = time
-        if self.option == "surfacetemperature_specified":
+    def calc_temperature(self):
+        r"""Calculate temperature of Semi Infinite object at time = t and position = x.
+        
+        
+        Parameters
+        ----------
+        `None_required` : 'None'
+            Attributes that are already defined are used in calculation.
+     
+        
+        Returns
+        -------
+        temperature : `int or float`
+             Temperature of object at given location and time.
+        
+        
+        Notes
+        -----
+        Temperature of the sold semi infinite object at given location and time
+        is computed based on the 'boundary condition'.
+        
+        1. Boundary condition: Surface temperature is specified as :math:`T_s` = constant
+        
+        .. math::
+            \frac{T(x,t) - T_i}{T_s - T_i} = erfc \left( \frac{x}{2\sqrt{\alpha t}} \right)
+        
+    
+        2. Boundary condition: Surface heat flux is specified as :math:`q_s` = constant
+        
+        .. math::
+            T(x,t) - T_i = \frac{q_s}{k} \left( \sqrt{\frac{4 \alpha t}{\pi}} exp\left(-\frac {x^2}{4 \alpha t}\right) -x erfc\left( \frac{x}{2\sqrt{\alpha t}} \right) \right) 
+            
+        
+        3. Boundary condition: Convection on surface, :math:`q_s(t) = h[T_{\infty} - T(0,t)]`
+        
+        .. math::
+            \frac{T(x,t) - T_i}{T_s - T_i} = erfc \left( \frac{x}{2\sqrt{\alpha t}} \right)  - exp \left( \frac{hx}{k} + \frac{h^2 \alpha t}{k^2}\right) erfc\left( \frac{x}{2\sqrt{\alpha t}} + \frac{h \sqrt{\alpha t}}{k}\right)
+            
+        4. Boundary condition: Surface i exposed to energy pulse, :math:`e_s` = constant
+        
+        .. math::
+            T(x,t) - T_i = \frac{e_s}{k \sqrt{\frac{\pi t}{\alpha}} exp\left(-\frac {x^2}{4 \alpha t}\right)
+            
+            
+        *where:*  
+        
+            t = time at which temperature or flux is to be computed
+            
+            x = location from surface of the semi infinite object where temperature is to be computed
+            
+            k = thermal conductivity of solid
+            
+            h = heat transfer coefficient between solid and fluid
+            
+            :math:`\alpha` *= thermal diffusivity of solid object*
+            
+            :math:`T(x,t)` *= temperature of solid object at losition 'x' and time 't'*
+        
+            :math:`T_{s}` *= new surface temperature of solid object*
+        
+            :math:`T_{i}` *= temperature of solid object at time = 0*
+            
+            :math:`q_s` *= constant heat flux applied to solid surface*
+            
+            :math:`e_s` *= constant energy pulse applied to soild surface*
+            
+            :math:`T_{\infty}` = temperature of fluid in contact with solid
+                     
+        
+        Examples
+        --------
+        >>> from pychemengg.heattransfer import transient
+        >>> wood = transient.SemiInfinite(boundarycondition="heatflux_specified", time = 20*60, T_initial=20, heatflux=1250, thermalconductivity=0.159, thermaldiffusivity=1.75e-7, xposition_tofindtemp=0)
+        # This will create an instance of 'Semi Infinite object' with a name 'wood' 
+        >>> wood.calc_temperature()
+        148.5516322557588
+        
+        
+        References
+        ----------
+        [1] G. F. Nellis and S. A. Klein, "Introduction to Engineering 
+        Heat Transfer", 1st Edition. Cambridge University Press, 2021.
+        
+        [2] Y. A. Cengel and A. J. Ghajar, "Heat And Mass Transfer
+        Fundamentals and Applications", 6th Edition. New York, McGraw Hill
+        Education, 2020.       
+        """
+
+        if self.boundarycondition == "surfacetemperature_specified":
             theta = erfc(self.xposition_tofindtemp/2/np.power(self.thermaldiffusivity*self.time, 0.5))
-            temp_at_given_x_and_time = self.T_initial + theta * (self.T_surface-self.T_initial)
-        if self.option == "surfaceheatflux_specified":
+            temp_at_given_x_and_time = self.T_initial + theta * (self.constantsurfacetemperature-self.T_initial)
+        if self.boundarycondition == "heatflux_specified":
             term1 = np.power(4*self.thermaldiffusivity*self.time/np.pi,0.5)
             term2 = np.exp(np.power(-self.xposition_tofindtemp,2)/4/self.thermaldiffusivity/self.time)
             term3 = self.xposition_tofindtemp*erfc(self.xposition_tofindtemp/2/np.power(self.thermaldiffusivity*self.time,0.5))
-            temp_at_given_x_and_time = self.T_initial + self.surfaceheatflux/self.thermalconductivity*(term1*term2-term3)
-        if self.option == "surfaceconvection_specified":
+            temp_at_given_x_and_time = self.T_initial + self.heatflux/self.thermalconductivity*(term1*term2-term3)
+        if self.boundarycondition == "surfaceconvection_specified":
             term0 = self.xposition_tofindtemp/2/np.power(self.thermaldiffusivity*self.time, 0.5)
             term1 = erfc(term0)
-            term2 = self.surfaceheattransfercoefficient*self.xposition_tofindtemp/self.thermalconductivity
-            term3 = np.power(self.surfaceheattransfercoefficient, 2)*self.thermaldiffusivity*self.time/np.power(self.thermalconductivity,2)
-            term4 = self.surfaceheattransfercoefficient*np.power(self.thermaldiffusivity*self.time, 0.5)/self.thermalconductivity
+            term2 = self.heattransfercoefficient*self.xposition_tofindtemp/self.thermalconductivity
+            term3 = np.power(self.heattransfercoefficient, 2)*self.thermaldiffusivity*self.time/np.power(self.thermalconductivity,2)
+            term4 = self.heattransfercoefficient*np.power(self.thermaldiffusivity*self.time, 0.5)/self.thermalconductivity
             theta = term1 - np.exp(term2+term3)*erfc(term0+term4)
             temp_at_given_x_and_time = self.T_initial + theta * (self.T_infinity-self.T_initial)
-        if self.option == "surfaceenergypulse_specified":
-            term1 = self.surfaceenergypulse/self.thermalconductivity
+        if self.boundarycondition == "energypulse_specified":
+            term1 = self.energypulse/self.thermalconductivity
             term2 = np.power(np.pi*self.time/self.thermaldiffusivity, 0.5)
             term3 = np.exp(- np.power(self.xposition_tofindtemp,2)/4/self.thermaldiffusivity/self.time)
             temp_at_given_x_and_time = self.T_initial + term1/term2*term3
         self.temp_at_given_x_and_time = temp_at_given_x_and_time
         return self.temp_at_given_x_and_time
     
-    def calc_heatflux_at_surface (self):
-        if self.option == "surfacetemperature_specified":
+    def calc_heatflux_forconstantsurfacetemperature(self):
+        r"""Calculate heat flux at time = t for boundary condition = "surfacetemperature_specified".
+        
+        
+        Parameters
+        ----------
+        `None_required` : 'None'
+            Attributes that are already defined are used in calculation.
+     
+        
+        Returns
+        -------
+        heat flux : `int or float; Positive: Heat is gained by object, Negative: Heat is lost by object`
+             Heat flux at a given instance of time 't'.
+        
+        
+        Notes
+        -----
+        Heat flux of the sold semi infinite object at given time 't'
+        is computed using the following formula:
+        
+        1. Boundary condition: Surface temperature is specified as :math:`T_s` = constant
+        
+            
+            q_s(t) = \frac{k(T_s - T_i)}{\sqrt{\pi \alpha t}}
+        
+            
+            
+        *where:*  
+        
+            t = time at which temperature or flux is to be computed
+            
+            :math:`\alpha` *= thermal diffusivity of solid object*
+        
+            :math:`T_{s}` *= new surface temperature of solid object*
+        
+            :math:`T_{i}` *= temperature of solid object at time = 0*
+            
+            :math:`q_s(t)` *= heat flux at any time 't'*           
+        
+                     
+        
+        Examples
+        --------
+        >>> from pychemengg.heattransfer import transient
+        >>> pipe = transient.SemiInfinite(boundarycondition="surfacetemperature_specified", constantsurfacetemperature=-10, T_initial=15, thermalconductivity=0.4, thermaldiffusivity=0.15e-6, time = 90*24*3600)
+        # This will create an instance of 'Semi Infinite object' with a name 'pipe' 
+        >>> pipe.calc_heatflux_forconstantsurfacetemperature ()
+        pipe.calc_heatflux_forconstantsurfacetemperature ()
+        -5.223977625442188
+        # negative value indicates heat is being lost by the solid object
+        
+        
+        References
+        ----------
+        [1] G. F. Nellis and S. A. Klein, "Introduction to Engineering 
+        Heat Transfer", 1st Edition. Cambridge University Press, 2021.
+        
+        [2] Y. A. Cengel and A. J. Ghajar, "Heat And Mass Transfer
+        Fundamentals and Applications", 6th Edition. New York, McGraw Hill
+        Education, 2020.       
+        """
+        if self.boundarycondition == "surfacetemperature_specified":
             term1 = np.power(np.pi*self.thermaldiffusivity*self.time, 0.5)
-            heatflux = self.thermalconductivity * (self.T_surface - self.T_initial)/term1
+            heatflux = self.thermalconductivity * (self.constantsurfacetemperature - self.T_initial)/term1
             return heatflux
             
-    def calc_temperature_atcontact(self, other):
+    def calc_contactsurfacetemperature(self, other):
         self_param = np.power(self.thermalconductivity*self.density*self.specificheat, 0.5)
         other_param = np.power(other.thermalconductivity*other.density*other.specificheat, 0.5)
         term1 = self_param*self.T_initial + other_param*other.T_initial
@@ -2587,8 +2803,8 @@ if __name__ == '__main__':
 # Ghajjar 5t edition and 6th Edition
 # Example 4-6
     def example4_6(burydistance):
-        pipe = SemiInfinite(option="surfacetemperature_specified",
-                            T_surface=-10,
+        pipe = SemiInfinite(boundarycondition="surfacetemperature_specified",
+                            constantsurfacetemperature=-10,
                             T_initial=15,
                             thermalconductivity=0.4,
                             thermaldiffusivity=0.15e-6,
@@ -2601,20 +2817,14 @@ if __name__ == '__main__':
 # Ghajjar 6th edition
 # Example 4-7
 
-    wood = SemiInfinite(option="surfaceheatflux_specified",
-                        time = 20*60,
-                        T_initial=20,
-                        surfaceheatflux=1250,
-                        thermalconductivity=0.159,
-                        thermaldiffusivity=1.75e-7,
-                        xposition_tofindtemp=0)
+    wood = SemiInfinite(boundarycondition="heatflux_specified", time = 20*60, T_initial=20, heatflux=1250, thermalconductivity=0.159, thermaldiffusivity=1.75e-7, xposition_tofindtemp=0)
     temp_wood = wood.calc_temperature()
     print(f"temp of wood surface from code = {temp_wood: 0.0f} C and ans from book is 149 C")
     
-    aluminum = SemiInfinite(option="surfaceheatflux_specified",
+    aluminum = SemiInfinite(boundarycondition="heatflux_specified",
                         time = 20*60,
                         T_initial=20,
-                        surfaceheatflux=1250,
+                        heatflux=1250,
                         thermalconductivity=237,
                         thermaldiffusivity=9.71e-5,
                         xposition_tofindtemp=0)
@@ -2624,13 +2834,13 @@ if __name__ == '__main__':
     # Ghajjar 6th edition
     # Example 4-7
     
-    plate = SemiInfinite(option="surfaceconvection_specified",
+    plate = SemiInfinite(boundarycondition="surfaceconvection_specified",
                          T_infinity=-70,
                          T_initial=10,
                          thermalconductivity=16.3,
                          specificheat=500,
                          density=8000,
-                         surfaceheattransfercoefficient=300,
+                         heattransfercoefficient=300,
                          xposition_tofindtemp=0.01,
                          time=30*60)
     tempatbolttip = plate.calc_temperature()
@@ -2639,13 +2849,13 @@ if __name__ == '__main__':
 # Ghajjar 5th Edn
 # Problem 4_99
     def problem4_99(energypulse):
-        slab = SemiInfinite(option="surfaceenergypulse_specified",
+        slab = SemiInfinite(boundarycondition="energypulse_specified",
                             thermalconductivity=63.9,
                             thermaldiffusivity=18.8e-6,
                             time=30,
                             xposition_tofindtemp=25e-3,
                             T_initial=20,
-                            surfaceenergypulse=energypulse[0])
+                            energypulse=energypulse[0])
         temp = slab.calc_temperature()
 
         return temp-130
@@ -2655,26 +2865,26 @@ if __name__ == '__main__':
 # Ghajjar 5th Edn
 # Problem 4_102
 
-    human = SemiInfinite(option="surfacetemperature_specified",
+    human = SemiInfinite(boundarycondition="surfacetemperature_specified",
                         thermalconductivity=1,
                         density=1,
                         specificheat=1.1e3**2,
                         T_initial=32)
     
-    aluminum = SemiInfinite(option="surfacetemperature_specified",
+    aluminum = SemiInfinite(boundarycondition="surfacetemperature_specified",
                         thermalconductivity=1,
                         density=1,
                         specificheat=24e3**2,
                         T_initial=20)
-    temp_human_alumium = human.calc_temperature_atcontact(aluminum)
+    temp_human_alumium = human.calc_contactsurfacetemperature(aluminum)
     print(f"contacting temp of human and aluminum = {temp_human_alumium: 0.1f} C and from book = 20.5 C ")
     
-    wood = SemiInfinite(option="surfacetemperature_specified",
+    wood = SemiInfinite(boundarycondition="surfacetemperature_specified",
                         thermalconductivity=1,
                         density=1,
                         specificheat=0.38e3**2,
                         T_initial=20)
-    temp_human_alumium = human.calc_temperature_atcontact(wood)
+    temp_human_alumium = human.calc_contactsurfacetemperature(wood)
     print(f"contacting temp of human and aluminum = {temp_human_alumium: 0.1f} C and from book = 28.9 C ")
                         
 

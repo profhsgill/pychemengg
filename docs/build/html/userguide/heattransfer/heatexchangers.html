@@ -302,7 +302,7 @@ the total heat rate. <code class="docutils literal notranslate"><span class="pre
 <span class="n">Cmin</span> <span class="o">=</span> <span class="n">Chot</span>
 <span class="n">Cmax</span> <span class="o">=</span> <span class="n">Ccold</span>
 <span class="c1"># Calculate NTU = UA/Cmin</span>
-<span class="n">NTU</span> <span class="o">=</span> <span class="o">.</span><span class="mf">205e3</span> <span class="o">*</span> <span class="mi">13</span><span class="o">/</span><span class="n">Cmin</span>
+<span class="n">NTU</span> <span class="o">=</span> <span class="mf">.205e3</span> <span class="o">*</span> <span class="mi">13</span><span class="o">/</span><span class="n">Cmin</span>
 <span class="c1"># Next given this NTU find effectiveness.</span>
 <span class="c1"># First create instance of EffNTU class</span>
 <span class="n">doublepipe</span> <span class="o">=</span> <span class="n">hx</span><span class="o">.</span><span class="n">EffNTU</span><span class="p">(</span><span class="n">Cmin</span><span class="o">=</span><span class="n">Cmin</span><span class="p">,</span> <span class="n">Cmax</span><span class="o">=</span><span class="n">Cmax</span><span class="p">,</span> <span class="n">NTU</span><span class="o">=</span><span class="n">NTU</span><span class="p">,</span> <span class="n">effectiveness</span><span class="o">=</span><span class="s2">&quot;?&quot;</span><span class="p">)</span>

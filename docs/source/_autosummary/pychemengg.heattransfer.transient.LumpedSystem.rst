@@ -18,10 +18,10 @@
    
       ~LumpedSystem.__init__
       ~LumpedSystem.calc_Bi
-      ~LumpedSystem.heatrateof_conv_at_time_t
-      ~LumpedSystem.maxheattransferpossible
-      ~LumpedSystem.temperature_of_solid_at_time_t
-      ~LumpedSystem.totalheat_transferred_during_interval_t
+      ~LumpedSystem.calc_heatrateof_conv_at_time_t
+      ~LumpedSystem.calc_maxheattransferpossible
+      ~LumpedSystem.calc_temperature_of_solid_at_time_t
+      ~LumpedSystem.calc_totalheat_transferred_during_interval_t
    
    
 
