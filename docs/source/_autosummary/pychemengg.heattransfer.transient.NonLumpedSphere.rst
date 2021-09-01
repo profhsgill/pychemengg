@@ -1,4 +1,4 @@
-﻿NonLumpedSphere
+NonLumpedSphere
 ===============
 
 .. currentmodule:: pychemengg.heattransfer.transient

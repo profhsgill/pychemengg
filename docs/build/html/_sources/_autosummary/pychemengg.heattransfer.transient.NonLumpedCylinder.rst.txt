@@ -1,4 +1,4 @@
-﻿NonLumpedCylinder
+NonLumpedCylinder
 =================
 
 .. currentmodule:: pychemengg.heattransfer.transient

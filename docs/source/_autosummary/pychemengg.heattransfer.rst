@@ -1,4 +1,4 @@
-﻿heattransfer
+heattransfer
 ============
 
 .. automodule:: pychemengg.heattransfer

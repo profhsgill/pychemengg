@@ -2545,12 +2545,73 @@ class SemiInfinite():
             heatflux = self.thermalconductivity * (self.constantsurfacetemperature - self.T_initial)/term1
             return heatflux
             
-    def calc_contactsurfacetemperature(self, other):
+    def calc_contacttemperature(self, other_semiinfinitesolid):
+        r"""Calculate contact temperature of two semi infinite solids".
+        
+        
+        Parameters
+        ----------
+        other_semiinfinitesolid : `~heattransfer.transient.SemiInfinite`
+            A `SemiInfinite` instance that serves as the second semiinfinite
+            solid that is in contact with the first semiinfinite solid - the 'self'
+
+        
+        Returns
+        -------
+        temperature : `int or float`
+             Temperature at contact of two semi infinite solids.
+        
+        
+        Notes
+        -----
+        Contact temperature is computed using the following formula:
+        
+        .. math::
+           
+            T_s = \left( \frac{\sqrt{(k \rho c_p)_A} T_{A,i} + \sqrt{(k \rho c_p)_B} T_{B,i}} {\sqrt{(k \rho c_p)}_A  + \sqrt{(k \rho c_p)_B}} \right)
+        
+            
+            
+        *where:*  
+            
+            *k = thermal conductivity of semi infinite solid 'A' or 'B'*
+                    
+            :math:`\rho` *= density of semi infinite solid 'A' or 'B'*
+            
+            :math:`c_p` *= specific heat of semi infinite solid 'A' or 'B'*
+        
+            :math:`T_{s}` *= contact temperature of semi infinite objects A and B*
+        
+            :math:`T_{A,i}` *= temperature of semi infinite object A at time = 0 (before contact with 'B')*
+            
+            :math:`T_{B,i}` *= temperature of semi infinite object B at time = 0 (before contact with 'A')*          
+        
+                     
+        
+        Examples
+        --------
+        >>> from pychemengg.heattransfer import transient
+        # If a human touches a metal block, then the temperature at interface
+        # of human and aluminum is as follows:
+        # First model the human and aluminum as semi infinite solids
+        >>> human = transient.SemiInfinite(boundarycondition="surfacetemperature_specified", thermalconductivity=1, density=1, specificheat=1.1e3**2, T_initial=32)  
+        >>> aluminum = transient.SemiInfinite(boundarycondition="surfacetemperature_specified", thermalconductivity=1, density=1, specificheat=24e3**2, T_initial=20)
+        # Next apply the method on one and pass the other as argument
+        >>> human.calc_contacttemperature(aluminum)
+        20.52589641434263
+        
+        
+        References
+        ----------        
+        [1] Y. A. Cengel and A. J. Ghajar, "Heat And Mass Transfer
+        Fundamentals and Applications", 6th Edition. New York, McGraw Hill
+        Education, 2020.       
+        """
         self_param = np.power(self.thermalconductivity*self.density*self.specificheat, 0.5)
-        other_param = np.power(other.thermalconductivity*other.density*other.specificheat, 0.5)
-        term1 = self_param*self.T_initial + other_param*other.T_initial
+        other_param = np.power(other_semiinfinitesolid.thermalconductivity*other_semiinfinitesolid.density*other_semiinfinitesolid.specificheat, 0.5)
+        term1 = self_param*self.T_initial + other_param*other_semiinfinitesolid.T_initial
         term2 = self_param + other_param
-        self.contact_temp = other.contact_temp = term1/term2
+        self.contact_temp = other_semiinfinitesolid.contact_temp = term1/term2
         return self.contact_temp
         
 
@@ -2876,7 +2937,7 @@ if __name__ == '__main__':
                         density=1,
                         specificheat=24e3**2,
                         T_initial=20)
-    temp_human_alumium = human.calc_contactsurfacetemperature(aluminum)
+    temp_human_alumium = human.calc_contacttemperature(aluminum)
     print(f"contacting temp of human and aluminum = {temp_human_alumium: 0.1f} C and from book = 20.5 C ")
     
     wood = SemiInfinite(boundarycondition="surfacetemperature_specified",
@@ -2884,7 +2945,7 @@ if __name__ == '__main__':
                         density=1,
                         specificheat=0.38e3**2,
                         T_initial=20)
-    temp_human_alumium = human.calc_contactsurfacetemperature(wood)
+    temp_human_alumium = human.calc_contacttemperature(wood)
     print(f"contacting temp of human and aluminum = {temp_human_alumium: 0.1f} C and from book = 28.9 C ")
                         
 

@@ -1,4 +1,4 @@
-﻿NonLumpedSlab
+NonLumpedSlab
 =============
 
 .. currentmodule:: pychemengg.heattransfer.transient

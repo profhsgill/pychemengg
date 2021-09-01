@@ -1,4 +1,4 @@
-﻿LumpedSystem
+LumpedSystem
 ============
 
 .. currentmodule:: pychemengg.heattransfer.transient
