@@ -31,6 +31,5 @@
 
    pychemengg.heattransfer
    pychemengg.physicalproperties
-   pychemengg.utils
 
 

@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Steady State Heat Transfer &mdash; PyChemEngg 0.1a9 documentation</title>
+  <title>Transient Heat Transfer &mdash; PyChemEngg 0.1a9 documentation</title>
   
 
   
@@ -48,8 +48,8 @@
     
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Fins" href="fins.html" />
-    <link rel="prev" title="PyChemEngg User Guide" href="index.html" /> 
+    <link rel="next" title="PyChemEngg API" href="../../autosummary_pychemengg.html" />
+    <link rel="prev" title="Common methods" href="heatcommonmethods.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -101,11 +101,17 @@
               <p class="caption" role="heading"><span class="caption-text">User Tutorial</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">Heat Transfer</a><ul class="current">
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Steady State Heat Transfer</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="steadystate.html">Steady State Heat Transfer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fins.html">Fins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="internalflow.html">Internal flow</a></li>
+<li class="toctree-l2"><a class="reference internal" href="externalflow.html">External flow</a></li>
+<li class="toctree-l2"><a class="reference internal" href="heatexchangers.html">Heat Exchangers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="heatcommonmethods.html">Common methods</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Transient Heat Transfer</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#introduction">Introduction</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#examples">Examples</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#example-1-rectangular-system-conduction">Example 1: Rectangular system <code class="docutils literal notranslate"><span class="pre">conduction</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="#example-2-rectangular-system-conduction">Example 2: Rectangular system <code class="docutils literal notranslate"><span class="pre">conduction</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#example-1-lumped-system-rectangular-plates">Example 1: Lumped system <code class="docutils literal notranslate"><span class="pre">Rectangular</span> <span class="pre">plates</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#example-2-lumped-system-cylindrical-rod">Example 2: Lumped system <code class="docutils literal notranslate"><span class="pre">cylindrical</span> <span class="pre">rod</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#example-3-rectangular-system-convection">Example 3: Rectangular system <code class="docutils literal notranslate"><span class="pre">convection</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#example-4-rectangular-system-convection-radiation">Example 4: Rectangular system <code class="docutils literal notranslate"><span class="pre">convection</span> <span class="pre">+</span> <span class="pre">radiation</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#example-5-rectangular-system-composite-wall-conduction">Example 5: Rectangular system <code class="docutils literal notranslate"><span class="pre">composite</span> <span class="pre">wall,</span> <span class="pre">conduction</span></code></a></li>
@@ -117,12 +123,6 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="fins.html">Fins</a></li>
-<li class="toctree-l2"><a class="reference internal" href="internalflow.html">Internal flow</a></li>
-<li class="toctree-l2"><a class="reference internal" href="externalflow.html">External flow</a></li>
-<li class="toctree-l2"><a class="reference internal" href="heatexchangers.html">Heat Exchangers</a></li>
-<li class="toctree-l2"><a class="reference internal" href="heatcommonmethods.html">Common methods</a></li>
-<li class="toctree-l2"><a class="reference internal" href="transient.html">Transient Heat Transfer</a></li>
 </ul>
 </li>
 </ul>
@@ -179,13 +179,13 @@
         
           <li><a href="index.html">PyChemEngg User Guide</a> &raquo;</li>
         
-      <li>Steady State Heat Transfer</li>
+      <li>Transient Heat Transfer</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
           
-            <a href="../../_sources/userguide/heattransfer/steadystate.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../../_sources/userguide/heattransfer/transient.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -195,10 +195,10 @@
   
   <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
       
-        <a href="fins.html" class="btn btn-neutral float-right" title="Fins" accesskey="n">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="../../autosummary_pychemengg.html" class="btn btn-neutral float-right" title="PyChemEngg API" accesskey="n">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
       
       
-        <a href="index.html" class="btn btn-neutral float-left" title="PyChemEngg User Guide" accesskey="p"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="heatcommonmethods.html" class="btn btn-neutral float-left" title="Common methods" accesskey="p"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
       
   </div>
   
@@ -231,86 +231,91 @@
     text-align: unset;
 }
 </style>
-<div class="section" id="steady-state-heat-transfer">
-<span id="steadystate"></span><h1>Steady State Heat Transfer<a class="headerlink" href="#steady-state-heat-transfer" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="transient-heat-transfer">
+<span id="transient"></span><h1>Transient Heat Transfer<a class="headerlink" href="#transient-heat-transfer" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="introduction">
 <h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
-<p>The module <code class="docutils literal notranslate"><span class="pre">steadystate</span></code> contains functions that can be used to solve
-a variety of one dimensional (1D) steady state heat transfer problems
-related to the following modes of heat transfer:</p>
-<ol class="arabic simple">
-<li><p>Conduction</p></li>
-<li><p>Convection</p></li>
-<li><p>Radiation</p></li>
+<p>The module <code class="docutils literal notranslate"><span class="pre">transient</span></code> contains functions that can be used to solve
+unsteady steady state heat transfer problems.</p>
+<p>The following three cases are covered in this module:</p>
+<ol class="arabic">
+<li><p>Lumped system</p></li>
+<li><p>Nonlumped system</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Large wall</p></li>
+<li><p>Long Cylinder</p></li>
+<li><p>Sphere</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>Semi infinite solids</p>
+<blockquote>
+<div><p>The following cases of boundary conditions are covered:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Surface temperature is specified</p></li>
+<li><p>Heatflux is specified</p></li>
+<li><p>Surface convection is specified</p></li>
+<li><p>Energy pulse is specified</p></li>
+</ul>
+</div></blockquote>
+</div></blockquote>
+</li>
 </ol>
-<p>There are four <em>class</em> definitions to model the following
-geometrical shapes:</p>
-<ol class="arabic simple">
-<li><p>Slab (to model rectangular objects)</p></li>
-<li><p>Cylinder (to model cylindrical objects)</p></li>
-<li><p>Sphere (to model spherical objects)</p></li>
-<li><p>CylinderBase (to model flat circular surface)</p></li>
-</ol>
-<p>Each of the above classes implement methods to find:</p>
-<ol class="arabic simple">
-<li><p>Heat transfer rate for conduction</p></li>
-<li><p>Heat transfer rate for convection</p></li>
-<li><p>Heat transfer rate for radiation</p></li>
-<li><p>Resistance to conductive heat transfer</p></li>
-<li><p>Resistance to convective heat transfer</p></li>
-<li><p>Resistance from fouling</p></li>
-</ol>
-<p>In addition, for ‘Cylinder’ and ‘Sphere’, methods are available
-to compute their ‘area’ and ‘volume’, while For ‘CylinderBase’,
-a method is available to compute its ‘area’. No ‘area’ or ‘volume’
-methods have been implemented for the class ‘Slab’.</p>
 <div class="custom docutils container">
 <p><strong>How to use</strong></p>
 <p>It is recommended that the module be imported
-as <code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">pychemengg</span> <span class="pre">import</span> <span class="pre">steadystate</span> <span class="pre">as</span> <span class="pre">ss</span></code>.</p>
+as <code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">pychemengg</span> <span class="pre">import</span> <span class="pre">transient</span> <span class="pre">as</span> <span class="pre">transient</span></code>.</p>
 </div>
-<p>The following examples demonstrate how the module <code class="docutils literal notranslate"><span class="pre">steadystate</span></code>
+<p>The following examples demonstrate how the module <code class="docutils literal notranslate"><span class="pre">transient</span></code>
 can be used to solve heat transfer problems.</p>
 </div>
 <div class="section" id="examples">
 <h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="example-1-rectangular-system-conduction">
-<h3>Example 1: Rectangular system <code class="docutils literal notranslate"><span class="pre">conduction</span></code><a class="headerlink" href="#example-1-rectangular-system-conduction" title="Permalink to this headline">¶</a></h3>
-<p><code class="docutils literal notranslate"><span class="pre">Example</span> <span class="pre">1.</span></code> Determine the heat flux q and the heat transfer rate across an
-iron plate with area A = 0.5 m2 and thickness L =0.02 m (k = 70 W/m °C)
-when one of its surfaces is maintained at T1 = 60 °C and the other at T2
-= 20 °C. <code class="docutils literal notranslate"><span class="pre">Ans:</span> <span class="pre">heat</span> <span class="pre">rate</span> <span class="pre">=</span> <span class="pre">70</span> <span class="pre">kW</span></code></p>
-<blockquote>
-<div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># EXAMPLE 1</span>
-<span class="kn">from</span> <span class="nn">pychemengg.heattransfer</span> <span class="kn">import</span> <span class="n">steadystate</span> <span class="k">as</span> <span class="n">ss</span>
-<span class="c1"># Create instance of Slab and call it wall.</span>
-<span class="n">wall</span> <span class="o">=</span> <span class="n">ss</span><span class="o">.</span><span class="n">Slab</span><span class="p">(</span><span class="n">thickness</span><span class="o">=</span><span class="mf">0.02</span><span class="p">,</span> <span class="n">area</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">thermalconductivity</span><span class="o">=</span><span class="mi">70</span><span class="p">)</span>
-<span class="c1"># Next call on the method of Slab for heat conduction.</span>
-<span class="c1"># This method needs dT.</span>
-<span class="c1"># Since the walls are at 60 and 20, dT = 60-20.</span>
-<span class="c1"># Heatrate can now be computed.</span>
-<span class="n">heatrate</span> <span class="o">=</span> <span class="n">wall</span><span class="o">.</span><span class="n">heatrateof_cond</span><span class="p">(</span><span class="n">dT</span><span class="o">=</span><span class="mi">60</span><span class="o">-</span><span class="mi">20</span><span class="p">)</span>
-<span class="c1"># Next divide by area of wall to get flux.</span>
-<span class="c1"># The area can be typed again, but it is stored in the</span>
-<span class="c1"># attribute &#39;area&#39; of the instance, so it can be used.</span>
-<span class="n">heatflux</span> <span class="o">=</span> <span class="n">heatrate</span><span class="o">/</span><span class="n">wall</span><span class="o">.</span><span class="n">area</span>
-<span class="c1"># Result can be printed.</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;heatrate = </span><span class="si">{</span><span class="n">heatrate</span><span class="si">}</span><span class="s2"> W&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;heatflux = </span><span class="si">{</span><span class="n">heatflux</span><span class="si">}</span><span class="s2"> W/m2&quot;</span><span class="p">)</span>
+<div class="section" id="example-1-lumped-system-rectangular-plates">
+<h3>Example 1: Lumped system <code class="docutils literal notranslate"><span class="pre">Rectangular</span> <span class="pre">plates</span></code><a class="headerlink" href="#example-1-lumped-system-rectangular-plates" title="Permalink to this headline">¶</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">Example</span> <span class="pre">1.</span></code> Plates (1 cm thick) made of metal are heated by passing them
+through an enclosed space maintained at 800 C. The plates enter
+the oven at 20 C and stay in the oven for 2 min. Find the temperature
+of the plates as they exit the enclosure. Use the heat transfer
+coefficient as 200 W/m2K and the following properties for the metal plates.</p>
+<dl>
+<dt>Metal plates:</dt><dd><p>k = 180 W/mK
+<span class="math">\(\rho\)</span> = 2800 kg/m3
+<span class="math">\(c_p\)</span> = 880 J/kg K</p>
+<p><code class="docutils literal notranslate"><span class="pre">Ans:</span> <span class="pre">Temperature</span> <span class="pre">of</span> <span class="pre">plates</span> <span class="pre">at</span> <span class="pre">exit</span> <span class="pre">=</span> <span class="pre">689</span> <span class="pre">C</span></code></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># EXAMPLE 1</span>
+<span class="kn">from</span> <span class="nn">pychemengg.heattransfer</span> <span class="kn">import</span> <span class="n">transient</span> <span class="k">as</span> <span class="n">transient</span>
+<span class="c1"># Start by assuming lumped system analysis can be applied</span>
+<span class="c1"># Create an instance of LumpedSystem</span>
+<span class="c1"># Since plate area is not given consider one side area = &#39;1&#39;</span>
+<span class="c1"># Since heat will transfer from both sides, surface area = 2*1</span>
+<span class="c1"># Volume then equals = Area of one side*thickness</span>
+<span class="n">plate</span> <span class="o">=</span> <span class="n">transient</span><span class="o">.</span><span class="n">LumpedSystem</span><span class="p">(</span><span class="n">surfacearea</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">volume</span><span class="o">=</span><span class="mi">1</span><span class="o">*</span><span class="mf">1e-2</span><span class="p">,</span> <span class="n">density</span><span class="o">=</span><span class="mi">2800</span><span class="p">,</span> <span class="n">specificheat</span><span class="o">=</span><span class="mi">880</span><span class="p">,</span> <span class="n">thermalconductivity</span><span class="o">=</span><span class="mi">180</span><span class="p">,</span> <span class="n">heattransfercoefficient</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span> <span class="n">T_infinity</span><span class="o">=</span><span class="mi">800</span><span class="p">,</span> <span class="n">T_initial</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+<span class="c1"># Compute Biot number to check lumped system assumption</span>
+<span class="n">biotnumber</span> <span class="o">=</span> <span class="n">plate</span><span class="o">.</span><span class="n">calc_Bi</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Biot number = </span><span class="si">{</span><span class="n">biotnumber</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="c1"># The result is Biot number = 0.005555555555555556 which is &lt; 0.1</span>
+<span class="c1"># Therefore lumped system assumption is valid</span>
+<span class="c1"># Temperature of plates as they exit can be computed as temperature at time = 2 min</span>
+<span class="n">exittemperature</span> <span class="o">=</span> <span class="n">plate</span><span class="o">.</span><span class="n">calc_temperature_of_solid_at_time_t</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="mi">2</span><span class="o">*</span><span class="mi">60</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Temperature of plates at exit = </span><span class="si">{</span><span class="n">exittemperature</span><span class="si">:</span><span class="s2"> 0.0f</span><span class="si">}</span><span class="s2"> C&quot;</span><span class="p">)</span>
 
 <span class="c1"># PRINTED OUTPUT</span>
-<span class="n">heatrate</span> <span class="o">=</span> <span class="mf">70000.0</span> <span class="n">W</span>
-<span class="n">heatflux</span> <span class="o">=</span> <span class="mf">140000.0</span> <span class="n">W</span><span class="o">/</span><span class="n">m2</span>
+<span class="n">Temperature</span> <span class="n">of</span> <span class="n">plates</span> <span class="n">at</span> <span class="n">exit</span> <span class="o">=</span>  <span class="mi">689</span> <span class="n">C</span>
 </pre></div>
 </div>
-</div></blockquote>
+</dd>
+</dl>
 </div>
 <hr class="docutils" />
-<div class="section" id="example-2-rectangular-system-conduction">
-<h3>Example 2: Rectangular system <code class="docutils literal notranslate"><span class="pre">conduction</span></code><a class="headerlink" href="#example-2-rectangular-system-conduction" title="Permalink to this headline">¶</a></h3>
-<p><code class="docutils literal notranslate"><span class="pre">Example</span> <span class="pre">2.</span></code> The heat flow rate through a wood board L = 2 cm thick for a
-temperature difference of ∆T = 25 °C between the two surfaces is 150 W/m2.
-Calculate the thermal conductivity of the wood. <code class="docutils literal notranslate"><span class="pre">Ans:</span> <span class="pre">k</span> <span class="pre">=</span> <span class="pre">0.12</span> <span class="pre">W/m</span> <span class="pre">°C</span></code></p>
+<div class="section" id="example-2-lumped-system-cylindrical-rod">
+<h3>Example 2: Lumped system <code class="docutils literal notranslate"><span class="pre">cylindrical</span> <span class="pre">rod</span></code><a class="headerlink" href="#example-2-lumped-system-cylindrical-rod" title="Permalink to this headline">¶</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">Example</span> <span class="pre">2.</span></code> A long copper rod of diameter 2 cm is exposed to airat 20 C
+with a heat transfer coefficient of 200 W/m2K. If the initial temperature
+of the rod is 100 C, how long will it take for the rod to reach an average
+temperature of 20 C. Take the  <code class="docutils literal notranslate"><span class="pre">Ans:</span> <span class="pre">k</span> <span class="pre">=</span> <span class="pre">0.12</span> <span class="pre">W/m</span> <span class="pre">°C</span></code></p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># EXAMPLE 2</span>
 <span class="kn">from</span> <span class="nn">pychemengg.heattransfer</span> <span class="kn">import</span> <span class="n">steadystate</span> <span class="k">as</span> <span class="n">ss</span>
 <span class="c1"># Create instance of Slab and call it board.</span>
@@ -659,8 +664,8 @@ The radii of the layers are:</p>
           </div>
           <footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="fins.html" class="btn btn-neutral float-right" title="Fins" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
-        <a href="index.html" class="btn btn-neutral float-left" title="PyChemEngg User Guide" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../../autosummary_pychemengg.html" class="btn btn-neutral float-right" title="PyChemEngg API" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="heatcommonmethods.html" class="btn btn-neutral float-left" title="Common methods" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
 
   <hr/>

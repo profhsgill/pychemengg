@@ -257,14 +257,7 @@
 <span class="sd">    However, any consistent units can be used</span>
 <span class="sd">    </span>
 <span class="sd">    &gt;&gt;&gt; from pychemengg.heattransfer import transient</span>
-<span class="sd">    &gt;&gt;&gt; plate = transient.LumpedSystem(thermalconductivity=180,</span>
-<span class="sd">                                       density=2800,</span>
-<span class="sd">                                       specificheat=880,</span>
-<span class="sd">                                       T_initial=700,</span>
-<span class="sd">                                       T_infinity=15,</span>
-<span class="sd">                                       heattransfercoefficient=53,</span>
-<span class="sd">                                       surfacearea=2*1,</span>
-<span class="sd">                                       volume=1*2e-2)</span>
+<span class="sd">    &gt;&gt;&gt; plate = transient.LumpedSystem(thermalconductivity=180, density=2800, specificheat=880, T_initial=700, T_infinity=15, heattransfercoefficient=53, surfacearea=2*1, volume=1*2e-2)</span>
 <span class="sd">    # This will create an instance of &#39;LumpedSystem&#39; with a name &#39;plate&#39; </span>
 
 <span class="sd">    &quot;&quot;&quot;</span>
@@ -380,25 +373,25 @@
 <span class="sd">        </span>
 <span class="sd">        *where:*</span>
 <span class="sd">        </span>
-<span class="sd">            :math:`T_{infinity} = temperature of surrounding fluid`</span>
+<span class="sd">            :math:`T_{infinity}` *= temperature of surrounding fluid*</span>
 <span class="sd">        </span>
-<span class="sd">            :math:`T_{initial} = intitial temperature of solid object`</span>
+<span class="sd">            :math:`T_{initial}` *= intitial temperature of solid object*</span>
 <span class="sd">            </span>
 <span class="sd">            :math:`b = \frac{hA_s}{\rho V C_p}`</span>
 <span class="sd">            </span>
-<span class="sd">            t = time at which temperature is to be computed</span>
+<span class="sd">            *t = time at which temperature is to be computed*</span>
 <span class="sd">            </span>
 <span class="sd">                where:</span>
 <span class="sd">                </span>
-<span class="sd">                h =  heat transfer coefficient</span>
+<span class="sd">                *h =  heat transfer coefficient*</span>
 <span class="sd">                </span>
-<span class="sd">                :math:`A_s = surface area of solid object`</span>
+<span class="sd">                :math:`A_s` *= surface area of solid object*</span>
 <span class="sd">                </span>
-<span class="sd">                :math:`\rho` = density of solid object</span>
+<span class="sd">                :math:`\rho` *= density of solid object*</span>
 <span class="sd">                </span>
-<span class="sd">                V = volume of solid object</span>
+<span class="sd">                *V = volume of solid object*</span>
 <span class="sd">               </span>
-<span class="sd">                :math:`C_p` = specific heat of solid object</span>
+<span class="sd">                :math:`C_p` *= specific heat of solid object*</span>
 <span class="sd">                     </span>
 <span class="sd">        </span>
 <span class="sd">        Examples</span>
@@ -458,17 +451,17 @@
 <span class="sd">            </span>
 <span class="sd">        *where:*</span>
 <span class="sd">        </span>
-<span class="sd">            t = time at which temperature is to be computed    </span>
+<span class="sd">            *t = time at which temperature is to be computed*</span>
 <span class="sd">        </span>
-<span class="sd">            h = heat transfer coefficient    </span>
+<span class="sd">            *h = heat transfer coefficient*</span>
 <span class="sd">        </span>
-<span class="sd">            :math:`T_{infinity} = temperature of surrounding fluid`</span>
+<span class="sd">            :math:`T_{infinity}` *= temperature of surrounding fluid*</span>
 <span class="sd">        </span>
-<span class="sd">            :math:`T_{t} = temperature of solid object at time = t`</span>
+<span class="sd">            :math:`T_{t}` *= temperature of solid object at time = t*</span>
 <span class="sd">            </span>
-<span class="sd">            :math:`A_s = surface area of solid object`</span>
+<span class="sd">            :math:`A_s` *= surface area of solid object*</span>
 <span class="sd">            </span>
-<span class="sd">            :math:`q_{t} = heat rate at time = t`</span>
+<span class="sd">            :math:`q_{t}` *= heat rate at time = t*</span>
 <span class="sd">                     </span>
 <span class="sd">        </span>
 <span class="sd">        Examples</span>
@@ -531,18 +524,18 @@
 <span class="sd">            </span>
 <span class="sd">        *where:*</span>
 <span class="sd">        </span>
-<span class="sd">            t = time marking the interval [0, t] for which heat</span>
-<span class="sd">            transferred is to be computed    </span>
+<span class="sd">            *t = time marking the interval [0, t] for which heat</span>
+<span class="sd">            transferred is to be computed*   </span>
 <span class="sd">        </span>
-<span class="sd">            m = mass of object</span>
+<span class="sd">            *m = mass of object*</span>
 <span class="sd">            </span>
-<span class="sd">            :math:`C_{p} = specific heat of object`</span>
+<span class="sd">            :math:`C_{p}` *= specific heat of object*</span>
 <span class="sd">        </span>
-<span class="sd">            :math:`T_{t} = temperature of object at time = t`</span>
+<span class="sd">            :math:`T_{t}` *= temperature of object at time = t*</span>
 <span class="sd">        </span>
-<span class="sd">            :math:`T_{initial} = temperature of object at time = 0`</span>
+<span class="sd">            :math:`T_{initial}` *= temperature of object at time = 0*</span>
 <span class="sd">            </span>
-<span class="sd">            :math:`q_{0 to t} = heat transferred in interval [0, t]`</span>
+<span class="sd">            :math:`q_{0 to t}` *= heat transferred in interval [0, t]*</span>
 <span class="sd">                     </span>
 <span class="sd">        </span>
 <span class="sd">        Examples</span>
@@ -605,15 +598,15 @@
 <span class="sd">            </span>
 <span class="sd">        *where:*  </span>
 <span class="sd">        </span>
-<span class="sd">            m = mass of solid object</span>
+<span class="sd">            *m = mass of solid object*</span>
 <span class="sd">            </span>
-<span class="sd">            :math:`C_{p} = specific heat of solid object`</span>
+<span class="sd">            :math:`C_{p}` *= specific heat of solid object*</span>
 <span class="sd">        </span>
-<span class="sd">            :math:`T_{infinity} = temperature of surrounding, which the solid object will eventually attain`</span>
+<span class="sd">            :math:`T_{infinity}` *= temperature of surrounding, which the solid object will eventually attain*</span>
 <span class="sd">        </span>
-<span class="sd">            :math:`T_{initial} = temperature of solid object at time = initial`</span>
+<span class="sd">            :math:`T_{initial}` *= temperature of solid object at time = initial*</span>
 <span class="sd">            </span>
-<span class="sd">            :math:`q_{max} = max heat transfer possible`</span>
+<span class="sd">            :math:`q_{max}` *= max heat transfer possible*</span>
 <span class="sd">                     </span>
 <span class="sd">        </span>
 <span class="sd">        Examples</span>
@@ -952,17 +945,17 @@
 <span class="sd">        </span>
 <span class="sd">        *where:*</span>
 <span class="sd">        </span>
-<span class="sd">            :math:`T_{infinity} = temperature of surrounding fluid`</span>
+<span class="sd">            :math:`T_{infinity}` *= temperature of surrounding fluid*</span>
 <span class="sd">        </span>
-<span class="sd">            :math:`T_{initial} = intitial temperature of solid object`</span>
+<span class="sd">            :math:`T_{initial}` *= intitial temperature of solid object*</span>
 <span class="sd">            </span>
-<span class="sd">            :math:`\lambda_n = nth eigen value of x_n tan(x_n) - Bi = 0 , n = 1 \hspace{2pt} to \hspace{2pt} \infty`</span>
+<span class="sd">            :math:`\lambda_n` *= nth eigen value of* :math:`x_n tan(x_n) - Bi = 0` *, n = 1* :math:`\hspace{2pt} to \hspace{2pt} \infty`</span>
 <span class="sd">            </span>
-<span class="sd">            :math:`\tau = Fourier number`</span>
+<span class="sd">            :math:`\tau` *= Fourier number*</span>
 <span class="sd">            </span>
-<span class="sd">            x = distance from center of solid slab where temperature is required (x = 0 for center of slab)</span>
+<span class="sd">            *x = distance from center of solid slab where temperature is required (x = 0 for center of slab)*</span>
 <span class="sd">            </span>
-<span class="sd">            L = thickness/2</span>
+<span class="sd">            *L = thickness/2*</span>
 <span class="sd">                     </span>
 <span class="sd">        </span>
 <span class="sd">        Examples</span>
@@ -1033,13 +1026,13 @@
 <span class="sd">            </span>
 <span class="sd">        *where:*</span>
 <span class="sd">        </span>
-<span class="sd">            t = time at which temperature is to be computed    </span>
+<span class="sd">            *t = time at which temperature is to be computed*</span>
 <span class="sd">        </span>
-<span class="sd">            h = heat transfer coefficient    </span>
+<span class="sd">            *h = heat transfer coefficient*  </span>
 <span class="sd">        </span>
-<span class="sd">            :math:`T_{infinity} = temperature of surrounding fluid`</span>
-<span class="sd">        </span>
-<span class="sd">            :math:`T_{t} = temperature of surface of solid object at time = t`</span>
+<span class="sd">            :math:`T_{infinity}` *= temperature of surrounding fluid*</span>
+<span class="sd">    </span>
+<span class="sd">            :math:`T_{t}` *= temperature of surface of solid object at time = t*</span>
 <span class="sd">            </span>
 <span class="sd">            :math:`A_s` *= surface area of solid object*</span>
 <span class="sd">            </span>
@@ -1117,11 +1110,11 @@
 <span class="sd">            </span>
 <span class="sd">        *where:*</span>
 <span class="sd">        </span>
-<span class="sd">            :math:`\lambda_n = n^{th} eigen value of x_n tan(x_n) - Bi = 0 , n = 1 \hspace{2pt} to \hspace{2pt} \infty`</span>
+<span class="sd">            :math:`\lambda_n` *= nth eigen value of* :math:`x_n tan(x_n) - Bi = 0` *, n = 1* :math:`\hspace{2pt} to \hspace{2pt} \infty`</span>
 <span class="sd">            </span>
-<span class="sd">            :math:`\tau = Fourier number`</span>
+<span class="sd">            :math:`\tau` *= Fourier number*</span>
 <span class="sd">                        </span>
-<span class="sd">            :math:`q_{max} = maximum heat transfer possible between object and surroundings`</span>
+<span class="sd">            :math:`q_{max}` *= maximum heat transfer possible between object and surroundings*</span>
 <span class="sd">       </span>
 
 <span class="sd">        </span>
@@ -1201,15 +1194,15 @@
 <span class="sd">            </span>
 <span class="sd">        *where:*  </span>
 <span class="sd">        </span>
-<span class="sd">            m = mass of solid object</span>
+<span class="sd">            *m = mass of solid object*</span>
 <span class="sd">            </span>
-<span class="sd">            :math:`C_{p} = specific heat of solid object`</span>
+<span class="sd">            :math:`C_{p}` *= specific heat of solid object*</span>
 <span class="sd">        </span>
-<span class="sd">            :math:`T_{infinity} = temperature of surrounding, which the solid object will eventually attain`</span>
+<span class="sd">            :math:`T_{infinity}` *= temperature of surrounding, which the solid object will eventually attain*</span>
 <span class="sd">        </span>
-<span class="sd">            :math:`T_{initial} = temperature of solid object at time = initial`</span>
+<span class="sd">            :math:`T_{initial}` *= temperature of solid object at time = initial*</span>
 <span class="sd">            </span>
-<span class="sd">            :math:`q_{max} = max heat transfer possible`</span>
+<span class="sd">            :math:`q_{max}` *= max heat transfer possible*</span>
 <span class="sd">                     </span>
 <span class="sd">        </span>
 <span class="sd">        Examples</span>
@@ -1548,9 +1541,9 @@
 <span class="sd">        </span>
 <span class="sd">        *where:*</span>
 <span class="sd">        </span>
-<span class="sd">            :math:`T_{infinity} = temperature of surrounding fluid`</span>
+<span class="sd">            :math:`T_{infinity}` *= temperature of surrounding fluid*</span>
 <span class="sd">        </span>
-<span class="sd">            :math:`T_{initial} = intitial temperature of solid object`</span>
+<span class="sd">            :math:`T_{initial}` *= intitial temperature of solid object*</span>
 <span class="sd">            </span>
 <span class="sd">            :math:`J_0` *= Bessel function of first kind of order 0* </span>
 <span class="sd">            </span>
@@ -1558,11 +1551,11 @@
 <span class="sd">            </span>
 <span class="sd">            :math:`\lambda_n` = :math:`n^{th}` eigen value of :math:`x_n tan(x_n) - Bi = 0` , n = 1 to :math:`\infty`</span>
 <span class="sd">            </span>
-<span class="sd">            Bi = Biot number</span>
+<span class="sd">            *Bi = Biot number*</span>
 <span class="sd">            </span>
-<span class="sd">            :math:`\tau = Fourier number`</span>
+<span class="sd">            :math:`\tau` *= Fourier number*</span>
 <span class="sd">            </span>
-<span class="sd">            r = radius from center of solid cylinder where temperature is required (r = 0 for center of cylinder)</span>
+<span class="sd">            *r = radius from center of solid cylinder where temperature is required (r = 0 for center of cylinder)*</span>
 <span class="sd">            </span>
 <span class="sd">            :math:`r_{outside}` *= outer radius of the cylinder*</span>
 <span class="sd">                     </span>
@@ -1636,9 +1629,9 @@
 <span class="sd">        </span>
 <span class="sd">        :math:`\lambda_n` = :math:`n^{th}` eigen value of :math:`x_n tan(x_n) - Bi = 0` , n = 1 to :math:`\infty`</span>
 <span class="sd">        </span>
-<span class="sd">        Bi = Biot number</span>
+<span class="sd">        *Bi = Biot number*</span>
 <span class="sd">        </span>
-<span class="sd">        :math:`\tau = Fourier number`</span>
+<span class="sd">        :math:`\tau` *= Fourier number*</span>
 <span class="sd">        </span>
 <span class="sd">        :math:`q_{max}` = *maximum possible heat transfer between solid and surrounding*</span>
 <span class="sd">        </span>
@@ -1720,13 +1713,13 @@
 <span class="sd">            </span>
 <span class="sd">        *where:*</span>
 <span class="sd">        </span>
-<span class="sd">            t = time at which temperature is to be computed    </span>
+<span class="sd">            *t = time at which temperature is to be computed*</span>
 <span class="sd">        </span>
-<span class="sd">            h = heat transfer coefficient    </span>
+<span class="sd">            *h = heat transfer coefficient*  </span>
 <span class="sd">        </span>
-<span class="sd">            :math:`T_{infinity} = temperature of surrounding fluid`</span>
+<span class="sd">            :math:`T_{infinity}` *= temperature of surrounding fluid*</span>
 <span class="sd">        </span>
-<span class="sd">            :math:`T_{t} = temperature of surface of solid object at time = t`</span>
+<span class="sd">            :math:`T_{t}` *= temperature of surface of solid object at time = t*</span>
 <span class="sd">            </span>
 <span class="sd">            :math:`A_s` *= surface area of solid object*</span>
 <span class="sd">            </span>
@@ -1802,15 +1795,15 @@
 <span class="sd">            </span>
 <span class="sd">        *where:*  </span>
 <span class="sd">        </span>
-<span class="sd">            m = mass of solid object</span>
+<span class="sd">            *m = mass of solid object*</span>
 <span class="sd">            </span>
-<span class="sd">            :math:`C_{p} = specific heat of solid object`</span>
+<span class="sd">            :math:`C_{p}` *= specific heat of solid object*</span>
 <span class="sd">        </span>
-<span class="sd">            :math:`T_{infinity} = temperature of surrounding, which the solid object will eventually attain`</span>
+<span class="sd">            :math:`T_{infinity}` *= temperature of surrounding, which the solid object will eventually attain*</span>
 <span class="sd">        </span>
-<span class="sd">            :math:`T_{initial} = temperature of solid object at time = initial`</span>
+<span class="sd">            :math:`T_{initial}` *= temperature of solid object at time = initial*</span>
 <span class="sd">            </span>
-<span class="sd">            :math:`q_{max} = max heat transfer possible`</span>
+<span class="sd">            :math:`q_{max}` *= max heat transfer possible*</span>
 <span class="sd">                     </span>
 <span class="sd">        </span>
 <span class="sd">        Examples</span>
@@ -2134,17 +2127,17 @@
 <span class="sd">        </span>
 <span class="sd">        *where:*</span>
 <span class="sd">        </span>
-<span class="sd">            :math:`T_{infinity} = temperature of surrounding fluid`</span>
+<span class="sd">            :math:`T_{infinity}` *= temperature of surrounding fluid*</span>
 <span class="sd">        </span>
-<span class="sd">            :math:`T_{initial} = intitial temperature of solid object`</span>
+<span class="sd">            :math:`T_{initial}` *= intitial temperature of solid object*</span>
 <span class="sd">            </span>
 <span class="sd">            :math:`\lambda_n` = :math:`n^{th}` eigen value of :math:`1 - \lambda_n cot(\lambda_n) - Bi = 0` , n = 1 to :math:`\infty`</span>
 <span class="sd">            </span>
-<span class="sd">            Bi = Biot number</span>
+<span class="sd">            *Bi = Biot number*</span>
 <span class="sd">            </span>
-<span class="sd">            :math:`\tau = Fourier number`</span>
+<span class="sd">            :math:`\tau` *= Fourier number*</span>
 <span class="sd">            </span>
-<span class="sd">            r = radius from center of solid sphere where temperature is required (r = 0 for center of sphere)</span>
+<span class="sd">            *r = radius from center of solid sphere where temperature is required (r = 0 for center of sphere)*</span>
 <span class="sd">            </span>
 <span class="sd">            :math:`r_{outside}` *= outer radius of the sphere*</span>
 <span class="sd">                     </span>
@@ -2216,9 +2209,9 @@
 <span class="sd">        </span>
 <span class="sd">        :math:`\lambda_n` = :math:`n^{th}` eigen value of :math:`x_n tan(x_n) - Bi = 0` , n = 1 to :math:`\infty`</span>
 <span class="sd">        </span>
-<span class="sd">        Bi = Biot number</span>
+<span class="sd">        *Bi = Biot number*</span>
 <span class="sd">        </span>
-<span class="sd">        :math:`\tau = Fourier number`</span>
+<span class="sd">        :math:`\tau` *= Fourier number*</span>
 <span class="sd">        </span>
 <span class="sd">        :math:`q_{max}` = *maximum possible heat transfer between solid and surrounding*</span>
 <span class="sd">        </span>
@@ -2300,13 +2293,13 @@
 <span class="sd">            </span>
 <span class="sd">        *where:*</span>
 <span class="sd">        </span>
-<span class="sd">            t = time at which temperature is to be computed    </span>
+<span class="sd">            *t = time at which temperature is to be computed*</span>
 <span class="sd">        </span>
-<span class="sd">            h = heat transfer coefficient    </span>
+<span class="sd">            *h = heat transfer coefficient* </span>
 <span class="sd">        </span>
-<span class="sd">            :math:`T_{infinity} = temperature of surrounding fluid`</span>
+<span class="sd">            :math:`T_{infinity}` *= temperature of surrounding fluid*</span>
 <span class="sd">        </span>
-<span class="sd">            :math:`T_{t} = temperature of surface of solid object at time = t`</span>
+<span class="sd">            :math:`T_{t}` *= temperature of surface of solid object at time = t*</span>
 <span class="sd">            </span>
 <span class="sd">            :math:`A_s` *= surface area of solid object*</span>
 <span class="sd">            </span>
@@ -2381,15 +2374,15 @@
 <span class="sd">            </span>
 <span class="sd">        *where:*  </span>
 <span class="sd">        </span>
-<span class="sd">            m = mass of solid object</span>
+<span class="sd">            *m = mass of solid object*</span>
 <span class="sd">            </span>
-<span class="sd">            :math:`C_{p} = specific heat of solid object`</span>
+<span class="sd">            :math:`C_{p}` *= specific heat of solid object*</span>
 <span class="sd">        </span>
-<span class="sd">            :math:`T_{infinity} = temperature of surrounding, which the solid object will eventually attain`</span>
+<span class="sd">            :math:`T_{infinity}` *= temperature of surrounding, which the solid object will eventually attain*</span>
 <span class="sd">        </span>
-<span class="sd">            :math:`T_{initial} = temperature of solid object at time = initial`</span>
+<span class="sd">            :math:`T_{initial}` *= temperature of solid object at time = initial*</span>
 <span class="sd">            </span>
-<span class="sd">            :math:`q_{max} = max heat transfer possible`</span>
+<span class="sd">            :math:`q_{max}` *= max heat transfer possible*</span>
 <span class="sd">                     </span>
 <span class="sd">        </span>
 <span class="sd">        Examples</span>
@@ -2583,13 +2576,13 @@
 <span class="sd">            </span>
 <span class="sd">        *where:*  </span>
 <span class="sd">        </span>
-<span class="sd">            t = time at which temperature or flux is to be computed</span>
+<span class="sd">            *t = time at which temperature or flux is to be computed*</span>
 <span class="sd">            </span>
-<span class="sd">            x = location from surface of the semi infinite object where temperature is to be computed</span>
+<span class="sd">            *x = location from surface of the semi infinite object where temperature is to be computed*</span>
 <span class="sd">            </span>
-<span class="sd">            k = thermal conductivity of solid</span>
+<span class="sd">            *k = thermal conductivity of solid*</span>
 <span class="sd">            </span>
-<span class="sd">            h = heat transfer coefficient between solid and fluid</span>
+<span class="sd">            *h = heat transfer coefficient between solid and fluid*</span>
 <span class="sd">            </span>
 <span class="sd">            :math:`\alpha` *= thermal diffusivity of solid object*</span>
 <span class="sd">            </span>
@@ -2679,7 +2672,7 @@
 <span class="sd">            </span>
 <span class="sd">        *where:*  </span>
 <span class="sd">        </span>
-<span class="sd">            t = time at which temperature or flux is to be computed</span>
+<span class="sd">            *t = time at which temperature or flux is to be computed*</span>
 <span class="sd">            </span>
 <span class="sd">            :math:`\alpha` *= thermal diffusivity of solid object*</span>
 <span class="sd">        </span>

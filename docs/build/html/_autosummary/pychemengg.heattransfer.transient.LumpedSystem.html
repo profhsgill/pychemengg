@@ -117,7 +117,6 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="pychemengg.physicalproperties.html">physicalproperties</a></li>
-<li class="toctree-l3"><a class="reference internal" href="pychemengg.utils.html">utils</a></li>
 </ul>
 </li>
 </ul>
@@ -264,14 +263,7 @@
 <p>Units used in this example: SI system</p>
 <p>However, any consistent units can be used</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pychemengg.heattransfer</span> <span class="kn">import</span> <span class="n">transient</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">plate</span> <span class="o">=</span> <span class="n">transient</span><span class="o">.</span><span class="n">LumpedSystem</span><span class="p">(</span><span class="n">thermalconductivity</span><span class="o">=</span><span class="mi">180</span><span class="p">,</span>
-<span class="go">                                   density=2800,</span>
-<span class="go">                                   specificheat=880,</span>
-<span class="go">                                   T_initial=700,</span>
-<span class="go">                                   T_infinity=15,</span>
-<span class="go">                                   heattransfercoefficient=53,</span>
-<span class="go">                                   surfacearea=2*1,</span>
-<span class="go">                                   volume=1*2e-2)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">plate</span> <span class="o">=</span> <span class="n">transient</span><span class="o">.</span><span class="n">LumpedSystem</span><span class="p">(</span><span class="n">thermalconductivity</span><span class="o">=</span><span class="mi">180</span><span class="p">,</span> <span class="n">density</span><span class="o">=</span><span class="mi">2800</span><span class="p">,</span> <span class="n">specificheat</span><span class="o">=</span><span class="mi">880</span><span class="p">,</span> <span class="n">T_initial</span><span class="o">=</span><span class="mi">700</span><span class="p">,</span> <span class="n">T_infinity</span><span class="o">=</span><span class="mi">15</span><span class="p">,</span> <span class="n">heattransfercoefficient</span><span class="o">=</span><span class="mi">53</span><span class="p">,</span> <span class="n">surfacearea</span><span class="o">=</span><span class="mi">2</span><span class="o">*</span><span class="mi">1</span><span class="p">,</span> <span class="n">volume</span><span class="o">=</span><span class="mi">1</span><span class="o">*</span><span class="mf">2e-2</span><span class="p">)</span>
 <span class="go"># This will create an instance of &#39;LumpedSystem&#39; with a name &#39;plate&#39; </span>
 </pre></div>
 </div>
@@ -395,12 +387,12 @@ Education, 2020.</p>
 \]</div>
 <p><em>where:</em></p>
 <blockquote>
-<div><p>t = time at which temperature is to be computed</p>
-<p>h = heat transfer coefficient</p>
-<p><span class="math">\(T_{infinity} = temperature of surrounding fluid\)</span></p>
-<p><span class="math">\(T_{t} = temperature of solid object at time = t\)</span></p>
-<p><span class="math">\(A_s = surface area of solid object\)</span></p>
-<p><span class="math">\(q_{t} = heat rate at time = t\)</span></p>
+<div><p><em>t = time at which temperature is to be computed</em></p>
+<p><em>h = heat transfer coefficient</em></p>
+<p><span class="math">\(T_{infinity}\)</span> <em>= temperature of surrounding fluid</em></p>
+<p><span class="math">\(T_{t}\)</span> <em>= temperature of solid object at time = t</em></p>
+<p><span class="math">\(A_s\)</span> <em>= surface area of solid object</em></p>
+<p><span class="math">\(q_{t}\)</span> <em>= heat rate at time = t</em></p>
 </div></blockquote>
 <p class="rubric">References</p>
 <p>[1] G. F. Nellis and S. A. Klein, “Introduction to Engineering 
@@ -454,11 +446,11 @@ of <span class="math">\(T_{infinity}\)</span></p>
 \]</div>
 <p><em>where:</em></p>
 <blockquote>
-<div><p>m = mass of solid object</p>
-<p><span class="math">\(C_{p} = specific heat of solid object\)</span></p>
-<p><span class="math">\(T_{infinity} = temperature of surrounding, which the solid object will eventually attain\)</span></p>
-<p><span class="math">\(T_{initial} = temperature of solid object at time = initial\)</span></p>
-<p><span class="math">\(q_{max} = max heat transfer possible\)</span></p>
+<div><p><em>m = mass of solid object</em></p>
+<p><span class="math">\(C_{p}\)</span> <em>= specific heat of solid object</em></p>
+<p><span class="math">\(T_{infinity}\)</span> <em>= temperature of surrounding, which the solid object will eventually attain</em></p>
+<p><span class="math">\(T_{initial}\)</span> <em>= temperature of solid object at time = initial</em></p>
+<p><span class="math">\(q_{max}\)</span> <em>= max heat transfer possible</em></p>
 </div></blockquote>
 <p class="rubric">References</p>
 <p>[1] G. F. Nellis and S. A. Klein, “Introduction to Engineering 
@@ -508,17 +500,17 @@ of solid object is to be found.</p>
 \]</div>
 <p><em>where:</em></p>
 <blockquote>
-<div><p><span class="math">\(T_{infinity} = temperature of surrounding fluid\)</span></p>
-<p><span class="math">\(T_{initial} = intitial temperature of solid object\)</span></p>
+<div><p><span class="math">\(T_{infinity}\)</span> <em>= temperature of surrounding fluid</em></p>
+<p><span class="math">\(T_{initial}\)</span> <em>= intitial temperature of solid object</em></p>
 <p><span class="math">\(b = \frac{hA_s}{\rho V C_p}\)</span></p>
-<p>t = time at which temperature is to be computed</p>
+<p><em>t = time at which temperature is to be computed</em></p>
 <blockquote>
 <div><p>where:</p>
-<p>h =  heat transfer coefficient</p>
-<p><span class="math">\(A_s = surface area of solid object\)</span></p>
-<p><span class="math">\(\rho\)</span> = density of solid object</p>
-<p>V = volume of solid object</p>
-<p><span class="math">\(C_p\)</span> = specific heat of solid object</p>
+<p><em>h =  heat transfer coefficient</em></p>
+<p><span class="math">\(A_s\)</span> <em>= surface area of solid object</em></p>
+<p><span class="math">\(\rho\)</span> <em>= density of solid object</em></p>
+<p><em>V = volume of solid object</em></p>
+<p><span class="math">\(C_p\)</span> <em>= specific heat of solid object</em></p>
 </div></blockquote>
 </div></blockquote>
 <p class="rubric">References</p>
@@ -572,13 +564,13 @@ following formula:</p>
 \]</div>
 <p><em>where:</em></p>
 <blockquote>
-<div><p>t = time marking the interval [0, t] for which heat
-transferred is to be computed</p>
-<p>m = mass of object</p>
-<p><span class="math">\(C_{p} = specific heat of object\)</span></p>
-<p><span class="math">\(T_{t} = temperature of object at time = t\)</span></p>
-<p><span class="math">\(T_{initial} = temperature of object at time = 0\)</span></p>
-<p><span class="math">\(q_{0 to t} = heat transferred in interval [0, t]\)</span></p>
+<div><p><em>t = time marking the interval [0, t] for which heat
+transferred is to be computed</em></p>
+<p><em>m = mass of object</em></p>
+<p><span class="math">\(C_{p}\)</span> <em>= specific heat of object</em></p>
+<p><span class="math">\(T_{t}\)</span> <em>= temperature of object at time = t</em></p>
+<p><span class="math">\(T_{initial}\)</span> <em>= temperature of object at time = 0</em></p>
+<p><span class="math">\(q_{0 to t}\)</span> <em>= heat transferred in interval [0, t]</em></p>
 </div></blockquote>
 <p class="rubric">References</p>
 <p>[1] G. F. Nellis and S. A. Klein, “Introduction to Engineering 

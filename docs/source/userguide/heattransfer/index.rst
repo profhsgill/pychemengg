@@ -15,5 +15,6 @@ This guide goes over how to use the *Heat Transfer* package of PyChemEngg.
    externalflow
    heatexchangers
    heatcommonmethods
+   transient
       
  
