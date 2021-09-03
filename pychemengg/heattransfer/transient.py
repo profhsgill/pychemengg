@@ -86,14 +86,7 @@ class LumpedSystem():
     However, any consistent units can be used
     
     >>> from pychemengg.heattransfer import transient
-    >>> plate = transient.LumpedSystem(thermalconductivity=180,
-                                       density=2800,
-                                       specificheat=880,
-                                       T_initial=700,
-                                       T_infinity=15,
-                                       heattransfercoefficient=53,
-                                       surfacearea=2*1,
-                                       volume=1*2e-2)
+    >>> plate = transient.LumpedSystem(thermalconductivity=180, density=2800, specificheat=880, T_initial=700, T_infinity=15, heattransfercoefficient=53, surfacearea=2*1, volume=1*2e-2)
     # This will create an instance of 'LumpedSystem' with a name 'plate' 
 
     """
@@ -209,25 +202,25 @@ class LumpedSystem():
         
         *where:*
         
-            :math:`T_{infinity} = temperature of surrounding fluid`
+            :math:`T_{infinity}` *= temperature of surrounding fluid*
         
-            :math:`T_{initial} = intitial temperature of solid object`
+            :math:`T_{initial}` *= intitial temperature of solid object*
             
             :math:`b = \frac{hA_s}{\rho V C_p}`
             
-            t = time at which temperature is to be computed
+            *t = time at which temperature is to be computed*
             
                 where:
                 
-                h =  heat transfer coefficient
+                *h =  heat transfer coefficient*
                 
-                :math:`A_s = surface area of solid object`
+                :math:`A_s` *= surface area of solid object*
                 
-                :math:`\rho` = density of solid object
+                :math:`\rho` *= density of solid object*
                 
-                V = volume of solid object
+                *V = volume of solid object*
                
-                :math:`C_p` = specific heat of solid object
+                :math:`C_p` *= specific heat of solid object*
                      
         
         Examples
@@ -287,17 +280,17 @@ class LumpedSystem():
             
         *where:*
         
-            t = time at which temperature is to be computed    
+            *t = time at which temperature is to be computed*
         
-            h = heat transfer coefficient    
+            *h = heat transfer coefficient*
         
-            :math:`T_{infinity} = temperature of surrounding fluid`
+            :math:`T_{infinity}` *= temperature of surrounding fluid*
         
-            :math:`T_{t} = temperature of solid object at time = t`
+            :math:`T_{t}` *= temperature of solid object at time = t*
             
-            :math:`A_s = surface area of solid object`
+            :math:`A_s` *= surface area of solid object*
             
-            :math:`q_{t} = heat rate at time = t`
+            :math:`q_{t}` *= heat rate at time = t*
                      
         
         Examples
@@ -360,18 +353,18 @@ class LumpedSystem():
             
         *where:*
         
-            t = time marking the interval [0, t] for which heat
-            transferred is to be computed    
+            *t = time marking the interval [0, t] for which heat
+            transferred is to be computed*   
         
-            m = mass of object
+            *m = mass of object*
             
-            :math:`C_{p} = specific heat of object`
+            :math:`C_{p}` *= specific heat of object*
         
-            :math:`T_{t} = temperature of object at time = t`
+            :math:`T_{t}` *= temperature of object at time = t*
         
-            :math:`T_{initial} = temperature of object at time = 0`
+            :math:`T_{initial}` *= temperature of object at time = 0*
             
-            :math:`q_{0 to t} = heat transferred in interval [0, t]`
+            :math:`q_{0 to t}` *= heat transferred in interval [0, t]*
                      
         
         Examples
@@ -434,15 +427,15 @@ class LumpedSystem():
             
         *where:*  
         
-            m = mass of solid object
+            *m = mass of solid object*
             
-            :math:`C_{p} = specific heat of solid object`
+            :math:`C_{p}` *= specific heat of solid object*
         
-            :math:`T_{infinity} = temperature of surrounding, which the solid object will eventually attain`
+            :math:`T_{infinity}` *= temperature of surrounding, which the solid object will eventually attain*
         
-            :math:`T_{initial} = temperature of solid object at time = initial`
+            :math:`T_{initial}` *= temperature of solid object at time = initial*
             
-            :math:`q_{max} = max heat transfer possible`
+            :math:`q_{max}` *= max heat transfer possible*
                      
         
         Examples
@@ -781,17 +774,17 @@ class NonLumpedSlab():
         
         *where:*
         
-            :math:`T_{infinity} = temperature of surrounding fluid`
+            :math:`T_{infinity}` *= temperature of surrounding fluid*
         
-            :math:`T_{initial} = intitial temperature of solid object`
+            :math:`T_{initial}` *= intitial temperature of solid object*
             
-            :math:`\lambda_n = nth eigen value of x_n tan(x_n) - Bi = 0 , n = 1 \hspace{2pt} to \hspace{2pt} \infty`
+            :math:`\lambda_n` *= nth eigen value of* :math:`x_n tan(x_n) - Bi = 0` *, n = 1* :math:`\hspace{2pt} to \hspace{2pt} \infty`
             
-            :math:`\tau = Fourier number`
+            :math:`\tau` *= Fourier number*
             
-            x = distance from center of solid slab where temperature is required (x = 0 for center of slab)
+            *x = distance from center of solid slab where temperature is required (x = 0 for center of slab)*
             
-            L = thickness/2
+            *L = thickness/2*
                      
         
         Examples
@@ -862,13 +855,13 @@ class NonLumpedSlab():
             
         *where:*
         
-            t = time at which temperature is to be computed    
+            *t = time at which temperature is to be computed*
         
-            h = heat transfer coefficient    
+            *h = heat transfer coefficient*  
         
-            :math:`T_{infinity} = temperature of surrounding fluid`
-        
-            :math:`T_{t} = temperature of surface of solid object at time = t`
+            :math:`T_{infinity}` *= temperature of surrounding fluid*
+    
+            :math:`T_{t}` *= temperature of surface of solid object at time = t*
             
             :math:`A_s` *= surface area of solid object*
             
@@ -946,11 +939,11 @@ class NonLumpedSlab():
             
         *where:*
         
-            :math:`\lambda_n = n^{th} eigen value of x_n tan(x_n) - Bi = 0 , n = 1 \hspace{2pt} to \hspace{2pt} \infty`
+            :math:`\lambda_n` *= nth eigen value of* :math:`x_n tan(x_n) - Bi = 0` *, n = 1* :math:`\hspace{2pt} to \hspace{2pt} \infty`
             
-            :math:`\tau = Fourier number`
+            :math:`\tau` *= Fourier number*
                         
-            :math:`q_{max} = maximum heat transfer possible between object and surroundings`
+            :math:`q_{max}` *= maximum heat transfer possible between object and surroundings*
        
 
         
@@ -1030,15 +1023,15 @@ class NonLumpedSlab():
             
         *where:*  
         
-            m = mass of solid object
+            *m = mass of solid object*
             
-            :math:`C_{p} = specific heat of solid object`
+            :math:`C_{p}` *= specific heat of solid object*
         
-            :math:`T_{infinity} = temperature of surrounding, which the solid object will eventually attain`
+            :math:`T_{infinity}` *= temperature of surrounding, which the solid object will eventually attain*
         
-            :math:`T_{initial} = temperature of solid object at time = initial`
+            :math:`T_{initial}` *= temperature of solid object at time = initial*
             
-            :math:`q_{max} = max heat transfer possible`
+            :math:`q_{max}` *= max heat transfer possible*
                      
         
         Examples
@@ -1377,9 +1370,9 @@ class NonLumpedCylinder():
         
         *where:*
         
-            :math:`T_{infinity} = temperature of surrounding fluid`
+            :math:`T_{infinity}` *= temperature of surrounding fluid*
         
-            :math:`T_{initial} = intitial temperature of solid object`
+            :math:`T_{initial}` *= intitial temperature of solid object*
             
             :math:`J_0` *= Bessel function of first kind of order 0* 
             
@@ -1387,11 +1380,11 @@ class NonLumpedCylinder():
             
             :math:`\lambda_n` = :math:`n^{th}` eigen value of :math:`x_n tan(x_n) - Bi = 0` , n = 1 to :math:`\infty`
             
-            Bi = Biot number
+            *Bi = Biot number*
             
-            :math:`\tau = Fourier number`
+            :math:`\tau` *= Fourier number*
             
-            r = radius from center of solid cylinder where temperature is required (r = 0 for center of cylinder)
+            *r = radius from center of solid cylinder where temperature is required (r = 0 for center of cylinder)*
             
             :math:`r_{outside}` *= outer radius of the cylinder*
                      
@@ -1465,9 +1458,9 @@ class NonLumpedCylinder():
         
         :math:`\lambda_n` = :math:`n^{th}` eigen value of :math:`x_n tan(x_n) - Bi = 0` , n = 1 to :math:`\infty`
         
-        Bi = Biot number
+        *Bi = Biot number*
         
-        :math:`\tau = Fourier number`
+        :math:`\tau` *= Fourier number*
         
         :math:`q_{max}` = *maximum possible heat transfer between solid and surrounding*
         
@@ -1549,13 +1542,13 @@ class NonLumpedCylinder():
             
         *where:*
         
-            t = time at which temperature is to be computed    
+            *t = time at which temperature is to be computed*
         
-            h = heat transfer coefficient    
+            *h = heat transfer coefficient*  
         
-            :math:`T_{infinity} = temperature of surrounding fluid`
+            :math:`T_{infinity}` *= temperature of surrounding fluid*
         
-            :math:`T_{t} = temperature of surface of solid object at time = t`
+            :math:`T_{t}` *= temperature of surface of solid object at time = t*
             
             :math:`A_s` *= surface area of solid object*
             
@@ -1631,15 +1624,15 @@ class NonLumpedCylinder():
             
         *where:*  
         
-            m = mass of solid object
+            *m = mass of solid object*
             
-            :math:`C_{p} = specific heat of solid object`
+            :math:`C_{p}` *= specific heat of solid object*
         
-            :math:`T_{infinity} = temperature of surrounding, which the solid object will eventually attain`
+            :math:`T_{infinity}` *= temperature of surrounding, which the solid object will eventually attain*
         
-            :math:`T_{initial} = temperature of solid object at time = initial`
+            :math:`T_{initial}` *= temperature of solid object at time = initial*
             
-            :math:`q_{max} = max heat transfer possible`
+            :math:`q_{max}` *= max heat transfer possible*
                      
         
         Examples
@@ -1963,17 +1956,17 @@ class NonLumpedSphere():
         
         *where:*
         
-            :math:`T_{infinity} = temperature of surrounding fluid`
+            :math:`T_{infinity}` *= temperature of surrounding fluid*
         
-            :math:`T_{initial} = intitial temperature of solid object`
+            :math:`T_{initial}` *= intitial temperature of solid object*
             
             :math:`\lambda_n` = :math:`n^{th}` eigen value of :math:`1 - \lambda_n cot(\lambda_n) - Bi = 0` , n = 1 to :math:`\infty`
             
-            Bi = Biot number
+            *Bi = Biot number*
             
-            :math:`\tau = Fourier number`
+            :math:`\tau` *= Fourier number*
             
-            r = radius from center of solid sphere where temperature is required (r = 0 for center of sphere)
+            *r = radius from center of solid sphere where temperature is required (r = 0 for center of sphere)*
             
             :math:`r_{outside}` *= outer radius of the sphere*
                      
@@ -2045,9 +2038,9 @@ class NonLumpedSphere():
         
         :math:`\lambda_n` = :math:`n^{th}` eigen value of :math:`x_n tan(x_n) - Bi = 0` , n = 1 to :math:`\infty`
         
-        Bi = Biot number
+        *Bi = Biot number*
         
-        :math:`\tau = Fourier number`
+        :math:`\tau` *= Fourier number*
         
         :math:`q_{max}` = *maximum possible heat transfer between solid and surrounding*
         
@@ -2129,13 +2122,13 @@ class NonLumpedSphere():
             
         *where:*
         
-            t = time at which temperature is to be computed    
+            *t = time at which temperature is to be computed*
         
-            h = heat transfer coefficient    
+            *h = heat transfer coefficient* 
         
-            :math:`T_{infinity} = temperature of surrounding fluid`
+            :math:`T_{infinity}` *= temperature of surrounding fluid*
         
-            :math:`T_{t} = temperature of surface of solid object at time = t`
+            :math:`T_{t}` *= temperature of surface of solid object at time = t*
             
             :math:`A_s` *= surface area of solid object*
             
@@ -2210,15 +2203,15 @@ class NonLumpedSphere():
             
         *where:*  
         
-            m = mass of solid object
+            *m = mass of solid object*
             
-            :math:`C_{p} = specific heat of solid object`
+            :math:`C_{p}` *= specific heat of solid object*
         
-            :math:`T_{infinity} = temperature of surrounding, which the solid object will eventually attain`
+            :math:`T_{infinity}` *= temperature of surrounding, which the solid object will eventually attain*
         
-            :math:`T_{initial} = temperature of solid object at time = initial`
+            :math:`T_{initial}` *= temperature of solid object at time = initial*
             
-            :math:`q_{max} = max heat transfer possible`
+            :math:`q_{max}` *= max heat transfer possible*
                      
         
         Examples
@@ -2412,13 +2405,13 @@ class SemiInfinite():
             
         *where:*  
         
-            t = time at which temperature or flux is to be computed
+            *t = time at which temperature or flux is to be computed*
             
-            x = location from surface of the semi infinite object where temperature is to be computed
+            *x = location from surface of the semi infinite object where temperature is to be computed*
             
-            k = thermal conductivity of solid
+            *k = thermal conductivity of solid*
             
-            h = heat transfer coefficient between solid and fluid
+            *h = heat transfer coefficient between solid and fluid*
             
             :math:`\alpha` *= thermal diffusivity of solid object*
             
@@ -2459,7 +2452,7 @@ class SemiInfinite():
             temp_at_given_x_and_time = self.T_initial + theta * (self.constantsurfacetemperature-self.T_initial)
         if self.boundarycondition == "heatflux_specified":
             term1 = np.power(4*self.thermaldiffusivity*self.time/np.pi,0.5)
-            term2 = np.exp(np.power(-self.xposition_tofindtemp,2)/4/self.thermaldiffusivity/self.time)
+            term2 = np.exp(-np.power(self.xposition_tofindtemp,2)/4/self.thermaldiffusivity/self.time)
             term3 = self.xposition_tofindtemp*erfc(self.xposition_tofindtemp/2/np.power(self.thermaldiffusivity*self.time,0.5))
             temp_at_given_x_and_time = self.T_initial + self.heatflux/self.thermalconductivity*(term1*term2-term3)
         if self.boundarycondition == "surfaceconvection_specified":
@@ -2508,7 +2501,7 @@ class SemiInfinite():
             
         *where:*  
         
-            t = time at which temperature or flux is to be computed
+            *t = time at which temperature or flux is to be computed*
             
             :math:`\alpha` *= thermal diffusivity of solid object*
         

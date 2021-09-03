@@ -110,15 +110,13 @@
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Transient Heat Transfer</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#introduction">Introduction</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#examples">Examples</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#example-1-lumped-system-rectangular-plates">Example 1: Lumped system <code class="docutils literal notranslate"><span class="pre">Rectangular</span> <span class="pre">plates</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="#example-2-lumped-system-cylindrical-rod">Example 2: Lumped system <code class="docutils literal notranslate"><span class="pre">cylindrical</span> <span class="pre">rod</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="#example-3-rectangular-system-convection">Example 3: Rectangular system <code class="docutils literal notranslate"><span class="pre">convection</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="#example-4-rectangular-system-convection-radiation">Example 4: Rectangular system <code class="docutils literal notranslate"><span class="pre">convection</span> <span class="pre">+</span> <span class="pre">radiation</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="#example-5-rectangular-system-composite-wall-conduction">Example 5: Rectangular system <code class="docutils literal notranslate"><span class="pre">composite</span> <span class="pre">wall,</span> <span class="pre">conduction</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="#example-6-cylindrical-system-convection">Example 6: Cylindrical system <code class="docutils literal notranslate"><span class="pre">convection</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="#example-7-cylindrical-system-composite-cylinder-conduction-convection">Example 7: Cylindrical system <code class="docutils literal notranslate"><span class="pre">composite</span> <span class="pre">cylinder,</span> <span class="pre">conduction,</span> <span class="pre">convection</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="#example-8-spherical-system-conduction">Example 8: Spherical system  <code class="docutils literal notranslate"><span class="pre">conduction</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="#example-9-spherical-system-composite-shell-conduction-convection">Example 9: Spherical system <code class="docutils literal notranslate"><span class="pre">composite</span> <span class="pre">shell,</span> <span class="pre">conduction,</span> <span class="pre">convection</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#example-1-lumped-system-rectangular">Example 1: Lumped system <code class="docutils literal notranslate"><span class="pre">rectangular</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#example-2-lumped-system-cylindrical">Example 2: Lumped system <code class="docutils literal notranslate"><span class="pre">cylindrical</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#example-3-non-lumped-system-cylindrical">Example 3: Non lumped system <code class="docutils literal notranslate"><span class="pre">cylindrical</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#example-4-semi-infinite-boundary-condition-surface-temperature-is-specified">Example 4: Semi infinite <code class="docutils literal notranslate"><span class="pre">boundary</span> <span class="pre">condition:</span> <span class="pre">surface</span> <span class="pre">temperature</span> <span class="pre">is</span> <span class="pre">specified</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#example-5-semi-infinite-boundary-condition-heat-flux-is-specified">Example 5: Semi infinite <code class="docutils literal notranslate"><span class="pre">boundary</span> <span class="pre">condition:</span> <span class="pre">heat</span> <span class="pre">flux</span> <span class="pre">is</span> <span class="pre">specified</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#example-6-semi-infinite-boundary-condition-surface-convection-is-specified">Example 6: Semi infinite <code class="docutils literal notranslate"><span class="pre">boundary</span> <span class="pre">condition:</span> <span class="pre">surface</span> <span class="pre">convection</span> <span class="pre">is</span> <span class="pre">specified</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#example-7-semi-infinite-boundary-condition-energy-pulse-is-specified">Example 7: Semi infinite <code class="docutils literal notranslate"><span class="pre">boundary</span> <span class="pre">condition:</span> <span class="pre">energy</span> <span class="pre">pulse</span> <span class="pre">is</span> <span class="pre">specified</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -273,17 +271,18 @@ can be used to solve heat transfer problems.</p>
 </div>
 <div class="section" id="examples">
 <h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="example-1-lumped-system-rectangular-plates">
-<h3>Example 1: Lumped system <code class="docutils literal notranslate"><span class="pre">Rectangular</span> <span class="pre">plates</span></code><a class="headerlink" href="#example-1-lumped-system-rectangular-plates" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="example-1-lumped-system-rectangular">
+<h3>Example 1: Lumped system <code class="docutils literal notranslate"><span class="pre">rectangular</span></code><a class="headerlink" href="#example-1-lumped-system-rectangular" title="Permalink to this headline">¶</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">Example</span> <span class="pre">1.</span></code> Plates (1 cm thick) made of metal are heated by passing them
 through an enclosed space maintained at 800 C. The plates enter
 the oven at 20 C and stay in the oven for 2 min. Find the temperature
 of the plates as they exit the enclosure. Use the heat transfer
 coefficient as 200 W/m2K and the following properties for the metal plates.</p>
-<dl>
-<dt>Metal plates:</dt><dd><p>k = 180 W/mK
-<span class="math">\(\rho\)</span> = 2800 kg/m3
-<span class="math">\(c_p\)</span> = 880 J/kg K</p>
+<p>Metal plates:</p>
+<blockquote>
+<div><p>k = 180 W/mK</p>
+<p><span class="math">\(\rho\)</span> = 2800 kg/m3</p>
+<p><span class="math">\(c_p\)</span> = 880 J/kg K</p>
 <p><code class="docutils literal notranslate"><span class="pre">Ans:</span> <span class="pre">Temperature</span> <span class="pre">of</span> <span class="pre">plates</span> <span class="pre">at</span> <span class="pre">exit</span> <span class="pre">=</span> <span class="pre">689</span> <span class="pre">C</span></code></p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># EXAMPLE 1</span>
 <span class="kn">from</span> <span class="nn">pychemengg.heattransfer</span> <span class="kn">import</span> <span class="n">transient</span> <span class="k">as</span> <span class="n">transient</span>
@@ -306,352 +305,305 @@ coefficient as 200 W/m2K and the following properties for the metal plates.</p>
 <span class="n">Temperature</span> <span class="n">of</span> <span class="n">plates</span> <span class="n">at</span> <span class="n">exit</span> <span class="o">=</span>  <span class="mi">689</span> <span class="n">C</span>
 </pre></div>
 </div>
-</dd>
-</dl>
+</div></blockquote>
 </div>
 <hr class="docutils" />
-<div class="section" id="example-2-lumped-system-cylindrical-rod">
-<h3>Example 2: Lumped system <code class="docutils literal notranslate"><span class="pre">cylindrical</span> <span class="pre">rod</span></code><a class="headerlink" href="#example-2-lumped-system-cylindrical-rod" title="Permalink to this headline">¶</a></h3>
-<p><code class="docutils literal notranslate"><span class="pre">Example</span> <span class="pre">2.</span></code> A long copper rod of diameter 2 cm is exposed to airat 20 C
+<div class="section" id="example-2-lumped-system-cylindrical">
+<h3>Example 2: Lumped system <code class="docutils literal notranslate"><span class="pre">cylindrical</span></code><a class="headerlink" href="#example-2-lumped-system-cylindrical" title="Permalink to this headline">¶</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">Example</span> <span class="pre">2.</span></code> A long copper rod of diameter 2 cm is exposed to air at 20 C
 with a heat transfer coefficient of 200 W/m2K. If the initial temperature
 of the rod is 100 C, how long will it take for the rod to reach an average
-temperature of 20 C. Take the  <code class="docutils literal notranslate"><span class="pre">Ans:</span> <span class="pre">k</span> <span class="pre">=</span> <span class="pre">0.12</span> <span class="pre">W/m</span> <span class="pre">°C</span></code></p>
+temperature of 20 C. Take the following properties for copper:</p>
+<p>Copper:</p>
+<blockquote>
+<div><p>k = 401 W/mK</p>
+<p><span class="math">\(\rho\)</span> = 8933 kg/m3</p>
+<p><span class="math">\(c_p\)</span> = 385 J/kg K</p>
+</div></blockquote>
+<p><code class="docutils literal notranslate"><span class="pre">Ans:</span> <span class="pre">Time</span> <span class="pre">=</span> <span class="pre">238</span> <span class="pre">s</span></code></p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># EXAMPLE 2</span>
-<span class="kn">from</span> <span class="nn">pychemengg.heattransfer</span> <span class="kn">import</span> <span class="n">steadystate</span> <span class="k">as</span> <span class="n">ss</span>
-<span class="c1"># Create instance of Slab and call it board.</span>
-<span class="c1"># Since area is not known, let area  = 1.</span>
-<span class="c1"># Since thermal conductivity is to be computed, call it &#39;x&#39;.</span>
-<span class="c1"># Create a function that can be solved for &#39;x&#39; as follows.</span>
-<span class="k">def</span> <span class="nf">func</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
-    <span class="n">board</span> <span class="o">=</span> <span class="n">ss</span><span class="o">.</span><span class="n">Slab</span><span class="p">(</span><span class="n">thickness</span><span class="o">=</span><span class="mf">2e-2</span><span class="p">,</span> <span class="n">area</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">thermalconductivity</span><span class="o">=</span><span class="n">x</span><span class="p">)</span>
-    <span class="c1"># Heat flux is given, so use it form an equation like so:</span>
-    <span class="c1"># Compute heat flux = heatrate/area.</span>
-    <span class="c1"># Since area = 1, heat flux = heat rate.</span>
-    <span class="n">flux</span> <span class="o">=</span> <span class="n">board</span><span class="o">.</span><span class="n">heatrateof_cond</span><span class="p">(</span><span class="n">dT</span><span class="o">=</span><span class="mi">25</span><span class="p">)</span>
-    <span class="c1"># This flux should equal = 150 (given). Thus flux-150 =0.</span>
-    <span class="c1"># Therefore, the equation to solve becomes:</span>
-    <span class="n">equation</span> <span class="o">=</span> <span class="n">flux</span> <span class="o">-</span> <span class="mi">150</span>
-    <span class="c1"># This equation can then be returned from this function.</span>
+<span class="kn">from</span> <span class="nn">pychemengg.heattransfer</span> <span class="kn">import</span> <span class="n">transient</span> <span class="k">as</span> <span class="n">transient</span>
+<span class="c1"># Start by assuming lumped system analysis can be applied</span>
+<span class="c1"># Create an instance of LumpedSystem</span>
+<span class="c1"># All units are in SI system</span>
+<span class="kn">import</span> <span class="nn">math</span>
+<span class="n">diameter</span> <span class="o">=</span> <span class="mf">2e-2</span>
+<span class="c1"># Assume length = 1</span>
+<span class="n">length</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">area</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="n">diameter</span> <span class="o">*</span> <span class="n">length</span>
+<span class="n">volume</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">4</span> <span class="o">*</span><span class="n">diameter</span><span class="o">**</span><span class="mi">2</span> <span class="o">*</span> <span class="n">length</span>
+<span class="n">rod</span> <span class="o">=</span> <span class="n">transient</span><span class="o">.</span><span class="n">LumpedSystem</span><span class="p">(</span><span class="n">surfacearea</span><span class="o">=</span><span class="n">area</span><span class="p">,</span> <span class="n">volume</span><span class="o">=</span><span class="n">volume</span><span class="p">,</span> <span class="n">density</span><span class="o">=</span><span class="mi">8933</span><span class="p">,</span> <span class="n">specificheat</span><span class="o">=</span><span class="mi">385</span><span class="p">,</span> <span class="n">thermalconductivity</span><span class="o">=</span><span class="mi">401</span><span class="p">,</span> <span class="n">heattransfercoefficient</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span> <span class="n">T_infinity</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">T_initial</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
+<span class="c1"># Compute Biot number to check lumped system assumption</span>
+<span class="n">biotnumber</span> <span class="o">=</span> <span class="n">rod</span><span class="o">.</span><span class="n">calc_Bi</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Biot number = </span><span class="si">{</span><span class="n">biotnumber</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="c1"># The result is Biot number = 0.0024937655860349127 which is &lt; 0.1</span>
+<span class="c1"># Therefore lumped system assumption is valid</span>
+<span class="c1"># Time for rod to reach a temperature of 20 C can be found as follows</span>
+<span class="c1"># Set a function that accepts &#39;time&#39; and returns &#39;temperature&#39; equation</span>
+
+<span class="k">def</span> <span class="nf">func</span> <span class="p">(</span><span class="n">time</span><span class="p">):</span>
+    <span class="n">temp</span> <span class="o">=</span> <span class="n">rod</span><span class="o">.</span><span class="n">calc_temperature_of_solid_at_time_t</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="n">time</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+    <span class="c1"># This temp is desired to be = 20 C</span>
+    <span class="n">equation</span> <span class="o">=</span> <span class="n">temp</span><span class="o">-</span><span class="mi">25</span>
     <span class="k">return</span> <span class="n">equation</span>
 
+<span class="c1"># Now solve this function using a solver</span>
 <span class="kn">from</span> <span class="nn">scipy.optimize</span> <span class="kn">import</span> <span class="n">fsolve</span>
 <span class="c1"># Typically these import statements are placed at top of code.</span>
-
-<span class="c1"># Use fsolve to solve for &#39;x&#39;</span>
-<span class="n">guess_thermalconductivity</span> <span class="o">=</span> <span class="mi">100</span>
-<span class="c1"># Guess is required to solve, and this is a random value.</span>
-<span class="c1"># User can change it and the result should be the same.</span>
-
-<span class="c1"># Pass function and guess value to fsolve.</span>
-<span class="n">solution</span> <span class="o">=</span> <span class="n">fsolve</span><span class="p">(</span><span class="n">func</span><span class="p">,</span> <span class="n">guess_thermalconductivity</span><span class="p">)</span>
-<span class="n">thermalconductivity</span> <span class="o">=</span> <span class="n">solution</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-<span class="c1"># Because output of fsolve is an array, use [0] to get the value.</span>
-<span class="c1"># Print the result.</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Thermal conductivity = </span><span class="si">{</span><span class="n">thermalconductivity</span><span class="si">}</span><span class="s2"> W/mC&quot;</span><span class="p">)</span>
-
-<span class="c1"># PRINTED OUTPUT</span>
-<span class="n">Thermal</span> <span class="n">conductivity</span> <span class="o">=</span> <span class="mf">0.12</span> <span class="n">W</span><span class="o">/</span><span class="n">mC</span>
-</pre></div>
-</div>
-</div>
-<hr class="docutils" />
-<div class="section" id="example-3-rectangular-system-convection">
-<h3>Example 3: Rectangular system <code class="docutils literal notranslate"><span class="pre">convection</span></code><a class="headerlink" href="#example-3-rectangular-system-convection" title="Permalink to this headline">¶</a></h3>
-<p><code class="docutils literal notranslate"><span class="pre">Example</span> <span class="pre">3.</span></code> An electrically heated plate dissipates heat by convection
-at a rate of q = 8000 W/m2 into the ambient air at Tf = 25 °C. If the surface
-of the hot plate is at Tw = 125 °C, calculate the heat transfer coefficient
-for convection between the plate and the air. <code class="docutils literal notranslate"><span class="pre">Ans:</span> <span class="pre">h</span> <span class="pre">=</span> <span class="pre">80</span> <span class="pre">W/m2</span> <span class="pre">°C</span></code></p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># EXAMPLE 3</span>
-<span class="kn">from</span> <span class="nn">pychemengg.heattransfer</span> <span class="kn">import</span> <span class="n">steadystate</span> <span class="k">as</span> <span class="n">ss</span>
-<span class="c1"># The plate can be modeled as a Slab.</span>
-<span class="c1"># Since convection is from surface, thickness and thermal conductivity</span>
-<span class="c1"># are not relevant. These keywords are by default set to &#39;None&#39;</span>
-<span class="c1"># and can be ignored. Set area = 1 because it is relevant and</span>
-<span class="c1"># by setting it to unity the heatrate becomes heatflux.</span>
-<span class="n">plate</span> <span class="o">=</span> <span class="n">ss</span><span class="o">.</span><span class="n">Slab</span><span class="p">(</span><span class="n">area</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-<span class="c1"># Compute heat rate of convection. Two keywords are needed for it,</span>
-<span class="c1"># heattransfercoefficient and dT. dT = 125-25, but heat transfercoefficient</span>
-<span class="c1"># need to be determined. Therefore, a function must be setup to solve</span>
-<span class="c1"># with fsolve.</span>
-<span class="k">def</span> <span class="nf">func</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
-    <span class="n">flux</span> <span class="o">=</span> <span class="n">plate</span><span class="o">.</span><span class="n">heatrateof_conv</span><span class="p">(</span><span class="n">heattransfercoefficient</span><span class="o">=</span><span class="n">x</span><span class="p">,</span> <span class="n">dT</span><span class="o">=</span><span class="mi">125</span><span class="o">-</span><span class="mi">25</span><span class="p">)</span>
-    <span class="c1"># This flux should equal 8000, thus flux-8000=0 is the equation to solve.</span>
-    <span class="n">equation</span> <span class="o">=</span> <span class="n">flux</span><span class="o">-</span><span class="mi">8000</span>
-    <span class="k">return</span> <span class="n">equation</span>
-
-<span class="kn">from</span> <span class="nn">scipy.optimize</span> <span class="kn">import</span> <span class="n">fsolve</span>
-<span class="c1"># Typically these import statements are placed at top of code.</span>
-<span class="n">guess_heattransfercoefficient</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">guess_time</span> <span class="o">=</span> <span class="mi">1</span>
 <span class="c1"># Guess is required to solve, and this is a random value.</span>
 <span class="c1"># User can change it and the result should be the same</span>
-<span class="n">solution</span> <span class="o">=</span> <span class="n">fsolve</span><span class="p">(</span><span class="n">func</span><span class="p">,</span> <span class="n">guess_heattransfercoefficient</span><span class="p">)</span>
-<span class="n">heattransfercoefficient</span> <span class="o">=</span> <span class="n">solution</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">solution</span> <span class="o">=</span> <span class="n">fsolve</span><span class="p">(</span><span class="n">func</span><span class="p">,</span> <span class="n">guess_time</span><span class="p">)</span>
+<span class="n">timetaken</span> <span class="o">=</span> <span class="n">solution</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
 <span class="c1"># Because output of fsolve is an array, use [0] to get the value.</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Heat transfer coefficient = </span><span class="si">{</span><span class="n">heattransfercoefficient</span><span class="si">}</span><span class="s2"> W/m2C&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Time = </span><span class="si">{</span><span class="n">timetaken</span><span class="si">:</span><span class="s2"> 0.0f</span><span class="si">}</span><span class="s2"> s&quot;</span><span class="p">)</span>
 
 <span class="c1"># PRINTED OUTPUT</span>
-<span class="n">Heat</span> <span class="n">transfer</span> <span class="n">coefficient</span> <span class="o">=</span> <span class="mf">80.0</span> <span class="n">W</span><span class="o">/</span><span class="n">m2C</span>
+<span class="n">Time</span> <span class="o">=</span>  <span class="mi">238</span> <span class="n">s</span>
 </pre></div>
 </div>
 </div>
 <hr class="docutils" />
-<div class="section" id="example-4-rectangular-system-convection-radiation">
-<h3>Example 4: Rectangular system <code class="docutils literal notranslate"><span class="pre">convection</span> <span class="pre">+</span> <span class="pre">radiation</span></code><a class="headerlink" href="#example-4-rectangular-system-convection-radiation" title="Permalink to this headline">¶</a></h3>
-<p><code class="docutils literal notranslate"><span class="pre">Example</span> <span class="pre">4.</span></code> A small, thin metal plate of area A m2 is kept insulated
-on one side and exposed to the sun on the other side. The plate absorbs
-solar energy at a rate of 500 W/m2 and dissipates it by convection into
-the ambient air at T∞ = 300 K with a convection heat transfer coefficient
-h = 20 W/m2 °C and by radiation into a surrounding area which may be
-assumed to be a black body at Tsky = 280 K . The emissivity of the
-surface is ε = 0.9. Determine the equilibrium temperature
-of the plate. <code class="docutils literal notranslate"><span class="pre">Ans:</span> <span class="pre">315.4</span> <span class="pre">K</span></code></p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># EXAMPLE 4</span>
-<span class="kn">from</span> <span class="nn">pychemengg.heattransfer</span> <span class="kn">import</span> <span class="n">steadystate</span> <span class="k">as</span> <span class="n">ss</span>
-<span class="c1"># Model the object with Slab.</span>
-<span class="c1"># Because it is a thin plate, thickness = 0, but thickness is not</span>
-<span class="c1"># involved in radiation so it can be left = None (default). Area is also not</span>
-<span class="c1"># known, and since flux is given use area = 1. Thermal conductivity is not</span>
-<span class="c1"># required because conductive heat transfer is not considered.</span>
-<span class="n">plate</span> <span class="o">=</span> <span class="n">ss</span><span class="o">.</span><span class="n">Slab</span><span class="p">(</span><span class="n">area</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<div class="section" id="example-3-non-lumped-system-cylindrical">
+<h3>Example 3: Non lumped system <code class="docutils literal notranslate"><span class="pre">cylindrical</span></code><a class="headerlink" href="#example-3-non-lumped-system-cylindrical" title="Permalink to this headline">¶</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">Example</span> <span class="pre">3.</span></code> A cylindrical wooden log measuring 10 cm in diameter is at a uniform
+temperature of 15 C. It is exposed to hot gases at 550 C in a fireplace with a
+heat transfer coefficient of 13.6 W/m2K. If the ingnition temperature is 420 C find the
+time needed for the log to ignite i) using one-term approximation, ii)
+using 10 terms of series solution. Use the following properties for the wooden log:</p>
+<blockquote>
+<div><p>k = 0.17 W/mK</p>
+<p><span class="math">\(\alpha\)</span> = 1.28e-7 m2/s</p>
+</div></blockquote>
+<p><code class="docutils literal notranslate"><span class="pre">Ans:</span> <span class="pre">i)</span> <span class="pre">Time</span> <span class="pre">=</span> <span class="pre">2771</span> <span class="pre">s;</span> <span class="pre">Time</span> <span class="pre">=</span> <span class="pre">2966</span> <span class="pre">s</span></code></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># EXAMPLE 3</span>
+<span class="kn">from</span> <span class="nn">pychemengg.heattransfer</span> <span class="kn">import</span> <span class="n">transient</span> <span class="k">as</span> <span class="n">transient</span>
+<span class="c1"># Problem statement asks that non lumped model be used.</span>
+<span class="c1"># Create an instance of non lumped system.</span>
+<span class="c1"># All units are in SI system.</span>
+<span class="kn">import</span> <span class="nn">math</span>
+<span class="n">diameter</span> <span class="o">=</span> <span class="mf">10e-2</span>
+<span class="c1"># Assume length = 1</span>
+<span class="n">length</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">area</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="n">diameter</span> <span class="o">*</span> <span class="n">length</span>
+<span class="n">volume</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">4</span> <span class="o">*</span><span class="n">diameter</span><span class="o">**</span><span class="mi">2</span> <span class="o">*</span> <span class="n">length</span>
+<span class="n">wood</span> <span class="o">=</span> <span class="n">transient</span><span class="o">.</span><span class="n">NonLumpedCylinder</span><span class="p">(</span><span class="n">radius</span><span class="o">=</span><span class="n">diameter</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="n">surfacearea</span><span class="o">=</span><span class="n">area</span><span class="p">,</span> <span class="n">volume</span><span class="o">=</span><span class="n">volume</span><span class="p">,</span> <span class="n">density</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">specificheat</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">thermalconductivity</span><span class="o">=</span><span class="mf">0.17</span><span class="p">,</span> <span class="n">thermaldiffusivity</span><span class="o">=</span><span class="mf">1.28e-7</span><span class="p">,</span> <span class="n">heattransfercoefficient</span><span class="o">=</span><span class="mf">13.6</span><span class="p">,</span> <span class="n">T_infinity</span><span class="o">=</span><span class="mi">550</span><span class="p">,</span> <span class="n">T_initial</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
+<span class="n">biotnumber</span> <span class="o">=</span> <span class="n">wood</span><span class="o">.</span><span class="n">calc_Bi</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Biot number = </span><span class="si">{</span><span class="n">biotnumber</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="c1"># The following gets printed to screen.</span>
+<span class="c1"># Biot number = 4.0</span>
+<span class="c1"># Case 1: use of one term approximation.</span>
+<span class="c1"># Set up a function that accepts &#39;time&#39; and returns</span>
+<span class="c1"># an equation that can be solved using a solver.</span>
 
-<span class="c1"># Apply energy balance.</span>
-<span class="c1"># Energy absorbed = Energy lost by convection + Energy lost by radiation ..(1)</span>
-<span class="c1"># Convection and radiation involve surface temperature, which is</span>
-<span class="c1"># the unknown here. Create a function that can be used by fsolve.</span>
-<span class="c1"># The function will return equation (1).</span>
-<span class="k">def</span> <span class="nf">func</span><span class="p">(</span><span class="n">Ts</span><span class="p">):</span>
-    <span class="n">E_absorbed</span> <span class="o">=</span> <span class="mi">500</span>
-    <span class="n">E_conv_loss</span> <span class="o">=</span> <span class="n">plate</span><span class="o">.</span><span class="n">heatrateof_conv</span><span class="p">(</span><span class="n">heattransfercoefficient</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">dT</span><span class="o">=</span><span class="n">Ts</span><span class="o">-</span><span class="mi">300</span><span class="p">)</span>
-    <span class="n">E_rad_loss</span> <span class="o">=</span> <span class="n">plate</span><span class="o">.</span><span class="n">heatrateof_rad</span><span class="p">(</span><span class="n">T_infinity</span><span class="o">=</span><span class="mi">280</span><span class="p">,</span> <span class="n">T_surface</span><span class="o">=</span><span class="n">Ts</span><span class="p">,</span> <span class="n">emissivity</span><span class="o">=</span><span class="mf">0.9</span><span class="p">)</span>
-    <span class="c1"># NOTE: radiation calculation MUST use absolute temperature.</span>
-    <span class="c1"># Also note temperature of 300 K is used with convection,</span>
-    <span class="c1"># and 280 K with radiation.</span>
-    <span class="n">equation</span> <span class="o">=</span> <span class="n">E_absorbed</span> <span class="o">-</span> <span class="n">E_conv_loss</span> <span class="o">-</span> <span class="n">E_rad_loss</span>
+<span class="k">def</span> <span class="nf">func</span><span class="p">(</span><span class="n">time</span><span class="p">,</span> <span class="o">*</span><span class="n">number_of_terms</span><span class="p">):</span>
+    <span class="c1"># Here &#39;time&#39; is guess values</span>
+    <span class="c1"># and &#39;number_of_terms&#39; are the terms to consider for infinite series solution</span>
+    <span class="n">fouriernumber</span> <span class="o">=</span>  <span class="n">wood</span><span class="o">.</span><span class="n">calc_Fo</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="n">time</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+    <span class="c1"># calculate first eigen value</span>
+    <span class="n">eigenvalue</span> <span class="o">=</span> <span class="n">wood</span><span class="o">.</span><span class="n">calc_eigenvalues</span><span class="p">(</span><span class="n">numberof_eigenvalues_desired</span><span class="o">=</span><span class="n">number_of_terms</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+    <span class="n">temperature</span> <span class="o">=</span> <span class="n">wood</span><span class="o">.</span><span class="n">calc_temperature_of_solid_at_time_t</span><span class="p">(</span><span class="n">rposition_tofindtemp</span><span class="o">=</span><span class="n">wood</span><span class="o">.</span><span class="n">radius</span><span class="p">)</span>
+    <span class="c1"># at some time &#39;t&#39;, this temperature should be = 420</span>
+    <span class="c1"># Therefore equation becomes, equation = temperature-420 = 0</span>
+    <span class="n">equation</span> <span class="o">=</span> <span class="n">temperature</span><span class="o">-</span><span class="mi">420</span>
     <span class="k">return</span> <span class="n">equation</span>
 
+<span class="c1"># Now solve this function using a solver</span>
 <span class="kn">from</span> <span class="nn">scipy.optimize</span> <span class="kn">import</span> <span class="n">fsolve</span>
 <span class="c1"># Typically these import statements are placed at top of code.</span>
-<span class="n">guess_surfacetemp</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">guess_time</span> <span class="o">=</span> <span class="mi">1</span>
 <span class="c1"># Guess is required to solve, and this is a random value.</span>
-<span class="c1"># User can change it and the result should be the same.</span>
-<span class="n">solution</span> <span class="o">=</span> <span class="n">fsolve</span><span class="p">(</span><span class="n">func</span><span class="p">,</span> <span class="n">guess_surfacetemp</span><span class="p">)</span>
-<span class="n">surfacetemp</span> <span class="o">=</span> <span class="n">solution</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="c1"># User can change it and the result should be the same</span>
+<span class="n">solution</span> <span class="o">=</span> <span class="n">fsolve</span><span class="p">(</span><span class="n">func</span><span class="p">,</span> <span class="n">guess_time</span><span class="p">,</span> <span class="p">(</span><span class="mi">1</span><span class="p">,))</span>
+<span class="n">timetaken_1</span> <span class="o">=</span> <span class="n">solution</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
 <span class="c1"># Because output of fsolve is an array, use [0] to get the value.</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Surface temperature of plate = </span><span class="si">{</span><span class="n">surfacetemp</span><span class="si">}</span><span class="s2"> K&quot;</span><span class="p">)</span>
-<span class="c1"># NOTE: Answer is in absolute scale (K in this case)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Time = </span><span class="si">{</span><span class="n">timetaken_1</span><span class="si">:</span><span class="s2"> 0.0f</span><span class="si">}</span><span class="s2"> s&quot;</span><span class="p">)</span>
+<span class="c1"># The following gets printed to screen</span>
+<span class="c1"># Time =  2771 s</span>
+<span class="c1"># Check the Fourier number</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Fourier number = </span><span class="si">{</span><span class="n">wood</span><span class="o">.</span><span class="n">calc_Fo</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="n">timetaken_1</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="c1"># This prints the following to screen</span>
+<span class="c1"># Fourier number = 0.1418840952127394</span>
+<span class="c1"># Fourier number is not greater than 0.2, thus one term approximation</span>
+<span class="c1"># is not valid.</span>
+
+<span class="c1"># Repeat the above calculation but this time use 10 terms of the series solution</span>
+
+
+<span class="c1"># Now solve with 10 terms</span>
+<span class="n">solution</span> <span class="o">=</span> <span class="n">fsolve</span><span class="p">(</span><span class="n">func</span><span class="p">,</span> <span class="n">guess_time</span><span class="p">,</span> <span class="p">(</span><span class="mi">10</span><span class="p">,))</span>
+<span class="n">timetaken_10</span> <span class="o">=</span> <span class="n">solution</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="c1"># Because output of fsolve is an array, use [0] to get the value.</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Time = </span><span class="si">{</span><span class="n">timetaken_10</span><span class="si">:</span><span class="s2"> 0.0f</span><span class="si">}</span><span class="s2"> s&quot;</span><span class="p">)</span>
+<span class="c1"># The following gets printed to screen</span>
+<span class="c1"># Time =  2966 s</span>
+
+<span class="c1"># Now print the solutions for both cases:</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Case 1: 1 term approximation gives time = </span><span class="si">{</span><span class="n">timetaken_1</span><span class="si">:</span><span class="s2"> 0.0f</span><span class="si">}</span><span class="s2"> s as answer&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Case 2: 10 term approximation gives time = </span><span class="si">{</span><span class="n">timetaken_10</span><span class="si">:</span><span class="s2"> 0.0f</span><span class="si">}</span><span class="s2"> s as answer&quot;</span><span class="p">)</span>
 
 <span class="c1"># PRINTED OUTPUT</span>
-<span class="n">Surface</span> <span class="n">temperature</span> <span class="n">of</span> <span class="n">plate</span> <span class="o">=</span> <span class="mf">315.42531589902273</span> <span class="n">K</span>
+<span class="n">Case</span> <span class="mi">1</span><span class="p">:</span> <span class="mi">1</span> <span class="n">term</span> <span class="n">approximation</span> <span class="n">gives</span> <span class="n">time</span> <span class="o">=</span>  <span class="mi">2771</span> <span class="n">s</span> <span class="k">as</span> <span class="n">answer</span>
+<span class="n">Case</span> <span class="mi">2</span><span class="p">:</span> <span class="mi">10</span> <span class="n">term</span> <span class="n">approximation</span> <span class="n">gives</span> <span class="n">time</span> <span class="o">=</span>  <span class="mi">2966</span> <span class="n">s</span> <span class="k">as</span> <span class="n">answer</span>
 </pre></div>
 </div>
 </div>
 <hr class="docutils" />
-<div class="section" id="example-5-rectangular-system-composite-wall-conduction">
-<h3>Example 5: Rectangular system <code class="docutils literal notranslate"><span class="pre">composite</span> <span class="pre">wall,</span> <span class="pre">conduction</span></code><a class="headerlink" href="#example-5-rectangular-system-composite-wall-conduction" title="Permalink to this headline">¶</a></h3>
-<p><code class="docutils literal notranslate"><span class="pre">Example</span> <span class="pre">5.</span></code> A composite wall has three layers with perfect thermal contact as shown below.
-The outermost surfaces are at T<sub>1</sub> = 400 C and T<sub>2</sub> = 50 C. The thickness of each layer
-and the respective thermal conductivities (k<sub>i</sub> where i = 1,2,3) are also given.
-Find the heat transfer rate per square meter of the surface area of the wall, and the
-interface temperatures, T<sub>x</sub> and T<sub>y</sub>. <code class="docutils literal notranslate"><span class="pre">Ans:</span> <span class="pre">25</span> <span class="pre">.13</span> <span class="pre">kW</span></code></p>
-<a class="reference internal image-reference" href="../../_images/steadystate_example6.png"><img alt="../../_images/steadystate_example6.png" class="align-center" src="../../_images/steadystate_example6.png" style="width: 356.09999999999997px; height: 171.0px;" /></a>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example 5</span>
-<span class="kn">from</span> <span class="nn">pychemengg.heattransfer</span> <span class="kn">import</span> <span class="n">steadystate</span> <span class="k">as</span> <span class="n">ss</span>
-<span class="c1"># Model each layer of the wall as a Slab.</span>
-<span class="n">layer_1</span> <span class="o">=</span> <span class="n">ss</span><span class="o">.</span><span class="n">Slab</span><span class="p">(</span><span class="n">thickness</span><span class="o">=</span><span class="mf">0.05</span><span class="p">,</span> <span class="n">thermalconductivity</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">area</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-<span class="n">layer_2</span> <span class="o">=</span> <span class="n">ss</span><span class="o">.</span><span class="n">Slab</span><span class="p">(</span><span class="n">thickness</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">thermalconductivity</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">area</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-<span class="n">layer_3</span> <span class="o">=</span> <span class="n">ss</span><span class="o">.</span><span class="n">Slab</span><span class="p">(</span><span class="n">thickness</span><span class="o">=</span><span class="mf">0.15</span><span class="p">,</span> <span class="n">thermalconductivity</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">area</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-<span class="c1"># Find total resistance.</span>
-<span class="n">R_total</span> <span class="o">=</span> <span class="n">layer_1</span><span class="o">.</span><span class="n">resistanceof_cond</span><span class="p">()</span> <span class="o">+</span> <span class="n">layer_2</span><span class="o">.</span><span class="n">resistanceof_cond</span><span class="p">()</span> <span class="o">+</span> <span class="n">layer_3</span><span class="o">.</span><span class="n">resistanceof_cond</span><span class="p">()</span>
-<span class="c1"># Heat flux is then given by:</span>
-<span class="n">heatflux</span> <span class="o">=</span> <span class="p">(</span><span class="mi">400</span><span class="o">-</span><span class="mi">50</span><span class="p">)</span> <span class="o">/</span> <span class="n">R_total</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Rate of heat per square meter = </span><span class="si">{</span><span class="n">heatflux</span><span class="si">:</span><span class="s2"> 0.2e</span><span class="si">}</span><span class="s2"> W/m2&quot;</span><span class="p">)</span>
-
-<span class="c1"># Now find Tx and Ty</span>
-<span class="c1"># To do this, use the concept that at steady state heat transfer through each layer is</span>
-<span class="c1"># equal, =&gt; layer_1.heatrateof_cond() = layer_2.heatrateof_cond() = layer_3.heatrateof_cond()</span>
-<span class="c1"># There are two unknown temperatures, therefore, two equations are required.</span>
-<span class="c1"># And the above relationship can be used to obtain these equations as follows:</span>
-<span class="c1"># layer_1.heatrateof_cond() - layer_2.heatrateof_cond() = 0 ... (1)</span>
-<span class="c1"># layer_2.heatrateof_cond() - layer_3.heatrateof_cond() = 0 ... (2)</span>
-<span class="c1"># Implement (1) and (2) in a function and use fsolve</span>
-<span class="k">def</span> <span class="nf">func</span><span class="p">(</span><span class="n">guesstemps</span><span class="p">):</span>
-    <span class="c1"># Because there are two unknonwns, Tx and Ty, two values must be fed into the function</span>
-    <span class="c1"># This is done by using the argument &#39;temps&#39; as an array</span>
-    <span class="c1"># Then :</span>
-    <span class="n">Tx</span> <span class="o">=</span> <span class="n">guesstemps</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-    <span class="n">Ty</span> <span class="o">=</span> <span class="n">guesstemps</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
-    <span class="c1"># Next let:</span>
-    <span class="n">q1</span> <span class="o">=</span> <span class="n">layer_1</span><span class="o">.</span><span class="n">heatrateof_cond</span><span class="p">(</span><span class="n">dT</span><span class="o">=</span><span class="mi">400</span><span class="o">-</span><span class="n">Tx</span><span class="p">)</span>
-    <span class="n">q2</span> <span class="o">=</span> <span class="n">layer_2</span><span class="o">.</span><span class="n">heatrateof_cond</span><span class="p">(</span><span class="n">dT</span><span class="o">=</span><span class="n">Tx</span><span class="o">-</span><span class="n">Ty</span><span class="p">)</span>
-    <span class="n">q3</span> <span class="o">=</span> <span class="n">layer_3</span><span class="o">.</span><span class="n">heatrateof_cond</span><span class="p">(</span><span class="n">dT</span><span class="o">=</span><span class="n">Ty</span><span class="o">-</span><span class="mi">50</span><span class="p">)</span>
-    <span class="c1"># Now since q1 = q2 = q3</span>
-    <span class="c1"># There are three equations that can be formed</span>
-    <span class="c1"># q1-q2 = 0; q1-q3=0; q2-q3=0</span>
-    <span class="c1"># Any two will serve the purpose</span>
-    <span class="c1"># Here q1-q2 = 0 and q2-q3=0 are selected.</span>
-    <span class="c1"># User can verify with other combinations.</span>
-    <span class="k">return</span> <span class="n">q1</span><span class="o">-</span><span class="n">q2</span><span class="p">,</span> <span class="n">q2</span><span class="o">-</span><span class="n">q3</span>
-
-<span class="kn">from</span> <span class="nn">scipy.optimize</span> <span class="kn">import</span> <span class="n">fsolve</span>
-<span class="c1"># Typically these import statements are placed at top of code.</span>
-<span class="c1"># To make a guess at Tx and Ty, any numbers between 400 and 50</span>
-<span class="c1"># can be selected. Here 300, 200 are arbitrarily selected.</span>
-<span class="n">guesstemps</span> <span class="o">=</span> <span class="p">[</span><span class="mi">300</span><span class="p">,</span> <span class="mi">200</span><span class="p">]</span>
-<span class="c1"># Guess is required to solve, and this is a random value.</span>
-<span class="c1"># User can change it and the result should be the same.</span>
-<span class="n">solution</span> <span class="o">=</span> <span class="n">fsolve</span><span class="p">(</span><span class="n">func</span><span class="p">,</span> <span class="n">guesstemps</span><span class="p">)</span>
-<span class="n">Tx</span> <span class="o">=</span> <span class="n">solution</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-<span class="n">Ty</span> <span class="o">=</span> <span class="n">solution</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Temps at wall interfaces are Tx = </span><span class="si">{</span><span class="n">Tx</span><span class="si">:</span><span class="s2"> .1f</span><span class="si">}</span><span class="s2"> C and Ty = </span><span class="si">{</span><span class="n">Ty</span><span class="si">:</span><span class="s2"> .1f</span><span class="si">}</span><span class="s2"> C&quot;</span><span class="p">)</span>
+<div class="section" id="example-4-semi-infinite-boundary-condition-surface-temperature-is-specified">
+<h3>Example 4: Semi infinite <code class="docutils literal notranslate"><span class="pre">boundary</span> <span class="pre">condition:</span> <span class="pre">surface</span> <span class="pre">temperature</span> <span class="pre">is</span> <span class="pre">specified</span></code><a class="headerlink" href="#example-4-semi-infinite-boundary-condition-surface-temperature-is-specified" title="Permalink to this headline">¶</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">Example</span> <span class="pre">4.</span></code> Tennis court made of clay is initially at a uniform tempertaure
+of 55 C. Suddenly due to rain the surface temperature becomes 25 C.
+Assume temperature of clay surface is maintained at 25 C. What is the
+temperature of the tennis court 3 cm deep and the heat flux that has been
+transferred after 60 min. Use the following properties for clay:</p>
+<blockquote>
+<div><p>k = 0.062 W/mK</p>
+<p><span class="math">\(\rho\)</span> = 2115 kg/m3</p>
+<p><span class="math">\(c_p\)</span> = 920 J/kg K</p>
+</div></blockquote>
+<p><code class="docutils literal notranslate"><span class="pre">Ans:</span> <span class="pre">Temperature</span> <span class="pre">=</span> <span class="pre">53.6</span> <span class="pre">C,</span> <span class="pre">Flux</span> <span class="pre">=</span> <span class="pre">98</span> <span class="pre">W/m2</span></code></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># EXAMPLE 4</span>
+<span class="kn">from</span> <span class="nn">pychemengg.heattransfer</span> <span class="kn">import</span> <span class="n">transient</span> <span class="k">as</span> <span class="n">transient</span>
+<span class="c1"># All units are in SI system.</span>
+<span class="c1"># Create an instance of semi infinite system.</span>
+<span class="c1"># Only relevant keywords are to be input.</span>
+<span class="n">clay</span> <span class="o">=</span> <span class="n">transient</span><span class="o">.</span><span class="n">SemiInfinite</span><span class="p">(</span><span class="n">boundarycondition</span><span class="o">=</span><span class="s2">&quot;surfacetemperature_specified&quot;</span><span class="p">,</span> <span class="n">xposition_tofindtemp</span><span class="o">=</span><span class="mf">3e-2</span><span class="p">,</span> <span class="n">time</span><span class="o">=</span><span class="mi">60</span><span class="o">*</span><span class="mi">60</span><span class="p">,</span> <span class="n">density</span><span class="o">=</span><span class="mi">2115</span><span class="p">,</span> <span class="n">specificheat</span><span class="o">=</span><span class="mi">920</span><span class="p">,</span> <span class="n">thermalconductivity</span><span class="o">=</span><span class="mf">0.062</span><span class="p">,</span> <span class="n">thermaldiffusivity</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">constantsurfacetemperature</span><span class="o">=</span><span class="mi">25</span><span class="p">,</span> <span class="n">heattransfercoefficient</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">heatflux</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">energypulse</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">T_infinity</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">T_initial</span><span class="o">=</span><span class="mi">55</span><span class="p">)</span>
+<span class="c1"># Call the method calc_temperature.</span>
+<span class="c1"># Depending on the boundary condition, the method selects the</span>
+<span class="c1"># appropriate equation to compute the temperature at given &#39;x&#39; and &#39;time&#39;</span>
+<span class="n">temperature</span> <span class="o">=</span> <span class="n">clay</span><span class="o">.</span><span class="n">calc_temperature</span><span class="p">()</span>
+<span class="c1"># Call the method calc_heatflux_forconstantsurfacetemperature()</span>
+<span class="n">flux</span> <span class="o">=</span> <span class="n">clay</span><span class="o">.</span><span class="n">calc_heatflux_forconstantsurfacetemperature</span><span class="p">()</span>
+<span class="c1"># Print the results.</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Temperature at 3cm depth in clay = </span><span class="si">{</span><span class="n">temperature</span><span class="si">:</span><span class="s2"> 0.1f</span><span class="si">}</span><span class="s2"> C&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Flux in 60 min = </span><span class="si">{</span><span class="n">flux</span><span class="si">:</span><span class="s2"> 0.0f</span><span class="si">}</span><span class="s2"> W/m2. Negative sign indicates loss of heat.&quot;</span><span class="p">)</span>
 
 <span class="c1"># PRINTED OUTPUT</span>
-<span class="n">Rate</span> <span class="n">of</span> <span class="n">heat</span> <span class="n">per</span> <span class="n">square</span> <span class="n">meter</span> <span class="o">=</span>  <span class="mf">5.83e+04</span> <span class="n">W</span><span class="o">/</span><span class="n">m2</span>
-<span class="n">Temps</span> <span class="n">at</span> <span class="n">wall</span> <span class="n">interfaces</span> <span class="n">are</span> <span class="n">Tx</span> <span class="o">=</span>  <span class="mf">254.2</span> <span class="n">C</span> <span class="ow">and</span> <span class="n">Ty</span> <span class="o">=</span>  <span class="mf">137.5</span> <span class="n">C</span>
-</pre></div>
-</div>
-</div>
-<div class="section" id="example-6-cylindrical-system-convection">
-<h3>Example 6: Cylindrical system <code class="docutils literal notranslate"><span class="pre">convection</span></code><a class="headerlink" href="#example-6-cylindrical-system-convection" title="Permalink to this headline">¶</a></h3>
-<p><code class="docutils literal notranslate"><span class="pre">Example</span> <span class="pre">6.</span></code> Pressurized water at 50 °C flows inside of 5 cm diameter,
-1 m long tube with surface temperature maintained at 130 °C. If the heat
-transfer coefficient between the water and the tube is h = 2000 W/m2 °C,
-Determine the heat transfer rate from the tube to the water.
-<code class="docutils literal notranslate"><span class="pre">Ans:</span> <span class="pre">25</span> <span class="pre">.13</span> <span class="pre">kW</span></code></p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example 6</span>
-<span class="kn">from</span> <span class="nn">pychemengg.heattransfer</span> <span class="kn">import</span> <span class="n">steadystate</span> <span class="k">as</span> <span class="n">ss</span>
-<span class="c1"># Model the tube as a Cylinder.</span>
-<span class="n">tube</span> <span class="o">=</span> <span class="n">ss</span><span class="o">.</span><span class="n">Cylinder</span><span class="p">(</span><span class="n">length</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">inner_radius</span><span class="o">=</span><span class="mf">5e-2</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
-<span class="c1"># Since only one diameter is given we assume tube is thin walled.</span>
-<span class="c1"># Only convective heat transfer is of interest and thermal conductivity</span>
-<span class="c1"># is not provided. Leave the *outer_diameter* and *thermalconductivity*</span>
-<span class="c1"># keywords as = None.</span>
-<span class="c1"># To find heat rate of transfer via convection call the following method.</span>
-<span class="n">heatrate</span> <span class="o">=</span> <span class="n">tube</span><span class="o">.</span><span class="n">heatrateof_conv</span><span class="p">(</span><span class="n">heattransfercoefficient</span><span class="o">=</span><span class="mi">2000</span><span class="p">,</span> <span class="n">radius</span><span class="o">=</span><span class="n">tube</span><span class="o">.</span><span class="n">inner_radius</span><span class="p">,</span> <span class="n">dT</span><span class="o">=</span><span class="mi">130</span><span class="o">-</span><span class="mi">50</span><span class="p">)</span>
-<span class="c1"># Print the solution</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Heat rate of convection from tube to water = </span><span class="si">{</span><span class="n">heatrate</span><span class="si">}</span><span class="s2"> W&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Heat rate of convection from tube to water = </span><span class="si">{</span><span class="n">heatrate</span><span class="si">:</span><span class="s2"> 0.3e</span><span class="si">}</span><span class="s2"> W&quot;</span><span class="p">)</span>
-<span class="c1"># The second print statement formats the output to show result with</span>
-<span class="c1"># exponent. Users should read Python&#39;s &#39;Formatted String Literals&#39;.</span>
-
-<span class="c1"># PRINTED OUTPUT</span>
-<span class="n">Heat</span> <span class="n">rate</span> <span class="n">of</span> <span class="n">convection</span> <span class="kn">from</span> <span class="nn">tube</span> <span class="n">to</span> <span class="n">water</span> <span class="o">=</span> <span class="mf">25132.741228718347</span> <span class="n">W</span>
-<span class="n">Heat</span> <span class="n">rate</span> <span class="n">of</span> <span class="n">convection</span> <span class="kn">from</span> <span class="nn">tube</span> <span class="n">to</span> <span class="n">water</span> <span class="o">=</span>  <span class="mf">2.513e+04</span> <span class="n">W</span>
+<span class="n">Temperature</span> <span class="n">at</span> <span class="mi">3</span> <span class="n">cm</span> <span class="n">depth</span> <span class="ow">in</span> <span class="n">clay</span> <span class="o">=</span>  <span class="mf">53.6</span> <span class="n">C</span>
+<span class="n">Flux</span> <span class="ow">in</span> <span class="mi">60</span> <span class="nb">min</span> <span class="o">=</span> <span class="o">-</span><span class="mi">98</span> <span class="n">W</span><span class="o">/</span><span class="n">m2</span><span class="o">.</span> <span class="n">Negative</span> <span class="n">sign</span> <span class="n">indicates</span> <span class="n">loss</span> <span class="n">of</span> <span class="n">heat</span><span class="o">.</span>
 </pre></div>
 </div>
 </div>
 <hr class="docutils" />
-<div class="section" id="example-7-cylindrical-system-composite-cylinder-conduction-convection">
-<h3>Example 7: Cylindrical system <code class="docutils literal notranslate"><span class="pre">composite</span> <span class="pre">cylinder,</span> <span class="pre">conduction,</span> <span class="pre">convection</span></code><a class="headerlink" href="#example-7-cylindrical-system-composite-cylinder-conduction-convection" title="Permalink to this headline">¶</a></h3>
-<p><code class="docutils literal notranslate"><span class="pre">Example</span> <span class="pre">7.</span></code> A pipe with 5 cm inner diameter and 7.6 cm outer diameter has thermal
-conductivity k<sub>1</sub>= 15 W/mC. It is covered with a 2 cm thick insulation with
-thermal conductivity k<sub>2</sub>=  = 0.2 W/mC. A hot gas at T<sub>a</sub> = 330 C
-and h<sub>a</sub> = 400 W/m2C flows in the pipe. The outer surface of insulation is
-exposed to cooler air at T<sub>b</sub> = 30 C and h<sub>b</sub> = 60 W/m2C.</p>
-<ol class="arabic simple">
-<li><p>Calculate heat loss from the pipe to the air if the pipe length is 10 m.</p></li>
-</ol>
-<p>2. Calculate the temperature drop from thermal resistance of the hot gas flow,
-the pipe material, the insulation, and the outside air.</p>
-<p><code class="docutils literal notranslate"><span class="pre">Ans:</span> <span class="pre">i)</span> <span class="pre">Heat</span> <span class="pre">loss</span> <span class="pre">=</span> <span class="pre">7451</span> <span class="pre">W</span></code>
-<code class="docutils literal notranslate"><span class="pre">ii)</span> <span class="pre">Temperature</span> <span class="pre">drop,</span> <span class="pre">Ta-T0</span> <span class="pre">=</span> <span class="pre">11.9</span> <span class="pre">C</span></code>
-<code class="docutils literal notranslate"><span class="pre">ii)</span> <span class="pre">Temperature</span> <span class="pre">drop,</span> <span class="pre">T0-T1</span> <span class="pre">=</span> <span class="pre">3.3</span> <span class="pre">C</span></code>
-<code class="docutils literal notranslate"><span class="pre">ii)</span> <span class="pre">Temperature</span> <span class="pre">drop,</span> <span class="pre">T1-T2</span> <span class="pre">=</span> <span class="pre">250.7</span> <span class="pre">C</span></code>
-<code class="docutils literal notranslate"><span class="pre">ii)</span> <span class="pre">Temperature</span> <span class="pre">drop,</span> <span class="pre">T2-Tb</span> <span class="pre">=</span> <span class="pre">34.1</span> <span class="pre">C</span></code></p>
-<a class="reference internal image-reference" href="../../_images/steadystate_example7.png"><img alt="../../_images/steadystate_example7.png" class="align-center" src="../../_images/steadystate_example7.png" style="width: 282.3px; height: 208.2px;" /></a>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example 7</span>
-<span class="kn">from</span> <span class="nn">pychemengg.heattransfer</span> <span class="kn">import</span> <span class="n">steadystate</span> <span class="k">as</span> <span class="n">ss</span>
-<span class="c1"># Model pipe and insulation each as a Cylinder.</span>
-<span class="n">pipe</span> <span class="o">=</span> <span class="n">ss</span><span class="o">.</span><span class="n">Cylinder</span><span class="p">(</span><span class="n">length</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">inner_radius</span><span class="o">=</span><span class="mf">0.05</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="n">outer_radius</span><span class="o">=</span><span class="mf">0.076</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="n">thermalconductivity</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
-<span class="n">ins</span> <span class="o">=</span> <span class="n">ss</span><span class="o">.</span><span class="n">Cylinder</span><span class="p">(</span><span class="n">length</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">inner_radius</span><span class="o">=</span><span class="mf">0.076</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="n">outer_radius</span><span class="o">=</span><span class="mf">0.076</span><span class="o">/</span><span class="mi">2</span><span class="o">+</span><span class="mf">0.02</span><span class="p">,</span> <span class="n">thermalconductivity</span><span class="o">=</span><span class="mf">0.2</span><span class="p">)</span>
-<span class="c1"># The resistances ar as follows:</span>
-<span class="n">Ra</span> <span class="o">=</span> <span class="n">pipe</span><span class="o">.</span><span class="n">resistanceof_conv</span><span class="p">(</span><span class="n">heattransfercoefficient</span><span class="o">=</span><span class="mi">400</span><span class="p">,</span> <span class="n">radius</span><span class="o">=</span><span class="n">pipe</span><span class="o">.</span><span class="n">inner_radius</span><span class="p">)</span>
-<span class="n">R1</span> <span class="o">=</span> <span class="n">pipe</span><span class="o">.</span><span class="n">resistanceof_cond</span><span class="p">()</span>
-<span class="n">R2</span> <span class="o">=</span> <span class="n">ins</span><span class="o">.</span><span class="n">resistanceof_cond</span><span class="p">()</span>
-<span class="n">Rb</span> <span class="o">=</span> <span class="n">ins</span><span class="o">.</span><span class="n">resistanceof_conv</span><span class="p">(</span><span class="n">heattransfercoefficient</span><span class="o">=</span><span class="mi">60</span><span class="p">,</span><span class="n">radius</span><span class="o">=</span><span class="n">ins</span><span class="o">.</span><span class="n">outer_radius</span><span class="p">)</span>
-<span class="n">total_R</span> <span class="o">=</span> <span class="n">Ra</span> <span class="o">+</span> <span class="n">R1</span> <span class="o">+</span> <span class="n">R2</span> <span class="o">+</span> <span class="n">Rb</span>
-<span class="n">total_heatrate</span> <span class="o">=</span> <span class="p">(</span><span class="mi">330</span><span class="o">-</span><span class="mi">30</span><span class="p">)</span><span class="o">/</span><span class="n">total_R</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Total heat loss = </span><span class="si">{</span><span class="n">total_heatrate</span><span class="si">:</span><span class="s2"> .2f</span><span class="si">}</span><span class="s2"> W&quot;</span><span class="p">)</span>
-<span class="c1"># At steady state heat flow rate is the same for all resistances.</span>
-<span class="c1"># Temperature drops can therefore be found from deltaT = total_heatrate * Resistance.</span>
-<span class="n">delta_Ta_T0</span> <span class="o">=</span> <span class="n">total_heatrate</span> <span class="o">*</span> <span class="n">Ra</span>
-<span class="n">delta_T0_T1</span> <span class="o">=</span> <span class="n">total_heatrate</span> <span class="o">*</span> <span class="n">R1</span>
-<span class="n">delta_T1_T2</span> <span class="o">=</span> <span class="n">total_heatrate</span> <span class="o">*</span> <span class="n">R2</span>
-<span class="n">delta_T2_Tb</span> <span class="o">=</span> <span class="n">total_heatrate</span> <span class="o">*</span> <span class="n">Rb</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Temperature drop, Ta - T0 = </span><span class="si">{</span><span class="n">delta_Ta_T0</span><span class="si">:</span><span class="s2"> 0.1f</span><span class="si">}</span><span class="s2"> C&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Temperature drop, T0 - T1 = </span><span class="si">{</span><span class="n">delta_T0_T1</span><span class="si">:</span><span class="s2"> 0.1f</span><span class="si">}</span><span class="s2"> C&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Temperature drop, T1 - T2 = </span><span class="si">{</span><span class="n">delta_T1_T2</span><span class="si">:</span><span class="s2"> 0.1f</span><span class="si">}</span><span class="s2"> C&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Temperature drop, T2 - Tb = </span><span class="si">{</span><span class="n">delta_T2_Tb</span><span class="si">:</span><span class="s2"> 0.1f</span><span class="si">}</span><span class="s2"> C&quot;</span><span class="p">)</span>
+<div class="section" id="example-5-semi-infinite-boundary-condition-heat-flux-is-specified">
+<h3>Example 5: Semi infinite <code class="docutils literal notranslate"><span class="pre">boundary</span> <span class="pre">condition:</span> <span class="pre">heat</span> <span class="pre">flux</span> <span class="pre">is</span> <span class="pre">specified</span></code><a class="headerlink" href="#example-5-semi-infinite-boundary-condition-heat-flux-is-specified" title="Permalink to this headline">¶</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">Example</span> <span class="pre">5.</span></code> In a room designed to test experimental fuels, a particular fuel
+is being burnt and as a result the brick walls of the room are subjected
+to a constant flux of 20,000 W/m2. If the initial wall temperature was 15 C,
+find the temperature in the wall at 1 cm depth after 1 h of exposure to
+constant flux. Take the following properties for the wall:</p>
+<blockquote>
+<div><p>k = 1 W/mK</p>
+<p><span class="math">\(\alpha\)</span> = 5.08e-7 m2/s</p>
+</div></blockquote>
+<p><code class="docutils literal notranslate"><span class="pre">Ans:</span> <span class="pre">Temperature</span> <span class="pre">=</span> <span class="pre">793</span> <span class="pre">C</span></code></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># EXAMPLE 5</span>
+<span class="kn">from</span> <span class="nn">pychemengg.heattransfer</span> <span class="kn">import</span> <span class="n">transient</span> <span class="k">as</span> <span class="n">transient</span>
+<span class="c1"># All units are in SI system.</span>
+<span class="c1"># Create an instance of semi infinite system.</span>
+<span class="c1"># Only relevant keywords are to be input.</span>
+<span class="n">wall</span> <span class="o">=</span> <span class="n">transient</span><span class="o">.</span><span class="n">SemiInfinite</span><span class="p">(</span><span class="n">boundarycondition</span><span class="o">=</span><span class="s2">&quot;heatflux_specified&quot;</span><span class="p">,</span> <span class="n">xposition_tofindtemp</span><span class="o">=</span><span class="mf">1e-2</span><span class="p">,</span> <span class="n">time</span><span class="o">=</span><span class="mi">60</span><span class="o">*</span><span class="mi">60</span><span class="p">,</span> <span class="n">density</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">specificheat</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">thermalconductivity</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">thermaldiffusivity</span><span class="o">=</span><span class="mf">5.08e-7</span><span class="p">,</span> <span class="n">constantsurfacetemperature</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">heattransfercoefficient</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">heatflux</span><span class="o">=</span><span class="mi">20000</span><span class="p">,</span> <span class="n">energypulse</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">T_infinity</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">T_initial</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
+<span class="c1"># Call the method calc_temperature.</span>
+<span class="c1"># Depending on the boundary condition, the method selects the</span>
+<span class="c1"># appropriate equation to compute the temperature at given &#39;x&#39; and &#39;time&#39;</span>
+<span class="n">temperature</span> <span class="o">=</span> <span class="n">wall</span><span class="o">.</span><span class="n">calc_temperature</span><span class="p">()</span>
+<span class="c1"># Print the results.</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Temperature at 1 cm depth in wall = </span><span class="si">{</span><span class="n">temperature</span><span class="si">:</span><span class="s2"> 0.0f</span><span class="si">}</span><span class="s2"> C&quot;</span><span class="p">)</span>
 
 <span class="c1"># PRINTED OUTPUT</span>
-<span class="n">Total</span> <span class="n">heat</span> <span class="n">loss</span> <span class="o">=</span>  <span class="mf">7451.73</span> <span class="n">W</span>
-<span class="n">Temperature</span> <span class="n">drop</span><span class="p">,</span> <span class="n">Ta</span> <span class="o">-</span> <span class="n">T0</span> <span class="o">=</span>  <span class="mf">11.9</span> <span class="n">C</span>
-<span class="n">Temperature</span> <span class="n">drop</span><span class="p">,</span> <span class="n">T0</span> <span class="o">-</span> <span class="n">T1</span> <span class="o">=</span>  <span class="mf">3.3</span> <span class="n">C</span>
-<span class="n">Temperature</span> <span class="n">drop</span><span class="p">,</span> <span class="n">T1</span> <span class="o">-</span> <span class="n">T2</span> <span class="o">=</span>  <span class="mf">250.7</span> <span class="n">C</span>
-<span class="n">Temperature</span> <span class="n">drop</span><span class="p">,</span> <span class="n">T2</span> <span class="o">-</span> <span class="n">Tb</span> <span class="o">=</span>  <span class="mf">34.1</span> <span class="n">C</span>
+<span class="n">Temperature</span> <span class="n">at</span> <span class="mi">1</span> <span class="n">cm</span> <span class="n">depth</span> <span class="ow">in</span> <span class="n">wall</span> <span class="o">=</span>  <span class="mi">793</span> <span class="n">C</span>
 </pre></div>
 </div>
 </div>
 <hr class="docutils" />
-<div class="section" id="example-8-spherical-system-conduction">
-<h3>Example 8: Spherical system  <code class="docutils literal notranslate"><span class="pre">conduction</span></code><a class="headerlink" href="#example-8-spherical-system-conduction" title="Permalink to this headline">¶</a></h3>
-<p><code class="docutils literal notranslate"><span class="pre">Example</span> <span class="pre">8.</span></code> A hollow sphere has inner and outer radii of 4 and 8 cm, respectively.
-It’s material of construction has a thermal conductivity = 50 W/mC. Find the heat flux
-needed to maintaint the inner surface at 100 C while the outer surface is at 0 C.
-<code class="docutils literal notranslate"><span class="pre">Ans:</span> <span class="pre">250</span> <span class="pre">kW/m2</span></code></p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example 8</span>
-<span class="kn">from</span> <span class="nn">pychemengg.heattransfer</span> <span class="kn">import</span> <span class="n">steadystate</span> <span class="k">as</span> <span class="n">ss</span>
-<span class="c1"># Model sphere as Sphere.</span>
-<span class="n">sphere</span> <span class="o">=</span> <span class="n">ss</span><span class="o">.</span><span class="n">Sphere</span><span class="p">(</span><span class="n">inner_radius</span><span class="o">=</span><span class="mf">4e-2</span><span class="p">,</span> <span class="n">outer_radius</span><span class="o">=</span><span class="mf">8e-2</span><span class="p">,</span> <span class="n">thermalconductivity</span><span class="o">=</span><span class="mi">50</span><span class="p">)</span>
-<span class="c1"># Flux = heat rate / surface area</span>
-<span class="c1"># Here surface area should be inner surface area of sphere.</span>
-<span class="n">innerarea</span> <span class="o">=</span> <span class="n">sphere</span><span class="o">.</span><span class="n">area</span><span class="p">(</span><span class="n">sphere</span><span class="o">.</span><span class="n">inner_radius</span><span class="p">)</span>
-<span class="n">heatflux</span> <span class="o">=</span> <span class="n">sphere</span><span class="o">.</span><span class="n">heatrateof_cond</span><span class="p">(</span><span class="n">dT</span><span class="o">=</span><span class="mi">100</span><span class="o">-</span><span class="mi">0</span><span class="p">)</span><span class="o">/</span><span class="n">innerarea</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Heat flux required = </span><span class="si">{</span><span class="n">heatflux</span><span class="si">:</span><span class="s2"> e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<div class="section" id="example-6-semi-infinite-boundary-condition-surface-convection-is-specified">
+<h3>Example 6: Semi infinite <code class="docutils literal notranslate"><span class="pre">boundary</span> <span class="pre">condition:</span> <span class="pre">surface</span> <span class="pre">convection</span> <span class="pre">is</span> <span class="pre">specified</span></code><a class="headerlink" href="#example-6-semi-infinite-boundary-condition-surface-convection-is-specified" title="Permalink to this headline">¶</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">Example</span> <span class="pre">6.</span></code> Insulation bricks are being tested. They must not exceed a temperature
+of 450 C when exposed to hot gases at a temperature of 550 C for 5 minutes.
+If the initial temperature of insulation bricks is 25 C, comment whether the bricks
+will reach their safe operational limit of 450 C. Take the following properties
+for the bricks:</p>
+<blockquote>
+<div><p>k = 0.17 W/mK</p>
+<p><span class="math">\(\alpha\)</span> = 1.28e-7 m2/s</p>
+<p>heat transfer coefficient = 35 W/m2 K</p>
+</div></blockquote>
+<p><code class="docutils literal notranslate"><span class="pre">Ans:</span> <span class="pre">Surface</span> <span class="pre">temperature</span> <span class="pre">after</span> <span class="pre">5</span> <span class="pre">min</span> <span class="pre">=</span> <span class="pre">360</span> <span class="pre">C</span></code></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># EXAMPLE 6</span>
+<span class="kn">from</span> <span class="nn">pychemengg.heattransfer</span> <span class="kn">import</span> <span class="n">transient</span> <span class="k">as</span> <span class="n">transient</span>
+<span class="c1"># All units are in SI system.</span>
+<span class="c1"># Create an instance of semi infinite system.</span>
+<span class="c1"># Only relevant keywords are to be input.</span>
+<span class="n">brick</span> <span class="o">=</span> <span class="n">transient</span><span class="o">.</span><span class="n">SemiInfinite</span><span class="p">(</span><span class="n">boundarycondition</span><span class="o">=</span><span class="s2">&quot;surfaceconvection_specified&quot;</span><span class="p">,</span> <span class="n">xposition_tofindtemp</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">time</span><span class="o">=</span><span class="mi">5</span><span class="o">*</span><span class="mi">60</span><span class="p">,</span> <span class="n">density</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">specificheat</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">thermalconductivity</span><span class="o">=</span><span class="mf">0.17</span><span class="p">,</span> <span class="n">thermaldiffusivity</span><span class="o">=</span><span class="mf">1.28e-7</span><span class="p">,</span> <span class="n">constantsurfacetemperature</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">heattransfercoefficient</span><span class="o">=</span><span class="mi">35</span><span class="p">,</span> <span class="n">heatflux</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">energypulse</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">T_infinity</span><span class="o">=</span><span class="mi">550</span><span class="p">,</span> <span class="n">T_initial</span><span class="o">=</span><span class="mi">25</span><span class="p">)</span>
+<span class="c1"># Call the method calc_temperature.</span>
+<span class="c1"># Depending on the boundary condition, the method selects the</span>
+<span class="c1"># appropriate equation to compute the temperature at given &#39;x&#39; and &#39;time&#39;</span>
+<span class="n">temperature</span> <span class="o">=</span> <span class="n">brick</span><span class="o">.</span><span class="n">calc_temperature</span><span class="p">()</span>
+<span class="c1"># Print the results.</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Temperature at brick surface = </span><span class="si">{</span><span class="n">temperature</span><span class="si">:</span><span class="s2"> 0.0f</span><span class="si">}</span><span class="s2"> C&quot;</span><span class="p">)</span>
+<span class="c1"># Comment: Since the temperature = 360 C &lt; operational limit of 450 C</span>
+<span class="c1"># the conditions are safe.</span>
 
 <span class="c1"># PRINTED OUTPUT</span>
-<span class="n">Heat</span> <span class="n">flux</span> <span class="n">required</span> <span class="o">=</span>  <span class="mf">2.500000e+05</span>
+<span class="n">Temperature</span> <span class="n">at</span> <span class="n">brick</span> <span class="n">surface</span> <span class="o">=</span> <span class="mi">360</span> <span class="n">C</span>
 
 <span class="o">====</span>
 </pre></div>
 </div>
 </div>
-<div class="section" id="example-9-spherical-system-composite-shell-conduction-convection">
-<h3>Example 9: Spherical system <code class="docutils literal notranslate"><span class="pre">composite</span> <span class="pre">shell,</span> <span class="pre">conduction,</span> <span class="pre">convection</span></code><a class="headerlink" href="#example-9-spherical-system-composite-shell-conduction-convection" title="Permalink to this headline">¶</a></h3>
-<p><code class="docutils literal notranslate"><span class="pre">Example</span> <span class="pre">9.</span></code> A hollow sphere has two layers in perfect thermal contact,
-an inner layer of lead (k= 35.3 W/mK) and an outer of stainless steel (k=15.1 W/mK).
-The sphere is filled with radioactive waste, which generates heat at a
-rate of 5 x 10<sup>5</sup> W/m3. The outside surface of sphere is exposed
-to T<sub>infinity</sub> = 10 C with heat transfer coefficient of h = 500 W.m2K.
-The radii of the layers are:</p>
+<div class="section" id="example-7-semi-infinite-boundary-condition-energy-pulse-is-specified">
+<h3>Example 7: Semi infinite <code class="docutils literal notranslate"><span class="pre">boundary</span> <span class="pre">condition:</span> <span class="pre">energy</span> <span class="pre">pulse</span> <span class="pre">is</span> <span class="pre">specified</span></code><a class="headerlink" href="#example-7-semi-infinite-boundary-condition-energy-pulse-is-specified" title="Permalink to this headline">¶</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">Example</span> <span class="pre">7.</span></code> Laser with a certain energy pulse output is hitting a large object.
+The object is at a uniform initial temperature of 20 C. After 30 s of expsoure,
+the temperature of the object at a depth of 25 mm from surface of laser expsoure
+is found to be 130 C. Find i) the amount of energy output from the laser, ii)
+and temperature of the object at 25 mm depth after 60 s of exposure.
+Take the following properties for the object :</p>
 <blockquote>
-<div><ul class="simple">
-<li><p>r1 (inner radius of lead layer) = 0.25 m</p></li>
-<li><p>r2 (outer radius of lead layer) = 0.3 m</p></li>
-<li><p>r3 (outer radius of stainless steel layer) = 0.31 m</p></li>
-</ul>
+<div><p>k = 63.9 W/mK</p>
+<p><span class="math">\(\alpha\)</span> = 18.8e-6 m2/s</p>
+<p>heat transfer coefficient = 35 W/m2 K</p>
 </div></blockquote>
-<p>What is the temperature of the innermost layer of the shell at radius r1?</p>
-<p><code class="docutils literal notranslate"><span class="pre">Ans:</span> <span class="pre">405</span> <span class="pre">K</span></code></p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example 9</span>
-<span class="kn">from</span> <span class="nn">pychemengg.heattransfer</span> <span class="kn">import</span> <span class="n">steadystate</span> <span class="k">as</span> <span class="n">ss</span>
-<span class="c1"># Model individual layers of shell as Sphere.</span>
-<span class="n">layer_lead</span> <span class="o">=</span> <span class="n">ss</span><span class="o">.</span><span class="n">Sphere</span><span class="p">(</span><span class="n">inner_radius</span><span class="o">=.</span><span class="mi">25</span><span class="p">,</span> <span class="n">outer_radius</span><span class="o">=.</span><span class="mi">30</span><span class="p">,</span> <span class="n">thermalconductivity</span><span class="o">=</span><span class="mf">35.3</span><span class="p">)</span>
-<span class="n">layer_SS</span> <span class="o">=</span> <span class="n">ss</span><span class="o">.</span><span class="n">Sphere</span><span class="p">(</span><span class="n">inner_radius</span><span class="o">=.</span><span class="mi">30</span><span class="p">,</span> <span class="n">outer_radius</span><span class="o">=.</span><span class="mi">31</span><span class="p">,</span> <span class="n">thermalconductivity</span><span class="o">=</span><span class="mf">15.1</span><span class="p">)</span>
-<span class="c1"># Heat rate can be computed by multiplying volumetric rate of heat generation</span>
-<span class="c1"># with inner volume of sphere.</span>
-<span class="n">heatrate</span> <span class="o">=</span> <span class="mf">5e5</span> <span class="o">*</span> <span class="n">layer_lead</span><span class="o">.</span><span class="n">volume</span><span class="p">(</span><span class="n">radius</span><span class="o">=</span><span class="n">layer_lead</span><span class="o">.</span><span class="n">inner_radius</span><span class="p">)</span>
-<span class="c1"># At steady state this is the rate of heat transferred through the shell layers.</span>
-<span class="c1"># Using heat rate = delta T / resistance, outer temeprature of shell can be found.</span>
-<span class="n">total_R</span> <span class="o">=</span> <span class="p">(</span><span class="n">layer_SS</span><span class="o">.</span><span class="n">resistanceof_conv</span><span class="p">(</span><span class="n">heattransfercoefficient</span><span class="o">=</span><span class="mi">500</span><span class="p">,</span> <span class="n">radius</span><span class="o">=</span><span class="n">shellSS</span><span class="o">.</span><span class="n">outer_radius</span><span class="p">)</span>
-          <span class="o">+</span> <span class="n">layer_SS</span><span class="o">.</span><span class="n">resistanceof_cond</span><span class="p">()</span>
-          <span class="o">+</span> <span class="n">layer_lead</span><span class="o">.</span><span class="n">resistanceof_cond</span><span class="p">())</span>
-<span class="c1"># delta T = inside temp - 10, form which inside temp can be computed</span>
-<span class="n">insidetemp_layer_lead</span> <span class="o">=</span> <span class="mi">10</span> <span class="o">+</span> <span class="n">heatrate</span><span class="o">*</span><span class="n">total_R</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Inside temp of lead shell = </span><span class="si">{</span><span class="n">shellLeadTempInside</span><span class="o">+</span><span class="mi">273</span><span class="si">:</span><span class="s2"> .0f</span><span class="si">}</span><span class="s2"> K&quot;</span><span class="p">)</span>
+<p><code class="docutils literal notranslate"><span class="pre">Ans:</span> <span class="pre">i)</span> <span class="pre">Energy</span> <span class="pre">pulse</span> <span class="pre">=</span> <span class="pre">2.076e7</span> <span class="pre">J/m2,</span> <span class="pre">ii)</span> <span class="pre">Temperature</span> <span class="pre">at</span> <span class="pre">25</span> <span class="pre">cm</span> <span class="pre">&#64;</span> <span class="pre">60s</span> <span class="pre">=</span> <span class="pre">109</span> <span class="pre">C</span></code></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># EXAMPLE 7</span>
+<span class="kn">from</span> <span class="nn">pychemengg.heattransfer</span> <span class="kn">import</span> <span class="n">transient</span> <span class="k">as</span> <span class="n">transient</span>
+<span class="c1"># All units are in SI system.</span>
+<span class="c1"># Create an instance of semi infinite system.</span>
+<span class="c1"># Only relevant keywords are to be input.</span>
+<span class="c1"># Since energy pulse is required to create the instance and this is also</span>
+<span class="c1"># the quantity that has to be found, a function must be created to solve the problem.</span>
+<span class="c1"># The function should return an equation that can be solved with a solver</span>
 
+<span class="k">def</span> <span class="nf">func</span><span class="p">(</span><span class="n">epulse</span><span class="p">):</span>
+    <span class="c1"># Create instance</span>
+    <span class="n">object_1</span> <span class="o">=</span> <span class="n">transient</span><span class="o">.</span><span class="n">SemiInfinite</span><span class="p">(</span><span class="n">boundarycondition</span><span class="o">=</span><span class="s2">&quot;energypulse_specified&quot;</span><span class="p">,</span> <span class="n">xposition_tofindtemp</span><span class="o">=</span><span class="mf">25e-3</span><span class="p">,</span> <span class="n">time</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span> <span class="n">density</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">specificheat</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">thermalconductivity</span><span class="o">=</span><span class="mf">63.9</span><span class="p">,</span> <span class="n">thermaldiffusivity</span><span class="o">=</span><span class="mf">18.8e-6</span><span class="p">,</span> <span class="n">constantsurfacetemperature</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">heattransfercoefficient</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">heatflux</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">energypulse</span><span class="o">=</span><span class="n">epulse</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">T_infinity</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">T_initial</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+    <span class="c1"># call on method to find temperature</span>
+    <span class="n">temperature</span> <span class="o">=</span> <span class="n">object_1</span><span class="o">.</span><span class="n">calc_temperature</span><span class="p">()</span>
+    <span class="c1"># This temperature must be 130 C at 30 s.</span>
+    <span class="c1"># Thus, equation becomes : temperature - 130 = 0.</span>
+    <span class="n">equation</span> <span class="o">=</span> <span class="n">temperature</span> <span class="o">-</span> <span class="mi">130</span>
+    <span class="c1"># Return this equation</span>
+    <span class="k">return</span> <span class="n">equation</span>
+
+<span class="c1"># Now solve this function using a solver</span>
+<span class="kn">from</span> <span class="nn">scipy.optimize</span> <span class="kn">import</span> <span class="n">fsolve</span>
+<span class="c1"># Typically these import statements are placed at top of code.</span>
+<span class="n">guess_epulse</span> <span class="o">=</span> <span class="mf">1e3</span>
+<span class="c1"># Guess is required to solve, and this is a random value.</span>
+<span class="c1"># User can change it and the result should be the same</span>
+<span class="n">solution</span> <span class="o">=</span> <span class="n">fsolve</span><span class="p">(</span><span class="n">func</span><span class="p">,</span> <span class="n">guess_epulse</span><span class="p">)</span>
+<span class="n">epulse</span> <span class="o">=</span> <span class="n">solution</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="c1"># Because output of fsolve is an array, use [0] to get the value.</span>
+<span class="c1"># Temperature at 25 mm deoth and 60 s can be computed as follows:</span>
+<span class="n">object_1</span> <span class="o">=</span> <span class="n">transient</span><span class="o">.</span><span class="n">SemiInfinite</span><span class="p">(</span><span class="n">boundarycondition</span><span class="o">=</span><span class="s2">&quot;energypulse_specified&quot;</span><span class="p">,</span> <span class="n">xposition_tofindtemp</span><span class="o">=</span><span class="mf">25e-3</span><span class="p">,</span> <span class="n">time</span><span class="o">=</span><span class="mi">60</span><span class="p">,</span> <span class="n">density</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">specificheat</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">thermalconductivity</span><span class="o">=</span><span class="mf">63.9</span><span class="p">,</span> <span class="n">thermaldiffusivity</span><span class="o">=</span><span class="mf">18.8e-6</span><span class="p">,</span> <span class="n">constantsurfacetemperature</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">heattransfercoefficient</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">heatflux</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">energypulse</span><span class="o">=</span><span class="n">epulse</span><span class="p">,</span> <span class="n">T_infinity</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">T_initial</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+<span class="n">temperature_60s</span> <span class="o">=</span> <span class="n">object_1</span><span class="o">.</span><span class="n">calc_temperature</span><span class="p">()</span>
+<span class="c1"># print results</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Energy pulse generated by laser = </span><span class="si">{</span><span class="n">epulse</span><span class="si">:</span><span class="s2"> 0.3e</span><span class="si">}</span><span class="s2"> W/m2&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Temperature at 25 mm depth and 60 s of expsoure = </span><span class="si">{</span><span class="n">temperature_60s</span><span class="si">:</span><span class="s2"> 0.0f</span><span class="si">}</span><span class="s2"> C&quot;</span><span class="p">)</span>
 
 <span class="c1"># PRINTED OUTPUT</span>
-<span class="n">Inside</span> <span class="n">temp</span> <span class="n">of</span> <span class="n">lead</span> <span class="n">shell</span> <span class="o">=</span>  <span class="mi">405</span> <span class="n">K</span>
+<span class="n">Energy</span> <span class="n">pulse</span> <span class="n">generated</span> <span class="n">by</span> <span class="n">laser</span> <span class="o">=</span>  <span class="mf">2.076e+07</span> <span class="n">W</span><span class="o">/</span><span class="n">m2</span>
+<span class="n">Temperature</span> <span class="n">at</span> <span class="mi">25</span> <span class="n">mm</span> <span class="n">depth</span> <span class="ow">and</span> <span class="mi">60</span> <span class="n">s</span> <span class="n">of</span> <span class="n">expsoure</span> <span class="o">=</span>  <span class="mi">109</span> <span class="n">C</span>
 </pre></div>
 </div>
 </div>
