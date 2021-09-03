@@ -118,7 +118,7 @@ class LumpedSystem():
         
         Parameters
         ----------
-        `None_required` : 'None'
+        None_required : `None`
             Attributes that are already defined are used in calculation.
                                 
         
@@ -164,10 +164,7 @@ class LumpedSystem():
         
         References
         ----------
-        [1] G. F. Nellis and S. A. Klein, "Introduction to Engineering 
-        Heat Transfer", 1st Edition. Cambridge University Press, 2021.
-        
-        [2] Y. A. Cengel and A. J. Ghajar, "Heat And Mass Transfer
+        [1] Y. A. Cengel and A. J. Ghajar, "Heat And Mass Transfer
         Fundamentals and Applications", 6th Edition. New York, McGraw Hill
         Education, 2020.      
         """        
@@ -182,7 +179,7 @@ class LumpedSystem():
         
         Parameters
         ----------
-        time : 'int or float'
+        time : `int or float`
             Time instant from begining of process, at which temperature
             of solid object is to be found.
                                 
@@ -242,10 +239,7 @@ class LumpedSystem():
         
         References
         ----------
-        [1] G. F. Nellis and S. A. Klein, "Introduction to Engineering 
-        Heat Transfer", 1st Edition. Cambridge University Press, 2021.
-        
-        [2] Y. A. Cengel and A. J. Ghajar, "Heat And Mass Transfer
+        [1] Y. A. Cengel and A. J. Ghajar, "Heat And Mass Transfer
         Fundamentals and Applications", 6th Edition. New York, McGraw Hill
         Education, 2020.   
         """
@@ -261,7 +255,7 @@ class LumpedSystem():
         
         Parameters
         ----------
-        time : 'int or float'
+        time : `int or float`
             Time instant from begining of process, at which heat rate is to be found.
                     
         
@@ -313,10 +307,7 @@ class LumpedSystem():
         
         References
         ----------
-        [1] G. F. Nellis and S. A. Klein, "Introduction to Engineering 
-        Heat Transfer", 1st Edition. Cambridge University Press, 2021.
-        
-        [2] Y. A. Cengel and A. J. Ghajar, "Heat And Mass Transfer
+        [1] Y. A. Cengel and A. J. Ghajar, "Heat And Mass Transfer
         Fundamentals and Applications", 6th Edition. New York, McGraw Hill
         Education, 2020.  
         """
@@ -331,7 +322,7 @@ class LumpedSystem():
         
         Parameters
         ----------
-        time : 'int or float'
+        time : `int or float`
             Time-limit after start of process for which
             heat transferred is to be computed.
                     
@@ -349,7 +340,7 @@ class LumpedSystem():
         following formula:
             
         .. math::
-            q_{0 to t} = m C_p (T_{t} - T_{inintial})
+            q_{0 \to t} = m C_p (T_{t} - T_{inintial})
             
         *where:*
         
@@ -364,7 +355,7 @@ class LumpedSystem():
         
             :math:`T_{initial}` *= temperature of object at time = 0*
             
-            :math:`q_{0 to t}` *= heat transferred in interval [0, t]*
+            :math:`q_{0 \to t}` *= heat transferred in interval [0, t]*
                      
         
         Examples
@@ -387,10 +378,7 @@ class LumpedSystem():
         
         References
         ----------
-        [1] G. F. Nellis and S. A. Klein, "Introduction to Engineering 
-        Heat Transfer", 1st Edition. Cambridge University Press, 2021.
-        
-        [2] Y. A. Cengel and A. J. Ghajar, "Heat And Mass Transfer
+        [1] Y. A. Cengel and A. J. Ghajar, "Heat And Mass Transfer
         Fundamentals and Applications", 6th Edition. New York, McGraw Hill
         Education, 2020.   
         """
@@ -404,7 +392,7 @@ class LumpedSystem():
         
         Parameters
         ----------
-        `None_required` : 'None'
+        None_required : `None`
             This class takes no parameters for instance creation.
      
         
@@ -457,10 +445,7 @@ class LumpedSystem():
         
         References
         ----------
-        [1] G. F. Nellis and S. A. Klein, "Introduction to Engineering 
-        Heat Transfer", 1st Edition. Cambridge University Press, 2021.
-        
-        [2] Y. A. Cengel and A. J. Ghajar, "Heat And Mass Transfer
+        [1] Y. A. Cengel and A. J. Ghajar, "Heat And Mass Transfer
         Fundamentals and Applications", 6th Edition. New York, McGraw Hill
         Education, 2020.       
         """
@@ -557,7 +542,7 @@ class NonLumpedSlab():
         
         Parameters
         ----------
-        `None_required` : 'None'
+        None_required : `None`
             Attributes that are already defined are used in calculation.
                                 
         
@@ -603,10 +588,7 @@ class NonLumpedSlab():
         
         References
         ----------
-        [1] G. F. Nellis and S. A. Klein, "Introduction to Engineering 
-        Heat Transfer", 1st Edition. Cambridge University Press, 2021.
-        
-        [2] Y. A. Cengel and A. J. Ghajar, "Heat And Mass Transfer
+        [1] Y. A. Cengel and A. J. Ghajar, "Heat And Mass Transfer
         Fundamentals and Applications", 6th Edition. New York, McGraw Hill
         Education, 2020.       
         """
@@ -624,7 +606,7 @@ class NonLumpedSlab():
         
         Parameters
         ----------
-        time : 'int or float'
+        time : `int or float`
             Time at which temperature or heat transfer is to be evaluated.
                                 
         
@@ -670,10 +652,7 @@ class NonLumpedSlab():
         
         References
         ----------
-        [1] G. F. Nellis and S. A. Klein, "Introduction to Engineering 
-        Heat Transfer", 1st Edition. Cambridge University Press, 2021.
-        
-        [2] Y. A. Cengel and A. J. Ghajar, "Heat And Mass Transfer
+        [1] Y. A. Cengel and A. J. Ghajar, "Heat And Mass Transfer
         Fundamentals and Applications", 6th Edition. New York, McGraw Hill
         Education, 2020.       
         """
@@ -687,7 +666,7 @@ class NonLumpedSlab():
         
         Parameters
         ----------
-        numberof_eigenvalues_desired : 'int or float' (default = 10)
+        numberof_eigenvalues_desired : `int or float` (default = 10)
             Number of eigen values desired for the characteristic equation.
                                 
         
@@ -732,10 +711,7 @@ class NonLumpedSlab():
         
         References
         ----------
-        [1] G. F. Nellis and S. A. Klein, "Introduction to Engineering 
-        Heat Transfer", 1st Edition. Cambridge University Press, 2021.
-        
-        [2] Y. A. Cengel and A. J. Ghajar, "Heat And Mass Transfer
+        [1] Y. A. Cengel and A. J. Ghajar, "Heat And Mass Transfer
         Fundamentals and Applications", 6th Edition. New York, McGraw Hill
         Education, 2020.       
         """
@@ -813,10 +789,7 @@ class NonLumpedSlab():
         
         References
         ----------
-        [1] G. F. Nellis and S. A. Klein, "Introduction to Engineering 
-        Heat Transfer", 1st Edition. Cambridge University Press, 2021.
-        
-        [2] Y. A. Cengel and A. J. Ghajar, "Heat And Mass Transfer
+        [1] Y. A. Cengel and A. J. Ghajar, "Heat And Mass Transfer
         Fundamentals and Applications", 6th Edition. New York, McGraw Hill
         Education, 2020.       
         """
@@ -898,10 +871,7 @@ class NonLumpedSlab():
         
         References
         ----------
-        [1] G. F. Nellis and S. A. Klein, "Introduction to Engineering 
-        Heat Transfer", 1st Edition. Cambridge University Press, 2021.
-        
-        [2] Y. A. Cengel and A. J. Ghajar, "Heat And Mass Transfer
+        [1] Y. A. Cengel and A. J. Ghajar, "Heat And Mass Transfer
         Fundamentals and Applications", 6th Edition. New York, McGraw Hill
         Education, 2020.       
         """
@@ -919,7 +889,7 @@ class NonLumpedSlab():
         
         Parameters
         ----------
-        `None_required` : 'None'
+        None_required : `None`
             Attributes that are already defined or calculated are used in calculation.
                     
         
@@ -935,7 +905,7 @@ class NonLumpedSlab():
         following formula:
             
         .. math::
-            q_{0 to t} = q_{max} (1 - \displaystyle\sum_{n=1}^\infty \cfrac{4Sin( \lambda_n)}{2 \lambda_n + Sin(2 \lambda_n)} \frac{Sin( \lambda_n)}{\lambda_n} e^{- \lambda_n^2 \tau}
+            q_{0 \to t} = q_{max} \left( 1 - \displaystyle\sum_{n=1}^\infty \cfrac{4sin( \lambda_n)}{2 \lambda_n + sin(2 \lambda_n)} \frac{sin( \lambda_n)}{\lambda_n} e^{- \lambda_n^2 \tau} \right)
             
         *where:*
         
@@ -980,10 +950,7 @@ class NonLumpedSlab():
         
         References
         ----------
-        [1] G. F. Nellis and S. A. Klein, "Introduction to Engineering 
-        Heat Transfer", 1st Edition. Cambridge University Press, 2021.
-        
-        [2] Y. A. Cengel and A. J. Ghajar, "Heat And Mass Transfer
+        [1] Y. A. Cengel and A. J. Ghajar, "Heat And Mass Transfer
         Fundamentals and Applications", 6th Edition. New York, McGraw Hill
         Education, 2020.       
         """
@@ -1001,7 +968,7 @@ class NonLumpedSlab():
         
         Parameters
         ----------
-        `None_required` : 'None'
+        None_required : `None`
             Attributes that are already defined are used in calculation.
      
         
@@ -1052,10 +1019,7 @@ class NonLumpedSlab():
         
         References
         ----------
-        [1] G. F. Nellis and S. A. Klein, "Introduction to Engineering 
-        Heat Transfer", 1st Edition. Cambridge University Press, 2021.
-        
-        [2] Y. A. Cengel and A. J. Ghajar, "Heat And Mass Transfer
+        [1] Y. A. Cengel and A. J. Ghajar, "Heat And Mass Transfer
         Fundamentals and Applications", 6th Edition. New York, McGraw Hill
         Education, 2020.       
         """
@@ -1151,7 +1115,7 @@ class NonLumpedCylinder():
         
         Parameters
         ----------
-        `None_required` : 'None'
+        None_required : `None`
             Attributes that are already defined are used in calculation.
                                 
         
@@ -1197,10 +1161,7 @@ class NonLumpedCylinder():
         
         References
         ----------
-        [1] G. F. Nellis and S. A. Klein, "Introduction to Engineering 
-        Heat Transfer", 1st Edition. Cambridge University Press, 2021.
-        
-        [2] Y. A. Cengel and A. J. Ghajar, "Heat And Mass Transfer
+        [1] Y. A. Cengel and A. J. Ghajar, "Heat And Mass Transfer
         Fundamentals and Applications", 6th Edition. New York, McGraw Hill
         Education, 2020.       
         """        
@@ -1216,7 +1177,7 @@ class NonLumpedCylinder():
         
         Parameters
         ----------
-        time : 'int or float'
+        time : `int or float`
             Time at which temperature or heat transfer is to be evaluated.
                                 
         
@@ -1262,10 +1223,7 @@ class NonLumpedCylinder():
         
         References
         ----------
-        [1] G. F. Nellis and S. A. Klein, "Introduction to Engineering 
-        Heat Transfer", 1st Edition. Cambridge University Press, 2021.
-        
-        [2] Y. A. Cengel and A. J. Ghajar, "Heat And Mass Transfer
+        [1] Y. A. Cengel and A. J. Ghajar, "Heat And Mass Transfer
         Fundamentals and Applications", 6th Edition. New York, McGraw Hill
         Education, 2020.       
         """
@@ -1279,7 +1237,7 @@ class NonLumpedCylinder():
         
         Parameters
         ----------
-        numberof_eigenvalues_desired : 'int or float' (default = 10)
+        numberof_eigenvalues_desired : `int or float` (default = 10)
             Number of eigen values desired for the characteristic equation.
                                 
         
@@ -1328,10 +1286,7 @@ class NonLumpedCylinder():
         
         References
         ----------
-        [1] G. F. Nellis and S. A. Klein, "Introduction to Engineering 
-        Heat Transfer", 1st Edition. Cambridge University Press, 2021.
-        
-        [2] Y. A. Cengel and A. J. Ghajar, "Heat And Mass Transfer
+        [1] Y. A. Cengel and A. J. Ghajar, "Heat And Mass Transfer
         Fundamentals and Applications", 6th Edition. New York, McGraw Hill
         Education, 2020.       
         """
@@ -1431,7 +1386,7 @@ class NonLumpedCylinder():
         
         Parameters
         ----------
-        `None_required` : 'None'
+        None_required : `None`
             Attributes that are already defined or calculated are used in calculation.
                     
         
@@ -1501,10 +1456,7 @@ class NonLumpedCylinder():
         
         References
         ----------
-        [1] G. F. Nellis and S. A. Klein, "Introduction to Engineering 
-        Heat Transfer", 1st Edition. Cambridge University Press, 2021.
-        
-        [2] Y. A. Cengel and A. J. Ghajar, "Heat And Mass Transfer
+        [1] Y. A. Cengel and A. J. Ghajar, "Heat And Mass Transfer
         Fundamentals and Applications", 6th Edition. New York, McGraw Hill
         Education, 2020.       
         """
@@ -1523,7 +1475,7 @@ class NonLumpedCylinder():
         
         Parameters
         ----------
-        `None_required` : 'None'
+        None_required : `None`
             Attributes that are already defined are used in calculation.
                     
         
@@ -1582,10 +1534,7 @@ class NonLumpedCylinder():
         
         References
         ----------
-        [1] G. F. Nellis and S. A. Klein, "Introduction to Engineering 
-        Heat Transfer", 1st Edition. Cambridge University Press, 2021.
-        
-        [2] Y. A. Cengel and A. J. Ghajar, "Heat And Mass Transfer
+        [1] Y. A. Cengel and A. J. Ghajar, "Heat And Mass Transfer
         Fundamentals and Applications", 6th Edition. New York, McGraw Hill
         Education, 2020.       
         """
@@ -1602,7 +1551,7 @@ class NonLumpedCylinder():
         
         Parameters
         ----------
-        `None_required` : 'None'
+        None_required : `None`
             Attributes that are already defined are used in calculation.
      
         
@@ -1646,10 +1595,7 @@ class NonLumpedCylinder():
         
         References
         ----------
-        [1] G. F. Nellis and S. A. Klein, "Introduction to Engineering 
-        Heat Transfer", 1st Edition. Cambridge University Press, 2021.
-        
-        [2] Y. A. Cengel and A. J. Ghajar, "Heat And Mass Transfer
+        [1] Y. A. Cengel and A. J. Ghajar, "Heat And Mass Transfer
         Fundamentals and Applications", 6th Edition. New York, McGraw Hill
         Education, 2020.       
         """
@@ -1743,7 +1689,7 @@ class NonLumpedSphere():
         
         Parameters
         ----------
-        `None_required` : 'None'
+        None_required : `None`
             Attributes that are already defined are used in calculation.
                                 
         
@@ -1789,10 +1735,7 @@ class NonLumpedSphere():
         
         References
         ----------
-        [1] G. F. Nellis and S. A. Klein, "Introduction to Engineering 
-        Heat Transfer", 1st Edition. Cambridge University Press, 2021.
-        
-        [2] Y. A. Cengel and A. J. Ghajar, "Heat And Mass Transfer
+        [1] Y. A. Cengel and A. J. Ghajar, "Heat And Mass Transfer
         Fundamentals and Applications", 6th Edition. New York, McGraw Hill
         Education, 2020.       
         """ 
@@ -1806,7 +1749,7 @@ class NonLumpedSphere():
         
         Parameters
         ----------
-        time : 'int or float'
+        time : `int or float`
             Time at which temperature or heat transfer is to be evaluated.
                                 
         
@@ -1852,10 +1795,7 @@ class NonLumpedSphere():
         
         References
         ----------
-        [1] G. F. Nellis and S. A. Klein, "Introduction to Engineering 
-        Heat Transfer", 1st Edition. Cambridge University Press, 2021.
-        
-        [2] Y. A. Cengel and A. J. Ghajar, "Heat And Mass Transfer
+        [1] Y. A. Cengel and A. J. Ghajar, "Heat And Mass Transfer
         Fundamentals and Applications", 6th Edition. New York, McGraw Hill
         Education, 2020.       
         """
@@ -1869,7 +1809,7 @@ class NonLumpedSphere():
         
         Parameters
         ----------
-        numberof_eigenvalues_desired : 'int or float' (default = 10)
+        numberof_eigenvalues_desired : `int or float` (default = 10)
             Number of eigen values desired for the characteristic equation.
                                 
         
@@ -1914,10 +1854,7 @@ class NonLumpedSphere():
         
         References
         ----------
-        [1] G. F. Nellis and S. A. Klein, "Introduction to Engineering 
-        Heat Transfer", 1st Edition. Cambridge University Press, 2021.
-        
-        [2] Y. A. Cengel and A. J. Ghajar, "Heat And Mass Transfer
+        [1] Y. A. Cengel and A. J. Ghajar, "Heat And Mass Transfer
         Fundamentals and Applications", 6th Edition. New York, McGraw Hill
         Education, 2020.       
         """
@@ -2016,7 +1953,7 @@ class NonLumpedSphere():
         
         Parameters
         ----------
-        `None_required` : 'None'
+        None_required : `None`
             Attributes that are already defined or calculated are used in calculation.
                     
         
@@ -2032,7 +1969,7 @@ class NonLumpedSphere():
         following formula:
             
         .. math::
-            q_{0 \to t} = q_{max} \left( 1-3 \displaystyle\sum_{n=1}^\infty \cfrac{4(Sin\lambda_n - \lambda_nCos\lambda_n)}{2 \lambda_n - sin(2 \lambda_n)} e^{- \lambda_n^2 \tau} \frac{sin\lambda_n - \lambda_n cos\lambda_n}{\lambda_n^3} \right)
+            q_{0 \to t} = q_{max} \left( 1-3 \displaystyle\sum_{n=1}^\infty \cfrac{4(sin\lambda_n - \lambda_ncos\lambda_n)}{2 \lambda_n - sin(2 \lambda_n)} e^{- \lambda_n^2 \tau} \frac{sin\lambda_n - \lambda_n cos\lambda_n}{\lambda_n^3} \right)
             
         *where:*
         
@@ -2079,10 +2016,7 @@ class NonLumpedSphere():
         
         References
         ----------
-        [1] G. F. Nellis and S. A. Klein, "Introduction to Engineering 
-        Heat Transfer", 1st Edition. Cambridge University Press, 2021.
-        
-        [2] Y. A. Cengel and A. J. Ghajar, "Heat And Mass Transfer
+        [1] Y. A. Cengel and A. J. Ghajar, "Heat And Mass Transfer
         Fundamentals and Applications", 6th Edition. New York, McGraw Hill
         Education, 2020.       
         """
@@ -2103,7 +2037,7 @@ class NonLumpedSphere():
         
         Parameters
         ----------
-        `None_required` : 'None'
+        None_required : `None`
             Attributes that are already defined are used in calculation.
                     
         
@@ -2160,11 +2094,8 @@ class NonLumpedSphere():
         
         
         References
-        ----------
-        [1] G. F. Nellis and S. A. Klein, "Introduction to Engineering 
-        Heat Transfer", 1st Edition. Cambridge University Press, 2021.
-        
-        [2] Y. A. Cengel and A. J. Ghajar, "Heat And Mass Transfer
+        ----------        
+        [1] Y. A. Cengel and A. J. Ghajar, "Heat And Mass Transfer
         Fundamentals and Applications", 6th Edition. New York, McGraw Hill
         Education, 2020.       
         """
@@ -2181,7 +2112,7 @@ class NonLumpedSphere():
         
         Parameters
         ----------
-        `None_required` : 'None'
+        None_required : `None`
             Attributes that are already defined are used in calculation.
      
         
@@ -2226,10 +2157,7 @@ class NonLumpedSphere():
         
         References
         ----------
-        [1] G. F. Nellis and S. A. Klein, "Introduction to Engineering 
-        Heat Transfer", 1st Edition. Cambridge University Press, 2021.
-        
-        [2] Y. A. Cengel and A. J. Ghajar, "Heat And Mass Transfer
+        [1] Y. A. Cengel and A. J. Ghajar, "Heat And Mass Transfer
         Fundamentals and Applications", 6th Edition. New York, McGraw Hill
         Education, 2020.       
         """
@@ -2365,7 +2293,7 @@ class SemiInfinite():
         
         Parameters
         ----------
-        `None_required` : 'None'
+        None_required : `None`
             Attributes that are already defined are used in calculation.
      
         
@@ -2396,11 +2324,12 @@ class SemiInfinite():
         
         .. math::
             \frac{T(x,t) - T_i}{T_s - T_i} = erfc \left( \frac{x}{2\sqrt{\alpha t}} \right)  - exp \left( \frac{hx}{k} + \frac{h^2 \alpha t}{k^2}\right) erfc\left( \frac{x}{2\sqrt{\alpha t}} + \frac{h \sqrt{\alpha t}}{k}\right)
+         
             
-        4. Boundary condition: Surface i exposed to energy pulse, :math:`e_s` = constant
+        4. Boundary condition: Surface is exposed to energy pulse, :math:`e_s` = constant
         
         .. math::
-            T(x,t) - T_i = \frac{e_s}{k \sqrt{\frac{\pi t}{\alpha}} exp\left(-\frac {x^2}{4 \alpha t}\right)
+            T(x,t) - T_i = \frac{e_s}{k \sqrt{ \frac{\pi t}{\alpha} }} exp \left( -\frac {x^2}{4 \alpha t} \right)
             
             
         *where:*  
@@ -2439,10 +2368,7 @@ class SemiInfinite():
         
         References
         ----------
-        [1] G. F. Nellis and S. A. Klein, "Introduction to Engineering 
-        Heat Transfer", 1st Edition. Cambridge University Press, 2021.
-        
-        [2] Y. A. Cengel and A. J. Ghajar, "Heat And Mass Transfer
+        [1] Y. A. Cengel and A. J. Ghajar, "Heat And Mass Transfer
         Fundamentals and Applications", 6th Edition. New York, McGraw Hill
         Education, 2020.       
         """
@@ -2477,7 +2403,7 @@ class SemiInfinite():
         
         Parameters
         ----------
-        `None_required` : 'None'
+        None_required : `None`
             Attributes that are already defined are used in calculation.
      
         
@@ -2526,10 +2452,7 @@ class SemiInfinite():
         
         References
         ----------
-        [1] G. F. Nellis and S. A. Klein, "Introduction to Engineering 
-        Heat Transfer", 1st Edition. Cambridge University Press, 2021.
-        
-        [2] Y. A. Cengel and A. J. Ghajar, "Heat And Mass Transfer
+        [1] Y. A. Cengel and A. J. Ghajar, "Heat And Mass Transfer
         Fundamentals and Applications", 6th Edition. New York, McGraw Hill
         Education, 2020.       
         """

@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>SemiInfinite &mdash; PyChemEngg 0.1a9 documentation</title>
+  <title>SemiInfinite &mdash; PyChemEngg 0.1a10 documentation</title>
   
 
   
@@ -73,7 +73,7 @@
             
             
               <div class="version">
-                0.1a9
+                0.1a10
               </div>
             
           
@@ -374,8 +374,8 @@ Education, 2020.</p>
 <dd><p>Calculate heat flux at time = t for boundary condition = “surfacetemperature_specified”.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>`None_required`</strong><span class="classifier">‘None’</span></dt><dd><p>Attributes that are already defined are used in calculation.</p>
+<dd class="field-odd"><dl>
+<dt><strong>None_required</strong><span class="classifier"><cite>None</cite></span></dt><dd><p>Attributes that are already defined are used in calculation.</p>
 </dd>
 </dl>
 </dd>
@@ -405,9 +405,7 @@ is computed using the following formula:</p>
 <p><span class="math">\(q_s(t)\)</span> <em>= heat flux at any time ‘t’</em></p>
 </div></blockquote>
 <p class="rubric">References</p>
-<p>[1] G. F. Nellis and S. A. Klein, “Introduction to Engineering 
-Heat Transfer”, 1st Edition. Cambridge University Press, 2021.</p>
-<p>[2] Y. A. Cengel and A. J. Ghajar, “Heat And Mass Transfer
+<p>[1] Y. A. Cengel and A. J. Ghajar, “Heat And Mass Transfer
 Fundamentals and Applications”, 6th Edition. New York, McGraw Hill
 Education, 2020.</p>
 <p class="rubric">Examples</p>
@@ -428,8 +426,8 @@ Education, 2020.</p>
 <dd><p>Calculate temperature of Semi Infinite object at time = t and position = x.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>`None_required`</strong><span class="classifier">‘None’</span></dt><dd><p>Attributes that are already defined are used in calculation.</p>
+<dd class="field-odd"><dl>
+<dt><strong>None_required</strong><span class="classifier"><cite>None</cite></span></dt><dd><p>Attributes that are already defined are used in calculation.</p>
 </dd>
 </dl>
 </dd>
@@ -465,10 +463,10 @@ is computed based on the ‘boundary condition’.</p>
 
 \]</div>
 <ol class="arabic simple" start="4">
-<li><p>Boundary condition: Surface i exposed to energy pulse, <span class="math">\(e_s\)</span> = constant</p></li>
+<li><p>Boundary condition: Surface is exposed to energy pulse, <span class="math">\(e_s\)</span> = constant</p></li>
 </ol>
 <div class="math">
-\[T(x,t) - T_i = \frac{e_s}{k \sqrt{\frac{\pi t}{\alpha}} exp\left(-\frac {x^2}{4 \alpha t}\right)
+\[T(x,t) - T_i = \frac{e_s}{k \sqrt{ \frac{\pi t}{\alpha} }} exp \left( -\frac {x^2}{4 \alpha t} \right)
 
 \]</div>
 <p><em>where:</em></p>
@@ -486,9 +484,7 @@ is computed based on the ‘boundary condition’.</p>
 <p><span class="math">\(T_{\infty}\)</span> = temperature of fluid in contact with solid</p>
 </div></blockquote>
 <p class="rubric">References</p>
-<p>[1] G. F. Nellis and S. A. Klein, “Introduction to Engineering 
-Heat Transfer”, 1st Edition. Cambridge University Press, 2021.</p>
-<p>[2] Y. A. Cengel and A. J. Ghajar, “Heat And Mass Transfer
+<p>[1] Y. A. Cengel and A. J. Ghajar, “Heat And Mass Transfer
 Fundamentals and Applications”, 6th Edition. New York, McGraw Hill
 Education, 2020.</p>
 <p class="rubric">Examples</p>
