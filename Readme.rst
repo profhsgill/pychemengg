@@ -2,6 +2,10 @@
 PyChemEngg
 ==========
 
+.. image:: https://static.pepy.tech/personalized-badge/pychemengg?period=total&units=none&left_color=black&right_color=orange&left_text=Downloads
+    :target: https://pepy.tech/project/pychemengg
+
+
 .. contents::
 
 About PyChemEngg
@@ -98,9 +102,9 @@ At this time the following has been accomplished.
 To do
 -----
 
-1. Finish the 'transition heat transfer' module for heat transfer and add it to the package.
-2. Complete 'tutorial' on material balances (without chemical reaction) and release the module.
-3. Gather feedback from constituents (instructors and students) to revise the design.
+1. Complete 'tutorial' on material balances (without chemical reaction) and release the module.
+2. Gather feedback from constituents (instructors and students) to revise the design.
+3. Complete other topics of chemical engineering
 
 
 Issues
