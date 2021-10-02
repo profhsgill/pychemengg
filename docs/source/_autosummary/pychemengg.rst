@@ -30,6 +30,7 @@
    :recursive:
 
    pychemengg.heattransfer
+   pychemengg.massbalances
    pychemengg.physicalproperties
 
 

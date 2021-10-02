@@ -219,7 +219,7 @@ background: #d2d5e0 !important;
 /* ====================================== */
 
 .rst-content div.document div div.highlight-python.notranslate div.highlight {
-  background-color: #eeffea !important; /* CREAM:#FEFBF4, GREEN:#ffffea, better green#f5f6ea, defalt RTD: #eeffcc*/
+  background-color: #fefef0 !important; /* VSCODE: #FDF6E3OLD: old: #eeffea, f9ffda CREAM:#FEFBF4, GREEN:#ffffea, better green#f5f6ea, defalt RTD: #eeffcc*/
 } 
 
 /* Size of font in python code boxes in USER Tutorial PAGES */
@@ -236,7 +236,7 @@ background: #d2d5e0 !important;
 /* Color of text of code and keyword names */
 .rst-content div.document div div.highlight-python.notranslate div.highlight pre span.n{
   color:  rgb(12, 150, 214)!important;
-}  /* rgb(38, 166, 175); rgb(29, 186, 197) rgb(46, 122, 194) rgb(22, 154, 216) (5, 129, 187)*/
+}  /*1stchoice rgb(12, 150, 214), and this is darker good rgb(34, 148, 224),  rgb(38, 166, 175); rgb(29, 186, 197) rgb(46, 122, 194) rgb(22, 154, 216) (5, 129, 187)*/
 
 /* Color of keyword value */
 .rst-content div.document div div.highlight-python.notranslate div.highlight pre span.mf, .rst-content div.document div div.highlight-python.notranslate div.highlight pre span.mi{

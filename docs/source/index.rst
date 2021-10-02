@@ -67,6 +67,7 @@ chemical engineers even more versatile.
 
 
    Heat Transfer <userguide/heattransfer/index>
+   Mass Balances <userguide/massbalances/index>
 
 
 

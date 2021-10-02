@@ -1,0 +1,1267 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>PhysicalProcess &mdash; PyChemEngg 0.1a11 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/my_theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/my_theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/my_theme.css" type="text/css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/katex-math.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.12.0/contrib/auto-render.min.js"></script>
+        <script src="../_static/katex_autorenderer.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="physicalproperties" href="pychemengg.physicalproperties.html" />
+    <link rel="prev" title="physicalmassbalance" href="pychemengg.massbalances.physicalmassbalance.html" />
+ 
+<script>
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-206775075-2']);
+  _gaq.push(['_trackPageview']);
+</script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> PyChemEngg
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1a11
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption" role="heading"><span class="caption-text">User Tutorial</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../userguide/heattransfer/index.html">Heat Transfer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../userguide/massbalances/index.html">Mass Balances</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Reference Guide</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../autosummary_pychemengg.html">PyChemEngg API Reference</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="pychemengg.html">pychemengg</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="pychemengg.heattransfer.html">heattransfer</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="pychemengg.massbalances.html">massbalances</a><ul class="current">
+<li class="toctree-l4 current"><a class="reference internal" href="pychemengg.massbalances.physicalmassbalance.html">physicalmassbalance</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="pychemengg.physicalproperties.html">physicalproperties</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">PyChemEngg</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../autosummary_pychemengg.html">PyChemEngg API</a> &raquo;</li>
+        
+          <li><a href="pychemengg.html">pychemengg</a> &raquo;</li>
+        
+          <li><a href="pychemengg.massbalances.html">massbalances</a> &raquo;</li>
+        
+          <li><a href="pychemengg.massbalances.physicalmassbalance.html">physicalmassbalance</a> &raquo;</li>
+        
+      <li>PhysicalProcess</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/_autosummary/pychemengg.massbalances.physicalmassbalance.PhysicalProcess.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
+      
+        <a href="pychemengg.physicalproperties.html" class="btn btn-neutral float-right" title="physicalproperties" accesskey="n">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+      
+      
+        <a href="pychemengg.massbalances.physicalmassbalance.html" class="btn btn-neutral float-left" title="physicalmassbalance" accesskey="p"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+      
+  </div>
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<div class="section" id="physicalprocess">
+<h1>PhysicalProcess<a class="headerlink" href="#physicalprocess" title="Permalink to this headline">¶</a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="pychemengg.massbalances.physicalmassbalance.PhysicalProcess">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">pychemengg.massbalances.physicalmassbalance.</span></span><span class="sig-name descname"><span class="pre">PhysicalProcess</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">processname</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pychemengg/massbalances/physicalmassbalance.html#PhysicalProcess"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pychemengg.massbalances.physicalmassbalance.PhysicalProcess" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Models a physical process such as a mixer, distillation column etc.</p>
+<p>The physical process can have streams attached to it, and a mass balance
+can be performed on these streams.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl>
+<dt><strong>processname</strong><span class="classifier"><cite>str</cite></span></dt><dd><p>The name assigned to a physical process as its identifier.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<p>First import the module <strong>physicalmassbalance</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pychemengg.massbalances</span> <span class="kn">import</span> <span class="n">physicalmassbalance</span> <span class="k">as</span> <span class="n">pmb</span> 
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mixer1</span> <span class="o">=</span> <span class="n">pmb</span><span class="o">.</span><span class="n">PhysicalProcess</span><span class="p">(</span><span class="s2">&quot;mixer1&quot;</span><span class="p">)</span>
+<span class="go"># This will create an instance of &#39;PhysicalProcess&#39; with a name &#39;mixer1&#39;.</span>
+<span class="go"># Notice that here the same name is used for &#39;variable name&#39; and &#39;process name&#39;.</span>
+<span class="go"># It does not have to be the same, however, it is less confusing if same</span>
+<span class="go"># names are used.</span>
+</pre></div>
+</div>
+<dl class="field-list">
+<dt class="field-odd">Attributes</dt>
+<dd class="field-odd"><dl>
+<dt><strong>streamregistry</strong><span class="classifier"><cite>dict</cite> {<cite>str</cite>: <cite>pychemengg.physicalmassbalance.PhysicalProcess.Stream</cite>}</span></dt><dd><p>The streamregistry is a dictionary that stores
+all streams attached to a physical process.
+The keys of the dictionary are names of streams and the 
+values are the “Stream” object itself.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="pychemengg.massbalances.physicalmassbalance.PhysicalProcess.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">processname</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pychemengg/massbalances/physicalmassbalance.html#PhysicalProcess.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pychemengg.massbalances.physicalmassbalance.PhysicalProcess.__init__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<p class="rubric">Methods</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pychemengg.massbalances.physicalmassbalance.PhysicalProcess.__init__" title="pychemengg.massbalances.physicalmassbalance.PhysicalProcess.__init__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">__init__</span></code></a>(processname)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#pychemengg.massbalances.physicalmassbalance.PhysicalProcess.attachstreams" title="pychemengg.massbalances.physicalmassbalance.PhysicalProcess.attachstreams"><code class="xref py py-obj docutils literal notranslate"><span class="pre">attachstreams</span></code></a>(*[, streamnames, flowrates, …])</p></td>
+<td><p>Attach one or more streams to process.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pychemengg.massbalances.physicalmassbalance.PhysicalProcess.degreesoffreedom" title="pychemengg.massbalances.physicalmassbalance.PhysicalProcess.degreesoffreedom"><code class="xref py py-obj docutils literal notranslate"><span class="pre">degreesoffreedom</span></code></a>()</p></td>
+<td><p>Perform degree of freedom analysis on the physical process.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#pychemengg.massbalances.physicalmassbalance.PhysicalProcess.find_unknownflowrate" title="pychemengg.massbalances.physicalmassbalance.PhysicalProcess.find_unknownflowrate"><code class="xref py py-obj docutils literal notranslate"><span class="pre">find_unknownflowrate</span></code></a>()</p></td>
+<td><p>Compute unknown flowrate “F” or “-F”.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pychemengg.massbalances.physicalmassbalance.PhysicalProcess.find_unknownfractions" title="pychemengg.massbalances.physicalmassbalance.PhysicalProcess.find_unknownfractions"><code class="xref py py-obj docutils literal notranslate"><span class="pre">find_unknownfractions</span></code></a>([streamname])</p></td>
+<td><p>Compute unknown fractions ‘x’.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#pychemengg.massbalances.physicalmassbalance.PhysicalProcess.perform_component_massbalance" title="pychemengg.massbalances.physicalmassbalance.PhysicalProcess.perform_component_massbalance"><code class="xref py py-obj docutils literal notranslate"><span class="pre">perform_component_massbalance</span></code></a>()</p></td>
+<td><p>Execute component mass balance on a process.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pychemengg.massbalances.physicalmassbalance.PhysicalProcess.solvesystem" title="pychemengg.massbalances.physicalmassbalance.PhysicalProcess.solvesystem"><code class="xref py py-obj docutils literal notranslate"><span class="pre">solvesystem</span></code></a>()</p></td>
+<td><p>Solves the physical process to find “F”, “-F”, and “x”</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#pychemengg.massbalances.physicalmassbalance.PhysicalProcess.update_streamflowrates" title="pychemengg.massbalances.physicalmassbalance.PhysicalProcess.update_streamflowrates"><code class="xref py py-obj docutils literal notranslate"><span class="pre">update_streamflowrates</span></code></a>(newflow)</p></td>
+<td><p>Update flowrate of a stream.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pychemengg.massbalances.physicalmassbalance.PhysicalProcess.update_streamfractions" title="pychemengg.massbalances.physicalmassbalance.PhysicalProcess.update_streamfractions"><code class="xref py py-obj docutils literal notranslate"><span class="pre">update_streamfractions</span></code></a>(new_fractioninfo)</p></td>
+<td><p>Update mole/mass fraction of a stream.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="py class">
+<dt class="sig sig-object py" id="pychemengg.massbalances.physicalmassbalance.PhysicalProcess.Stream">
+<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">Stream</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">instanceof_physical_process</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">streamname</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pychemengg/massbalances/physicalmassbalance.html#PhysicalProcess.Stream"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pychemengg.massbalances.physicalmassbalance.PhysicalProcess.Stream" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Creates a stream to be attached to a physical process.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl>
+<dt><strong>instance of physical process</strong><span class="classifier"><cite>pychemengg.physicalmassbalance.PhysicalProcess</cite></span></dt><dd><p>Physical process to which the created stream will be attached.</p>
+</dd>
+<dt><strong>streamname</strong><span class="classifier"><cite>str</cite></span></dt><dd><p>Name of stream to be created.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>None</dt><dd></dd>
+</dl>
+</dd>
+</dl>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<dl class="simple">
+<dt><a class="reference internal" href="#pychemengg.massbalances.physicalmassbalance.PhysicalProcess.attachstreams" title="pychemengg.massbalances.physicalmassbalance.PhysicalProcess.attachstreams"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pychemengg.massbalances.physicalmassbalance.PhysicalProcess.attachstreams</span></code></a></dt><dd></dd>
+<dt><a class="reference internal" href="#pychemengg.massbalances.physicalmassbalance.PhysicalProcess.Stream.setflow" title="pychemengg.massbalances.physicalmassbalance.PhysicalProcess.Stream.setflow"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pychemengg.massbalances.physicalmassbalance.PhysicalProcess.Stream.setflow</span></code></a></dt><dd></dd>
+<dt><a class="reference internal" href="#pychemengg.massbalances.physicalmassbalance.PhysicalProcess.Stream.setfractions" title="pychemengg.massbalances.physicalmassbalance.PhysicalProcess.Stream.setfractions"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pychemengg.massbalances.physicalmassbalance.PhysicalProcess.Stream.setfractions</span></code></a></dt><dd></dd>
+<dt><a class="reference internal" href="#pychemengg.massbalances.physicalmassbalance.PhysicalProcess.Stream.setextrainfo" title="pychemengg.massbalances.physicalmassbalance.PhysicalProcess.Stream.setextrainfo"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pychemengg.massbalances.physicalmassbalance.PhysicalProcess.Stream.setextrainfo</span></code></a></dt><dd></dd>
+</dl>
+</div>
+<p class="rubric">Notes</p>
+<p>Creates a stream and stores it in streamregistry (a dictionary) of the
+physical process.</p>
+<p>~.streamregistry[streamname] = Stream object</p>
+<p class="rubric">Examples</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">To</span> <span class="n">create</span> <span class="n">an</span> <span class="n">instance</span> <span class="n">of</span> <span class="s1">&#39;Stream&#39;</span> <span class="n">use</span> <span class="n">the</span> <span class="s1">&#39;attachstreams&#39;</span> <span class="n">method</span><span class="o">.</span>
+</pre></div>
+</div>
+<dl class="field-list">
+<dt class="field-odd">Attributes</dt>
+<dd class="field-odd"><dl>
+<dt><strong>streamname</strong><span class="classifier"><cite>str</cite></span></dt><dd><p>Name of stream.</p>
+</dd>
+<dt><strong>connectedprocess</strong><span class="classifier"><cite>pychemengg.physicalmassbalance.PhysicalProcess</cite></span></dt><dd><p>The instance of physical process to which the stream is attached.</p>
+</dd>
+<dt><strong>flowrate</strong><span class="classifier"><cite>int</cite> or <cite>float</cite> or <cite>str</cite></span></dt><dd><p>Stream flowrate.</p>
+</dd>
+<dt><strong>fractions</strong><span class="classifier">a list containing [<cite>int</cite> or <cite>float</cite> or <cite>str</cite>, <cite>int</cite> or <cite>float</cite> or <cite>str</cite>, … ]</span></dt><dd><p>Component mass/mole fractions of a stream.</p>
+</dd>
+<dt><strong>extrainfo</strong><span class="classifier">a list of [<cite>str</cite>]</span></dt><dd><p>Extra information between component or total flowrates between streams.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="pychemengg.massbalances.physicalmassbalance.PhysicalProcess.Stream.deleteextrainfo">
+<span class="sig-name descname"><span class="pre">deleteextrainfo</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pychemengg/massbalances/physicalmassbalance.html#PhysicalProcess.Stream.deleteextrainfo"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pychemengg.massbalances.physicalmassbalance.PhysicalProcess.Stream.deleteextrainfo" title="Permalink to this definition">¶</a></dt>
+<dd><p>Delete extra information of a stream.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>None</strong></dt><dd></dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>None</dt><dd></dd>
+</dl>
+</dd>
+</dl>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<dl class="simple">
+<dt><a class="reference internal" href="#pychemengg.massbalances.physicalmassbalance.PhysicalProcess.attachstreams" title="pychemengg.massbalances.physicalmassbalance.PhysicalProcess.attachstreams"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pychemengg.massbalances.physicalmassbalance.PhysicalProcess.attachstreams</span></code></a></dt><dd></dd>
+<dt><a class="reference internal" href="#pychemengg.massbalances.physicalmassbalance.PhysicalProcess.Stream.setflow" title="pychemengg.massbalances.physicalmassbalance.PhysicalProcess.Stream.setflow"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pychemengg.massbalances.physicalmassbalance.PhysicalProcess.Stream.setflow</span></code></a></dt><dd></dd>
+<dt><a class="reference internal" href="#pychemengg.massbalances.physicalmassbalance.PhysicalProcess.Stream.setfractions" title="pychemengg.massbalances.physicalmassbalance.PhysicalProcess.Stream.setfractions"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pychemengg.massbalances.physicalmassbalance.PhysicalProcess.Stream.setfractions</span></code></a></dt><dd></dd>
+</dl>
+</div>
+<p class="rubric">Notes</p>
+<p>Deletes ‘extrainfo’ attribute of a stream if it exists</p>
+<p class="rubric">Examples</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">S1</span><span class="o">.</span><span class="n">deleteextrainfo</span><span class="p">()</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pychemengg.massbalances.physicalmassbalance.PhysicalProcess.Stream.setequalto">
+<span class="sig-name descname"><span class="pre">setequalto</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">streamtocopy</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">flowdirection</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'+'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pychemengg/massbalances/physicalmassbalance.html#PhysicalProcess.Stream.setequalto"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pychemengg.massbalances.physicalmassbalance.PhysicalProcess.Stream.setequalto" title="Permalink to this definition">¶</a></dt>
+<dd><p>Copy data of one stream to another stream.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl>
+<dt><strong>streamtocopy</strong><span class="classifier"><cite>pychemengg.physicalmassbalance.PhysicalProcess.Stream</cite></span></dt><dd><p>Stream to be copied.</p>
+</dd>
+<dt><strong>destination</strong><span class="classifier"><cite>pychemengg.physicalmassbalance.PhysicalProcess.Stream</cite></span></dt><dd><p>Destination stream. “self” is the destination stream.</p>
+</dd>
+<dt><strong>flowdirection</strong><span class="classifier"><cite>str</cite></span></dt><dd><p>“+” or “-” depending on whether destination stream is entering
+or exiting the physical process, default = “+”</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>None</dt><dd></dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Consider two physical processes &#39;process1&#39; and &#39;process2&#39;.</span>
+<span class="c1"># Consider a stream S1 from process1 enters process2 as S2.</span>
+<span class="c1"># Then it would be desirable to set S2 equal to S1 so that</span>
+<span class="c1"># data of S1 can be copied into S2.</span>
+<span class="c1"># This can be done as follows.</span>
+<span class="c1"># First import the module **physicalmassbalance**</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="kn">from</span> <span class="nn">pychemengg.massbalances</span> <span class="kn">import</span> <span class="n">physicalmassbalance</span> <span class="k">as</span> <span class="n">pmb</span>
+
+<span class="c1"># Next create instance of physical process process1</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">process1</span> <span class="o">=</span> <span class="n">pmb</span><span class="o">.</span><span class="n">PhysicalProcess</span><span class="p">(</span><span class="s2">&quot;process1&quot;</span><span class="p">)</span>
+
+<span class="c1"># Attach S1 to process1.</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">process1</span><span class="o">.</span><span class="n">S1</span> <span class="o">=</span> <span class="n">process1</span><span class="o">.</span><span class="n">attachstreams</span><span class="p">(</span><span class="n">streamnames</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;S1&quot;</span><span class="p">],</span> <span class="n">flowrates</span><span class="o">=</span><span class="p">[</span><span class="o">-</span><span class="mi">300</span><span class="p">],</span> <span class="n">fractions</span><span class="o">=</span><span class="p">[[</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">,</span> <span class="mf">0.6</span><span class="p">]])</span>
+
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">print</span><span class="p">(</span><span class="n">process1</span><span class="p">)</span>
+<span class="c1"># Output is as follows:</span>
+
+<span class="o">====================================</span>
+<span class="n">Process</span> <span class="n">streams</span> <span class="k">for</span> <span class="s1">&#39;process1&#39;</span> <span class="n">are</span> <span class="p">:</span>
+<span class="o">====================================</span>
+<span class="n">Stream</span> <span class="o">=</span> <span class="n">S1</span><span class="p">;</span> <span class="n">Flowrate</span> <span class="o">=</span> <span class="o">-</span><span class="mf">300.00</span><span class="p">;</span> <span class="n">Fractions</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;0.1000&#39;</span><span class="p">,</span> <span class="s1">&#39;0.3000&#39;</span><span class="p">,</span> <span class="s1">&#39;0.6000&#39;</span><span class="p">];</span> <span class="n">Extra</span> <span class="n">Info</span> <span class="o">=</span> <span class="kc">None</span> 
+<span class="o">------------------------------------</span>
+<span class="n">END</span>
+
+<span class="c1"># Next create instance of physical process process2</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">process2</span> <span class="o">=</span> <span class="n">pmb</span><span class="o">.</span><span class="n">PhysicalProcess</span><span class="p">(</span><span class="s2">&quot;process2&quot;</span><span class="p">)</span>
+<span class="c1"># Attach S2 to process2</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">process2</span><span class="o">.</span><span class="n">S2</span> <span class="o">=</span> <span class="n">process2</span><span class="o">.</span><span class="n">attachstreams</span><span class="p">(</span><span class="n">streamnames</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;S2&quot;</span><span class="p">])</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">process2</span><span class="o">.</span><span class="n">S2</span><span class="o">.</span><span class="n">setequalto</span><span class="p">(</span><span class="n">process1</span><span class="o">.</span><span class="n">S1</span><span class="p">,</span> <span class="n">flowdirection</span><span class="o">=</span><span class="s2">&quot;+&quot;</span><span class="p">)</span>
+<span class="c1"># S2 is inlet thus it has &#39;+&#39; sign for flowdirection</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">print</span><span class="p">(</span><span class="n">process2</span><span class="p">)</span>
+
+<span class="o">====================================</span>
+<span class="n">Process</span> <span class="n">streams</span> <span class="k">for</span> <span class="s1">&#39;process2&#39;</span> <span class="n">are</span> <span class="p">:</span>
+<span class="o">====================================</span>
+<span class="n">Stream</span> <span class="o">=</span> <span class="n">S2</span><span class="p">;</span> <span class="n">Flowrate</span> <span class="o">=</span> <span class="mf">300.00</span><span class="p">;</span> <span class="n">Fractions</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;0.1000&#39;</span><span class="p">,</span> <span class="s1">&#39;0.3000&#39;</span><span class="p">,</span> <span class="s1">&#39;0.6000&#39;</span><span class="p">];</span> <span class="n">Extra</span> <span class="n">Info</span> <span class="o">=</span> <span class="kc">None</span> 
+<span class="o">------------------------------------</span>
+<span class="n">END</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pychemengg.massbalances.physicalmassbalance.PhysicalProcess.Stream.setextrainfo">
+<span class="sig-name descname"><span class="pre">setextrainfo</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">info</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pychemengg/massbalances/physicalmassbalance.html#PhysicalProcess.Stream.setextrainfo"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pychemengg.massbalances.physicalmassbalance.PhysicalProcess.Stream.setextrainfo" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set extra information of a stream.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>extrainfo: A list of [`str`, …]</strong></dt><dd><p>String representation of relationship between overall or
+component flowrates amongst different streams, or
+some other relationship that can help solve the mass balance.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>None</dt><dd></dd>
+</dl>
+</dd>
+</dl>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<dl class="simple">
+<dt><a class="reference internal" href="#pychemengg.massbalances.physicalmassbalance.PhysicalProcess.attachstreams" title="pychemengg.massbalances.physicalmassbalance.PhysicalProcess.attachstreams"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pychemengg.massbalances.physicalmassbalance.PhysicalProcess.attachstreams</span></code></a></dt><dd></dd>
+<dt><a class="reference internal" href="#pychemengg.massbalances.physicalmassbalance.PhysicalProcess.Stream.setflow" title="pychemengg.massbalances.physicalmassbalance.PhysicalProcess.Stream.setflow"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pychemengg.massbalances.physicalmassbalance.PhysicalProcess.Stream.setflow</span></code></a></dt><dd></dd>
+<dt><a class="reference internal" href="#pychemengg.massbalances.physicalmassbalance.PhysicalProcess.Stream.setfractions" title="pychemengg.massbalances.physicalmassbalance.PhysicalProcess.Stream.setfractions"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pychemengg.massbalances.physicalmassbalance.PhysicalProcess.Stream.setfractions</span></code></a></dt><dd></dd>
+</dl>
+</div>
+<p class="rubric">Notes</p>
+<p>Creates an attribute ‘extrainfo’ for the stream and assigns
+it a value.</p>
+<p class="rubric">Examples</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># For a physical process &#39;mixer1&#39; and say a stream &#39;S1&#39;,</span>
+<span class="c1"># flowrate can be set as follows.</span>
+<span class="c1"># First import the module **physicalmassbalance**</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="kn">from</span> <span class="nn">pychemengg.massbalances</span> <span class="kn">import</span> <span class="n">physicalmassbalance</span> <span class="k">as</span> <span class="n">pmb</span>
+
+<span class="c1"># Next create instance of physical process, say a mixer</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">mixer1</span> <span class="o">=</span> <span class="n">pmb</span><span class="o">.</span><span class="n">PhysicalProcess</span><span class="p">(</span><span class="s2">&quot;mixer1&quot;</span><span class="p">)</span>
+<span class="c1"># Next, a single stream with a certain name can be attached</span>
+<span class="c1"># ---------------------------------------------------------</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">mixer1</span><span class="o">.</span><span class="n">attachstreams</span><span class="p">([</span><span class="s2">&quot;S1&quot;</span><span class="p">])</span>
+<span class="c1"># This will attach a stream named &quot;S1&quot; to &quot;mixer1&quot;.</span>
+<span class="c1"># The returned &#39;~.Stream&#39; instance can be stored as follows.</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">S1</span> <span class="o">=</span> <span class="n">mixer1</span><span class="o">.</span><span class="n">attachstreams</span><span class="p">([</span><span class="s2">&quot;S1&quot;</span><span class="p">])</span>
+<span class="c1"># Say that stream S1 overall flowrate is half that of S4</span>
+<span class="c1"># then S1=0.5*S4</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">S1</span><span class="o">.</span><span class="n">extrainfo</span><span class="p">[[</span><span class="s2">&quot;S1=0.5*S4&quot;</span><span class="p">]]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pychemengg.massbalances.physicalmassbalance.PhysicalProcess.Stream.setflow">
+<span class="sig-name descname"><span class="pre">setflow</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">flow</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pychemengg/massbalances/physicalmassbalance.html#PhysicalProcess.Stream.setflow"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pychemengg.massbalances.physicalmassbalance.PhysicalProcess.Stream.setflow" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets flowrate of a stream.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl>
+<dt><strong>flow</strong><span class="classifier"><cite>int or float or str</cite></span></dt><dd><p>Flowrate of the stream.</p>
+<ul class="simple">
+<li><p>Use positive <cite>int</cite> or <cite>float</cite> for inlet stream.</p></li>
+<li><p>Use negative <cite>int</cite> or <cite>float</cite> for outlet stream.</p></li>
+</ul>
+<p>If flowrate is unknown, use:</p>
+<ul class="simple">
+<li><p>“F” or “+F” for inlet stream, and</p></li>
+<li><p>“-F” for outlet stream</p></li>
+</ul>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>None</dt><dd></dd>
+</dl>
+</dd>
+</dl>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<dl class="simple">
+<dt><a class="reference internal" href="#pychemengg.massbalances.physicalmassbalance.PhysicalProcess.attachstreams" title="pychemengg.massbalances.physicalmassbalance.PhysicalProcess.attachstreams"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pychemengg.massbalances.physicalmassbalance.PhysicalProcess.attachstreams</span></code></a></dt><dd></dd>
+<dt><a class="reference internal" href="#pychemengg.massbalances.physicalmassbalance.PhysicalProcess.Stream.setfractions" title="pychemengg.massbalances.physicalmassbalance.PhysicalProcess.Stream.setfractions"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pychemengg.massbalances.physicalmassbalance.PhysicalProcess.Stream.setfractions</span></code></a></dt><dd></dd>
+<dt><a class="reference internal" href="#pychemengg.massbalances.physicalmassbalance.PhysicalProcess.Stream.setextrainfo" title="pychemengg.massbalances.physicalmassbalance.PhysicalProcess.Stream.setextrainfo"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pychemengg.massbalances.physicalmassbalance.PhysicalProcess.Stream.setextrainfo</span></code></a></dt><dd></dd>
+</dl>
+</div>
+<p class="rubric">Notes</p>
+<p>Creates an attribute ‘flowrate’ for the stream and assigns
+it a value.</p>
+<p class="rubric">Examples</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># For a physical process &#39;mixer1&#39; and say a stream &#39;S1&#39;,</span>
+<span class="c1"># flowrate can be set as follows.</span>
+<span class="c1"># First import the module **physicalmassbalance**</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="kn">from</span> <span class="nn">pychemengg.massbalances</span> <span class="kn">import</span> <span class="n">physicalmassbalance</span> <span class="k">as</span> <span class="n">pmb</span>
+
+<span class="c1"># Next create instance of physical process, say a mixer</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">mixer1</span> <span class="o">=</span> <span class="n">pmb</span><span class="o">.</span><span class="n">PhysicalProcess</span><span class="p">(</span><span class="s2">&quot;mixer1&quot;</span><span class="p">)</span>
+<span class="c1"># Next, a single stream with a certain name can be attached</span>
+<span class="c1"># ---------------------------------------------------------</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">mixer1</span><span class="o">.</span><span class="n">attachstreams</span><span class="p">([</span><span class="s2">&quot;S1&quot;</span><span class="p">])</span>
+<span class="c1"># This will attach a stream named &quot;S1&quot; to &quot;mixer1&quot;.</span>
+<span class="c1"># The returned &#39;~.Stream&#39; instance can be stored as follows.</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">S1</span> <span class="o">=</span> <span class="n">mixer1</span><span class="o">.</span><span class="n">attachstreams</span><span class="p">([</span><span class="s2">&quot;S1&quot;</span><span class="p">])</span>
+<span class="c1"># If flowrate is 1335, it can be assigned as</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">S1</span><span class="o">.</span><span class="n">setflow</span><span class="p">(</span><span class="mi">1335</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">print</span><span class="p">(</span><span class="n">S1</span><span class="o">.</span><span class="n">flowrate</span><span class="p">)</span>
+<span class="mi">1335</span>
+<span class="c1"># If flowrate is -300 (assuming stream is outlet)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">S1</span><span class="o">.</span><span class="n">setflow</span><span class="p">(</span><span class="o">-</span><span class="mi">300</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">print</span><span class="p">(</span><span class="n">S1</span><span class="o">.</span><span class="n">flowrate</span><span class="p">)</span>
+<span class="o">-</span><span class="mi">300</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pychemengg.massbalances.physicalmassbalance.PhysicalProcess.Stream.setfractions">
+<span class="sig-name descname"><span class="pre">setfractions</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fracts</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pychemengg/massbalances/physicalmassbalance.html#PhysicalProcess.Stream.setfractions"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pychemengg.massbalances.physicalmassbalance.PhysicalProcess.Stream.setfractions" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set component mole/mass fractions of a stream.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl>
+<dt><strong>fracts: A list of [`int or float or str`, `int or float or str`, …]</strong></dt><dd><p>Mass or mole fractions of stream components.</p>
+<p>If a fraction for a component is unknown, use:</p>
+<ul class="simple">
+<li><p>“x”</p></li>
+</ul>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>None</dt><dd></dd>
+</dl>
+</dd>
+</dl>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<dl class="simple">
+<dt><a class="reference internal" href="#pychemengg.massbalances.physicalmassbalance.PhysicalProcess.attachstreams" title="pychemengg.massbalances.physicalmassbalance.PhysicalProcess.attachstreams"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pychemengg.massbalances.physicalmassbalance.PhysicalProcess.attachstreams</span></code></a></dt><dd></dd>
+<dt><a class="reference internal" href="#pychemengg.massbalances.physicalmassbalance.PhysicalProcess.Stream.setflow" title="pychemengg.massbalances.physicalmassbalance.PhysicalProcess.Stream.setflow"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pychemengg.massbalances.physicalmassbalance.PhysicalProcess.Stream.setflow</span></code></a></dt><dd></dd>
+<dt><a class="reference internal" href="#pychemengg.massbalances.physicalmassbalance.PhysicalProcess.Stream.setextrainfo" title="pychemengg.massbalances.physicalmassbalance.PhysicalProcess.Stream.setextrainfo"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pychemengg.massbalances.physicalmassbalance.PhysicalProcess.Stream.setextrainfo</span></code></a></dt><dd></dd>
+</dl>
+</div>
+<p class="rubric">Notes</p>
+<p>Creates an attribute ‘fractions’ for the stream and assigns
+it a value.</p>
+<p class="rubric">Examples</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># For a physical process &#39;mixer1&#39; and say a stream &#39;S1&#39;,</span>
+<span class="c1"># flowrate can be set as follows.</span>
+<span class="c1"># First import the module **physicalmassbalance**</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="kn">from</span> <span class="nn">pychemengg.massbalances</span> <span class="kn">import</span> <span class="n">physicalmassbalance</span> <span class="k">as</span> <span class="n">pmb</span>
+
+<span class="c1"># Next create instance of physical process, say a mixer</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">mixer1</span> <span class="o">=</span> <span class="n">pmb</span><span class="o">.</span><span class="n">PhysicalProcess</span><span class="p">(</span><span class="s2">&quot;mixer1&quot;</span><span class="p">)</span>
+<span class="c1"># Next, a single stream with a certain name can be attached</span>
+<span class="c1"># ---------------------------------------------------------</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">mixer1</span><span class="o">.</span><span class="n">attachstreams</span><span class="p">([</span><span class="s2">&quot;S1&quot;</span><span class="p">])</span>
+<span class="c1"># This will attach a stream named &quot;S1&quot; to &quot;mixer1&quot;.</span>
+<span class="c1"># The returned &#39;~.Stream&#39; instance can be stored as follows.</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">S1</span> <span class="o">=</span> <span class="n">mixer1</span><span class="o">.</span><span class="n">attachstreams</span><span class="p">([</span><span class="s2">&quot;S1&quot;</span><span class="p">])</span>
+<span class="c1"># If the stream has four components and with mass fractions</span>
+<span class="c1"># 0.1, 0.3, 0.5, 0.1, then specify them as follows:</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">S1</span><span class="o">.</span><span class="n">setfractions</span><span class="p">([</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">]</span>
+<span class="c1"># If one of them in an unknown, say component &#39;3&#39;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">S</span><span class="o">.</span><span class="n">setfractions</span><span class="p">([</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">,</span> <span class="s2">&quot;x&quot;</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">])</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pychemengg.massbalances.physicalmassbalance.PhysicalProcess.attachstreams">
+<span class="sig-name descname"><span class="pre">attachstreams</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">streamnames</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">flowrates</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fractions</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">extrainfos</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pychemengg/massbalances/physicalmassbalance.html#PhysicalProcess.attachstreams"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pychemengg.massbalances.physicalmassbalance.PhysicalProcess.attachstreams" title="Permalink to this definition">¶</a></dt>
+<dd><p>Attach one or more streams to process.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl>
+<dt><strong>streamnames</strong><span class="classifier"><cite>list</cite> [<cite>str</cite>, <cite>str</cite>, …]</span></dt><dd><p>A list containing streamnames.</p>
+</dd>
+<dt><strong>flowrates</strong><span class="classifier"><cite>list</cite> [<cite>str</cite> or <cite>int</cite> or <cite>float</cite>, <cite>str</cite> or <cite>int</cite> or <cite>float</cite>, …]. optional</span></dt><dd><p>A list containing flowrates for each stream.</p>
+<ul class="simple">
+<li><p>Use positive <cite>int</cite> or <cite>float</cite> for inlet stream.</p></li>
+<li><p>Use negative <cite>int</cite> or <cite>float</cite> for outlet stream.</p></li>
+</ul>
+<p>If flowrate is unknown, use:</p>
+<ul class="simple">
+<li><p>“F” or “+F” for inlet stream, and</p></li>
+<li><p>“-F” for outlet stream</p></li>
+</ul>
+</dd>
+<dt><strong>fractions</strong><span class="classifier"><cite>list</cite> [ [<cite>str</cite> or <cite>int</cite> or <cite>float</cite>, <cite>str</cite> or <cite>int</cite> or <cite>float</cite>, …], [<cite>str</cite> or <cite>int</cite> or <cite>float</cite>, <cite>str</cite> or <cite>int</cite> or <cite>float</cite>, …], …]. optional</span></dt><dd><p>A list containing a list of component fractions for each stream.
+If the component fraction is unknown use the string “x”.</p>
+</dd>
+<dt><strong>extrainfos</strong><span class="classifier"><cite>list</cite> [ [<cite>str</cite>], [<cite>str</cite>], …], optional</span></dt><dd><p>A list containing extrainfo for a stream represented as a string.</p>
+<p>Example:</p>
+<p><strong>CASE 1: Relation between component flowrates in different streams is provided.</strong></p>
+<blockquote>
+<div><p>Let extrainfo : [“2:S1=1.2*S4”]</p>
+<p>This means that for component ‘2’, the ‘component flowrate’ in S1
+is 1.2 times that in S4.</p>
+</div></blockquote>
+<p><strong>CASE 2: Relation between overall stream flowrates is provided.</strong></p>
+<blockquote>
+<div><p>Let extrainfo : [“S1=1.2*S4”]</p>
+<p>This means overall flowrate of stream S1 is 1.2 times the
+overall flowrate of stream S4.</p>
+</div></blockquote>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>Single <cite>~.Stream</cite> instance OR <cite>list</cite> of <cite>~.Stream</cite> instances</dt><dd><p>If a single stream with just name is created, a single
+‘~.Stream’ instance is returned.
+If more than one stream is created, a list of <cite>~.Stream</cite> instances
+is returned.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<dl class="simple">
+<dt><a class="reference internal" href="#pychemengg.massbalances.physicalmassbalance.PhysicalProcess.Stream" title="pychemengg.massbalances.physicalmassbalance.PhysicalProcess.Stream"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pychemengg.massbalances.physicalmassbalance.PhysicalProcess.Stream</span></code></a></dt><dd></dd>
+</dl>
+</div>
+<p class="rubric">Notes</p>
+<ul>
+<li><p>The Stream class requires three arguments:</p>
+<blockquote>
+<div><ol class="lowerroman simple">
+<li><p>self : instance of Stream object (passed automatically by Python))</p></li>
+<li><p>instance of physical process</p></li>
+<li><p>streamname</p></li>
+</ol>
+<p>By calling the Stream as <em>PhysicalProcess.Stream(self, streamname)</em>,
+the arguments ii) and iii) are being provided. The ‘self’ in this
+statement is the physical process to which the stream is attached,
+which is argument ii) and streamname satisfies argument iii).</p>
+</div></blockquote>
+</li>
+<li><p>Attributes</p>
+<blockquote>
+<div><p>There are three <cite>~.Stream</cite> attributes set by this method.</p>
+<ul>
+<li><dl>
+<dt>flowrate<span class="classifier"><cite>int</cite> or <cite>float</cite> or <cite>str</cite></span></dt><dd><p>Stream flowrate.</p>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt>fractions<span class="classifier">a list containing [<cite>int</cite> or <cite>float</cite> or <cite>str</cite>, <cite>int</cite> or <cite>float</cite> or <cite>str</cite>, … ]</span></dt><dd><p>Component mass/mole fractions of a stream.</p>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt>extrainfo<span class="classifier">a list of [<cite>str</cite>]</span></dt><dd><p>Extra information between component or total flowrates between streams.</p>
+</dd>
+</dl>
+</li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 32%" />
+<col style="width: 35%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Method of attaching
+‘Stream’</p></th>
+<th class="head"><p>‘flowrate’
+attribute is set as</p></th>
+<th class="head"><p>‘fractions’ attribute
+is set as</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Just the keyword
+“streamnames” is used</p></td>
+<td><p>“Not yet defined”</p></td>
+<td><p>“Not yet defined”</p></td>
+</tr>
+<tr class="row-odd"><td><p>The
+keywords
+“streamnames” ,
+“flowrates” ,
+“fractions” are used</p></td>
+<td><p>User supplied
+values</p></td>
+<td><p>User supplied
+values</p></td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li><p>extrainfo attribute is either not set or set to user defined values.</p></li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+<p class="rubric">Examples</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># First import the module **physicalmassbalance**</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="kn">from</span> <span class="nn">pychemengg.massbalances</span> <span class="kn">import</span> <span class="n">physicalmassbalance</span> <span class="k">as</span> <span class="n">pmb</span>
+
+<span class="c1"># Next create instance of physical process, say a mixer</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">mixer1</span> <span class="o">=</span> <span class="n">pmb</span><span class="o">.</span><span class="n">PhysicalProcess</span><span class="p">(</span><span class="s2">&quot;mixer1&quot;</span><span class="p">)</span>
+
+<span class="c1"># How to attach a single stream with a certain name</span>
+<span class="c1"># -------------------------------------------------</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">mixer1</span><span class="o">.</span><span class="n">attachstreams</span><span class="p">([</span><span class="s2">&quot;S1&quot;</span><span class="p">])</span>
+<span class="c1"># This will attach a stream named &quot;S1&quot; to &quot;mixer1&quot;.</span>
+<span class="c1"># The returned &#39;~.Stream&#39; instance can be stored as follows.</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">S1</span> <span class="o">=</span> <span class="n">mixer1</span><span class="o">.</span><span class="n">attachstreams</span><span class="p">([</span><span class="s2">&quot;S1&quot;</span><span class="p">])</span>
+<span class="c1"># Flowrates and component fractions must be set</span>
+<span class="c1"># separately using setflow, setfractions, and setextrainfo methods.</span>
+
+<span class="c1"># How to attach many streams with given names </span>
+<span class="c1"># --------------------------------------------</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">Water</span><span class="p">,</span> <span class="n">NaOH</span><span class="p">,</span> <span class="n">Product</span> <span class="o">=</span> <span class="n">mixer1</span><span class="o">.</span><span class="n">attachstreams</span><span class="p">([</span><span class="s2">&quot;Water&quot;</span><span class="p">,</span> <span class="s2">&quot;NaOH&quot;</span><span class="p">,</span> <span class="s2">&quot;Product&quot;</span><span class="p">])</span>
+<span class="c1"># The returned stream objects are each stored in the stream variables</span>
+<span class="c1"># Water, NaOH, and Product.</span>
+<span class="c1"># Flowrates and component fractions must be set</span>
+<span class="c1"># separately using setflow, setfractions, and setextrainfo methods.</span>
+
+<span class="c1"># How to attach one or many streams with given names and data</span>
+<span class="c1"># -----------------------------------------------------------</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">streams</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Water&quot;</span><span class="p">,</span> <span class="s2">&quot;NaOH&quot;</span><span class="p">,</span> <span class="s2">&quot;Product&quot;</span><span class="p">]</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">flows</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;F&quot;</span><span class="p">,</span> <span class="mi">1000</span><span class="p">,</span> <span class="s2">&quot;-F&quot;</span><span class="p">]</span>
+<span class="c1"># Use &#39;F&#39; or &#39;+F&#39; if flowrate is unknown for inlet stream</span>
+<span class="c1"># Use &#39;-F&#39; if flowrate is unknown for outlet stream</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">fractions</span> <span class="o">=</span> <span class="p">[</span> <span class="p">[</span><span class="s2">&quot;x&quot;</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="s2">&quot;x&quot;</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">]</span> <span class="p">]</span>
+<span class="c1"># Use &#39;x&#39; if a component fraction is unknown.</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">extrainfo</span> <span class="o">=</span> <span class="p">[</span> <span class="p">[],</span> <span class="p">[],</span> <span class="p">[</span><span class="s2">&quot;Water=0.9*Product&quot;</span><span class="p">]</span> <span class="p">]</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">Water</span><span class="p">,</span> <span class="n">NaOH</span><span class="p">,</span> <span class="n">Product</span> <span class="o">=</span> <span class="n">mixer1</span><span class="o">.</span><span class="n">attachstreams</span><span class="p">(</span><span class="n">streamnames</span><span class="o">=</span><span class="n">streams</span><span class="p">,</span>
+                                                <span class="n">flowrates</span><span class="o">=</span><span class="n">flows</span><span class="p">,</span>
+                                                <span class="n">fractions</span><span class="o">=</span><span class="n">fractions</span><span class="p">,</span>
+                                                <span class="n">extrainfos</span><span class="o">=</span><span class="n">extrainfo</span><span class="p">)</span>
+<span class="c1"># Here three streams are created.</span>
+<span class="c1"># The returned stream objects are each stored in the stream variables</span>
+<span class="c1"># Water, NaOH, and Product.</span>
+<span class="c1"># The above process can be carried for one or many streams.</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pychemengg.massbalances.physicalmassbalance.PhysicalProcess.degreesoffreedom">
+<span class="sig-name descname"><span class="pre">degreesoffreedom</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pychemengg/massbalances/physicalmassbalance.html#PhysicalProcess.degreesoffreedom"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pychemengg.massbalances.physicalmassbalance.PhysicalProcess.degreesoffreedom" title="Permalink to this definition">¶</a></dt>
+<dd><p>Perform degree of freedom analysis on the physical process.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>None</strong><span class="classifier">Method is applied to the physical process.</span></dt><dd></dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>None</strong><span class="classifier">None.</span></dt><dd><p>Multiple “self” attributes are created. These are used to
+formulate balances that are required to solve for “F”, “-F”, and “x”</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-odd">Attributes</dt>
+<dd class="field-odd"><dl>
+<dt><strong>unknown_x_count</strong><span class="classifier"><cite>int</cite></span></dt><dd><p>Count of total unknown fractions in streams attached to the process.</p>
+</dd>
+<dt><strong>unknownplusF_count</strong><span class="classifier"><cite>int</cite></span></dt><dd><p>Count of total unknown inlet stream flowrates.</p>
+</dd>
+<dt><strong>unknownminusF_count</strong><span class="classifier"><cite>int</cite></span></dt><dd><p>Count of total unknown outlet stream flowrates.</p>
+</dd>
+<dt><strong>unknown_Fs_count</strong><span class="classifier"><cite>int</cite></span></dt><dd><p>Count of total unknown inlet + outlet stream flowrates.</p>
+</dd>
+<dt><strong>totalunknowns</strong><span class="classifier"><cite>int</cite></span></dt><dd><p>Sum of unknown_Fs_count + unknown_x_count</p>
+</dd>
+<dt><strong>extrainfo_count</strong><span class="classifier"><cite>int</cite></span></dt><dd><p>Count of total extra information available for the process.</p>
+</dd>
+<dt><strong>component_count</strong><span class="classifier"><cite>int</cite></span></dt><dd><p>Total components in the process streams</p>
+</dd>
+<dt><strong>streamswith_unknownx_count</strong><span class="classifier"><cite>int</cite></span></dt><dd><p>Count of streams that contain at least one unknown component fraction.</p>
+</dd>
+<dt><strong>totalequations_possible</strong><span class="classifier"><cite>int</cite></span></dt><dd><p>Sum of extrainfo_count + component_count + streamswith_unknownx_count</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pychemengg.massbalances.physicalmassbalance.PhysicalProcess.find_unknownflowrate">
+<span class="sig-name descname"><span class="pre">find_unknownflowrate</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pychemengg/massbalances/physicalmassbalance.html#PhysicalProcess.find_unknownflowrate"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pychemengg.massbalances.physicalmassbalance.PhysicalProcess.find_unknownflowrate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Compute unknown flowrate “F” or “-F”.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>physical process</strong><span class="classifier">Instance of ~.PhysicalProcess</span></dt><dd><p>Physical process for which ‘F’/’-F’ are to be computed.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>A list. Each list can take one of the following form.</dt><dd></dd>
+<dt><strong>- If ‘F’/’-F’ is computable</strong><span class="classifier">[[True, streamname, missingflowrate_value]]</span></dt><dd></dd>
+<dt><strong>- If ‘F’/’-F’ is not computable</strong><span class="classifier">[[False, textmessage]]</span></dt><dd></dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>Attempt is made to compute the unknown flowrate for a process
+using  # ΣFin + ΣFout = 0. This approach can only work if there is
+just one unknown ‘F’ or ‘-F’ in a given process.</p>
+<p class="rubric">Examples</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pychemengg.massbalances</span> <span class="kn">import</span> <span class="n">physicalmassbalance</span> <span class="k">as</span> <span class="n">pmb</span>
+
+<span class="go"># Next create instance of physical process, say it is called &#39;process1&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">process1</span> <span class="o">=</span> <span class="n">pmb</span><span class="o">.</span><span class="n">PhysicalProcess</span><span class="p">(</span><span class="s2">&quot;process1&quot;</span><span class="p">)</span>
+
+<span class="go"># Attach two inlet streams and one outlet stream to process1.</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">process1</span><span class="o">.</span><span class="n">S1</span> <span class="o">=</span> <span class="n">process1</span><span class="o">.</span><span class="n">attachstreams</span><span class="p">(</span><span class="n">streamnames</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;S1&quot;</span><span class="p">],</span> <span class="n">flowrates</span><span class="o">=</span><span class="p">[</span><span class="mi">300</span><span class="p">],</span> <span class="n">fractions</span><span class="o">=</span><span class="p">[[</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">,</span> <span class="mf">0.6</span><span class="p">]])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">process1</span><span class="o">.</span><span class="n">S2</span> <span class="o">=</span> <span class="n">process1</span><span class="o">.</span><span class="n">attachstreams</span><span class="p">(</span><span class="n">streamnames</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;S2&quot;</span><span class="p">],</span> <span class="n">flowrates</span><span class="o">=</span><span class="p">[</span><span class="mi">200</span><span class="p">],</span> <span class="n">fractions</span><span class="o">=</span><span class="p">[[</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.12</span><span class="p">,</span> <span class="s2">&quot;x&quot;</span><span class="p">]])</span>
+<span class="go"># The stream below is the outlet stream. Note the flowrate has a negative sign.</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">process1</span><span class="o">.</span><span class="n">S3</span> <span class="o">=</span> <span class="n">process1</span><span class="o">.</span><span class="n">attachstreams</span><span class="p">(</span><span class="n">streamnames</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;S3&quot;</span><span class="p">],</span> <span class="n">flowrates</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;-F&quot;</span><span class="p">],</span> <span class="n">fractions</span><span class="o">=</span><span class="p">[[</span><span class="mf">0.1</span><span class="p">,</span> <span class="s2">&quot;x&quot;</span><span class="p">,</span> <span class="s2">&quot;x&quot;</span><span class="p">]])</span>
+
+<span class="go"># Apply the find_unknownflowrate() method on the process</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">unknownF</span> <span class="o">=</span> <span class="n">process1</span><span class="o">.</span><span class="n">find_unknownflowrate</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">unknownF</span><span class="p">)</span>
+<span class="go">Output is:</span>
+<span class="go">[[True, &#39;S3&#39;, -500.0]]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pychemengg.massbalances.physicalmassbalance.PhysicalProcess.find_unknownfractions">
+<span class="sig-name descname"><span class="pre">find_unknownfractions</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">streamname</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pychemengg/massbalances/physicalmassbalance.html#PhysicalProcess.find_unknownfractions"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pychemengg.massbalances.physicalmassbalance.PhysicalProcess.find_unknownfractions" title="Permalink to this definition">¶</a></dt>
+<dd><p>Compute unknown fractions ‘x’.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>physical process</strong><span class="classifier">Instance of ~.PhysicalProcess</span></dt><dd><p>Physical process for which ‘x’ are to be computed</p>
+</dd>
+<dt><strong>streamname</strong><span class="classifier">instance of ~.PhysicalProcess.Stream, default = None</span></dt><dd><p>A specific stream of the PhysicalProcess for which ‘x’ is to
+be computed. If this parameter is not provided, all streams
+of the physical process are considered for finding the ‘x’.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>A list of lists. Each sublist item can take one of the following form.</dt><dd></dd>
+<dt><strong>- If ‘x’ is computable</strong><span class="classifier">[True, streamname, location_wherexunknown,  missingxvalue]</span></dt><dd></dd>
+<dt><strong>- If ‘x’ are not computable</strong><span class="classifier">[False, streamname, textmessage]</span></dt><dd></dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>Attempt is made to compute the unknown ‘x’ fraction for each stream
+using  Σx = 1. This approach can only work if there is just one
+unknown ‘x’ in a given stream.</p>
+<p class="rubric">Examples</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pychemengg.massbalances</span> <span class="kn">import</span> <span class="n">physicalmassbalance</span> <span class="k">as</span> <span class="n">pmb</span>
+
+<span class="go"># Next create instance of physical process, say it is called &#39;process1&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">process1</span> <span class="o">=</span> <span class="n">pmb</span><span class="o">.</span><span class="n">PhysicalProcess</span><span class="p">(</span><span class="s2">&quot;process1&quot;</span><span class="p">)</span>
+
+<span class="go"># Attach three inlet streams to process1.</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">process1</span><span class="o">.</span><span class="n">S1</span> <span class="o">=</span> <span class="n">process1</span><span class="o">.</span><span class="n">attachstreams</span><span class="p">(</span><span class="n">streamnames</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;S1&quot;</span><span class="p">],</span> <span class="n">flowrates</span><span class="o">=</span><span class="p">[</span><span class="mi">300</span><span class="p">],</span> <span class="n">fractions</span><span class="o">=</span><span class="p">[[</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">,</span> <span class="mf">0.6</span><span class="p">]])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">process1</span><span class="o">.</span><span class="n">S2</span> <span class="o">=</span> <span class="n">process1</span><span class="o">.</span><span class="n">attachstreams</span><span class="p">(</span><span class="n">streamnames</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;S2&quot;</span><span class="p">],</span> <span class="n">flowrates</span><span class="o">=</span><span class="p">[</span><span class="mi">200</span><span class="p">],</span> <span class="n">fractions</span><span class="o">=</span><span class="p">[[</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.12</span><span class="p">,</span> <span class="s2">&quot;x&quot;</span><span class="p">]])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">process1</span><span class="o">.</span><span class="n">S3</span> <span class="o">=</span> <span class="n">process1</span><span class="o">.</span><span class="n">attachstreams</span><span class="p">(</span><span class="n">streamnames</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;S3&quot;</span><span class="p">],</span> <span class="n">flowrates</span><span class="o">=</span><span class="p">[</span><span class="mi">700</span><span class="p">],</span> <span class="n">fractions</span><span class="o">=</span><span class="p">[[</span><span class="mf">0.1</span><span class="p">,</span> <span class="s2">&quot;x&quot;</span><span class="p">,</span> <span class="s2">&quot;x&quot;</span><span class="p">]])</span>
+
+<span class="go"># Apply the find_unknownfractions() method on the process</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">unknownx</span> <span class="o">=</span> <span class="n">process1</span><span class="o">.</span><span class="n">find_unknownfractions</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">unknownx</span><span class="p">)</span>
+<span class="go">Output is:</span>
+<span class="go">[[False, &#39;S1&#39;, &#39;There are no missing fractions.&#39;], [True, &#39;S2&#39;, 2, 0.78], [False, &#39;S3&#39;, &quot;More than one &#39;x&#39; unknown fractions in the stream. Σx = 1 is insufficient to find them.&quot;]]</span>
+
+<span class="go"># Apply the find_unknownfractions() method on one of the process stream</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">unkn</span> <span class="o">=</span> <span class="n">process1</span><span class="o">.</span><span class="n">find_unknownfractions</span><span class="p">(</span><span class="n">streamname</span><span class="o">=</span><span class="s2">&quot;S1&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">unkn</span><span class="p">)</span>
+<span class="go">Output is:</span>
+<span class="go">[[False, &#39;S1&#39;, &#39;There are no missing fractions.&#39;]]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pychemengg.massbalances.physicalmassbalance.PhysicalProcess.perform_component_massbalance">
+<span class="sig-name descname"><span class="pre">perform_component_massbalance</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pychemengg/massbalances/physicalmassbalance.html#PhysicalProcess.perform_component_massbalance"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pychemengg.massbalances.physicalmassbalance.PhysicalProcess.perform_component_massbalance" title="Permalink to this definition">¶</a></dt>
+<dd><p>Execute component mass balance on a process.</p>
+<p><span class="math">\((ΣF_ix_{i,component})\)</span> = 0; where i = stream index</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>physical process</strong><span class="classifier">Instance of ~.PhysicalProcess</span></dt><dd><p>Physical process for which component mass balance is to be performed.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>None</dt><dd></dd>
+</dl>
+</dd>
+</dl>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<dl class="simple">
+<dt><a class="reference internal" href="#pychemengg.massbalances.physicalmassbalance.PhysicalProcess.find_unknownflowrate" title="pychemengg.massbalances.physicalmassbalance.PhysicalProcess.find_unknownflowrate"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pychemengg.massbalances.physicalmassbalance.PhysicalProcess.find_unknownflowrate</span></code></a></dt><dd></dd>
+<dt><a class="reference internal" href="#pychemengg.massbalances.physicalmassbalance.PhysicalProcess.find_unknownfractions" title="pychemengg.massbalances.physicalmassbalance.PhysicalProcess.find_unknownfractions"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pychemengg.massbalances.physicalmassbalance.PhysicalProcess.find_unknownfractions</span></code></a></dt><dd></dd>
+</dl>
+</div>
+<p class="rubric">Notes</p>
+<p><strong>Logic for component mass balance</strong></p>
+<p>The nparray of stream flowrates has shape (n,1):</p>
+<ul class="simple">
+<li><p>n : number of streams</p></li>
+</ul>
+<p>The nparray of stream flowrates has shape (n,m):</p>
+<ul class="simple">
+<li><p>n : number of streams</p></li>
+<li><p>m : number of components per stream</p></li>
+</ul>
+<p>For example consider three streams:</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 38%" />
+<col style="width: 26%" />
+<col style="width: 36%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Stream</p></th>
+<th class="head"><p>Flowrate</p></th>
+<th class="head"><p>Fractions</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Inlet 1</p></td>
+<td><p>F1</p></td>
+<td><p>[x11, x12, x13]</p></td>
+</tr>
+<tr class="row-odd"><td><p>Inlet 2</p></td>
+<td><p>F2</p></td>
+<td><p>[x21, x22, x23]</p></td>
+</tr>
+<tr class="row-even"><td><p>Outlet 3</p></td>
+<td><p>F3</p></td>
+<td><p>[x31, x32, x33]</p></td>
+</tr>
+</tbody>
+</table>
+<p>The nparray for flowrates is:</p>
+<blockquote>
+<div><p>A =</p>
+<p>[[F1]</p>
+<p>[F2]</p>
+<p>[F3]]</p>
+<p>shape = (3, 1)</p>
+</div></blockquote>
+<p>The nparray for component fractions is:</p>
+<blockquote>
+<div><p>B =</p>
+<p>[[x11, x12, x13]</p>
+<p>[x21, x22, x23]</p>
+<p>[x31, x32, x33]]</p>
+<p>shape = (3, 3)</p>
+</div></blockquote>
+<p><span class="math">\(x_{m,n}\)</span> :</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>m : stream index</p></li>
+<li><p>n : component index</p></li>
+</ul>
+</div></blockquote>
+<p>To perform component mass balance, the row of matrix ‘A’ is multiplied
+to row of matrix ‘B’</p>
+<p>C =</p>
+<p>[[F1*x11, F1*x12, F1*x13]</p>
+<p>[F2*x21, F2*x22, F2*x23]</p>
+<p>[F3*x31, F3*x32, F3*x33]]</p>
+<p>Each column of ‘C’ represents flowrate of a component.
+By summing the column of ‘C’ the component mass balance can be
+performed.</p>
+<ul class="simple">
+<li><p>Sum of column 1 = Flowrate balance for component 1</p></li>
+<li><p>Sum of column 2 = Flowrate balance for component 2</p></li>
+</ul>
+<p class="rubric">Examples</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pychemengg.massbalances</span> <span class="kn">import</span> <span class="n">physicalmassbalance</span> <span class="k">as</span> <span class="n">pmb</span>
+
+<span class="go"># Next create instance of physical process, say it is called &#39;process1&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">process1</span> <span class="o">=</span> <span class="n">pmb</span><span class="o">.</span><span class="n">PhysicalProcess</span><span class="p">(</span><span class="s2">&quot;process1&quot;</span><span class="p">)</span>
+
+<span class="go"># Attach two inlet streams and one outlet stream to process1.</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">process1</span><span class="o">.</span><span class="n">S1</span> <span class="o">=</span> <span class="n">process1</span><span class="o">.</span><span class="n">attachstreams</span><span class="p">(</span><span class="n">streamnames</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;S1&quot;</span><span class="p">],</span> <span class="n">flowrates</span><span class="o">=</span><span class="p">[</span><span class="mi">300</span><span class="p">],</span> <span class="n">fractions</span><span class="o">=</span><span class="p">[[</span><span class="mf">0.4333</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">,</span> <span class="mf">0.2667</span><span class="p">]])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">process1</span><span class="o">.</span><span class="n">S2</span> <span class="o">=</span> <span class="n">process1</span><span class="o">.</span><span class="n">attachstreams</span><span class="p">(</span><span class="n">streamnames</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;S2&quot;</span><span class="p">],</span> <span class="n">flowrates</span><span class="o">=</span><span class="p">[</span><span class="mi">200</span><span class="p">],</span> <span class="n">fractions</span><span class="o">=</span><span class="p">[[</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.12</span><span class="p">,</span> <span class="mf">0.78</span><span class="p">]])</span>
+<span class="go"># The stream below is the outlet stream. Note the flowrate has a negative sign.</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">process1</span><span class="o">.</span><span class="n">S3</span> <span class="o">=</span> <span class="n">process1</span><span class="o">.</span><span class="n">attachstreams</span><span class="p">(</span><span class="n">streamnames</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;S3&quot;</span><span class="p">],</span> <span class="n">flowrates</span><span class="o">=</span><span class="p">[</span><span class="o">-</span><span class="mi">500</span><span class="p">],</span> <span class="n">fractions</span><span class="o">=</span><span class="p">[[</span><span class="mf">0.3</span><span class="p">,</span> <span class="mf">0.228</span><span class="p">,</span> <span class="mf">0.472</span><span class="p">]])</span>
+
+<span class="go"># Apply the perform_component_massbalance() method on the process</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">componentbalance</span> <span class="o">=</span> <span class="n">process1</span><span class="o">.</span><span class="n">perform_component_massbalance</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;component balance: &quot;</span><span class="p">,</span> <span class="n">componentbalance</span><span class="p">)</span>
+<span class="go">Output is:</span>
+<span class="go">component balance:  [-0.01  0.    0.01]</span>
+<span class="go"># This means that:</span>
+<span class="go"># For component 1: ΣFx = -0.01</span>
+<span class="go"># For component 2: ΣFx = 0.</span>
+<span class="go"># For component 3: ΣFx = 0.01</span>
+<span class="go"># The above balance can be set up as part of a function to solve</span>
+<span class="go"># for unknown &quot;F&quot;, &quot;-F&quot;, and &quot;x&quot;. See &#39;User Tutorial&#39;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pychemengg.massbalances.physicalmassbalance.PhysicalProcess.solvesystem">
+<span class="sig-name descname"><span class="pre">solvesystem</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pychemengg/massbalances/physicalmassbalance.html#PhysicalProcess.solvesystem"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pychemengg.massbalances.physicalmassbalance.PhysicalProcess.solvesystem" title="Permalink to this definition">¶</a></dt>
+<dd><p>Solves the physical process to find “F”, “-F”, and “x”</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>None</strong><span class="classifier">Apply the method to the physical process to be solved.</span></dt><dd></dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>solution</strong><span class="classifier">Instance of the class PhysicalProcess</span></dt><dd><p>A new instance of PhysicalProcess is created that
+stores the solution. The solution can be printed.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pychemengg.massbalances.physicalmassbalance.PhysicalProcess.update_streamflowrates">
+<span class="sig-name descname"><span class="pre">update_streamflowrates</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">newflow</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pychemengg/massbalances/physicalmassbalance.html#PhysicalProcess.update_streamflowrates"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pychemengg.massbalances.physicalmassbalance.PhysicalProcess.update_streamflowrates" title="Permalink to this definition">¶</a></dt>
+<dd><p>Update flowrate of a stream.</p>
+<p>This method should be used after finding unknown ‘x’ using
+‘find_unknownflowrate’.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl>
+<dt><strong>new_flow</strong><span class="classifier"><cite>list</cite></span></dt><dd><p>A list containing information to update stream fractions.</p>
+<p>The form of the list is:
+- [[False, textmessage]]
+- [[True, streamname, missingflowrate_value]]</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>None</dt><dd></dd>
+</dl>
+</dd>
+</dl>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<dl class="simple">
+<dt><a class="reference internal" href="#pychemengg.massbalances.physicalmassbalance.PhysicalProcess.find_unknownflowrate" title="pychemengg.massbalances.physicalmassbalance.PhysicalProcess.find_unknownflowrate"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pychemengg.massbalances.physicalmassbalance.PhysicalProcess.find_unknownflowrate</span></code></a></dt><dd></dd>
+</dl>
+</div>
+<p class="rubric">Examples</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pychemengg.massbalances</span> <span class="kn">import</span> <span class="n">physicalmassbalance</span> <span class="k">as</span> <span class="n">pmb</span>
+
+<span class="go"># Next create instance of physical process, say it is called &#39;process1&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">process1</span> <span class="o">=</span> <span class="n">pmb</span><span class="o">.</span><span class="n">PhysicalProcess</span><span class="p">(</span><span class="s2">&quot;process1&quot;</span><span class="p">)</span>
+
+<span class="go"># Attach two inlet streams and one outlet stream to process1.</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">process1</span><span class="o">.</span><span class="n">S1</span> <span class="o">=</span> <span class="n">process1</span><span class="o">.</span><span class="n">attachstreams</span><span class="p">(</span><span class="n">streamnames</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;S1&quot;</span><span class="p">],</span> <span class="n">flowrates</span><span class="o">=</span><span class="p">[</span><span class="mi">300</span><span class="p">],</span> <span class="n">fractions</span><span class="o">=</span><span class="p">[[</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">,</span> <span class="mf">0.6</span><span class="p">]])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">process1</span><span class="o">.</span><span class="n">S2</span> <span class="o">=</span> <span class="n">process1</span><span class="o">.</span><span class="n">attachstreams</span><span class="p">(</span><span class="n">streamnames</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;S2&quot;</span><span class="p">],</span> <span class="n">flowrates</span><span class="o">=</span><span class="p">[</span><span class="mi">200</span><span class="p">],</span> <span class="n">fractions</span><span class="o">=</span><span class="p">[[</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.12</span><span class="p">,</span> <span class="s2">&quot;x&quot;</span><span class="p">]])</span>
+<span class="go"># The stream below is the outlet stream. Note the flowrate has a negative sign.</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">process1</span><span class="o">.</span><span class="n">S3</span> <span class="o">=</span> <span class="n">process1</span><span class="o">.</span><span class="n">attachstreams</span><span class="p">(</span><span class="n">streamnames</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;S3&quot;</span><span class="p">],</span> <span class="n">flowrates</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;-F&quot;</span><span class="p">],</span> <span class="n">fractions</span><span class="o">=</span><span class="p">[[</span><span class="mf">0.1</span><span class="p">,</span> <span class="s2">&quot;x&quot;</span><span class="p">,</span> <span class="s2">&quot;x&quot;</span><span class="p">]])</span>
+
+<span class="go"># Apply the find_unknownflowrate() method on the process</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">unknownF</span> <span class="o">=</span> <span class="n">process1</span><span class="o">.</span><span class="n">find_unknownflowrate</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">process1</span><span class="o">.</span><span class="n">update_streamflowrates</span><span class="p">(</span><span class="n">unknownF</span><span class="p">)</span>
+<span class="go">Output is:</span>
+<span class="go">For  &quot; process1 &quot; : the stream &quot; S3 &quot; has new flowrate = -500.0</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pychemengg.massbalances.physicalmassbalance.PhysicalProcess.update_streamfractions">
+<span class="sig-name descname"><span class="pre">update_streamfractions</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">new_fractioninfo</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pychemengg/massbalances/physicalmassbalance.html#PhysicalProcess.update_streamfractions"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pychemengg.massbalances.physicalmassbalance.PhysicalProcess.update_streamfractions" title="Permalink to this definition">¶</a></dt>
+<dd><p>Update mole/mass fraction of a stream.</p>
+<p>This method should be used after finding unknown ‘x’ using
+‘find_unknownfractions’.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl>
+<dt><strong>new_fractioninfo</strong><span class="classifier"><cite>list</cite></span></dt><dd><p>A list containing information to update stream fractions.</p>
+<p>The form of the list is:
+- [True, streamname, location_wherexunknown, missingx_value]
+- [False, streamname, missingx_value]</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>None</dt><dd></dd>
+</dl>
+</dd>
+</dl>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<dl class="simple">
+<dt><a class="reference internal" href="#pychemengg.massbalances.physicalmassbalance.PhysicalProcess.find_unknownfractions" title="pychemengg.massbalances.physicalmassbalance.PhysicalProcess.find_unknownfractions"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pychemengg.massbalances.physicalmassbalance.PhysicalProcess.find_unknownfractions</span></code></a></dt><dd></dd>
+</dl>
+</div>
+<p class="rubric">Examples</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pychemengg.massbalances</span> <span class="kn">import</span> <span class="n">physicalmassbalance</span> <span class="k">as</span> <span class="n">pmb</span>
+
+<span class="go"># Next create instance of physical process, say it is called &#39;process1&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">process1</span> <span class="o">=</span> <span class="n">pmb</span><span class="o">.</span><span class="n">PhysicalProcess</span><span class="p">(</span><span class="s2">&quot;process1&quot;</span><span class="p">)</span>
+
+<span class="go"># Attach three inlet streams to process1.</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">process1</span><span class="o">.</span><span class="n">S1</span> <span class="o">=</span> <span class="n">process1</span><span class="o">.</span><span class="n">attachstreams</span><span class="p">(</span><span class="n">streamnames</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;S1&quot;</span><span class="p">],</span> <span class="n">flowrates</span><span class="o">=</span><span class="p">[</span><span class="mi">300</span><span class="p">],</span> <span class="n">fractions</span><span class="o">=</span><span class="p">[[</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">,</span> <span class="mf">0.6</span><span class="p">]])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">process1</span><span class="o">.</span><span class="n">S2</span> <span class="o">=</span> <span class="n">process1</span><span class="o">.</span><span class="n">attachstreams</span><span class="p">(</span><span class="n">streamnames</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;S2&quot;</span><span class="p">],</span> <span class="n">flowrates</span><span class="o">=</span><span class="p">[</span><span class="mi">200</span><span class="p">],</span> <span class="n">fractions</span><span class="o">=</span><span class="p">[[</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.12</span><span class="p">,</span> <span class="s2">&quot;x&quot;</span><span class="p">]])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">process1</span><span class="o">.</span><span class="n">S3</span> <span class="o">=</span> <span class="n">process1</span><span class="o">.</span><span class="n">attachstreams</span><span class="p">(</span><span class="n">streamnames</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;S3&quot;</span><span class="p">],</span> <span class="n">flowrates</span><span class="o">=</span><span class="p">[</span><span class="mi">700</span><span class="p">],</span> <span class="n">fractions</span><span class="o">=</span><span class="p">[[</span><span class="mf">0.1</span><span class="p">,</span> <span class="s2">&quot;x&quot;</span><span class="p">,</span> <span class="s2">&quot;x&quot;</span><span class="p">]])</span>
+
+<span class="go"># Apply the find_unknownfractions() method on the process</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">unknownx</span> <span class="o">=</span> <span class="n">process1</span><span class="o">.</span><span class="n">find_unknownfractions</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">unknownx</span><span class="p">)</span>
+<span class="go">Output is:</span>
+<span class="go">[[False, &#39;S1&#39;, &#39;There are no missing fractions.&#39;], [True, &#39;S2&#39;, 2, 0.78], [False, &#39;S3&#39;, &quot;More than one &#39;x&#39; unknown fractions in the stream. Σx = 1 is insufficient to find them.&quot;]]</span>
+
+<span class="go"># Use unknownx to update streams</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">process1</span><span class="o">.</span><span class="n">update_streamfractions</span><span class="p">(</span><span class="n">unknownx</span><span class="p">)</span>
+<span class="go">Output is :</span>
+<span class="go">For  &quot; process1 &quot; : the stream &quot; S1 &quot; There are no missing fractions.</span>
+<span class="go">For  &quot; process1 &quot; : the stream &quot; S2 &quot; The new component fraction @ position = &quot; 2 &quot; is now =  0.78</span>
+<span class="go">For  &quot; process1 &quot; : the stream &quot; S3 &quot; More than one &#39;x&#39; unknown fractions in the stream. Σx = 1 is insufficient to find them.</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="pychemengg.physicalproperties.html" class="btn btn-neutral float-right" title="physicalproperties" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="pychemengg.massbalances.physicalmassbalance.html" class="btn btn-neutral float-left" title="physicalmassbalance" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021, Harvinder Singh Gill.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+ 
+<div class="footer">This page uses <a href="https://analytics.google.com/">
+Google Analytics</a> to collect statistics. You can disable it by blocking
+the JavaScript coming from www.google-analytics.com.
+<script>
+  (function() {
+    var ga = document.createElement('script');
+    ga.src = ('https:' == document.location.protocol ?
+              'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    ga.setAttribute('async', 'true');
+    document.documentElement.firstChild.appendChild(ga);
+  })();
+</script>
+</div>
+
+
+</body>
+</html>
