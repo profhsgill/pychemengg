@@ -95,16 +95,16 @@ there will be support for different topics such as:
 
 At this time the following has been accomplished.
 
-1. Material Balances : Physical balance module is ready and is being documented.
+
+1. Material Balances : Physical balance module is ready and and released as a beta version.
 2. Heat Transfer : Modules for common topics generally taught are ready and released as a beta version.
 
 
 To do
 -----
 
-1. Complete 'tutorial' on material balances (without chemical reaction) and release the module.
-2. Gather feedback from constituents (instructors and students) to revise the design.
-3. Complete other topics of chemical engineering
+1. Gather feedback from constituents (instructors and students) to revise the design if needed.
+2. Create other modules.
 
 
 Issues
