@@ -108,9 +108,10 @@ At this time the following has been accomplished.
 
 To do
 -----
-1. Finish the 'transition heat transfer' module for heat transfer and add it to the package.
-2. Complete 'tutorial' on material balances and release the module.
-3. Gather feedback from constituents (instructors and students) to revise the beta design.
+
+1. Gather feedback from constituents (instructors and students) to revise the design if needed.
+2. Create other modules.
+
 
 
 Website
